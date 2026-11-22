@@ -1,0 +1,83 @@
+{
+  "model": "gpt-6.2-astra",
+  "public_historical_replay": {
+    "asml-search": {
+      "checks": {
+        "Q3營收74.67億歐元": true,
+        "Q3淨新增訂單26.33億歐元": true,
+        "EUV訂單約14億歐元": true,
+        "2025營收指引300至350億，且標註非實績": true,
+        "Q4訂單於截止時不可知": true
+      },
+      "elapsed_seconds": 44.05
+    },
+    "asml-snapshot": {
+      "checks": {
+        "Q3營收74.67億歐元": true,
+        "Q3淨新增訂單26.33億歐元": true,
+        "EUV訂單約14億歐元": true,
+        "2025營收指引300至350億，且標註非實績": true,
+        "Q4訂單於截止時不可知": true
+      },
+      "elapsed_seconds": 18.13
+    },
+    "asml-system": {
+      "checks": {
+        "Q3營收74.67億歐元": true,
+        "Q3淨新增訂單26.33億歐元": true,
+        "EUV訂單約14億歐元": true,
+        "2025營收指引300至350億，且標註非實績": true,
+        "Q4訂單於截止時不可知": true
+      },
+      "elapsed_seconds": 37.14
+    }
+  },
+  "actual_search_actions": [
+    "search",
+    "find_in_page",
+    "find_in_page"
+  ],
+  "synthetic": {
+    "criteria": [
+      "截止時點認證不可確認",
+      "兩個營業利益",
+      "兩個稀釋EPS",
+      "EPS差額",
+      "最低不虧損批數",
+      "開始正獲利批數"
+    ],
+    "synthetic-direct": {
+      "passed": 6,
+      "elapsed_seconds": 13.94,
+      "mentions_future_document_only_as_exclusion": true
+    },
+    "synthetic-system": {
+      "passed": 6,
+      "elapsed_seconds": 35.36,
+      "future_document_absent_from_snapshot": true
+    }
+  },
+  "local_system_branch": {
+    "n": 21,
+    "median_ms": 3.78,
+    "tested_lots": [
+      399,
+      400,
+      401
+    ],
+    "calls_to_model": 0,
+    "all_recomputations_and_parent_checks_passed": true
+  },
+  "qualitative_review": [
+    "網搜組找到原始快照之外的公司提前發布聲明。它引用晚於截止的 Q4 財報只為核對實際發布時間，且未把後來數字帶入分析。",
+    "系統組固定段落、版本和假說檢驗門檻，但 ASML 的主要推翻條件要靠非公開的逐案訂單紀錄。網搜組提供的公司財報與指引修訂較易公開追蹤。",
+    "ASML 輸入為附有原始 URL 的中文來源摘要。系統通用的『原文／來源原句』顯示標籤會讓摘要看起來像逐字引文。"
+  ],
+  "limits": [
+    "一個公開事件、一個虛構案例，主要路徑每組一趟，可能同時執行；延遲僅是單次觀測。",
+    "系統耗時含建稿與引文追問，網搜組含搜尋，人工整理系統證據快照時間未計。",
+    "公開文件時點採公告日期的 UTC 日末作回放代理，沒有主張當時已實際收件。",
+    "評分為逐條核對與工程檢查，沒有獨立人工盲評及可比模型費用紀錄。"
+  ],
+  "reproduce": "python -m benchmarks.astra_pilot {asml-search|asml-system|asml-snapshot|synthetic-direct|synthetic-system} --output <新目錄>"
+}

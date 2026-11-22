@@ -1,0 +1,17 @@
+{
+  "event_text": "［synthetic fixture］虛構丙公司（SYN-C）下修 2025Q2 工控晶片需求指引。",
+  "research_target": "虛構丙公司（SYN-C）",
+  "research_horizon": "2025Q2",
+  "as_of": "2025-04-11T18:00:00+08:00",
+  "documents": [
+    {
+      "id": "demand",
+      "kind": "disclosure",
+      "source": "虛構丙公司（SYN-C）指引更新",
+      "synthetic": true,
+      "published_at": "2025-04-11T10:00:00+08:00",
+      "obtained_at": "2025-04-11T11:00:00+08:00",
+      "paragraphs": {"2": "［虛構引文］丙公司下修第二季工控晶片需求指引，預計五月更新訂單能見度。"}
+    }
+  ]
+}
