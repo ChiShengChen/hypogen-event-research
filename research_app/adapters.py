@@ -41,29 +41,9 @@ class Fixture:
             "qualification:1": "認證涵蓋客戶 X 的先進封裝；出貨批量與客戶 X 是否受停線影響待查。",
             "demand:2": "引文是需求指引更新；實際出貨與合併獲利影響待查。",
         }
-        quotes = {item["id"]: item["quote"] for item in context["evidence"]}
-        supply_chain = []
-        for edge in context["supply_edges"]:
-            if edge["status"] != "evidenced" or target not in (edge["supplier"], edge["customer"]):
-                continue
-            downstream = edge["supplier"] == target
-            other_side = edge["customer"] if downstream else edge["supplier"]
-            company = other_side.removeprefix("虛構")
-            ref = edge["evidence_id"]
-            if company not in quotes.get(ref, ""):
-                continue
-            supply_chain.append({
-                "company": company, "role": "downstream" if downstream else "upstream",
-                "status": "disclosed_relationship", "product_scope": edge["product"],
-                "relationship": f"{edge['supplier']}供應{edge['customer']}的{edge['product']}。",
-                "transmission": "相關料號、需求及交付時點相符時，事件才可能影響這條關係。",
-                "materiality": "公開資料不足以量化。",
-                "public_check": "查看是否有對應產品或客戶關係的後續公司揭露。",
-                "gap": "目前資料未確認同一料號、訂單或認列時點。",
-                "evidence_ids": [ref],
-            })
         return Hypotheses(assessment={
-            "supply_chain": supply_chain[:6],
+            "supply_chain": [],
+            "trade_opportunities": [],
             "thesis": (
                 "停線是否帶來可在研究季度認列的轉單，取決於客戶認證、可交付產能和季內認列的批量。"
                 if bottleneck else "下一次公司揭露可用來確認事件是否持續影響研究期間的營運。"
@@ -119,7 +99,7 @@ class Fixture:
 
 
 class ModelAdapter:
-    prompt_version = 7
+    prompt_version = 8
 
     def hypotheses(self, context):
         return self._generate(Hypotheses, (
@@ -152,6 +132,21 @@ class ModelAdapter:
             "A general relationship, industry category, equipment installation or product overlap "
             "does not prove exposure to this event, a new order, or equivalent technology. Do not infer "
             "share, revenue, margin, or replacement capacity. Omit any lane lacking any named supported company. "
+            "Proactively fill trade_opportunities for up to four of the named supply_chain companies, "
+            "even when the user did not ask about them. Exclude the report target and companies explicitly "
+            "named in the incoming event. Prioritize link strength, materiality and a public trigger. "
+            "Copy the company name exactly from supply_chain and include its relationship evidence IDs. "
+            "Offer long_if or short_if only for disclosed_relationship with a plausible company-level earnings "
+            "driver. Candidate and comparable_only companies must be watch. Distinguish operational upside "
+            "from the stock's setup, and spell out which disclosure or observation would activate the "
+            "direction, when to look, the falsification condition, and the scale or valuation evidence gap. "
+            "An equipment customer's higher capex can hurt cash flow even if it favors the supplier. "
+            "Never equate DUV competition with EUV substitution or infer positive spillover automatically. "
+            "For ticker and listing_evidence_id, return null unless the visible cited source explicitly "
+            "identifies the company's exact quoted symbol or listed security; cite that evidence separately. "
+            "Never present a spot price, valuation target, short availability or current executable trade "
+            "without data. Leave the list empty when no named company other than the target has a credible "
+            "connection. The opportunities are conditional research hypotheses, not trade instructions. "
             "Use exact evidence IDs and only attach claim IDs relevant to that hypothesis. "
             "Never infer shared customer identity, product equivalence, qualified capacity, order transfer, "
             "delivery, or profit from a general supply relationship or product approval alone. "
@@ -178,7 +173,8 @@ class ModelAdapter:
             "deadline. Missing data, inaccessible records, or inability to confirm never falsify a "
             "hypothesis. State the contrary observation explicitly. Avoid mirrored profit signs as "
             "predictions. Phrase mechanisms conditionally "
-            "and distinguish orders from delivered volume or recognized revenue. Avoid stock directions, "
+            "and distinguish orders from delivered volume or recognized revenue. Keep primary hypotheses operational, "
+            "and avoid unsupported stock directions, "
             "assumed dated events, probabilities, or calculations."
         ), context)
 
@@ -190,7 +186,8 @@ class ModelAdapter:
             "parties, products, time windows, and the difference between approval, orders and shipments. "
             "If a question could refer to two different parties or scopes, explicitly answer each relevant "
             "interpretation instead of an unqualified yes or no. Cite only IDs directly supporting the "
-            "answer. List at most two decision-relevant gaps with the document needed to close them. "
+            "answer. List at most two gaps directly needed to answer the question. Leave gaps empty "
+            "when the supplied evidence resolves every requested part. "
             "If no excerpt supports an answer, return no citations and describe the missing evidence."
         ), {
             "report": {key: context[key] for key in ("as_of", "event_text", "target", "evidence")},

@@ -32,7 +32,7 @@ def source_key(url):
     return parts.hostname.lower().removeprefix("www."), parts.path.rstrip("/") or "/", parts.query
 
 
-def collect(event, adapter):
+def collect(event, adapter, *, question=None, unanswered=(), parent_evidence=()):
     if not callable(getattr(adapter, "search", None)):
         raise AdapterError("自動搜尋需要 RESEARCH_MODE=codex")
     context = {
@@ -41,10 +41,17 @@ def collect(event, adapter):
         "as_of": event.as_of.isoformat(), "allowed_domains": event.search_domains,
     }
     cutoff = event.as_of.astimezone(timezone.utc)
+    domains = tuple(domain.lower().removeprefix("www.") for domain in event.search_domains)
+
+    def allowed(key):
+        return key is not None and any(key[0] == domain or key[0].endswith("." + domain) for domain in domains)
+
     sources = []
     log = []
     seen = {key for doc in event.documents if (key := source_key(doc.source))}
     used_ids = {doc.id for doc in event.documents}
+    seen.update(key for item in parent_evidence if (key := source_key(item["source"])))
+    used_ids.update(item["document_id"] for item in parent_evidence)
     shared = (
         "Use native web search. Search the allowed official domains only and use at most two search "
         "queries and two page opens per round. Cite the exact HTTPS URLs returned by the tool. "
@@ -65,11 +72,24 @@ def collect(event, adapter):
                          "suppliers, even though the input did not ask about supply chain. Prefer dated issuer "
                          "disclosures or annual reports with actual counterparty names and specific products. "
                          "Where available report the direction of the link, concentration or operational "
-                         "dependence, timing and relevant publicly disclosed metrics. Distinguish a peer "
+                         "dependence, timing, relevant publicly disclosed metrics, and a listing venue "
+                         "and ticker only when the primary disclosure explicitly identifies them. Distinguish a peer "
                          "from a qualified substitute, and general relationships from event exposure. "
                          "Search separately for the upstream, downstream and alternatives angles. Use up to "
                          "three search queries and three page opens in this round."),
     ]
+    if question is not None:
+        context.update({
+            "question": question, "unanswered_gaps": list(unanswered),
+            "existing_urls": sorted({item["source"] for item in parent_evidence if allowed(source_key(item["source"]))}),
+        })
+        tasks = [("question_follow_up",
+                  "Find a new primary source that directly resolves the explicit research question or "
+                  "one of its unresolved gaps. Look for archived investor calendars, prior releases, "
+                  "and contemporaneous attachments when the question is about a scheduled date. "
+                  "For a document with no cover date, use the issuer's dated publication announcement "
+                  "that links to that exact document and search both URLs. Mention that provenance "
+                  "in the summary. Do not use hindsight or later results to answer an earlier cutoff.")]
     gaps = []
     for stage, task in tasks:
         instruction = shared if stage != "supply_chain" else shared.replace(
@@ -84,12 +104,11 @@ def collect(event, adapter):
             key for item in trace for hit in item.get("results", [])
             if (key := source_key(hit.get("url", "")))
         }
-        domains = [domain.lower().removeprefix("www.") for domain in event.search_domains]
         counts = {"accepted": 0, "duplicate": 0, "unverified_url": 0, "after_cutoff": 0}
         accepted_ids = []
         for candidate in result.sources:
             key = source_key(candidate.url)
-            if key not in observed or not any(key[0] == domain or key[0].endswith("." + domain) for domain in domains):
+            if key not in observed or not allowed(key):
                 counts["unverified_url"] += 1
                 continue
             if key in seen:

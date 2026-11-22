@@ -99,6 +99,10 @@ python -m research_app.demo --codex --output output/codex
 
 報告只納入原生搜尋工具回傳、符合指定網域與截止時點的 URL。公司名稱須出現在所引的可見來源。關係依證據分為已揭露產品關係、待確認的曝險對象和同業對照。找不到可靠公司或量化資料時，該欄列待查。模型整理的文字標為「來源摘要」。
 
+每次建稿都會產出「延伸交易機會」，從供應鏈裡挑選收件時未點名的公司，最多四家。每筆列出財務傳導、公開催化劑、觸發與失效條件，以及交易前待查的資料。模型漏列時，系統以有來源的供應鏈關係補成觀察候選。只有具備已揭露產品關係的公司可以列條件式偏多或偏空，代號須有可見證據。缺乏合格候選時仍列出證據缺口。
+
+報告 JSON 的 `assessment.trade_opportunities` 和 `assessment.trade_opportunities_gap` 保存這一區。追問和情境重算也會帶出對應版本的這兩個欄位。是否執行網路搜尋仍依送件或伺服器設定。
+
 可為伺服器設定搜尋預設值。啟用後，使用者只需送事件與研究截止時點。
 
 ```bash
@@ -125,6 +129,20 @@ RESEARCH_MODE=codex RESEARCH_CODEX_MODEL=gpt-6.2-astra \
 ```bash
 python -m benchmarks.astra_pilot asml-harness --output output/astra-harness
 ```
+
+### 追問補搜與證據子版
+
+已啟用搜尋的報告會先以指定版本回答追問。如果回答仍缺少直接證據，系統使用同一截止時點和來源網域補搜一輪。新證據必須通過時點與網址查核，且被第二次回答實際引用，才會保存為證據子版。回應包含 `child_revision`，可透過原本的報告版本端點重新讀取；子版的 `evidence_followups` 保存問題、回答、引用及搜尋紀錄。
+
+```json
+{
+  "parent_revision": 1,
+  "question": "ASML 2024 Q3 財報原本預定哪天公布？",
+  "evidence_search": "auto"
+}
+```
+
+搜尋沒有取得可引用的新證據時，回傳原回答與補搜狀態。可為單筆追問設定 `"evidence_search": "off"` 只查既有版本。歷史回放使用公告日期的可得時點代理；`live` 模式使用本次實際取得時間，因此截止點之後才收件的資料不會進入子版。
 
 ### Benchmark 摘要
 

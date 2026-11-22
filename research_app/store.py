@@ -8,7 +8,10 @@ from uuid import uuid4
 
 from .adapters import AdapterError
 from .discovery import DISCOVERY_VERSION, collect
-from .research import FORMULA_VERSION, REPORT_VERSION, apply_financial_scenario, build_report, render
+from .research import (
+    FORMULA_VERSION, REPORT_VERSION, apply_financial_scenario, build_report, document_evidence,
+    render, render_followups,
+)
 from .schema import Event, FinancialInputs
 
 
@@ -18,6 +21,17 @@ class MissingReport(Exception):
 
 def encode(data):
     return json.dumps(data, ensure_ascii=False, sort_keys=True, allow_nan=False)
+
+
+def opportunity_fields(report):
+    assessment = report["assessment"]
+    ideas = assessment.get("trade_opportunities", [])
+    return {
+        "trade_opportunities": ideas,
+        "trade_opportunities_gap": assessment.get(
+            "trade_opportunities_gap", None if ideas else "此版本沒有可列入的延伸交易機會。",
+        ),
+    }
 
 
 class Store:
@@ -99,15 +113,68 @@ class Store:
         return {**json.loads(row[0]), "report_id": report_id, "revision": revision,
                 "parent_revision": row[1]}
 
+    def event(self, report_id):
+        with self.connection() as db:
+            payload = db.execute("SELECT event FROM runs WHERE report_id = ?", (report_id,)).fetchone()[0]
+        return Event.model_validate_json(payload)
+
+    def save_child(self, report_id, parent_revision, report):
+        data = {key: value for key, value in report.items() if key not in {"report_id", "revision", "parent_revision"}}
+        with self.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            revision = db.execute(
+                "SELECT MAX(revision) + 1 FROM revisions WHERE report_id = ?", (report_id,)
+            ).fetchone()[0]
+            db.execute("INSERT INTO revisions VALUES (?, ?, ?, ?)",
+                       (report_id, revision, parent_revision, encode(data)))
+        return revision
+
+    @staticmethod
+    def checked_answer(adapter, report, question):
+        answer = adapter.answer(report, question)
+        if set(answer.evidence_ids) - {item["id"] for item in report["evidence"]}:
+            raise AdapterError("模型回答使用了不存在或不可見的證據引用")
+        if not answer.evidence_ids and not answer.gaps:
+            raise AdapterError("無引文的模型回答必須列明證據缺口")
+        return answer.model_dump()
+
+    def answer_question(self, report_id, parent, question, adapter):
+        initial = self.checked_answer(adapter, parent, question.question)
+        if question.evidence_search == "off" or not initial["gaps"]:
+            return initial
+        event = self.event(report_id)
+        if event.search_mode == "off" or not callable(getattr(adapter, "search", None)):
+            return initial
+        try:
+            found, audit = collect(event, adapter, question=question.question,
+                                   unanswered=initial["gaps"], parent_evidence=parent["evidence"])
+        except AdapterError:
+            return {**initial, "evidence_search": {"status": "failed"}}
+        if not found:
+            return {**initial, "evidence_search": {"status": "no_new_sources", **audit}}
+        added = [item for doc in found for item in document_evidence(doc)]
+        report = {**parent, "evidence": parent["evidence"] + added}
+        refined = self.checked_answer(adapter, report, question.question)
+        new_refs = {item["id"] for item in added}
+        if not new_refs.intersection(refined["evidence_ids"]):
+            return {**initial, "evidence_search": {"status": "unresolved", **audit}}
+        followup = {
+            "parent_revision": question.parent_revision, "question": question.question,
+            "answer": refined, "added_evidence_ids": sorted(new_refs), "discovery": audit,
+        }
+        original_followups = parent.get("evidence_followups", [])
+        report["evidence_followups"] = [*original_followups, followup]
+        report["revision_kind"] = "evidence_follow_up"
+        report["markdown"] = parent["markdown"] + render_followups({
+            "evidence": report["evidence"], "evidence_followups": [followup],
+        })
+        child = self.save_child(report_id, question.parent_revision, report)
+        return {**refined, "child_revision": child, "evidence_search": {"status": "published", **audit}}
+
     def question(self, report_id, question, adapter):
         parent = self.revision(report_id, question.parent_revision)
         if question.overrides is None:
-            answer = adapter.answer(parent, question.question)
-            if set(answer.evidence_ids) - {item["id"] for item in parent["evidence"]}:
-                raise AdapterError("模型回答使用了不存在或不可見的證據引用")
-            if not answer.evidence_ids and not answer.gaps:
-                raise AdapterError("無引文的模型回答必須列明證據缺口")
-            return answer.model_dump()
+            return {**self.answer_question(report_id, parent, question, adapter), **opportunity_fields(parent)}
 
         if parent["model_inputs"] is None:
             raise ValueError("此版本缺少可重算的財務參數")
@@ -115,12 +182,12 @@ class Store:
         inputs = previous_inputs.model_copy(update=question.overrides.model_dump())
         if parent.get("report_version") == REPORT_VERSION:
             report = apply_financial_scenario(parent, inputs)
-            for field in ("report_id", "revision", "parent_revision"):
-                report.pop(field, None)
         else:
-            with self.connection() as db:
-                payload = db.execute("SELECT event FROM runs WHERE report_id = ?", (report_id,)).fetchone()[0]
-            report = build_report(Event.model_validate_json(payload), adapter, inputs)
+            report = build_report(self.event(report_id), adapter, inputs, discovery=parent.get("discovery"))
+            if parent.get("evidence_followups"):
+                report["evidence_followups"] = parent["evidence_followups"]
+                included = {item["id"] for item in report["evidence"]}
+                report["evidence"].extend(item for item in parent["evidence"] if item["id"] not in included)
         changes = []
         for section in ("model_inputs", "model_outputs", "hypotheses", "assessment", "claims"):
             before, after = parent.get(section), report[section]
@@ -138,19 +205,14 @@ class Store:
         threshold = report["model_outputs"]["break_even_lots"]
         threshold_text = f"{threshold} 批" if threshold is not None else "無法達成"
         report["question"] = question.question
+        report["revision_kind"] = "scenario"
         report["changes"] = changes
         report["incremental_eps_delta"] = str(eps_delta)
         report["branch_summary"] = {
             "parent_revision": question.parent_revision, "prior_lots": previous_inputs.lots,
         }
         report["markdown"] = render(report)
-        with self.connection() as db:
-            db.execute("BEGIN IMMEDIATE")
-            revision = db.execute(
-                "SELECT MAX(revision) + 1 FROM revisions WHERE report_id = ?", (report_id,)
-            ).fetchone()[0]
-            db.execute("INSERT INTO revisions VALUES (?, ?, ?, ?)",
-                       (report_id, revision, question.parent_revision, encode(report)))
+        revision = self.save_child(report_id, question.parent_revision, report)
         return {
             "child_revision": revision, "changes": changes, "incremental_eps_delta": str(eps_delta),
             "answer": (
@@ -164,4 +226,5 @@ class Store:
             ),
             "evidence_ids": [inputs.evidence_id],
             "gaps": report["valuation"]["gaps"],
+            **opportunity_fields(report),
         }

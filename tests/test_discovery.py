@@ -2,7 +2,7 @@ import pytest
 
 from research_app.adapters import AdapterError, Fixture
 from research_app.api import apply_search_defaults
-from research_app.schema import CompanyExposure, Event, PublicCheck
+from research_app.schema import Answer, CompanyExposure, Event, PublicCheck, Question
 from research_app.store import Store
 
 
@@ -135,3 +135,95 @@ def test_live_search_does_not_backdate_freshly_obtained_documents():
     documents, audit = collect(event().model_copy(update={"search_mode": "live"}), SearchFixture())
     assert documents == []
     assert sum(round_["after_cutoff"] for round_ in audit["rounds"]) == 5
+
+
+class QuestionSearchFixture(SearchFixture):
+    match = "https://ir.issuer.example/calendar"
+    fail = False
+    answer_stays_unresolved = False
+    date = "2024-09-30"
+
+    def search(self, schema, instruction, context):
+        if "question" not in context:
+            return super().search(schema, instruction, context)
+        self.calls.append(context)
+        if self.fail:
+            raise AdapterError("model timeout")
+        sources = [
+            (self.match, self.date, "公司財務行事曆原定 10 月 16 日發布。"),
+            ("https://issuer.example/future", "2024-10-17", "截止後資料。"),
+            ("https://issuer.example/results", "2024-10-15", "已有來源。"),
+        ]
+        return schema.model_validate({
+            "sources": [{"url": url, "published_on": day, "summary": summary} for url, day, summary in sources],
+            "gaps": [],
+        }), [{"results": [{"url": url} for url, _, _ in sources]}]
+
+    def answer(self, context, question):
+        if question == "問已知結果":
+            return Answer(answer="已確認", evidence_ids=[context["evidence"][0]["id"]], gaps=[])
+        for item in context["evidence"]:
+            if item["source"] == self.match and not self.answer_stays_unresolved:
+                return Answer(answer="原定 10 月 16 日", evidence_ids=[item["id"]], gaps=[])
+        return Answer(answer="原定日待查", evidence_ids=[], gaps=["缺少公司財務行事曆"])
+
+
+def test_question_search_saves_new_answer_in_immutable_evidence_child(tmp_path):
+    path = tmp_path / "test.sqlite3"
+    store = Store(path)
+    engine = QuestionSearchFixture()
+    run = store.create(event(), engine)
+    ref = run["report_id"]
+    original = store.revision(ref, 1)
+    question = Question(parent_revision=1, question="哪一天原定發布？")
+
+    result = store.question(ref, question, engine)
+    assert result["answer"] == "原定 10 月 16 日"
+    assert result["evidence_search"]["status"] == "published"
+    assert result["evidence_search"]["rounds"][0]["after_cutoff"] == 1
+    assert result["evidence_search"]["rounds"][0]["duplicate"] == 1
+    assert engine.calls[-1]["as_of"] == "2024-10-15T23:59:59+00:00"
+    assert engine.calls[-1]["unanswered_gaps"] == ["缺少公司財務行事曆"]
+    assert len(engine.calls) == 4
+
+    reopened = Store(path)
+    assert reopened.revision(ref, 1) == original
+    child = reopened.revision(ref, result["child_revision"])
+    assert child["parent_revision"] == 1
+    assert child["as_of"] == original["as_of"]
+    assert child["assessment"] == original["assessment"]
+    assert child["evidence_followups"][0]["answer"]["evidence_ids"] == result["evidence_ids"]
+    assert "截止後資料" not in child["markdown"]
+    assert "原定 10 月 16 日" in child["markdown"]
+    assert reopened.question(ref, question.model_copy(update={"parent_revision": result["child_revision"]}), engine)[
+        "answer"
+    ] == result["answer"]
+    assert len(engine.calls) == 4
+
+
+def test_questions_skip_search_when_answer_is_known_or_disabled(tmp_path):
+    store = Store(tmp_path / "test.sqlite3")
+    engine = QuestionSearchFixture()
+    ref = store.create(event(), engine)["report_id"]
+    assert store.question(ref, Question(parent_revision=1, question="問已知結果"), engine)["gaps"] == []
+    disabled = Question(parent_revision=1, question="哪一天原定發布？", evidence_search="off")
+    assert store.question(ref, disabled, engine)["answer"] == "原定日待查"
+    assert len(engine.calls) == 3
+
+
+@pytest.mark.parametrize(("field", "value", "status"), [
+    ("fail", True, "failed"),
+    ("date", "2024-10-16", "no_new_sources"),
+    ("answer_stays_unresolved", True, "unresolved"),
+])
+def test_unsuccessful_question_search_returns_original_without_revision(tmp_path, field, value, status):
+    store = Store(tmp_path / "test.sqlite3")
+    engine = QuestionSearchFixture()
+    ref = store.create(event(), engine)["report_id"]
+    setattr(engine, field, value)
+    result = store.question(ref, Question(parent_revision=1, question="哪一天原定發布？"), engine)
+    assert result["answer"] == "原定日待查"
+    assert result["evidence_search"]["status"] == status
+    assert "child_revision" not in result
+    with store.connection() as db:
+        assert db.execute("SELECT count(*) FROM revisions").fetchone()[0] == 1

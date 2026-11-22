@@ -123,6 +123,19 @@ class CompanyExposure(Schema):
     evidence_ids: list[Nonempty] = Field(min_length=1)
 
 
+class TradeOpportunity(Schema):
+    company: Nonempty
+    direction: Literal["long_if", "short_if", "watch"]
+    earnings_path: Nonempty
+    catalyst: Nonempty
+    trigger: Nonempty
+    invalidation: Nonempty
+    evidence_gap: Nonempty
+    ticker: Nonempty | None
+    listing_evidence_id: Nonempty | None
+    evidence_ids: list[Nonempty] = Field(min_length=1)
+
+
 class Assessment(Schema):
     thesis: Nonempty
     key_gap: Nonempty
@@ -130,6 +143,7 @@ class Assessment(Schema):
     evidence_limits: list[EvidenceLimit]
     public_checks: list[PublicCheck] = Field(max_length=3)
     supply_chain: list[CompanyExposure] = Field(max_length=6)
+    trade_opportunities: list[TradeOpportunity] = Field(max_length=4)
 
 
 class Hypotheses(Schema):
@@ -151,3 +165,4 @@ class Question(Schema):
     parent_revision: Annotated[int, Field(ge=1, strict=True)]
     question: Nonempty
     overrides: Overrides | None = None
+    evidence_search: Literal["auto", "off"] = "auto"

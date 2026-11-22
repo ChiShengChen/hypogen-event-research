@@ -1,10 +1,13 @@
+import re
 from datetime import timezone
 from decimal import Decimal, ROUND_CEILING, ROUND_FLOOR, localcontext
 
 from .adapters import AdapterError
+from .schema import CompanyExposure, TradeOpportunity
 
 FORMULA_VERSION = 2
-REPORT_VERSION = 5
+REPORT_VERSION = 7
+MAX_TRADE_OPPORTUNITIES = 4
 
 SUPPLY_ROLES = {
     "upstream": "上游關鍵供應商",
@@ -16,10 +19,92 @@ RELATION_STATUSES = {
     "candidate": "待確認的曝險對象",
     "comparable_only": "同業對照",
 }
+TRADE_DIRECTIONS = {"long_if": "條件式偏多", "short_if": "條件式偏空", "watch": "觀察"}
 
 
 def company_key(name):
     return "".join(character for character in name.casefold() if character.isalnum())
+
+
+def trade_opportunities(assessment, report, evidence):
+    mentioned = company_key(report["event_text"])
+    target = company_key(report["target"])
+    eligible = {
+        company_key(item.company): item for item in assessment.supply_chain
+        if company_key(item.company) not in mentioned and company_key(item.company) != target
+        and "匿名" not in item.company and "anonymous" not in item.company.casefold()
+    }
+    results = {}
+    for idea in assessment.trade_opportunities:
+        name = company_key(idea.company)
+        if name not in eligible:
+            continue
+        exposure = eligible[name]
+        claimed = set(idea.evidence_ids)
+        if claimed - evidence.keys() or not claimed.intersection(exposure.evidence_ids):
+            raise AdapterError("延伸交易機會須引用已驗證的供應鏈關係")
+        if idea.direction != "watch" and exposure.status != "disclosed_relationship":
+            raise AdapterError("待確認曝險或同業對照只能列為觀察")
+        symbol, ref = idea.ticker, idea.listing_evidence_id
+        if symbol or ref:
+            source = evidence.get(ref)
+            quoted = source and re.search(
+                rf"(?<![A-Za-z0-9]){re.escape(symbol or '')}(?![A-Za-z0-9])", source["quote"]
+            )
+            if not symbol or not quoted or name not in company_key(source["quote"]):
+                raise AdapterError("交易代號缺少同時列出公司與代號的可見證據")
+        results.setdefault(name, idea)
+
+    for name, exposure in eligible.items():
+        if len(results) == MAX_TRADE_OPPORTUNITIES:
+            break
+        if name in results:
+            continue
+        results[name] = TradeOpportunity(
+            company=exposure.company, direction="watch", earnings_path=exposure.transmission,
+            catalyst=exposure.public_check, trigger="待公開資料確認受影響產品與規模後，再評估方向。",
+            invalidation="若公開資料確認事件未影響該公司的對應產品，移出事件觀察清單。",
+            evidence_gap=f"{exposure.materiality} {exposure.gap}",
+            ticker=None, listing_evidence_id=None, evidence_ids=exposure.evidence_ids,
+        )
+    gap = None
+    if not results:
+        gap = (
+            "目前的公司證據只涵蓋已點名或未具名的對象。需要其他具名供應鏈公司的公開來源。"
+            if assessment.supply_chain else "缺少截止時點可用、可連結研究標的與其他具名公司的產品關係證據。"
+        )
+    return {
+        "trade_opportunities": [idea.model_dump() for idea in results.values()],
+        "trade_opportunities_gap": gap,
+    }
+
+
+def complete_supply_chain(assessment, report, cited_text):
+    known = {company_key(item.company) for item in assessment.supply_chain}
+    target = company_key(report["target"])
+    for edge in report["supply_edges"]:
+        if len(assessment.supply_chain) == 6:
+            break
+        parties = (company_key(edge["supplier"]), company_key(edge["customer"]))
+        ref = edge["evidence_id"]
+        if target not in parties or edge["status"] != "evidenced" or ref not in cited_text:
+            continue
+        downstream = parties[0] == target
+        side = edge["customer"] if downstream else edge["supplier"]
+        company = side.removeprefix("虛構")
+        key = company_key(company)
+        if not key or key in known or key not in cited_text[ref]:
+            continue
+        assessment.supply_chain.append(CompanyExposure(
+            company=company, role="downstream" if downstream else "upstream", status="candidate",
+            product_scope=edge["product"],
+            relationship=f"輸入資料的供應路徑為 {edge['supplier']} → {edge['customer']}，來源可核對公司名稱。",
+            transmission="若事件影響這項產品的訂單或交付，可能沿買賣關係影響收入或成本。",
+            materiality="待確認訂單規模與公司營收占比。",
+            public_check="查雙方財報或公告是否揭露對應產品的訂單及交付。",
+            gap="供應方向、涉案料號與實際交付仍待確認。", evidence_ids=[ref],
+        ))
+        known.add(key)
 
 
 def calculate(inputs):
@@ -55,17 +140,23 @@ def calculate(inputs):
         }
 
 
-def build_context(event, inputs=None):
-    evidence = [
+def document_evidence(doc):
+    return [
         {
             "id": f"{doc.id}:{paragraph}", "document_id": doc.id, "paragraph": paragraph,
             "source": doc.source, "quote": quote, "synthetic": doc.synthetic, "kind": doc.kind,
             "text_format": doc.text_format, "availability_basis": doc.availability_basis,
             "published_at": doc.published_at.isoformat(), "obtained_at": doc.obtained_at.isoformat(),
         }
-        for doc in event.documents
-        if max(doc.published_at, doc.obtained_at) <= event.as_of
         for paragraph, quote in sorted(doc.paragraphs.items())
+    ]
+
+
+def build_context(event, inputs=None):
+    evidence = [
+        item for doc in event.documents
+        if max(doc.published_at, doc.obtained_at) <= event.as_of
+        for item in document_evidence(doc)
     ]
     visible = {item["id"] for item in evidence}
     edges = []
@@ -187,7 +278,11 @@ def build_report(event, adapter, inputs=None, *, discovery=None):
         if getattr(by_stance["bull"], field) == getattr(by_stance["bear"], field):
             raise AdapterError("多方與空方必須提出可區分的機制及預測")
     report["hypotheses"] = [hypothesis.model_dump() for hypothesis in hypotheses]
+    complete_supply_chain(generated.assessment, report, cited_text)
     report["assessment"] = generated.assessment.model_dump()
+    report["assessment"].update(trade_opportunities(
+        generated.assessment, report, {item["id"]: item for item in context["evidence"]},
+    ))
     report["adapter"] = adapter.identity
     report["report_version"] = REPORT_VERSION
     if discovery is not None:
@@ -298,6 +393,22 @@ def render(report):
                 f"  - 公開查核與缺口　{item['public_check']} {item['gap']}",
                 "",
             ])
+    lines.extend(["## 延伸交易機會", ""])
+    lines.append("以下為未在收件敘述中點名的供應鏈公司。方向取決於觸發條件，估值、行情與可執行性仍需查核。")
+    if assessment.get("trade_opportunities_gap"):
+        lines.extend(["", assessment["trade_opportunities_gap"], ""])
+    for idea in assessment["trade_opportunities"]:
+        security = f"{idea['ticker']} {cite(idea['listing_evidence_id'])}" if idea["ticker"] else "上市工具待確認"
+        refs = "、".join(cite(ref) for ref in idea["evidence_ids"])
+        lines.extend([
+            "", f"### {idea['company']}｜{TRADE_DIRECTIONS[idea['direction']]}", "",
+            f"- 交易標的　{security}",
+            f"- 財務傳導　{idea['earnings_path']} {refs}",
+            f"- 公開催化劑　{idea['catalyst']}",
+            f"- 觸發條件　{idea['trigger']}",
+            f"- 失效條件　{idea['invalidation']}",
+            f"- 交易前待查　{idea['evidence_gap']}",
+        ])
     lines.extend(["", "## 事件與證據判讀", "", f"收件敘述（待核）　{report['event_text']}", ""])
     if discovery := report.get("discovery"):
         actions = sum(stage["web_actions"] for stage in discovery["rounds"])
@@ -364,4 +475,19 @@ def render(report):
             f'  - {timing}',
             f'  - {text_label}　{item["quote"]}',
         ])
-    return "\n".join(lines) + "\n"
+    return "\n".join(lines) + "\n" + render_followups(report)
+
+
+def render_followups(report):
+    lines = []
+    evidence = {item["id"]: item for item in report["evidence"]}
+    for followup in report.get("evidence_followups", []):
+        answer = followup["answer"]
+        lines.extend(["", "## 追問補搜", "", followup["question"], "", answer["answer"], ""])
+        for ref in answer["evidence_ids"]:
+            item = evidence[ref]
+            label = f"[{ref}]({item['source']})" if item["source"].startswith("https://") else f"`{ref}`"
+            lines.append(f"- {label}　{item['quote']}")
+        if answer["gaps"]:
+            lines.extend(f"- 待查　{gap}" for gap in answer["gaps"])
+    return "\n".join(lines) + "\n" if lines else ""
