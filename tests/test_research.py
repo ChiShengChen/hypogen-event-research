@@ -41,6 +41,17 @@ def ask(api, run, **overrides):
     })
 
 
+def test_workbench_serves_assets_and_supply_chain_example(api):
+    assert "研究工作台" in api.get("/").text
+    assert api.get("/workbench-assets/app.js").status_code == 200
+    assert api.get("/workbench/config").json()["mode"] == "fixture"
+    assert api.get("/workbench/examples/missing").status_code == 404
+    example = api.get("/workbench/examples/supply-chain")
+    assert example.status_code == 200
+    result = report(api, create(api, example.json()))
+    assert {idea["company"] for idea in result["assessment"]["trade_opportunities"]} == {"北辰光學", "南河製造"}
+
+
 def test_scenario_revision_survives_reopening(tmp_path):
     path = tmp_path / "research.db"
     with TestClient(create_app(Store(path), Fixture())) as client:

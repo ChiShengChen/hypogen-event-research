@@ -1,13 +1,17 @@
 import os
 from functools import lru_cache
+from pathlib import Path
 
 from fastapi import Depends, FastAPI, HTTPException, Request
-from fastapi.responses import JSONResponse
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import ValidationError
 
 from .adapters import AdapterError, configured_adapter
 from .schema import Event, Question
 from .store import MissingReport, Store
+
+PACKAGE = Path(__file__).resolve().parent
 
 
 @lru_cache
@@ -31,6 +35,7 @@ def apply_search_defaults(event):
 
 def create_app(store=None, adapter=None):
     app = FastAPI(title="事件驅動交易假說研究系統")
+    app.mount("/workbench-assets", StaticFiles(directory=PACKAGE / "web"), name="workbench-assets")
 
     def storage():
         return store if store is not None else default_store()
@@ -48,6 +53,23 @@ def create_app(store=None, adapter=None):
     @app.exception_handler(AdapterError)
     async def adapter_failure(request: Request, exc: AdapterError):
         return JSONResponse(status_code=502, content={"detail": str(exc)})
+
+    @app.get("/", include_in_schema=False)
+    def workbench():
+        return FileResponse(PACKAGE / "web" / "index.html")
+
+    @app.get("/workbench/config", include_in_schema=False)
+    def workbench_config(engine=Depends(generator)):
+        return {
+            "mode": engine.identity["mode"], "model": engine.identity.get("model"),
+            "search_default": os.getenv("RESEARCH_SEARCH_MODE", "off"),
+        }
+
+    @app.get("/workbench/examples/{name}", include_in_schema=False)
+    def workbench_example(name: str):
+        if name not in {"shutdown", "demand", "supply-chain"}:
+            raise HTTPException(status_code=404, detail="找不到示範事件")
+        return FileResponse(PACKAGE / "fixtures" / f"{name}.json", media_type="application/json")
 
     @app.post("/events")
     def create(event: Event, db=Depends(storage), engine=Depends(generator)):

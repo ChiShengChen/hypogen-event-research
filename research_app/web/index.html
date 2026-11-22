@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Hypogen｜研究工作台</title>
+  <link rel="stylesheet" href="/workbench-assets/style.css">
+  <script type="module" src="/workbench-assets/app.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidenav" aria-label="工作台">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">H</span><span>Hypogen<small>RESEARCH WORKBENCH</small></span></a>
+    <div class="navgroup">
+      <button class="navitem selected" id="go-home" type="button"><span class="nav-icon" aria-hidden="true">▦</span>研究工作台</button>
+      <button class="navitem" id="go-history" type="button"><span class="nav-icon" aria-hidden="true">◷</span>版本紀錄</button>
+    </div>
+    <div class="navgroup">
+      <h2>示範案例</h2>
+      <button class="navitem" data-example="shutdown" type="button"><span class="case-icon" aria-hidden="true"></span>封裝線停工</button>
+      <button class="navitem" data-example="demand" type="button"><span class="case-icon" aria-hidden="true"></span>需求指引下修</button>
+      <button class="navitem" data-example="supply-chain" type="button"><span class="case-icon" aria-hidden="true"></span>供應鏈曝險</button>
+    </div>
+    <div class="sidebottom">
+      <div class="mode"><span id="mode-dot" class="dot"></span><span id="mode-label">連線中</span></div>
+      <a href="/docs" target="_blank" rel="noopener">API 文件</a>
+    </div>
+  </aside>
+
+  <div class="workspace">
+    <header class="topbar"><div class="top-title">研究工作台</div><div class="top-actions"><button type="button" class="button quiet" id="open-question-bank">試跑題庫</button><button type="button" class="button primary" id="new-analysis">＋　新增分析</button></div></header>
+    <main>
+      <div id="status" role="status" aria-live="polite"></div>
+      <section class="empty" id="empty" hidden>
+        <h1>建立一份研究報告</h1>
+        <p>從事件、公開來源與研究截止時點出發。也可以先打開虛構案例，試跑追問與情境重算。</p>
+        <button class="button primary" type="button" data-example="shutdown">載入封裝線停工案例</button>
+      </section>
+      <section class="empty" id="history" hidden>
+        <h1>版本紀錄</h1>
+        <p>這個瀏覽器已開啟的報告與情境版本。</p>
+        <div id="history-list" class="cards"></div>
+      </section>
+
+      <div id="research" hidden>
+        <section class="hero">
+          <div class="hero-main">
+            <div class="eyebrow" id="report-label">事件研究</div>
+            <h1 id="report-title"></h1>
+            <p id="event-text" class="event-description"></p>
+            <div class="metadata"><span id="report-date"></span><span id="report-horizon"></span><span id="report-revision"></span></div>
+          </div>
+          <div class="hero-actions">
+            <span class="state-pill"><span class="dot"></span>研究觀望</span>
+            <button id="download" class="button quiet" type="button">下載 Markdown</button>
+          </div>
+        </section>
+
+        <div id="metrics" class="metrics" aria-label="情境指標"></div>
+        <div class="content-grid">
+          <section class="panel report-panel" aria-label="研究報告">
+            <nav class="tabs" aria-label="報告區段">
+              <button type="button" data-tab="overview" aria-current="page">概覽</button>
+              <button type="button" data-tab="opportunities">供應鏈機會</button>
+              <button type="button" data-tab="evidence">證據</button>
+              <button type="button" data-tab="source">報告全文</button>
+            </nav>
+            <div id="tab-body" class="tab-body"></div>
+          </section>
+          <aside class="tools-column" aria-label="研究操作">
+            <section class="panel tool-panel">
+              <div class="section-kicker">研究操作</div>
+              <h2>追問與重算</h2>
+              <div class="segmented" aria-label="操作類型">
+                <button type="button" data-action="question" aria-pressed="true">引文追問</button>
+                <button type="button" data-action="scenario" aria-pressed="false">情境重算</button>
+              </div>
+              <form id="question-form">
+                <label for="question">對目前版本提出問題</label>
+                <textarea id="question" required rows="4" placeholder="例如：客戶已認證乙嗎？"></textarea>
+                <label class="checkbox"><input type="checkbox" id="auto-search" checked><span id="search-label">必要時補搜證據</span></label>
+                <button class="button primary full" type="submit">送出追問</button>
+              </form>
+              <form id="scenario-form" hidden>
+                <label for="lots">本季交付認列批量</label>
+                <div class="input-unit"><input type="number" id="lots" required min="0" step="1" value="300"><span>批</span></div>
+                <p class="form-note" id="scenario-note"></p>
+                <button class="button primary full" type="submit">建立重算子版</button>
+              </form>
+              <div id="answer" class="answer" aria-live="polite" hidden></div>
+            </section>
+            <section class="panel tool-panel versions">
+              <h2>版本紀錄</h2>
+              <div id="versions"></div>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<dialog id="event-dialog" aria-labelledby="dialog-title">
+  <div class="dialog-header"><div><span class="section-kicker">研究事件</span><h2 id="dialog-title">新增分析</h2></div><button class="button quiet" type="button" id="close-dialog" aria-label="關閉">✕</button></div>
+  <div class="segmented" aria-label="事件輸入方式">
+    <button type="button" data-input="simple" aria-pressed="true">快速輸入</button>
+    <button type="button" data-input="json" aria-pressed="false">事件 JSON</button>
+  </div>
+  <form id="event-form">
+    <div id="simple-input">
+      <label for="intake">事件敘述</label>
+      <textarea id="intake" required rows="4" placeholder="描述已發生的事件、研究標的與關鍵問題。"></textarea>
+      <div class="form-row">
+        <div><label for="target">研究標的</label><input id="target" placeholder="例如 ASML"></div>
+        <div><label for="horizon">研究期間</label><input id="horizon" placeholder="例如 2025Q1"></div>
+      </div>
+      <label for="cutoff">研究截止時點（瀏覽器本機時區）</label>
+      <input type="datetime-local" id="cutoff" required step="1">
+      <label for="search-mode">來源搜尋</label>
+      <select id="search-mode">
+        <option value="">沿用伺服器設定</option>
+        <option value="off">關閉網路搜尋</option>
+        <option value="historical_replay">歷史回放</option>
+        <option value="live">依實際取得時間</option>
+      </select>
+      <div id="domains-row" hidden>
+        <label for="domains">允許的來源網域（逗號分隔）</label>
+        <input id="domains" placeholder="asml.com, sec.gov">
+        <p id="search-help" class="form-note"></p>
+      </div>
+    </div>
+    <div id="json-input" hidden>
+      <label for="event-json">符合事件 API 格式的 JSON</label>
+      <textarea id="event-json" rows="12" spellcheck="false"></textarea>
+    </div>
+    <p id="event-error" class="error-text" role="alert"></p>
+    <div class="dialog-actions"><button class="button quiet" type="button" id="cancel-dialog">取消</button><button class="button primary" type="submit">開始分析</button></div>
+  </form>
+</dialog>
+
+<dialog id="question-bank" aria-labelledby="bank-title">
+  <div class="dialog-header">
+    <h2 id="bank-title">試跑題庫</h2>
+    <button class="button quiet" type="button" id="close-question-bank" aria-label="關閉">✕</button>
+  </div>
+  <p class="form-note">選擇一題會載入對應案例並填好操作。離線示範適合驗證報告與重算；開放式問題可在 Astra 工作台試答。</p>
+  <div id="bank-list" class="cards"></div>
+</dialog>
+</body>
+</html>

@@ -36,10 +36,21 @@ python -m research_app.demo
 
 示範將原稿、情境子版、逐行差異及 SQLite 資料庫寫入 `output/demo/`。預設使用可重現的 `fixture` 模式。停工案以 600 批建稿，追問改成 300 批，單季 EPS 增量從 +0.048 元改為 −0.024 元，損益兩平量為 400 批。可用 `--output` 指定目錄。
 
-## API
+## 瀏覽器工作台與 API
 
 ```bash
 python -m uvicorn research_app.api:app --host 127.0.0.1 --port 8000
+```
+
+打開 `http://127.0.0.1:8000/` 使用研究工作台。離線模式會載入虛構停工示範，也能切到需求下修或供應鏈曝險案例。可送件、查證據、追問、重算批量、切換版本與下載 Markdown。工作台的開啟紀錄存在目前瀏覽器，原始報告與版本保存在 SQLite。
+
+右上角的「試跑題庫」提供 10 題。選題會載入相應案例並填好追問或批量，確認後可送出。離線模式可演示認證與重算，開放式分析可用 Astra 模式試答。
+
+需要執行 Codex 模型與網路搜尋時，可用既有的 Codex CLI 登入啟動。送件表單可指定搜尋方式和允許的來源網域。
+
+```bash
+RESEARCH_MODE=codex RESEARCH_CODEX_MODEL=gpt-6.2-astra \
+  python -m uvicorn research_app.api:app --host 127.0.0.1 --port 8001
 ```
 
 互動式文件在 `http://127.0.0.1:8000/docs`。預設資料庫是 `output/research.sqlite3`，可用 `RESEARCH_DB` 指向既有 SQLite 檔案。以下命令在另一個終端執行。

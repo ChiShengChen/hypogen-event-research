@@ -1,0 +1,45 @@
+{
+  "event_text": "虛構新澤設備調整精密製程設備的交付排程。研究 2025Q2 設備與零件交付是否同步後移。",
+  "research_target": "虛構新澤設備",
+  "research_horizon": "2025Q2",
+  "as_of": "2025-04-18T18:00:00+08:00",
+  "documents": [
+    {
+      "id": "schedule",
+      "kind": "disclosure",
+      "source": "虛構新澤設備交付公告",
+      "synthetic": true,
+      "published_at": "2025-04-18T09:00:00+08:00",
+      "obtained_at": "2025-04-18T10:00:00+08:00",
+      "paragraphs": {
+        "1": "新澤設備表示第二季部分精密製程設備預定交付改期。仍待客戶確認新日期，公告未揭露客戶身分或變更台數。"
+      }
+    },
+    {
+      "id": "optics",
+      "kind": "disclosure",
+      "source": "虛構北辰光學產品揭露",
+      "synthetic": true,
+      "published_at": "2025-04-01T09:00:00+08:00",
+      "obtained_at": "2025-04-01T10:00:00+08:00",
+      "paragraphs": {
+        "1": "北辰光學向新澤設備供應精密光學組件。揭露未提供第二季排程、供貨台數或客戶營收占比。"
+      }
+    },
+    {
+      "id": "buyer",
+      "kind": "disclosure",
+      "source": "虛構南河製造擴產說明",
+      "synthetic": true,
+      "published_at": "2025-04-10T09:00:00+08:00",
+      "obtained_at": "2025-04-10T10:00:00+08:00",
+      "paragraphs": {
+        "1": "南河製造曾向新澤設備採購精密製程設備，準備用於新產線。說明未確認此次公告中的調整是否涉及該產線。"
+      }
+    }
+  ],
+  "supply_edges": [
+    {"supplier": "虛構北辰光學", "customer": "虛構新澤設備", "product": "精密光學組件", "evidence_id": "optics:1"},
+    {"supplier": "虛構新澤設備", "customer": "虛構南河製造", "product": "精密製程設備", "evidence_id": "buyer:1"}
+  ]
+}
