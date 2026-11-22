@@ -3,6 +3,7 @@ from datetime import timezone
 from decimal import Decimal, ROUND_CEILING, ROUND_FLOOR, ROUND_HALF_UP, localcontext
 
 from .adapters import AdapterError
+from .earnings import complete_plan, render_earnings, validate_plan
 from .schema import CompanyExposure, TradeOpportunity
 
 FORMULA_VERSION = 2
@@ -267,6 +268,8 @@ def apply_financial_scenario(report, inputs):
 
 def build_report(event, adapter, inputs=None, *, discovery=None):
     report = build_context(event, inputs)
+    if event.earnings_plan is not None:
+        validate_plan(event.earnings_plan, event.as_of, report["evidence"])
     context = {key: report[key] for key in ("event_text", "as_of", "target", "horizon", "supply_edges")}
     context["evidence"] = [item for item in report["evidence"] if item["kind"] != "scenario"]
     visible = {item["id"] for item in context["evidence"]}
@@ -321,6 +324,8 @@ def build_report(event, adapter, inputs=None, *, discovery=None):
     report["report_version"] = REPORT_VERSION
     if discovery is not None:
         report["discovery"] = discovery
+    if event.earnings_plan is not None:
+        report["earnings"] = complete_plan(event.earnings_plan, event.as_of, report, adapter)
     report["markdown"] = render(report)
     return report
 
@@ -477,8 +482,12 @@ def render(report):
         ])
     lines.extend(["## 財務橋接", "", *financial_lines(
         inputs, outputs, cite(inputs["evidence_id"]) if inputs else None,
-    ), "", "## 市場預期與估值", ""])
-    lines.extend(f"- {gap}" for gap in report["valuation"]["gaps"])
+    ), ""])
+    if "earnings" in report:
+        lines.extend(render_earnings(report["earnings"], cite))
+    else:
+        lines.extend(["## 市場預期與估值", ""])
+        lines.extend(f"- {gap}" for gap in report["valuation"]["gaps"])
     lines.extend(["", "## 主張索引", ""])
     summaries = {item["id"] for item in report["evidence"] if item["text_format"] == "summary"}
     for claim in report["claims"]:

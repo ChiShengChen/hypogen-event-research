@@ -104,6 +104,7 @@ function keepReport(report) {
 
 function versionName(entry) {
   if (entry.revision === 1) return "原稿";
+  if (entry.kind === "earnings_scenario") return "盈利重算";
   return entry.kind === "scenario" ? "情境重算" : entry.kind === "evidence_follow_up" ? "補搜證據" : "研究版本";
 }
 
@@ -268,7 +269,112 @@ function renderEvidence(body, report) {
   body.append(items);
 }
 
+const financialMetric = { revenue: "營收", gross_margin: "毛利率", operating_income: "營業利益", eps: "稀釋 EPS" };
+
+function jsonAction(title, value, handler) {
+  const details = node("details", null, "item");
+  const form = node("form");
+  const label = node("label", "JSON");
+  const input = node("textarea");
+  input.rows = 8;
+  input.spellcheck = false;
+  input.required = true;
+  input.value = JSON.stringify(value, null, 2);
+  label.append(input);
+  const button = node("button", title, "button primary");
+  button.type = "submit";
+  form.append(label, button);
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    perform(() => handler(JSON.parse(input.value)), "正在更新盈利研究…");
+  });
+  details.append(node("summary", title), form);
+  return details;
+}
+
+function renderEarnings(body, report) {
+  const { earnings } = report;
+  const currency = earnings.inputs.currency;
+  const path = `/reports/${encodeURIComponent(report.report_id)}/revisions/${report.revision}`;
+  body.append(heading("盈利預估", `${currency} 百萬／EPS 為每股`));
+  for (const quarter of earnings.quarters) {
+    body.append(node("h3", quarter.period_end));
+    const table = node("table", null, "compare");
+    const head = node("thead");
+    const header = node("tr");
+    for (const title of ["指標", "舊預估", "空方", "基準", "多方"]) header.append(node("th", title));
+    head.append(header);
+    const rows = node("tbody");
+    const format = (value, key) => value === undefined ? "—" : key === "gross_margin"
+      ? `${(Number(value) * 100).toFixed(2)}%` : numberText(key === "eps" ? Number(value).toFixed(2) : Number(value) / 1e6);
+    for (const [key, label] of Object.entries(financialMetric)) {
+      const row = node("tr");
+      row.append(node("th", label), node("td", format(quarter.baseline[key], key)));
+      for (const name of ["bear", "base", "bull"]) row.append(node("td", format(quarter.scenarios[name]?.revised[key], key)));
+      rows.append(row);
+    }
+    table.append(head, rows);
+    const wrapper = node("div", null, "scroll-table");
+    wrapper.append(table);
+    body.append(wrapper);
+  }
+  if (earnings.valuation) {
+    body.append(heading("每股情境價值", currency));
+    body.append(fields(Object.entries(earnings.valuation.scenarios).map(([scenario, value]) =>
+      [({ bear: "空方", base: "基準", bull: "多方" })[scenario], value.value ? Number(value.value).toFixed(2) : "年度 EPS 非正"])));
+  }
+  const driver = earnings.inputs.drivers[0];
+  if (driver) {
+    body.append(jsonAction("建立盈利重算子版", { drivers: [driver] }, async (payload) => {
+      const child = await request(`/reports/${encodeURIComponent(report.report_id)}/earnings/branches`,
+        { ...payload, parent_revision: report.revision });
+      renderReport(child);
+    }));
+  }
+  const first = earnings.quarters[0];
+  const refresh = async (action, value) => {
+    await request(`${path}/${action}`, value);
+    selectTab("earnings");
+  };
+  if (first) {
+    const deadline = new Date(`${first.period_end}T23:59:59Z`);
+    deadline.setUTCDate(deadline.getUTCDate() + 60);
+    const point = first.scenarios.base?.revised.revenue ?? first.baseline.revenue;
+    const evidence = earnings.inputs.quarters.find((entry) => entry.period_end === first.period_end);
+    body.append(jsonAction("登記預測", {
+      key: { metric: "revenue", period_end: first.period_end, duration: "quarter",
+        scope: "consolidated", basis: earnings.inputs.basis, currency },
+      low: point, high: point, deadline: deadline.toISOString(), resolution_source: "公司同期間財報",
+      probability: null, evidence_ids: evidence.evidence_ids,
+      purpose: deadline < new Date() ? "historical_replay" : "live",
+    }, (value) => refresh("forecasts", value)));
+  }
+  body.append(jsonAction("記錄研究員覆核", { reviewer: "", decision: "changes_requested", note: "" },
+    (value) => refresh("reviews", value)));
+  const records = node("div", null, "cards");
+  body.append(heading("預測核對與覆核紀錄"), records);
+  request(`${path}/earnings`).then((data) => {
+    for (const forecast of data.forecasts) {
+      const label = { pending: "待核對", overdue: "已到期", hit: "命中", miss: "落空",
+        late: "逾期披露", not_disclosed: "未披露", redefined: "口徑變更" }[forecast.status];
+      records.append(node("p", `${forecast.key.period_end} ${financialMetric[forecast.key.metric]} · ${label} · ${forecast.purpose}`, "notice"));
+      if (!forecast.resolution) {
+        records.append(jsonAction("核對實績", {
+          status: "reported", key: forecast.key, value: "", paragraph_id: "actual", note: "",
+          document: { id: "actual", source: "", kind: "disclosure", published_at: "", obtained_at: "",
+            paragraphs: { actual: "" } },
+        }, (value) => refresh(`forecasts/${encodeURIComponent(forecast.id)}/resolve`, value)));
+      }
+    }
+    for (const review of data.reviews) {
+      records.append(node("p", `${review.reviewer} · ${review.decision === "approved" ? "通過" : "需修改"} · ${review.note}`, "notice"));
+    }
+    if (!data.forecasts.length && !data.reviews.length) records.append(node("p", "本版尚無登記或覆核。", "notice"));
+  }).catch((error) => records.append(node("p", error.message, "error-text")));
+}
+
 function selectTab(name) {
+  if (name === "earnings" && !state.report?.earnings) name = "overview";
   state.tab = name;
   all("[data-tab]").forEach((button) => {
     if (button.dataset.tab === name) button.setAttribute("aria-current", "page");
@@ -280,6 +386,7 @@ function selectTab(name) {
   if (!report) return;
   if (name === "overview") renderOverview(body, report);
   if (name === "opportunities") renderSupply(body, report);
+  if (name === "earnings") renderEarnings(body, report);
   if (name === "evidence") renderEvidence(body, report);
   if (name === "source") body.append(node("pre", report.markdown || ""));
 }
@@ -295,6 +402,7 @@ function selectAction(name) {
 
 function renderReport(report) {
   state.report = report;
+  $("[data-tab=earnings]").hidden = !report.earnings;
   keepReport(report);
   switchPage("report");
   const synthetic = report.evidence?.some((item) => item.synthetic);
@@ -335,7 +443,7 @@ async function loadReport(id, revision) {
 
 async function submitEvent(payload, exercise = null) {
   const result = await request("/events", payload);
-  state.tab = "overview";
+  state.tab = payload.earnings_plan ? "earnings" : "overview";
   await loadReport(result.report_id, result.revision);
   if (exercise) {
     selectAction("question");

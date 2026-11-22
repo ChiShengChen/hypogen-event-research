@@ -8,7 +8,8 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import ValidationError
 
 from .adapters import AdapterError, configured_adapter
-from .schema import Event, Question
+from .earnings import EarningsError
+from .schema import EarningsBranch, Event, ForecastRegistration, ForecastResolution, Question, ResearchReview
 from .store import MissingReport, Store
 
 PACKAGE = Path(__file__).resolve().parent
@@ -54,6 +55,10 @@ def create_app(store=None, adapter=None):
     async def adapter_failure(request: Request, exc: AdapterError):
         return JSONResponse(status_code=502, content={"detail": str(exc)})
 
+    @app.exception_handler(EarningsError)
+    async def earnings_validation(request: Request, exc: EarningsError):
+        return JSONResponse(status_code=422, content={"detail": str(exc)})
+
     @app.get("/", include_in_schema=False)
     def workbench():
         return FileResponse(PACKAGE / "web" / "index.html")
@@ -67,7 +72,7 @@ def create_app(store=None, adapter=None):
 
     @app.get("/workbench/examples/{name}", include_in_schema=False)
     def workbench_example(name: str):
-        if name not in {"asml-q3", "nvidia-h20", "intel-high-na"}:
+        if name not in {"asml-q3", "asml-earnings", "nvidia-h20", "intel-high-na"}:
             raise HTTPException(status_code=404, detail="找不到示範事件")
         return FileResponse(PACKAGE / "examples" / f"{name}.json", media_type="application/json")
 
@@ -86,6 +91,26 @@ def create_app(store=None, adapter=None):
     @app.get("/reports/{id}/revisions/{v}")
     def revision(id: str, v: int, db=Depends(storage)):
         return db.revision(id, v)
+
+    @app.get("/reports/{id}/revisions/{v}/earnings")
+    def earnings_status(id: str, v: int, db=Depends(storage)):
+        return db.earnings_status(id, v)
+
+    @app.post("/reports/{id}/earnings/branches")
+    def earnings_branch(id: str, body: EarningsBranch, db=Depends(storage)):
+        return db.earnings_branch(id, body)
+
+    @app.post("/reports/{id}/revisions/{v}/forecasts")
+    def register_forecast(id: str, v: int, body: ForecastRegistration, db=Depends(storage)):
+        return db.register_forecast(id, v, body)
+
+    @app.post("/reports/{id}/revisions/{v}/forecasts/{forecast_id}/resolve")
+    def resolve_forecast(id: str, v: int, forecast_id: str, body: ForecastResolution, db=Depends(storage)):
+        return db.forecast_resolution(id, v, forecast_id, body)
+
+    @app.post("/reports/{id}/revisions/{v}/reviews")
+    def research_review(id: str, v: int, body: ResearchReview, db=Depends(storage)):
+        return db.research_review(id, v, body)
 
     @app.post("/reports/{id}/questions")
     def question(id: str, body: Question, db=Depends(storage), engine=Depends(generator)):

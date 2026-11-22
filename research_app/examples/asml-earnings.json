@@ -1,0 +1,495 @@
+{
+  "event_text": "ASML 提前公布 2024 Q3 財報。以當時可知資料研究未來兩季認列、盈利修正與估值敏感度。",
+  "research_target": "ASML",
+  "research_horizon": "截至 2025 Q1 財報公布",
+  "as_of": "2024-10-15T23:59:59Z",
+  "search_mode": "off",
+  "documents": [
+    {
+      "id": "asml-q3",
+      "source": "https://www.sec.gov/Archives/edgar/data/937966/000093796624000022/pressreleasequarterlyresul.htm",
+      "kind": "disclosure",
+      "text_format": "summary",
+      "availability_basis": "replay_day_end",
+      "published_at": "2024-10-15T23:59:59Z",
+      "obtained_at": "2024-10-15T23:59:59Z",
+      "paragraphs": {
+        "actual": "ASML 2024 年 Q2 與 Q3 的淨新增訂單分別為 5,567 與 2,633 百萬歐元。Q3 EUV 訂單約 14 億歐元，總淨營收 7,467 百萬歐元。",
+        "guidance": "ASML 指引 2025 年淨營收 300 至 350 億歐元，毛利率 51% 至 53%。管理層提及部分先進邏輯客戶擴產延後，影響 EUV 需求時程，未點名個別客戶。 公司對 2024 Q4 的淨營收指引為 88 至 92 億歐元，毛利率介於 49% 與 50%。"
+      }
+    },
+    {
+      "id": "asml-release",
+      "source": "https://investor.asml.com/news-releases/news-release-details/statement-relating-early-publication-our-q3-results",
+      "kind": "disclosure",
+      "text_format": "summary",
+      "availability_basis": "replay_day_end",
+      "published_at": "2024-10-15T23:59:59Z",
+      "obtained_at": "2024-10-15T23:59:59Z",
+      "paragraphs": {
+        "statement": "ASML 因官網技術錯誤提前揭露部分財報資訊，隨後在 2024 年 10 月 15 日正式公布完整 Q3 結果。"
+      }
+    },
+    {
+      "id": "asml-calendar",
+      "source": "https://ourbrand.asml.com/m/10230a77cff6864b/original/ASML-Statutory-Interim-Report-2024.pdf#page=26",
+      "kind": "disclosure",
+      "text_format": "summary",
+      "availability_basis": "replay_day_end",
+      "published_at": "2024-07-17T23:59:59Z",
+      "obtained_at": "2024-07-17T23:59:59Z",
+      "paragraphs": {
+        "calendar": "ASML 法定期中報告第 26 頁財務行事曆列出 2024 年 10 月 16 日為第三季業績公布日。"
+      }
+    },
+    {
+      "id": "asml-annual",
+      "source": "https://www.sec.gov/Archives/edgar/data/937966/000093796624000010/a2023annualreportbasedon.htm",
+      "kind": "disclosure",
+      "text_format": "summary",
+      "availability_basis": "replay_day_end",
+      "published_at": "2024-02-14T23:59:59Z",
+      "obtained_at": "2024-02-14T23:59:59Z",
+      "paragraphs": {
+        "supplier": "ASML 2023 年報指出 Carl Zeiss SMT 是關鍵光學元件的獨家供應商；透鏡、反射鏡等元件的供應能力可限制設備產量。",
+        "competition": "ASML 2023 年報把 Canon 和 Nikon 列為 DUV 設備競爭者。"
+      }
+    },
+    {
+      "id": "high-na-order",
+      "source": "https://investor.asml.com/news-releases/news-release-details/intel-and-asml-strengthen-their-collaboration-drive-high-na-manufacturing-2025",
+      "kind": "disclosure",
+      "text_format": "summary",
+      "availability_basis": "replay_day_end",
+      "published_at": "2022-01-19T23:59:59Z",
+      "obtained_at": "2022-01-19T23:59:59Z",
+      "paragraphs": {
+        "order": "ASML 與 Intel（INTC）公告，Intel 已向 ASML 發出首筆 TWINSCAN EXE:5200 採購單。雙方亦說明 Intel 曾於 2018 年率先購買先前的 EXE:5000。公告把 2025 年導入 High-NA EUV 量產列為合作方向。"
+      }
+    },
+    {
+      "id": "asml-q4",
+      "source": "https://www.sec.gov/Archives/edgar/data/937966/000093796625000003/pressreleasequarterlyresul.htm",
+      "kind": "disclosure",
+      "text_format": "summary",
+      "availability_basis": "replay_day_end",
+      "published_at": "2025-01-29T23:59:59Z",
+      "obtained_at": "2025-01-29T23:59:59Z",
+      "paragraphs": {
+        "actual": "ASML 於 2025 年 1 月 29 日公布 2024 年第四季實際淨新增訂單為 7,088 百萬歐元。 該季實際淨營收為 92.63 億歐元，毛利率 51.7%。"
+      }
+    },
+    {
+      "id": "asml-q2-2024",
+      "source": "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu6.2-billion-total-net-sales-and-eu1.6-billion-net-income-q2-2024",
+      "kind": "disclosure",
+      "text_format": "summary",
+      "availability_basis": "replay_day_end",
+      "published_at": "2024-07-17T23:59:59Z",
+      "obtained_at": "2024-07-17T23:59:59Z",
+      "paragraphs": {
+        "q3-guidance": "2024 年 7 月 17 日 ASML 預計 2024 Q3 的淨營收為 67 至 73 億歐元，毛利率 50% 至 51%。"
+      }
+    },
+    {
+      "id": "asml-q1-2024",
+      "source": "https://www.asml.com/news/press-releases/2024/q1-2024-financial-results",
+      "kind": "disclosure",
+      "text_format": "summary",
+      "availability_basis": "replay_day_end",
+      "published_at": "2024-04-17T23:59:59Z",
+      "obtained_at": "2024-04-17T23:59:59Z",
+      "paragraphs": {
+        "history": "US GAAP 比較表載 2023 Q4 淨營收 7,237 百萬歐元、Installed Base Management 營收 1,555 百萬歐元、毛利率 51.4%、淨利 2,048 百萬歐元。2024 Q1 對應數為 5,290、1,324 百萬歐元、51.0%、1,224 百萬歐元。"
+      }
+    },
+    {
+      "id": "asml-investor-day",
+      "source": "https://investor.asml.com/news-releases/news-release-details/asml-provides-updated-view-demand-outlook-capacity-plans-and-business-model-investor-day-meeting",
+      "kind": "disclosure",
+      "text_format": "summary",
+      "availability_basis": "replay_day_end",
+      "published_at": "2022-11-11T23:59:59Z",
+      "obtained_at": "2022-11-11T23:59:59Z",
+      "paragraphs": {
+        "outlook": "2022 年投資者日的 2025 年市場機會模型為年營收約 300 至 400 億歐元、毛利率約 54% 至 56%。此為當時的長期機會區間。"
+      }
+    },
+    {
+      "id": "asml-q1-2025",
+      "source": "https://ourbrand.asml.com/m/303a5535a607f9a0/original/Press-Release-Quarterly-Results-Q1-2025.pdf",
+      "kind": "disclosure",
+      "text_format": "summary",
+      "availability_basis": "replay_day_end",
+      "published_at": "2025-04-16T23:59:59Z",
+      "obtained_at": "2025-04-16T23:59:59Z",
+      "paragraphs": {
+        "actual": "ASML 2025 Q1 實際淨營收為 7,742 百萬歐元，毛利率 54.0%。"
+      }
+    }
+  ],
+  "supply_edges": [
+    {
+      "supplier": "Carl Zeiss SMT",
+      "customer": "ASML",
+      "product": "微影設備的關鍵光學元件",
+      "evidence_id": "asml-annual:supplier"
+    },
+    {
+      "supplier": "ASML",
+      "customer": "Intel",
+      "product": "TWINSCAN EXE:5200 High-NA EUV 設備",
+      "evidence_id": "high-na-order:order"
+    }
+  ],
+  "reported_calculations": [
+    {
+      "id": "asml-bookings-qoq",
+      "label": "淨新增訂單季變化率",
+      "operation": "change",
+      "value": {
+        "label": "Q3 淨新增訂單",
+        "value": "2633",
+        "approximate": false,
+        "unit": "百萬歐元",
+        "evidence_id": "asml-q3:actual"
+      },
+      "baseline": {
+        "label": "Q2 淨新增訂單",
+        "value": "5567",
+        "approximate": false,
+        "unit": "百萬歐元",
+        "evidence_id": "asml-q3:actual"
+      }
+    },
+    {
+      "id": "asml-euv-share",
+      "label": "Q3 EUV 訂單占比",
+      "operation": "share",
+      "value": {
+        "label": "Q3 EUV 訂單",
+        "value": "1400",
+        "approximate": true,
+        "unit": "百萬歐元",
+        "evidence_id": "asml-q3:actual"
+      },
+      "baseline": {
+        "label": "Q3 淨新增訂單",
+        "value": "2633",
+        "approximate": false,
+        "unit": "百萬歐元",
+        "evidence_id": "asml-q3:actual"
+      }
+    }
+  ],
+  "earnings_plan": {
+    "event_at": "2024-10-15T23:59:59Z",
+    "currency": "EUR",
+    "basis": "US_GAAP",
+    "references": [
+      {
+        "key": {
+          "metric": "revenue",
+          "period_end": "2024-09-30",
+          "duration": "quarter",
+          "scope": "consolidated",
+          "basis": "US_GAAP",
+          "currency": "EUR"
+        },
+        "kind": "issuer_guidance",
+        "label": "2024 Q2 公告的 Q3 指引",
+        "available_at": "2024-07-17T23:59:59Z",
+        "low": "6700000000",
+        "high": "7300000000",
+        "evidence_ids": [
+          "asml-q2-2024:q3-guidance"
+        ]
+      },
+      {
+        "key": {
+          "metric": "revenue",
+          "period_end": "2025-12-31",
+          "duration": "year",
+          "scope": "consolidated",
+          "basis": "US_GAAP",
+          "currency": "EUR"
+        },
+        "kind": "issuer_outlook",
+        "label": "2022 投資者日機會區間",
+        "available_at": "2022-11-11T23:59:59Z",
+        "low": "30000000000",
+        "high": "40000000000",
+        "evidence_ids": [
+          "asml-investor-day:outlook"
+        ]
+      },
+      {
+        "key": {
+          "metric": "gross_margin",
+          "period_end": "2025-12-31",
+          "duration": "year",
+          "scope": "consolidated",
+          "basis": "US_GAAP",
+          "currency": "EUR"
+        },
+        "kind": "issuer_outlook",
+        "label": "2022 投資者日機會區間",
+        "available_at": "2022-11-11T23:59:59Z",
+        "low": ".54",
+        "high": ".56",
+        "evidence_ids": [
+          "asml-investor-day:outlook"
+        ]
+      }
+    ],
+    "event_values": [
+      {
+        "key": {
+          "metric": "revenue",
+          "period_end": "2024-09-30",
+          "duration": "quarter",
+          "scope": "consolidated",
+          "basis": "US_GAAP",
+          "currency": "EUR"
+        },
+        "kind": "reported_actual",
+        "label": "2024 Q3 公布實績",
+        "available_at": "2024-10-15T23:59:59Z",
+        "low": "7467000000",
+        "high": "7467000000",
+        "evidence_ids": [
+          "asml-q3:actual"
+        ]
+      },
+      {
+        "key": {
+          "metric": "revenue",
+          "period_end": "2025-12-31",
+          "duration": "year",
+          "scope": "consolidated",
+          "basis": "US_GAAP",
+          "currency": "EUR"
+        },
+        "kind": "issuer_guidance",
+        "label": "2024 Q3 更新 FY2025 指引",
+        "available_at": "2024-10-15T23:59:59Z",
+        "low": "30000000000",
+        "high": "35000000000",
+        "evidence_ids": [
+          "asml-q3:guidance"
+        ]
+      },
+      {
+        "key": {
+          "metric": "gross_margin",
+          "period_end": "2025-12-31",
+          "duration": "year",
+          "scope": "consolidated",
+          "basis": "US_GAAP",
+          "currency": "EUR"
+        },
+        "kind": "issuer_guidance",
+        "label": "2024 Q3 更新 FY2025 指引",
+        "available_at": "2024-10-15T23:59:59Z",
+        "low": ".51",
+        "high": ".53",
+        "evidence_ids": [
+          "asml-q3:guidance"
+        ]
+      }
+    ],
+    "quarters": [
+      {
+        "period_end": "2024-12-31",
+        "available_at": "2024-04-17T23:59:59Z",
+        "segment_revenue": {
+          "net_system_sales": "5682000000",
+          "installed_base_management": "1555000000"
+        },
+        "gross_margin": ".514",
+        "opex": "1320000000",
+        "tax_rate": "0.16",
+        "other_after_tax": "32152880.00000",
+        "diluted_shares": "394000000",
+        "evidence_ids": [
+          "asml-q1-2024:history"
+        ],
+        "method": "回放採去年同季公開營收／服務收入與毛利率；營業費用、16% 稅率與 3.94 億稀釋股數為明列模型假設。稅後其他為對帳至該歷史淨利的餘額。"
+      },
+      {
+        "period_end": "2025-03-31",
+        "available_at": "2024-04-17T23:59:59Z",
+        "segment_revenue": {
+          "net_system_sales": "3966000000",
+          "installed_base_management": "1324000000"
+        },
+        "gross_margin": ".51",
+        "opex": "1305000000",
+        "tax_rate": "0.16",
+        "other_after_tax": "53964000.0000",
+        "diluted_shares": "394000000",
+        "evidence_ids": [
+          "asml-q1-2024:history"
+        ],
+        "method": "回放採去年同季公開營收／服務收入與毛利率；營業費用、16% 稅率與 3.94 億稀釋股數為明列模型假設。稅後其他為對帳至該歷史淨利的餘額。"
+      }
+    ],
+    "drivers": [
+      {
+        "period_end": "2024-12-31",
+        "scenario": "bear",
+        "segment_revenue_delta": {
+          "net_system_sales": "1150000000",
+          "installed_base_management": "240000000"
+        },
+        "shipment_changes": {
+          "net_system_sales": {
+            "incremental_recognized_units": 1,
+            "revenue_per_unit": "150000000",
+            "recognition_basis": "回放敏感度假設。該季度完成交付並滿足收入認列條件；單台金額非公司披露。"
+          }
+        },
+        "gross_margin_delta": "-0.024",
+        "opex_delta": "140000000",
+        "rationale": "舊基準為季節對照。分開假設已認列的新系統、其他系統和服務收入、組合及費用變化。2024 Q4 基準情境對齊公司指引中點；2025 Q1 未取得事件日季度指引，純為回放情境。",
+        "evidence_ids": [
+          "asml-q3:guidance",
+          "asml-q1-2024:history"
+        ]
+      },
+      {
+        "period_end": "2024-12-31",
+        "scenario": "base",
+        "segment_revenue_delta": {
+          "net_system_sales": "1213000000",
+          "installed_base_management": "250000000"
+        },
+        "shipment_changes": {
+          "net_system_sales": {
+            "incremental_recognized_units": 2,
+            "revenue_per_unit": "150000000",
+            "recognition_basis": "回放敏感度假設。該季度完成交付並滿足收入認列條件；單台金額非公司披露。"
+          }
+        },
+        "gross_margin_delta": "-0.019",
+        "opex_delta": "100000000",
+        "rationale": "舊基準為季節對照。分開假設已認列的新系統、其他系統和服務收入、組合及費用變化。2024 Q4 基準情境對齊公司指引中點；2025 Q1 未取得事件日季度指引，純為回放情境。",
+        "evidence_ids": [
+          "asml-q3:guidance",
+          "asml-q1-2024:history"
+        ]
+      },
+      {
+        "period_end": "2024-12-31",
+        "scenario": "bull",
+        "segment_revenue_delta": {
+          "net_system_sales": "1300000000",
+          "installed_base_management": "300000000"
+        },
+        "shipment_changes": {
+          "net_system_sales": {
+            "incremental_recognized_units": 3,
+            "revenue_per_unit": "150000000",
+            "recognition_basis": "回放敏感度假設。該季度完成交付並滿足收入認列條件；單台金額非公司披露。"
+          }
+        },
+        "gross_margin_delta": "-0.014",
+        "opex_delta": "90000000",
+        "rationale": "舊基準為季節對照。分開假設已認列的新系統、其他系統和服務收入、組合及費用變化。2024 Q4 基準情境對齊公司指引中點；2025 Q1 未取得事件日季度指引，純為回放情境。",
+        "evidence_ids": [
+          "asml-q3:guidance",
+          "asml-q1-2024:history"
+        ]
+      },
+      {
+        "period_end": "2025-03-31",
+        "scenario": "bear",
+        "segment_revenue_delta": {
+          "net_system_sales": "220000000",
+          "installed_base_management": "80000000"
+        },
+        "shipment_changes": {},
+        "gross_margin_delta": "-0.010",
+        "opex_delta": "120000000",
+        "rationale": "舊基準為季節對照。分開假設已認列的新系統、其他系統和服務收入、組合及費用變化。2024 Q4 基準情境對齊公司指引中點；2025 Q1 未取得事件日季度指引，純為回放情境。",
+        "evidence_ids": [
+          "asml-q3:guidance",
+          "asml-q1-2024:history"
+        ]
+      },
+      {
+        "period_end": "2025-03-31",
+        "scenario": "base",
+        "segment_revenue_delta": {
+          "net_system_sales": "310000000",
+          "installed_base_management": "100000000"
+        },
+        "shipment_changes": {
+          "net_system_sales": {
+            "incremental_recognized_units": 2,
+            "revenue_per_unit": "150000000",
+            "recognition_basis": "回放敏感度假設。該季度完成交付並滿足收入認列條件；單台金額非公司披露。"
+          }
+        },
+        "gross_margin_delta": "0.000",
+        "opex_delta": "100000000",
+        "rationale": "舊基準為季節對照。分開假設已認列的新系統、其他系統和服務收入、組合及費用變化。2024 Q4 基準情境對齊公司指引中點；2025 Q1 未取得事件日季度指引，純為回放情境。",
+        "evidence_ids": [
+          "asml-q3:guidance",
+          "asml-q1-2024:history"
+        ]
+      },
+      {
+        "period_end": "2025-03-31",
+        "scenario": "bull",
+        "segment_revenue_delta": {
+          "net_system_sales": "440000000",
+          "installed_base_management": "150000000"
+        },
+        "shipment_changes": {
+          "net_system_sales": {
+            "incremental_recognized_units": 3,
+            "revenue_per_unit": "150000000",
+            "recognition_basis": "回放敏感度假設。該季度完成交付並滿足收入認列條件；單台金額非公司披露。"
+          }
+        },
+        "gross_margin_delta": "0.010",
+        "opex_delta": "100000000",
+        "rationale": "舊基準為季節對照。分開假設已認列的新系統、其他系統和服務收入、組合及費用變化。2024 Q4 基準情境對齊公司指引中點；2025 Q1 未取得事件日季度指引，純為回放情境。",
+        "evidence_ids": [
+          "asml-q3:guidance",
+          "asml-q1-2024:history"
+        ]
+      }
+    ],
+    "valuation": {
+      "fiscal_year_end": "2025-12-31",
+      "annual_base_eps": {
+        "key": {
+          "metric": "eps",
+          "period_end": "2025-12-31",
+          "duration": "year",
+          "scope": "consolidated",
+          "basis": "US_GAAP",
+          "currency": "EUR"
+        },
+        "kind": "internal",
+        "label": "22 歐元之年度 EPS 回放假設",
+        "available_at": "2024-04-17T23:59:59Z",
+        "low": "22",
+        "high": "22",
+        "evidence_ids": [
+          "asml-q1-2024:history"
+        ]
+      },
+      "old_multiple": "25",
+      "scenario_multiples": {
+        "bear": "20",
+        "base": "25",
+        "bull": "30"
+      },
+      "multiple_basis": "回放用敏感度刻度與假設 EPS，未取得當時市場倍數或股價。只有 FY2025 Q1 修正納入 FY2025 EPS。",
+      "annual_diluted_shares": "394000000"
+    }
+  }
+}

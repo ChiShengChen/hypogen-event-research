@@ -1,0 +1,65 @@
+{
+  "planned": 30,
+  "paired": 30,
+  "quarters": 60,
+  "metrics": {
+    "revenue": {
+      "mae": {
+        "seasonal": 1487.1,
+        "astra": 507.94266666666664,
+        "harness": 613.8583333333333
+      },
+      "head_to_head": [
+        13,
+        9,
+        38
+      ]
+    },
+    "gross_margin": {
+      "mae": {
+        "seasonal": 8.75602538789026,
+        "astra": 4.351851620115741,
+        "harness": 5.1198629880421604
+      },
+      "head_to_head": [
+        22,
+        6,
+        32
+      ]
+    },
+    "operating_income": {
+      "mae": {
+        "seasonal": 1301.7000055106666,
+        "astra": 611.6886508333333,
+        "harness": 770.2199298953333
+      },
+      "head_to_head": [
+        23,
+        1,
+        36
+      ]
+    },
+    "eps": {
+      "mae": {
+        "seasonal": 0.7859119938667266,
+        "astra": 0.3378333333333333,
+        "harness": 0.45424498875882047
+      },
+      "head_to_head": [
+        26,
+        0,
+        34
+      ]
+    }
+  },
+  "median_seconds": {
+    "harness": 32.825,
+    "astra": 14.43
+  },
+  "failures": [],
+  "negative_implied_opex": {
+    "harness": 0,
+    "astra": 0
+  },
+  "human_reviews": 0
+}

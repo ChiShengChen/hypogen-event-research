@@ -1,3 +1,4 @@
+from datetime import date
 from decimal import Decimal
 from typing import Annotated, Literal
 
@@ -77,6 +78,209 @@ class ReportedCalculation(Schema):
     baseline: ReportedNumber
 
 
+Amount = Annotated[Decimal, Field(max_digits=24, decimal_places=8)]
+DecimalText = Annotated[str, Field(pattern=r"^-?[0-9]{1,24}(\.[0-9]{1,8})?$")]
+Rate = Annotated[Decimal, Field(ge=0, le=1, decimal_places=8)]
+Scenario = Literal["bear", "base", "bull"]
+Metric = Literal["revenue", "gross_margin", "operating_income", "eps"]
+Currency = Annotated[str, Field(pattern=r"^[A-Z]{3}$")]
+
+
+class MetricKey(Schema):
+    metric: Metric
+    period_end: date
+    duration: Literal["quarter", "year"]
+    scope: Nonempty
+    basis: Literal["US_GAAP", "IFRS", "adjusted"]
+    currency: Currency
+
+
+class EstimateReference(Schema):
+    key: MetricKey
+    kind: Literal["issuer_guidance", "issuer_outlook", "consensus", "internal", "reported_actual"]
+    label: Nonempty
+    available_at: AwareDatetime
+    low: Amount
+    high: Amount
+    evidence_ids: list[Nonempty] = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def check_range(self):
+        if self.low > self.high:
+            raise ValueError("基準下限不得高於上限")
+        return self
+
+
+class OperatingBaseline(Schema):
+    """Amounts are unscaled currency, and margins and tax rates are fractions."""
+
+    period_end: date
+    available_at: AwareDatetime
+    segment_revenue: dict[Nonempty, Annotated[Amount, Field(ge=0)]] = Field(min_length=1)
+    gross_margin: Annotated[Amount, Field(le=1)]
+    opex: Annotated[Amount, Field(ge=0)]
+    tax_rate: Rate
+    other_after_tax: Amount = Decimal(0)
+    diluted_shares: Annotated[Amount, Field(gt=0)]
+    evidence_ids: list[Nonempty] = Field(min_length=1)
+    method: Nonempty
+
+
+class ShipmentChange(Schema):
+    incremental_recognized_units: int
+    revenue_per_unit: Annotated[Amount, Field(gt=0)]
+    recognition_basis: Nonempty
+
+
+class DriverBase(Schema):
+    period_end: date
+    scenario: Scenario
+    gross_margin_delta: Annotated[Amount, Field(ge=-1, le=1)]
+    opex_delta: Amount
+    rationale: Nonempty
+    evidence_ids: list[Nonempty] = Field(min_length=1)
+
+
+class EstimateDriver(DriverBase):
+    segment_revenue_delta: dict[Nonempty, Amount]
+    shipment_changes: dict[Nonempty, ShipmentChange]
+
+
+class DraftShipment(Schema):
+    incremental_recognized_units: int
+    revenue_per_unit: DecimalText
+    recognition_basis: Nonempty
+
+
+class DraftSegment(Schema):
+    segment: Nonempty
+    revenue_delta: DecimalText
+    shipment: DraftShipment | None
+
+
+class DraftDriver(Schema):
+    period_end: date
+    scenario: Scenario
+    gross_margin_delta: DecimalText
+    opex_delta: DecimalText
+    rationale: Nonempty
+    evidence_ids: list[Nonempty] = Field(min_length=1)
+    segments: list[DraftSegment]
+
+    @model_validator(mode="after")
+    def check_segments(self):
+        if len({entry.segment for entry in self.segments}) != len(self.segments):
+            raise ValueError("模型驅動不可重複列出同一分部")
+        return self
+
+    def to_driver(self):
+        return EstimateDriver(
+            **self.model_dump(exclude={"segments"}),
+            segment_revenue_delta={entry.segment: entry.revenue_delta for entry in self.segments},
+            shipment_changes={entry.segment: entry.shipment.model_dump()
+                              for entry in self.segments if entry.shipment is not None},
+        )
+
+
+class DriverDraft(Schema):
+    drivers: list[DraftDriver]
+
+
+class PEValuation(Schema):
+    fiscal_year_end: date
+    annual_base_eps: EstimateReference
+    annual_diluted_shares: Annotated[Amount, Field(gt=0)]
+    old_multiple: Annotated[Amount, Field(gt=0)]
+    scenario_multiples: dict[Scenario, Annotated[Amount, Field(gt=0)]]
+    multiple_basis: Nonempty
+    market_price: Annotated[Amount, Field(gt=0)] | None = None
+    price_at: AwareDatetime | None = None
+    price_evidence_id: Nonempty | None = None
+
+    @model_validator(mode="after")
+    def check_inputs(self):
+        if set(self.scenario_multiples) != {"bear", "base", "bull"}:
+            raise ValueError("須提供空、基準、多三個情境的本益比")
+        quoted = (self.market_price, self.price_at, self.price_evidence_id)
+        if any(value is not None for value in quoted) and any(value is None for value in quoted):
+            raise ValueError("現價、時間與來源須同時提供")
+        return self
+
+
+class EarningsPlan(Schema):
+    event_at: AwareDatetime
+    currency: Currency
+    basis: Literal["US_GAAP", "IFRS", "adjusted"]
+    references: list[EstimateReference] = Field(default_factory=list, max_length=40)
+    event_values: list[EstimateReference] = Field(default_factory=list, max_length=20)
+    quarters: list[OperatingBaseline] = Field(default_factory=list, max_length=2)
+    drivers: list[EstimateDriver] = Field(default_factory=list, max_length=6)
+    generate_drivers: bool = False
+    valuation: PEValuation | None = None
+
+    @model_validator(mode="after")
+    def check_periods(self):
+        periods = {quarter.period_end for quarter in self.quarters}
+        if len(periods) != len(self.quarters):
+            raise ValueError("預測季度不可重複")
+        keys = {(driver.period_end, driver.scenario) for driver in self.drivers}
+        if len(keys) != len(self.drivers) or any(period not in periods for period, _ in keys):
+            raise ValueError("情境須對應既有預測季度且不可重複")
+        if self.generate_drivers and (not periods or self.drivers):
+            raise ValueError("模型草擬需要季度基準，且不能同時提供手動驅動")
+        return self
+
+
+class EarningsBranch(Schema):
+    parent_revision: Annotated[int, Field(ge=1, strict=True)]
+    drivers: list[EstimateDriver] = Field(min_length=1, max_length=6)
+
+
+class ForecastRegistration(Schema):
+    key: MetricKey
+    low: Amount
+    high: Amount
+    deadline: AwareDatetime
+    resolution_source: Nonempty
+    probability: Rate | None = None
+    evidence_ids: list[Nonempty] = Field(min_length=1)
+    purpose: Literal["live", "historical_replay"] = "live"
+
+    @model_validator(mode="after")
+    def check_range(self):
+        if self.low > self.high or self.deadline.date() < self.key.period_end:
+            raise ValueError("預測區間或判定截止日無效")
+        return self
+
+
+class ForecastResolution(Schema):
+    status: Literal["reported", "not_disclosed", "redefined"]
+    document: Document
+    paragraph_id: Nonempty
+    key: MetricKey | None = None
+    value: Amount | None = None
+    note: Nonempty
+
+    @model_validator(mode="after")
+    def check_resolution(self):
+        if self.document.kind != "disclosure" or self.document.synthetic or self.paragraph_id not in self.document.paragraphs:
+            raise ValueError("核對須附可定位的真實公開披露")
+        if self.status == "reported" and (self.key is None or self.value is None):
+            raise ValueError("已披露的結果須提供原口徑與數值")
+        if self.status != "reported" and (self.key is not None or self.value is not None):
+            raise ValueError("未披露或口徑變更不可填入可比較數值")
+        if self.status == "reported" and self.document.published_at.date() < self.key.period_end:
+            raise ValueError("實績不能提前於觀測期末發布")
+        return self
+
+
+class ResearchReview(Schema):
+    reviewer: Nonempty
+    decision: Literal["approved", "changes_requested"]
+    note: Nonempty
+    duration_seconds: Annotated[Amount, Field(ge=0)] | None = None
+
+
 class Event(Schema):
     event_text: Nonempty
     as_of: AwareDatetime
@@ -90,6 +294,7 @@ class Event(Schema):
     supply_edges: list[SupplyEdge] = Field(default_factory=list)
     financial_inputs: FinancialInputs | None = None
     reported_calculations: list[ReportedCalculation] = Field(default_factory=list, max_length=12)
+    earnings_plan: EarningsPlan | None = None
 
     @model_validator(mode="after")
     def check_documents(self):

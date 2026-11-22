@@ -13,6 +13,7 @@ export const questionBank = [
 
 export const exampleLabels = {
   "asml-q3": "ASML Q3 財報",
+  "asml-earnings": "ASML 盈利預測",
   "nvidia-h20": "NVIDIA H20",
   "intel-high-na": "Intel High-NA EUV",
 };

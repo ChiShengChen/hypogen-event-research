@@ -248,12 +248,60 @@ python -m benchmarks.hypothesis_pilot --head-to-head
 python -m benchmarks.hypothesis_pilot --head-to-head --holdout
 ```
 
+### 盈利預測、估值與研究員覆核
+
+工作台的「ASML 盈利預測」案例提供兩季盈利、可獨立修改的情境、市場預期比較及年度本益比分析。案例重演 2024 Q3 公告當天。原始公告是實際資料，認列台數、單台收入、估值倍數與年度模型 EPS 是明列的回放假設。缺少歷史市場共識或當時股價時，報告會保留缺口。
+
+[事件 JSON](research_app/examples/asml-earnings.json) 可直接送到 `POST /events`。其中 `earnings_plan` 鎖定事件時點、各類基準、當次披露及季度假設。款項用原幣，毛利率用小數比例，季度 EPS 以稀釋股數重算。事件前基準及其證據必須在事件前可取得。預期差只比較同指標、期別、分部、會計口徑與幣別，取各類最近一版。
+
+可提供研究員填寫的空方、基準、多方假設，也可令 `generate_drivers` 為 `true` 並傳空的 `drivers`，讓 Astra 在已凍結的資料內草擬。程式把已符合收入認列條件的台數和單台收入分開計算。年度 P/E 先用同財年季度的稅後盈利差除以年度稀釋股數，再分解盈利與倍數影響。
+
+| 操作 | API |
+|---|---|
+| 讀取預估、到期狀態與覆核紀錄 | `GET /reports/{id}/revisions/{v}/earnings` |
+| 改假設並另存子版 | `POST /reports/{id}/earnings/branches` |
+| 登記指標、區間、截止日及核對來源 | `POST /reports/{id}/revisions/{v}/forecasts` |
+| 附實績披露核對 | `POST /reports/{id}/revisions/{v}/forecasts/{forecast_id}/resolve` |
+| 記錄人工覆核決定 | `POST /reports/{id}/revisions/{v}/reviews` |
+
+首次核對保留在原登記對應的版本。披露口徑有差異、缺值或晚於截止日會保留各自的狀態。已登記的二元區間機率可以計算 Brier score。歷史回放和正式登記分開標記。原稿及其預測區間不會被子版或覆核覆蓋。工作台的覆核人姓名由使用者填寫，供本機流程使用。
+
+```bash
+RESEARCH_MODE=codex RESEARCH_CODEX_MODEL=gpt-6.2-astra python -m benchmarks.earnings_demo
+```
+
+輸出包含 ASML 原稿、修改認列台數的子版、兩季實績核對及 SQLite，存於 `output/earnings-asml/`。研究員覆核可在報告的「盈利與覆核」頁面送出。實績另附同口徑披露原文。[ASML 工作流 PDF](docs/asml-earnings-workflow.pdf)
+
+#### 30 案盈利回放與純 Astra
+
+固定 AMD、Intel、Micron、Qualcomm 和 Texas Instruments 的 2019 至 2024 年 Q1 10-Q，共 30 案，對照未來兩季的合併營收、毛利率、營業利益與稀釋 EPS。模型看同一份事件與季節基準來源，使用同一個 Astra 及一個呼叫額度，停用搜尋。後續申報只交給計分。申報日期使用 UTC 日末作歷史可得代理。歷史回放仍可能受模型先驗知識影響。[SEC Company Facts 與申報 API](https://www.sec.gov/search-filings/edgar-application-programming-interfaces)
+
+先將各公司的 SEC Company Facts JSON 下載到指定資料夾，以 `AMD.json`、`INTC.json`、`MU.json`、`QCOM.json`、`TXN.json` 命名。CIK 對照在 [資料建案程式](benchmarks/earnings_cases.py)。命令可加 `--case AMD-2019` 試跑一案。
+
+```bash
+python -m benchmarks.earnings_pilot --sec-dir output/earnings-benchmark/sec --output output/earnings-benchmark-v2
+```
+
+評分目錄包含逐案預測、實績引用、誤差、匿名覆核包 `blind-review.md` 和可填寫的 `review-form.csv`。實績與 A/B 方法對照另存。模型生成耗時和人工覆核耗時分開記錄。
+
+本次完成 30 個事件、60 個未來季度。數字是平均絕對誤差。[評測報告 PDF](docs/earnings-benchmark-report.pdf) · [評分資料](docs/earnings-benchmark-scorecard.json)
+
+| 指標 | 初版 Harness | 修正後 Harness | 純 Astra |
+|---|---:|---:|---:|
+| 營收（百萬美元） | 1170.99 | 613.86 | 507.94 |
+| 毛利率（百分點） | 6.70 | 5.12 | 4.35 |
+| 營業利益（百萬美元） | 1059.46 | 770.22 | 611.69 |
+| 稀釋 EPS（美元） | 0.619 | 0.454 | 0.338 |
+
+修正後四項誤差都下降。這次資料衡量歷史回放的合併財務數字，四項誤差仍由純 Astra 領先。修正後 Harness 的中位生成耗時為 32.8 秒，純 Astra 為 14.4 秒。人工盲評、覆核耗時與授權的歷史共識資料尚待接入。
+
 ## 專案結構
 
 | 路徑 | 內容 |
 |---|---|
 | `research_app/api.py`、`schema.py` | FastAPI 端點與輸入、輸出契約 |
 | `research_app/research.py`、`store.py` | 時點快照、財務計算、Markdown 報告與 SQLite 版本 |
+| `research_app/earnings.py` | 盈利修正、估值分解與預測核對 |
 | `research_app/adapters.py`、`demo.py` | 模型介接與可重跑的案例 |
 | `research_app/fixtures/`、`tests/` | 虛構事件與回歸測試 |
 | `research_app/examples/`、`web/` | 真實歷史事件及瀏覽器工作台 |

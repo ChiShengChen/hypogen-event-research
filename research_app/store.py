@@ -2,17 +2,19 @@ import hashlib
 import json
 import sqlite3
 from contextlib import contextmanager
+from datetime import datetime, timezone
 from decimal import Decimal
 from pathlib import Path
 from uuid import uuid4
 
-from .adapters import AdapterError
+from .adapters import AdapterError, EARNINGS_DRIVER_VERSION
 from .discovery import DISCOVERY_VERSION, collect
+from .earnings import EarningsError, available_evidence, calculate_earnings, resolve_forecast
 from .research import (
     FORMULA_VERSION, REPORT_VERSION, apply_financial_scenario, build_report, document_evidence,
     render, render_followups,
 )
-from .schema import Event, FinancialInputs
+from .schema import EarningsPlan, Event, FinancialInputs, ForecastRegistration
 
 
 class MissingReport(Exception):
@@ -50,6 +52,12 @@ class Store:
                     PRIMARY KEY (report_id, revision),
                     FOREIGN KEY (report_id, parent_revision) REFERENCES revisions(report_id, revision)
                 );
+                CREATE TABLE IF NOT EXISTS earnings_log (
+                    report_id TEXT NOT NULL, revision INTEGER NOT NULL, kind TEXT NOT NULL,
+                    action_key TEXT NOT NULL, recorded_at TEXT NOT NULL, payload TEXT NOT NULL,
+                    PRIMARY KEY (report_id, revision, kind, action_key),
+                    FOREIGN KEY (report_id, revision) REFERENCES revisions(report_id, revision)
+                );
             """)
 
     @contextmanager
@@ -68,10 +76,14 @@ class Store:
 
     def create(self, event, adapter):
         payload = event.model_dump(mode="json")
+        if payload.get("earnings_plan") is None:
+            payload.pop("earnings_plan", None)
         request_key = hashlib.sha256(encode({
             "event": payload, "adapter": adapter.identity, "formula_version": FORMULA_VERSION,
             "report_version": REPORT_VERSION,
             "discovery_version": DISCOVERY_VERSION if event.search_mode != "off" else None,
+            **({"earnings_driver_version": EARNINGS_DRIVER_VERSION}
+               if event.earnings_plan and event.earnings_plan.generate_drivers else {}),
         }).encode()).hexdigest()
         lookup = "SELECT run_id, report_id FROM runs WHERE request_key = ?"
         with self.connection() as db:
@@ -128,6 +140,109 @@ class Store:
             db.execute("INSERT INTO revisions VALUES (?, ?, ?, ?)",
                        (report_id, revision, parent_revision, encode(data)))
         return revision
+
+    def earnings_branch(self, report_id, branch):
+        parent = self.revision(report_id, branch.parent_revision)
+        if "earnings" not in parent:
+            raise EarningsError("原稿缺少盈利預測基準")
+        old = parent["earnings"]["inputs"]
+        incoming = {(item.period_end.isoformat(), item.scenario): item.model_dump(mode="json")
+                    for item in branch.drivers}
+        if len(incoming) != len(branch.drivers):
+            raise EarningsError("修改項目重複")
+        if {period for period, _ in incoming} - {item["period_end"] for item in old["quarters"]}:
+            raise EarningsError("情境須對應既有預測季度")
+        drivers = {(item["period_end"], item["scenario"]): item for item in old["drivers"]}
+        drivers.update(incoming)
+        plan = EarningsPlan.model_validate({**old, "drivers": list(drivers.values())})
+        earnings = calculate_earnings(plan, datetime.fromisoformat(parent["as_of"]), parent["evidence"])
+        earnings["driver_origin"] = "analyst_branch"
+        report = {**parent, "earnings": earnings, "revision_kind": "earnings_scenario"}
+        report["earnings_parent_revision"] = branch.parent_revision
+        report["markdown"] = render(report)
+        child = self.save_child(report_id, branch.parent_revision, report)
+        return self.revision(report_id, child)
+
+    def _earnings_action(self, report_id, revision, kind, key, payload, now):
+        encoded = encode(payload)
+        with self.connection() as db:
+            db.execute("BEGIN IMMEDIATE")
+            existing = db.execute(
+                "SELECT recorded_at, payload FROM earnings_log "
+                "WHERE report_id=? AND revision=? AND kind=? AND action_key=?",
+                (report_id, revision, kind, key),
+            ).fetchone()
+            if existing:
+                if existing[1] != encoded:
+                    raise EarningsError("已有不同內容的核對紀錄")
+                return {"id": key, "recorded_at": existing[0], **payload}
+            recorded_at = now.isoformat()
+            db.execute("INSERT INTO earnings_log VALUES (?, ?, ?, ?, ?, ?)",
+                       (report_id, revision, kind, key, recorded_at, encoded))
+        return {"id": key, "recorded_at": recorded_at, **payload}
+
+    def register_forecast(self, report_id, revision, request):
+        report = self.revision(report_id, revision)
+        snapshot = datetime.fromisoformat(report["as_of"])
+        now = datetime.now(timezone.utc)
+        if request.deadline <= snapshot or request.key.period_end < snapshot.date():
+            raise EarningsError("觀測期末和截止日須在原稿時點之後")
+        if request.purpose == "live" and now > snapshot and request.key.period_end < now.date():
+            raise EarningsError("已結束的觀測期間只能登記為歷史回放")
+        if request.purpose == "live" and request.deadline <= now:
+            raise EarningsError("正式登記時截止日尚未到期")
+        available_evidence(request.evidence_ids, {row["id"]: row for row in report["evidence"]}, snapshot)
+        payload = {**request.model_dump(mode="json"), "snapshot_as_of": report["as_of"], "target": report["target"]}
+        key = hashlib.sha256(encode(payload).encode()).hexdigest()[:24]
+        return self._earnings_action(report_id, revision, "forecast", key, payload, now)
+
+    def forecast_resolution(self, report_id, revision, forecast_id, request):
+        self.revision(report_id, revision)
+        with self.connection() as db:
+            stored = db.execute(
+                "SELECT recorded_at, payload FROM earnings_log "
+                "WHERE report_id=? AND revision=? AND kind='forecast' AND action_key=?",
+                (report_id, revision, forecast_id),
+            ).fetchone()
+        if stored is None:
+            raise MissingReport("找不到預測登記")
+        raw = json.loads(stored[1])
+        snapshot, target = raw.pop("snapshot_as_of"), raw.pop("target")
+        forecast = ForecastRegistration.model_validate(raw)
+        registration = {**forecast.model_dump(), "key": forecast.key}
+        registration["snapshot_as_of"] = datetime.fromisoformat(snapshot)
+        registration["registered_at"] = datetime.fromisoformat(stored[0])
+        now = datetime.now(timezone.utc)
+        outcome, score = resolve_forecast(registration, request, now)
+        payload = {
+            "forecast_id": forecast_id, "outcome": outcome, "brier_score": score, "target": target,
+            "observation": request.model_dump(mode="json"),
+        }
+        return self._earnings_action(report_id, revision, "resolution", forecast_id, payload, now)
+
+    def research_review(self, report_id, revision, request):
+        self.revision(report_id, revision)
+        payload = request.model_dump(mode="json")
+        return self._earnings_action(report_id, revision, "review", uuid4().hex, payload, datetime.now(timezone.utc))
+
+    def earnings_status(self, report_id, revision):
+        report = self.revision(report_id, revision)
+        with self.connection() as db:
+            rows = db.execute(
+                "SELECT kind, action_key, recorded_at, payload FROM earnings_log "
+                "WHERE report_id=? AND revision=? ORDER BY recorded_at, rowid",
+                (report_id, revision),
+            ).fetchall()
+        logs = {"forecast": {}, "resolution": {}, "review": {}}
+        for kind, action_key, at, payload in rows:
+            logs[kind][action_key] = {"id": action_key, "recorded_at": at, **json.loads(payload)}
+        now = datetime.now(timezone.utc)
+        for key, forecast in logs["forecast"].items():
+            forecast["resolution"] = logs["resolution"].get(key)
+            forecast["status"] = (forecast["resolution"]["outcome"] if forecast["resolution"] else
+                                  "overdue" if datetime.fromisoformat(forecast["deadline"]) < now else "pending")
+        return {"report_id": report_id, "revision": revision, "earnings": report.get("earnings"),
+                "forecasts": list(logs["forecast"].values()), "reviews": list(logs["review"].values())}
 
     @staticmethod
     def checked_answer(adapter, report, question):

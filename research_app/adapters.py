@@ -7,7 +7,9 @@ from tempfile import TemporaryDirectory
 import httpx
 from pydantic import ValidationError
 
-from .schema import Answer, DetailedAnswer, Hypotheses
+from .schema import Answer, DetailedAnswer, DriverDraft, Hypotheses
+
+EARNINGS_DRIVER_VERSION = 2
 
 
 class AdapterError(Exception):
@@ -177,6 +179,27 @@ class ModelAdapter:
             "and that each contrary result can be checked within the same scope as its prediction."
         ), context)
 
+    def earnings_drivers(self, context):
+        return self._generate(DriverDraft, (
+            "Draft bear, base and bull forecast adjustments for each supplied quarter in Traditional Chinese. "
+            "Use only provided point-in-time evidence. Quote the exact IDs. The numbers are assumptions, "
+            "not reported facts. Write numeric amounts as plain decimal strings without separators. "
+            "Keep all amounts in unscaled currency units and changes in gross margin "
+            "as fractions (for example 0.01 means one percentage point). Use the exact segment names from "
+            "the baseline. Produce the base scenario first. Before encoding deltas, estimate absolute revenue, "
+            "gross margin and operating expense for the target quarter as you would in a point forecast. "
+            "Anchor operating scale to the latest comparable newly disclosed quarter and use the older "
+            "baseline for seasonal shape. If current results indicate a persistent scale or regime change, "
+            "carry the change forward in the base case and explain the persistence assumption. "
+            "Give applicable same-period issuer guidance priority over a seasonal carry-forward. "
+            "Convert the resulting point forecasts to exact additive deltas. Then bracket base with bear and bull. "
+            "Reflect uncertainty through scenario ranges and evidence gaps. "
+            "Leave the segment list empty when there is no revenue change. Use shipment only "
+            "for scenario units explicitly assumed to be recognized in that quarter. Do not double-count these "
+            "units in revenue_delta or treat bookings as revenue. Keep after-tax adjustments, tax rate and shares "
+            "fixed. Distinguish the issuer's guidance from market consensus. Return all three cases for each quarter."
+        ), context)
+
     def answer(self, context, question):
         assessment = context.get("assessment", {})
         payload = {
@@ -188,6 +211,8 @@ class ModelAdapter:
             "disclosed_calculations": context.get("disclosed_calculations", []),
             "question": question,
         }
+        if context.get("earnings"):
+            payload["earnings_revision"] = context["earnings"]
         instruction = (
             "Answer in Traditional Chinese using only supplied point-in-time evidence for factual claims. "
             "Stored research is the requested report version, not proof of what happened. For questions about "
@@ -198,6 +223,8 @@ class ModelAdapter:
             "state exactly which evidence would be needed. Mark a requirement missing if you left it out. "
             "For a calculation give the original numbers, units, denominator and result. Select the relevant "
             "calculation_ids from disclosed_calculations; code will append their exact operands and formulas. "
+            "When earnings_revision is provided, use its computed values for estimate revisions. Mark the "
+            "scenario or market reference type and cite the underlying evidence IDs, not hypothetical actuals. "
             "For equipment milestones distinguish purchase order, actual shipment or acceptance, production, "
             "and revenue recognition, including what publicly verifiable would substantiate each asked stage. "
             "Distinguish confirmed event attribution from general supplier or customer relationships. "
