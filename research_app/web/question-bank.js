@@ -1,48 +1,18 @@
 export const questionBank = [
-  {
-    title: "截止時點的認證", example: "shutdown", action: "question",
-    question: "截至 2025 年 1 月 15 日，能確認客戶 X 已認證乙公司的先進封裝產品嗎？當時可用的證據支持到哪裡？",
-  },
-  {
-    title: "認證公開後的證據", example: "shutdown", action: "question", asOf: "2025-01-21T09:00:00+08:00",
-    question: "截至台北時間 2025 年 1 月 21 日上午 9 點，能確認 X 的先進封裝認證嗎？這份公告也能證明轉單或出貨嗎？",
-  },
-  {
-    title: "批量減半的 EPS", example: "shutdown", action: "scenario", lots: 300,
-    question: "若本季全數交付並認列 300 批，增量營業利益和稀釋 EPS 各是多少？與 600 批母版差多少？",
-  },
-  {
-    title: "損益兩平後的第一批", example: "shutdown", action: "scenario", lots: 401,
-    question: "若本季全數交付並認列 401 批，增量營業利益和稀釋 EPS 各是多少？為何和 400 批不同？",
-  },
-  {
-    title: "指引與實績", example: "demand", action: "question",
-    question: "丙公司的公告確認了什麼？這能否證明當季實際出貨、營收或 EPS 已下滑？",
-  },
-  {
-    title: "公開多空查核點", example: "demand", action: "question",
-    question: "下一次何時有公開資料可查？用同一個指標和比較基準，說明哪種觀察會支持需求改善或持續轉弱。",
-  },
-  {
-    title: "上游供應商曝險", example: "supply-chain", action: "question", tab: "opportunities",
-    question: "第一份報告是否主動找出未被點名的上游公司？新澤設備交付改期可能如何傳導到零件需求與供應商收入？",
-  },
-  {
-    title: "下游客戶與事件歸因", example: "supply-chain", action: "question", tab: "opportunities",
-    question: "報告能找出哪一家下游客戶？既有設備採購紀錄是否足以證明它就是此次改期的客戶？",
-  },
-  {
-    title: "替代來源的證據門檻", example: "supply-chain", action: "question", tab: "opportunities",
-    question: "目前能確認具名替代供應商嗎？如果證據不足，需要查到哪類產品規格、客戶認證或產能資料？",
-  },
-  {
-    title: "延伸交易機會", example: "supply-chain", action: "question", tab: "opportunities",
-    question: "從原事件未點名的供應鏈公司中列出可觀察的交易候選。哪些公開訊號會觸發或推翻判斷？還缺哪些資料才能量化？",
-  },
+  { title: "原訂與實際財報日", example: "asml-q3", question: "ASML 原訂哪天公布 2024 Q3 財報？實際發布日為何，為什麼提前？請引用官方行事曆和公告。" },
+  { title: "接單季減與 EUV 占比", example: "asml-q3", question: "以財報表列金額，計算 ASML Q3 淨新增訂單季減幅及 EUV 占比。哪個數字只能視為近似？" },
+  { title: "財報截止時點", example: "asml-q3", question: "2024 年 10 月 15 日能得知 ASML Q4 實際接單嗎？同一份證據能支持哪些 2025 年指引？" },
+  { title: "供應鏈交易候選", example: "asml-q3", tab: "opportunities", question: "從首稿挑選未點名的供應鏈公司。請區分光學件供應、客戶採購及 DUV 同業，並列可啟動或推翻交易假說的公開訊號。" },
+  { title: "出口許可與費用預估", example: "nvidia-h20", question: "NVIDIA 在 4 月 15 日申報了什麼？許可通知、申報日期以及最高 55 億美元費用預估分別代表什麼？" },
+  { title: "H20 費用與毛利實績", example: "nvidia-h20", asOf: "2025-05-28T23:59:59Z", question: "以 NVIDIA 5 月 28 日財報比較 4 月費用預估和實際 H20 費用。請分別列出 GAAP、non-GAAP 與排除 H20 費用後的 non-GAAP 毛利率。" },
+  { title: "H20 上游曝險", example: "nvidia-h20", tab: "opportunities", question: "年報具名哪些晶圓代工和記憶體公司？哪些關係只適用於 NVIDIA 整體供應鏈？請說明 H20 公司別曝險還缺什麼。" },
+  { title: "High-NA 採購單", example: "intel-high-na", question: "2022 年的聯合公告涉及哪一款機型？採購單能確認到哪個階段，量產及收入認列還需要什麼證據？" },
+  { title: "首批模組與機型差異", example: "intel-high-na", question: "ASML 說明 2023 年 12 月交付的是哪個型號、哪個階段？它和 2022 年採購的型號是否相同？" },
+  { title: "設備商與客戶的公開訊號", example: "intel-high-na", tab: "opportunities", question: "針對 Intel 與首稿找到的供應鏈公司，各提出一項可公開查核的交付或量產訊號，並說明如何區分營收、資本支出及成本影響。" },
 ];
 
 export const exampleLabels = {
-  shutdown: "封裝線停工",
-  demand: "需求指引下修",
-  "supply-chain": "供應鏈曝險",
+  "asml-q3": "ASML Q3 財報",
+  "nvidia-h20": "NVIDIA H20",
+  "intel-high-na": "Intel High-NA EUV",
 };

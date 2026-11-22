@@ -1,0 +1,41 @@
+{
+  "event_text": "研究 Intel 採購 High-NA EUV 設備後的導入進展、設備商里程碑與可公開驗證的財務訊號。",
+  "research_target": "Intel",
+  "research_horizon": "High-NA EUV 採購與導入",
+  "as_of": "2024-01-25T23:59:59Z",
+  "search_mode": "off",
+  "documents": [
+    {
+      "id": "high-na-order",
+      "source": "https://investor.asml.com/news-releases/news-release-details/intel-and-asml-strengthen-their-collaboration-drive-high-na-manufacturing-2025",
+      "kind": "disclosure",
+      "text_format": "summary",
+      "availability_basis": "replay_day_end",
+      "published_at": "2022-01-19T23:59:59Z",
+      "obtained_at": "2022-01-19T23:59:59Z",
+      "paragraphs": {
+        "order": "ASML 與 Intel（INTC）公告，Intel 已向 ASML 發出首筆 TWINSCAN EXE:5200 採購單。雙方亦說明 Intel 曾於 2018 年率先購買先前的 EXE:5000。公告把 2025 年導入 High-NA EUV 量產列為合作方向。"
+      }
+    },
+    {
+      "id": "high-na-delivery",
+      "source": "https://www.asml.com/en/company/stories/2024/5-things-high-na-euv",
+      "kind": "disclosure",
+      "text_format": "summary",
+      "availability_basis": "replay_day_end",
+      "published_at": "2024-01-25T23:59:59Z",
+      "obtained_at": "2024-01-25T23:59:59Z",
+      "paragraphs": {
+        "delivery": "ASML 於 2024 年 1 月 25 日說明，已在 2023 年 12 月向 Intel 運送首套 High-NA EUV 系統 TWINSCAN EXE:5000 的首批模組。該說明描述的是模組出貨里程碑。"
+      }
+    }
+  ],
+  "supply_edges": [
+    {
+      "supplier": "ASML",
+      "customer": "Intel",
+      "product": "High-NA EUV 設備",
+      "evidence_id": "high-na-order:order"
+    }
+  ]
+}

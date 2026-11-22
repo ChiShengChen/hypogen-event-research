@@ -9,6 +9,7 @@ from fastapi.testclient import TestClient
 
 from research_app.adapters import Fixture, Live, configured_adapter
 from research_app.api import create_app
+from research_app.schema import DetailedAnswer
 from research_app.store import Store
 
 FIXTURES = Path(__file__).resolve().parents[1] / "research_app" / "fixtures"
@@ -41,15 +42,24 @@ def ask(api, run, **overrides):
     })
 
 
-def test_workbench_serves_assets_and_supply_chain_example(api):
+def test_workbench_serves_real_historical_examples_and_filters_later_sources(api):
     assert "研究工作台" in api.get("/").text
     assert api.get("/workbench-assets/app.js").status_code == 200
     assert api.get("/workbench/config").json()["mode"] == "fixture"
     assert api.get("/workbench/examples/missing").status_code == 404
-    example = api.get("/workbench/examples/supply-chain")
-    assert example.status_code == 200
-    result = report(api, create(api, example.json()))
-    assert {idea["company"] for idea in result["assessment"]["trade_opportunities"]} == {"北辰光學", "南河製造"}
+    for name in ("asml-q3", "nvidia-h20", "intel-high-na"):
+        example = api.get(f"/workbench/examples/{name}")
+        assert example.status_code == 200
+        assert all(doc["source"].startswith("https://") and not doc.get("synthetic")
+                   for doc in example.json()["documents"])
+    asml = api.get("/workbench/examples/asml-q3").json()
+    result = report(api, create(api, asml))
+    assert {idea["company"] for idea in result["assessment"]["trade_opportunities"]} == {"Carl Zeiss SMT", "Intel"}
+    assert not any(item["id"].startswith("asml-q4") for item in result["evidence"])
+    nvidia = api.get("/workbench/examples/nvidia-h20").json()
+    assert not any(item["id"].startswith("nvidia-q1") for item in report(api, create(api, nvidia))["evidence"])
+    nvidia["as_of"] = "2025-05-28T23:59:59Z"
+    assert "nvidia-q1:charge" in {item["id"] for item in report(api, create(api, nvidia))["evidence"]}
 
 
 def test_scenario_revision_survives_reopening(tmp_path):
@@ -255,7 +265,11 @@ def test_codex_cli_accepts_snapshot_and_validates_response(tmp_path, monkeypatch
         if "hypotheses" in schema["properties"]:
             response = Fixture().hypotheses(data)
         else:
-            response = Fixture().answer(data["report"], data["question"])
+            fixture_answer = Fixture().answer(data["report"], data["question"])
+            response = DetailedAnswer(
+                **fixture_answer.model_dump(), calculation_ids=[],
+                coverage=[{"requirement": "認證時點", "status": "unavailable"}],
+            )
         output = Path(command[command.index("--output-last-message") + 1])
         assert output.parent == cwd
         output.write_text(response.model_dump_json(), encoding="utf-8")

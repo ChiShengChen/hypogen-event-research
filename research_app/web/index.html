@@ -17,10 +17,10 @@
       <button class="navitem" id="go-history" type="button"><span class="nav-icon" aria-hidden="true">◷</span>版本紀錄</button>
     </div>
     <div class="navgroup">
-      <h2>示範案例</h2>
-      <button class="navitem" data-example="shutdown" type="button"><span class="case-icon" aria-hidden="true"></span>封裝線停工</button>
-      <button class="navitem" data-example="demand" type="button"><span class="case-icon" aria-hidden="true"></span>需求指引下修</button>
-      <button class="navitem" data-example="supply-chain" type="button"><span class="case-icon" aria-hidden="true"></span>供應鏈曝險</button>
+      <h2>真實案例</h2>
+      <button class="navitem" data-example="asml-q3" type="button"><span class="case-icon" aria-hidden="true"></span>ASML Q3 財報</button>
+      <button class="navitem" data-example="nvidia-h20" type="button"><span class="case-icon" aria-hidden="true"></span>NVIDIA H20 出口許可</button>
+      <button class="navitem" data-example="intel-high-na" type="button"><span class="case-icon" aria-hidden="true"></span>Intel High-NA EUV</button>
     </div>
     <div class="sidebottom">
       <div class="mode"><span id="mode-dot" class="dot"></span><span id="mode-label">連線中</span></div>
@@ -34,8 +34,15 @@
       <div id="status" role="status" aria-live="polite"></div>
       <section class="empty" id="empty" hidden>
         <h1>建立一份研究報告</h1>
-        <p>從事件、公開來源與研究截止時點出發。也可以先打開虛構案例，試跑追問與情境重算。</p>
-        <button class="button primary" type="button" data-example="shutdown">載入封裝線停工案例</button>
+        <p>從公開來源與歷史截止點開始。選一個真實案例，查看證據並用 Codex CLI 建稿。</p>
+        <button class="button primary" type="button" data-example="asml-q3">載入 ASML 財報案例</button>
+      </section>
+      <section class="empty" id="example-preview" hidden>
+        <h1 id="preview-title"></h1>
+        <p id="preview-event"></p>
+        <p id="preview-note"></p>
+        <a class="button primary" id="preview-run" href="http://127.0.0.1:8000/">在 Codex 工作台分析</a>
+        <div id="preview-evidence" class="preview-evidence"></div>
       </section>
       <section class="empty" id="history" hidden>
         <h1>版本紀錄</h1>
@@ -144,7 +151,7 @@
     <h2 id="bank-title">試跑題庫</h2>
     <button class="button quiet" type="button" id="close-question-bank" aria-label="關閉">✕</button>
   </div>
-  <p class="form-note">選擇一題會載入對應案例並填好操作。離線示範適合驗證報告與重算；開放式問題可在 Astra 工作台試答。</p>
+  <p class="form-note">選擇一題會載入真實案例與官方證據。確認建稿後，題目會填入追問欄。</p>
   <div id="bank-list" class="cards"></div>
 </dialog>
 </body>

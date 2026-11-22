@@ -38,20 +38,16 @@ python -m research_app.demo
 
 ## 瀏覽器工作台與 API
 
-```bash
-python -m uvicorn research_app.api:app --host 127.0.0.1 --port 8000
-```
-
-打開 `http://127.0.0.1:8000/` 使用研究工作台。離線模式會載入虛構停工示範，也能切到需求下修或供應鏈曝險案例。可送件、查證據、追問、重算批量、切換版本與下載 Markdown。工作台的開啟紀錄存在目前瀏覽器，原始報告與版本保存在 SQLite。
-
-右上角的「試跑題庫」提供 10 題。選題會載入相應案例並填好追問或批量，確認後可送出。離線模式可演示認證與重算，開放式分析可用 Astra 模式試答。
-
-需要執行 Codex 模型與網路搜尋時，可用既有的 Codex CLI 登入啟動。送件表單可指定搜尋方式和允許的來源網域。
+先用 `codex login status` 確認本機 Codex CLI 已透過 ChatGPT 登入，再啟動工作台。
 
 ```bash
 RESEARCH_MODE=codex RESEARCH_CODEX_MODEL=gpt-6.2-astra \
-  python -m uvicorn research_app.api:app --host 127.0.0.1 --port 8001
+  python -m uvicorn research_app.api:app --host 127.0.0.1 --port 8000
 ```
+
+打開 `http://127.0.0.1:8000/`。左側案例與 10 題題庫使用 ASML 2024 Q3 財報、NVIDIA H20 申報及 Intel High-NA EUV 等真實歷史事件，附公司或 SEC 原始來源。採用公告日期的來源標示為歷史回放代理。選題後先確認建稿，再送出預填的追問。使用 Codex 模式時，模型透過本機 CLI 的現有登入執行。
+
+工作台可送件、查證據、追問、切換版本與下載 Markdown。只有提供可重算財務輸入的報告才能重算批量。未設定 Codex 模式時，可預覽真實案例的公開證據。原始報告和版本保存在 SQLite。
 
 互動式文件在 `http://127.0.0.1:8000/docs`。預設資料庫是 `output/research.sqlite3`，可用 `RESEARCH_DB` 指向既有 SQLite 檔案。以下命令在另一個終端執行。
 
@@ -143,6 +139,10 @@ python -m benchmarks.astra_pilot asml-harness --output output/astra-harness
 
 ### 追問補搜與證據子版
 
+追問會帶入指定版本的供應鏈、延伸交易機會、公開查核點與假說。模型逐項對照問題要求，若回報某項尚未回答，系統只對欠缺的項目補答一次。原始事實仍以截止時點可見的證據為準。
+
+事件可選填 `reported_calculations`，附上來自披露的兩個數值、單位和段落 ID。系統用 Decimal 計算占比、變化率或差額，排除時點不可見或單位不一致的輸入。追問選用計算時，答案會附原始數值、算式與來源；來源有約數時保留近似標記。[ASML 事件示例](research_app/examples/asml-q3.json)
+
 已啟用搜尋的報告會先以指定版本回答追問。如果回答仍缺少直接證據，系統使用同一截止時點和來源網域補搜一輪。新證據必須通過時點與網址查核，且被第二次回答實際引用，才會保存為證據子版。回應包含 `child_revision`，可透過原本的報告版本端點重新讀取；子版的 `evidence_followups` 保存問題、回答、引用及搜尋紀錄。
 
 ```json
@@ -178,6 +178,34 @@ python -m benchmarks.astra_pilot synthetic-direct --output output/astra-initial
 python -m benchmarks.astra_pilot synthetic-system --output output/astra-initial
 ```
 
+### 公開題庫品質實驗
+
+本機 Codex 以同一個 Astra、同一推理強度比較兩組。固定樣本包含 12 題 FinanceBench、8 題 FinSearchComp T3、5 題 FinanceGym 和 5 個真實供應鏈事件。FinanceBench 兩組讀相同原文節錄。其餘題組共用每題的搜尋網域及提示操作上限。供應鏈題只給事件，從首稿評分。
+
+2026-11-23 完成 30 組配對、共 60 份回答。分數為本機匿名評審的每題平均，滿分 6 分。[完整報告 PDF](docs/public-benchmark-report.pdf) · [評分資料](docs/public-benchmark-scorecard.json)
+
+| 題組 | 案數 | 純 Astra | Harness |
+|---|---:|---:|---:|
+| FinanceBench 財報節錄 | 12 | 5.75 | 5.75 |
+| FinSearchComp T3 歷史搜尋 | 8 | 3.75 | 3.62 |
+| FinanceGym 時點研究 | 5 | 4.00 | 4.80 |
+| 供應鏈首稿 | 5 | 3.40 | 4.80 |
+
+供應鏈首稿中，Harness 給出 12 個有來源且有催化劑和失效條件的交易假設，純 Astra 為 0。預先標註的公司關係則分別命中 6/13 與 9/13。18 個搜尋案中，Harness 有 16 案超過提示預算，純 Astra 皆在預算內。T3 的耗時中位數為 Harness 224.5 秒、純 Astra 51.3 秒。兩邊都在預算內的搜尋案共 2 案，等預算效果仍待更多樣本。
+
+```bash
+mkdir -p output/public-benchmark/inputs
+curl -fL https://raw.githubusercontent.com/patronus-ai/financebench/main/data/financebench_open_source.jsonl -o output/public-benchmark/inputs/financebench.jsonl
+curl -fL https://huggingface.co/datasets/ByteSeedXpert/FinSearchComp/resolve/1fd1beea75482e2dd5e2be8f618195d9c6aff176/finsearchcomp_data.json -o output/public-benchmark/inputs/finsearchcomp.json
+curl -fL https://huggingface.co/datasets/Rujun/FinanceGym/resolve/main/benchmark_400_public.jsonl -o output/public-benchmark/inputs/financegym.jsonl
+python -m benchmarks.public_pilot
+python -m benchmarks.public_grade
+```
+
+輸出包含每一案原始回答、來源、Codex 工具事件、耗時與盲評分數，並匯出 `report.md`、`summary.json` 和 `questions-and-answers.md`。輸入檔雜湊與固定題號保存在 `manifest.json`。重跑會沿用完成的回答並重試失敗的執行。可用 `--case FB-01` 先跑單案。
+
+FrontierFinance 下載需登入並接受資料存取條件，本輪以 FinanceBench 代替。FinanceGym 採非商用授權且完整 rubric 由主辦方保留。本機以匿名的 Sol 評審對任務完成、證據支持和推理各評 0 至 2 分。搜尋實耗另外稽核，時點回放使用目前搜尋索引。 [FrontierFinance](https://huggingface.co/datasets/samaya-ai/FrontierFinance/tree/main) · [FinanceBench](https://github.com/patronus-ai/financebench) · [FinSearchComp](https://randomtutu.github.io/FinSearchComp/) · [FinanceGym](https://financegym.github.io/)
+
 ## 專案結構
 
 | 路徑 | 內容 |
@@ -186,6 +214,7 @@ python -m benchmarks.astra_pilot synthetic-system --output output/astra-initial
 | `research_app/research.py`、`store.py` | 時點快照、財務計算、Markdown 報告與 SQLite 版本 |
 | `research_app/adapters.py`、`demo.py` | 模型介接與可重跑的案例 |
 | `research_app/fixtures/`、`tests/` | 虛構事件與回歸測試 |
+| `research_app/examples/`、`web/` | 真實歷史事件及瀏覽器工作台 |
 | `benchmarks/`、`docs/` | Astra 比較腳本、架構 PDF 與評分紀錄 |
 
 本機執行產物寫入 `output/`。

@@ -1,12 +1,12 @@
 import re
 from datetime import timezone
-from decimal import Decimal, ROUND_CEILING, ROUND_FLOOR, localcontext
+from decimal import Decimal, ROUND_CEILING, ROUND_FLOOR, ROUND_HALF_UP, localcontext
 
 from .adapters import AdapterError
 from .schema import CompanyExposure, TradeOpportunity
 
 FORMULA_VERSION = 2
-REPORT_VERSION = 7
+REPORT_VERSION = 8
 MAX_TRADE_OPPORTUNITIES = 4
 
 SUPPLY_ROLES = {
@@ -152,6 +152,37 @@ def document_evidence(doc):
     ]
 
 
+def disclosed_calculations(event, visible):
+    results = []
+    for calculation in event.reported_calculations:
+        value, baseline = calculation.value, calculation.baseline
+        refs = list(dict.fromkeys((value.evidence_id, baseline.evidence_id)))
+        if set(refs) - visible or value.unit != baseline.unit:
+            continue
+        if calculation.operation != "difference" and not baseline.value:
+            continue
+        first, second = f"{value.value:,f}", f"{baseline.value:,f}"
+        difference = f"({first} − {second})"
+        with localcontext() as ctx:
+            ctx.prec = 50
+            if calculation.operation == "difference":
+                amount = value.value - baseline.value
+                formula, unit = difference, value.unit
+            else:
+                numerator = value.value if calculation.operation == "share" else value.value - baseline.value
+                amount = (numerator / baseline.value * 100).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+                left = first if calculation.operation == "share" else difference
+                formula, unit = f"{left} ÷ {second} × 100%", "%"
+        approximate = value.approximate or baseline.approximate
+        results.append({
+            "id": calculation.id, "label": calculation.label, "value": format(amount, "f"),
+            "unit": unit, "formula": formula, "approximate": approximate,
+            "operands": [value.model_dump(mode="json"), baseline.model_dump(mode="json")],
+            "evidence_ids": refs,
+        })
+    return results
+
+
 def build_context(event, inputs=None):
     evidence = [
         item for doc in event.documents
@@ -207,6 +238,9 @@ def build_context(event, inputs=None):
         "target": inputs.target if inputs else event.research_target or "由事件與可見證據識別",
         "horizon": inputs.quarter if inputs else event.research_horizon or "依事件與可見證據識別",
         "evidence": evidence, "supply_edges": edges, "claims": claims,
+        "disclosed_calculations": disclosed_calculations(
+            event, {item["id"] for item in evidence if item["kind"] == "disclosure"},
+        ),
         "valuation": {"gaps": [
             "缺少截止時點的股價、可比基準及市場共識，無法判斷市場已反映多少。",
             "估值仍需基準獲利與可辯護的估值倍數。",

@@ -15,8 +15,8 @@ function readHistory() {
 
 const state = { report: null, tab: "overview", action: "question", busy: false, history: readHistory(), config: {} };
 let pendingExercise = null;
-let scenarioExercise = null;
-const modes = { fixture: "離線示範", codex: "Codex", live: "模型 API" };
+let previewSelection = null;
+const modes = { fixture: "公開資料預覽", codex: "Codex CLI", live: "模型 API" };
 const directions = { long_if: "條件式偏多", short_if: "條件式偏空", watch: "觀察" };
 const stances = { bull: "多方", bear: "空方", wait: "觀望" };
 const roles = { upstream: "上游", downstream: "下游", alternative: "替代與同業" };
@@ -84,6 +84,7 @@ function switchPage(view) {
   $("#research").hidden = view !== "report";
   $("#empty").hidden = view !== "empty";
   $("#history").hidden = view !== "history";
+  $("#example-preview").hidden = view !== "preview";
   $("#go-home").classList.toggle("selected", view !== "history");
   $("#go-history").classList.toggle("selected", view === "history");
 }
@@ -293,7 +294,6 @@ function selectAction(name) {
 }
 
 function renderReport(report) {
-  scenarioExercise = null;
   state.report = report;
   keepReport(report);
   switchPage("report");
@@ -338,16 +338,10 @@ async function submitEvent(payload, exercise = null) {
   state.tab = "overview";
   await loadReport(result.report_id, result.revision);
   if (exercise) {
-    selectAction(exercise.action);
+    selectAction("question");
     if (exercise.tab) selectTab(exercise.tab);
-    if (exercise.action === "scenario") {
-      scenarioExercise = exercise;
-      $("#lots").value = exercise.lots;
-      $("#lots").focus();
-    } else {
-      $("#question").value = exercise.question;
-      $("#question").focus();
-    }
+    $("#question").value = exercise.question;
+    $("#question").focus();
   }
 }
 
@@ -448,11 +442,33 @@ function eventInput() {
   return payload;
 }
 
-async function loadExample(name, runImmediately = false, exercise = null) {
+function previewExample(name, payload, exercise) {
+  previewSelection = { payload, exercise };
+  switchPage("preview");
+  $("#preview-title").textContent = exampleLabels[name];
+  $("#preview-event").textContent = payload.event_text;
+  $("#preview-note").textContent = `截止 ${dateText(payload.as_of)}。來源日期以 UTC 日末作為回放代理。`;
+  const params = new URLSearchParams({ example: name });
+  if (exercise) params.set("question", String(questionBank.indexOf(exercise) + 1));
+  const button = $("#preview-run");
+  button.href = state.config.mode === "fixture" ? `http://127.0.0.1:8000/?${params}` : `?${params}`;
+  button.textContent = state.config.mode === "fixture" ? "在 Codex 工作台分析" : "使用這個案例";
+  const sources = $("#preview-evidence");
+  sources.replaceChildren();
+  if (exercise) sources.append(node("p", exercise.question, "notice"));
+  const cutoff = Date.parse(payload.as_of);
+  const evidence = payload.documents
+    .filter((doc) => Math.max(Date.parse(doc.published_at), Date.parse(doc.obtained_at)) <= cutoff)
+    .flatMap((doc) => Object.entries(doc.paragraphs).map(([paragraph, quote]) => ({
+      ...doc, id: `${doc.id}:${paragraph}`, quote,
+    })));
+  renderEvidence(sources, { evidence });
+}
+
+async function loadExample(name, exercise = null, preview = false) {
   const payload = await request(`/workbench/examples/${name}`);
-  payload.search_mode = "off";
   if (exercise?.asOf) payload.as_of = exercise.asOf;
-  if (runImmediately || state.config.mode === "fixture") await submitEvent(payload, exercise);
+  if (preview || state.config.mode === "fixture") previewExample(name, payload, exercise);
   else showDialog(payload, exercise);
 }
 
@@ -466,7 +482,7 @@ function showQuestionBank() {
     button.type = "button";
     button.addEventListener("click", () => {
       $("#question-bank").close();
-      perform(() => loadExample(exercise.example, false, exercise), "正在載入題目與案例…");
+      perform(() => loadExample(exercise.example, exercise), "正在載入題目與案例…");
     });
     item.append(title, node("p", exercise.question), button);
     return item;
@@ -478,12 +494,17 @@ all("[data-tab]").forEach((button) => button.addEventListener("click", () => sel
 all("[data-action]").forEach((button) => button.addEventListener("click", () => selectAction(button.dataset.action)));
 all("[data-input]").forEach((button) => button.addEventListener("click", () => selectInput(button.dataset.input)));
 all("[data-example]").forEach((button) => button.addEventListener("click", () =>
-  perform(() => loadExample(button.dataset.example), "正在載入示範案例…")));
-$("#go-home").addEventListener("click", () => switchPage(state.report ? "report" : "empty"));
+  perform(() => loadExample(button.dataset.example, null, true), "正在載入公開案例…")));
+$("#go-home").addEventListener("click", () => switchPage(state.report ? "report" : previewSelection ? "preview" : "empty"));
 $("#go-history").addEventListener("click", () => { renderHistory(); switchPage("history"); });
 $("#new-analysis").addEventListener("click", () => showDialog());
 $("#open-question-bank").addEventListener("click", showQuestionBank);
 $("#close-question-bank").addEventListener("click", () => $("#question-bank").close());
+$("#preview-run").addEventListener("click", (event) => {
+  if (state.config.mode === "fixture" || !previewSelection) return;
+  event.preventDefault();
+  showDialog(previewSelection.payload, previewSelection.exercise);
+});
 $("#close-dialog").addEventListener("click", () => $("#event-dialog").close());
 $("#cancel-dialog").addEventListener("click", () => $("#event-dialog").close());
 $("#search-mode").addEventListener("change", (event) => {
@@ -500,7 +521,7 @@ $("#event-form").addEventListener("submit", (event) => {
     const exercise = pendingExercise;
     await submitEvent(eventInput(), exercise);
     $("#event-dialog").close();
-    if (exercise) $(exercise.action === "scenario" ? "#lots" : "#question").focus();
+    if (exercise) $("#question").focus();
   }, "正在建立分析…", (error) => { $("#event-error").textContent = error.message; });
 });
 $("#question-form").addEventListener("submit", (event) => {
@@ -513,8 +534,7 @@ $("#question-form").addEventListener("submit", (event) => {
 $("#scenario-form").addEventListener("submit", (event) => {
   event.preventDefault();
   const lots = $("#lots").valueAsNumber;
-  const question = scenarioExercise?.lots === lots ? scenarioExercise.question : `若本季認列 ${lots} 批，結果如何？`;
-  perform(() => ask({ question, overrides: { lots } }), "正在重算情境…");
+  perform(() => ask({ question: `若本季認列 ${lots} 批，結果如何？`, overrides: { lots } }), "正在重算情境…");
 });
 $("#download").addEventListener("click", () => {
   const report = state.report;
@@ -531,17 +551,35 @@ async function boot() {
     state.config = await request("/workbench/config");
     const { mode, model } = state.config;
     $("#mode-label").textContent = `${modes[mode] || mode}${model ? ` · ${model}` : ""}`;
+    $("#new-analysis").disabled = mode === "fixture";
+    const params = new URLSearchParams(location.search);
+    const requestedReport = params.get("report") || "";
+    if (/^[a-f0-9]{32}$/.test(requestedReport)) {
+      const revision = Number(params.get("revision") || "1");
+      if (Number.isSafeInteger(revision) && revision > 0) {
+        await loadReport(requestedReport, revision);
+        return;
+      }
+    }
+    const selected = params.get("example");
+    if (Object.hasOwn(exampleLabels, selected)) {
+      const exercise = questionBank[Number(params.get("question")) - 1];
+      await loadExample(selected, exercise?.example === selected ? exercise : null, true);
+      return;
+    }
     const latest = state.history[0];
     if (latest) {
       try {
-        await loadReport(latest.id, latest.revision);
-        return;
+        const report = await request(`/reports/${encodeURIComponent(latest.id)}/revisions/${latest.revision}`);
+        if (!report.evidence?.some((item) => item.synthetic)) {
+          renderReport(report);
+          return;
+        }
       } catch {
         // A different local database may not have the last opened report.
       }
     }
-    if (mode === "fixture") await loadExample("shutdown", true);
-    else switchPage("empty");
+    await loadExample("asml-q3", null, true);
   }, "正在連線研究服務…", (error) => {
     $("#mode-dot").classList.add("error");
     $("#mode-label").textContent = "連線失敗";

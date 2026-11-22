@@ -67,9 +67,9 @@ def create_app(store=None, adapter=None):
 
     @app.get("/workbench/examples/{name}", include_in_schema=False)
     def workbench_example(name: str):
-        if name not in {"shutdown", "demand", "supply-chain"}:
+        if name not in {"asml-q3", "nvidia-h20", "intel-high-na"}:
             raise HTTPException(status_code=404, detail="找不到示範事件")
-        return FileResponse(PACKAGE / "fixtures" / f"{name}.json", media_type="application/json")
+        return FileResponse(PACKAGE / "examples" / f"{name}.json", media_type="application/json")
 
     @app.post("/events")
     def create(event: Event, db=Depends(storage), engine=Depends(generator)):

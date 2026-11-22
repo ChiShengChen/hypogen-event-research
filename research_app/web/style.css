@@ -109,6 +109,7 @@ input[type=checkbox] { accent-color: var(--green); width: 15px; height: 15px; ma
 .form-note { color: var(--muted); font-size: .88rem; margin: 8px 0 12px; }
 .answer { border-top: 1px solid var(--border); margin-top: 14px; padding-top: 12px; overflow-wrap: anywhere; }
 .answer p, .answer ul { margin: 6px 0 0; }
+.answer p { white-space: pre-wrap; }
 .answer ul { padding-left: 1.1em; }
 .small { color: var(--muted); font-size: .85rem; }
 .versions h2 { margin-bottom: 6px; }
@@ -169,3 +170,5 @@ dialog::backdrop { background: #11231bae; }
   .top-actions { gap: 5px; }
   .top-actions .button { padding-inline: 8px; }
 }
+a.button { display: inline-flex; align-items: center; text-decoration: none; }
+.preview-evidence { margin-top: 24px; }

@@ -1,0 +1,75 @@
+{
+  "event_text": "NVIDIA 申報 H20 受出口許可要求影響。研究公告時點、費用與供應鏈差異。",
+  "research_target": "NVIDIA",
+  "research_horizon": "FY2026 Q1 H20",
+  "as_of": "2025-04-15T23:59:59Z",
+  "search_mode": "off",
+  "documents": [
+    {
+      "id": "nvidia-8k",
+      "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000082/nvda-20250409.htm",
+      "kind": "disclosure",
+      "text_format": "summary",
+      "availability_basis": "replay_day_end",
+      "published_at": "2025-04-15T23:59:59Z",
+      "obtained_at": "2025-04-15T23:59:59Z",
+      "paragraphs": {
+        "license": "NVIDIA 於 4 月 15 日申報，美國政府 4 月 9 日告知 H20 等涵蓋產品出口至中國（含香港及澳門）、D:5 國家或相關總部或最終母公司設於該等地區的企業，須取得許可。4 月 14 日再告知許可要求將無限期有效。",
+        "estimate": "NVIDIA 當時預估 FY2026 第一季將就 H20 庫存、採購承諾及相關準備認列最高約 55 億美元費用。"
+      }
+    },
+    {
+      "id": "nvidia-10k",
+      "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+      "kind": "disclosure",
+      "text_format": "summary",
+      "availability_basis": "replay_day_end",
+      "published_at": "2025-02-26T23:59:59Z",
+      "obtained_at": "2025-02-26T23:59:59Z",
+      "paragraphs": {
+        "foundry": "NVIDIA FY2025 年報列出台積電（TSMC）及 Samsung 為晶圓代工來源。這項揭露描述整體供應鏈，未拆分 H20 各供應商訂單。",
+        "memory": "NVIDIA FY2025 年報列出 SK Hynix、Micron、Samsung 為記憶體採購來源。這項揭露未提供 H20 的個別供貨份額。"
+      }
+    },
+    {
+      "id": "nvidia-q1",
+      "source": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2026",
+      "kind": "disclosure",
+      "text_format": "summary",
+      "availability_basis": "replay_day_end",
+      "published_at": "2025-05-28T23:59:59Z",
+      "obtained_at": "2025-05-28T23:59:59Z",
+      "paragraphs": {
+        "charge": "NVIDIA FY2026 第一季公告認列 45 億美元的 H20 過剩庫存與採購義務費用。當季有 25 億美元 H20 營收未能出貨。",
+        "margin": "NVIDIA 公布當季 GAAP 與 non-GAAP 毛利率為 60.5% 與 61.0%。排除 H20 費用後，non-GAAP 毛利率為 71.3%。",
+        "eps": "當季 GAAP 與 non-GAAP 稀釋 EPS 分別為 0.76 與 0.81 美元。排除 H20 費用及其稅務影響後，non-GAAP 稀釋 EPS 為 0.96 美元。"
+      }
+    }
+  ],
+  "supply_edges": [
+    {
+      "supplier": "台積電",
+      "customer": "NVIDIA",
+      "product": "整體晶圓代工",
+      "evidence_id": "nvidia-10k:foundry"
+    },
+    {
+      "supplier": "Samsung",
+      "customer": "NVIDIA",
+      "product": "晶圓代工與記憶體",
+      "evidence_id": "nvidia-10k:memory"
+    },
+    {
+      "supplier": "Micron",
+      "customer": "NVIDIA",
+      "product": "整體記憶體採購",
+      "evidence_id": "nvidia-10k:memory"
+    },
+    {
+      "supplier": "SK Hynix",
+      "customer": "NVIDIA",
+      "product": "整體記憶體採購",
+      "evidence_id": "nvidia-10k:memory"
+    }
+  ]
+}

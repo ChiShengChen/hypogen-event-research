@@ -7,7 +7,7 @@ from tempfile import TemporaryDirectory
 import httpx
 from pydantic import ValidationError
 
-from .schema import Answer, Hypotheses
+from .schema import Answer, DetailedAnswer, Hypotheses
 
 
 class AdapterError(Exception):
@@ -179,20 +179,49 @@ class ModelAdapter:
         ), context)
 
     def answer(self, context, question):
-        return self._generate(Answer, (
-            "Answer in Traditional Chinese in two to four concise sentences using only the supplied "
-            "evidence excerpts. Scenario inputs are assumptions. Answer directly with "
-            "what the evidence confirms at the requested scope. Distinguish identified and unidentified "
-            "parties, products, time windows, and the difference between approval, orders and shipments. "
-            "If a question could refer to two different parties or scopes, explicitly answer each relevant "
-            "interpretation instead of an unqualified yes or no. Cite only IDs directly supporting the "
-            "answer. List at most two gaps directly needed to answer the question. Leave gaps empty "
-            "when the supplied evidence resolves every requested part. "
-            "If no excerpt supports an answer, return no citations and describe the missing evidence."
-        ), {
+        assessment = context.get("assessment", {})
+        payload = {
             "report": {key: context[key] for key in ("as_of", "event_text", "target", "evidence")},
+            "stored_research": {key: assessment[key] for key in (
+                "supply_chain", "trade_opportunities", "trade_opportunities_gap", "public_checks",
+            ) if key in assessment},
+            "stored_hypotheses": context.get("hypotheses", []),
+            "disclosed_calculations": context.get("disclosed_calculations", []),
             "question": question,
-        })
+        }
+        instruction = (
+            "Answer in Traditional Chinese using only supplied point-in-time evidence for factual claims. "
+            "Stored research is the requested report version, not proof of what happened. For questions about "
+            "the first report, use its actual stored company candidates, triggers, invalidations, and "
+            "financial materiality or valuation gaps. Never say the draft was not provided. "
+            "Before finalizing, list each explicit requirement in coverage; answer all parts in matching "
+            "order, using bullets for multi-part questions. Mark an answered unknown as unavailable and "
+            "state exactly which evidence would be needed. Mark a requirement missing if you left it out. "
+            "For a calculation give the original numbers, units, denominator and result. Select the relevant "
+            "calculation_ids from disclosed_calculations; code will append their exact operands and formulas. "
+            "For equipment milestones distinguish purchase order, actual shipment or acceptance, production, "
+            "and revenue recognition, including what publicly verifiable would substantiate each asked stage. "
+            "Distinguish confirmed event attribution from general supplier or customer relationships. "
+            "Use exact evidence IDs, and list only unresolved gaps directly needed by the question."
+        )
+        result = self._generate(DetailedAnswer, instruction, payload)
+        missing = [part.requirement for part in result.coverage if part.status == "missing"]
+        if not missing:
+            return result
+        supplement = self._generate(DetailedAnswer, (
+            instruction + " Reply only with the missing pieces in missing_requirements. "
+            "Do not repeat the initial answer. Copy each missing requirement verbatim in coverage."
+        ), {**payload, "initial_answer": result.answer, "missing_requirements": missing})
+        covered = {part.requirement: part for part in supplement.coverage}
+        result.coverage = [covered.get(part.requirement, part) if part.status == "missing" else part
+                           for part in result.coverage]
+        result.answer = result.answer + "\n\n" + supplement.answer
+        result.evidence_ids = list(dict.fromkeys(result.evidence_ids + supplement.evidence_ids))
+        result.calculation_ids = list(dict.fromkeys(result.calculation_ids + supplement.calculation_ids))
+        result.gaps = list(dict.fromkeys(result.gaps + supplement.gaps))
+        result.gaps.extend(f"回答仍未完整涵蓋：{part.requirement}" for part in result.coverage
+                           if part.status == "missing")
+        return result
 
 
 class Live(ModelAdapter):
@@ -237,8 +266,11 @@ class Live(ModelAdapter):
 
 
 class Codex(ModelAdapter):
-    def __init__(self):
+    def __init__(self, *, audit=None, reasoning_effort=None, call_timeout=None):
         self.model = os.getenv("RESEARCH_CODEX_MODEL", "")
+        self.audit = audit
+        self.reasoning_effort = reasoning_effort
+        self.call_timeout = call_timeout
         self.identity = {
             "mode": "codex", "prompt_version": self.prompt_version, "model": self.model or "cli-default",
         }
@@ -277,26 +309,41 @@ class Codex(ModelAdapter):
                     "--disable", "shell_tool", "--disable", "multi_agent",
                     "--output-schema", str(schema_path), "--output-last-message", str(result_path),
                 ]
-                command += ["--json"] if search else ["-c", 'web_search="disabled"']
+                if search or self.audit:
+                    command.append("--json")
+                if not search:
+                    command += ["-c", 'web_search="disabled"']
+                if self.reasoning_effort:
+                    command += ["-c", f'model_reasoning_effort="{self.reasoning_effort}"']
                 if self.model:
                     command.extend(["--model", self.model])
                 result = subprocess.run(
                     [*command, "-"], cwd=workdir, input=prompt, encoding="utf-8",
-                    capture_output=True, timeout=120 if search else 90,
+                    capture_output=True, timeout=self.call_timeout or (120 if search else 90),
                 )
+                events = [json.loads(line) for line in result.stdout.splitlines()
+                          if line.strip()] if search or self.audit else []
+                if self.audit:
+                    self.audit(events)
                 if result.returncode:
                     raise AdapterError(
                         f"Codex CLI 執行失敗（結束碼 {result.returncode}）。請檢查 codex login status 與模型設定。"
                     )
-                items = []
-                if search:
-                    for line in result.stdout.splitlines():
-                        event = json.loads(line)
-                        item = event.get("item", {})
-                        if event.get("type") == "item.completed" and item.get("type") == "web_search":
-                            items.append(item)
+                items = [event["item"] for event in events
+                         if event.get("type") == "item.completed"
+                         and event.get("item", {}).get("type") == "web_search"]
                 return schema.model_validate_json(result_path.read_text(encoding="utf-8")), items
         except subprocess.TimeoutExpired as exc:
+            if self.audit and exc.stdout:
+                output = exc.stdout.decode("utf-8", errors="replace")
+                events = []
+                for line in output.splitlines():
+                    try:
+                        events.append(json.loads(line))
+                    except json.JSONDecodeError:
+                        # The final event may have been interrupted mid-write.
+                        continue
+                self.audit(events)
             raise AdapterError("Codex CLI 請求逾時") from exc
         except FileNotFoundError as exc:
             if exc.filename == "codex":

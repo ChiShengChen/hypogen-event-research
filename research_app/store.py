@@ -132,11 +132,32 @@ class Store:
     @staticmethod
     def checked_answer(adapter, report, question):
         answer = adapter.answer(report, question)
-        if set(answer.evidence_ids) - {item["id"] for item in report["evidence"]}:
+        data = answer.model_dump()
+        calculations = {item["id"]: item for item in report.get("disclosed_calculations", [])}
+        selected = list(dict.fromkeys(data.pop("calculation_ids", [])))
+        if set(selected) - calculations.keys():
+            raise AdapterError("模型選取了不存在或不可見的計算資料")
+        for key in selected:
+            item = calculations[key]
+            left, right = item["operands"]
+            numbers = "、".join(
+                f"{operand['label']} {'約' if operand['approximate'] else ''}{Decimal(operand['value']):,f} {operand['unit']}"
+                for operand in (left, right)
+            )
+            relation = "≈" if item["unit"] == "%" or item["approximate"] else "="
+            approx = "（來源金額為約數）" if item["approximate"] else ""
+            data["answer"] += (
+                f"\n\n{item['label']}：{numbers}；"
+                f"{item['formula']} {relation} {item['value']}{item['unit']}{approx}。"
+            )
+            data["evidence_ids"] = list(dict.fromkeys(data["evidence_ids"] + item["evidence_ids"]))
+        if selected:
+            data["calculations"] = [calculations[key] for key in selected]
+        if set(data["evidence_ids"]) - {item["id"] for item in report["evidence"]}:
             raise AdapterError("模型回答使用了不存在或不可見的證據引用")
-        if not answer.evidence_ids and not answer.gaps:
+        if not data["evidence_ids"] and not data["gaps"]:
             raise AdapterError("無引文的模型回答必須列明證據缺口")
-        return answer.model_dump()
+        return data
 
     def answer_question(self, report_id, parent, question, adapter):
         initial = self.checked_answer(adapter, parent, question.question)

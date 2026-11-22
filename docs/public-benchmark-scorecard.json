@@ -1,0 +1,210 @@
+{
+  "FinanceBench": {
+    "planned": 12,
+    "paired": 12,
+    "graded": 12,
+    "harness_win_tie_loss": [
+      0,
+      12,
+      0
+    ],
+    "within_budget": {
+      "n": 12,
+      "harness_minus_direct": 0.0,
+      "wins_ties_losses": [
+        0,
+        12,
+        0
+      ]
+    },
+    "arms": {
+      "direct": {
+        "mean_out_of_6": 5.75,
+        "dimension_means_out_of_2": {
+          "task": 1.83,
+          "evidence": 2.0,
+          "reasoning": 1.92
+        },
+        "median_seconds": 9.575,
+        "median_search_queries": 0.0,
+        "median_input_tokens": 15411.0,
+        "over_search_budget": 0,
+        "claimed_post_cutoff_citations": 0,
+        "citations_missing_usable_dates": 0
+      },
+      "harness": {
+        "mean_out_of_6": 5.75,
+        "dimension_means_out_of_2": {
+          "task": 1.83,
+          "evidence": 2.0,
+          "reasoning": 1.92
+        },
+        "median_seconds": 37.894999999999996,
+        "median_search_queries": 0.0,
+        "median_input_tokens": 34939.5,
+        "over_search_budget": 0,
+        "claimed_post_cutoff_citations": 0,
+        "citations_missing_usable_dates": 0
+      }
+    }
+  },
+  "FinSearchComp T3": {
+    "planned": 8,
+    "paired": 8,
+    "graded": 8,
+    "harness_win_tie_loss": [
+      2,
+      2,
+      4
+    ],
+    "within_budget": {
+      "n": 1,
+      "harness_minus_direct": 1.0,
+      "wins_ties_losses": [
+        1,
+        0,
+        0
+      ]
+    },
+    "arms": {
+      "direct": {
+        "mean_out_of_6": 3.75,
+        "dimension_means_out_of_2": {
+          "task": 1.5,
+          "evidence": 0.62,
+          "reasoning": 1.62
+        },
+        "median_seconds": 51.31,
+        "median_search_queries": 5.5,
+        "median_input_tokens": 117414.0,
+        "over_search_budget": 0,
+        "claimed_post_cutoff_citations": 0,
+        "citations_missing_usable_dates": 0
+      },
+      "harness": {
+        "mean_out_of_6": 3.62,
+        "dimension_means_out_of_2": {
+          "task": 1.62,
+          "evidence": 0.5,
+          "reasoning": 1.5
+        },
+        "median_seconds": 224.54000000000002,
+        "median_search_queries": 11.5,
+        "median_input_tokens": 450542.5,
+        "over_search_budget": 7,
+        "claimed_post_cutoff_citations": 0,
+        "citations_missing_usable_dates": 0
+      }
+    }
+  },
+  "FinanceGym": {
+    "planned": 5,
+    "paired": 5,
+    "graded": 5,
+    "harness_win_tie_loss": [
+      4,
+      1,
+      0
+    ],
+    "within_budget": {
+      "n": 0,
+      "harness_minus_direct": null,
+      "wins_ties_losses": [
+        0,
+        0,
+        0
+      ]
+    },
+    "arms": {
+      "direct": {
+        "mean_out_of_6": 4.0,
+        "dimension_means_out_of_2": {
+          "task": 2.0,
+          "evidence": 1.0,
+          "reasoning": 1.0
+        },
+        "median_seconds": 78.26,
+        "median_search_queries": 7,
+        "median_input_tokens": 164235,
+        "over_search_budget": 0,
+        "claimed_post_cutoff_citations": 0,
+        "citations_missing_usable_dates": 2
+      },
+      "harness": {
+        "mean_out_of_6": 4.8,
+        "dimension_means_out_of_2": {
+          "task": 2.0,
+          "evidence": 1.0,
+          "reasoning": 1.8
+        },
+        "median_seconds": 280.84,
+        "median_search_queries": 12,
+        "median_input_tokens": 493653,
+        "over_search_budget": 5,
+        "claimed_post_cutoff_citations": 0,
+        "citations_missing_usable_dates": 0
+      }
+    }
+  },
+  "Supply chain": {
+    "planned": 5,
+    "paired": 5,
+    "graded": 5,
+    "harness_win_tie_loss": [
+      5,
+      0,
+      0
+    ],
+    "within_budget": {
+      "n": 1,
+      "harness_minus_direct": 2.0,
+      "wins_ties_losses": [
+        1,
+        0,
+        0
+      ]
+    },
+    "arms": {
+      "direct": {
+        "mean_out_of_6": 3.4,
+        "dimension_means_out_of_2": {
+          "task": 1.4,
+          "evidence": 1.0,
+          "reasoning": 1.0
+        },
+        "median_seconds": 77.38,
+        "median_search_queries": 7,
+        "median_input_tokens": 137517,
+        "over_search_budget": 0,
+        "claimed_post_cutoff_citations": 0,
+        "citations_missing_usable_dates": 0,
+        "gold_relationship_hits": 9,
+        "gold_relationship_total": 13,
+        "supported_companies": 9,
+        "uncertain_companies": 9,
+        "contradicted_companies": 0,
+        "conditional_research_hypotheses": 0
+      },
+      "harness": {
+        "mean_out_of_6": 4.8,
+        "dimension_means_out_of_2": {
+          "task": 1.8,
+          "evidence": 1.0,
+          "reasoning": 2.0
+        },
+        "median_seconds": 212.28,
+        "median_search_queries": 10,
+        "median_input_tokens": 311332,
+        "over_search_budget": 4,
+        "claimed_post_cutoff_citations": 0,
+        "citations_missing_usable_dates": 0,
+        "gold_relationship_hits": 6,
+        "gold_relationship_total": 13,
+        "supported_companies": 14,
+        "uncertain_companies": 7,
+        "contradicted_companies": 0,
+        "conditional_research_hypotheses": 12
+      }
+    }
+  }
+}

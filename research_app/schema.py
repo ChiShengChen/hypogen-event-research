@@ -61,6 +61,22 @@ class FinancialInputs(Schema):
     full_tax_shield: bool
 
 
+class ReportedNumber(Schema):
+    label: Nonempty
+    value: Annotated[Decimal, Field(max_digits=24, decimal_places=8)]
+    unit: Nonempty
+    evidence_id: Nonempty
+    approximate: bool = False
+
+
+class ReportedCalculation(Schema):
+    id: Nonempty
+    label: Nonempty
+    operation: Literal["share", "change", "difference"]
+    value: ReportedNumber
+    baseline: ReportedNumber
+
+
 class Event(Schema):
     event_text: Nonempty
     as_of: AwareDatetime
@@ -73,6 +89,7 @@ class Event(Schema):
     documents: list[Document] = Field(default_factory=list)
     supply_edges: list[SupplyEdge] = Field(default_factory=list)
     financial_inputs: FinancialInputs | None = None
+    reported_calculations: list[ReportedCalculation] = Field(default_factory=list, max_length=12)
 
     @model_validator(mode="after")
     def check_documents(self):
@@ -83,6 +100,9 @@ class Event(Schema):
             raise ValueError("document IDs must be unique")
         if any(":" in value for value in ids):
             raise ValueError("document IDs cannot contain a colon")
+        calc_ids = {item.id for item in self.reported_calculations}
+        if len(calc_ids) != len(self.reported_calculations):
+            raise ValueError("reported calculation IDs must be unique")
         return self
 
 
@@ -155,6 +175,16 @@ class Answer(Schema):
     answer: Nonempty
     evidence_ids: list[Nonempty]
     gaps: list[Nonempty]
+
+
+class AnswerPart(Schema):
+    requirement: Nonempty
+    status: Literal["answered", "unavailable", "missing"]
+
+
+class DetailedAnswer(Answer):
+    coverage: list[AnswerPart] = Field(min_length=1, max_length=12)
+    calculation_ids: list[Nonempty] = Field(max_length=12)
 
 
 class Overrides(Schema):
