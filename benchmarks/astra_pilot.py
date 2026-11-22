@@ -36,7 +36,8 @@ def asml():
         "research_horizon": "2025",
         "documents": [
             {
-                "id": "asml-q3", "source": ASML_Q3, "kind": "disclosure",
+                "id": "asml-q3", "source": ASML_Q3, "kind": "disclosure", "text_format": "summary",
+                "availability_basis": "replay_day_end",
                 "published_at": "2024-10-15T23:59:59Z", "obtained_at": "2024-10-15T23:59:59Z",
                 "paragraphs": {
                     "q3-actual": "財報表列 2024 Q3 營收 7,467 百萬歐元，淨新增訂單 2,633 百萬歐元。"
@@ -48,7 +49,8 @@ def asml():
                 },
             },
             {
-                "id": "asml-q4", "source": ASML_Q4, "kind": "disclosure",
+                "id": "asml-q4", "source": ASML_Q4, "kind": "disclosure", "text_format": "summary",
+                "availability_basis": "replay_day_end",
                 "published_at": "2025-01-29T23:59:59Z", "obtained_at": "2025-01-29T23:59:59Z",
                 "paragraphs": {"q4-actual": "後續公布 2024 Q4 實際淨新增訂單 7,088 百萬歐元。"},
             },
@@ -86,9 +88,9 @@ def system(output, name, event):
     run = store.create(event, adapter)
     report_id = run["report_id"]
     original = store.revision(report_id, 1)
-    if name == "asml-system":
+    if name.startswith("asml"):
         result = store.question(report_id, Question(parent_revision=1, question=PUBLIC_QUESTION), adapter)
-        assert "asml-q4:q4-actual" not in {row["id"] for row in original["evidence"]}
+        assert all(row["id"] != "asml-q4:q4-actual" for row in original["evidence"])
     else:
         qa = store.question(report_id, Question(
             parent_revision=1, question="客戶 X 已認證乙的先進封裝產品嗎？",
@@ -100,12 +102,18 @@ def system(output, name, event):
         assert child["hypotheses"] == original["hypotheses"]
         result = {"qa": qa, "branch": branch, "original": original["model_outputs"], "child": child["model_outputs"]}
     (output / f"{name}.md").write_text(original["markdown"], encoding="utf-8")
-    write_json(output / f"{name}.json", {"run": run, "answer": result, "evidence": original["evidence"]})
+    write_json(output / f"{name}.json", {
+        "run": run, "answer": result, "evidence": original["evidence"],
+        "assessment": original["assessment"], "discovery": original.get("discovery"),
+    })
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("arm", choices=["asml-search", "asml-system", "asml-snapshot", "synthetic-system", "synthetic-direct"])
+    parser.add_argument("arm", choices=[
+        "asml-search", "asml-system", "asml-snapshot", "asml-harness",
+        "synthetic-system", "synthetic-direct",
+    ])
     parser.add_argument("--output", type=Path, default=Path("output/astra-benchmark"))
     args = parser.parse_args()
     output = args.output
@@ -114,7 +122,12 @@ def main():
     start = perf_counter()
     if args.arm.startswith("asml"):
         event = asml()
-        if args.arm == "asml-system":
+        if args.arm == "asml-harness":
+            event = event.model_copy(update={
+                "documents": [], "search_mode": "historical_replay", "search_domains": ["asml.com", "sec.gov"],
+            })
+            system(output, args.arm, event)
+        elif args.arm == "asml-system":
             system(output, args.arm, event)
         else:
             prompt = (

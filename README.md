@@ -2,7 +2,7 @@
 
 從事件、原始資料和財務假設建立可審閱的 Markdown 研究報告。每份原稿鎖定研究截止時點，保存多空假說、證據、待查點與可重算的財務橋接。研究員可以指定舊版追問，或只改批量建立情境子版。
 
-[架構與驗證 PDF](docs/architecture.pdf) · [Astra 比較結果](docs/astra-pilot-scorecard.json) · [實作計畫](plan.md)
+[架構與驗證 PDF](docs/architecture.pdf) · [Astra Benchmark 報告 PDF](docs/astra-benchmark-report.pdf) · [初版評分紀錄](docs/astra-pilot-scorecard.json) · [實作計畫](plan.md)
 
 ## 架構與研究流程
 
@@ -93,9 +93,53 @@ python -m research_app.demo --codex --output output/codex
 
 ## 驗證與 Astra 比較
 
-本機測試通過 15 項 pytest。兩個虛構案例另經 GPT 審稿，六項品質面向均通過。停工案將認列量從 600 批改為 300 批，稀釋 EPS 增量由 +0.048 元降到 −0.024 元。400 批損益兩平，401 批起增量營業利益為正。
+### 自動搜尋與公開查核點
 
-Astra 試跑在各組使用同一個 `gpt-6.2-astra`。ASML 2024 Q3 歷史回放的純網搜、同證據直接問答與系統組均答對 5 項。虛構案的直接問答與系統組均答對 6 項。網搜組另找到了公司提前發布聲明。系統在既有版本上做了 21 次本機重算，中位數 3.78 毫秒，並保存可重開的版本。
+啟動 API 時設定 `RESEARCH_MODE=codex`。正常建稿時可自動搜尋發行人原始資料、補查發布時點或更正，再搜尋上游供應商、下游客戶、替代供應商與同業。供應鏈公司分析直接出現在第一份報告。每家公司列出產品範圍、來源支持的關係、事件傳導、財務重要性與公開查核點。
+
+報告只納入原生搜尋工具回傳、符合指定網域與截止時點的 URL。公司名稱須出現在所引的可見來源。關係依證據分為已揭露產品關係、待確認的曝險對象和同業對照。找不到可靠公司或量化資料時，該欄列待查。模型整理的文字標為「來源摘要」。
+
+可為伺服器設定搜尋預設值。啟用後，使用者只需送事件與研究截止時點。
+
+```bash
+RESEARCH_MODE=codex RESEARCH_CODEX_MODEL=gpt-6.2-astra \
+  RESEARCH_SEARCH_MODE=historical_replay RESEARCH_SEARCH_DOMAINS=asml.com,sec.gov \
+  python -m uvicorn research_app.api:app --host 127.0.0.1 --port 8000
+```
+
+單筆送件也可指定 `search_mode` 和 `search_domains`。明確送 `"search_mode": "off"` 可關閉該筆搜尋。
+
+```json
+{
+  "event_text": "ASML 公布 2024 Q3 財報。研究 2025 年接單與營收。",
+  "research_target": "ASML",
+  "research_horizon": "2025",
+  "as_of": "2024-10-15T23:59:59Z",
+  "search_mode": "historical_replay",
+  "search_domains": ["asml.com", "sec.gov"]
+}
+```
+
+預設為 `off`。`historical_replay` 依目前可見頁面上的公告日期，以 UTC 日末作為歷史可得時點代理。盤中時點和事後修訂的內容仍需歷史存檔核對。`live` 依實際取得時間過濾，截止點早於取得時間的補搜文件會排除。兩種模式均記錄搜尋輪數、工具操作數及納入的證據 ID。
+
+```bash
+python -m benchmarks.astra_pilot asml-harness --output output/astra-harness
+```
+
+### Benchmark 摘要
+
+四輪比較使用同一個 `gpt-6.2-astra`，以 ASML 2024 Q3 歷史回放和虛構停工案測試。
+
+| 測試 | 純 Astra | 研究系統＋Astra | 觀察 |
+|---|---:|---:|---|
+| 初版事實與計算 | ASML 5/5、停工案 6/6 | ASML 5/5、停工案 6/6 | 純 Astra 網搜找到人工快照漏收的提前發布聲明 |
+| 自動搜尋 | ASML 5/5（前輪基準） | ASML 5/5 | 從空白清單找到季報與提前發布聲明，補搜納入 Q2 財報 |
+| 五題追問 | 15/15 | 15/15 | 純 Astra 補到原訂發布日；系統切開兩個證據時點，並保留母版與重算子版 |
+| 供應鏈主動覆蓋 | 0/10 | 10/10 | 兩組只收到事件，評分題目事後才用來檢查首稿。系統主動分析四家公司 |
+
+**結論。** 基礎題正確率打平。現有樣本支持 Harness 在主動供應鏈覆蓋、證據快照與版本重算的優勢。初版的 21 次既有版本重算中位數為 **3.78 毫秒**，全程沒有模型呼叫。追問遇到既有快照缺口時，純 Astra 的即時搜尋仍能補到更多資料。
+
+評分涵蓋一個公開事件與一個虛構案例，以逐項核對完成，尚未做人工盲評。主動覆蓋分數只衡量供應鏈專項。各組耗時包含不同步驟，端到端延遲及成本尚無等預算比較。完整題目、計分口徑與時間邊界見 [Astra Benchmark 報告 PDF](docs/astra-benchmark-report.pdf)。
 
 ```bash
 python -m benchmarks.astra_pilot asml-search --output output/astra-initial
@@ -104,8 +148,6 @@ python -m benchmarks.astra_pilot asml-system --output output/astra-initial
 python -m benchmarks.astra_pilot synthetic-direct --output output/astra-initial
 python -m benchmarks.astra_pilot synthetic-system --output output/astra-initial
 ```
-
-比較包含一個公開事件與一個虛構案例。延遲是單次觀測，系統耗時未計人工整理證據。ASML 範例採附原始 URL 的中文摘要，報告目前沿用「原文」標籤。真實資料可得性、完整估值及研究員盲評仍待驗證。
 
 ## 專案結構
 

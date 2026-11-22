@@ -4,7 +4,22 @@ from decimal import Decimal, ROUND_CEILING, ROUND_FLOOR, localcontext
 from .adapters import AdapterError
 
 FORMULA_VERSION = 2
-REPORT_VERSION = 3
+REPORT_VERSION = 5
+
+SUPPLY_ROLES = {
+    "upstream": "上游關鍵供應商",
+    "downstream": "下游客戶與需求",
+    "alternative": "替代供應商與同業",
+}
+RELATION_STATUSES = {
+    "disclosed_relationship": "已揭露產品關係",
+    "candidate": "待確認的曝險對象",
+    "comparable_only": "同業對照",
+}
+
+
+def company_key(name):
+    return "".join(character for character in name.casefold() if character.isalnum())
 
 
 def calculate(inputs):
@@ -45,6 +60,7 @@ def build_context(event, inputs=None):
         {
             "id": f"{doc.id}:{paragraph}", "document_id": doc.id, "paragraph": paragraph,
             "source": doc.source, "quote": quote, "synthetic": doc.synthetic, "kind": doc.kind,
+            "text_format": doc.text_format, "availability_basis": doc.availability_basis,
             "published_at": doc.published_at.isoformat(), "obtained_at": doc.obtained_at.isoformat(),
         }
         for doc in event.documents
@@ -124,7 +140,7 @@ def apply_financial_scenario(report, inputs):
     }
 
 
-def build_report(event, adapter, inputs=None):
+def build_report(event, adapter, inputs=None, *, discovery=None):
     report = build_context(event, inputs)
     context = {key: report[key] for key in ("event_text", "as_of", "target", "horizon", "supply_edges")}
     context["evidence"] = [item for item in report["evidence"] if item["kind"] != "scenario"]
@@ -150,6 +166,15 @@ def build_report(event, adapter, inputs=None):
         raise AdapterError("模型摘要使用了不存在、不可見或重複的證據引用")
     if visible and not limits:
         raise AdapterError("模型摘要須說明對核心證據的判讀")
+    if any(set(check.evidence_ids) - visible for check in generated.assessment.public_checks):
+        raise AdapterError("公開查核點使用了不存在或不可見的證據引用")
+    cited_text = {item["id"]: company_key(item["quote"]) for item in context["evidence"]}
+    for exposure in generated.assessment.supply_chain:
+        if set(exposure.evidence_ids) - visible:
+            raise AdapterError("供應鏈公司使用了不存在或不可見的證據引用")
+        name = company_key(exposure.company)
+        if not name or not any(name in cited_text[ref] for ref in exposure.evidence_ids):
+            raise AdapterError(f"供應鏈公司未見於所引來源：{exposure.company}")
     by_stance = {hypothesis.stance: hypothesis for hypothesis in hypotheses}
     if len(by_stance) != len(hypotheses) or not {"bull", "bear"} <= by_stance.keys():
         raise AdapterError("模型必須分別提供一項多方及空方假說")
@@ -165,6 +190,8 @@ def build_report(event, adapter, inputs=None):
     report["assessment"] = generated.assessment.model_dump()
     report["adapter"] = adapter.identity
     report["report_version"] = REPORT_VERSION
+    if discovery is not None:
+        report["discovery"] = discovery
     report["markdown"] = render(report)
     return report
 
@@ -247,7 +274,40 @@ def render(report):
             f"{inputs['lots']:,} 批，稀釋 EPS 增量差 **"
             f"{Decimal(report['incremental_eps_delta']):+f} {inputs['currency']}/股**。"
         )
+    if checks := assessment["public_checks"]:
+        lines.extend(["", "## 公開查核點", ""])
+        for check in checks:
+            refs = "、".join(cite(ref) for ref in check["evidence_ids"])
+            lines.append(
+                f"- **{check['metric']}**　從{check['source_to_watch']}查核（{check['window']}）。"
+                f"{check['impact_on_thesis']} {refs}"
+            )
+    lines.extend(["", "## 供應鏈公司分析", ""])
+    for role, label in SUPPLY_ROLES.items():
+        exposures = [item for item in assessment["supply_chain"] if item["role"] == role]
+        lines.extend([f"### {label}", ""])
+        if not exposures:
+            lines.extend(["目前可見來源未提供足以列名的公司。", ""])
+        for item in exposures:
+            refs = "、".join(cite(ref) for ref in item["evidence_ids"])
+            lines.extend([
+                f"- **{item['company']}**（{RELATION_STATUSES[item['status']]}，{item['product_scope']}）",
+                f"  - 來源支持的關係　{item['relationship']} {refs}",
+                f"  - 事件傳導　{item['transmission']}",
+                f"  - 財務重要性　{item['materiality']}",
+                f"  - 公開查核與缺口　{item['public_check']} {item['gap']}",
+                "",
+            ])
     lines.extend(["", "## 事件與證據判讀", "", f"收件敘述（待核）　{report['event_text']}", ""])
+    if discovery := report.get("discovery"):
+        actions = sum(stage["web_actions"] for stage in discovery["rounds"])
+        accepted = sum(stage["accepted"] for stage in discovery["rounds"])
+        if discovery["mode"] == "historical_replay":
+            lines.extend(["搜尋為事後歷史回放。日期級來源以 UTC 日末作為可得時點代理。", ""])
+        lines.extend([
+            f"完成 {len(discovery['rounds'])} 輪來源搜尋，記錄 {actions} 項工具操作，納入 {accepted} 份來源。",
+            "",
+        ])
     limits = assessment["evidence_limits"]
     if not limits:
         lines.append("截止時點缺乏可判讀的來源。")
@@ -275,22 +335,33 @@ def render(report):
     ), "", "## 市場預期與估值", ""])
     lines.extend(f"- {gap}" for gap in report["valuation"]["gaps"])
     lines.extend(["", "## 主張索引", ""])
+    summaries = {item["id"] for item in report["evidence"] if item["text_format"] == "summary"}
     for claim in report["claims"]:
         identifier = claim["id"]
         label = {"fact": "來源原句", "assumption": "待查假設", "model_result": "情境計算"}[claim["kind"]]
         if identifier == "lots" or identifier.startswith("scenario:"):
             label = "情境假設"
+        elif claim.get("evidence_id") in summaries:
+            label = "來源摘要"
         source = f"（{cite(claim['evidence_id'])}）" if claim.get("evidence_id") else ""
         lines.append(f'- <a id="{claim_anchors[identifier]}"></a> `{identifier}` {label}　{claim["text"]}{source}')
-    lines.extend(["", "## 原文與時點", ""])
+    lines.extend(["", "## 來源與時點", ""])
     for item in report["evidence"]:
         identifier = item["id"]
         label = "虛構，" if item["synthetic"] else ""
         label += {"scenario": "情境假設", "disclosure": "來源揭露", "unspecified": "提供的資料"}[item["kind"]]
+        text_label = "來源摘要" if item["text_format"] == "summary" else "原文"
+        basis = item["availability_basis"]
+        if basis == "replay_day_end":
+            timing = f'歷史可得時點代理 {item["obtained_at"]}。'
+        elif basis == "search_observed":
+            timing = f'公開日期（依搜尋摘要）{item["published_at"][:10]}，搜尋取得 {item["obtained_at"]}。'
+        else:
+            timing = f'公開 {item["published_at"]}，取得 {item["obtained_at"]}。'
         lines.extend([
             f'- <a id="{anchor_ids[identifier]}"></a> `{identifier}` {item["source"]} '
             f'第 {item["paragraph"]} 段（{label}）',
-            f'  - 公開 {item["published_at"]}，取得 {item["obtained_at"]}。',
-            f'  - 原文　{item["quote"]}',
+            f'  - {timing}',
+            f'  - {text_label}　{item["quote"]}',
         ])
     return "\n".join(lines) + "\n"

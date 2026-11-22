@@ -1,8 +1,9 @@
 import os
 from functools import lru_cache
 
-from fastapi import Depends, FastAPI, Request
+from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
+from pydantic import ValidationError
 
 from .adapters import AdapterError, configured_adapter
 from .schema import Event, Question
@@ -12,6 +13,20 @@ from .store import MissingReport, Store
 @lru_cache
 def default_store():
     return Store(os.getenv("RESEARCH_DB", "output/research.sqlite3"))
+
+
+def apply_search_defaults(event):
+    mode = os.getenv("RESEARCH_SEARCH_MODE", "off")
+    if mode == "off" or "search_mode" in event.model_fields_set:
+        return event
+    domains = event.search_domains or [
+        domain.strip()
+        for domain in os.getenv("RESEARCH_SEARCH_DOMAINS", "sec.gov").split(",")
+        if domain.strip()
+    ]
+    return Event.model_validate({
+        **event.model_dump(), "search_mode": mode, "search_domains": domains,
+    })
 
 
 def create_app(store=None, adapter=None):
@@ -36,6 +51,10 @@ def create_app(store=None, adapter=None):
 
     @app.post("/events")
     def create(event: Event, db=Depends(storage), engine=Depends(generator)):
+        try:
+            event = apply_search_defaults(event)
+        except ValidationError as exc:
+            raise HTTPException(status_code=422, detail="搜尋預設值無效，請檢查模式與來源網域") from exc
         return db.create(event, engine)
 
     @app.get("/runs/{id}")

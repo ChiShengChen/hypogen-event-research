@@ -7,6 +7,7 @@ from pathlib import Path
 from uuid import uuid4
 
 from .adapters import AdapterError
+from .discovery import DISCOVERY_VERSION, collect
 from .research import FORMULA_VERSION, REPORT_VERSION, apply_financial_scenario, build_report, render
 from .schema import Event, FinancialInputs
 
@@ -56,13 +57,19 @@ class Store:
         request_key = hashlib.sha256(encode({
             "event": payload, "adapter": adapter.identity, "formula_version": FORMULA_VERSION,
             "report_version": REPORT_VERSION,
+            "discovery_version": DISCOVERY_VERSION if event.search_mode != "off" else None,
         }).encode()).hexdigest()
         lookup = "SELECT run_id, report_id FROM runs WHERE request_key = ?"
         with self.connection() as db:
             existing = db.execute(lookup, (request_key,)).fetchone()
         if existing:
             return self.result(existing)
-        report = build_report(event, adapter)
+        discovery = None
+        if event.search_mode != "off":
+            found, discovery = collect(event, adapter)
+            event = event.model_copy(update={"documents": event.documents + found})
+            payload = event.model_dump(mode="json")
+        report = build_report(event, adapter, discovery=discovery)
         with self.connection() as db:
             db.execute("BEGIN IMMEDIATE")
             existing = db.execute(lookup, (request_key,)).fetchone()
