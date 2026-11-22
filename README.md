@@ -206,6 +206,48 @@ python -m benchmarks.public_grade
 
 FrontierFinance 下載需登入並接受資料存取條件，本輪以 FinanceBench 代替。FinanceGym 採非商用授權且完整 rubric 由主辦方保留。本機以匿名的 Sol 評審對任務完成、證據支持和推理各評 0 至 2 分。搜尋實耗另外稽核，時點回放使用目前搜尋索引。 [FrontierFinance](https://huggingface.co/datasets/samaya-ai/FrontierFinance/tree/main) · [FinanceBench](https://github.com/patronus-ai/financebench) · [FinSearchComp](https://randomtutu.github.io/FinSearchComp/) · [FinanceGym](https://financegym.github.io/)
 
+### 假說風格 benchmark
+
+比較傳統多空、財務傳導、競爭解釋、預期差、供應鏈外溢。六個真實事件在各自截止日凍結證據，每種方法使用同一個 Astra、相同欄位及一次呼叫，產出兩條假說。
+
+評審用 Sol 在兩種匿名排序下檢查證據支持、因果傳導、預測可驗證性、失效條件及組內差異。每項 0 至 2 分。不存在的引用，以及兩次評分均確認有原文反證或事後資訊的候選，會被判為不合格。評分著重假說品質，預測實現率可另外用事前定義的結果追蹤。[評估方法參考](https://github.com/SKYLENAGE-AI/HypoArena#3-evaluation)
+
+2026-11-23 首跑完成 30 組、60 條假說。傳統多空、財務傳導、預期差皆為 9.17/10，供應鏈外溢 8.67，競爭解釋 8.25。財務傳導的機制平均 2.00/2，預期差的可驗證預測平均 1.75/2，傳統多空的失效條件平均 1.92/2，各為本輪最高。供應鏈外溢的扣分多與產品級營運資料的公開可得性有關。這是六案、單一模型評審的探索性結果。
+
+```bash
+codex login status
+python -m benchmarks.hypothesis_pilot
+```
+
+可加 `--case H-01` 先執行 ASML，或用 `--prepare-only` 檢查六份快照。完成後可在 `output/hypothesis-benchmark/` 查看 `report.md`、逐案原始假說及盲評、完整的 `hypotheses-and-reviews.md` 與 `summary.json`。
+
+```bash
+python -m benchmarks.hypothesis_pilot --compare-astra
+```
+
+這個模式新增簡短提示的純 Astra 及現行 Harness 報告流程。各組看同一份時點證據，停用搜尋，分數直接與純 Astra 配對。新執行的輸出目錄帶有正式提示版本，例如 `output/hypothesis-astra-v9/`，並保留 Harness 的完整原稿。
+
+提示第 8 版的六案對照完成 84 條假說。純 Astra 平均 7.83/10，第 8 版 Harness 的假說欄位為 4.58，使用共用模板的傳統多空為 9.75。第 8 版 Harness 的證據支持為 2.00/2，但六案多空的組內差異平均為 0.00/2，多以同一項指標的互補門檻描述。拿掉組內差異後，純 Astra 為 5.83/8，Harness 為 4.58/8。這輪評分限於假說和引文，中位耗時分別為 22.78 秒與 67.62 秒。
+
+#### 第 9 版與純 Astra 的對照
+
+第 9 版要求多空各自提出不同的事件傳導，並交代公開查核來源、期間、基準、截止日及同口徑的反證。使用代理指標時須標明歸因限制。以 ASML 為例，新版多方查公開的 EUV 淨新增訂單，空方查毛利率指引下緣。
+
+| 題組 | 案數 | 純 Astra／10 | 第 9 版 Harness／10 | Harness 勝／和／負 |
+|---|---:|---:|---:|---:|
+| 原本案例 | 6 | 8.17 | 9.83 | 5／1／0 |
+| 新驗證案例 | 4 | 8.62 | 9.75 | 3／1／0 |
+| 合計 | 10 | 8.35 | **9.80** | **8／2／0** |
+
+新驗證案例是 UPS、Disney、Novo Nordisk 和 Ford。兩組用相同 Astra 與凍結證據，停用搜尋，由 Sol 交換匿名順序評分。純 Astra 生成假說的耗時中位數為 21.0 秒，Harness 生成完整原稿為 61.6 秒。分數衡量假說與引用品質。[驗證報告 PDF](docs/harness-v9-hypothesis-report.pdf) · [評分資料](docs/harness-v9-hypothesis-scorecard.json)
+
+下列命令分別重跑兩組。完整原稿與逐案評分會寫入 `output/hypothesis-head-to-head-v9/` 和 `output/hypothesis-head-to-head-v9-holdout/`。
+
+```bash
+python -m benchmarks.hypothesis_pilot --head-to-head
+python -m benchmarks.hypothesis_pilot --head-to-head --holdout
+```
+
 ## 專案結構
 
 | 路徑 | 內容 |

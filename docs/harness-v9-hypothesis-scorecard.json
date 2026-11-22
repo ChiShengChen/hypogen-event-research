@@ -1,0 +1,50 @@
+{
+  "原六案": {
+    "cases": 6,
+    "mean_scores": {
+      "astra-direct": 8.166666666666666,
+      "current-harness": 9.833333333333334
+    },
+    "median_seconds": {
+      "astra-direct": 21.200000000000003,
+      "current-harness": 66.14
+    },
+    "win_tie_loss": [
+      5,
+      1,
+      0
+    ]
+  },
+  "四案獨立驗證": {
+    "cases": 4,
+    "mean_scores": {
+      "astra-direct": 8.625,
+      "current-harness": 9.75
+    },
+    "median_seconds": {
+      "astra-direct": 20.05,
+      "current-harness": 40.105000000000004
+    },
+    "win_tie_loss": [
+      3,
+      1,
+      0
+    ]
+  },
+  "合計": {
+    "cases": 10,
+    "mean_scores": {
+      "astra-direct": 8.35,
+      "current-harness": 9.8
+    },
+    "median_seconds": {
+      "astra-direct": 20.98,
+      "current-harness": 61.574999999999996
+    },
+    "win_tie_loss": [
+      8,
+      2,
+      0
+    ]
+  }
+}

@@ -99,13 +99,29 @@ class Fixture:
 
 
 class ModelAdapter:
-    prompt_version = 8
+    prompt_version = 9
 
     def hypotheses(self, context):
         return self._generate(Hypotheses, (
             "Write concise Traditional Chinese for an equity research analyst. Return an assessment and "
             "one bull and one bear operating hypothesis for the same research target and period. "
             "Copy target and horizon exactly when explicitly supplied. "
+            "For the two operating hypotheses, start from distinct event-specific earnings or operating "
+            "drivers. Trace each from the event through a different causal path to a company outcome. "
+            "The bear can describe a different cost, bottleneck, mix, or execution risk even if the bull is "
+            "plausible. Do not write two opposite thresholds on the same observation as different cases. "
+            "For each, connect a dated or event-relative catalyst to a public metric or observable milestone. "
+            "Name its issuer, regulator, or counterparty disclosure channel, the measured period, a supported "
+            "baseline or clear directional threshold, and a deadline within the research horizon. Check that "
+            "the disclosure could reasonably be available by that deadline. Prefer a disclosed company or "
+            "segment metric or a visible operational milestone over customer orders, internal records or "
+            "product-level figures that require undisclosed detail. Label a proxy as such, state what it "
+            "cannot attribute, and keep proprietary details as evidence gaps. If no credible public check "
+            "exists, state what remains unresolved and which disclosure would make it testable. "
+            "In invalidation give the observed contrary result for the same company, metric, comparison and "
+            "window. Missing disclosure does not establish the contrary outcome. Explain the plausible "
+            "earnings or operating impact in mechanism, with an explicit scale gap where needed. "
+            "Use the exact relevant claim IDs. Distinguish orders, deliveries, adoption and revenue recognition. "
             "Explicitly distinguish announced events, forward guidance, scenario assumptions, and observed "
             "operating facts. Analyst intake text is unverified. In assessment give a one-sentence "
             "operating thesis, the most material unresolved question, and a concrete document or metric "
@@ -147,7 +163,6 @@ class ModelAdapter:
             "Never present a spot price, valuation target, short availability or current executable trade "
             "without data. Leave the list empty when no named company other than the target has a credible "
             "connection. The opportunities are conditional research hypotheses, not trade instructions. "
-            "Use exact evidence IDs and only attach claim IDs relevant to that hypothesis. "
             "Never infer shared customer identity, product equivalence, qualified capacity, order transfer, "
             "delivery, or profit from a general supply relationship or product approval alone. "
             "Capability, approval and spare capacity only enable a customer decision. Where the thesis "
@@ -156,26 +171,10 @@ class ModelAdapter:
             "For each side, explain why the studied event would cause the proposed outcome versus a "
             "no-event baseline. A generic unrelated customer decline, demand shock, or margin pressure "
             "does not qualify. For a guidance release distinguish what the disclosure signals from the "
-            "underlying business change that could cause operational effects. Prefer competing "
-            "explanations such as a tightly timed, qualified transfer "
-            "versus event-specific costs incurred to pursue or fulfill that transfer. If there is no "
-            "evidence for event-related harm, use limited or no incremental benefit as the bear case. "
-            "Do not assume an unverified identity or shared customer even in the thesis summary. "
-            "In each case name a diagnostic observation, its data source, window and cutoff. "
-            "The prediction and invalidation must use exactly the same population, metric, window, "
-            "and cutoff. If the prediction is zero attributable production orders, a single verified "
-            "such order within the window contradicts it. If the prediction is at least one such order, "
-            "only complete records showing zero by the window's end contradict it. Do not switch "
-            "between zero, limited and majority. Where appropriate, check quarter-end delivery as a "
-            "separate second-stage outcome and do not use it to disprove a confirmed order. "
-            "Invalidation always requires a verified contrary observation "
-            "or complete relevant records showing that a promised observation did not occur by its "
-            "deadline. Missing data, inaccessible records, or inability to confirm never falsify a "
-            "hypothesis. State the contrary observation explicitly. Avoid mirrored profit signs as "
-            "predictions. Phrase mechanisms conditionally "
-            "and distinguish orders from delivered volume or recognized revenue. Keep primary hypotheses operational, "
-            "and avoid unsupported stock directions, "
-            "assumed dated events, probabilities, or calculations."
+            "underlying business change that could cause operational effects. Keep the main hypotheses "
+            "operational, and avoid unsupported stock directions, dated events, probabilities, or calculations. "
+            "Before finalizing, check that the two hypotheses change what a researcher would monitor, "
+            "and that each contrary result can be checked within the same scope as its prediction."
         ), context)
 
     def answer(self, context, question):
