@@ -860,10 +860,10 @@
           "published_at": "2023-05-02T23:59:59Z",
           "obtained_at": "2023-05-02T23:59:59Z",
           "paragraphs": {
-            "deal": "CVS Health 完成收購 Oak Street Health，交易企業價值約 106 億美元。Oak Street Health 有約 600 名初級照護提供人員，在 21 州有 170 多個醫療中心。",
-            "service": "Oak Street Health 為多保險方的價值導向初級照護服務商，照顧 Medicare 病患。CVS 把其納入 care delivery 策略並繼續面對多個付款方。",
-            "strategy": "CVS Health 同時經營健康保險與醫療照護服務，公告以結合照護觸及病患為策略，未公布附加中心的計費、納入率或專門導流保證。",
-            "original": "multi-payor, value-based primary care company"
+            "deal": "CVS Health 完成收購 Oak Street Health，交易企業價值約 106 億美元，透過 50 億美元定期貸款及既有現金和資源籌資。",
+            "service": "CVS Health 表示交易擴大其 value-based primary care platform，Oak Street Health 將在 CVS Health 旗下繼續作為多保險方的初級照護服務商營運。",
+            "strategy": "CVS Health 說明整合目的為改善照護可及性、成效與成本。交割公告未給中心計費、病患歸戶量或專門導流保證。",
+            "original": "Oak Street Health will continue to operate as a multi-payor primary care provider"
           }
         }
       ],
@@ -874,8 +874,8 @@
     },
     "anchors": {
       "cvs-release": {
-        "location": "公告開頭與 Oak Street Health 服務說明",
-        "quote": "multi-payor, value-based primary care company"
+        "location": "交割公告開頭與交割後營運安排",
+        "quote": "Oak Street Health will continue to operate as a multi-payor primary care provider"
       }
     },
     "gold": {
@@ -894,7 +894,7 @@
           "document_id": "cvs-release",
           "paragraph": "deal",
           "source": "https://www.cvshealth.com/news/company-news/cvs-health-completes-acquisition-of-oak-street-health.html",
-          "quote": "CVS Health 完成收購 Oak Street Health，交易企業價值約 106 億美元。Oak Street Health 有約 600 名初級照護提供人員，在 21 州有 170 多個醫療中心。",
+          "quote": "CVS Health 完成收購 Oak Street Health，交易企業價值約 106 億美元，透過 50 億美元定期貸款及既有現金和資源籌資。",
           "synthetic": false,
           "kind": "disclosure",
           "text_format": "summary",
@@ -907,7 +907,7 @@
           "document_id": "cvs-release",
           "paragraph": "original",
           "source": "https://www.cvshealth.com/news/company-news/cvs-health-completes-acquisition-of-oak-street-health.html",
-          "quote": "multi-payor, value-based primary care company",
+          "quote": "Oak Street Health will continue to operate as a multi-payor primary care provider",
           "synthetic": false,
           "kind": "disclosure",
           "text_format": "summary",
@@ -920,7 +920,7 @@
           "document_id": "cvs-release",
           "paragraph": "service",
           "source": "https://www.cvshealth.com/news/company-news/cvs-health-completes-acquisition-of-oak-street-health.html",
-          "quote": "Oak Street Health 為多保險方的價值導向初級照護服務商，照顧 Medicare 病患。CVS 把其納入 care delivery 策略並繼續面對多個付款方。",
+          "quote": "CVS Health 表示交易擴大其 value-based primary care platform，Oak Street Health 將在 CVS Health 旗下繼續作為多保險方的初級照護服務商營運。",
           "synthetic": false,
           "kind": "disclosure",
           "text_format": "summary",
@@ -933,7 +933,7 @@
           "document_id": "cvs-release",
           "paragraph": "strategy",
           "source": "https://www.cvshealth.com/news/company-news/cvs-health-completes-acquisition-of-oak-street-health.html",
-          "quote": "CVS Health 同時經營健康保險與醫療照護服務，公告以結合照護觸及病患為策略，未公布附加中心的計費、納入率或專門導流保證。",
+          "quote": "CVS Health 說明整合目的為改善照護可及性、成效與成本。交割公告未給中心計費、病患歸戶量或專門導流保證。",
           "synthetic": false,
           "kind": "disclosure",
           "text_format": "summary",
