@@ -1,0 +1,55 @@
+{
+  "case": "V-01",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T09:16:09.001733+00:00",
+  "queued_epoch": 1795425369.0017626,
+  "started_at": "2026-11-23T09:16:58.618366+00:00",
+  "request_sha256": "95d45b8440d703439c674c6952e0963270c3dc963e0ddbb21c87bf14fa1e8108",
+  "queue_seconds": 49.614,
+  "preparation_seconds": 0.003,
+  "prompt_bytes": 2151,
+  "returncode": 0,
+  "cli_elapsed_seconds": 20.936,
+  "hypotheses": {
+    "first": {
+      "company": "UPS",
+      "mechanism": "若最大客戶的包裹量在 2025 年開始下降，其他客戶新增的包裹收入與價格調整可能不足以補回缺口，使全年合併營收低於公司指引。",
+      "catalyst": "觀察 UPS 在分季財報中揭露的最大客戶減量進度。減量逾 50% 的計畫目標落在 2026 年下半年，研究期內可檢驗的是初期減量對 2025 年營收的影響。",
+      "prediction": "截至 2026 年 3 月 31 日，預期 UPS 公布的 2025 年合併營收低於指引中心值 890 億美元，且公司將最大客戶減量列為營收承壓的原因之一。",
+      "invalidation": "若全年合併營收達到或超過 890 億美元，營收預測即失效。若營收低於該水準，但公司披露最大客戶的包裹量並未下降，則減量機制失效。",
+      "materiality": "以 890 億美元為基準，營收每低於指引中心值 1%，即相差約 8.9 億美元，可據此衡量初期減量對營收預估的重要性。",
+      "evidence_ids": [
+        "ups-q4:volume",
+        "ups-q4:guidance"
+      ]
+    },
+    "second": {
+      "company": "UPS",
+      "mechanism": "SurePost 改由 UPS 自行配送後，若新增包裹能併入既有路線，便可分攤末端配送成本。若美國網路重整也能隨最大客戶減量同步縮減閒置運能，兩者可支撐合併營業利益率。",
+      "catalyst": "SurePost 自 2025 年 1 月 1 日起全面改為自行配送。2025 年各季財報可用來追蹤路線整併與成本節省進度，約 10 億美元的節省目標涵蓋多年。",
+      "prediction": "截至 2026 年 3 月 31 日，預期 UPS 公布的 2025 年合併營業利益率按指引口徑達到或超過 10.8%，且公司披露美國網路調整已在年內帶來成本節省。",
+      "invalidation": "若 2025 年合併營業利益率按指引口徑低於 10.8%，則利益率預測失效。若達標但公司披露網路調整的節省均在 2025 年後才實現，則當年節省支撐利益率的解釋失效。",
+      "materiality": "按全年營收指引 890 億美元估算，合併營業利益率每變動 0.1 個百分點，全年營業利益約相差 8,900 萬美元。",
+      "evidence_ids": [
+        "ups-q4:volume",
+        "ups-q4:network",
+        "ups-q4:guidance"
+      ]
+    }
+  },
+  "elapsed_seconds": 20.936,
+  "usage": {
+    "input_tokens": 15313,
+    "cached_input_tokens": 0,
+    "output_tokens": 752,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.162,
+    "turn.started": 1.429,
+    "item.completed": 20.405,
+    "turn.completed": 20.446
+  },
+  "finished_at": "2026-11-23T09:17:19.556189+00:00"
+}

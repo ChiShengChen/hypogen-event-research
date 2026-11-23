@@ -1,0 +1,102 @@
+{
+  "planned_cases": 4,
+  "first_complete_pairs": 2,
+  "complete_pairs_with_recovery": 4,
+  "recovered_pairs": 2,
+  "recovery_passed": true,
+  "per_case_selected_round": {
+    "V-01": "recovery",
+    "V-02": "first",
+    "V-03": "recovery",
+    "V-04": "first"
+  },
+  "total": {
+    "launched": 11,
+    "completed": 9,
+    "timeouts": 0,
+    "availability_failures": 2,
+    "metered_calls": 9,
+    "observed_call_seconds": 334.883,
+    "observed_time_calls": 11,
+    "tokens": {
+      "input_tokens": 145315,
+      "cached_input_tokens": 0,
+      "output_tokens": 10743,
+      "reasoning_output_tokens": 0
+    }
+  },
+  "by_round": {
+    "first": {
+      "launched": 7,
+      "completed": 5,
+      "timeouts": 0,
+      "availability_failures": 2,
+      "metered_calls": 5,
+      "observed_call_seconds": 166.9,
+      "observed_time_calls": 7,
+      "tokens": {
+        "input_tokens": 79820,
+        "cached_input_tokens": 0,
+        "output_tokens": 5318,
+        "reasoning_output_tokens": 0
+      }
+    },
+    "recovery": {
+      "launched": 4,
+      "completed": 4,
+      "timeouts": 0,
+      "availability_failures": 0,
+      "metered_calls": 4,
+      "observed_call_seconds": 167.983,
+      "observed_time_calls": 4,
+      "tokens": {
+        "input_tokens": 65495,
+        "cached_input_tokens": 0,
+        "output_tokens": 5425,
+        "reasoning_output_tokens": 0
+      }
+    }
+  },
+  "by_arm": {
+    "astra": {
+      "launched": 6,
+      "completed": 5,
+      "timeouts": 0,
+      "availability_failures": 1,
+      "metered_calls": 5,
+      "observed_call_seconds": 127.318,
+      "observed_time_calls": 6,
+      "tokens": {
+        "input_tokens": 74816,
+        "cached_input_tokens": 0,
+        "output_tokens": 3413,
+        "reasoning_output_tokens": 0
+      }
+    },
+    "v9": {
+      "launched": 5,
+      "completed": 4,
+      "timeouts": 0,
+      "availability_failures": 1,
+      "metered_calls": 4,
+      "observed_call_seconds": 207.565,
+      "observed_time_calls": 5,
+      "tokens": {
+        "input_tokens": 70499,
+        "cached_input_tokens": 0,
+        "output_tokens": 7330,
+        "reasoning_output_tokens": 0
+      }
+    }
+  },
+  "batch_wall_seconds": 771.442,
+  "cooldowns_completed": 2,
+  "cooldowns_blocked": 0,
+  "cooldown_seconds": 435.0,
+  "human_review_ready_pairs": 4,
+  "human_reviewed_pairs": 0,
+  "human_review_pending_pairs": 4,
+  "new_model_reviewed_pairs": 0,
+  "holdout_started_cases": 0,
+  "prospective_resolved_cases": 0
+}

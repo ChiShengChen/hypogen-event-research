@@ -1,0 +1,3 @@
+﻿case,round,arm,cause,status,reported_wait_seconds,scheduled_seconds,started_at,resume_at,finished_at,elapsed_seconds
+V-01,first,astra,rate_limit,completed,1.999876819,2,2026-11-23T09:16:06.941590+00:00,2026-11-23T09:16:08.941590+00:00,2026-11-23T09:16:08.941689+00:00,2.0
+V-03,first,v9,rate_limit,completed,432.999888371,433,2026-11-23T09:19:00.119791+00:00,2026-11-23T09:26:13.119791+00:00,2026-11-23T09:26:13.119882+00:00,433.0

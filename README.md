@@ -274,6 +274,18 @@ python -m benchmarks.v9_equal --out output/v9-equal-new --phase report
 
 服務探針通過後才開先導。先導配對齊全時才開啟保留集，兩階段均齊全後才啟動雙順序模型評分。用同一輸出目錄可從一般程序中斷後接續尚未啟動的呼叫。遇到限流或模型容量錯誤的批次停止派發。收到人工評分後，`report` 可加 `--ratings` 匯入。匿名對照鍵留在本機輸出資料夾。 [上一輪預註冊與執行帳本](docs/v9-equal/README.md)
 
+#### V9 限流後成對復原
+
+四案沿用相同的點時證據、提示與 180 秒單次上限。暫時性失敗後依 CLI 公告冷卻，單次最多 900 秒。每案允許一次復原，兩組重跑並交換順序。首次完整配對率與固定復原預算內的配對率各自保留。匿名覆核只納入同一輪的完整配對。 [報告及完整帳本](docs/v9-equal-recovery/README.md)
+
+正式批次首次完成 **2/4**（Disney、Ford），固定復原預算內完成 **4/4**，復原流程通過。UPS 和 Novo Nordisk 各收到一次 HTTP 429，分別冷卻 2 秒及 433 秒後反序重跑兩組。合計啟動 11 次、有效回覆 9 次，已回報 145,315／10,743 輸入／輸出詞元。四案均可送評，人工評分、新模型評分、保留集及前瞻實績各為 0 案。 [評測 PDF](docs/v9-equal-recovery/report.pdf) · [完整 QA](docs/v9-equal-recovery/QA.md) · [分析師匿名 PDF](docs/v9-equal-recovery/analyst-review.pdf) · [空白評分表](docs/v9-equal-recovery/review-form.csv)
+
+```bash
+python -m benchmarks.v9_equal_recovery --out output/v9-equal-recovery-new --phase seal
+python -m benchmarks.v9_equal_recovery --out output/v9-equal-recovery-new --phase run
+python -m benchmarks.v9_equal_recovery --out output/v9-equal-recovery-new --phase report
+```
+
 ### 盈利預測、估值與研究員覆核
 
 工作台的「ASML 盈利預測」案例提供兩季盈利、可獨立修改的情境、市場預期比較及年度本益比分析。案例重演 2024 Q3 公告當天。原始公告是實際資料，認列台數、單台收入、估值倍數與年度模型 EPS 是明列的回放假設。缺少歷史市場共識或當時股價時，報告會保留缺口。

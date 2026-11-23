@@ -1,0 +1,2 @@
+{"timestamp": "2026-11-23T09:18:57.313110+00:00", "seconds": 0.707, "event": {"type": "thread.started", "thread_id": "01a207b3-8add-7d02-8135-ccdea0558914"}}
+{"timestamp": "2026-11-23T09:18:57.955204+00:00", "seconds": 1.35, "event": {"type": "turn.started"}}

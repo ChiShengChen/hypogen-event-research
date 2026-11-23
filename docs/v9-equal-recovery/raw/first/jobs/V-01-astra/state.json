@@ -1,0 +1,24 @@
+{
+  "case": "V-01",
+  "call": "astra",
+  "status": "error",
+  "queued_at": "2026-11-23T09:16:02.887091+00:00",
+  "queued_epoch": 1795425362.8871021,
+  "started_at": "2026-11-23T09:16:03.225017+00:00",
+  "request_sha256": "95d45b8440d703439c674c6952e0963270c3dc963e0ddbb21c87bf14fa1e8108",
+  "queue_seconds": 0.335,
+  "preparation_seconds": 0.003,
+  "prompt_bytes": 2151,
+  "returncode": -15,
+  "reason": "rate_limit",
+  "cli_elapsed_seconds": 3.714,
+  "error": "CLI 回報限流或用量上限",
+  "availability_source": "stderr",
+  "elapsed_seconds": 3.715,
+  "usage": null,
+  "event_seconds": {
+    "thread.started": 0.803,
+    "turn.started": 1.509
+  },
+  "finished_at": "2026-11-23T09:16:06.941590+00:00"
+}

@@ -1,0 +1,72 @@
+{
+  "$defs": {
+    "Hypothesis": {
+      "additionalProperties": false,
+      "properties": {
+        "company": {
+          "minLength": 1,
+          "title": "Company",
+          "type": "string"
+        },
+        "mechanism": {
+          "minLength": 1,
+          "title": "Mechanism",
+          "type": "string"
+        },
+        "catalyst": {
+          "minLength": 1,
+          "title": "Catalyst",
+          "type": "string"
+        },
+        "prediction": {
+          "minLength": 1,
+          "title": "Prediction",
+          "type": "string"
+        },
+        "invalidation": {
+          "minLength": 1,
+          "title": "Invalidation",
+          "type": "string"
+        },
+        "materiality": {
+          "minLength": 1,
+          "title": "Materiality",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "company",
+        "mechanism",
+        "catalyst",
+        "prediction",
+        "invalidation",
+        "materiality",
+        "evidence_ids"
+      ],
+      "title": "Hypothesis",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "first": {
+      "$ref": "#/$defs/Hypothesis"
+    },
+    "second": {
+      "$ref": "#/$defs/Hypothesis"
+    }
+  },
+  "required": [
+    "first",
+    "second"
+  ],
+  "title": "HypothesisPair",
+  "type": "object"
+}

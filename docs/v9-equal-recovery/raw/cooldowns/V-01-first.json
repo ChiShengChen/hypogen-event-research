@@ -1,0 +1,13 @@
+{
+  "case": "V-01",
+  "round": "first",
+  "arm": "astra",
+  "cause": "rate_limit",
+  "reported_wait_seconds": 1.999876819,
+  "scheduled_seconds": 2,
+  "status": "completed",
+  "started_at": "2026-11-23T09:16:06.941590+00:00",
+  "resume_at": "2026-11-23T09:16:08.941590+00:00",
+  "finished_at": "2026-11-23T09:16:08.941689+00:00",
+  "elapsed_seconds": 2.0
+}

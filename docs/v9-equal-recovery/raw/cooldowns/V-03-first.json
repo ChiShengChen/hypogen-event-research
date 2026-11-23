@@ -1,0 +1,13 @@
+{
+  "case": "V-03",
+  "round": "first",
+  "arm": "v9",
+  "cause": "rate_limit",
+  "reported_wait_seconds": 432.999888371,
+  "scheduled_seconds": 433,
+  "status": "completed",
+  "started_at": "2026-11-23T09:19:00.119791+00:00",
+  "resume_at": "2026-11-23T09:26:13.119791+00:00",
+  "finished_at": "2026-11-23T09:26:13.119882+00:00",
+  "elapsed_seconds": 433.0
+}

@@ -1,0 +1,253 @@
+{
+  "case": "V-03",
+  "call": "v9",
+  "status": "completed",
+  "queued_at": "2026-11-23T09:26:13.138391+00:00",
+  "queued_epoch": 1795425973.1384065,
+  "started_at": "2026-11-23T09:26:13.316258+00:00",
+  "request_sha256": "9cae2b4f178bc76c31b12165ebbc843e953ef6061e976e21d4f01bc9d646dfb3",
+  "queue_seconds": 0.143,
+  "preparation_seconds": 0.035,
+  "prompt_bytes": 8599,
+  "returncode": 0,
+  "cli_elapsed_seconds": 71.609,
+  "hypotheses": {
+    "first": {
+      "company": "Novo Nordisk",
+      "mechanism": "三廠原已與 Novo Nordisk 合作。若收購交割，Novo Nordisk 可直接規劃廠區投資與擴產時程，較維持委外合作多一層控制權。期內可驗證的是取得控制權。管理層預期自 2026 年起逐步增產，每年可增加多少充填量及獲利仍待量化。",
+      "catalyst": "2024-02-05 簽約後，觀察 Novo Nordisk 就三廠交割發布的投資人公告。",
+      "prediction": "以簽約日三廠仍為合作廠為基準，至 2025-06-30，Novo Nordisk 公告已完成三廠收購並取得控制權。",
+      "invalidation": "Novo Nordisk 在 2025-06-30 前公告交易終止，或確認截至該日仍有廠區未完成交割。若屆時只有簽約公告，結果待定。",
+      "materiality": "—",
+      "evidence_ids": [
+        "novo-sites:acquisition",
+        "novo-sites:capacity"
+      ]
+    },
+    "second": {
+      "company": "Novo Nordisk",
+      "mechanism": "即使順利交割，約 110 億美元預付款也可能早於新增產能。相較維持原合作安排，若 Novo Nordisk 期內支付購置款，將先動用資金，縮小可供其他投資運用的金額。購置付款屬現金流出，利息及損益影響取決於融資方式。",
+      "catalyst": "簽約後的價款結算。觀察 Novo Nordisk 交割公告及截至 2025-06-30 已發布的年報或季報收購附註。",
+      "prediction": "以未收購時三廠購置付款為零作情境基準，自簽約至 2025-06-30，Novo Nordisk 公開確認已就本案支付購置款，早於管理層預期自 2026 年起逐步增產的時點。",
+      "invalidation": "Novo Nordisk 於同一期內公告取消交易且未支付購置款，或確認全部購置款延至 2025-06-30 後支付。僅揭露約定對價或未單列付款，均無法判定實付結果。",
+      "materiality": "—",
+      "evidence_ids": [
+        "novo-sites:acquisition",
+        "novo-sites:capacity"
+      ]
+    }
+  },
+  "original_report": {
+    "event_text": "Novo Nordisk 宣布簽約收購三座藥品充填及成品製造廠。",
+    "as_of": "2024-02-05T23:59:59+00:00",
+    "target": "Novo Nordisk",
+    "horizon": "2025-06-30",
+    "evidence": [
+      {
+        "id": "novo-sites:acquisition",
+        "document_id": "novo-sites",
+        "paragraph": "acquisition",
+        "source": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=167017&stream=top",
+        "quote": "Novo Nordisk 同意以約 110 億美元預付款向 Novo Holdings 購買三座充填及成品製造廠。該購買與 Novo Holdings 收購 Catalent 的交易相關。",
+        "synthetic": false,
+        "kind": "disclosure",
+        "text_format": "summary",
+        "availability_basis": "replay_day_end",
+        "published_at": "2024-02-05T23:59:59+00:00",
+        "obtained_at": "2024-02-05T23:59:59+00:00"
+      },
+      {
+        "id": "novo-sites:capacity",
+        "document_id": "novo-sites",
+        "paragraph": "capacity",
+        "source": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=167017&stream=top",
+        "quote": "三座廠當時已與 Novo Nordisk 合作。管理層預期自 2026 年起逐步增加充填產能。",
+        "synthetic": false,
+        "kind": "disclosure",
+        "text_format": "summary",
+        "availability_basis": "replay_day_end",
+        "published_at": "2024-02-05T23:59:59+00:00",
+        "obtained_at": "2024-02-05T23:59:59+00:00"
+      }
+    ],
+    "supply_edges": [],
+    "claims": [
+      {
+        "id": "fact:novo-sites:acquisition",
+        "kind": "fact",
+        "text": "Novo Nordisk 同意以約 110 億美元預付款向 Novo Holdings 購買三座充填及成品製造廠。該購買與 Novo Holdings 收購 Catalent 的交易相關。",
+        "evidence_id": "novo-sites:acquisition"
+      },
+      {
+        "id": "fact:novo-sites:capacity",
+        "kind": "fact",
+        "text": "三座廠當時已與 Novo Nordisk 合作。管理層預期自 2026 年起逐步增加充填產能。",
+        "evidence_id": "novo-sites:capacity"
+      },
+      {
+        "id": "unverified_impact",
+        "kind": "assumption",
+        "assumption_id": "impact_mechanism",
+        "text": "事件的傳導機制與獲利影響待查。"
+      }
+    ],
+    "disclosed_calculations": [],
+    "valuation": {
+      "gaps": [
+        "缺少截止時點的股價、可比基準及市場共識，無法判斷市場已反映多少。",
+        "估值仍需基準獲利與可辯護的估值倍數。"
+      ]
+    },
+    "model_inputs": null,
+    "model_outputs": null,
+    "hypotheses": [
+      {
+        "stance": "bull",
+        "mechanism": "三廠原已與 Novo Nordisk 合作。若收購交割，Novo Nordisk 可直接規劃廠區投資與擴產時程，較維持委外合作多一層控制權。期內可驗證的是取得控制權。管理層預期自 2026 年起逐步增產，每年可增加多少充填量及獲利仍待量化。",
+        "target": "Novo Nordisk",
+        "horizon": "2025-06-30",
+        "catalyst": "2024-02-05 簽約後，觀察 Novo Nordisk 就三廠交割發布的投資人公告。",
+        "prediction": "以簽約日三廠仍為合作廠為基準，至 2025-06-30，Novo Nordisk 公告已完成三廠收購並取得控制權。",
+        "invalidation": "Novo Nordisk 在 2025-06-30 前公告交易終止，或確認截至該日仍有廠區未完成交割。若屆時只有簽約公告，結果待定。",
+        "claim_ids": [
+          "fact:novo-sites:acquisition",
+          "fact:novo-sites:capacity"
+        ]
+      },
+      {
+        "stance": "bear",
+        "mechanism": "即使順利交割，約 110 億美元預付款也可能早於新增產能。相較維持原合作安排，若 Novo Nordisk 期內支付購置款，將先動用資金，縮小可供其他投資運用的金額。購置付款屬現金流出，利息及損益影響取決於融資方式。",
+        "target": "Novo Nordisk",
+        "horizon": "2025-06-30",
+        "catalyst": "簽約後的價款結算。觀察 Novo Nordisk 交割公告及截至 2025-06-30 已發布的年報或季報收購附註。",
+        "prediction": "以未收購時三廠購置付款為零作情境基準，自簽約至 2025-06-30，Novo Nordisk 公開確認已就本案支付購置款，早於管理層預期自 2026 年起逐步增產的時點。",
+        "invalidation": "Novo Nordisk 於同一期內公告取消交易且未支付購置款，或確認全部購置款延至 2025-06-30 後支付。僅揭露約定對價或未單列付款，均無法判定實付結果。",
+        "claim_ids": [
+          "fact:novo-sites:acquisition",
+          "fact:novo-sites:capacity"
+        ]
+      }
+    ],
+    "assessment": {
+      "thesis": "截至 2024-02-05，Novo Nordisk 已簽約收購三座既有合作廠，至 2025 年中可檢驗取得擴產控制權的進度與先行資金支出，管理層預期的新增充填產能則自 2026 年起逐步到位。",
+      "key_gap": "約 110 億美元對價最終能換得多少可用新增充填量？公告未量化原有產量、增量或投產成本，現階段估算單位投資效益需要非公開廠級資料，或公司後續量化揭露。",
+      "next_check": "自 2024-02-05 簽約至 2025-06-30，核對 Novo Nordisk 交割公告中的已移轉廠數，再查期限內已發布的收購附註有無列示實付款。交割狀態可用公開資料核對，付款若未單列則仍待確認。",
+      "evidence_limits": [
+        {
+          "evidence_id": "novo-sites:acquisition",
+          "limit": "公司公告支持已簽約、約 110 億美元預付款條件及與 Catalent 交易的關聯。摘要未確認交割、付款日期或融資方式。"
+        },
+        {
+          "evidence_id": "novo-sites:capacity",
+          "limit": "三廠已與 Novo Nordisk 合作是營運事實，自 2026 年起逐步增產是管理層預期。摘要未揭露新增產量、客戶訂單、產品交付、採用或收入認列。"
+        }
+      ],
+      "public_checks": [
+        {
+          "metric": "已公告完成交割的廠數，收購範圍為三座",
+          "source_to_watch": "Novo Nordisk 投資人交易公告",
+          "window": "自簽約至 2025-06-30，以期限內發布的公告為準。",
+          "impact_on_thesis": "三廠全數移轉支持公司取得直接規劃權。若公司確認延後交割，期內取得控制權的信心下降。移轉本身無法量化新增供貨或獲利。",
+          "evidence_ids": [
+            "novo-sites:acquisition",
+            "novo-sites:capacity"
+          ]
+        },
+        {
+          "metric": "公司確認的三廠購置實付款與付款時點",
+          "source_to_watch": "Novo Nordisk 交割公告、年報或季報收購附註",
+          "window": "簽約後至 2025-06-30，僅採用當時已發布的文件。",
+          "impact_on_thesis": "若公司確認已支付價款，支持資金先於增產投入。若明示全額遞延至期限後，期內資金壓力假設減弱。約定對價不能代替實付款。",
+          "evidence_ids": [
+            "novo-sites:acquisition",
+            "novo-sites:capacity"
+          ]
+        }
+      ],
+      "supply_chain": [
+        {
+          "company": "Catalent",
+          "role": "upstream",
+          "status": "candidate",
+          "product_scope": "三座藥品充填及成品製造廠涉及的上游製造服務",
+          "relationship": "三廠已與 Novo Nordisk 合作，三廠買賣與 Novo Holdings 收購 Catalent 有關。摘要僅將既有合作明確歸於廠區，未指明簽約供應服務的 Catalent 法人。",
+          "transmission": "若交易完成，三廠控制權移轉可能改變 Catalent 涉及的製造業務範圍，既有客戶合約如何承接仍待揭露。",
+          "materiality": "約 110 億美元是 Novo Nordisk 與 Novo Holdings 約定的三廠對價，無法據以估計 Catalent 的營收或利潤變化。",
+          "public_check": "至 2025-06-30 查 Catalent 交易文件及 Novo Nordisk 交割公告，核對移轉的廠區、營運法人及合約範圍。",
+          "gap": "缺少廠區對應的合約主體、收入及獲利貢獻。",
+          "evidence_ids": [
+            "novo-sites:acquisition",
+            "novo-sites:capacity"
+          ]
+        },
+        {
+          "company": "Novo Holdings",
+          "role": "upstream",
+          "status": "disclosed_relationship",
+          "product_scope": "向 Novo Nordisk 出售三座充填及成品製造廠",
+          "relationship": "Novo Holdings 是三廠買賣協議列名的賣方，並另行收購 Catalent。",
+          "transmission": "若相關交易完成並結算，Novo Holdings 可依約取得售廠價款，Novo Nordisk 取得廠區。",
+          "materiality": "公告給出約 110 億美元預付款條件。缺少資產成本與交易費用，無法估計賣方處分損益。",
+          "public_check": "至 2025-06-30 查買賣雙方交割公告，核對三廠移轉與價款結算狀態。",
+          "gap": "實收金額、收款時點及賣方帳面成本待查。",
+          "evidence_ids": [
+            "novo-sites:acquisition"
+          ]
+        }
+      ],
+      "trade_opportunities": [
+        {
+          "company": "Novo Holdings",
+          "direction": "watch",
+          "earnings_path": "售廠結算可帶來現金流入，處分損益仍取決於資產帳面成本與交易費用。",
+          "catalyst": "至 2025-06-30 觀察與 Catalent 收購及三廠出售相關的交割公告。",
+          "trigger": "雙方公開確認三廠已移轉及價款已結算後，可評估實收款與相關收購支出的關係。",
+          "invalidation": "若期限內公告出售終止且未收款，或明示全額價款延至期限後結算，期內現金流入假設失效。",
+          "evidence_gap": "缺少淨現金流、處分損益、上市證券及估值資料。",
+          "ticker": null,
+          "listing_evidence_id": null,
+          "evidence_ids": [
+            "novo-sites:acquisition"
+          ]
+        },
+        {
+          "company": "Catalent",
+          "direction": "watch",
+          "earnings_path": "若移轉範圍包含原由 Catalent 認列的充填業務，後續營收範圍可能改變，方向與幅度取決於實際移轉的合約。",
+          "catalyst": "至 2025-06-30 觀察 Catalent 交易文件及三廠交割公告。",
+          "trigger": "公開文件確認相關營運法人及移轉合約，且可辨識 Catalent 原認列的收入後，再評估營收影響。",
+          "invalidation": "若期限內的交易文件明示相關收入合約全數由 Catalent 保留，則合約隨廠移出其營收範圍的假設失效。",
+          "evidence_gap": "缺少合約歸屬、廠區損益、可辨識證券及估值資料，無法形成股價方向判斷。",
+          "ticker": null,
+          "listing_evidence_id": null,
+          "evidence_ids": [
+            "novo-sites:acquisition",
+            "novo-sites:capacity"
+          ]
+        }
+      ],
+      "trade_opportunities_gap": null
+    },
+    "adapter": {
+      "mode": "codex",
+      "model": "gpt-6.2-astra",
+      "prompt_version": 9
+    },
+    "report_version": 8,
+    "markdown": "# 事件研究報告\n\n- 標的／研究期間為 **Novo Nordisk／2025-06-30**。\n- 截止時點為 2024-02-05T23:59:59+00:00，生成模式為 `codex`（`gpt-6.2-astra`）。\n- **研究結論為觀望**。待確認事件對公司營運的傳導與現價隱含預期。\n- **核心判斷**　截至 2024-02-05，Novo Nordisk 已簽約收購三座既有合作廠，至 2025 年中可檢驗取得擴產控制權的進度與先行資金支出，管理層預期的新增充填產能則自 2026 年起逐步到位。\n- **首要待證**　約 110 億美元對價最終能換得多少可用新增充填量？公告未量化原有產量、增量或投產成本，現階段估算單位投資效益需要非公開廠級資料，或公司後續量化揭露。\n- **下一個查核點**　自 2024-02-05 簽約至 2025-06-30，核對 Novo Nordisk 交割公告中的已移轉廠數，再查期限內已發布的收購附註有無列示實付款。交割狀態可用公開資料核對，付款若未單列則仍待確認。\n\n## 公開查核點\n\n- **已公告完成交割的廠數，收購範圍為三座**　從Novo Nordisk 投資人交易公告查核（自簽約至 2025-06-30，以期限內發布的公告為準。）。三廠全數移轉支持公司取得直接規劃權。若公司確認延後交割，期內取得控制權的信心下降。移轉本身無法量化新增供貨或獲利。 [`novo-sites:acquisition`](#evidence-1)、[`novo-sites:capacity`](#evidence-2)\n- **公司確認的三廠購置實付款與付款時點**　從Novo Nordisk 交割公告、年報或季報收購附註查核（簽約後至 2025-06-30，僅採用當時已發布的文件。）。若公司確認已支付價款，支持資金先於增產投入。若明示全額遞延至期限後，期內資金壓力假設減弱。約定對價不能代替實付款。 [`novo-sites:acquisition`](#evidence-1)、[`novo-sites:capacity`](#evidence-2)\n\n## 供應鏈公司分析\n\n### 上游關鍵供應商\n\n- **Catalent**（待確認的曝險對象，三座藥品充填及成品製造廠涉及的上游製造服務）\n  - 來源支持的關係　三廠已與 Novo Nordisk 合作，三廠買賣與 Novo Holdings 收購 Catalent 有關。摘要僅將既有合作明確歸於廠區，未指明簽約供應服務的 Catalent 法人。 [`novo-sites:acquisition`](#evidence-1)、[`novo-sites:capacity`](#evidence-2)\n  - 事件傳導　若交易完成，三廠控制權移轉可能改變 Catalent 涉及的製造業務範圍，既有客戶合約如何承接仍待揭露。\n  - 財務重要性　約 110 億美元是 Novo Nordisk 與 Novo Holdings 約定的三廠對價，無法據以估計 Catalent 的營收或利潤變化。\n  - 公開查核與缺口　至 2025-06-30 查 Catalent 交易文件及 Novo Nordisk 交割公告，核對移轉的廠區、營運法人及合約範圍。 缺少廠區對應的合約主體、收入及獲利貢獻。\n\n- **Novo Holdings**（已揭露產品關係，向 Novo Nordisk 出售三座充填及成品製造廠）\n  - 來源支持的關係　Novo Holdings 是三廠買賣協議列名的賣方，並另行收購 Catalent。 [`novo-sites:acquisition`](#evidence-1)\n  - 事件傳導　若相關交易完成並結算，Novo Holdings 可依約取得售廠價款，Novo Nordisk 取得廠區。\n  - 財務重要性　公告給出約 110 億美元預付款條件。缺少資產成本與交易費用，無法估計賣方處分損益。\n  - 公開查核與缺口　至 2025-06-30 查買賣雙方交割公告，核對三廠移轉與價款結算狀態。 實收金額、收款時點及賣方帳面成本待查。\n\n### 下游客戶與需求\n\n目前可見來源未提供足以列名的公司。\n\n### 替代供應商與同業\n\n目前可見來源未提供足以列名的公司。\n\n## 延伸交易機會\n\n以下為未在收件敘述中點名的供應鏈公司。方向取決於觸發條件，估值、行情與可執行性仍需查核。\n\n### Novo Holdings｜觀察\n\n- 交易標的　上市工具待確認\n- 財務傳導　售廠結算可帶來現金流入，處分損益仍取決於資產帳面成本與交易費用。 [`novo-sites:acquisition`](#evidence-1)\n- 公開催化劑　至 2025-06-30 觀察與 Catalent 收購及三廠出售相關的交割公告。\n- 觸發條件　雙方公開確認三廠已移轉及價款已結算後，可評估實收款與相關收購支出的關係。\n- 失效條件　若期限內公告出售終止且未收款，或明示全額價款延至期限後結算，期內現金流入假設失效。\n- 交易前待查　缺少淨現金流、處分損益、上市證券及估值資料。\n\n### Catalent｜觀察\n\n- 交易標的　上市工具待確認\n- 財務傳導　若移轉範圍包含原由 Catalent 認列的充填業務，後續營收範圍可能改變，方向與幅度取決於實際移轉的合約。 [`novo-sites:acquisition`](#evidence-1)、[`novo-sites:capacity`](#evidence-2)\n- 公開催化劑　至 2025-06-30 觀察 Catalent 交易文件及三廠交割公告。\n- 觸發條件　公開文件確認相關營運法人及移轉合約，且可辨識 Catalent 原認列的收入後，再評估營收影響。\n- 失效條件　若期限內的交易文件明示相關收入合約全數由 Catalent 保留，則合約隨廠移出其營收範圍的假設失效。\n- 交易前待查　缺少合約歸屬、廠區損益、可辨識證券及估值資料，無法形成股價方向判斷。\n\n## 事件與證據判讀\n\n收件敘述（待核）　Novo Nordisk 宣布簽約收購三座藥品充填及成品製造廠。\n\n- [`novo-sites:acquisition`](#evidence-1) 公司公告支持已簽約、約 110 億美元預付款條件及與 Catalent 交易的關聯。摘要未確認交割、付款日期或融資方式。\n- [`novo-sites:capacity`](#evidence-2) 三廠已與 Novo Nordisk 合作是營運事實，自 2026 年起逐步增產是管理層預期。摘要未揭露新增產量、客戶訂單、產品交付、採用或收入認列。\n\n## 多空假說與查核\n\n推翻假說需要相反證據。必要紀錄未取得時，假說仍待驗證。\n\n### 多方\n\n- 傳導機制　三廠原已與 Novo Nordisk 合作。若收購交割，Novo Nordisk 可直接規劃廠區投資與擴產時程，較維持委外合作多一層控制權。期內可驗證的是取得控制權。管理層預期自 2026 年起逐步增產，每年可增加多少充填量及獲利仍待量化。\n- 查核時機　2024-02-05 簽約後，觀察 Novo Nordisk 就三廠交割發布的投資人公告。\n- 可驗證預測　以簽約日三廠仍為合作廠為基準，至 2025-06-30，Novo Nordisk 公告已完成三廠收購並取得控制權。\n- 推翻條件　Novo Nordisk 在 2025-06-30 前公告交易終止，或確認截至該日仍有廠區未完成交割。若屆時只有簽約公告，結果待定。\n- 依據　[`fact:novo-sites:acquisition`](#claim-1)、[`fact:novo-sites:capacity`](#claim-2)\n\n### 空方\n\n- 傳導機制　即使順利交割，約 110 億美元預付款也可能早於新增產能。相較維持原合作安排，若 Novo Nordisk 期內支付購置款，將先動用資金，縮小可供其他投資運用的金額。購置付款屬現金流出，利息及損益影響取決於融資方式。\n- 查核時機　簽約後的價款結算。觀察 Novo Nordisk 交割公告及截至 2025-06-30 已發布的年報或季報收購附註。\n- 可驗證預測　以未收購時三廠購置付款為零作情境基準，自簽約至 2025-06-30，Novo Nordisk 公開確認已就本案支付購置款，早於管理層預期自 2026 年起逐步增產的時點。\n- 推翻條件　Novo Nordisk 於同一期內公告取消交易且未支付購置款，或確認全部購置款延至 2025-06-30 後支付。僅揭露約定對價或未單列付款，均無法判定實付結果。\n- 依據　[`fact:novo-sites:acquisition`](#claim-1)、[`fact:novo-sites:capacity`](#claim-2)\n\n## 財務橋接\n\n缺少相符且有時點可見來源的財務輸入，維持定性判斷。\n\n## 市場預期與估值\n\n- 缺少截止時點的股價、可比基準及市場共識，無法判斷市場已反映多少。\n- 估值仍需基準獲利與可辯護的估值倍數。\n\n## 主張索引\n\n- <a id=\"claim-1\"></a> `fact:novo-sites:acquisition` 來源摘要　Novo Nordisk 同意以約 110 億美元預付款向 Novo Holdings 購買三座充填及成品製造廠。該購買與 Novo Holdings 收購 Catalent 的交易相關。（[`novo-sites:acquisition`](#evidence-1)）\n- <a id=\"claim-2\"></a> `fact:novo-sites:capacity` 來源摘要　三座廠當時已與 Novo Nordisk 合作。管理層預期自 2026 年起逐步增加充填產能。（[`novo-sites:capacity`](#evidence-2)）\n- <a id=\"claim-3\"></a> `unverified_impact` 待查假設　事件的傳導機制與獲利影響待查。\n\n## 來源與時點\n\n- <a id=\"evidence-1\"></a> `novo-sites:acquisition` https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=167017&stream=top 第 acquisition 段（來源揭露）\n  - 歷史可得時點代理 2024-02-05T23:59:59+00:00。\n  - 來源摘要　Novo Nordisk 同意以約 110 億美元預付款向 Novo Holdings 購買三座充填及成品製造廠。該購買與 Novo Holdings 收購 Catalent 的交易相關。\n- <a id=\"evidence-2\"></a> `novo-sites:capacity` https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=167017&stream=top 第 capacity 段（來源揭露）\n  - 歷史可得時點代理 2024-02-05T23:59:59+00:00。\n  - 來源摘要　三座廠當時已與 Novo Nordisk 合作。管理層預期自 2026 年起逐步增加充填產能。\n"
+  },
+  "elapsed_seconds": 71.615,
+  "usage": {
+    "input_tokens": 17393,
+    "cached_input_tokens": 0,
+    "output_tokens": 2459,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.66,
+    "turn.started": 1.398,
+    "item.completed": 71.131,
+    "turn.completed": 71.162
+  },
+  "finished_at": "2026-11-23T09:27:24.933261+00:00"
+}

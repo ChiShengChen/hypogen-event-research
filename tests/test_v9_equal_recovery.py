@@ -10,6 +10,7 @@ from time import monotonic, sleep
 import pytest
 
 from benchmarks import v9_equal_recovery as recovery
+from benchmarks import v9_equal_recovery_review as report
 from benchmarks.v9_equal import Event
 from benchmarks.hypothesis_pilot import read
 
@@ -88,6 +89,11 @@ def test_complete_pairs_only_use_same_round_and_reverse_call_order(fake_cli):
         assert cool["elapsed_seconds"] >= 1
         first_arm, _ = protocol["orders"][key]["recovery"]
         assert datetime.fromisoformat(calls[key, "recovery", first_arm]["started_at"]) >= datetime.fromisoformat(cool["resume_at"])
+    selected, origin = report.select_pairs(cases, calls)
+    assert origin == {"V-01": "recovery", "V-02": "recovery", "V-03": "first", "V-04": "first"}
+    assert selected["V-01"][1]["astra"]["first"]["company"] == "recovery/V-01-astra"
+    calls["V-01", "recovery", "astra"] = {"status": "timeout"}
+    assert "V-01" not in report.select_pairs(cases, calls)[0]
     subprocess.run(command, env=env, check=True, timeout=10)
     assert spawned(marker) == starts
 

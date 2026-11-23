@@ -1,0 +1,9 @@
+﻿case,code,analyst_id,citations,mechanism,testable_prediction,invalidation,major_errors,ready,edit_seconds,notes
+V-01,R8406,,,,,,,,,
+V-01,R9694,,,,,,,,,
+V-02,R3446,,,,,,,,,
+V-02,R2744,,,,,,,,,
+V-03,R1981,,,,,,,,,
+V-03,R1437,,,,,,,,,
+V-04,R3550,,,,,,,,,
+V-04,R7440,,,,,,,,,

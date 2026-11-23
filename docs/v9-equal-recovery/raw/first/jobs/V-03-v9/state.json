@@ -1,0 +1,24 @@
+{
+  "case": "V-03",
+  "call": "v9",
+  "status": "error",
+  "queued_at": "2026-11-23T09:18:26.270471+00:00",
+  "queued_epoch": 1795425506.2704818,
+  "started_at": "2026-11-23T09:18:56.603917+00:00",
+  "request_sha256": "9cae2b4f178bc76c31b12165ebbc843e953ef6061e976e21d4f01bc9d646dfb3",
+  "queue_seconds": 30.329,
+  "preparation_seconds": 0.005,
+  "prompt_bytes": 8599,
+  "returncode": -15,
+  "reason": "rate_limit",
+  "cli_elapsed_seconds": 3.513,
+  "error": "CLI 回報限流或用量上限",
+  "availability_source": "stderr",
+  "elapsed_seconds": 3.514,
+  "usage": null,
+  "event_seconds": {
+    "thread.started": 0.707,
+    "turn.started": 1.35
+  },
+  "finished_at": "2026-11-23T09:19:00.119791+00:00"
+}
