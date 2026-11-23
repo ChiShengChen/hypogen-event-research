@@ -17,6 +17,7 @@ from .full_revision import (
     FILING_SELECTION_PROMPT, FilingExtraction, check_filing_revision, filing_citation, parse_filing,
     _source_url,
 )
+from .hypothesis_tree import branch_context, branch_path, result_nodes, seed_nodes
 from .research import (
     FORMULA_VERSION, REPORT_VERSION, apply_financial_scenario, build_report, company_key, document_evidence,
     render, render_followups,
@@ -64,6 +65,15 @@ class Store:
                     report_id TEXT NOT NULL, revision INTEGER NOT NULL, kind TEXT NOT NULL,
                     action_key TEXT NOT NULL, recorded_at TEXT NOT NULL, payload TEXT NOT NULL,
                     PRIMARY KEY (report_id, revision, kind, action_key),
+                    FOREIGN KEY (report_id, revision) REFERENCES revisions(report_id, revision)
+                );
+                CREATE TABLE IF NOT EXISTS hypothesis_nodes (
+                    sequence INTEGER PRIMARY KEY,
+                    report_id TEXT NOT NULL,
+                    revision INTEGER NOT NULL,
+                    node_id TEXT NOT NULL,
+                    payload TEXT NOT NULL,
+                    UNIQUE (report_id, revision, node_id),
                     FOREIGN KEY (report_id, revision) REFERENCES revisions(report_id, revision)
                 );
             """)
@@ -153,6 +163,36 @@ class Store:
         with self.connection() as db:
             payload = db.execute("SELECT event FROM runs WHERE report_id = ?", (report_id,)).fetchone()[0]
         return Event.model_validate_json(payload)
+
+    def _hypothesis_nodes(self, report):
+        with self.connection() as db:
+            saved = db.execute(
+                "SELECT payload FROM hypothesis_nodes WHERE report_id = ? AND revision = ? ORDER BY sequence",
+                (report["report_id"], report["revision"]),
+            ).fetchall()
+        return seed_nodes(report) + [json.loads(row[0]) for row in saved]
+
+    def hypothesis_tree(self, report_id, revision):
+        return {"nodes": self._hypothesis_nodes(self.revision(report_id, revision))}
+
+    def extend_hypothesis_tree(self, report_id, revision, query, adapter):
+        report = self.revision(report_id, revision)
+        try:
+            path = branch_path(self._hypothesis_nodes(report), query.parent_id)
+        except KeyError as exc:
+            raise MissingReport("此版本找不到指定的假說節點") from exc
+        generate = getattr(adapter, "branch_hypotheses", None)
+        if not callable(generate):
+            raise AdapterError("產生假說分支需要 Codex CLI 或模型 API 模式")
+        context = branch_context(report, path, query)
+        draft = generate(context)
+        nodes = result_nodes(report, path, query, draft, context, company_key)
+        with self.connection() as db:
+            db.executemany(
+                "INSERT INTO hypothesis_nodes (report_id, revision, node_id, payload) VALUES (?, ?, ?, ?)",
+                [(report_id, revision, item["id"], encode(item)) for item in nodes],
+            )
+        return {"nodes": nodes, "selected_id": nodes[0]["id"]}
 
     def save_child(self, report_id, parent_revision, report):
         data = {key: value for key, value in report.items() if key not in {"report_id", "revision", "parent_revision"}}

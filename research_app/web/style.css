@@ -76,6 +76,31 @@ main { max-width: 1530px; margin: 0 auto; padding: 28px clamp(16px, 3.3vw, 48px)
 .tabs button { min-height: 54px; padding: 0 7px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--muted); font-size: .92rem; white-space: nowrap; }
 .tabs button[aria-current] { color: var(--green); font-weight: 700; border-bottom-color: var(--green); }
 .tab-body { padding: 18px; min-height: 315px; overflow-wrap: anywhere; }
+.content-grid[data-view="tree"] { grid-template-columns: minmax(0, 1fr); }
+.content-grid[data-view="tree"] .tools-column { display: none; }
+.hypothesis-tree-grid { display: grid; grid-template-columns: minmax(240px, 32%) minmax(0, 1fr); gap: 18px; }
+.hypothesis-outline { min-width: 0; max-height: 68vh; overflow: auto; background: var(--soft); border: 1px solid var(--border); border-radius: 10px; padding: 10px; }
+.hypothesis-branches { list-style: none; padding: 0; margin: 0; }
+.hypothesis-branches .hypothesis-branches { margin-left: 11px; padding-left: 11px; border-left: 1px solid #aebfb0; }
+.hypothesis-branches > li { position: relative; }
+.hypothesis-branches .hypothesis-branches > li::before { content: ""; position: absolute; width: 11px; top: 17px; left: -11px; border-top: 1px solid #aebfb0; }
+.hypothesis-node-row { display: flex; gap: 3px; align-items: center; min-width: 140px; margin: 2px 0; }
+.hypothesis-toggle, .hypothesis-leaf { flex: 0 0 23px; text-align: center; color: var(--muted); }
+.hypothesis-toggle { border: 0; background: transparent; padding: 4px 0; border-radius: 6px; }
+.hypothesis-toggle:hover { background: #e0eadf; }
+.hypothesis-node { display: flex; align-items: baseline; gap: 6px; min-width: 0; padding: 6px 8px; border: 1px solid transparent; border-radius: 6px; text-align: left; background: transparent; color: var(--text); }
+.hypothesis-node-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.hypothesis-node[aria-current], .hypothesis-node:hover { color: var(--green); border-color: #d0dfd2; background: #fff; }
+.hypothesis-node[aria-current] { font-weight: 700; }
+.hypothesis-node[data-stance="bear"] { color: #8c3f36; }
+.hypothesis-detail { min-width: 0; }
+.hypothesis-detail .notice, .hypothesis-question, .hypothesis-stance { margin-top: 8px; }
+.hypothesis-question { white-space: pre-wrap; }
+.hypothesis-child-links { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 10px 0; }
+.hypothesis-child-links .button { white-space: normal; text-align: left; }
+.hypothesis-form { margin-top: 16px; padding-top: 9px; border-top: 1px solid var(--border); }
+.hypothesis-form button { margin-top: 8px; }
+.hypothesis-form .form-note:empty { display: none; }
 .thesis { border-left: 3px solid #759b63; padding: 11px 14px; border-radius: 0 8px 8px 0; background: var(--soft); margin-bottom: 18px; }
 .thesis p { margin-top: 4px; }
 .section-title { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; }
@@ -161,6 +186,8 @@ dialog::backdrop { background: #11231bae; }
   .tools-column { grid-template-columns: minmax(0,1fr); }
   .tabs { padding: 0 8px; gap: 4px; }
   .tab-body { padding: 12px; }
+  .hypothesis-tree-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .hypothesis-outline { max-height: 35vh; }
 }
 
 .top-actions { display: flex; gap: 8px; align-items: center; }

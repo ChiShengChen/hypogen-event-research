@@ -10,6 +10,7 @@ from pydantic import AwareDatetime, Field, ValidationError
 
 from .adapters import AdapterError, configured_adapter
 from .earnings import EarningsError
+from .hypothesis_tree import TreeQuestion
 from .revision_bridge import RevisionQuote
 from .schema import ConsensusImport, EarningsBranch, Event, ForecastRegistration, ForecastResolution, Question, ResearchReview, Schema
 from .store import MissingReport, Store
@@ -111,6 +112,15 @@ def create_app(store=None, adapter=None):
     @app.get("/reports/{id}/revisions/{v}")
     def revision(id: str, v: int, db=Depends(storage)):
         return db.revision(id, v)
+
+    @app.get("/reports/{id}/revisions/{v}/hypothesis-tree")
+    def hypothesis_tree(id: str, v: int, db=Depends(storage)):
+        return db.hypothesis_tree(id, v)
+
+    @app.post("/reports/{id}/revisions/{v}/hypothesis-tree")
+    def extend_hypothesis_tree(id: str, v: int, question: TreeQuestion,
+                               db=Depends(storage), engine=Depends(generator)):
+        return db.extend_hypothesis_tree(id, v, question, engine)
 
     @app.get("/reports/{id}/revisions/{v}/earnings")
     def earnings_status(id: str, v: int, db=Depends(storage)):

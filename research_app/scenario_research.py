@@ -73,9 +73,15 @@ def _horizon_end(value):
         return date(int(years[0]), 12, 31) if len(years) == 1 else None
 
 
-def verify_stance_cases(draft, report, evidence, key):
+def case_supported(case, report, eligible, key):
     cutoff = datetime.fromisoformat(report["as_of"]).date()
     end = _horizon_end(report["horizon"])
+    return (set(case.evidence_ids) <= eligible and bool(key(case.mechanism))
+            and case.review_by >= cutoff and (end is None or case.review_by <= end)
+            and key(case.prediction) != key(case.falsifier))
+
+
+def verify_stance_cases(draft, report, evidence, key):
     eligible = {row["id"] for row in evidence if row["kind"] == "disclosure" and not row["synthetic"]}
     by_stance = {stance: {"stance": stance, "cases": [], "evidence_gap": None} for stance in STANCE_LABELS}
     mechanisms, rejected = set(), set()
@@ -84,9 +90,8 @@ def verify_stance_cases(draft, report, evidence, key):
         target["evidence_gap"] = target["evidence_gap"] or bucket.evidence_gap
         for case in bucket.cases:
             mechanism = key(case.mechanism)
-            if (set(case.evidence_ids) - eligible or not mechanism or mechanism in mechanisms
-                    or case.review_by < cutoff or (end is not None and case.review_by > end)
-                    or key(case.prediction) == key(case.falsifier) or len(target["cases"]) >= 2):
+            if (not case_supported(case, report, eligible, key) or mechanism in mechanisms
+                    or len(target["cases"]) >= 2):
                 rejected.add(bucket.stance)
                 continue
             mechanisms.add(mechanism)

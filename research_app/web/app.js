@@ -1,4 +1,5 @@
 import { exampleLabels, questionBank } from "./question-bank.js";
+import { renderHypothesisTree } from "./hypothesis-tree.js";
 
 const $ = (selector) => document.querySelector(selector);
 const all = (selector) => [...document.querySelectorAll(selector)];
@@ -748,9 +749,13 @@ function selectTab(name) {
   });
   const body = $("#tab-body");
   body.replaceChildren();
+  body.closest(".content-grid").dataset.view = name;
   const report = state.report;
   if (!report) return;
   if (name === "overview") renderOverview(body, report);
+  if (name === "tree") renderHypothesisTree(body, {
+    report, request, node, fields, evidenceLinks, enabled: ["codex", "live"].includes(state.config.mode),
+  });
   if (name === "opportunities") renderSupply(body, report);
   if (name === "earnings") renderEarnings(body, report);
   if (name === "evidence") renderEvidence(body, report);
@@ -1030,6 +1035,7 @@ async function boot() {
     const params = new URLSearchParams(location.search);
     const requestedReport = params.get("report") || "";
     if (/^[a-f0-9]{32}$/.test(requestedReport)) {
+      if (params.get("view") === "tree") state.tab = "tree";
       const revision = Number(params.get("revision") || "1");
       if (Number.isSafeInteger(revision) && revision > 0) {
         await loadReport(requestedReport, revision);
