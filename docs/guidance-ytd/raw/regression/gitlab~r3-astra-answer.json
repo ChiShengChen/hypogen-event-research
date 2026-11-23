@@ -1,0 +1,17 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "203729000"},
+    {"item": "implied_remainder_new", "value": "205682000"},
+    {"item": "implied_remainder_change", "value": "1953000"},
+    {"item": "implied_remainder", "value": "raised"}
+  ],
+  "evidence_ids": [
+    "gitlab-prior:p0002",
+    "gitlab-prior:p0003",
+    "gitlab-prior:p0007",
+    "gitlab-latest:p0002",
+    "gitlab-latest:p0003",
+    "gitlab-latest:p0007"
+  ],
+  "reason": "以百萬美元計，前次全年指引中點 743 扣除上半年實際營收 351.771 與第三季指引中點 187.5，隱含第四季營收為 203.729。最新全年指引中點 753.5 扣除前三季實際營收 547.818，隱含第四季營收為 205.682，較前次上調 1.953。"
+}

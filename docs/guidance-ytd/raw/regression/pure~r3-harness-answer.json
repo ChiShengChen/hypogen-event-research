@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "pure-latest",
+      "block": "pure-latest:p0002",
+      "quote": "$3.15B",
+      "tabular": true,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior",
+      "document": "pure-prior",
+      "block": "pure-prior:p0002",
+      "quote": "$3.1B",
+      "tabular": true,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_interim",
+      "document": "pure-prior",
+      "block": "pure-prior:p0002",
+      "quote": "$815M",
+      "tabular": true,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "pure-prior",
+      "block": "pure-prior:p0001",
+      "quote": "$763.8 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "pure-latest",
+      "block": "pure-latest:p0001",
+      "quote": "$831.1 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "pure-prior",
+      "block": "pure-prior:p0001",
+      "quote": "$763.8 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    }
+  ],
+  "reason": "兩份公告的營收指引表均在金額儲存格內標明幣別與單位。第二季及第三季的財務摘要各自明列單季實際營收。第一季營收僅能由累計數倒推，故兩組實績均省略第一季。"
+}

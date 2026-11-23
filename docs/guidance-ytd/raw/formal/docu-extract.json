@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "docu-latest",
+      "block": "docu-latest:p0004",
+      "quote": "$2,959 to $2,963",
+      "tabular": true,
+      "unit_block": "docu-latest:p0004",
+      "unit_quote": "Fiscal Year ending January 31, 2025 (in millions, except percentages)"
+    },
+    {
+      "name": "prior",
+      "document": "docu-prior",
+      "block": "docu-prior:p0005",
+      "quote": "$2,940 to $2,952",
+      "tabular": true,
+      "unit_block": "docu-prior:p0005",
+      "unit_quote": "Fiscal Year ending January 31, 2025 (in millions, except percentages)"
+    },
+    {
+      "name": "prior_interim",
+      "document": "docu-prior",
+      "block": "docu-prior:p0005",
+      "quote": "$743 to $747",
+      "tabular": true,
+      "unit_block": "docu-prior:p0005",
+      "unit_quote": "Quarter ending October 31, 2024 (in millions, except percentages)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "docu-prior",
+      "block": "docu-prior:p0004",
+      "quote": "$736.0 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "docu-latest",
+      "block": "docu-latest:p0001",
+      "quote": "$754.8 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "docu-prior",
+      "block": "docu-prior:p0004",
+      "quote": "$736.0 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    }
+  ],
+  "reason": "兩份公告均列出 2025 財年的總營收指引，9 月公告另列第三季指引。9 月公告已公布第二季實績，12 月公告再公布第三季實績。兩份公告均未單列第一季總營收，故省略該季。"
+}

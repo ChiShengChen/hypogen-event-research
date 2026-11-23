@@ -1,0 +1,63 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "114146000"},
+    {"item": "implied_remainder_new", "value": "113990000"},
+    {"item": "implied_remainder_change", "value": "-156000"},
+    {"item": "implied_remainder", "value": "lowered"}
+  ],
+  "evidence_ids": [
+    "frog-prior:p0002",
+    "frog-prior:p0007",
+    "frog-latest:p0002",
+    "frog-latest:p0007"
+  ],
+  "reason": "金額均為美元。前次全年營收指引中點扣除上半年實績及當時第三季指引中點，得出第四季隱含營收 423000000 − 203354000 − 105500000 = 114146000。最新全年指引中點扣除前九個月實績，得出 426400000 − 312410000 = 113990000，較前次下調 156000。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "frog-prior",
+      "block": "frog-prior:p0002",
+      "quote": "Fiscal Year 2024 Outlook: ○ Revenue between $422 million to $424 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "frog-prior",
+      "block": "frog-prior:p0007",
+      "quote": "Total subscription revenue 103,043 84,170 203,354 163,990",
+      "tabular": true,
+      "unit_block": "frog-prior:p0007",
+      "unit_quote": "(in thousands, except per share data; unaudited) Three Months Ended June 30, Six Months Ended June 30, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $"
+    },
+    {
+      "name": "prior_interim",
+      "document": "frog-prior",
+      "block": "frog-prior:p0002",
+      "quote": "Third Quarter 2024 Outlook: ○ Revenue between $105 million and $106 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "new",
+      "document": "frog-latest",
+      "block": "frog-latest:p0002",
+      "quote": "Fiscal Year 2024 Outlook: ○ Revenue between $425.9 million to $ 426.9 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "frog-latest",
+      "block": "frog-latest:p0007",
+      "quote": "Total subscription revenue 109,056 88,636 312,410 252,626",
+      "tabular": true,
+      "unit_block": "frog-latest:p0007",
+      "unit_quote": "(in thousands, except per share data; unaudited) Three Months Ended Nine Months Ended September 30, September 30, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $"
+    }
+  ],
+  "missing_reason": null
+}

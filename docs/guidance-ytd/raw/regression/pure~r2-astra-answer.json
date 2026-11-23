@@ -1,0 +1,10 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "827750000"},
+    {"item": "implied_remainder_new", "value": "861678000"},
+    {"item": "implied_remainder_change", "value": "33928000"},
+    {"item": "implied_remainder", "value": "raised"}
+  ],
+  "evidence_ids": ["pure-prior:p0002", "pure-prior:p0006", "pure-latest:p0002", "pure-latest:p0006"],
+  "reason": "以百萬美元計，前次全年營收指引 3100 扣除上半年實績 1457.250 及當時第三季指引 815，隱含第四季營收 827.750。最新全年指引 3150 扣除前三季實績 2288.322，隱含第四季營收 861.678，較前次上調 33.928。"
+}

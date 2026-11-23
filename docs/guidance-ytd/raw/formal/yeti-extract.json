@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "yeti-latest",
+      "block": "yeti-latest:p0014",
+      "quote": "$ 1,831,650",
+      "tabular": true,
+      "unit_block": "yeti-latest:p0014",
+      "unit_quote": "(In thousands except per share amounts)"
+    },
+    {
+      "name": "prior",
+      "document": "yeti-prior",
+      "block": "yeti-prior:p0014",
+      "quote": "$ 1,814,846",
+      "tabular": true,
+      "unit_block": "yeti-prior:p0014",
+      "unit_quote": "(In thousands except per share amounts)"
+    },
+    {
+      "name": "prior",
+      "document": "yeti-prior",
+      "block": "yeti-prior:p0014",
+      "quote": "$ 1,848,454",
+      "tabular": true,
+      "unit_block": "yeti-prior:p0014",
+      "unit_quote": "(In thousands except per share amounts)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "yeti-prior",
+      "block": "yeti-prior:p0002",
+      "quote": "$463.5 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "yeti-latest",
+      "block": "yeti-latest:p0002",
+      "quote": "$478.4 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "yeti-prior",
+      "block": "yeti-prior:p0002",
+      "quote": "$463.5 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    }
+  ],
+  "reason": "YETI 的全年指引採調整後淨銷售額。前次指引分列上下限，中點為 1,831,650 千美元，與最新指引相同。兩份公告分別明列第二季及第三季實績，但均未單列第一季實績，也未提供第三季單季營收指引。"
+}

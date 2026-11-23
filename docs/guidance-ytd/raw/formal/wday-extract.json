@@ -1,0 +1,32 @@
+{
+  "figures": [
+    {
+      "name": "reported_in_period",
+      "document": "wday-prior",
+      "block": "wday-prior:p0002",
+      "quote": "Total revenues were $2.085 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "wday-latest",
+      "block": "wday-latest:p0001",
+      "quote": "Total revenues were $2.160 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "wday-prior",
+      "block": "wday-prior:p0002",
+      "quote": "Total revenues were $2.085 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    }
+  ],
+  "reason": "兩份公告的全年指引及先前的第三季指引均僅涵蓋訂閱收入，因此省略合併總營收指引。公告直接列出第二季及第三季的單季總營收；第一季總營收須由累計數回推，故省略。"
+}

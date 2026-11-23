@@ -1,0 +1,9 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "unknown"},
+    {"item": "implied_remainder_change", "value": "unknown"},
+    {"item": "implied_remainder", "value": "unknown"}
+  ],
+  "evidence_ids": ["bestbuy-prior:p0002", "bestbuy-prior:p0005", "bestbuy-latest:p0002", "bestbuy-latest:p0005"],
+  "reason": "前次全年營收指引中點扣除上半年實績後，只能算出第三、四季合計營收。當時公司僅預估第三季可比銷售額的年減幅，無法據此算出第三季合併營收。最新指引隱含第四季營收為137.2億美元，但前次隱含值無法確定，因此變動金額與方向也無法判定。"
+}

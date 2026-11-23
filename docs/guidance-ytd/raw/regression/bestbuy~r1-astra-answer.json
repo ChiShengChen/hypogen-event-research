@@ -1,0 +1,9 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "unknown"},
+    {"item": "implied_remainder_change", "value": "unknown"},
+    {"item": "implied_remainder", "value": "unknown"}
+  ],
+  "evidence_ids": ["bestbuy-prior:p0002", "bestbuy-prior:p0005", "bestbuy-latest:p0002", "bestbuy-latest:p0005"],
+  "reason": "前次全年營收指引中點扣除上半年實績，只能算出下半年合計 234.65 億美元。當時第三季僅有可比銷售額變動率預估，無法單獨推算第四季合併營收。最新指引中點扣除前三季實績後，隱含第四季營收為 137.20 億美元，但因前次第四季金額未知，變動金額與方向均無法確定。"
+}

@@ -1,0 +1,64 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "260481000"},
+    {"item": "implied_remainder_new", "value": "260981000"},
+    {"item": "implied_remainder_change", "value": "500000"},
+    {"item": "implied_remainder", "value": "raised"}
+  ],
+  "evidence_ids": [
+    "mndy-prior:p0006",
+    "mndy-prior:p0009",
+    "mndy-prior:p0005",
+    "mndy-latest:p0002",
+    "mndy-latest:p0006"
+  ],
+  "reason": "以美元計，前次全年營收指引中點扣除上半年實績及當時第三季指引中點，得出第四季隱含營收 958500000 − 453019000 − 245000000 = 260481000。最新全年指引中點扣除前九個月實績，得出 965000000 − 704019000 = 260981000，較前次上調 500000 美元。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "mndy-prior",
+      "block": "mndy-prior:p0006",
+      "quote": "$956 million to $961 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "mndy-prior",
+      "block": "mndy-prior:p0009",
+      "quote": "$ 453,019",
+      "tabular": true,
+      "unit_block": "mndy-prior:p0009",
+      "unit_quote": "(U.S. dollars in thousands, except share and per share data)"
+    },
+    {
+      "name": "prior_interim",
+      "document": "mndy-prior",
+      "block": "mndy-prior:p0005",
+      "quote": "$243 million to $247 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "new",
+      "document": "mndy-latest",
+      "block": "mndy-latest:p0002",
+      "quote": "$964 million to $966 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "mndy-latest",
+      "block": "mndy-latest:p0006",
+      "quote": "$ 704,019",
+      "tabular": true,
+      "unit_block": "mndy-latest:p0006",
+      "unit_quote": "(U.S. dollars in thousands, except share and per share data)"
+    }
+  ],
+  "missing_reason": null
+}

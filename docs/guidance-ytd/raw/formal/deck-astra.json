@@ -1,0 +1,21 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "unknown"},
+    {"item": "implied_remainder_change", "value": "unknown"},
+    {"item": "implied_remainder", "value": "unknown"}
+  ],
+  "evidence_ids": [
+    "deck-prior:p0005",
+    "deck-prior:p0008",
+    "deck-latest:p0005",
+    "deck-latest:p0008"
+  ],
+  "reason": "前次全年指引扣除上半年實績，僅能算出第三、四季合計營收為 4800000000 − 2136667000 = 2663333000 美元。最新指引扣除前九個月實績，得出第四季隱含營收為 4900000000 − 3963832000 = 936168000 美元。由於無法拆出前次指引中的第四季金額，變動金額與方向也無法判定。",
+  "figures_used": [
+    {"name": "prior", "document": "deck-prior", "block": "deck-prior:p0005", "quote": "$4.8 billion", "tabular": false, "unit_block": null, "unit_quote": null},
+    {"name": "prior_reported_in_period", "document": "deck-prior", "block": "deck-prior:p0008", "quote": "$ 2,136,667", "tabular": true, "unit_block": "deck-prior:p0008", "unit_quote": "(dollar and share data amounts in thousands, except per share data)"},
+    {"name": "new", "document": "deck-latest", "block": "deck-latest:p0005", "quote": "$4.9 billion", "tabular": false, "unit_block": null, "unit_quote": null},
+    {"name": "reported_in_period", "document": "deck-latest", "block": "deck-latest:p0008", "quote": "$ 3,963,832", "tabular": true, "unit_block": "deck-latest:p0008", "unit_quote": "(dollar and share data amounts in thousands, except per share data)"}
+  ],
+  "missing_reason": "2024 年 10 月 24 日的公告未提供 2025 財年第三季合併營收指引，也未直接揭露第四季營收預估。第三季實績於次年 1 月才公布。"
+}

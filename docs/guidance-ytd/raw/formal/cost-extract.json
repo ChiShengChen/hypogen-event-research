@@ -1,0 +1,32 @@
+{
+  "figures": [
+    {
+      "name": "reported_in_period",
+      "document": "cost-prior",
+      "block": "cost-prior:p0003",
+      "quote": "63,723",
+      "tabular": true,
+      "unit_block": "cost-prior:p0003",
+      "unit_quote": "(dollars in millions, except per share data) (unaudited) 12 Weeks Ended 24 Weeks Ended February 16, 2025 February 18, 2024 February 16, 2025 February 18, 2024 REVENUE Net sales $ 62,530"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "cost-latest",
+      "block": "cost-latest:p0003",
+      "quote": "63,205",
+      "tabular": true,
+      "unit_block": "cost-latest:p0003",
+      "unit_quote": "(dollars in millions, except per share data) (unaudited) 12 Weeks Ended 36 Weeks Ended May 11, 2025 May 12, 2024 May 11, 2025 May 12, 2024 REVENUE Net sales $ 61,965"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "cost-prior",
+      "block": "cost-prior:p0003",
+      "quote": "63,723",
+      "tabular": true,
+      "unit_block": "cost-prior:p0003",
+      "unit_quote": "(dollars in millions, except per share data) (unaudited) 12 Weeks Ended 24 Weeks Ended February 16, 2025 February 18, 2024 February 16, 2025 February 18, 2024 REVENUE Net sales $ 62,530"
+    }
+  ],
+  "reason": "以兩份公告日為基準，採用合併損益表「Total revenue」列的十二週金額，包含淨銷售額與會員費。3 月公告列出第二季實績，至 5 月公告時已有第二季及第三季實績。兩份公告均未單列第一季總營收，也未提供 2025 財年全年營收指引、全年初估或第三季營收指引。"
+}

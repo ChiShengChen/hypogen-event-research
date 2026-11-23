@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "s-latest",
+      "block": "s-latest:p0002",
+      "quote": "$818 million",
+      "tabular": true,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior",
+      "document": "s-prior",
+      "block": "s-prior:p0002",
+      "quote": "$815 million",
+      "tabular": true,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_interim",
+      "document": "s-prior",
+      "block": "s-prior:p0002",
+      "quote": "$209.5 million",
+      "tabular": true,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "s-prior",
+      "block": "s-prior:p0007",
+      "quote": "$ 198,937",
+      "tabular": true,
+      "unit_block": "s-prior:p0007",
+      "unit_quote": "(in thousands, except share and per share data)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "s-latest",
+      "block": "s-latest:p0008",
+      "quote": "$ 210,648",
+      "tabular": true,
+      "unit_block": "s-latest:p0008",
+      "unit_quote": "(in thousands, except share and per share data)"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "s-prior",
+      "block": "s-prior:p0007",
+      "quote": "$ 198,937",
+      "tabular": true,
+      "unit_block": "s-prior:p0007",
+      "unit_quote": "(in thousands, except share and per share data)"
+    }
+  ],
+  "reason": "兩次公告的展望表均在金額儲存格內標明幣別與單位。第二季及第三季實績取自各期合併損益表的單季營收欄。第一季營收僅能由累計數回推，兩份公告均未直接列出該季金額，故省略。"
+}

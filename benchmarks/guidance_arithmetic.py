@@ -83,10 +83,12 @@ IMPLICIT_QUESTIONS = {
     "revision": "Did this release raise, lower or keep unchanged the company's {period} revenue outlook?",
     "midpoint_change": "By how much did this release change the company's {period} revenue outlook?",
     "interim_surprise": "By how much did revenue for {interim} beat or miss what the company had guided?",
-    "implied_remainder_new": "What revenue does the company's latest outlook imply for {remainder}?",
-    "implied_remainder_change": "By how much did this release change the company's revenue outlook for {remainder}?",
-    "implied_remainder": "Did this release raise, lower or keep unchanged the company's revenue outlook for "
-                         "{remainder}?",
+    "implied_remainder_new": "What revenue for {remainder} is embedded in the company's latest full-year outlook?",
+    "implied_remainder_prior": "What revenue for {remainder} was embedded in the company's previous full-year outlook?",
+    "implied_remainder_change": "By how much did the revenue embedded for {remainder} change?",
+    "implied_remainder_change_ratio": "What was the percentage revision in the revenue embedded for {remainder}?",
+    "implied_remainder": "Did the revenue embedded in the full-year outlook for {remainder} rise, fall, "
+                         "or stay unchanged since the previous release?",
     "sequential": "Does the company's latest outlook put {period} revenue above (raised), below (lowered) or "
                   "level with (unchanged) {last_period}?",
 }
@@ -145,6 +147,7 @@ class Case(Schema):
     items: list[Literal[tuple(ITEM_KINDS)]] = Field(min_length=1)
     style: Literal["explicit", "implicit"] = "explicit"
     trap: Nonempty
+    undetermined: dict[Literal[tuple(ITEM_KINDS)], Nonempty] = Field(default_factory=dict)
 
     @model_validator(mode="after")
     def check_case(self):
@@ -159,12 +162,17 @@ class Case(Schema):
                 raise ValueError(f"figure {name} needs {'one reference' if name in INTERVALS else 'references'}")
         if len(set(self.items)) != len(self.items):
             raise ValueError("items repeat")
+        if set(self.undetermined) - set(self.items):
+            raise ValueError("undetermined items must be asked")
         templates = TEMPLATES[self.style]
         for item in self.items:
             if item not in templates:
                 raise ValueError(f"item {item} has no {self.style} wording")
-            if missing := set(NEEDS[item]) - set(self.figures):
+            missing = set(NEEDS[item]) - set(self.figures)
+            if missing and item not in self.undetermined:
                 raise ValueError(f"item {item} needs figures {sorted(missing)}")
+            if not missing and item in self.undetermined:
+                raise ValueError(f"item {item} has all required figures")
             if missing := set(re.findall(r"{(\w+)}", templates[item])) - set(self.labels):
                 raise ValueError(f"item {item} needs labels {sorted(missing)}")
         return self
@@ -228,8 +236,11 @@ def case_blocks(case):
 
 
 def gold(case, blocks=None):
-    items = compute(figure_inputs(case.figures, blocks or case_blocks(case)))
-    return {item: items[item] for item in case.items}
+    known = [item for item in case.items if item not in case.undetermined]
+    required = {name for item in known for name in NEEDS[item]}
+    figures = {name: refs for name, refs in case.figures.items() if name in required}
+    items = compute(figure_inputs(figures, blocks or case_blocks(case))) if known else {}
+    return {item: "unknown" if item in case.undetermined else items[item] for item in case.items}
 
 
 def questions(case):
@@ -246,6 +257,8 @@ def parse_answer(kind, value):
     try:
         number = Decimal(text)
     except InvalidOperation:
+        return None
+    if not number.is_finite():
         return None
     return number / 100 if kind == "ratio" else number
 
@@ -265,7 +278,9 @@ def grade(case, expected, answers):
     for item in case.items:
         kind = ITEM_KINDS[item]
         answer = parse_answer(kind, answers.get(item, ""))
-        if answer is None:
+        if item in case.undetermined:
+            correct = str(answers.get(item, "")).strip().casefold() == "unknown"
+        elif answer is None:
             correct = False
         elif kind == "direction":
             correct = answer == expected[item]
@@ -354,9 +369,22 @@ def requests_for(case, blocks):
     base = {"issuer": case.issuer, "ticker": case.ticker, "as_of": case.as_of.isoformat(), "documents": documents}
     asked = [{"item": row["item"], "question": row["question"]} for row in questions(case)]
     wanted = [{"name": name, "description": FIGURE_HINTS[name].format(**case.labels)} for name in needed(case)]
+    if case.style == "implicit":
+        base["conventions"] = (
+            "Use guidance midpoints, comparable consolidated USD revenue, and only figures knowable "
+            "at each release's own date. 'Embedded' refers to the outlook derived from full-year guidance. "
+            "For a change subtract the prior amount from the latest amount."
+        )
+    extract = EXTRACT
+    if case.style == "implicit":
+        extract += (
+            " PDF page blocks preserve the table order. When a cell lacks its own currency symbol, "
+            "use a contiguous span from the scale heading through the first currency-marked cell "
+            "of that same table as unit_quote, when available; quote only the requested amount in quote."
+        )
     return {
         "astra": equal.make_request(Answers, DIRECT, base | {"questions": asked}),
-        "harness": equal.make_request(Extraction, EXTRACT, base | {"figures": wanted}),
+        "harness": equal.make_request(Extraction, extract, base | {"figures": wanted}),
     }
 
 
@@ -430,6 +458,8 @@ def seal(root, cases):
         "pilot_purpose": "Pilot cases are seen during design. They estimate ceiling and discordance only; the "
                          "holdout size is set from them and holdout issuers must be new.",
         "implicit_definitions": DEFINITIONS,
+        "undetermined": "Only an explicit unknown is correct for a preregistered unsupported item. "
+                        "Missing answers, failed calls and timeouts are scored wrong.",
         "cases_sha256": equal.digest(frozen), "requests_sha256": equal.digest(requests),
     }
     for name, value in (("cases.json", frozen), ("requests.json", requests), ("protocol.json", protocol)):
@@ -517,7 +547,7 @@ def summarize(root, split):
         if row["case"]["split"] != split:
             continue
         case = Case.model_validate(row["case"])
-        expected = {item: value if ITEM_KINDS[item] == "direction" else Decimal(value)
+        expected = {item: value if ITEM_KINDS[item] == "direction" or item in case.undetermined else Decimal(value)
                     for item, value in row["gold"].items()}
         for repeat in range(1, REPEATS + 1):
             pair = {}

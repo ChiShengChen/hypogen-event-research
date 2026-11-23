@@ -1,0 +1,16 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "unknown"},
+    {"item": "implied_remainder_change", "value": "unknown"},
+    {"item": "implied_remainder", "value": "unknown"}
+  ],
+  "evidence_ids": ["hd-prior:p0002", "hd-prior:p0005", "hd-latest:p0002", "hd-latest:p0005"],
+  "reason": "前次全年銷售成長率指引的中點為（2.5%＋3.5%）÷2＝3.0%。按當時資料，全年預估扣除上半年實績後，仍包含第三季與第四季。最新全年成長率指引雖升至約4%，但第三季實績到本次公告才揭露，因此無法判定兩次指引隱含的第四季營收差額或方向。",
+  "figures_used": [
+    {"name": "prior", "document": "hd-prior", "block": "hd-prior:p0002", "quote": "Total sales to increase between 2.5% and 3.5% including the 53rd week", "tabular": false, "unit_block": null, "unit_quote": null},
+    {"name": "prior_reported_in_period", "document": "hd-prior", "block": "hd-prior:p0005", "quote": "$ 79,593", "tabular": true, "unit_block": "hd-prior:p0005", "unit_quote": "in millions, except per share data 2024 2023 % Change 2024 2023 % Change Net sales $"},
+    {"name": "new", "document": "hd-latest", "block": "hd-latest:p0002", "quote": "Total sales to increase approximately 4% including SRS and the 53rd week", "tabular": false, "unit_block": null, "unit_quote": null},
+    {"name": "reported_in_period", "document": "hd-latest", "block": "hd-latest:p0005", "quote": "$ 119,810", "tabular": true, "unit_block": "hd-latest:p0005", "unit_quote": "in millions, except per share data 2024 2023 % Change 2024 2023 % Change Net sales $"}
+  ],
+  "missing_reason": "兩份公告均未提供將全年成長率換算為美元金額所需的2023財年全年淨銷售額。前次公告也未提供2024財年第三季營收指引，無法從當時預估的下半年營收中單獨推算第四季。"
+}

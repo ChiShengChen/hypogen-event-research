@@ -1,0 +1,11 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "unknown"},
+    {"item": "implied_remainder_change", "value": "unknown"},
+    {"item": "implied_remainder", "value": "unknown"}
+  ],
+  "evidence_ids": ["tgt-prior:p0002", "tgt-latest:p0002"],
+  "reason": "前次公告僅預估全年及第三季的可比銷售成長率。最新公告預期第四季可比銷售大致持平。這些指引無法換算為第四季合併營收金額，因此也無法判定修訂金額或方向。",
+  "figures_used": [],
+  "missing_reason": "前次公告缺少 2024 財年全年及第三季合併營收的美元指引，無法從全年預估扣除上半年實績及第三季預估。最新公告也缺少全年合併營收的美元指引，無法扣除前九個月實績以推算第四季。"
+}

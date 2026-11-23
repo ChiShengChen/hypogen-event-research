@@ -1,0 +1,63 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "755333000"},
+    {"item": "implied_remainder_new", "value": "760513000"},
+    {"item": "implied_remainder_change", "value": "5180000"},
+    {"item": "implied_remainder", "value": "raised"}
+  ],
+  "evidence_ids": [
+    "docu-prior:p0005",
+    "docu-prior:p0009",
+    "docu-latest:p0004",
+    "docu-latest:p0008"
+  ],
+  "reason": "以百萬美元計，前次全年營收指引中點扣除上半年實績及第三季指引中點，得出第四季隱含營收 2946 − 1445.667 − 745 = 755.333。最新全年指引中點扣除前九個月實績，得出 2961 − 2200.487 = 760.513，因此上調 5.180 百萬美元。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "docu-prior",
+      "block": "docu-prior:p0005",
+      "quote": "Total revenue $2,940 to $2,952",
+      "tabular": true,
+      "unit_block": "docu-prior:p0005",
+      "unit_quote": "Fiscal Year ending January 31, 2025 (in millions, except percentages):"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "docu-prior",
+      "block": "docu-prior:p0009",
+      "quote": "1,445,667",
+      "tabular": true,
+      "unit_block": "docu-prior:p0009",
+      "unit_quote": "(in thousands, except per share data) 2024 2023 2024 2023 Revenue: Subscription $"
+    },
+    {
+      "name": "prior_interim",
+      "document": "docu-prior",
+      "block": "docu-prior:p0005",
+      "quote": "Total revenue $743 to $747",
+      "tabular": true,
+      "unit_block": "docu-prior:p0005",
+      "unit_quote": "Quarter ending October 31, 2024 (in millions, except percentages):"
+    },
+    {
+      "name": "new",
+      "document": "docu-latest",
+      "block": "docu-latest:p0004",
+      "quote": "Total revenue $2,959 to $2,963",
+      "tabular": true,
+      "unit_block": "docu-latest:p0004",
+      "unit_quote": "Fiscal Year ending January 31, 2025 (in millions, except percentages):"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "docu-latest",
+      "block": "docu-latest:p0008",
+      "quote": "2,200,487",
+      "tabular": true,
+      "unit_block": "docu-latest:p0008",
+      "unit_quote": "(in thousands, except per share data) 2024 2023 2024 2023 Revenue: Subscription $"
+    }
+  ],
+  "missing_reason": null
+}

@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "gitlab-latest",
+      "block": "gitlab-latest:p0003",
+      "quote": "$753 - $754",
+      "tabular": true,
+      "unit_block": "gitlab-latest:p0002",
+      "unit_quote": "( in millions, except share and per share data)"
+    },
+    {
+      "name": "prior",
+      "document": "gitlab-prior",
+      "block": "gitlab-prior:p0003",
+      "quote": "$742.0 - $744.0",
+      "tabular": true,
+      "unit_block": "gitlab-prior:p0002",
+      "unit_quote": "(in millions, except share and per share data)"
+    },
+    {
+      "name": "prior_interim",
+      "document": "gitlab-prior",
+      "block": "gitlab-prior:p0003",
+      "quote": "$187.0 - $188.0",
+      "tabular": true,
+      "unit_block": "gitlab-prior:p0002",
+      "unit_quote": "(in millions, except share and per share data)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "gitlab-prior",
+      "block": "gitlab-prior:p0001",
+      "quote": "$182.6 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "gitlab-latest",
+      "block": "gitlab-latest:p0001",
+      "quote": "$196.0 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "gitlab-prior",
+      "block": "gitlab-prior:p0001",
+      "quote": "$182.6 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    }
+  ],
+  "reason": "兩份公告均列出 2025 財年全年營收指引，前次公告另列第三季營收指引。前次發布時已公布第二季實績，最新發布時亦已公布第三季實績。兩份公告均未單列第一季營收，因此省略該季。"
+}

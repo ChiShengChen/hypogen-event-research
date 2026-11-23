@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "docs-latest",
+      "block": "docs-latest:p0001",
+      "quote": "between $564.6 million and $565.6 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior",
+      "document": "docs-prior",
+      "block": "docs-prior:p0001",
+      "quote": "between $535 million and $540 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_interim",
+      "document": "docs-prior",
+      "block": "docs-prior:p0001",
+      "quote": "between $152 million and $153 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "docs-prior",
+      "block": "docs-prior:p0001",
+      "quote": "$136.8 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "docs-latest",
+      "block": "docs-latest:p0001",
+      "quote": "$168.6 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "docs-prior",
+      "block": "docs-prior:p0001",
+      "quote": "$136.8 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    }
+  ],
+  "reason": "兩份公告均明列全年營收指引，前次公告另列第三季指引。第二季實績在兩次發布時均已公布，第三季實績於最新公告公布。兩份公告均未單列第一季營收，因此省略該季。"
+}

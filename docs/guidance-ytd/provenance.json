@@ -1,0 +1,305 @@
+[
+  {
+    "case": "docu",
+    "operand": "prior_reported_in_period",
+    "ref": {
+      "document": "docu-prior",
+      "block": "docu-prior:p0009",
+      "quote": "1,445,667",
+      "tabular": true,
+      "unit_block": "docu-prior:p0009",
+      "unit_quote": "(in thousands, except per share data)                                              2024           2023              2024           2023 Revenue: Subscription                                                             $"
+    },
+    "table": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+    "header": "Three Months Ended July 31,       Six Months Ended July 31, (in thousands, except per share data)                                              2024           2023              2024           2023",
+    "row": "Total revenue                                                                 736,027         687,687         1,445,667       1,349,075",
+    "column": 3,
+    "cumulative": true,
+    "multiplier": 1000,
+    "value": "1445667000",
+    "published_at": "2024-09-05T23:59:59-04:00",
+    "source_url": "https://s21.q4cdn.com/706790701/files/doc_financials/2025/q2/7706ac78-b4f6-4e99-818b-c8fc0b5de9a0.pdf#page=9",
+    "fiscal_year": 2025,
+    "report_end": "2024-07-31",
+    "quarters": [
+      1,
+      2
+    ]
+  },
+  {
+    "case": "docu",
+    "operand": "reported_in_period",
+    "ref": {
+      "document": "docu-latest",
+      "block": "docu-latest:p0008",
+      "quote": "2,200,487",
+      "tabular": true,
+      "unit_block": "docu-latest:p0008",
+      "unit_quote": "(in thousands, except per share data)                    2024           2023                 2024          2023 Revenue: Subscription                                              $"
+    },
+    "table": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+    "header": "Three Months Ended October          Nine Months Ended October 31,                                 31, (in thousands, except per share data)                    2024           2023                 2024          2023",
+    "row": "Total revenue                                                 754,820          700,421        2,200,487        2,049,496",
+    "column": 3,
+    "cumulative": true,
+    "multiplier": 1000,
+    "value": "2200487000",
+    "published_at": "2024-12-05T23:59:59-05:00",
+    "source_url": "https://s21.q4cdn.com/706790701/files/doc_news/Docusign-Announces-Third-Quarter-Fiscal-2025-Financial-Results-2024.pdf#page=8",
+    "fiscal_year": 2025,
+    "report_end": "2024-10-31",
+    "quarters": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "case": "sprt",
+    "operand": "prior_reported_in_period",
+    "ref": {
+      "document": "sprt-prior",
+      "block": "sprt-prior:p0007",
+      "quote": "196,180",
+      "tabular": true,
+      "unit_block": "sprt-prior:p0007",
+      "unit_quote": "(in thousands, except share and per share data) Six Months Ended June 30, 2024                     2023 Revenue Subscription                                                                                   $"
+    },
+    "table": "Consolidated Statements of Operations (Unaudited)",
+    "header": "Six Months Ended June 30, 2024                     2023",
+    "row": "Total revenue                                                                                       196,180                  154,527",
+    "column": 1,
+    "cumulative": true,
+    "multiplier": 1000,
+    "value": "196180000",
+    "published_at": "2024-08-01T23:59:59-04:00",
+    "source_url": "https://s203.q4cdn.com/239200346/files/doc_earnings/2024/q2/earnings-result/Sprout-Social-2Q24-Earnings-Release.pdf#page=7",
+    "fiscal_year": 2024,
+    "report_end": "2024-06-30",
+    "quarters": [
+      1,
+      2
+    ]
+  },
+  {
+    "case": "sprt",
+    "operand": "reported_in_period",
+    "ref": {
+      "document": "sprt-latest",
+      "block": "sprt-latest:p0008",
+      "quote": "298,818",
+      "tabular": true,
+      "unit_block": "sprt-latest:p0008",
+      "unit_quote": "(in thousands, except share and per share data) Nine Months Ended September 30, 2024                     2023 Revenue Subscription                                                                                   $"
+    },
+    "table": "Consolidated Statements of Operations (Unaudited)",
+    "header": "Nine Months Ended September 30, 2024                     2023",
+    "row": "Total revenue                                                                                      298,818                  240,059",
+    "column": 1,
+    "cumulative": true,
+    "multiplier": 1000,
+    "value": "298818000",
+    "published_at": "2024-11-07T23:59:59-05:00",
+    "source_url": "https://s203.q4cdn.com/239200346/files/doc_earnings/2024/q3/earnings-result/Sprout-Social-3Q24-Earnings-Release.pdf#page=8",
+    "fiscal_year": 2024,
+    "report_end": "2024-09-30",
+    "quarters": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "case": "yeti",
+    "operand": "prior_reported_in_period",
+    "ref": {
+      "document": "yeti-prior",
+      "block": "yeti-prior:p0010",
+      "quote": "804,893",
+      "tabular": true,
+      "unit_block": "yeti-prior:p0010",
+      "unit_quote": "(In thousands, except per share amounts) Three Months Ended          Six Months Ended June 29,          July 1,  June 29,         July 1, 2024             2023      2024            2023 Net sales                                                $"
+    },
+    "table": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+    "header": "Three Months Ended          Six Months Ended June 29,          July 1,  June 29,         July 1, 2024             2023      2024            2023",
+    "row": "Net sales                                                $     463,499    $        402,563         $       804,893        $       705,359",
+    "column": 3,
+    "cumulative": true,
+    "multiplier": 1000,
+    "value": "804893000",
+    "published_at": "2024-08-08T23:59:59-04:00",
+    "source_url": "https://s22.q4cdn.com/322452763/files/doc_financials/2024/q2/YETI-Reports-Second-Quarter-2024-Results-2024.pdf#page=10",
+    "fiscal_year": 2024,
+    "report_end": "2024-06-29",
+    "quarters": [
+      1,
+      2
+    ]
+  },
+  {
+    "case": "yeti",
+    "operand": "reported_in_period",
+    "ref": {
+      "document": "yeti-latest",
+      "block": "yeti-latest:p0009",
+      "quote": "1,283,333",
+      "tabular": true,
+      "unit_block": "yeti-latest:p0009",
+      "unit_quote": "(In thousands, except per share amounts) Three Months Ended       Nine Months Ended September     September September    September 28,           30,       28,          30, 2024          2023      2024         2023 Net sales                                                       $"
+    },
+    "table": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+    "header": "Three Months Ended       Nine Months Ended September     September September    September 28,           30,       28,          30, 2024          2023      2024         2023",
+    "row": "Net sales                                                       $     478,440    $     433,561       $   1,283,333        $   1,138,920",
+    "column": 3,
+    "cumulative": true,
+    "multiplier": 1000,
+    "value": "1283333000",
+    "published_at": "2024-11-07T23:59:59-05:00",
+    "source_url": "https://s22.q4cdn.com/322452763/files/doc_financials/2024/q3/YETI-Reports-Third-Quarter-2024-Results-2024.pdf#page=9",
+    "fiscal_year": 2024,
+    "report_end": "2024-09-28",
+    "quarters": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "case": "s",
+    "operand": "prior_reported_in_period",
+    "ref": {
+      "document": "s-prior",
+      "block": "s-prior:p0007",
+      "quote": "385,292",
+      "tabular": true,
+      "unit_block": "s-prior:p0007",
+      "unit_quote": "(in thousands, except share and per share data) (unaudited) Three Months Ended July 31,       Six Months Ended July 31, 2024             2023             2024            2023 Revenue .......................................................................              $"
+    },
+    "table": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+    "header": "Three Months Ended July 31,       Six Months Ended July 31, 2024             2023             2024            2023",
+    "row": "Revenue .......................................................................              $      198,937 $        149,421 $       385,292 $        282,814",
+    "column": 3,
+    "cumulative": true,
+    "multiplier": 1000,
+    "value": "385292000",
+    "published_at": "2024-08-27T23:59:59-04:00",
+    "source_url": "https://s28.q4cdn.com/399982429/files/doc_earnings/2025/q2/earnings-result/Q2-FY25-Earnings-Press-Release-FINAL-SentinelOne.pdf#page=7",
+    "fiscal_year": 2025,
+    "report_end": "2024-07-31",
+    "quarters": [
+      1,
+      2
+    ]
+  },
+  {
+    "case": "s",
+    "operand": "reported_in_period",
+    "ref": {
+      "document": "s-latest",
+      "block": "s-latest:p0008",
+      "quote": "595,940",
+      "tabular": true,
+      "unit_block": "s-latest:p0008",
+      "unit_quote": "(in thousands, except share and per share data) (unaudited) Three Months Ended October 31,   Nine Months Ended October 31, 2024            2023             2024            2023 Revenue .......................................................................              $"
+    },
+    "table": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+    "header": "Three Months Ended October 31,   Nine Months Ended October 31, 2024            2023             2024            2023",
+    "row": "Revenue .......................................................................              $    210,648 $       164,165 $       595,940 $        446,979",
+    "column": 3,
+    "cumulative": true,
+    "multiplier": 1000,
+    "value": "595940000",
+    "published_at": "2024-12-04T23:59:59-05:00",
+    "source_url": "https://s28.q4cdn.com/399982429/files/doc_earnings/2025/q3/earnings-result/Q3-FY25-Earnings-Press-Release-FINAL-SentinelOne.pdf#page=8",
+    "fiscal_year": 2025,
+    "report_end": "2024-10-31",
+    "quarters": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "case": "docs",
+    "operand": "prior_reported_in_period",
+    "ref": {
+      "document": "docs-prior",
+      "block": "docs-prior:p0004",
+      "quote": "263,508",
+      "tabular": true,
+      "unit_block": "docs-prior:p0004",
+      "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended   Six Months Ended September 30,       September 30, 2024        2023    2024        2023 Revenue                                                              $"
+    },
+    "table": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+    "header": "Three Months Ended   Six Months Ended September 30,       September 30, 2024        2023    2024        2023",
+    "row": "Revenue                                                              $ 136,832 $ 113,612 $ 263,508 $ 222,081",
+    "column": 3,
+    "cumulative": true,
+    "multiplier": 1000,
+    "value": "263508000",
+    "published_at": "2024-11-07T23:59:59-05:00",
+    "source_url": "https://s201.q4cdn.com/617428576/files/doc_financials/2025/q2/Doximity-2Q25-Earnings-Call-Press-Release.pdf#page=4",
+    "fiscal_year": 2025,
+    "report_end": "2024-09-30",
+    "quarters": [
+      1,
+      2
+    ]
+  },
+  {
+    "case": "docs",
+    "operand": "reported_in_period",
+    "ref": {
+      "document": "docs-latest",
+      "block": "docs-latest:p0004",
+      "quote": "432,111",
+      "tabular": true,
+      "unit_block": "docs-latest:p0004",
+      "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended   Nine Months Ended December 31,         December 31, 2024        2023     2024        2023 Revenue                                                              $"
+    },
+    "table": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+    "header": "Three Months Ended   Nine Months Ended December 31,         December 31, 2024        2023     2024        2023",
+    "row": "Revenue                                                              $ 168,603 $ 135,284 $ 432,111 $ 357,365",
+    "column": 3,
+    "cumulative": true,
+    "multiplier": 1000,
+    "value": "432111000",
+    "published_at": "2025-02-06T23:59:59-05:00",
+    "source_url": "https://s201.q4cdn.com/617428576/files/doc_financials/2025/q3/Doximity-3Q25-Earnings-Call-Press-Release.pdf#page=4",
+    "fiscal_year": 2025,
+    "report_end": "2024-12-31",
+    "quarters": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "case": "mndy",
+    "operand": "reported_in_period",
+    "ref": {
+      "document": "mndy-latest",
+      "block": "mndy-latest:p0006",
+      "quote": "704,019",
+      "tabular": true,
+      "unit_block": "mndy-latest:p0006",
+      "unit_quote": "(U.S. dollars in thousands, except share and per share data) Three months ended                      Nine months ended September 30,                          September 30, 2024                   2023             2024                 2023 (unaudited)                             (unaudited) Revenue                                      $"
+    },
+    "table": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+    "header": "Three months ended                      Nine months ended September 30,                          September 30, 2024                   2023             2024                 2023",
+    "row": "Revenue                                      $      251,000      $         189,190    $     704,019      $       527,125",
+    "column": 3,
+    "cumulative": true,
+    "multiplier": 1000,
+    "value": "704019000",
+    "published_at": "2024-11-11T23:59:59-05:00",
+    "source_url": "https://s29.q4cdn.com/881027206/files/doc_financials/2024/q3/Q3-24-PR.pdf#page=6",
+    "fiscal_year": 2024,
+    "report_end": "2024-09-30",
+    "quarters": [
+      1,
+      2,
+      3
+    ]
+  }
+]

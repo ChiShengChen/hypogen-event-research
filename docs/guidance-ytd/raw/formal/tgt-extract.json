@@ -1,0 +1,32 @@
+{
+  "figures": [
+    {
+      "name": "reported_in_period",
+      "document": "tgt-prior",
+      "block": "tgt-prior:p0005",
+      "quote": "25,452",
+      "tabular": true,
+      "unit_block": "tgt-prior:p0005",
+      "unit_quote": "(millions, except per share data) (unaudited) August 3, 2024 July 29, 2023 Change August 3, 2024 July 29, 2023 Change Sales $ 25,021"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "tgt-latest",
+      "block": "tgt-latest:p0005",
+      "quote": "25,668",
+      "tabular": true,
+      "unit_block": "tgt-latest:p0005",
+      "unit_quote": "(millions, except per share data) (unaudited) 2024 2023 Change 2024 2023 Change Sales $ 25,228"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "tgt-prior",
+      "block": "tgt-prior:p0005",
+      "quote": "25,452",
+      "tabular": true,
+      "unit_block": "tgt-prior:p0005",
+      "unit_quote": "(millions, except per share data) (unaudited) August 3, 2024 July 29, 2023 Change August 3, 2024 July 29, 2023 Change Sales $ 25,021"
+    }
+  ],
+  "reason": "兩份公告均未提供以美元計的全年或第三季合併總營收指引。合併損益表的「Total revenue」列直接列出第二、三季的單季實績；第一季金額須由上半年累計額扣除第二季金額推算，因此省略。"
+}

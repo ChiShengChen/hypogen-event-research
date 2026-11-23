@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "sprt-latest",
+      "block": "sprt-latest:p0002",
+      "quote": "between $405.1 million and $405.9 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior",
+      "document": "sprt-prior",
+      "block": "sprt-prior:p0002",
+      "quote": "between $405.0 million and $406.0 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_interim",
+      "document": "sprt-prior",
+      "block": "sprt-prior:p0002",
+      "quote": "between $101.9 million and $102.1 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "sprt-prior",
+      "block": "sprt-prior:p0006",
+      "quote": "99,396",
+      "tabular": true,
+      "unit_block": "sprt-prior:p0006",
+      "unit_quote": "(in thousands, except share and per share data) Three Months Ended June 30, 2024 2023 Revenue Subscription $ 98,498"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "sprt-latest",
+      "block": "sprt-latest:p0007",
+      "quote": "102,638",
+      "tabular": true,
+      "unit_block": "sprt-latest:p0006",
+      "unit_quote": "(in thousands, except share and per share data) Three Months Ended September 30, 2024 2023 Revenue Subscription $ 101,813"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "sprt-prior",
+      "block": "sprt-prior:p0006",
+      "quote": "99,396",
+      "tabular": true,
+      "unit_block": "sprt-prior:p0006",
+      "unit_quote": "(in thousands, except share and per share data) Three Months Ended June 30, 2024 2023 Revenue Subscription $ 98,498"
+    }
+  ],
+  "reason": "兩次公告均明列 2024 全年總營收指引，8 月公告另列第三季指引。單季實績取自合併損益表的總營收列，單位為千美元。8 月公告時已公布第二季實績，11 月公告時另有第三季實績。兩份公告均未單列第一季總營收，故省略該季。"
+}

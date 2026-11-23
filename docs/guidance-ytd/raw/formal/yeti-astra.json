@@ -1,0 +1,54 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "unknown"},
+    {"item": "implied_remainder_change", "value": "unknown"},
+    {"item": "implied_remainder", "value": "unknown"}
+  ],
+  "evidence_ids": [
+    "yeti-prior:p0014",
+    "yeti-prior:p0012",
+    "yeti-prior:p0006",
+    "yeti-latest:p0014",
+    "yeti-latest:p0011"
+  ],
+  "reason": "以千美元計，前次全年調整後淨銷售額指引中點為（1814846＋1848454）÷2＝1831650，扣除上半年實績804893後，得到第三、四季合計1026757。最新全年指引扣除前九個月實績，得出第四季隱含金額1831650－1283333＝548317。由於前次公告未提供第三季預測，無法單獨算出前次第四季金額，也無法判定變動金額或方向。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "yeti-prior",
+      "block": "yeti-prior:p0014",
+      "quote": "$ 1,814,846 $ 1,848,454",
+      "tabular": true,
+      "unit_block": "yeti-prior:p0014",
+      "unit_quote": "(In thousands except per share amounts) Fiscal 2023 Fiscal 2024 Outlook Low High Adjusted net sales $"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "yeti-prior",
+      "block": "yeti-prior:p0012",
+      "quote": "$ 804,893",
+      "tabular": true,
+      "unit_block": "yeti-prior:p0012",
+      "unit_quote": "(In thousands except per share amounts) Three Months Ended Six Months Ended June 29, July 1, June 29, July 1, 2024 2023 2024 2023 Net sales $"
+    },
+    {
+      "name": "new",
+      "document": "yeti-latest",
+      "block": "yeti-latest:p0014",
+      "quote": "$ 1,831,650",
+      "tabular": true,
+      "unit_block": "yeti-latest:p0014",
+      "unit_quote": "(In thousands except per share amounts) Fiscal 2024 Fiscal 2023 Outlook Adjusted net sales $"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "yeti-latest",
+      "block": "yeti-latest:p0011",
+      "quote": "$ 1,283,333",
+      "tabular": true,
+      "unit_block": "yeti-latest:p0011",
+      "unit_quote": "(In thousands except per share amounts) Three Months Ended Nine Months Ended September September September September 28, 30, 28, 30, 2024 2023 2024 2023 Net sales $"
+    }
+  ],
+  "missing_reason": "缺少前次公告當時對2024財年第三季調整後淨銷售額的預測，或當時將下半年預測拆分至第三、四季的資料。"
+}

@@ -1,0 +1,23 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "121492000"},
+    {"item": "implied_remainder_new", "value": "132989000"},
+    {"item": "implied_remainder_change", "value": "11497000"},
+    {"item": "implied_remainder", "value": "raised"}
+  ],
+  "evidence_ids": [
+    "docs-prior:p0001",
+    "docs-prior:p0004",
+    "docs-latest:p0001",
+    "docs-latest:p0004"
+  ],
+  "reason": "以百萬美元計，前次全年指引中點扣除上半年實際營收及第三季指引中點，得出第四季隱含營收 537.5 − 263.508 − 152.5 = 121.492。最新全年指引中點扣除前九個月實際營收，得出 565.1 − 432.111 = 132.989。因此第四季隱含營收上調 11.497 百萬美元。",
+  "figures_used": [
+    {"name": "prior", "document": "docs-prior", "block": "docs-prior:p0001", "quote": "Revenue between $535 million and $540 million.", "tabular": false, "unit_block": null, "unit_quote": null},
+    {"name": "prior_reported_in_period", "document": "docs-prior", "block": "docs-prior:p0004", "quote": "$ 263,508", "tabular": true, "unit_block": "docs-prior:p0004", "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended Six Months Ended September 30, September 30, 2024 2023 2024 2023 Revenue $"},
+    {"name": "prior_interim", "document": "docs-prior", "block": "docs-prior:p0001", "quote": "Revenue between $152 million and $153 million.", "tabular": false, "unit_block": null, "unit_quote": null},
+    {"name": "new", "document": "docs-latest", "block": "docs-latest:p0001", "quote": "Revenue between $564.6 million and $565.6 million.", "tabular": false, "unit_block": null, "unit_quote": null},
+    {"name": "reported_in_period", "document": "docs-latest", "block": "docs-latest:p0004", "quote": "$ 432,111", "tabular": true, "unit_block": "docs-latest:p0004", "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended Nine Months Ended December 31, December 31, 2024 2023 2024 2023 Revenue $"}
+  ],
+  "missing_reason": null
+}

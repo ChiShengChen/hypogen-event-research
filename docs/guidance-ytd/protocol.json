@@ -1,0 +1,37 @@
+{
+  "sealed_at": "2026-11-23T13:33:00.979446+00:00",
+  "hypothesis": "累計期間與財務欄位證據可增加可計算案例全對而維持零誤調。",
+  "model": "gpt-6.2-astra",
+  "effort": "medium",
+  "search": false,
+  "timeout_seconds": 180,
+  "single_worker": true,
+  "one_attempt_per_arm": true,
+  "source_sha256": {
+    "/tmp/hypogen-ytd-work/benchmarks/guidance_arithmetic.py": "ec3463791b7bc018c831452d1e23c07817b2bd6e98bc952bbf264300406ddab1",
+    "/tmp/hypogen-ytd-work/benchmarks/guidance_ytd.py": "61adc7d6a47bc48529056951dda10c07bf38d1da460f55bfd3d58d4ddf12a11d",
+    "/tmp/hypogen-ytd-work/benchmarks/guidance_ytd_run.py": "3131c09ec1b5570ace670a3c6bd9c759af9b31303739bdefd41715fd6e7269c3",
+    "research_app/guidance_arithmetic.py": "554af69edec311b28a286f7264c12893e803c9259133d70600f6aec7eece7982",
+    "research_app/financial_units.py": "59983e5833b4413e5938d0e2e0f05abad939554a4ebb42f7392e4bf17bdd5539"
+  },
+  "cases_sha256": "da9644ef11c49d483267f4c3b8226b39b70e137b662690bba7c908ed60c6ba4d",
+  "requests_sha256": "0d9bbd875b43ba8a426545078880524e78f4006813c38024329e171f4344756a",
+  "primary": "新舊隱含金額、差額、方向及來源欄位或證據不足理由須同時正確。時間及幣別錯不可得分。",
+  "tolerance": "金額採既有 1% 或封存精度 1/100 的較大者。方向完全一致。Astra 逐欄給引用。",
+  "citation": "正例須支持五項可見的金額基礎，核對封存原文字面與可接受欄位。負例須明確 unknown、提出本案缺少的條件並指向點時公告。",
+  "pilot_gate": {
+    "complete": 4,
+    "new_exact_min": 3,
+    "new_positive_min": 1,
+    "false_adjustments_max": 0
+  },
+  "holdout_gate": {
+    "complete": 8,
+    "new_positive_min": 3,
+    "new_negative_min": 3,
+    "false_adjustments_max": 0
+  },
+  "improvement": "通過保留集基本門檻、正例比現版多至少一案且負例不退步。",
+  "lead": "通過保留集基本門檻、全對數比純 Astra 多至少兩案。",
+  "stop": "先導未過立即停止，保留失敗回傳並輸出未開始的保留集。先導通過後跑完八個保留集即停止。同一次擷取並行經兩版驗證器，純 Astra 獨立回覆。服務容量或限流時停止派發，已開始者計入預算。"
+}

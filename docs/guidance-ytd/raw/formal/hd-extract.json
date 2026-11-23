@@ -1,0 +1,32 @@
+{
+  "figures": [
+    {
+      "name": "reported_in_period",
+      "document": "hd-prior",
+      "block": "hd-prior:p0005",
+      "quote": "$ 43,175",
+      "tabular": true,
+      "unit_block": "hd-prior:p0005",
+      "unit_quote": "in millions, except per share data"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "hd-latest",
+      "block": "hd-latest:p0005",
+      "quote": "$ 40,217",
+      "tabular": true,
+      "unit_block": "hd-latest:p0005",
+      "unit_quote": "in millions, except per share data"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "hd-prior",
+      "block": "hd-prior:p0005",
+      "quote": "$ 43,175",
+      "tabular": true,
+      "unit_block": "hd-prior:p0005",
+      "unit_quote": "in millions, except per share data"
+    }
+  ],
+  "reason": "兩份公告的合併損益表分別列出第二季及第三季的單季淨銷售額。第二季數字在兩次發布指引時均已公布。第一季金額須由半年累計額反推，故略去。全年營收指引僅列成長率（最新約 4%，前次為 2.5% 至 3.5%），未列全年營收總額；前次公告亦未列第三季營收指引。"
+}

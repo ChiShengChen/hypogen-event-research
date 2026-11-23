@@ -1,0 +1,50 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "deck-latest",
+      "block": "deck-latest:p0005",
+      "quote": "$4.9 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior",
+      "document": "deck-prior",
+      "block": "deck-prior:p0004",
+      "quote": "APPROXIMATELY $4.8 BILLION",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "deck-prior",
+      "block": "deck-prior:p0008",
+      "quote": "$ 1,311,320",
+      "tabular": true,
+      "unit_block": "deck-prior:p0008",
+      "unit_quote": "(dollar and share data amounts in thousands, except per share data)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "deck-latest",
+      "block": "deck-latest:p0008",
+      "quote": "$ 1,827,165",
+      "tabular": true,
+      "unit_block": "deck-latest:p0008",
+      "unit_quote": "(dollar and share data amounts in thousands, except per share data)"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "deck-prior",
+      "block": "deck-prior:p0008",
+      "quote": "$ 1,311,320",
+      "tabular": true,
+      "unit_block": "deck-prior:p0008",
+      "unit_quote": "(dollar and share data amounts in thousands, except per share data)"
+    }
+  ],
+  "reason": "Deckers 將 2025 財年營收指引由約 48 億美元上調至 49 億美元。第二季及第三季實績取自合併綜合損益表的單季淨銷售額。所附公告未單列第一季營收，也未提供第三季營收指引，因此略去這兩項。"
+}

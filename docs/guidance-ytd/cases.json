@@ -1,0 +1,1186 @@
+{
+  "docu": {
+    "case": {
+      "id": "docu",
+      "split": "pilot",
+      "issuer": "Docusign",
+      "ticker": "DOCU",
+      "event_at": "2024-12-05T23:59:59-05:00",
+      "as_of": "2024-12-05T23:59:59-05:00",
+      "currency": "USD",
+      "precision": "1000",
+      "labels": {
+        "period": "fiscal 2025",
+        "interim": "the third quarter of fiscal 2025",
+        "remainder": "the fourth quarter of fiscal 2025"
+      },
+      "documents": [
+        {
+          "id": "docu-prior",
+          "source_url": "https://s21.q4cdn.com/706790701/files/doc_financials/2025/q2/7706ac78-b4f6-4e99-818b-c8fc0b5de9a0.pdf",
+          "path": "output/guidance-ytd/filings/docu-prior.pages.txt",
+          "sha256": "7ec58467fcbb3902eca2aa25a935ca19f49f5ad6a64f43e5e37708afc8c37765",
+          "content_type": "text/plain",
+          "published_at": "2024-09-05T23:59:59-04:00",
+          "obtained_at": "2024-09-05T23:59:59-04:00"
+        },
+        {
+          "id": "docu-latest",
+          "source_url": "https://s21.q4cdn.com/706790701/files/doc_news/Docusign-Announces-Third-Quarter-Fiscal-2025-Financial-Results-2024.pdf",
+          "path": "output/guidance-ytd/filings/docu-latest.pages.txt",
+          "sha256": "31d8eb65d081f53cb049fe9aa7e44c65e1667e36d7e95ed070bbddf53625d724",
+          "content_type": "text/plain",
+          "published_at": "2024-12-05T23:59:59-05:00",
+          "obtained_at": "2024-12-05T23:59:59-05:00"
+        }
+      ],
+      "figures": {
+        "prior": [
+          {
+            "document": "docu-prior",
+            "block": "docu-prior:p0005",
+            "quote": "$2,940 to $2,952",
+            "tabular": true,
+            "unit_block": "docu-prior:p0005",
+            "unit_quote": "in millions, except percentages"
+          }
+        ],
+        "prior_interim": [
+          {
+            "document": "docu-prior",
+            "block": "docu-prior:p0005",
+            "quote": "$743 to $747",
+            "tabular": true,
+            "unit_block": "docu-prior:p0005",
+            "unit_quote": "in millions, except percentages"
+          }
+        ],
+        "new": [
+          {
+            "document": "docu-latest",
+            "block": "docu-latest:p0004",
+            "quote": "$2,959 to $2,963",
+            "tabular": true,
+            "unit_block": "docu-latest:p0004",
+            "unit_quote": "in millions, except percentages"
+          }
+        ],
+        "prior_reported_in_period": [
+          {
+            "document": "docu-prior",
+            "block": "docu-prior:p0009",
+            "quote": "1,445,667",
+            "tabular": true,
+            "unit_block": "docu-prior:p0009",
+            "unit_quote": "(in thousands, except per share data) 2024 2023 2024 2023 Revenue: Subscription $"
+          }
+        ],
+        "reported_in_period": [
+          {
+            "document": "docu-latest",
+            "block": "docu-latest:p0008",
+            "quote": "2,200,487",
+            "tabular": true,
+            "unit_block": "docu-latest:p0008",
+            "unit_quote": "(in thousands, except per share data) 2024 2023 2024 2023 Revenue: Subscription $"
+          }
+        ]
+      },
+      "items": [
+        "implied_remainder_prior",
+        "implied_remainder_new",
+        "implied_remainder_change",
+        "implied_remainder"
+      ],
+      "style": "implicit",
+      "trap": "選對本財年與合併口徑的累計營收，排除單季、去年同期和明示獨立 Q4。",
+      "undetermined": {}
+    },
+    "vintages": {
+      "docu-prior": {
+        "report_end": "2024-07-31",
+        "fiscal_year": 2025,
+        "quarter": 2
+      },
+      "docu-latest": {
+        "report_end": "2024-10-31",
+        "fiscal_year": 2025,
+        "quarter": 3
+      }
+    },
+    "gap_terms": [],
+    "gold": {
+      "implied_remainder_prior": "755333000",
+      "implied_remainder_new": "760513000",
+      "implied_remainder_change": "5180000",
+      "implied_remainder": "raised"
+    }
+  },
+  "sprt": {
+    "case": {
+      "id": "sprt",
+      "split": "pilot",
+      "issuer": "Sprout Social",
+      "ticker": "SPT",
+      "event_at": "2024-11-07T23:59:59-05:00",
+      "as_of": "2024-11-07T23:59:59-05:00",
+      "currency": "USD",
+      "precision": "1000",
+      "labels": {
+        "period": "fiscal 2024",
+        "interim": "the third quarter of fiscal 2024",
+        "remainder": "the fourth quarter of fiscal 2024"
+      },
+      "documents": [
+        {
+          "id": "sprt-prior",
+          "source_url": "https://s203.q4cdn.com/239200346/files/doc_earnings/2024/q2/earnings-result/Sprout-Social-2Q24-Earnings-Release.pdf",
+          "path": "output/guidance-ytd/filings/sprt-prior.pages.txt",
+          "sha256": "ddc37ffed563c6ca4cc64593e674198301642982fca625d776e35609d54ae969",
+          "content_type": "text/plain",
+          "published_at": "2024-08-01T23:59:59-04:00",
+          "obtained_at": "2024-08-01T23:59:59-04:00"
+        },
+        {
+          "id": "sprt-latest",
+          "source_url": "https://s203.q4cdn.com/239200346/files/doc_earnings/2024/q3/earnings-result/Sprout-Social-3Q24-Earnings-Release.pdf",
+          "path": "output/guidance-ytd/filings/sprt-latest.pages.txt",
+          "sha256": "4ef21480ef4ffb4200325c910fc031bccde85ef8376584c9187f1a5885413675",
+          "content_type": "text/plain",
+          "published_at": "2024-11-07T23:59:59-05:00",
+          "obtained_at": "2024-11-07T23:59:59-05:00"
+        }
+      ],
+      "figures": {
+        "prior": [
+          {
+            "document": "sprt-prior",
+            "block": "sprt-prior:p0002",
+            "quote": "between $405.0 million and $406.0 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ],
+        "prior_interim": [
+          {
+            "document": "sprt-prior",
+            "block": "sprt-prior:p0002",
+            "quote": "between $101.9 million and $102.1 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ],
+        "new": [
+          {
+            "document": "sprt-latest",
+            "block": "sprt-latest:p0002",
+            "quote": "between $405.1 million and $405.9 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ],
+        "prior_reported_in_period": [
+          {
+            "document": "sprt-prior",
+            "block": "sprt-prior:p0007",
+            "quote": "196,180",
+            "tabular": true,
+            "unit_block": "sprt-prior:p0007",
+            "unit_quote": "(in thousands, except share and per share data) Six Months Ended June 30, 2024 2023 Revenue Subscription $"
+          }
+        ],
+        "reported_in_period": [
+          {
+            "document": "sprt-latest",
+            "block": "sprt-latest:p0008",
+            "quote": "298,818",
+            "tabular": true,
+            "unit_block": "sprt-latest:p0008",
+            "unit_quote": "(in thousands, except share and per share data) Nine Months Ended September 30, 2024 2023 Revenue Subscription $"
+          }
+        ]
+      },
+      "items": [
+        "implied_remainder_prior",
+        "implied_remainder_new",
+        "implied_remainder_change",
+        "implied_remainder"
+      ],
+      "style": "implicit",
+      "trap": "選對本財年與合併口徑的累計營收，排除單季、去年同期和明示獨立 Q4。",
+      "undetermined": {}
+    },
+    "vintages": {
+      "sprt-prior": {
+        "report_end": "2024-06-30",
+        "fiscal_year": 2024,
+        "quarter": 2
+      },
+      "sprt-latest": {
+        "report_end": "2024-09-30",
+        "fiscal_year": 2024,
+        "quarter": 3
+      }
+    },
+    "gap_terms": [],
+    "gold": {
+      "implied_remainder_prior": "107320000.0",
+      "implied_remainder_new": "106682000.0",
+      "implied_remainder_change": "-638000.0",
+      "implied_remainder": "lowered"
+    }
+  },
+  "yeti": {
+    "case": {
+      "id": "yeti",
+      "split": "pilot",
+      "issuer": "YETI",
+      "ticker": "YETI",
+      "event_at": "2024-11-07T23:59:59-05:00",
+      "as_of": "2024-11-07T23:59:59-05:00",
+      "currency": "USD",
+      "precision": "1000",
+      "labels": {
+        "period": "fiscal 2024",
+        "interim": "the third quarter of fiscal 2024",
+        "remainder": "the fourth quarter of fiscal 2024"
+      },
+      "documents": [
+        {
+          "id": "yeti-prior",
+          "source_url": "https://s22.q4cdn.com/322452763/files/doc_financials/2024/q2/YETI-Reports-Second-Quarter-2024-Results-2024.pdf",
+          "path": "output/guidance-ytd/filings/yeti-prior.pages.txt",
+          "sha256": "33af9d97541cc23688173c57bb40555bfd0fec1feb738b0f1076f43d4e5f7aa2",
+          "content_type": "text/plain",
+          "published_at": "2024-08-08T23:59:59-04:00",
+          "obtained_at": "2024-08-08T23:59:59-04:00"
+        },
+        {
+          "id": "yeti-latest",
+          "source_url": "https://s22.q4cdn.com/322452763/files/doc_financials/2024/q3/YETI-Reports-Third-Quarter-2024-Results-2024.pdf",
+          "path": "output/guidance-ytd/filings/yeti-latest.pages.txt",
+          "sha256": "569c192ff39cff2d9547d2cf598ce4f50cd40dbd55bf109bd5310acea337878c",
+          "content_type": "text/plain",
+          "published_at": "2024-11-07T23:59:59-05:00",
+          "obtained_at": "2024-11-07T23:59:59-05:00"
+        }
+      ],
+      "figures": {},
+      "items": [
+        "implied_remainder_prior",
+        "implied_remainder_change",
+        "implied_remainder"
+      ],
+      "style": "implicit",
+      "trap": "The prior release does not provide a Q3 consolidated net sales dollar outlook. Annual revenue growth rates do not supply it.",
+      "undetermined": {
+        "implied_remainder_prior": "The prior release does not provide a Q3 consolidated net sales dollar outlook. Annual revenue growth rates do not supply it.",
+        "implied_remainder_change": "The prior release does not provide a Q3 consolidated net sales dollar outlook. Annual revenue growth rates do not supply it.",
+        "implied_remainder": "The prior release does not provide a Q3 consolidated net sales dollar outlook. Annual revenue growth rates do not supply it."
+      }
+    },
+    "vintages": {
+      "yeti-prior": {
+        "report_end": "2024-06-29",
+        "fiscal_year": 2024,
+        "quarter": 2
+      },
+      "yeti-latest": {
+        "report_end": "2024-09-28",
+        "fiscal_year": 2024,
+        "quarter": 3
+      }
+    },
+    "gap_terms": [
+      "prior_interim",
+      "q3",
+      "third quarter",
+      "第三季",
+      "第三季度",
+      "前季",
+      "上一季",
+      "先前",
+      "前次"
+    ],
+    "gold": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+    }
+  },
+  "wday": {
+    "case": {
+      "id": "wday",
+      "split": "pilot",
+      "issuer": "Workday",
+      "ticker": "WDAY",
+      "event_at": "2024-11-26T23:59:59-05:00",
+      "as_of": "2024-11-26T23:59:59-05:00",
+      "currency": "USD",
+      "precision": "1000",
+      "labels": {
+        "period": "fiscal 2025",
+        "interim": "the third quarter of fiscal 2025",
+        "remainder": "the fourth quarter of fiscal 2025"
+      },
+      "documents": [
+        {
+          "id": "wday-prior",
+          "source_url": "https://s23.q4cdn.com/175719177/files/doc_news/Workday-Announces-Fiscal-2025-Second-Quarter-Financial-Results-2024.pdf",
+          "path": "output/guidance-ytd/filings/wday-prior.pages.txt",
+          "sha256": "ce06522b5d825131e24ddcdd96b18214fcb38689aad0d48fbff5877d72001140",
+          "content_type": "text/plain",
+          "published_at": "2024-08-22T23:59:59-04:00",
+          "obtained_at": "2024-08-22T23:59:59-04:00"
+        },
+        {
+          "id": "wday-latest",
+          "source_url": "https://s21.q4cdn.com/950027458/files/doc_news/Workday-Announces-Fiscal-2025-Third-Quarter-Financial-Results-11-26-2024-2024.pdf",
+          "path": "output/guidance-ytd/filings/wday-latest.pages.txt",
+          "sha256": "c19df55847e2df3740ba37b6a35b3916e6bfab2a6d8988e563421ae1aedaccf6",
+          "content_type": "text/plain",
+          "published_at": "2024-11-26T23:59:59-05:00",
+          "obtained_at": "2024-11-26T23:59:59-05:00"
+        }
+      ],
+      "figures": {},
+      "items": [
+        "implied_remainder_prior",
+        "implied_remainder_change",
+        "implied_remainder"
+      ],
+      "style": "implicit",
+      "trap": "The outlook is subscription revenue; it does not establish comparable consolidated total revenue guidance.",
+      "undetermined": {
+        "implied_remainder_prior": "The outlook is subscription revenue; it does not establish comparable consolidated total revenue guidance.",
+        "implied_remainder_change": "The outlook is subscription revenue; it does not establish comparable consolidated total revenue guidance.",
+        "implied_remainder": "The outlook is subscription revenue; it does not establish comparable consolidated total revenue guidance."
+      }
+    },
+    "vintages": {
+      "wday-prior": {
+        "report_end": "2024-07-31",
+        "fiscal_year": 2025,
+        "quarter": 2
+      },
+      "wday-latest": {
+        "report_end": "2024-10-31",
+        "fiscal_year": 2025,
+        "quarter": 3
+      }
+    },
+    "gap_terms": [
+      "prior_interim",
+      "q3",
+      "third quarter",
+      "第三季",
+      "第三季度",
+      "前季",
+      "上一季",
+      "先前",
+      "前次",
+      "prior figure",
+      "total revenue",
+      "合併營收",
+      "總營收",
+      "訂閱",
+      "subscription",
+      "prior"
+    ],
+    "gold": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+    }
+  },
+  "s": {
+    "case": {
+      "id": "s",
+      "split": "holdout",
+      "issuer": "SentinelOne",
+      "ticker": "S",
+      "event_at": "2024-12-04T23:59:59-05:00",
+      "as_of": "2024-12-04T23:59:59-05:00",
+      "currency": "USD",
+      "precision": "1000",
+      "labels": {
+        "period": "fiscal 2025",
+        "interim": "the third quarter of fiscal 2025",
+        "remainder": "the fourth quarter of fiscal 2025"
+      },
+      "documents": [
+        {
+          "id": "s-prior",
+          "source_url": "https://s28.q4cdn.com/399982429/files/doc_earnings/2025/q2/earnings-result/Q2-FY25-Earnings-Press-Release-FINAL-SentinelOne.pdf",
+          "path": "output/guidance-ytd/filings/s-prior.pages.txt",
+          "sha256": "dc74719c9535678b3387b7e3ae6bab065609e06879a420d0739e84686ac8524a",
+          "content_type": "text/plain",
+          "published_at": "2024-08-27T23:59:59-04:00",
+          "obtained_at": "2024-08-27T23:59:59-04:00"
+        },
+        {
+          "id": "s-latest",
+          "source_url": "https://s28.q4cdn.com/399982429/files/doc_earnings/2025/q3/earnings-result/Q3-FY25-Earnings-Press-Release-FINAL-SentinelOne.pdf",
+          "path": "output/guidance-ytd/filings/s-latest.pages.txt",
+          "sha256": "ecfaef44d6dc6ec642eb1504bb05b6b733b1f9824096e37c03f98f43b6b004bb",
+          "content_type": "text/plain",
+          "published_at": "2024-12-04T23:59:59-05:00",
+          "obtained_at": "2024-12-04T23:59:59-05:00"
+        }
+      ],
+      "figures": {
+        "prior": [
+          {
+            "document": "s-prior",
+            "block": "s-prior:p0002",
+            "quote": "$815 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ],
+        "prior_interim": [
+          {
+            "document": "s-prior",
+            "block": "s-prior:p0002",
+            "quote": "$209.5 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ],
+        "new": [
+          {
+            "document": "s-latest",
+            "block": "s-latest:p0002",
+            "quote": "$818 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ],
+        "prior_reported_in_period": [
+          {
+            "document": "s-prior",
+            "block": "s-prior:p0007",
+            "quote": "385,292",
+            "tabular": true,
+            "unit_block": "s-prior:p0007",
+            "unit_quote": "(in thousands, except share and per share data) (unaudited) Three Months Ended July 31, Six Months Ended July 31, 2024 2023 2024 2023 Revenue ....................................................................... $"
+          }
+        ],
+        "reported_in_period": [
+          {
+            "document": "s-latest",
+            "block": "s-latest:p0008",
+            "quote": "595,940",
+            "tabular": true,
+            "unit_block": "s-latest:p0008",
+            "unit_quote": "(in thousands, except share and per share data) (unaudited) Three Months Ended October 31, Nine Months Ended October 31, 2024 2023 2024 2023 Revenue ....................................................................... $"
+          }
+        ]
+      },
+      "items": [
+        "implied_remainder_prior",
+        "implied_remainder_new",
+        "implied_remainder_change",
+        "implied_remainder"
+      ],
+      "style": "implicit",
+      "trap": "選對本財年與合併口徑的累計營收，排除單季、去年同期和明示獨立 Q4。",
+      "undetermined": {}
+    },
+    "vintages": {
+      "s-prior": {
+        "report_end": "2024-07-31",
+        "fiscal_year": 2025,
+        "quarter": 2
+      },
+      "s-latest": {
+        "report_end": "2024-10-31",
+        "fiscal_year": 2025,
+        "quarter": 3
+      }
+    },
+    "gap_terms": [],
+    "gold": {
+      "implied_remainder_prior": "220208000.0",
+      "implied_remainder_new": "222060000",
+      "implied_remainder_change": "1852000.0",
+      "implied_remainder": "raised"
+    }
+  },
+  "docs": {
+    "case": {
+      "id": "docs",
+      "split": "holdout",
+      "issuer": "Doximity",
+      "ticker": "DOCS",
+      "event_at": "2025-02-06T23:59:59-05:00",
+      "as_of": "2025-02-06T23:59:59-05:00",
+      "currency": "USD",
+      "precision": "1000",
+      "labels": {
+        "period": "fiscal 2025",
+        "interim": "the third quarter of fiscal 2025",
+        "remainder": "the fourth quarter of fiscal 2025"
+      },
+      "documents": [
+        {
+          "id": "docs-prior",
+          "source_url": "https://s201.q4cdn.com/617428576/files/doc_financials/2025/q2/Doximity-2Q25-Earnings-Call-Press-Release.pdf",
+          "path": "output/guidance-ytd/filings/docs-prior.pages.txt",
+          "sha256": "247ffb3249edd9bd6bbac2abee826fac34952d9acbeb935888ca8ef2cce16170",
+          "content_type": "text/plain",
+          "published_at": "2024-11-07T23:59:59-05:00",
+          "obtained_at": "2024-11-07T23:59:59-05:00"
+        },
+        {
+          "id": "docs-latest",
+          "source_url": "https://s201.q4cdn.com/617428576/files/doc_financials/2025/q3/Doximity-3Q25-Earnings-Call-Press-Release.pdf",
+          "path": "output/guidance-ytd/filings/docs-latest.pages.txt",
+          "sha256": "96a10204ac40982c9e10d3536919ed86dc2d499a738dfc786debf82cf0358267",
+          "content_type": "text/plain",
+          "published_at": "2025-02-06T23:59:59-05:00",
+          "obtained_at": "2025-02-06T23:59:59-05:00"
+        }
+      ],
+      "figures": {
+        "prior": [
+          {
+            "document": "docs-prior",
+            "block": "docs-prior:p0001",
+            "quote": "between $535 million and $540 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ],
+        "prior_interim": [
+          {
+            "document": "docs-prior",
+            "block": "docs-prior:p0001",
+            "quote": "between $152 million and $153 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ],
+        "new": [
+          {
+            "document": "docs-latest",
+            "block": "docs-latest:p0001",
+            "quote": "between $564.6 million and $565.6 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ],
+        "prior_reported_in_period": [
+          {
+            "document": "docs-prior",
+            "block": "docs-prior:p0004",
+            "quote": "263,508",
+            "tabular": true,
+            "unit_block": "docs-prior:p0004",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended Six Months Ended September 30, September 30, 2024 2023 2024 2023 Revenue $"
+          }
+        ],
+        "reported_in_period": [
+          {
+            "document": "docs-latest",
+            "block": "docs-latest:p0004",
+            "quote": "432,111",
+            "tabular": true,
+            "unit_block": "docs-latest:p0004",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended Nine Months Ended December 31, December 31, 2024 2023 2024 2023 Revenue $"
+          }
+        ]
+      },
+      "items": [
+        "implied_remainder_prior",
+        "implied_remainder_new",
+        "implied_remainder_change",
+        "implied_remainder"
+      ],
+      "style": "implicit",
+      "trap": "選對本財年與合併口徑的累計營收，排除單季、去年同期和明示獨立 Q4。",
+      "undetermined": {}
+    },
+    "vintages": {
+      "docs-prior": {
+        "report_end": "2024-09-30",
+        "fiscal_year": 2025,
+        "quarter": 2
+      },
+      "docs-latest": {
+        "report_end": "2024-12-31",
+        "fiscal_year": 2025,
+        "quarter": 3
+      }
+    },
+    "gap_terms": [],
+    "gold": {
+      "implied_remainder_prior": "121492000",
+      "implied_remainder_new": "132989000.0",
+      "implied_remainder_change": "11497000.0",
+      "implied_remainder": "raised"
+    }
+  },
+  "mndy": {
+    "case": {
+      "id": "mndy",
+      "split": "holdout",
+      "issuer": "monday.com",
+      "ticker": "MNDY",
+      "event_at": "2024-11-11T23:59:59-05:00",
+      "as_of": "2024-11-11T23:59:59-05:00",
+      "currency": "USD",
+      "precision": "1000",
+      "labels": {
+        "period": "fiscal 2024",
+        "interim": "the third quarter of fiscal 2024",
+        "remainder": "the fourth quarter of fiscal 2024"
+      },
+      "documents": [
+        {
+          "id": "mndy-prior",
+          "source_url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001845338/a0415556-b4a7-4c55-88b4-3794d88dbf9c.pdf",
+          "path": "output/guidance-ytd/filings/mndy-prior.pages.txt",
+          "sha256": "2035c22bd3f2c1ce52d87efc2c7d87beb9c38cdf6ef14525bdb59e99dd4e86c6",
+          "content_type": "text/plain",
+          "published_at": "2024-08-12T23:59:59-04:00",
+          "obtained_at": "2024-08-12T23:59:59-04:00"
+        },
+        {
+          "id": "mndy-latest",
+          "source_url": "https://s29.q4cdn.com/881027206/files/doc_financials/2024/q3/Q3-24-PR.pdf",
+          "path": "output/guidance-ytd/filings/mndy-latest.pages.txt",
+          "sha256": "42696ae9c5e3e41f3f4400ff208dcf851b9c817ea8de13d4ef196e3cc40df906",
+          "content_type": "text/plain",
+          "published_at": "2024-11-11T23:59:59-05:00",
+          "obtained_at": "2024-11-11T23:59:59-05:00"
+        }
+      ],
+      "figures": {
+        "prior": [
+          {
+            "document": "mndy-prior",
+            "block": "mndy-prior:p0006",
+            "quote": "$956 million to $961 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ],
+        "prior_interim": [
+          {
+            "document": "mndy-prior",
+            "block": "mndy-prior:p0005",
+            "quote": "$243 million to $247 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ],
+        "new": [
+          {
+            "document": "mndy-latest",
+            "block": "mndy-latest:p0002",
+            "quote": "$964 million to $966 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ],
+        "prior_reported_in_period": [
+          {
+            "document": "mndy-prior",
+            "block": "mndy-prior:p0009",
+            "quote": "453,019",
+            "tabular": true,
+            "unit_block": "mndy-prior:p0009",
+            "unit_quote": "(U.S. dollars in thousands, except share and per share data) Three months ended June 30, Six months ended June 30, 2024 2023 2024 2023 (unaudited) (unaudited) Revenue $"
+          }
+        ],
+        "reported_in_period": [
+          {
+            "document": "mndy-latest",
+            "block": "mndy-latest:p0006",
+            "quote": "704,019",
+            "tabular": true,
+            "unit_block": "mndy-latest:p0006",
+            "unit_quote": "(U.S. dollars in thousands, except share and per share data) Three months ended Nine months ended September 30, September 30, 2024 2023 2024 2023 (unaudited) (unaudited) Revenue $"
+          }
+        ]
+      },
+      "items": [
+        "implied_remainder_prior",
+        "implied_remainder_new",
+        "implied_remainder_change",
+        "implied_remainder"
+      ],
+      "style": "implicit",
+      "trap": "選對本財年與合併口徑的累計營收，排除單季、去年同期和明示獨立 Q4。",
+      "undetermined": {}
+    },
+    "vintages": {
+      "mndy-prior": {
+        "report_end": "2024-06-30",
+        "fiscal_year": 2024,
+        "quarter": 2
+      },
+      "mndy-latest": {
+        "report_end": "2024-09-30",
+        "fiscal_year": 2024,
+        "quarter": 3
+      }
+    },
+    "gap_terms": [],
+    "gold": {
+      "implied_remainder_prior": "260481000",
+      "implied_remainder_new": "260981000",
+      "implied_remainder_change": "500000",
+      "implied_remainder": "raised"
+    }
+  },
+  "frog": {
+    "case": {
+      "id": "frog",
+      "split": "holdout",
+      "issuer": "JFrog",
+      "ticker": "FROG",
+      "event_at": "2024-11-07T23:59:59-05:00",
+      "as_of": "2024-11-07T23:59:59-05:00",
+      "currency": "USD",
+      "precision": "1000",
+      "labels": {
+        "period": "fiscal 2024",
+        "interim": "the third quarter of fiscal 2024",
+        "remainder": "the fourth quarter of fiscal 2024"
+      },
+      "documents": [
+        {
+          "id": "frog-prior",
+          "source_url": "https://s21.q4cdn.com/528621000/files/doc_news/2024/08/1/JFrog-Q2-2024-Earnings-PR_FINAL.pdf",
+          "path": "output/guidance-ytd/filings/frog-prior.pages.txt",
+          "sha256": "7d92f83b71989aed213cc6c7e59514b331d5c0d17371478c33904f2cd6f4c269",
+          "content_type": "text/plain",
+          "published_at": "2024-08-07T23:59:59-04:00",
+          "obtained_at": "2024-08-07T23:59:59-04:00"
+        },
+        {
+          "id": "frog-latest",
+          "source_url": "https://s21.q4cdn.com/528621000/files/doc_financials/2024/q3/FINAL-JFrog-Q3-2024-Earnings-PR_11-7.pdf",
+          "path": "output/guidance-ytd/filings/frog-latest.pages.txt",
+          "sha256": "625d02870c425f7a1db89bbbfe8351beb5ea08a4398390729407bc876ee61f8b",
+          "content_type": "text/plain",
+          "published_at": "2024-11-07T23:59:59-05:00",
+          "obtained_at": "2024-11-07T23:59:59-05:00"
+        }
+      ],
+      "figures": {
+        "prior": [
+          {
+            "document": "frog-prior",
+            "block": "frog-prior:p0002",
+            "quote": "$422 million to $424 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ],
+        "prior_interim": [
+          {
+            "document": "frog-prior",
+            "block": "frog-prior:p0002",
+            "quote": "between $105 million and $106 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ],
+        "new": [
+          {
+            "document": "frog-latest",
+            "block": "frog-latest:p0002",
+            "quote": "$425.9 million to $ 426.9 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ],
+        "prior_reported_in_period": [
+          {
+            "document": "frog-prior",
+            "block": "frog-prior:p0007",
+            "quote": "203,354",
+            "tabular": true,
+            "unit_block": "frog-prior:p0007",
+            "unit_quote": "(in thousands, except per share data; unaudited) Three Months Ended June 30, Six Months Ended June 30, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $"
+          }
+        ],
+        "reported_in_period": [
+          {
+            "document": "frog-latest",
+            "block": "frog-latest:p0007",
+            "quote": "312,410",
+            "tabular": true,
+            "unit_block": "frog-latest:p0007",
+            "unit_quote": "(in thousands, except per share data; unaudited) Three Months Ended Nine Months Ended September 30, September 30, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $"
+          }
+        ]
+      },
+      "items": [
+        "implied_remainder_prior",
+        "implied_remainder_new",
+        "implied_remainder_change",
+        "implied_remainder"
+      ],
+      "style": "implicit",
+      "trap": "選對本財年與合併口徑的累計營收，排除單季、去年同期和明示獨立 Q4。",
+      "undetermined": {}
+    },
+    "vintages": {
+      "frog-prior": {
+        "report_end": "2024-06-30",
+        "fiscal_year": 2024,
+        "quarter": 2
+      },
+      "frog-latest": {
+        "report_end": "2024-09-30",
+        "fiscal_year": 2024,
+        "quarter": 3
+      }
+    },
+    "gap_terms": [],
+    "gold": {
+      "implied_remainder_prior": "114146000",
+      "implied_remainder_new": "113990000.0",
+      "implied_remainder_change": "-156000.0",
+      "implied_remainder": "lowered"
+    }
+  },
+  "hd": {
+    "case": {
+      "id": "hd",
+      "split": "holdout",
+      "issuer": "Home Depot",
+      "ticker": "HD",
+      "event_at": "2024-11-12T23:59:59-05:00",
+      "as_of": "2024-11-12T23:59:59-05:00",
+      "currency": "USD",
+      "precision": "1000",
+      "labels": {
+        "period": "fiscal 2024",
+        "interim": "the third quarter of fiscal 2024",
+        "remainder": "the fourth quarter of fiscal 2024"
+      },
+      "documents": [
+        {
+          "id": "hd-prior",
+          "source_url": "https://ir.homedepot.com/~/media/Files/H/HomeDepot-IR/press-release/q2-2024-earning-release.pdf",
+          "path": "output/guidance-ytd/filings/hd-prior.pages.txt",
+          "sha256": "382bd2f42addf45d29f35ec3f7d5cf6632bb12899ac15783a94f651749732b40",
+          "content_type": "text/plain",
+          "published_at": "2024-08-13T23:59:59-04:00",
+          "obtained_at": "2024-08-13T23:59:59-04:00"
+        },
+        {
+          "id": "hd-latest",
+          "source_url": "https://ir.homedepot.com/~/media/Files/H/HomeDepot-IR/press-release/q3-2024-earning-release.pdf",
+          "path": "output/guidance-ytd/filings/hd-latest.pages.txt",
+          "sha256": "59ee57af984d2f2afbe99615ee5317709c12b4ea13c68a231b081d7ba26f4815",
+          "content_type": "text/plain",
+          "published_at": "2024-11-12T23:59:59-05:00",
+          "obtained_at": "2024-11-12T23:59:59-05:00"
+        }
+      ],
+      "figures": {},
+      "items": [
+        "implied_remainder_prior",
+        "implied_remainder_change",
+        "implied_remainder"
+      ],
+      "style": "implicit",
+      "trap": "Fiscal-year sales growth guidance and SRS contribution do not establish a prior Q3 USD revenue guidance at the same consolidated scope.",
+      "undetermined": {
+        "implied_remainder_prior": "Fiscal-year sales growth guidance and SRS contribution do not establish a prior Q3 USD revenue guidance at the same consolidated scope.",
+        "implied_remainder_change": "Fiscal-year sales growth guidance and SRS contribution do not establish a prior Q3 USD revenue guidance at the same consolidated scope.",
+        "implied_remainder": "Fiscal-year sales growth guidance and SRS contribution do not establish a prior Q3 USD revenue guidance at the same consolidated scope."
+      }
+    },
+    "vintages": {
+      "hd-prior": {
+        "report_end": "2024-07-28",
+        "fiscal_year": 2024,
+        "quarter": 2
+      },
+      "hd-latest": {
+        "report_end": "2024-10-27",
+        "fiscal_year": 2024,
+        "quarter": 3
+      }
+    },
+    "gap_terms": [
+      "prior_interim",
+      "q3",
+      "third quarter",
+      "第三季",
+      "第三季度",
+      "前季",
+      "上一季",
+      "先前",
+      "前次"
+    ],
+    "gold": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+    }
+  },
+  "tgt": {
+    "case": {
+      "id": "tgt",
+      "split": "holdout",
+      "issuer": "Target",
+      "ticker": "TGT",
+      "event_at": "2024-11-20T23:59:59-05:00",
+      "as_of": "2024-11-20T23:59:59-05:00",
+      "currency": "USD",
+      "precision": "1000",
+      "labels": {
+        "period": "fiscal 2024",
+        "interim": "the third quarter of fiscal 2024",
+        "remainder": "the fourth quarter of fiscal 2024"
+      },
+      "documents": [
+        {
+          "id": "tgt-prior",
+          "source_url": "https://corporate.target.com/getmedia/50a20b2e-c394-4ae2-ab73-8afcf99b4e0c/Target-Corporation-Reports-Second-Quarter-Earnings.pdf",
+          "path": "output/guidance-ytd/filings/tgt-prior.pages.txt",
+          "sha256": "3acd6b21be16272fda376dfc10445e9741f4555f851d82386b1957f333f0a355",
+          "content_type": "text/plain",
+          "published_at": "2024-08-21T23:59:59-04:00",
+          "obtained_at": "2024-08-21T23:59:59-04:00"
+        },
+        {
+          "id": "tgt-latest",
+          "source_url": "https://corporate.target.com/getmedia/9bb5f514-fcaf-4097-837d-f08ff31cb089/Target-Corporation-Reports-Third-Quarter-Earnings.pdf",
+          "path": "output/guidance-ytd/filings/tgt-latest.pages.txt",
+          "sha256": "433cda1395a73e90d6a13e802d65a41194e6583e1d17bd37e430e31fb1130d67",
+          "content_type": "text/plain",
+          "published_at": "2024-11-20T23:59:59-05:00",
+          "obtained_at": "2024-11-20T23:59:59-05:00"
+        }
+      ],
+      "figures": {},
+      "items": [
+        "implied_remainder_prior",
+        "implied_remainder_change",
+        "implied_remainder"
+      ],
+      "style": "implicit",
+      "trap": "Quarterly comparable sales and diluted EPS outlook are not a Q3 consolidated revenue dollar estimate.",
+      "undetermined": {
+        "implied_remainder_prior": "Quarterly comparable sales and diluted EPS outlook are not a Q3 consolidated revenue dollar estimate.",
+        "implied_remainder_change": "Quarterly comparable sales and diluted EPS outlook are not a Q3 consolidated revenue dollar estimate.",
+        "implied_remainder": "Quarterly comparable sales and diluted EPS outlook are not a Q3 consolidated revenue dollar estimate."
+      }
+    },
+    "vintages": {
+      "tgt-prior": {
+        "report_end": "2024-08-03",
+        "fiscal_year": 2024,
+        "quarter": 2
+      },
+      "tgt-latest": {
+        "report_end": "2024-11-02",
+        "fiscal_year": 2024,
+        "quarter": 3
+      }
+    },
+    "gap_terms": [
+      "prior_interim",
+      "q3",
+      "third quarter",
+      "第三季",
+      "第三季度",
+      "前季",
+      "上一季",
+      "先前",
+      "前次"
+    ],
+    "gold": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+    }
+  },
+  "cost": {
+    "case": {
+      "id": "cost",
+      "split": "holdout",
+      "issuer": "Costco",
+      "ticker": "COST",
+      "event_at": "2025-05-29T23:59:59-04:00",
+      "as_of": "2025-05-29T23:59:59-04:00",
+      "currency": "USD",
+      "precision": "1000",
+      "labels": {
+        "period": "fiscal 2025",
+        "interim": "the third quarter of fiscal 2025",
+        "remainder": "the fourth quarter of fiscal 2025"
+      },
+      "documents": [
+        {
+          "id": "cost-prior",
+          "source_url": "https://s201.q4cdn.com/287523651/files/doc_news/Costco-Wholesale-Corporation-Reports-Second-Quarter-and-Year-To-Date-Operating-Results-For-Fiscal-2025-and-February-Sales-Results-2025.pdf",
+          "path": "output/guidance-ytd/filings/cost-prior.pages.txt",
+          "sha256": "a427936cb8209d30728fb043486d64f450a0da6a54b14825e17072edbfd16e17",
+          "content_type": "text/plain",
+          "published_at": "2025-03-06T23:59:59-05:00",
+          "obtained_at": "2025-03-06T23:59:59-05:00"
+        },
+        {
+          "id": "cost-latest",
+          "source_url": "https://s201.q4cdn.com/287523651/files/doc_news/Costco-Wholesale-Corporation-Reports-Third-Quarter-and-Year-To-Date-Operating-Results-for-Fiscal-2025-2025.pdf",
+          "path": "output/guidance-ytd/filings/cost-latest.pages.txt",
+          "sha256": "a256314a71d004cff76f0a629d3cbb932207b4a1fd8250e261a4fa86d66b1103",
+          "content_type": "text/plain",
+          "published_at": "2025-05-29T23:59:59-04:00",
+          "obtained_at": "2025-05-29T23:59:59-04:00"
+        }
+      ],
+      "figures": {},
+      "items": [
+        "implied_remainder_prior",
+        "implied_remainder_change",
+        "implied_remainder"
+      ],
+      "style": "implicit",
+      "trap": "Both announcements provide actual net sales and comparisons, without the prior Q3 or comparable full-year revenue outlook.",
+      "undetermined": {
+        "implied_remainder_prior": "Both announcements provide actual net sales and comparisons, without the prior Q3 or comparable full-year revenue outlook.",
+        "implied_remainder_change": "Both announcements provide actual net sales and comparisons, without the prior Q3 or comparable full-year revenue outlook.",
+        "implied_remainder": "Both announcements provide actual net sales and comparisons, without the prior Q3 or comparable full-year revenue outlook."
+      }
+    },
+    "vintages": {
+      "cost-prior": {
+        "report_end": "2025-02-16",
+        "fiscal_year": 2025,
+        "quarter": 2
+      },
+      "cost-latest": {
+        "report_end": "2025-05-11",
+        "fiscal_year": 2025,
+        "quarter": 3
+      }
+    },
+    "gap_terms": [
+      "prior_interim",
+      "q3",
+      "third quarter",
+      "第三季",
+      "第三季度",
+      "前季",
+      "上一季",
+      "先前",
+      "前次",
+      "prior figure",
+      "total revenue",
+      "合併營收",
+      "總營收",
+      "訂閱",
+      "subscription",
+      "prior"
+    ],
+    "gold": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+    }
+  },
+  "deck": {
+    "case": {
+      "id": "deck",
+      "split": "holdout",
+      "issuer": "Deckers",
+      "ticker": "DECK",
+      "event_at": "2025-01-30T23:59:59-05:00",
+      "as_of": "2025-01-30T23:59:59-05:00",
+      "currency": "USD",
+      "precision": "1000",
+      "labels": {
+        "period": "fiscal 2025",
+        "interim": "the third quarter of fiscal 2025",
+        "remainder": "the fourth quarter of fiscal 2025"
+      },
+      "documents": [
+        {
+          "id": "deck-prior",
+          "source_url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000910521/5cecef8a-b608-488a-8a1c-629f0fd54187.pdf",
+          "path": "output/guidance-ytd/filings/deck-prior.pages.txt",
+          "sha256": "715145c324acbd9875cff1f0fb7e72033c6088a66a4350c9b2347b41dce9674d",
+          "content_type": "text/plain",
+          "published_at": "2024-10-24T23:59:59-04:00",
+          "obtained_at": "2024-10-24T23:59:59-04:00"
+        },
+        {
+          "id": "deck-latest",
+          "source_url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000910521/c55b9dbd-d813-47e6-8399-fce0ecee367d.pdf",
+          "path": "output/guidance-ytd/filings/deck-latest.pages.txt",
+          "sha256": "68c9a38bc086671b8c33818913c50c6f01d7f4e6b0bc8d56fa282efe43153b18",
+          "content_type": "text/plain",
+          "published_at": "2025-01-30T23:59:59-05:00",
+          "obtained_at": "2025-01-30T23:59:59-05:00"
+        }
+      ],
+      "figures": {},
+      "items": [
+        "implied_remainder_prior",
+        "implied_remainder_change",
+        "implied_remainder"
+      ],
+      "style": "implicit",
+      "trap": "Annual net sales can be disclosed, but the prior release does not publish a comparable Q3 total net sales amount.",
+      "undetermined": {
+        "implied_remainder_prior": "Annual net sales can be disclosed, but the prior release does not publish a comparable Q3 total net sales amount.",
+        "implied_remainder_change": "Annual net sales can be disclosed, but the prior release does not publish a comparable Q3 total net sales amount.",
+        "implied_remainder": "Annual net sales can be disclosed, but the prior release does not publish a comparable Q3 total net sales amount."
+      }
+    },
+    "vintages": {
+      "deck-prior": {
+        "report_end": "2024-09-30",
+        "fiscal_year": 2025,
+        "quarter": 2
+      },
+      "deck-latest": {
+        "report_end": "2024-12-31",
+        "fiscal_year": 2025,
+        "quarter": 3
+      }
+    },
+    "gap_terms": [
+      "prior_interim",
+      "q3",
+      "third quarter",
+      "第三季",
+      "第三季度",
+      "前季",
+      "上一季",
+      "先前",
+      "前次"
+    ],
+    "gold": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+    }
+  }
+}

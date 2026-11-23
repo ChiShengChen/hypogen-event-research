@@ -1,0 +1,63 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "220208000"},
+    {"item": "implied_remainder_new", "value": "222060000"},
+    {"item": "implied_remainder_change", "value": "1852000"},
+    {"item": "implied_remainder", "value": "raised"}
+  ],
+  "evidence_ids": [
+    "s-prior:p0002",
+    "s-prior:p0007",
+    "s-latest:p0002",
+    "s-latest:p0008"
+  ],
+  "reason": "以美元計，前次全年營收指引扣除上半年實績及當時的第三季指引，得到第四季隱含營收 815000000 − 385292000 − 209500000 = 220208000。最新全年指引扣除前九個月實績，得到 818000000 − 595940000 = 222060000。因此第四季隱含營收上調 1852000 美元。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "s-prior",
+      "block": "s-prior:p0002",
+      "quote": "$815 million",
+      "tabular": true,
+      "unit_block": "s-prior:p0002",
+      "unit_quote": "$815 million"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "s-prior",
+      "block": "s-prior:p0007",
+      "quote": "$ 385,292",
+      "tabular": true,
+      "unit_block": "s-prior:p0007",
+      "unit_quote": "(in thousands, except share and per share data)"
+    },
+    {
+      "name": "prior_interim",
+      "document": "s-prior",
+      "block": "s-prior:p0002",
+      "quote": "$209.5 million",
+      "tabular": true,
+      "unit_block": "s-prior:p0002",
+      "unit_quote": "$209.5 million"
+    },
+    {
+      "name": "new",
+      "document": "s-latest",
+      "block": "s-latest:p0002",
+      "quote": "$818 million",
+      "tabular": true,
+      "unit_block": "s-latest:p0002",
+      "unit_quote": "$818 million"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "s-latest",
+      "block": "s-latest:p0008",
+      "quote": "$ 595,940",
+      "tabular": true,
+      "unit_block": "s-latest:p0008",
+      "unit_quote": "(in thousands, except share and per share data)"
+    }
+  ],
+  "missing_reason": null
+}

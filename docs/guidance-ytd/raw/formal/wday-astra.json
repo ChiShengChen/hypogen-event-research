@@ -1,0 +1,17 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "2038500000"},
+    {"item": "implied_remainder_change", "value": "-13500000"},
+    {"item": "implied_remainder", "value": "lowered"}
+  ],
+  "evidence_ids": ["wday-prior:p0004", "wday-prior:p0006", "wday-latest:p0003", "wday-latest:p0006"],
+  "reason": "以百萬美元計，前次全年訂閱收入指引的中點為（7700＋7725）÷2＝7712.5。扣除上半年實績3719及當時的第三季指引1955，隱含第四季收入為2038.5。最新全年指引7703扣除前九個月實績5678後為2025，較前次下調13.5百萬美元。",
+  "figures_used": [
+    {"name": "prior", "document": "wday-prior", "block": "wday-prior:p0004", "quote": "Subscription revenue between $7.700 billion to $7.725 billion", "tabular": false, "unit_block": null, "unit_quote": null},
+    {"name": "prior_reported_in_period", "document": "wday-prior", "block": "wday-prior:p0006", "quote": "$ 3,719", "tabular": true, "unit_block": "wday-prior:p0006", "unit_quote": "(in millions, except number of shares which are reflected in thousands and per share data)"},
+    {"name": "prior_interim", "document": "wday-prior", "block": "wday-prior:p0004", "quote": "Subscription revenue of $1.955 billion", "tabular": false, "unit_block": null, "unit_quote": null},
+    {"name": "new", "document": "wday-latest", "block": "wday-latest:p0003", "quote": "Subscription revenue of $7.703 billion", "tabular": false, "unit_block": null, "unit_quote": null},
+    {"name": "reported_in_period", "document": "wday-latest", "block": "wday-latest:p0006", "quote": "$ 5,678", "tabular": true, "unit_block": "wday-latest:p0006", "unit_quote": "(in millions, except number of shares which are re ected in thousands and per share data)"}
+  ],
+  "missing_reason": null
+}

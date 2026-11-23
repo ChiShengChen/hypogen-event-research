@@ -1,0 +1,33 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "unknown"},
+    {"item": "implied_remainder_change", "value": "unknown"},
+    {"item": "implied_remainder", "value": "unknown"}
+  ],
+  "evidence_ids": [
+    "cost-prior:p0003",
+    "cost-latest:p0003"
+  ],
+  "reason": "前次公告列出前24週實際總營收。要推算當時隱含的第四季營收，須從前次全年指引中點扣除前24週實績及當時的第三季指引中點。最新公告已列出前36週實際總營收，但仍缺全年指引，因此無法算出兩次隱含值的差額或判定方向。",
+  "figures_used": [
+    {
+      "name": "prior_reported_in_period",
+      "document": "cost-prior",
+      "block": "cost-prior:p0003",
+      "quote": "125,874",
+      "tabular": true,
+      "unit_block": "cost-prior:p0003",
+      "unit_quote": "(dollars in millions, except per share data)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "cost-latest",
+      "block": "cost-latest:p0003",
+      "quote": "189,079",
+      "tabular": true,
+      "unit_block": "cost-latest:p0003",
+      "unit_quote": "(dollars in millions, except per share data)"
+    }
+  ],
+  "missing_reason": "3月6日公告未提供2025財年全年或第三季的合併總營收指引，5月29日公告也未提供2025財年全年合併總營收指引。"
+}

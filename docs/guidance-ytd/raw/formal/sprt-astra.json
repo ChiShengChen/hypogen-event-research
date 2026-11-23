@@ -1,0 +1,63 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "107320000"},
+    {"item": "implied_remainder_new", "value": "106682000"},
+    {"item": "implied_remainder_change", "value": "-638000"},
+    {"item": "implied_remainder", "value": "lowered"}
+  ],
+  "evidence_ids": [
+    "sprt-prior:p0002",
+    "sprt-prior:p0007",
+    "sprt-latest:p0002",
+    "sprt-latest:p0008"
+  ],
+  "reason": "兩次全年營收指引的中點均為 405500000 美元。前次扣除上半年實績及第三季指引中點，隱含第四季營收為 405500000 − 196180000 − 102000000 = 107320000 美元。最新指引扣除前九個月實績後為 405500000 − 298818000 = 106682000 美元，較前次下調 638000 美元。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "sprt-prior",
+      "block": "sprt-prior:p0002",
+      "quote": "Total revenue to be between $405.0 million and $406.0 million.",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "sprt-prior",
+      "block": "sprt-prior:p0007",
+      "quote": "Total revenue 196,180",
+      "tabular": true,
+      "unit_block": "sprt-prior:p0007",
+      "unit_quote": "(in thousands, except share and per share data) Six Months Ended June 30, 2024 2023 Revenue Subscription $"
+    },
+    {
+      "name": "prior_interim",
+      "document": "sprt-prior",
+      "block": "sprt-prior:p0002",
+      "quote": "Total revenue between $101.9 million and $102.1 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "new",
+      "document": "sprt-latest",
+      "block": "sprt-latest:p0002",
+      "quote": "Total revenue to be between $405.1 million and $405.9 million.",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "sprt-latest",
+      "block": "sprt-latest:p0008",
+      "quote": "Total revenue 298,818",
+      "tabular": true,
+      "unit_block": "sprt-latest:p0008",
+      "unit_quote": "(in thousands, except share and per share data) Nine Months Ended September 30, 2024 2023 Revenue Subscription $"
+    }
+  ],
+  "missing_reason": null
+}

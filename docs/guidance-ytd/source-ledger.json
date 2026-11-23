@@ -1,0 +1,170 @@
+{
+  "docu-prior": {
+    "pdf": "output/guidance-ytd/filings/docu-prior.pdf",
+    "sha256": "c7c49289c04d14efb734c0f5fe286f75ec5b2ba5a4015c278ca0a88e844c28f9",
+    "text_sha256": "7ec58467fcbb3902eca2aa25a935ca19f49f5ad6a64f43e5e37708afc8c37765",
+    "source": "https://s21.q4cdn.com/706790701/files/doc_financials/2025/q2/7706ac78-b4f6-4e99-818b-c8fc0b5de9a0.pdf",
+    "pages": 15
+  },
+  "docu-latest": {
+    "pdf": "output/guidance-ytd/filings/docu-latest.pdf",
+    "sha256": "154cf6a9e65dcb410650eceb5a68edef5f0588971a131725c776fab36fbb1487",
+    "text_sha256": "31d8eb65d081f53cb049fe9aa7e44c65e1667e36d7e95ed070bbddf53625d724",
+    "source": "https://s21.q4cdn.com/706790701/files/doc_news/Docusign-Announces-Third-Quarter-Fiscal-2025-Financial-Results-2024.pdf",
+    "pages": 13
+  },
+  "sprt-prior": {
+    "pdf": "output/guidance-ytd/filings/sprt-prior.pdf",
+    "sha256": "2a80c7932181706cbc5450429b5fe9487c984d5197cdd9e11bc564678c21cff3",
+    "text_sha256": "ddc37ffed563c6ca4cc64593e674198301642982fca625d776e35609d54ae969",
+    "source": "https://s203.q4cdn.com/239200346/files/doc_earnings/2024/q2/earnings-result/Sprout-Social-2Q24-Earnings-Release.pdf",
+    "pages": 13
+  },
+  "sprt-latest": {
+    "pdf": "output/guidance-ytd/filings/sprt-latest.pdf",
+    "sha256": "ad7e7725962efa5016e31bcedafd51ec989f3e6333df4dc8b30b5bd83757c68a",
+    "text_sha256": "4ef21480ef4ffb4200325c910fc031bccde85ef8376584c9187f1a5885413675",
+    "source": "https://s203.q4cdn.com/239200346/files/doc_earnings/2024/q3/earnings-result/Sprout-Social-3Q24-Earnings-Release.pdf",
+    "pages": 14
+  },
+  "yeti-prior": {
+    "pdf": "output/guidance-ytd/filings/yeti-prior.pdf",
+    "sha256": "bfef7d3f73756ca0b7eb8f851769af1723ac7c56e6361d80e2b575996ea9d293",
+    "text_sha256": "33af9d97541cc23688173c57bb40555bfd0fec1feb738b0f1076f43d4e5f7aa2",
+    "source": "https://s22.q4cdn.com/322452763/files/doc_financials/2024/q2/YETI-Reports-Second-Quarter-2024-Results-2024.pdf",
+    "pages": 16
+  },
+  "yeti-latest": {
+    "pdf": "output/guidance-ytd/filings/yeti-latest.pdf",
+    "sha256": "9f7b9a05d1970721802e0b406f536cf8f0a793024cf358864b129a8bc922f928",
+    "text_sha256": "569c192ff39cff2d9547d2cf598ce4f50cd40dbd55bf109bd5310acea337878c",
+    "source": "https://s22.q4cdn.com/322452763/files/doc_financials/2024/q3/YETI-Reports-Third-Quarter-2024-Results-2024.pdf",
+    "pages": 15
+  },
+  "wday-prior": {
+    "pdf": "output/guidance-ytd/filings/wday-prior.pdf",
+    "sha256": "38e4f67e7f86da87606ea1e7c400ff008019cd1d9b8968dc076e875bee3607be",
+    "text_sha256": "ce06522b5d825131e24ddcdd96b18214fcb38689aad0d48fbff5877d72001140",
+    "source": "https://s23.q4cdn.com/175719177/files/doc_news/Workday-Announces-Fiscal-2025-Second-Quarter-Financial-Results-2024.pdf",
+    "pages": 12
+  },
+  "wday-latest": {
+    "pdf": "output/guidance-ytd/filings/wday-latest.pdf",
+    "sha256": "c1ef9365c608d421e61c858b46eda0964abb0743b73dbbf2488ab81f37e6a9b6",
+    "text_sha256": "c19df55847e2df3740ba37b6a35b3916e6bfab2a6d8988e563421ae1aedaccf6",
+    "source": "https://s21.q4cdn.com/950027458/files/doc_news/Workday-Announces-Fiscal-2025-Third-Quarter-Financial-Results-11-26-2024-2024.pdf",
+    "pages": 11
+  },
+  "s-prior": {
+    "pdf": "output/guidance-ytd/filings/s-prior.pdf",
+    "sha256": "be72b67b3a3b18dde284948ca4147712958401171553cc4a6ec5cb2fad6fb6b8",
+    "text_sha256": "dc74719c9535678b3387b7e3ae6bab065609e06879a420d0739e84686ac8524a",
+    "source": "https://s28.q4cdn.com/399982429/files/doc_earnings/2025/q2/earnings-result/Q2-FY25-Earnings-Press-Release-FINAL-SentinelOne.pdf",
+    "pages": 12
+  },
+  "s-latest": {
+    "pdf": "output/guidance-ytd/filings/s-latest.pdf",
+    "sha256": "eea1be4a2eb378c40c765de71600978773bb3d95743f6382b2af7765bb13fe60",
+    "text_sha256": "ecfaef44d6dc6ec642eb1504bb05b6b733b1f9824096e37c03f98f43b6b004bb",
+    "source": "https://s28.q4cdn.com/399982429/files/doc_earnings/2025/q3/earnings-result/Q3-FY25-Earnings-Press-Release-FINAL-SentinelOne.pdf",
+    "pages": 13
+  },
+  "docs-prior": {
+    "pdf": "output/guidance-ytd/filings/docs-prior.pdf",
+    "sha256": "4aa952367dc086ca4226a0998003401b5ea14e66f1c0686da84fa87ade82fefa",
+    "text_sha256": "247ffb3249edd9bd6bbac2abee826fac34952d9acbeb935888ca8ef2cce16170",
+    "source": "https://s201.q4cdn.com/617428576/files/doc_financials/2025/q2/Doximity-2Q25-Earnings-Call-Press-Release.pdf",
+    "pages": 9
+  },
+  "docs-latest": {
+    "pdf": "output/guidance-ytd/filings/docs-latest.pdf",
+    "sha256": "8aab2377f3fe0ef4fd262b056a7a3c58e73bb69dd61feed98e65ae788f0575ee",
+    "text_sha256": "96a10204ac40982c9e10d3536919ed86dc2d499a738dfc786debf82cf0358267",
+    "source": "https://s201.q4cdn.com/617428576/files/doc_financials/2025/q3/Doximity-3Q25-Earnings-Call-Press-Release.pdf",
+    "pages": 9
+  },
+  "mndy-prior": {
+    "pdf": "output/guidance-ytd/filings/mndy-prior.pdf",
+    "sha256": "4ec05f536b09ef2a4973029dbc58f4f32ab72f6528742e32e7d4e695fb482c72",
+    "text_sha256": "2035c22bd3f2c1ce52d87efc2c7d87beb9c38cdf6ef14525bdb59e99dd4e86c6",
+    "source": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001845338/a0415556-b4a7-4c55-88b4-3794d88dbf9c.pdf",
+    "pages": 15
+  },
+  "mndy-latest": {
+    "pdf": "output/guidance-ytd/filings/mndy-latest.pdf",
+    "sha256": "0690d284df8675855614ad1f488023dd316fe751607fc82a800c8632ddb52092",
+    "text_sha256": "42696ae9c5e3e41f3f4400ff208dcf851b9c817ea8de13d4ef196e3cc40df906",
+    "source": "https://s29.q4cdn.com/881027206/files/doc_financials/2024/q3/Q3-24-PR.pdf",
+    "pages": 11
+  },
+  "frog-prior": {
+    "pdf": "output/guidance-ytd/filings/frog-prior.pdf",
+    "sha256": "78495dbe6589723d41ba53b79580c44cac95019b8ad51a74f6cd9df520cd92cb",
+    "text_sha256": "7d92f83b71989aed213cc6c7e59514b331d5c0d17371478c33904f2cd6f4c269",
+    "source": "https://s21.q4cdn.com/528621000/files/doc_news/2024/08/1/JFrog-Q2-2024-Earnings-PR_FINAL.pdf",
+    "pages": 11
+  },
+  "frog-latest": {
+    "pdf": "output/guidance-ytd/filings/frog-latest.pdf",
+    "sha256": "dee3bffe89e213d94d9bc1a50333687cfbf9c943d1954ba90cd316e6d02d88ab",
+    "text_sha256": "625d02870c425f7a1db89bbbfe8351beb5ea08a4398390729407bc876ee61f8b",
+    "source": "https://s21.q4cdn.com/528621000/files/doc_financials/2024/q3/FINAL-JFrog-Q3-2024-Earnings-PR_11-7.pdf",
+    "pages": 11
+  },
+  "hd-prior": {
+    "pdf": "output/guidance-ytd/filings/hd-prior.pdf",
+    "sha256": "7c810b09bf0126b82c365ac3eaee38389f935847732df027bde617a1e8eb8f09",
+    "text_sha256": "382bd2f42addf45d29f35ec3f7d5cf6632bb12899ac15783a94f651749732b40",
+    "source": "https://ir.homedepot.com/~/media/Files/H/HomeDepot-IR/press-release/q2-2024-earning-release.pdf",
+    "pages": 8
+  },
+  "hd-latest": {
+    "pdf": "output/guidance-ytd/filings/hd-latest.pdf",
+    "sha256": "47f8b86e5099b72429a27d3b9b8c7e0d1a2b0e451d70775727927fd0641b1a2d",
+    "text_sha256": "59ee57af984d2f2afbe99615ee5317709c12b4ea13c68a231b081d7ba26f4815",
+    "source": "https://ir.homedepot.com/~/media/Files/H/HomeDepot-IR/press-release/q3-2024-earning-release.pdf",
+    "pages": 8
+  },
+  "tgt-prior": {
+    "pdf": "output/guidance-ytd/filings/tgt-prior.pdf",
+    "sha256": "331910eed4bb192d7f1c1e143cb070444f90169babb1c7a983f99652dd436dc8",
+    "text_sha256": "3acd6b21be16272fda376dfc10445e9741f4555f851d82386b1957f333f0a355",
+    "source": "https://corporate.target.com/getmedia/50a20b2e-c394-4ae2-ab73-8afcf99b4e0c/Target-Corporation-Reports-Second-Quarter-Earnings.pdf",
+    "pages": 11
+  },
+  "tgt-latest": {
+    "pdf": "output/guidance-ytd/filings/tgt-latest.pdf",
+    "sha256": "2a0f6d846f89cbc6c7044d2b8b0ab289d478bc97976299a9a7836d4e5caaeee5",
+    "text_sha256": "433cda1395a73e90d6a13e802d65a41194e6583e1d17bd37e430e31fb1130d67",
+    "source": "https://corporate.target.com/getmedia/9bb5f514-fcaf-4097-837d-f08ff31cb089/Target-Corporation-Reports-Third-Quarter-Earnings.pdf",
+    "pages": 11
+  },
+  "cost-prior": {
+    "pdf": "output/guidance-ytd/filings/cost-prior.pdf",
+    "sha256": "fa979d69e026ee800a14c06c55a7f5b98536622e4845e4d315c1dbebf03d7659",
+    "text_sha256": "a427936cb8209d30728fb043486d64f450a0da6a54b14825e17072edbfd16e17",
+    "source": "https://s201.q4cdn.com/287523651/files/doc_news/Costco-Wholesale-Corporation-Reports-Second-Quarter-and-Year-To-Date-Operating-Results-For-Fiscal-2025-and-February-Sales-Results-2025.pdf",
+    "pages": 5
+  },
+  "cost-latest": {
+    "pdf": "output/guidance-ytd/filings/cost-latest.pdf",
+    "sha256": "bd2bde58d61b9764e30c0ae45102b12b370afb7a9f20ffa0ed8fc1a18c42bfe9",
+    "text_sha256": "a256314a71d004cff76f0a629d3cbb932207b4a1fd8250e261a4fa86d66b1103",
+    "source": "https://s201.q4cdn.com/287523651/files/doc_news/Costco-Wholesale-Corporation-Reports-Third-Quarter-and-Year-To-Date-Operating-Results-for-Fiscal-2025-2025.pdf",
+    "pages": 4
+  },
+  "deck-prior": {
+    "pdf": "output/guidance-ytd/filings/deck-prior.pdf",
+    "sha256": "0c49179cec952450082681a6c3e8b869b6549e9b13a18728a9840745bd1a0ad7",
+    "text_sha256": "715145c324acbd9875cff1f0fb7e72033c6088a66a4350c9b2347b41dce9674d",
+    "source": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000910521/5cecef8a-b608-488a-8a1c-629f0fd54187.pdf",
+    "pages": 9
+  },
+  "deck-latest": {
+    "pdf": "output/guidance-ytd/filings/deck-latest.pdf",
+    "sha256": "5ade2deebe5f9ed62ab35a0fc9a1acd9471254f38789df1f51a3c25622e5c907",
+    "text_sha256": "68c9a38bc086671b8c33818913c50c6f01d7f4e6b0bc8d56fa282efe43153b18",
+    "source": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000910521/c55b9dbd-d813-47e6-8399-fce0ecee367d.pdf",
+    "pages": 9
+  }
+}
