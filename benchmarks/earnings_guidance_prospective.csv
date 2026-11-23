@@ -1,0 +1,6 @@
+case,published_on,quarter_ahead,basis,currency,metric,low,high,source,summary
+AMD-01,2026-11-03,1,US_GAAP,USD,revenue,16490000000,17510000000,https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000188/q32026991.htm,AMD 2026 Q4 合併營收展望為 170 億美元上下 3%。
+INTC-01,2026-10-29,1,US_GAAP,USD,revenue,15000000000,16000000000,https://www.sec.gov/Archives/edgar/data/50863/000005086326000188/q326earningsrelease.htm,Intel 2026 Q4 合併營收展望為 150 至 160 億美元。
+INTC-01,2026-10-29,1,US_GAAP,USD,gross_margin,0.371,0.371,https://www.sec.gov/Archives/edgar/data/50863/000005086326000188/q326earningsrelease.htm,Intel 2026 Q4 GAAP 毛利率展望為 37.1%。
+INTC-01,2026-10-29,1,US_GAAP,USD,tax_rate,0.31,0.31,https://www.sec.gov/Archives/edgar/data/50863/000005086326000188/q326earningsrelease.htm,Intel 2026 Q4 GAAP 稅率展望為 31%。
+TXN-01,2026-10-21,1,US_GAAP,USD,revenue,5800000000,6300000000,https://www.ti.com/en-us/about-ti/newsroom/news-releases/2026/2026-10-21-ti-reports-third-quarter-2026-financial-results-and-shareholder-returns,TI 2026 Q4 合併營收展望為 58 至 63 億美元。

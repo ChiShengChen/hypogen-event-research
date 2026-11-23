@@ -82,10 +82,11 @@ def test_model_draft_uses_frozen_public_input_and_typed_scenarios(tmp_path):
         def earnings_drivers(self, context):
             assert "asml-q4:actual" not in {row["id"] for row in context["evidence"]}
             assert "asml-q1-2025:actual" not in {row["id"] for row in context["evidence"]}
+            assert {item["stance"] for item in context["hypotheses"]} >= {"bull", "bear"}
             return DriverDraft.model_validate({"drivers": [
                 {"period_end": period["period_end"], "scenario": stance, "segments": [],
-                 "gross_margin_delta": "0", "opex_delta": "0",
-                 "rationale": "保持基準以等待交付披露。", "evidence_ids": ["asml-q3:guidance"]}
+                 "gross_margin_delta": "0.01" if stance == "bull" else "0", "opex_delta": "0",
+                 "rationale": "多方假設組合改善，待披露查核。", "evidence_ids": ["asml-q3:guidance"]}
                 for period in context["baseline"]["quarters"] for stance in ("bear", "base", "bull")
             ]})
 
@@ -94,3 +95,8 @@ def test_model_draft_uses_frozen_public_input_and_typed_scenarios(tmp_path):
     report = store.revision(result["report_id"], 1)
     assert report["earnings"]["driver_origin"] == "model_draft"
     assert all(len(row["scenarios"]) == 3 for row in report["earnings"]["quarters"])
+    assert len(report["earnings"]["driver_audit"]) == 2
+    assert all(row["origin"] == "model_draft" and row["hypothesis_stance"] == "bull"
+               for row in report["earnings"]["driver_audit"])
+    assert all(Decimal(row["scenarios"]["bull"]["delta"]["gross_margin"]) == Decimal("0.01")
+               for row in report["earnings"]["quarters"])

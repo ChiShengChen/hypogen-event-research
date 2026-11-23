@@ -3,10 +3,11 @@ from calendar import monthrange
 from decimal import Decimal, localcontext
 from datetime import datetime
 
-from .schema import DriverDraft, EarningsPlan
+from .schema import DriverDraft, DriverImpact, EarningsPlan, EstimateDriver, HypothesisDriverLink
 
 SCENARIOS = ("bear", "base", "bull")
 METRICS = {"revenue": "營收", "gross_margin": "毛利率", "operating_income": "營業利益", "eps": "稀釋 EPS"}
+EPS_INPUTS = {"tax_rate": "常態有效稅率", "diluted_shares": "稀釋股數", "recurring_nonoperating": "經常性營業外損益"}
 
 
 class EarningsError(ValueError):
@@ -39,6 +40,12 @@ def validate_plan(plan, as_of, evidence):
     for quarter in plan.quarters:
         if quarter.period_end < plan.event_at.date():
             raise EarningsError("預測季度不得在事件前已結束")
+    for profile in plan.eps_assumptions:
+        items = [*(getattr(profile, key) for key in EPS_INPUTS), *profile.one_offs]
+        for item in items:
+            if item.available_at > as_of:
+                raise EarningsError("EPS 假設可得時間晚於研究截止時點")
+            available_evidence(item.evidence_ids, visible, item.available_at)
     if valuation := plan.valuation:
         ref = valuation.annual_base_eps
         key = ref.key
@@ -56,10 +63,23 @@ def validate_plan(plan, as_of, evidence):
             available_evidence([valuation.price_evidence_id], visible, valuation.price_at)
     for driver in plan.drivers:
         available_evidence(driver.evidence_ids, visible, as_of)
+    quarters = {row.period_end: row for row in plan.quarters}
+    shipment_slots = {(row.period_end, row.scenario, segment) for row in plan.drivers
+                      for segment, shipment in row.shipment_changes.items() if shipment.incremental_recognized_units}
+    for link in plan.driver_links:
+        available_evidence(link.evidence_ids, visible, as_of)
+        for period, _, segment, _ in link_impacts(link):
+            if period not in quarters or (segment and segment not in quarters[period].segment_revenue):
+                raise EarningsError(f"假說連結使用了不存在的季度或分部：{link.id}")
+            if link.recognition_shift:
+                slot = (period, link.scenario, segment)
+                if slot in shipment_slots:
+                    raise EarningsError(f"跨季認列與其他台數調整重疊：{link.id}")
+                shipment_slots.add(slot)
     return visible
 
 
-def operating_numbers(quarter, driver=None):
+def operating_numbers(quarter, driver=None, profile=None):
     segments = quarter.segment_revenue.copy()
     margin, opex = quarter.gross_margin, quarter.opex
     if driver:
@@ -76,12 +96,81 @@ def operating_numbers(quarter, driver=None):
         raise EarningsError("重算後的分部營收、毛利率或營業費用超出可用範圍")
     gross_profit = revenue * margin
     operating_income = gross_profit - opex
-    net_income = operating_income * (1 - quarter.tax_rate) + quarter.other_after_tax
+    if profile is None:
+        net_income = operating_income * (1 - quarter.tax_rate) + quarter.other_after_tax
+        shares = quarter.diluted_shares
+    else:
+        pretax = operating_income + profile.recurring_nonoperating.value
+        discrete_tax = Decimal(0)
+        for item in profile.one_offs:
+            if item.treatment == "pretax_nonoperating":
+                pretax += item.value
+            else:
+                discrete_tax += item.value
+        tax_base = pretax if profile.recognize_loss_tax_benefit else max(pretax, Decimal(0))
+        net_income = pretax - tax_base * profile.tax_rate.value - discrete_tax
+        shares = profile.diluted_shares.value
     return {
         "segment_revenue": segments, "revenue": revenue, "gross_margin": margin,
         "gross_profit": gross_profit, "opex": opex, "operating_income": operating_income,
-        "net_income": net_income, "eps": net_income / quarter.diluted_shares,
+        "net_income": net_income, "eps": net_income / shares,
     }
+
+
+def issuer_guidance(plan):
+    """Select comparable quarter-level issuer points or ranges, with an unambiguous latest vintage."""
+    eligible = {}
+    periods = {quarter.period_end for quarter in plan.quarters}
+    for row in [*plan.references, *plan.event_values]:
+        key = row.key
+        if (
+            row.kind != "issuer_guidance" or key.period_end not in periods
+            or key.metric not in {"revenue", "gross_margin"} or key.duration != "quarter"
+            or key.scope != "consolidated" or (key.currency, key.basis) != (plan.currency, plan.basis)
+            or (key.metric == "revenue" and row.low < 0) or (key.metric == "gross_margin" and row.high > 1)
+        ):
+            continue
+        eligible.setdefault((key.period_end, key.metric), []).append(row)
+    result = {}
+    for key, rows in eligible.items():
+        latest = max(row.available_at for row in rows)
+        current = [row for row in rows if row.available_at == latest]
+        if len({(row.low, row.high) for row in current}) == 1:
+            result[key] = current[0]
+    return result
+
+
+def calibrate_drivers(quarter, drivers, guidance):
+    base = drivers.get("base")
+    if base is None:
+        return drivers, []
+    forecasts = {scenario: operating_numbers(quarter, driver) for scenario, driver in drivers.items()}
+    changes, audit = {}, []
+    for metric in ("revenue", "gross_margin"):
+        reference = guidance.get((quarter.period_end, metric))
+        if reference is None:
+            continue
+        prior = forecasts["base"][metric]
+        midpoint = (reference.low + reference.high) / 2
+        if metric == "revenue" and not prior and midpoint:
+            continue
+        if metric == "gross_margin" and max(row[metric] for row in forecasts.values()) + midpoint - prior > 1:
+            continue
+        changes[metric] = midpoint / prior if metric == "revenue" and prior else midpoint - prior
+        audit.append({"period_end": quarter.period_end.isoformat(), "metric": metric, "draft_base": format(prior, "f"),
+                      "calibrated_base": format(midpoint, "f"), "reference": reference.model_dump(mode="json")})
+    calibrated = {}
+    for scenario, driver in drivers.items():
+        update = {}
+        if "revenue" in changes and forecasts["base"]["revenue"]:
+            deltas = driver.segment_revenue_delta.copy()
+            for segment, amount in forecasts[scenario]["segment_revenue"].items():
+                deltas[segment] = deltas.get(segment, Decimal(0)) + amount * (changes["revenue"] - 1)
+            update["segment_revenue_delta"] = deltas
+        if "gross_margin" in changes:
+            update["gross_margin_delta"] = driver.gross_margin_delta + changes["gross_margin"]
+        calibrated[scenario] = driver.model_copy(update=update) if update else driver
+    return calibrated, audit
 
 
 def numbers_json(numbers):
@@ -95,7 +184,7 @@ def comparison_rows(plan):
         latest = {}
         for base in sorted(plan.references, key=lambda row: row.available_at):
             if base.key == event.key:
-                latest[base.kind] = base
+                latest[(base.kind, base.provider)] = base
         for base in latest.values():
             relation = "above" if event.low > base.high else "below" if event.high < base.low else "overlaps"
             results.append({
@@ -144,23 +233,110 @@ def valuation_rows(plan, quarterly):
     }
 
 
-def calculate_earnings(plan, as_of, evidence):
+def link_impacts(link):
+    if shift := link.recognition_shift:
+        amount = shift.units * shift.revenue_per_unit
+        return [(shift.from_period, "segment_revenue", shift.segment, -amount),
+                (shift.to_period, "segment_revenue", shift.segment, amount)]
+    return [(row.period_end, row.metric, row.segment, row.delta) for row in link.impacts]
+
+
+def compile_driver(plan, period, scenario, audit, quarter, driver, profile):
+    linked = [(link, [row for row in link_impacts(link) if row[0] == period])
+              for link in plan.driver_links if link.scenario == scenario]
+    for link, impacts in linked:
+        if not impacts:
+            continue
+        before = operating_numbers(quarter, driver, profile)
+        if driver is None:
+            driver = EstimateDriver(period_end=period, scenario=scenario, segment_revenue_delta={},
+                                    shipment_changes={}, gross_margin_delta=0, opex_delta=0,
+                                    rationale=link.assumption, evidence_ids=link.evidence_ids)
+        revenue = driver.segment_revenue_delta.copy()
+        changes = {"gross_margin": driver.gross_margin_delta, "opex": driver.opex_delta}
+        for _, metric, segment, delta in impacts:
+            if segment:
+                revenue[segment] = revenue.get(segment, Decimal(0)) + delta
+            else:
+                changes[metric] += delta
+        driver = driver.model_copy(update={"segment_revenue_delta": revenue,
+                                          "gross_margin_delta": changes["gross_margin"],
+                                          "opex_delta": changes["opex"]})
+        after = operating_numbers(quarter, driver, profile)
+        audit[link.id]["effects"].append({"period_end": period.isoformat(), **numbers_json({
+            key: after[key] - before[key] for key in (*METRICS, "net_income")
+        })})
+    return driver
+
+
+def link_model_drivers(drivers, hypotheses):
+    """Attribute generated bear/bull numeric changes without counting them twice."""
+    by_stance = {row["stance"]: row for row in hypotheses}
+    links, retained = [], []
+    for driver in drivers:
+        hypothesis = by_stance.get(driver.scenario)
+        if not hypothesis:
+            retained.append(driver)
+            continue
+        impacts = [
+            DriverImpact(period_end=driver.period_end, metric="segment_revenue", segment=segment, delta=delta)
+            for segment, delta in driver.segment_revenue_delta.items() if delta
+        ]
+        impacts += [DriverImpact(period_end=driver.period_end, metric=metric, delta=delta)
+                    for metric, delta in (("gross_margin", driver.gross_margin_delta), ("opex", driver.opex_delta))
+                    if delta]
+        if not impacts or len(impacts) > 6:
+            retained.append(driver)
+            continue
+        links.append(HypothesisDriverLink(
+            id=f"draft-{driver.period_end}-{driver.scenario}", hypothesis_stance=driver.scenario,
+            scenario=driver.scenario, hypothesis_summary=hypothesis["mechanism"], evidence_ids=driver.evidence_ids,
+            assumption=driver.rationale, public_check=hypothesis["prediction"], falsifier=hypothesis["invalidation"],
+            impacts=impacts, origin="model_draft",
+        ))
+        retained.append(driver.model_copy(update={"segment_revenue_delta": {}, "gross_margin_delta": Decimal(0),
+                                                  "opex_delta": Decimal(0)}))
+    return retained, links
+
+
+def calculate_earnings(plan, as_of, evidence, *, hypotheses=(), claims=()):
     validate_plan(plan, as_of, evidence)
-    quarterly = []
+    by_stance = {row["stance"]: row for row in hypotheses}
+    refs = {row["id"]: row.get("evidence_id") for row in claims}
+    audit = {}
+    for link in plan.driver_links:
+        if link.hypothesis_stance not in by_stance:
+            raise EarningsError(f"找不到連結的假說：{link.id}")
+        hypothesis = by_stance[link.hypothesis_stance]
+        hypothesis_refs = {refs.get(ref) for ref in hypothesis["claim_ids"]}
+        audit[link.id] = {
+            **link.model_dump(mode="json"), "source_overlap": sorted(hypothesis_refs.intersection(link.evidence_ids)),
+            "hypothesis_prediction": hypothesis["prediction"], "effects": [],
+        }
+    quarterly, guidance_audit = [], []
+    profiles = {profile.period_end: profile for profile in plan.eps_assumptions}
+    guidance = issuer_guidance(plan) if plan.calibrate_guidance else {}
     with localcontext() as ctx:
         ctx.prec = 50
         for quarter in sorted(plan.quarters, key=lambda value: value.period_end):
             baseline = operating_numbers(quarter)
+            profile = profiles.get(quarter.period_end)
+            drivers = {driver.scenario: driver for driver in plan.drivers if driver.period_end == quarter.period_end}
+            if guidance:
+                drivers, entries = calibrate_drivers(quarter, drivers, guidance)
+                guidance_audit.extend(entries)
             scenarios = {}
-            for driver in plan.drivers:
-                if driver.period_end == quarter.period_end:
-                    revised = operating_numbers(quarter, driver)
-                    delta = {key: revised[key] - baseline[key] for key in revised if key != "segment_revenue"}
-                    delta["segment_revenue"] = {
-                        name: revised["segment_revenue"][name] - prior
-                        for name, prior in baseline["segment_revenue"].items()
-                    }
-                    scenarios[driver.scenario] = {"revised": revised, "delta": delta}
+            for scenario in SCENARIOS:
+                driver = compile_driver(plan, quarter.period_end, scenario, audit, quarter, drivers.get(scenario), profile)
+                if driver is None:
+                    continue
+                revised = operating_numbers(quarter, driver, profile)
+                delta = {key: revised[key] - baseline[key] for key in revised if key != "segment_revenue"}
+                delta["segment_revenue"] = {
+                    name: revised["segment_revenue"][name] - prior
+                    for name, prior in baseline["segment_revenue"].items()
+                }
+                scenarios[scenario] = {"revised": revised, "delta": delta}
             quarterly.append({"period_end": quarter.period_end, "baseline": baseline, "scenarios": scenarios})
         return {
             "inputs": plan.model_dump(mode="json"),
@@ -170,34 +346,50 @@ def calculate_earnings(plan, as_of, evidence):
                  "scenarios": numbers_json(row["scenarios"])} for row in quarterly
             ],
             "valuation": valuation_rows(plan, quarterly),
+            "driver_audit": list(audit.values()),
+            **({"guidance_calibration": guidance_audit} if guidance_audit else {}),
+            "unlinked_driver_inputs": [
+                {"period_end": driver.period_end.isoformat(), "scenario": driver.scenario}
+                for driver in plan.drivers if any(driver.segment_revenue_delta.values())
+                or driver.gross_margin_delta or driver.opex_delta
+                or any(change.incremental_recognized_units for change in driver.shipment_changes.values())
+            ],
             "gaps": [
-                f"缺少 {quarter.period_end} {key} 的修正驅動。"
-                for quarter in plan.quarters for key in SCENARIOS
-                if not any((d.period_end, d.scenario) == (quarter.period_end, key) for d in plan.drivers)
+                f"缺少 {row['period_end']} {key} 的修正驅動。"
+                for row in quarterly for key in SCENARIOS if key not in row["scenarios"]
             ],
         }
 
 
 def complete_plan(plan, as_of, context, adapter):
+    review = {"hypotheses": context.get("hypotheses", ()), "claims": context.get("claims", ())}
     if not plan.generate_drivers:
-        return calculate_earnings(plan, as_of, context["evidence"])
+        return calculate_earnings(plan, as_of, context["evidence"], **review)
     validate_plan(plan, as_of, context["evidence"])
     draft = getattr(adapter, "earnings_drivers", None)
     if draft is None:
         raise EarningsError("此模型模式不支援草擬預測驅動")
+    legacy = getattr(adapter, "earnings_driver_version", None) == 3
+    excluded = {"eps_assumptions", "calibrate_guidance"} if legacy else set()
     result: DriverDraft = draft({
         "target": context["target"], "event": context["event_text"], "as_of": context["as_of"],
         "evidence": [row for row in context["evidence"] if row["kind"] == "disclosure" and not row["synthetic"]],
-        "baseline": plan.model_dump(mode="json"),
+        "baseline": plan.model_dump(mode="json", exclude=excluded),
+        **({"hypotheses": list(review["hypotheses"])} if review["hypotheses"] else {}),
     })
     expected = {(quarter.period_end, name) for quarter in plan.quarters for name in SCENARIOS}
     if {(driver.period_end, driver.scenario) for driver in result.drivers} != expected:
         raise EarningsError("模型草擬需涵蓋每個季度的空、基準、多情境")
+    candidates = [driver.to_driver() for driver in result.drivers]
+    candidates, links = link_model_drivers(candidates, review["hypotheses"]) if not plan.driver_links else (candidates, [])
     filled = EarningsPlan.model_validate({
         **plan.model_dump(), "generate_drivers": False,
-        "drivers": [driver.to_driver().model_dump() for driver in result.drivers],
+        "drivers": candidates, "driver_links": [*plan.driver_links, *links],
+        "calibrate_guidance": plan.calibrate_guidance if plan.calibrate_guidance is not None else (
+            not legacy and bool(issuer_guidance(plan))
+        ),
     })
-    result = calculate_earnings(filled, as_of, context["evidence"])
+    result = calculate_earnings(filled, as_of, context["evidence"], **review)
     result["driver_origin"] = "model_draft"
     return result
 
@@ -271,6 +463,7 @@ def render_earnings(earnings, cite):
         lines += ["缺少可用的事件前季度預估。", ""]
     drivers = {(entry["period_end"], entry["scenario"]): entry for entry in inputs["drivers"]}
     baselines = {quarter["period_end"]: quarter for quarter in inputs["quarters"]}
+    profiles = {row["period_end"]: row for row in inputs.get("eps_assumptions", [])}
     for row in earnings["quarters"]:
         period = row["period_end"]
         baseline = baselines[period]
@@ -299,6 +492,28 @@ def render_earnings(earnings, cite):
                 cells.append(f"{fmt(revised[key], unit)}（{difference}）")
             lines.append(f"| {label} | {' | '.join(cells)} |")
         lines.append("")
+        for entry in earnings.get("guidance_calibration", []):
+            if entry["period_end"] == period:
+                key, reference = entry["metric"], entry["reference"]
+                lines.append(
+                    f"- 公司指引校準 {METRICS[key]}，草擬 {fmt(entry['draft_base'], key)}，"
+                    f"採指引中點 {fmt(entry['calibrated_base'], key)}。{source_line(reference)}"
+                )
+        if profile := profiles.get(period):
+            lines.append("- EPS 以稅前損益、常態稅率與單列項目重算。")
+            for key, label in EPS_INPUTS.items():
+                item = profile[key]
+                value = fmt(item["value"], "gross_margin" if key == "tax_rate" else "revenue")
+                unit = {"recurring_nonoperating": f" 百萬 {inputs['currency']}", "diluted_shares": " 百萬股"}.get(key, "")
+                lines.append(f"  - {label} {value}{unit}。{item['method']} {source_line(item)}")
+            for item in profile["one_offs"]:
+                treatment = {"pretax_nonoperating": "稅前營業外損益", "income_tax_expense": "一次性所得稅費用"}
+                lines.append(f"  - {item['label']}，{treatment[item['treatment']]} {fmt(item['value'], 'revenue')}。"
+                             f"{item['method']} {source_line(item)}")
+            if not profile["one_offs"]:
+                lines.append("  - 預估未單列一次性項目。")
+            if not profile["recognize_loss_tax_benefit"]:
+                lines.append("  - 稅前虧損情境未假設可認列稅務利益。")
         for scenario in SCENARIOS:
             driver = drivers.get((period, scenario))
             if driver:
@@ -309,6 +524,27 @@ def render_earnings(earnings, cite):
                                  f"{shipment['recognition_basis']}")
         lines.append("")
     lines.extend(f"- {gap}" for gap in earnings["gaps"])
+    if earnings.get("driver_audit") or earnings.get("unlinked_driver_inputs"):
+        lines += ["", "## 假說與財務驅動追溯", ""]
+        for link in earnings.get("driver_audit", []):
+            owner = "模型草擬，待覆核" if link.get("origin") == "model_draft" else "研究輸入"
+            lines += [
+                f"- **{link['id']}｜{labels[link['scenario']]}**　{link['hypothesis_summary']}（{owner}） {source_line(link)}",
+                f"  - 對應假說的原始預測　{link['hypothesis_prediction']}",
+                f"  - 模型條件　{link['assumption']}",
+                f"  - 核對與反證　{link['public_check']}　{link['falsifier']}",
+            ]
+            if not link["source_overlap"]:
+                lines.append("  - 連結來源與假說原引文無交集，待研究員確認關聯。")
+            if shift := link["recognition_shift"]:
+                lines.append(f"  - 移轉 {shift['units']} 台，自 {shift['from_period']} 至 "
+                             f"{shift['to_period']}。{shift['recognition_basis']}")
+            for effect in link["effects"]:
+                lines.append(f"  - {effect['period_end']} 營收差 {fmt(effect['revenue'], 'revenue')}，"
+                             f"營業利益差 {fmt(effect['operating_income'], 'operating_income')}，"
+                             f"EPS 差 {fmt(effect['eps'], 'eps')}。")
+        if earnings.get("unlinked_driver_inputs"):
+            lines.append("- 部分原始調整未掛接具名假說。連結影響按列示順序計算，交互作用歸於後套用項目。")
     lines += ["", "## 本益比情境估值", ""]
     if valuation := earnings["valuation"]:
         baseline = valuation["inputs"]["annual_base_eps"]

@@ -19,7 +19,7 @@ class Document(Schema):
     source: Nonempty
     kind: Literal["disclosure", "scenario", "unspecified"] = "unspecified"
     text_format: Literal["excerpt", "summary"] = "excerpt"
-    availability_basis: Literal["recorded", "replay_day_end", "search_observed"] = "recorded"
+    availability_basis: Literal["recorded", "replay_day_end", "search_observed", "vendor_point_in_time"] = "recorded"
     synthetic: bool = False
     published_at: AwareDatetime
     obtained_at: AwareDatetime
@@ -103,11 +103,41 @@ class EstimateReference(Schema):
     low: Amount
     high: Amount
     evidence_ids: list[Nonempty] = Field(min_length=1)
+    provider: Nonempty | None = None
 
     @model_validator(mode="after")
     def check_range(self):
         if self.low > self.high:
             raise ValueError("基準下限不得高於上限")
+        return self
+
+
+class SourcedAssumption(Schema):
+    value: Amount
+    available_at: AwareDatetime
+    evidence_ids: list[Nonempty] = Field(min_length=1)
+    method: Nonempty
+
+
+class OneOffAssumption(SourcedAssumption):
+    label: Nonempty
+    treatment: Literal["pretax_nonoperating", "income_tax_expense"]
+
+
+class EPSAssumptions(Schema):
+    period_end: date
+    tax_rate: SourcedAssumption
+    diluted_shares: SourcedAssumption
+    recurring_nonoperating: SourcedAssumption
+    one_offs: list[OneOffAssumption] = Field(default_factory=list, max_length=10)
+    recognize_loss_tax_benefit: bool = False
+
+    @model_validator(mode="after")
+    def check_inputs(self):
+        if not 0 <= self.tax_rate.value <= 1 or self.diluted_shares.value <= 0:
+            raise ValueError("常態稅率須介於零與一之間，且稀釋股數須為正")
+        if len({row.label for row in self.one_offs}) != len(self.one_offs):
+            raise ValueError("一次性項目不可重複列入")
         return self
 
 
@@ -144,6 +174,69 @@ class DriverBase(Schema):
 class EstimateDriver(DriverBase):
     segment_revenue_delta: dict[Nonempty, Amount]
     shipment_changes: dict[Nonempty, ShipmentChange]
+
+
+class DriverImpact(Schema):
+    period_end: date
+    metric: Literal["segment_revenue", "gross_margin", "opex"]
+    segment: Nonempty | None = None
+    delta: Amount
+
+    @model_validator(mode="after")
+    def check_impact(self):
+        if (self.metric == "segment_revenue") != (self.segment is not None):
+            raise ValueError("只有分部營收影響須指定分部")
+        if not self.delta or (self.metric == "gross_margin" and abs(self.delta) > 1):
+            raise ValueError("驅動差額為零或毛利率變動超出比例範圍")
+        return self
+
+
+class RecognitionShift(Schema):
+    from_period: date
+    to_period: date
+    segment: Nonempty
+    units: Annotated[int, Field(gt=0, strict=True)]
+    revenue_per_unit: Annotated[Amount, Field(gt=0)]
+    recognition_basis: Nonempty
+
+    @model_validator(mode="after")
+    def check_periods(self):
+        if self.from_period == self.to_period:
+            raise ValueError("遞延或提前認列須橫跨兩個季度")
+        return self
+
+
+class HypothesisDriverLink(Schema):
+    id: Annotated[str, Field(pattern=r"^[a-zA-Z0-9_-]+$", max_length=64)]
+    hypothesis_stance: Literal["bull", "bear"]
+    scenario: Scenario
+    hypothesis_summary: Nonempty
+    evidence_ids: list[Nonempty] = Field(min_length=1)
+    assumption: Nonempty
+    public_check: Nonempty
+    falsifier: Nonempty
+    origin: Literal["analyst_input", "model_draft"] = "analyst_input"
+    impacts: list[DriverImpact] = Field(default_factory=list, max_length=6)
+    recognition_shift: RecognitionShift | None = None
+
+    @model_validator(mode="after")
+    def check_changes(self):
+        if bool(self.impacts) == bool(self.recognition_shift):
+            raise ValueError("每條連結須選跨季認列，或一組明列的財務影響")
+        keys = {(row.period_end, row.metric, row.segment) for row in self.impacts}
+        if len(keys) != len(self.impacts):
+            raise ValueError("同一假說不可重複調整同一欄位")
+        return self
+
+
+class ConsensusImport(Schema):
+    parent_revision: Annotated[int, Field(ge=1, strict=True)]
+    target: Nonempty
+    provider: Nonempty
+    source_url: Nonempty
+    captured_at: AwareDatetime
+    purpose: Literal["live", "historical_replay"]
+    csv_text: Annotated[str, Field(min_length=1, max_length=100_000)]
 
 
 class DraftShipment(Schema):
@@ -217,6 +310,9 @@ class EarningsPlan(Schema):
     drivers: list[EstimateDriver] = Field(default_factory=list, max_length=6)
     generate_drivers: bool = False
     valuation: PEValuation | None = None
+    driver_links: list[HypothesisDriverLink] = Field(default_factory=list, max_length=20)
+    eps_assumptions: list[EPSAssumptions] = Field(default_factory=list, max_length=2)
+    calibrate_guidance: bool | None = None
 
     @model_validator(mode="after")
     def check_periods(self):
@@ -228,12 +324,34 @@ class EarningsPlan(Schema):
             raise ValueError("情境須對應既有預測季度且不可重複")
         if self.generate_drivers and (not periods or self.drivers):
             raise ValueError("模型草擬需要季度基準，且不能同時提供手動驅動")
+        if len({row.id for row in self.driver_links}) != len(self.driver_links):
+            raise ValueError("假說驅動連結 ID 不可重複")
+        eps_periods = {row.period_end for row in self.eps_assumptions}
+        if not eps_periods <= periods or len(eps_periods) != len(self.eps_assumptions):
+            raise ValueError("EPS 假設須對應既有預測季度且不可重複")
         return self
 
 
 class EarningsBranch(Schema):
     parent_revision: Annotated[int, Field(ge=1, strict=True)]
-    drivers: list[EstimateDriver] = Field(min_length=1, max_length=6)
+    drivers: list[EstimateDriver] = Field(default_factory=list, max_length=6)
+    driver_links: list[HypothesisDriverLink] = Field(default_factory=list, max_length=20)
+    eps_assumptions: list[EPSAssumptions] = Field(default_factory=list, max_length=2)
+    calibrate_guidance: bool | None = None
+    issuer_guidance: list[EstimateReference] = Field(default_factory=list, max_length=8)
+
+    @model_validator(mode="after")
+    def check_changes(self):
+        if not (self.drivers or self.driver_links or self.eps_assumptions or self.issuer_guidance
+                or self.calibrate_guidance is not None):
+            raise ValueError("須提供要修改的盈利模型輸入")
+        if len({row.id for row in self.driver_links}) != len(self.driver_links):
+            raise ValueError("假說驅動連結 ID 不可重複")
+        if len({row.period_end for row in self.eps_assumptions}) != len(self.eps_assumptions):
+            raise ValueError("EPS 假設季度不可重複")
+        if any(row.kind != "issuer_guidance" for row in self.issuer_guidance):
+            raise ValueError("校準只接受來源標記為公司指引的資料")
+        return self
 
 
 class ForecastRegistration(Schema):

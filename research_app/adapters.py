@@ -9,7 +9,7 @@ from pydantic import ValidationError
 
 from .schema import Answer, DetailedAnswer, DriverDraft, Hypotheses
 
-EARNINGS_DRIVER_VERSION = 2
+EARNINGS_DRIVER_VERSION = 4
 
 
 class AdapterError(Exception):
@@ -180,6 +180,20 @@ class ModelAdapter:
         ), context)
 
     def earnings_drivers(self, context):
+        version = getattr(self, "earnings_driver_version", EARNINGS_DRIVER_VERSION)
+        if version == 3:
+            use_guidance = "Give applicable same-period issuer guidance priority over a seasonal carry-forward. "
+            eps_rules = "Keep after-tax adjustments, tax rate and shares fixed. "
+        else:
+            use_guidance = (
+                "Give applicable same-period, same-basis issuer guidance priority over a seasonal carry-forward. "
+                "A range for one quarter only applies to that quarter. When forecasting through a turn, "
+                "test whether the latest sequential direction and its magnitude can persist. "
+            )
+            eps_rules = (
+                "The calculation applies any supplied EPS assumptions separately. "
+                "Exclude nonoperating adjustments and discrete taxes from operating expenses. "
+            )
         return self._generate(DriverDraft, (
             "Draft bear, base and bull forecast adjustments for each supplied quarter in Traditional Chinese. "
             "Use only provided point-in-time evidence. Quote the exact IDs. The numbers are assumptions, "
@@ -191,13 +205,16 @@ class ModelAdapter:
             "Anchor operating scale to the latest comparable newly disclosed quarter and use the older "
             "baseline for seasonal shape. If current results indicate a persistent scale or regime change, "
             "carry the change forward in the base case and explain the persistence assumption. "
-            "Give applicable same-period issuer guidance priority over a seasonal carry-forward. "
+            + use_guidance +
             "Convert the resulting point forecasts to exact additive deltas. Then bracket base with bear and bull. "
             "Reflect uncertainty through scenario ranges and evidence gaps. "
+            "Any supplied driver_links are applied separately by code. Exclude their effects from your deltas. "
             "Leave the segment list empty when there is no revenue change. Use shipment only "
             "for scenario units explicitly assumed to be recognized in that quarter. Do not double-count these "
-            "units in revenue_delta or treat bookings as revenue. Keep after-tax adjustments, tax rate and shares "
-            "fixed. Distinguish the issuer's guidance from market consensus. Return all three cases for each quarter."
+            "units in revenue_delta or treat bookings as revenue. " + eps_rules +
+            "Distinguish the issuer's guidance from market consensus. In each rationale name a public "
+            "observation with its timeframe and the opposite result, or explicitly describe the missing disclosure. "
+            "Return all three cases for each quarter."
         ), context)
 
     def answer(self, context, question):
@@ -292,11 +309,13 @@ class Live(ModelAdapter):
 
 
 class Codex(ModelAdapter):
-    def __init__(self, *, audit=None, reasoning_effort=None, call_timeout=None):
+    def __init__(self, *, audit=None, reasoning_effort=None, call_timeout=None,
+                 earnings_driver_version=EARNINGS_DRIVER_VERSION):
         self.model = os.getenv("RESEARCH_CODEX_MODEL", "")
         self.audit = audit
         self.reasoning_effort = reasoning_effort
         self.call_timeout = call_timeout
+        self.earnings_driver_version = earnings_driver_version
         self.identity = {
             "mode": "codex", "prompt_version": self.prompt_version, "model": self.model or "cli-default",
         }

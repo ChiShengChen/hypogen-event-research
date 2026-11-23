@@ -105,6 +105,7 @@ function keepReport(report) {
 function versionName(entry) {
   if (entry.revision === 1) return "原稿";
   if (entry.kind === "earnings_scenario") return "盈利重算";
+  if (entry.kind === "earnings_consensus") return "共識快照";
   return entry.kind === "scenario" ? "情境重算" : entry.kind === "evidence_follow_up" ? "補搜證據" : "研究版本";
 }
 
@@ -296,6 +297,11 @@ function renderEarnings(body, report) {
   const { earnings } = report;
   const currency = earnings.inputs.currency;
   const path = `/reports/${encodeURIComponent(report.report_id)}/revisions/${report.revision}`;
+  const earningsBranch = async (payload) => {
+    const child = await request(`/reports/${encodeURIComponent(report.report_id)}/earnings/branches`,
+      { ...payload, parent_revision: report.revision });
+    renderReport(child);
+  };
   body.append(heading("盈利預估", `${currency} 百萬／EPS 為每股`));
   for (const quarter of earnings.quarters) {
     body.append(node("h3", quarter.period_end));
@@ -317,20 +323,90 @@ function renderEarnings(body, report) {
     const wrapper = node("div", null, "scroll-table");
     wrapper.append(table);
     body.append(wrapper);
+    for (const entry of (earnings.guidance_calibration || []).filter((row) => row.period_end === quarter.period_end)) {
+      const record = node("div", null, "item");
+      record.append(fields([[
+        `公司指引校準 · ${financialMetric[entry.metric]}`,
+        `${format(entry.draft_base, entry.metric)} → ${format(entry.calibrated_base, entry.metric)}`,
+      ]]), evidenceLinks(entry.reference.evidence_ids));
+      body.append(record);
+    }
+    const profile = (earnings.inputs.eps_assumptions || []).find((row) => row.period_end === quarter.period_end);
+    if (profile) {
+      const item = node("details", null, "item");
+      item.append(node("summary", "EPS 假設與來源"));
+      const inputs = [
+        ["常態有效稅率", profile.tax_rate, "gross_margin"],
+        ["稀釋股數（百萬股）", profile.diluted_shares, "revenue"],
+        ["經常性營業外損益", profile.recurring_nonoperating, "revenue"],
+        ...profile.one_offs.map((entry) => [entry.label, entry, "revenue"]),
+      ];
+      for (const [label, entry, kind] of inputs) {
+        item.append(fields([[label, `${format(entry.value, kind)}。${entry.method}`]]), evidenceLinks(entry.evidence_ids));
+      }
+      if (!profile.one_offs.length) item.append(node("p", "預估未單列一次性項目。"));
+      if (!profile.recognize_loss_tax_benefit) item.append(node("p", "稅前虧損情境未假設可認列稅務利益。"));
+      body.append(item);
+    }
   }
   if (earnings.valuation) {
     body.append(heading("每股情境價值", currency));
     body.append(fields(Object.entries(earnings.valuation.scenarios).map(([scenario, value]) =>
       [({ bear: "空方", base: "基準", bull: "多方" })[scenario], value.value ? Number(value.value).toFixed(2) : "年度 EPS 非正"])));
   }
+  if (earnings.driver_audit?.length || earnings.unlinked_driver_inputs?.length) {
+    body.append(heading("假說與驅動追溯"));
+    for (const link of earnings.driver_audit || []) {
+      const item = node("details", null, "item");
+      const impacts = link.effects.map((row) => [
+        row.period_end, `營收 ${numberText(Number(row.revenue) / 1e6, true)} 百萬，EPS ${Number(row.eps).toFixed(2)}`,
+      ]);
+      item.append(node("summary", link.hypothesis_summary), fields([
+        ["模型條件", link.assumption], ["公開查核", link.public_check], ["反證", link.falsifier], ...impacts,
+      ]), evidenceLinks(link.evidence_ids));
+      if (!link.source_overlap.length) item.append(node("p", "與原假說引文無交集，待覆核。", "notice"));
+      body.append(item);
+    }
+    if (earnings.unlinked_driver_inputs?.length) {
+      body.append(node("p", `另有 ${earnings.unlinked_driver_inputs.length} 個季度情境含未連結調整。`, "notice"));
+    }
+  }
   const driver = earnings.inputs.drivers[0];
   if (driver) {
-    body.append(jsonAction("建立盈利重算子版", { drivers: [driver] }, async (payload) => {
-      const child = await request(`/reports/${encodeURIComponent(report.report_id)}/earnings/branches`,
-        { ...payload, parent_revision: report.revision });
-      renderReport(child);
-    }));
+    body.append(jsonAction("建立盈利重算子版", { drivers: [driver] }, earningsBranch));
   }
+  if (earnings.quarters.length === 2 && earnings.inputs.quarters[0].segment_revenue) {
+    const [firstQuarter, secondQuarter] = earnings.quarters;
+    const segment = Object.keys(firstQuarter.baseline.segment_revenue)[0];
+    body.append(jsonAction("新增跨季認列假說", { driver_links: [{
+      id: "recognition-shift", hypothesis_stance: "bear", scenario: "bear", hypothesis_summary: "",
+      evidence_ids: [], assumption: "", public_check: "", falsifier: "", impacts: [],
+      recognition_shift: { from_period: firstQuarter.period_end, to_period: secondQuarter.period_end,
+        segment, units: 1, revenue_per_unit: "", recognition_basis: "" },
+    }] }, earningsBranch));
+  }
+  if (earnings.inputs.quarters.length && driver) {
+    const [first] = earnings.inputs.quarters;
+    const sourced = (value) => ({ value, available_at: first.available_at, evidence_ids: first.evidence_ids, method: "" });
+    const profiles = (earnings.inputs.eps_assumptions || []).length ? earnings.inputs.eps_assumptions : [{
+      period_end: first.period_end, tax_rate: sourced(first.tax_rate), diluted_shares: sourced(first.diluted_shares),
+      recurring_nonoperating: sourced("0"), one_offs: [], recognize_loss_tax_benefit: false,
+    }];
+    body.append(jsonAction("修改 EPS 假設與一次性項目", { eps_assumptions: profiles }, earningsBranch));
+    body.append(jsonAction("用公司指引校準", { calibrate_guidance: true, issuer_guidance: [{
+      key: { metric: "revenue", period_end: first.period_end, duration: "quarter", scope: "consolidated",
+        basis: earnings.inputs.basis, currency },
+      kind: "issuer_guidance", label: "", available_at: report.as_of, low: "", high: "", evidence_ids: [],
+    }] }, earningsBranch));
+  }
+  body.append(jsonAction("匯入點時共識 CSV", {
+    target: report.target, provider: "", source_url: "", captured_at: "",
+    purpose: "historical_replay", csv_text: "metric,period_end,duration,scope,basis,currency,unit,low,high,available_at\n",
+  }, async (payload) => {
+    const child = await request(`/reports/${encodeURIComponent(report.report_id)}/earnings/consensus`,
+      { ...payload, parent_revision: report.revision });
+    renderReport(child);
+  }));
   const first = earnings.quarters[0];
   const refresh = async (action, value) => {
     await request(`${path}/${action}`, value);

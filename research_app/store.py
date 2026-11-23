@@ -8,6 +8,7 @@ from pathlib import Path
 from uuid import uuid4
 
 from .adapters import AdapterError, EARNINGS_DRIVER_VERSION
+from .consensus import parse_consensus
 from .discovery import DISCOVERY_VERSION, collect
 from .earnings import EarningsError, available_evidence, calculate_earnings, resolve_forecast
 from .research import (
@@ -78,11 +79,25 @@ class Store:
         payload = event.model_dump(mode="json")
         if payload.get("earnings_plan") is None:
             payload.pop("earnings_plan", None)
+        else:
+            plan_payload = payload["earnings_plan"]
+            if not plan_payload["driver_links"]:
+                plan_payload.pop("driver_links")
+            if not plan_payload["eps_assumptions"]:
+                plan_payload.pop("eps_assumptions")
+            if plan_payload["calibrate_guidance"] is None:
+                plan_payload.pop("calibrate_guidance")
+            references = plan_payload["references"] + plan_payload["event_values"]
+            if plan_payload["valuation"]:
+                references.append(plan_payload["valuation"]["annual_base_eps"])
+            for reference in references:
+                if reference["provider"] is None:
+                    reference.pop("provider")
         request_key = hashlib.sha256(encode({
             "event": payload, "adapter": adapter.identity, "formula_version": FORMULA_VERSION,
             "report_version": REPORT_VERSION,
             "discovery_version": DISCOVERY_VERSION if event.search_mode != "off" else None,
-            **({"earnings_driver_version": EARNINGS_DRIVER_VERSION}
+            **({"earnings_driver_version": EARNINGS_DRIVER_VERSION, "earnings_attribution_version": 1}
                if event.earnings_plan and event.earnings_plan.generate_drivers else {}),
         }).encode()).hexdigest()
         lookup = "SELECT run_id, report_id FROM runs WHERE request_key = ?"
@@ -154,13 +169,59 @@ class Store:
             raise EarningsError("情境須對應既有預測季度")
         drivers = {(item["period_end"], item["scenario"]): item for item in old["drivers"]}
         drivers.update(incoming)
-        plan = EarningsPlan.model_validate({**old, "drivers": list(drivers.values())})
-        earnings = calculate_earnings(plan, datetime.fromisoformat(parent["as_of"]), parent["evidence"])
-        earnings["driver_origin"] = "analyst_branch"
-        report = {**parent, "earnings": earnings, "revision_kind": "earnings_scenario"}
-        report["earnings_parent_revision"] = branch.parent_revision
+        links = {item["id"]: item for item in old.get("driver_links", [])}
+        links.update({item.id: item.model_dump(mode="json") for item in branch.driver_links})
+        if len(links) > 20:
+            raise EarningsError("同一版本最多保留二十個假說驅動連結")
+        profiles = {item["period_end"]: item for item in old.get("eps_assumptions", [])}
+        profiles.update({item.period_end.isoformat(): item.model_dump(mode="json") for item in branch.eps_assumptions})
+        if set(profiles) - {item["period_end"] for item in old["quarters"]}:
+            raise EarningsError("EPS 假設須對應既有預測季度")
+        calibrate = branch.calibrate_guidance if branch.calibrate_guidance is not None else old.get("calibrate_guidance")
+        plan_event_at = datetime.fromisoformat(old["event_at"])
+        pre_event, current = list(old["references"]), list(old["event_values"])
+        for reference in branch.issuer_guidance:
+            bucket = pre_event if reference.available_at < plan_event_at else current
+            data = reference.model_dump(mode="json")
+            if data not in bucket:
+                bucket.append(data)
+        if len(pre_event) > 40 or len(current) > 20:
+            raise EarningsError("加入指引後超過此版本的基準或事件數字上限")
+        plan = EarningsPlan.model_validate({**old, "drivers": list(drivers.values()), "driver_links": list(links.values()),
+                                           "eps_assumptions": list(profiles.values()), "calibrate_guidance": calibrate,
+                                           "references": pre_event, "event_values": current})
+        return self._save_earnings_child(report_id, parent, plan, "earnings_scenario")
+
+    def earnings_consensus(self, report_id, request):
+        parent = self.revision(report_id, request.parent_revision)
+        if "earnings" not in parent:
+            raise EarningsError("原稿缺少盈利預測基準")
+        old = EarningsPlan.model_validate(parent["earnings"]["inputs"])
+        document, references, log = parse_consensus(request, old, parent["target"], datetime.now(timezone.utc))
+        if any(row["document_id"] == document.id for row in parent["evidence"]):
+            return parent
+        if len(old.references) + len(references) > 40:
+            raise EarningsError("共識快照超出此版本的四十筆基準上限")
+        evidence = document_evidence(document)
+        new = {**parent, "evidence": [*parent["evidence"], *evidence],
+               "claims": [*parent["claims"], *[
+                   {"id": f"fact:{row['id']}", "kind": "fact", "text": row["quote"], "evidence_id": row["id"]}
+                   for row in evidence
+               ]], "consensus_imports": [*parent.get("consensus_imports", []), log]}
+        plan = old.model_copy(update={"references": [*old.references, *references]})
+        return self._save_earnings_child(report_id, new, plan, "earnings_consensus")
+
+    def _save_earnings_child(self, report_id, parent, plan, kind):
+        earnings = calculate_earnings(
+            plan, datetime.fromisoformat(parent["as_of"]), parent["evidence"],
+            hypotheses=parent["hypotheses"], claims=parent["claims"],
+        )
+        earnings["driver_origin"] = ("analyst_branch" if kind == "earnings_scenario"
+                                     else parent["earnings"].get("driver_origin", "input"))
+        report = {**parent, "earnings": earnings, "revision_kind": kind}
+        report["earnings_parent_revision"] = parent["revision"]
         report["markdown"] = render(report)
-        child = self.save_child(report_id, branch.parent_revision, report)
+        child = self.save_child(report_id, parent["revision"], report)
         return self.revision(report_id, child)
 
     def _earnings_action(self, report_id, revision, kind, key, payload, now):

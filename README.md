@@ -295,6 +295,58 @@ python -m benchmarks.earnings_pilot --sec-dir output/earnings-benchmark/sec --ou
 
 修正後四項誤差都下降。這次資料衡量歷史回放的合併財務數字，四項誤差仍由純 Astra 領先。修正後 Harness 的中位生成耗時為 32.8 秒，純 Astra 為 14.4 秒。人工盲評、覆核耗時與授權的歷史共識資料尚待接入。
 
+### 假說與財務驅動的追溯
+
+在工作台「盈利與覆核」頁面可新增跨季認列假說或匯入共識，兩者都另存子版。跨季認列需指定假說立場、原文、兩個期別、分部、台數、單價、公開查核及反證。引擎在兩季各減加同一筆營收，按各季口徑重算毛利、營業利益及 EPS，並檢查同一情境有無重複的台數調整。一般營收、毛利率和費用的影響也能個別連結。多項同時套用時，交互作用歸到後套用的項目。
+
+把 `earnings_plan.generate_drivers` 設為 `true`，模型即可草擬多空數字的連結，並保留原假說與引文。模型連結會標作待覆核。來源與原假說無交集的連結，以及沒有明確配對的原始驅動調整，會另外列出。手動連結可在 `POST /reports/{id}/earnings/branches` 傳入 `driver_links`。
+
+#### 點時市場共識匯入
+
+`POST /reports/{id}/earnings/consensus` 接受母版號、標的、提供者、HTTPS 來源、快照擷取時間、用途及 CSV 內容。CSV 標題如下。
+
+```text
+metric,period_end,duration,scope,basis,currency,unit,low,high,available_at
+```
+
+金額可用 `currency` 或 `currency_millions`，EPS 用 `currency_per_share`，毛利率用 `fraction` 或 `percent`。供應商可得時間和快照時間須包含時區。程式保存匯入時點及內容雜湊，並要求快照早於事件。同一口徑的共識、指引及內部預估各自比較。請輸入有權使用的供應商匯出資料。本機範例沒有授權市場共識數值。
+
+#### 等工作量與前瞻對照
+
+```bash
+python -m benchmarks.earnings_equal --driver-version 3 --sec-dir output/earnings-benchmark/sec
+python -m benchmarks.earnings_prospective seed
+python -m benchmarks.earnings_prospective run
+python -m benchmarks.earnings_prospective status
+```
+
+歷史回放的三組均交兩季三情境及相同財務指標。純 Astra 與「Astra＋計算器」共用同一次原始回答，計算器重新對帳 EPS，Harness 用同一模型的一次呼叫草擬驅動。30 案、60 季的基準 EPS 平均絕對誤差分別為 0.356、0.438、0.451 美元。這批使用已知歷史案例。
+
+前瞻隊列預先保留五家公司各六案，已封存 AMD、Intel、TI 三案的預測。其餘名額等待符合條件的新申報。下列命令可登記新的 SEC 原始申報，或在已封存的觀測季公開後補登實績。
+
+```bash
+python -m benchmarks.earnings_prospective enroll TICKER ACCESSION event.json
+python -m benchmarks.earnings_prospective resolve CASE actual-quarter.json
+```
+
+實績檔含 `period_end`、`duration`、`scope`、`basis`、`currency`、`source`、`accession`、具時區的 `published_at`，以及 `revenue`、`gross_margin`、`operating_income`、`eps`。隊列要求同公司 SEC 來源，且實績發布時間晚於封存。SQLite 保留三組原始預測、封存時間及雜湊。匿名覆核表與解盲鍵分開保存。填寫 `review-form.csv` 後執行 `status`，可統計三組均完成的案例之重大錯誤率、可驗證率及人工覆核中位秒數。
+
+#### 公司指引校準與 EPS 對帳
+
+「盈利與覆核」可另存公司指引或 EPS 假設子版。EPS 可逐項設定稅率、稀釋股數、經常性營業外損益、一次性稅前營業外項目與所得稅費用。每項都附日期、計算依據及引文。虧損情境預設不認列稅務利益，可明列假設後啟用。API 可在 `earnings_plan.eps_assumptions` 或盈利子版傳入這些假設。
+
+新生成的盈利研究自動採用可得且同季、同幣別、同會計口徑的合併公司指引。基準取營收與毛利率中點，其他情境以相同營收倍率與毛利率差額調整。分部按原情境比例分攤，明列的假說影響再另行套用。報告保留原草擬值與指引來源。手動子版可新增 `issuer_guidance` 並透過 `calibrate_guidance` 開關控制。
+
+```bash
+python -m benchmarks.earnings_calibration --run-model
+python -m benchmarks.earnings_prospective --output output/earnings-calibration-prospective seed --guidance benchmarks/earnings_guidance_prospective.csv
+python -m benchmarks.earnings_prospective --output output/earnings-calibration-prospective run
+```
+
+校準回放讀取上一節第 3 版的原始預測。若本機尚無資料，先執行上一節的歷史命令。同 30 案固定舊模型輸出，分開測試 EPS 對帳與公司指引。兩項套用後，Harness 的 EPS 平均絕對誤差由 0.451 降至 0.373 美元，毛利率由 5.176 降至 4.661 個百分點。另以本機 Astra 使用相同擴充後的點時資料重新生成 30 組配對。新 Harness 的毛利率誤差為 3.982 個百分點，純 Astra 為 4.250。EPS 誤差為 0.365 對 0.367 美元，營收誤差為 601.483 對 571.800 百萬美元。公司指引涵蓋下一季的 30 筆營收及其中 10 筆毛利率。公開指引的來源與時點記錄於 [歷史快照](benchmarks/earnings_guidance.csv)。
+
+新方案已另行封存 AMD、Intel 和 TI 三案的預測，等待實績與研究員覆核。
+
 ## 專案結構
 
 | 路徑 | 內容 |

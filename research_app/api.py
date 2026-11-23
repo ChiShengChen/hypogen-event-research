@@ -9,7 +9,7 @@ from pydantic import ValidationError
 
 from .adapters import AdapterError, configured_adapter
 from .earnings import EarningsError
-from .schema import EarningsBranch, Event, ForecastRegistration, ForecastResolution, Question, ResearchReview
+from .schema import ConsensusImport, EarningsBranch, Event, ForecastRegistration, ForecastResolution, Question, ResearchReview
 from .store import MissingReport, Store
 
 PACKAGE = Path(__file__).resolve().parent
@@ -99,6 +99,10 @@ def create_app(store=None, adapter=None):
     @app.post("/reports/{id}/earnings/branches")
     def earnings_branch(id: str, body: EarningsBranch, db=Depends(storage)):
         return db.earnings_branch(id, body)
+
+    @app.post("/reports/{id}/earnings/consensus")
+    def earnings_consensus(id: str, body: ConsensusImport, db=Depends(storage)):
+        return db.earnings_consensus(id, body)
 
     @app.post("/reports/{id}/revisions/{v}/forecasts")
     def register_forecast(id: str, v: int, body: ForecastRegistration, db=Depends(storage)):

@@ -508,6 +508,8 @@ def render(report):
         basis = item["availability_basis"]
         if basis == "replay_day_end":
             timing = f'歷史可得時點代理 {item["obtained_at"]}。'
+        elif basis == "vendor_point_in_time":
+            timing = f'提供者共識快照時點 {item["published_at"]}。實際匯入時點另存於報告版本。'
         elif basis == "search_observed":
             timing = f'公開日期（依搜尋摘要）{item["published_at"][:10]}，搜尋取得 {item["obtained_at"]}。'
         else:
