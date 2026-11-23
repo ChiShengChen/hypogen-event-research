@@ -202,7 +202,7 @@ def read_availability(stderr, trailing):
     return admission.availability_reason(block.decode("utf-8", errors="replace")), block[-512:]
 
 
-def attempt(root, job, case, request, stop, deadline, timeout):
+def attempt(root, job, case, request, stop, deadline, timeout, *, transform=normalize, model=None):
     state = journal.restore(root, job)
     if state["status"] != "queued" or stop.is_set():
         return state
@@ -225,7 +225,7 @@ def attempt(root, job, case, request, stop, deadline, timeout):
     result = {"status": "completed"}
     received = []
     began = monotonic()
-    model = hypothesis.MODEL if arm in ARMS else hypothesis.JUDGE
+    model = model or (hypothesis.MODEL if arm in ARMS else hypothesis.JUDGE)
     stderr_path = job / "stderr.log"
     stderr_reason = None
     try:
@@ -273,7 +273,7 @@ def attempt(root, job, case, request, stop, deadline, timeout):
             turns = sum(row["event"].get("type") == "turn.completed" for row in received)
             if prohibited or turns != 1:
                 raise ValueError("發現禁止工具或未取得恰好一次的完整 CLI 回合")
-            result.update(normalize(arm, case, json.loads(answer.read_bytes())))
+            result.update(transform(arm, case, json.loads(answer.read_bytes())))
     except (OSError, ValueError, ValidationError, AdapterError) as exc:
         result.update(status="error", reason="execution_or_validation", error=str(exc))
     observed = any(row["event"].get("type") == "turn.completed" and row["event"].get("usage")

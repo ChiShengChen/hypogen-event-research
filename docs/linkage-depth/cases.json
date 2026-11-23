@@ -1,0 +1,1278 @@
+{
+  "P-01": {
+    "issuer": "General Motors",
+    "split": "pilot",
+    "event": {
+      "event_text": "General Motors 宣布調整自動駕駛事業策略。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-12-10T23:59:59Z",
+      "research_target": "General Motors",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "gm-av",
+          "source": "https://news.gm.com/home.detail.html/Pages/news/us/en/2024/dec/1210-gm.html",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-12-10T23:59:59Z",
+          "obtained_at": "2024-12-10T23:59:59Z",
+          "paragraphs": {
+            "event": "GM 宣布將停止資助 Cruise 的 robotaxi 開發，並擬整合 Cruise LLC 與 GM 技術團隊，開發自動與輔助駕駛。",
+            "business": "GM 表示會以 Super Cruise 既有進展為基礎，推進個人用車的駕駛輔助技術。公告時 Super Cruise 已提供給逾 20 款車。",
+            "cost": "若重整按計畫完成，GM 預期每年減少逾 10 億美元支出。公司當時預期計畫於 2025 年上半年完成。",
+            "original": "GM intends to combine the majority-owned Cruise LLC and GM technical teams"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "gm-av": {
+        "location": "公告策略與資本配置段落",
+        "quote": "GM intends to combine the majority-owned Cruise LLC and GM technical teams"
+      }
+    },
+    "gold": {
+      "positive": true,
+      "category": "同公司跨業務",
+      "standard": "辨識 Cruise 專案資源整併與 Super Cruise／個人用車開發的條件式連動。用團隊整合、產品技術採用等公開訊號區分單純裁撤成本。逾 10 億美元屬公司預估重整後年化支出節省，不能當作 Super Cruise 專案所得預算或已實現毛利。"
+    },
+    "input": {
+      "event_text": "General Motors 宣布調整自動駕駛事業策略。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-12-10T23:59:59+00:00",
+      "target": "General Motors",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "gm-av:business",
+          "document_id": "gm-av",
+          "paragraph": "business",
+          "source": "https://news.gm.com/home.detail.html/Pages/news/us/en/2024/dec/1210-gm.html",
+          "quote": "GM 表示會以 Super Cruise 既有進展為基礎，推進個人用車的駕駛輔助技術。公告時 Super Cruise 已提供給逾 20 款車。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-10T23:59:59+00:00",
+          "obtained_at": "2024-12-10T23:59:59+00:00"
+        },
+        {
+          "id": "gm-av:cost",
+          "document_id": "gm-av",
+          "paragraph": "cost",
+          "source": "https://news.gm.com/home.detail.html/Pages/news/us/en/2024/dec/1210-gm.html",
+          "quote": "若重整按計畫完成，GM 預期每年減少逾 10 億美元支出。公司當時預期計畫於 2025 年上半年完成。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-10T23:59:59+00:00",
+          "obtained_at": "2024-12-10T23:59:59+00:00"
+        },
+        {
+          "id": "gm-av:event",
+          "document_id": "gm-av",
+          "paragraph": "event",
+          "source": "https://news.gm.com/home.detail.html/Pages/news/us/en/2024/dec/1210-gm.html",
+          "quote": "GM 宣布將停止資助 Cruise 的 robotaxi 開發，並擬整合 Cruise LLC 與 GM 技術團隊，開發自動與輔助駕駛。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-10T23:59:59+00:00",
+          "obtained_at": "2024-12-10T23:59:59+00:00"
+        },
+        {
+          "id": "gm-av:original",
+          "document_id": "gm-av",
+          "paragraph": "original",
+          "source": "https://news.gm.com/home.detail.html/Pages/news/us/en/2024/dec/1210-gm.html",
+          "quote": "GM intends to combine the majority-owned Cruise LLC and GM technical teams",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-10T23:59:59+00:00",
+          "obtained_at": "2024-12-10T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "P-02": {
+    "issuer": "Unilever",
+    "split": "pilot",
+    "event": {
+      "event_text": "Unilever 公布第一季交易更新與策略進展。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-04-25T23:59:59Z",
+      "research_target": "Unilever",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "ul-q1",
+          "source": "https://www.unilever.com/news/press-and-media/press-releases/2024/improved-volume-growth-led-by-power-brands/",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-04-25T23:59:59Z",
+          "obtained_at": "2024-04-25T23:59:59Z",
+          "paragraphs": {
+            "portfolio": "Unilever 說計畫於 2025 年底前完成 Ice Cream 分拆。另啟動集團生產力計畫，三年目標節省約 8 億歐元，預期可抵銷分拆造成的營運協同損失。",
+            "beauty": "Beauty & Wellbeing 的基礎銷售成長為 7.4%，銷量成長 5.6%，由 Health & Wellbeing 和 Prestige Beauty 持續雙位數成長帶動。",
+            "original": "Beauty & Wellbeing grew underlying sales by 7.4%"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "ul-q1": {
+        "location": "Beauty & Wellbeing 段落及 Ice Cream 分拆更新",
+        "quote": "Beauty & Wellbeing grew underlying sales by 7.4%"
+      }
+    },
+    "gold": {
+      "positive": false,
+      "category": "資源去向未披露",
+      "standard": "區分集團生產力節省與 Ice Cream 分拆的成本抵銷，以及 Beauty & Wellbeing 本身成長。缺少撥款、支出移轉或資本配置明細，不能說分拆款項或節省支出流入 Beauty & Wellbeing 並造成既見財務成長。"
+    },
+    "input": {
+      "event_text": "Unilever 公布第一季交易更新與策略進展。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-04-25T23:59:59+00:00",
+      "target": "Unilever",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "ul-q1:beauty",
+          "document_id": "ul-q1",
+          "paragraph": "beauty",
+          "source": "https://www.unilever.com/news/press-and-media/press-releases/2024/improved-volume-growth-led-by-power-brands/",
+          "quote": "Beauty & Wellbeing 的基礎銷售成長為 7.4%，銷量成長 5.6%，由 Health & Wellbeing 和 Prestige Beauty 持續雙位數成長帶動。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-04-25T23:59:59+00:00",
+          "obtained_at": "2024-04-25T23:59:59+00:00"
+        },
+        {
+          "id": "ul-q1:original",
+          "document_id": "ul-q1",
+          "paragraph": "original",
+          "source": "https://www.unilever.com/news/press-and-media/press-releases/2024/improved-volume-growth-led-by-power-brands/",
+          "quote": "Beauty & Wellbeing grew underlying sales by 7.4%",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-04-25T23:59:59+00:00",
+          "obtained_at": "2024-04-25T23:59:59+00:00"
+        },
+        {
+          "id": "ul-q1:portfolio",
+          "document_id": "ul-q1",
+          "paragraph": "portfolio",
+          "source": "https://www.unilever.com/news/press-and-media/press-releases/2024/improved-volume-growth-led-by-power-brands/",
+          "quote": "Unilever 說計畫於 2025 年底前完成 Ice Cream 分拆。另啟動集團生產力計畫，三年目標節省約 8 億歐元，預期可抵銷分拆造成的營運協同損失。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-04-25T23:59:59+00:00",
+          "obtained_at": "2024-04-25T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "P-03": {
+    "issuer": "Amazon",
+    "split": "pilot",
+    "event": {
+      "event_text": "Amazon 宣布增加一筆策略投資並深化既有合作。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-11-22T23:59:59Z",
+      "research_target": "Amazon",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "amzn-ai",
+          "source": "https://www.aboutamazon.com/news/aws/amazon-invests-additional-4-billion-anthropic-ai",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-11-22T23:59:59Z",
+          "obtained_at": "2024-11-22T23:59:59Z",
+          "paragraphs": {
+            "event": "Amazon 宣布再對 Anthropic 投資 40 億美元。Anthropic 將 AWS 列為主要訓練合作夥伴，且 AWS 繼續是主要雲端供應商。",
+            "compute": "Anthropic 表示將使用 AWS Trainium 與 Inferentia 訓練及部署未來基礎模型，雙方會共同推進 Trainium 的硬體及軟體能力。",
+            "channel": "Amazon Bedrock 提供 Anthropic Claude 模型給 AWS 客戶。公告未列 Anthropic 的保證雲端用量、單價或 AWS 由此認列的營收。",
+            "original": "Anthropic is now naming AWS its primary training partner"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "amzn-ai": {
+        "location": "公告標題後的合作條款及技術部署段落",
+        "quote": "Anthropic is now naming AWS its primary training partner"
+      }
+    },
+    "gold": {
+      "positive": true,
+      "category": "具名對手方",
+      "standard": "辨識 Anthropic 實際訓練或部署專案帶來 AWS Trainium／AWS 運算需求，或 Anthropic 模型供應帶來 Bedrock 使用。以具名訓練、模型部署或 AWS 使用事證區分投資金額與一般雲端需求。股權投資不能視為 AWS 營收，請指出用量／單價條件。"
+    },
+    "input": {
+      "event_text": "Amazon 宣布增加一筆策略投資並深化既有合作。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-11-22T23:59:59+00:00",
+      "target": "Amazon",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "amzn-ai:channel",
+          "document_id": "amzn-ai",
+          "paragraph": "channel",
+          "source": "https://www.aboutamazon.com/news/aws/amazon-invests-additional-4-billion-anthropic-ai",
+          "quote": "Amazon Bedrock 提供 Anthropic Claude 模型給 AWS 客戶。公告未列 Anthropic 的保證雲端用量、單價或 AWS 由此認列的營收。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-22T23:59:59+00:00",
+          "obtained_at": "2024-11-22T23:59:59+00:00"
+        },
+        {
+          "id": "amzn-ai:compute",
+          "document_id": "amzn-ai",
+          "paragraph": "compute",
+          "source": "https://www.aboutamazon.com/news/aws/amazon-invests-additional-4-billion-anthropic-ai",
+          "quote": "Anthropic 表示將使用 AWS Trainium 與 Inferentia 訓練及部署未來基礎模型，雙方會共同推進 Trainium 的硬體及軟體能力。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-22T23:59:59+00:00",
+          "obtained_at": "2024-11-22T23:59:59+00:00"
+        },
+        {
+          "id": "amzn-ai:event",
+          "document_id": "amzn-ai",
+          "paragraph": "event",
+          "source": "https://www.aboutamazon.com/news/aws/amazon-invests-additional-4-billion-anthropic-ai",
+          "quote": "Amazon 宣布再對 Anthropic 投資 40 億美元。Anthropic 將 AWS 列為主要訓練合作夥伴，且 AWS 繼續是主要雲端供應商。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-22T23:59:59+00:00",
+          "obtained_at": "2024-11-22T23:59:59+00:00"
+        },
+        {
+          "id": "amzn-ai:original",
+          "document_id": "amzn-ai",
+          "paragraph": "original",
+          "source": "https://www.aboutamazon.com/news/aws/amazon-invests-additional-4-billion-anthropic-ai",
+          "quote": "Anthropic is now naming AWS its primary training partner",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-22T23:59:59+00:00",
+          "obtained_at": "2024-11-22T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "P-04": {
+    "issuer": "PepsiCo",
+    "split": "pilot",
+    "event": {
+      "event_text": "PepsiCo 公布第三季財報並更新展望。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-10-08T23:59:59Z",
+      "research_target": "PepsiCo",
+      "research_horizon": "2025-06-30",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "pep-q3",
+          "source": "https://investor.pepsico.com/docs/default-source/investors/q3-2024/q3-2024-earnings-release_3zjmhjkr4wdt37ko.pdf",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-10-08T23:59:59Z",
+          "obtained_at": "2024-10-08T23:59:59Z",
+          "paragraphs": {
+            "flna": "PepsiCo 第三季 Frito-Lay North America 的 GAAP 營收年減 1%，核心固定匯率營業利益年減 9%。",
+            "pbna": "同一季 PepsiCo Beverages North America 的 GAAP 營收約持平，有機營收年增 1%，核心固定匯率營業利益年增 7%。",
+            "outlook": "公司更新的是集團全年展望。部門表各自列示分部數字及可比性調整。",
+            "original": "Frito-Lay North America"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "pep-q3": {
+        "location": "第三季部門營運比較表",
+        "quote": "Frito-Lay North America"
+      }
+    },
+    "gold": {
+      "positive": false,
+      "category": "並列的分部變動",
+      "standard": "零食與飲料有各自部門表，缺共同促銷／同客群或資源移轉、以及可歸因的數量或費用資料。不能說 Frito-Lay 的衰退直接導致飲料部門改善，或把 GAAP 與核心固定匯率混作同口徑成長。"
+    },
+    "input": {
+      "event_text": "PepsiCo 公布第三季財報並更新展望。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-10-08T23:59:59+00:00",
+      "target": "PepsiCo",
+      "horizon": "2025-06-30",
+      "evidence": [
+        {
+          "id": "pep-q3:flna",
+          "document_id": "pep-q3",
+          "paragraph": "flna",
+          "source": "https://investor.pepsico.com/docs/default-source/investors/q3-2024/q3-2024-earnings-release_3zjmhjkr4wdt37ko.pdf",
+          "quote": "PepsiCo 第三季 Frito-Lay North America 的 GAAP 營收年減 1%，核心固定匯率營業利益年減 9%。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-10-08T23:59:59+00:00",
+          "obtained_at": "2024-10-08T23:59:59+00:00"
+        },
+        {
+          "id": "pep-q3:original",
+          "document_id": "pep-q3",
+          "paragraph": "original",
+          "source": "https://investor.pepsico.com/docs/default-source/investors/q3-2024/q3-2024-earnings-release_3zjmhjkr4wdt37ko.pdf",
+          "quote": "Frito-Lay North America",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-10-08T23:59:59+00:00",
+          "obtained_at": "2024-10-08T23:59:59+00:00"
+        },
+        {
+          "id": "pep-q3:outlook",
+          "document_id": "pep-q3",
+          "paragraph": "outlook",
+          "source": "https://investor.pepsico.com/docs/default-source/investors/q3-2024/q3-2024-earnings-release_3zjmhjkr4wdt37ko.pdf",
+          "quote": "公司更新的是集團全年展望。部門表各自列示分部數字及可比性調整。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-10-08T23:59:59+00:00",
+          "obtained_at": "2024-10-08T23:59:59+00:00"
+        },
+        {
+          "id": "pep-q3:pbna",
+          "document_id": "pep-q3",
+          "paragraph": "pbna",
+          "source": "https://investor.pepsico.com/docs/default-source/investors/q3-2024/q3-2024-earnings-release_3zjmhjkr4wdt37ko.pdf",
+          "quote": "同一季 PepsiCo Beverages North America 的 GAAP 營收約持平，有機營收年增 1%，核心固定匯率營業利益年增 7%。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-10-08T23:59:59+00:00",
+          "obtained_at": "2024-10-08T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-01": {
+    "issuer": "Microsoft",
+    "split": "holdout",
+    "event": {
+      "event_text": "Microsoft 公布多年期策略合作。請提出可供研究員覆核的首稿。",
+      "as_of": "2022-12-12T23:59:59Z",
+      "research_target": "Microsoft",
+      "research_horizon": "2024-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "ms-lseg",
+          "source": "https://news.microsoft.com/source/2022/12/12/lseg-and-microsoft-launch-10-year-strategic-partnership-for-next-generation-data-and-analytics-and-cloud-infrastructure-solutions-microsoft-to-make-equity-investment-in-lseg-through-acquisition-of-sh/",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2022-12-12T23:59:59Z",
+          "obtained_at": "2022-12-12T23:59:59Z",
+          "paragraphs": {
+            "contract": "London Stock Exchange Group（LSEG）與 Microsoft 簽十年合作。LSEG 對 Microsoft 的最低雲端相關支出承諾為十年合計 28 億美元。",
+            "migration": "LSEG 的資料平台與其他關鍵科技基礎設施會遷移至 Microsoft Azure。Workspace 與 Teams／Microsoft 365 另有整合計畫。",
+            "equity": "Microsoft 還擬取得 LSEG 約 4% 股份；持股交易與雲端服務使用是不同項目。",
+            "original": "Contractual commitment by LSEG for minimum cloud-related spend with Microsoft"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "ms-lseg": {
+        "location": "公告條列合約支出及雲端遷移",
+        "quote": "Contractual commitment by LSEG for minimum cloud-related spend with Microsoft"
+      }
+    },
+    "gold": {
+      "positive": true,
+      "category": "具名對手方",
+      "standard": "LSEG 遷移計畫和最低雲端支出契約連至 Azure／雲端服務需求。追蹤遷移、工作負載上線或合約履約，區分入股與一般 Azure 增長。28 億為十年最低支出，不能按年平均當成已認列收入。"
+    },
+    "input": {
+      "event_text": "Microsoft 公布多年期策略合作。請提出可供研究員覆核的首稿。",
+      "as_of": "2022-12-12T23:59:59+00:00",
+      "target": "Microsoft",
+      "horizon": "2024-12-31",
+      "evidence": [
+        {
+          "id": "ms-lseg:contract",
+          "document_id": "ms-lseg",
+          "paragraph": "contract",
+          "source": "https://news.microsoft.com/source/2022/12/12/lseg-and-microsoft-launch-10-year-strategic-partnership-for-next-generation-data-and-analytics-and-cloud-infrastructure-solutions-microsoft-to-make-equity-investment-in-lseg-through-acquisition-of-sh/",
+          "quote": "London Stock Exchange Group（LSEG）與 Microsoft 簽十年合作。LSEG 對 Microsoft 的最低雲端相關支出承諾為十年合計 28 億美元。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2022-12-12T23:59:59+00:00",
+          "obtained_at": "2022-12-12T23:59:59+00:00"
+        },
+        {
+          "id": "ms-lseg:equity",
+          "document_id": "ms-lseg",
+          "paragraph": "equity",
+          "source": "https://news.microsoft.com/source/2022/12/12/lseg-and-microsoft-launch-10-year-strategic-partnership-for-next-generation-data-and-analytics-and-cloud-infrastructure-solutions-microsoft-to-make-equity-investment-in-lseg-through-acquisition-of-sh/",
+          "quote": "Microsoft 還擬取得 LSEG 約 4% 股份；持股交易與雲端服務使用是不同項目。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2022-12-12T23:59:59+00:00",
+          "obtained_at": "2022-12-12T23:59:59+00:00"
+        },
+        {
+          "id": "ms-lseg:migration",
+          "document_id": "ms-lseg",
+          "paragraph": "migration",
+          "source": "https://news.microsoft.com/source/2022/12/12/lseg-and-microsoft-launch-10-year-strategic-partnership-for-next-generation-data-and-analytics-and-cloud-infrastructure-solutions-microsoft-to-make-equity-investment-in-lseg-through-acquisition-of-sh/",
+          "quote": "LSEG 的資料平台與其他關鍵科技基礎設施會遷移至 Microsoft Azure。Workspace 與 Teams／Microsoft 365 另有整合計畫。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2022-12-12T23:59:59+00:00",
+          "obtained_at": "2022-12-12T23:59:59+00:00"
+        },
+        {
+          "id": "ms-lseg:original",
+          "document_id": "ms-lseg",
+          "paragraph": "original",
+          "source": "https://news.microsoft.com/source/2022/12/12/lseg-and-microsoft-launch-10-year-strategic-partnership-for-next-generation-data-and-analytics-and-cloud-infrastructure-solutions-microsoft-to-make-equity-investment-in-lseg-through-acquisition-of-sh/",
+          "quote": "Contractual commitment by LSEG for minimum cloud-related spend with Microsoft",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2022-12-12T23:59:59+00:00",
+          "obtained_at": "2022-12-12T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-02": {
+    "issuer": "Dell Technologies",
+    "split": "holdout",
+    "event": {
+      "event_text": "Dell Technologies 被列入產業平台更新。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-06-02T23:59:59Z",
+      "research_target": "Dell Technologies",
+      "research_horizon": "2025-06-30",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "nv-system",
+          "source": "https://nvidianews.nvidia.com/news/computer-industry-ai-factories-data-centers/",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-06-02T23:59:59Z",
+          "obtained_at": "2024-06-02T23:59:59Z",
+          "paragraphs": {
+            "dell": "NVIDIA 公開提到 Dell Technologies、Hewlett Packard Enterprise 和 Lenovo 的伺服器可使用相關資料中心技術。",
+            "peer": "同一公布列出 Supermicro 等不同系統廠商供應以 NVIDIA GPU 與網路為基礎的產品。",
+            "platform": "公告描述 NVIDIA Blackwell 與系統設計平台的產業採用情形，未列各 OEM 的同一批客戶訂單或可分配晶片數。",
+            "original": "Dell Technologies, Hewlett Packard Enterprise and Lenovo"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "nv-system": {
+        "location": "Computex 公告與合作夥伴段落",
+        "quote": "Dell Technologies, Hewlett Packard Enterprise and Lenovo"
+      }
+    },
+    "gold": {
+      "positive": false,
+      "category": "共用供應商",
+      "standard": "辨識共用平台可說明設備相容或供應選項。缺少配額、訂單或客戶改單，保留 Dell 與 Supermicro／其他 OEM 相對增量方向。不能主張供應、訂單或份額已由一方流往另一方。"
+    },
+    "input": {
+      "event_text": "Dell Technologies 被列入產業平台更新。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-06-02T23:59:59+00:00",
+      "target": "Dell Technologies",
+      "horizon": "2025-06-30",
+      "evidence": [
+        {
+          "id": "nv-system:dell",
+          "document_id": "nv-system",
+          "paragraph": "dell",
+          "source": "https://nvidianews.nvidia.com/news/computer-industry-ai-factories-data-centers/",
+          "quote": "NVIDIA 公開提到 Dell Technologies、Hewlett Packard Enterprise 和 Lenovo 的伺服器可使用相關資料中心技術。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-06-02T23:59:59+00:00",
+          "obtained_at": "2024-06-02T23:59:59+00:00"
+        },
+        {
+          "id": "nv-system:original",
+          "document_id": "nv-system",
+          "paragraph": "original",
+          "source": "https://nvidianews.nvidia.com/news/computer-industry-ai-factories-data-centers/",
+          "quote": "Dell Technologies, Hewlett Packard Enterprise and Lenovo",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-06-02T23:59:59+00:00",
+          "obtained_at": "2024-06-02T23:59:59+00:00"
+        },
+        {
+          "id": "nv-system:peer",
+          "document_id": "nv-system",
+          "paragraph": "peer",
+          "source": "https://nvidianews.nvidia.com/news/computer-industry-ai-factories-data-centers/",
+          "quote": "同一公布列出 Supermicro 等不同系統廠商供應以 NVIDIA GPU 與網路為基礎的產品。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-06-02T23:59:59+00:00",
+          "obtained_at": "2024-06-02T23:59:59+00:00"
+        },
+        {
+          "id": "nv-system:platform",
+          "document_id": "nv-system",
+          "paragraph": "platform",
+          "source": "https://nvidianews.nvidia.com/news/computer-industry-ai-factories-data-centers/",
+          "quote": "公告描述 NVIDIA Blackwell 與系統設計平台的產業採用情形，未列各 OEM 的同一批客戶訂單或可分配晶片數。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-06-02T23:59:59+00:00",
+          "obtained_at": "2024-06-02T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-03": {
+    "issuer": "Walmart",
+    "split": "holdout",
+    "event": {
+      "event_text": "Walmart 公告完成一筆收購。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-12-03T23:59:59Z",
+      "research_target": "Walmart",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "wmt-vizio",
+          "source": "https://corporate.walmart.com/news/2024/12/03/walmart-completes-acquisition-of-vizio",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-12-03T23:59:59Z",
+          "obtained_at": "2024-12-03T23:59:59Z",
+          "paragraphs": {
+            "event": "Walmart 公告完成收購 VIZIO。VIZIO 提供 SmartCast 連網電視作業系統。",
+            "platform": "VIZIO 的 Platform+ 主要由廣告業務組成，公告時占 VIZIO 全部毛利。這是 VIZIO 的口徑。",
+            "agency": "管理層預期收購有助 Walmart Connect 廣告業務成長。完成交易與廣告技術整合是不同進度。",
+            "original": "accelerate growth at Walmart Connect, the company’s advertising business"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "wmt-vizio": {
+        "location": "公告的 SmartCast 與廣告業務段落",
+        "quote": "accelerate growth at Walmart Connect, the company’s advertising business"
+      }
+    },
+    "gold": {
+      "positive": true,
+      "category": "同公司跨業務",
+      "standard": "SmartCast／Platform+ 的廣告庫存或廣告主與 Walmart Connect 的廣告規模連動。條件要涉及廣告整合、可購庫存、銷售或衡量能力。用共同產品推廣／具名串流庫存採用分離 Walmart Connect 既有成長或併表基期效應，勿套用 VIZIO 的毛利為 Walmart 結果。"
+    },
+    "input": {
+      "event_text": "Walmart 公告完成一筆收購。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-12-03T23:59:59+00:00",
+      "target": "Walmart",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "wmt-vizio:agency",
+          "document_id": "wmt-vizio",
+          "paragraph": "agency",
+          "source": "https://corporate.walmart.com/news/2024/12/03/walmart-completes-acquisition-of-vizio",
+          "quote": "管理層預期收購有助 Walmart Connect 廣告業務成長。完成交易與廣告技術整合是不同進度。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-03T23:59:59+00:00",
+          "obtained_at": "2024-12-03T23:59:59+00:00"
+        },
+        {
+          "id": "wmt-vizio:event",
+          "document_id": "wmt-vizio",
+          "paragraph": "event",
+          "source": "https://corporate.walmart.com/news/2024/12/03/walmart-completes-acquisition-of-vizio",
+          "quote": "Walmart 公告完成收購 VIZIO。VIZIO 提供 SmartCast 連網電視作業系統。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-03T23:59:59+00:00",
+          "obtained_at": "2024-12-03T23:59:59+00:00"
+        },
+        {
+          "id": "wmt-vizio:original",
+          "document_id": "wmt-vizio",
+          "paragraph": "original",
+          "source": "https://corporate.walmart.com/news/2024/12/03/walmart-completes-acquisition-of-vizio",
+          "quote": "accelerate growth at Walmart Connect, the company’s advertising business",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-03T23:59:59+00:00",
+          "obtained_at": "2024-12-03T23:59:59+00:00"
+        },
+        {
+          "id": "wmt-vizio:platform",
+          "document_id": "wmt-vizio",
+          "paragraph": "platform",
+          "source": "https://corporate.walmart.com/news/2024/12/03/walmart-completes-acquisition-of-vizio",
+          "quote": "VIZIO 的 Platform+ 主要由廣告業務組成，公告時占 VIZIO 全部毛利。這是 VIZIO 的口徑。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-03T23:59:59+00:00",
+          "obtained_at": "2024-12-03T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-04": {
+    "issuer": "Target",
+    "split": "holdout",
+    "event": {
+      "event_text": "Target 公布第三季業績。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-11-20T23:59:59Z",
+      "research_target": "Target",
+      "research_horizon": "2025-06-30",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "tgt-q3",
+          "source": "https://corporate.target.com/press/release/2024/11/target-corporation-reports-third-quarter-earnings",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-11-20T23:59:59Z",
+          "obtained_at": "2024-11-20T23:59:59Z",
+          "paragraphs": {
+            "beauty": "Target 的 Beauty 可比銷售增逾 6%。Food & Beverage 和 Essentials 的增幅為低個位數。",
+            "overall": "合併可比銷售增 0.3%，客流增 2.4%。公告列示的是各品類及全店的業績。",
+            "margin": "合併第三季毛利率較上年低 0.2 個百分點。",
+            "original": "Beauty comparable sales grew more than 6 percent."
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "tgt-q3": {
+        "location": "財報重點的品類分項",
+        "quote": "Beauty comparable sales grew more than 6 percent."
+      }
+    },
+    "gold": {
+      "positive": false,
+      "category": "品類同時成長",
+      "standard": "缺同店同客戶的購物籃、跨品類轉換或促銷歸因資料。可說 Beauty 與 Food & Beverage 並行成長，須保留 Beauty 為食品引流或貢獻該品類毛利的判斷。"
+    },
+    "input": {
+      "event_text": "Target 公布第三季業績。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-11-20T23:59:59+00:00",
+      "target": "Target",
+      "horizon": "2025-06-30",
+      "evidence": [
+        {
+          "id": "tgt-q3:beauty",
+          "document_id": "tgt-q3",
+          "paragraph": "beauty",
+          "source": "https://corporate.target.com/press/release/2024/11/target-corporation-reports-third-quarter-earnings",
+          "quote": "Target 的 Beauty 可比銷售增逾 6%。Food & Beverage 和 Essentials 的增幅為低個位數。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-20T23:59:59+00:00",
+          "obtained_at": "2024-11-20T23:59:59+00:00"
+        },
+        {
+          "id": "tgt-q3:margin",
+          "document_id": "tgt-q3",
+          "paragraph": "margin",
+          "source": "https://corporate.target.com/press/release/2024/11/target-corporation-reports-third-quarter-earnings",
+          "quote": "合併第三季毛利率較上年低 0.2 個百分點。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-20T23:59:59+00:00",
+          "obtained_at": "2024-11-20T23:59:59+00:00"
+        },
+        {
+          "id": "tgt-q3:original",
+          "document_id": "tgt-q3",
+          "paragraph": "original",
+          "source": "https://corporate.target.com/press/release/2024/11/target-corporation-reports-third-quarter-earnings",
+          "quote": "Beauty comparable sales grew more than 6 percent.",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-20T23:59:59+00:00",
+          "obtained_at": "2024-11-20T23:59:59+00:00"
+        },
+        {
+          "id": "tgt-q3:overall",
+          "document_id": "tgt-q3",
+          "paragraph": "overall",
+          "source": "https://corporate.target.com/press/release/2024/11/target-corporation-reports-third-quarter-earnings",
+          "quote": "合併可比銷售增 0.3%，客流增 2.4%。公告列示的是各品類及全店的業績。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-20T23:59:59+00:00",
+          "obtained_at": "2024-11-20T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-05": {
+    "issuer": "Uber",
+    "split": "holdout",
+    "event": {
+      "event_text": "Uber 公布擴大既有合作。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-09-13T23:59:59Z",
+      "research_target": "Uber",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "uber-av",
+          "source": "https://investor.uber.com/news-events/news/press-release-details/2024/Uber-and-Waymo-Expand-Partnership-to-Bring-Autonomous-Ride-Hailing-to-Austin-and-Atlanta/default.aspx",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-09-13T23:59:59Z",
+          "obtained_at": "2024-09-13T23:59:59Z",
+          "paragraphs": {
+            "network": "Uber 與 Waymo 公布擴大合作。Austin 和 Atlanta 規劃自 2025 年起以 Uber app 獨家提供 Waymo 自動駕駛叫車。",
+            "fleet": "Uber 將提供車隊管理，包含清潔、維修及車庫營運，Waymo 負責 Waymo Driver 的測試及操作。",
+            "scale": "合作計畫讓車隊日後擴大至數百輛。公告未列實際總行程數、雙方費率或單趟貢獻。",
+            "original": "Uber will provide fleet management services"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "uber-av": {
+        "location": "合作城市、營運職責和車隊段落",
+        "quote": "Uber will provide fleet management services"
+      }
+    },
+    "gold": {
+      "positive": true,
+      "category": "具名對手方",
+      "standard": "Waymo 車隊實際上線可把額外可叫車供給或營運職責導入 Uber 平台。驗證特定城市上線、可用車、行程或獨家通路，區分平台一般成長／既有司機替代。量化仍須單趟經濟與新增/替代需求。"
+    },
+    "input": {
+      "event_text": "Uber 公布擴大既有合作。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-09-13T23:59:59+00:00",
+      "target": "Uber",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "uber-av:fleet",
+          "document_id": "uber-av",
+          "paragraph": "fleet",
+          "source": "https://investor.uber.com/news-events/news/press-release-details/2024/Uber-and-Waymo-Expand-Partnership-to-Bring-Autonomous-Ride-Hailing-to-Austin-and-Atlanta/default.aspx",
+          "quote": "Uber 將提供車隊管理，包含清潔、維修及車庫營運，Waymo 負責 Waymo Driver 的測試及操作。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-09-13T23:59:59+00:00",
+          "obtained_at": "2024-09-13T23:59:59+00:00"
+        },
+        {
+          "id": "uber-av:network",
+          "document_id": "uber-av",
+          "paragraph": "network",
+          "source": "https://investor.uber.com/news-events/news/press-release-details/2024/Uber-and-Waymo-Expand-Partnership-to-Bring-Autonomous-Ride-Hailing-to-Austin-and-Atlanta/default.aspx",
+          "quote": "Uber 與 Waymo 公布擴大合作。Austin 和 Atlanta 規劃自 2025 年起以 Uber app 獨家提供 Waymo 自動駕駛叫車。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-09-13T23:59:59+00:00",
+          "obtained_at": "2024-09-13T23:59:59+00:00"
+        },
+        {
+          "id": "uber-av:original",
+          "document_id": "uber-av",
+          "paragraph": "original",
+          "source": "https://investor.uber.com/news-events/news/press-release-details/2024/Uber-and-Waymo-Expand-Partnership-to-Bring-Autonomous-Ride-Hailing-to-Austin-and-Atlanta/default.aspx",
+          "quote": "Uber will provide fleet management services",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-09-13T23:59:59+00:00",
+          "obtained_at": "2024-09-13T23:59:59+00:00"
+        },
+        {
+          "id": "uber-av:scale",
+          "document_id": "uber-av",
+          "paragraph": "scale",
+          "source": "https://investor.uber.com/news-events/news/press-release-details/2024/Uber-and-Waymo-Expand-Partnership-to-Bring-Autonomous-Ride-Hailing-to-Austin-and-Atlanta/default.aspx",
+          "quote": "合作計畫讓車隊日後擴大至數百輛。公告未列實際總行程數、雙方費率或單趟貢獻。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-09-13T23:59:59+00:00",
+          "obtained_at": "2024-09-13T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-06": {
+    "issuer": "FedEx",
+    "split": "holdout",
+    "event": {
+      "event_text": "FedEx 董事會公告事業組合決定。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-12-19T23:59:59Z",
+      "research_target": "FedEx",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "fdx-sep",
+          "source": "https://newsroom.fedex.com/newsroom/global-english/fedex-announces-intent-to-separate-fedex-freight-creating-two-industry-leading-public-companies",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-12-19T23:59:59Z",
+          "obtained_at": "2024-12-19T23:59:59Z",
+          "paragraphs": {
+            "decision": "FedEx 董事會擬分拆 FedEx Freight，使其成為獨立上市公司。當時目標為 18 個月內完成，須待後續條件及核准。",
+            "capital": "公告描述以資本市場方式推動分離，預期符合美國聯邦所得稅免稅分離資格，未量化母公司實收款或指定其用途。",
+            "original": "expected to qualify as a tax-free separation"
+          }
+        },
+        {
+          "id": "fdx-q2",
+          "source": "https://newsroom.fedex.com/newsroom/global-english/fedex-reports-second-quarter-diluted-eps-of-3-03-and-adjusted-diluted-eps-of-4-05",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-12-19T23:59:59Z",
+          "obtained_at": "2024-12-19T23:59:59Z",
+          "paragraphs": {
+            "repurchases": "同期財報說本季已完成 10 億美元回購。該數字是本季已發生事項。",
+            "original": "$1 Billion Share Repurchases Completed During Quarter"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "fdx-sep": {
+        "location": "Transaction Process 段落",
+        "quote": "expected to qualify as a tax-free separation"
+      },
+      "fdx-q2": {
+        "location": "同期財報標題重點",
+        "quote": "$1 Billion Share Repurchases Completed During Quarter"
+      }
+    },
+    "gold": {
+      "positive": false,
+      "category": "資源去向未披露",
+      "standard": "分拆計畫並不確立實收現金或回購、航空／其他業務資金去向。需要分拆資本結構、現金或分配條款、董事會用途與流量日期。已完成回購不得歸因於未完成交易。"
+    },
+    "input": {
+      "event_text": "FedEx 董事會公告事業組合決定。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-12-19T23:59:59+00:00",
+      "target": "FedEx",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "fdx-sep:capital",
+          "document_id": "fdx-sep",
+          "paragraph": "capital",
+          "source": "https://newsroom.fedex.com/newsroom/global-english/fedex-announces-intent-to-separate-fedex-freight-creating-two-industry-leading-public-companies",
+          "quote": "公告描述以資本市場方式推動分離，預期符合美國聯邦所得稅免稅分離資格，未量化母公司實收款或指定其用途。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        },
+        {
+          "id": "fdx-sep:decision",
+          "document_id": "fdx-sep",
+          "paragraph": "decision",
+          "source": "https://newsroom.fedex.com/newsroom/global-english/fedex-announces-intent-to-separate-fedex-freight-creating-two-industry-leading-public-companies",
+          "quote": "FedEx 董事會擬分拆 FedEx Freight，使其成為獨立上市公司。當時目標為 18 個月內完成，須待後續條件及核准。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        },
+        {
+          "id": "fdx-sep:original",
+          "document_id": "fdx-sep",
+          "paragraph": "original",
+          "source": "https://newsroom.fedex.com/newsroom/global-english/fedex-announces-intent-to-separate-fedex-freight-creating-two-industry-leading-public-companies",
+          "quote": "expected to qualify as a tax-free separation",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        },
+        {
+          "id": "fdx-q2:original",
+          "document_id": "fdx-q2",
+          "paragraph": "original",
+          "source": "https://newsroom.fedex.com/newsroom/global-english/fedex-reports-second-quarter-diluted-eps-of-3-03-and-adjusted-diluted-eps-of-4-05",
+          "quote": "$1 Billion Share Repurchases Completed During Quarter",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        },
+        {
+          "id": "fdx-q2:repurchases",
+          "document_id": "fdx-q2",
+          "paragraph": "repurchases",
+          "source": "https://newsroom.fedex.com/newsroom/global-english/fedex-reports-second-quarter-diluted-eps-of-3-03-and-adjusted-diluted-eps-of-4-05",
+          "quote": "同期財報說本季已完成 10 億美元回購。該數字是本季已發生事項。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-07": {
+    "issuer": "lululemon",
+    "split": "holdout",
+    "event": {
+      "event_text": "lululemon 公布新的多年合作。請提出可供研究員覆核的首稿。",
+      "as_of": "2023-09-27T23:59:59Z",
+      "research_target": "lululemon",
+      "research_horizon": "2024-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "lulu-pton",
+          "source": "https://corporate.lululemon.com/newsroom/press-releases/2023/09-27-2023-211026323",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2023-09-27T23:59:59Z",
+          "obtained_at": "2023-09-27T23:59:59Z",
+          "paragraphs": {
+            "terms": "lululemon 與 Peloton 公布五年合作。Peloton 成為 lululemon 的獨家數位健身內容供應商，lululemon 成為 Peloton 主要運動服飾合作夥伴。",
+            "subscription": "從 2023 年 11 月 1 日起，lululemon Studio All-Access 會員會按當時同價取得 Peloton 課程。",
+            "sales": "聯合公告描述以 Peloton 通路推出共同品牌服飾與相關計畫。此屬通路與供應安排。",
+            "original": "Peloton will become the exclusive digital fitness content provider for lululemon"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "lulu-pton": {
+        "location": "聯合公告的合作交換與會員段落",
+        "quote": "Peloton will become the exclusive digital fitness content provider for lululemon"
+      }
+    },
+    "gold": {
+      "positive": true,
+      "category": "跨通路與具名對手方",
+      "standard": "可選 Peloton 內容導入 Studio 與內容成本或會員留存，或 Peloton 的具名服飾通路連到 lululemon 增量銷售。查同價上線／可購服飾／新通路銷售，區分其他會員變動、季節折扣或原有服飾通路移轉；缺分潤或成本時只主張條件影響。"
+    },
+    "input": {
+      "event_text": "lululemon 公布新的多年合作。請提出可供研究員覆核的首稿。",
+      "as_of": "2023-09-27T23:59:59+00:00",
+      "target": "lululemon",
+      "horizon": "2024-12-31",
+      "evidence": [
+        {
+          "id": "lulu-pton:original",
+          "document_id": "lulu-pton",
+          "paragraph": "original",
+          "source": "https://corporate.lululemon.com/newsroom/press-releases/2023/09-27-2023-211026323",
+          "quote": "Peloton will become the exclusive digital fitness content provider for lululemon",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-09-27T23:59:59+00:00",
+          "obtained_at": "2023-09-27T23:59:59+00:00"
+        },
+        {
+          "id": "lulu-pton:sales",
+          "document_id": "lulu-pton",
+          "paragraph": "sales",
+          "source": "https://corporate.lululemon.com/newsroom/press-releases/2023/09-27-2023-211026323",
+          "quote": "聯合公告描述以 Peloton 通路推出共同品牌服飾與相關計畫。此屬通路與供應安排。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-09-27T23:59:59+00:00",
+          "obtained_at": "2023-09-27T23:59:59+00:00"
+        },
+        {
+          "id": "lulu-pton:subscription",
+          "document_id": "lulu-pton",
+          "paragraph": "subscription",
+          "source": "https://corporate.lululemon.com/newsroom/press-releases/2023/09-27-2023-211026323",
+          "quote": "從 2023 年 11 月 1 日起，lululemon Studio All-Access 會員會按當時同價取得 Peloton 課程。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-09-27T23:59:59+00:00",
+          "obtained_at": "2023-09-27T23:59:59+00:00"
+        },
+        {
+          "id": "lulu-pton:terms",
+          "document_id": "lulu-pton",
+          "paragraph": "terms",
+          "source": "https://corporate.lululemon.com/newsroom/press-releases/2023/09-27-2023-211026323",
+          "quote": "lululemon 與 Peloton 公布五年合作。Peloton 成為 lululemon 的獨家數位健身內容供應商，lululemon 成為 Peloton 主要運動服飾合作夥伴。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-09-27T23:59:59+00:00",
+          "obtained_at": "2023-09-27T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-08": {
+    "issuer": "NIKE",
+    "split": "holdout",
+    "event": {
+      "event_text": "NIKE 公布季度財報。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-12-19T23:59:59Z",
+      "research_target": "NIKE",
+      "research_horizon": "2025-06-30",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "nike-q2",
+          "source": "https://investors.nike.com/sec-filings/all-sec-filings/content/0000320187-24-000069/q2fy25exhibit991er.htm",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-12-19T23:59:59Z",
+          "obtained_at": "2024-12-19T23:59:59Z",
+          "paragraphs": {
+            "direct": "第二財季 NIKE Direct 營收 50 億美元，按報告口徑年減 13%。NIKE Brand Digital 銷售年減 21%，自營門市銷售年減 2%。",
+            "wholesale": "批發營收 69 億美元，按報告口徑年減 3%。",
+            "margin": "集團毛利率下滑 1 個百分點至 43.6%。公告同時列出通路和合併財務表現。",
+            "original": "NIKE Direct revenues were $5.0 billion"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "nike-q2": {
+        "location": "Second Quarter Income Statement Review",
+        "quote": "NIKE Direct revenues were $5.0 billion"
+      }
+    },
+    "gold": {
+      "positive": false,
+      "category": "通路讀數並列",
+      "standard": "通路跌幅差異不證明相同顧客從 Direct 轉到批發。缺同款同市場銷量或庫存、通路配置或消費者遷移，保留替代效應與特定通路造成合併毛利變動的大小。"
+    },
+    "input": {
+      "event_text": "NIKE 公布季度財報。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-12-19T23:59:59+00:00",
+      "target": "NIKE",
+      "horizon": "2025-06-30",
+      "evidence": [
+        {
+          "id": "nike-q2:direct",
+          "document_id": "nike-q2",
+          "paragraph": "direct",
+          "source": "https://investors.nike.com/sec-filings/all-sec-filings/content/0000320187-24-000069/q2fy25exhibit991er.htm",
+          "quote": "第二財季 NIKE Direct 營收 50 億美元，按報告口徑年減 13%。NIKE Brand Digital 銷售年減 21%，自營門市銷售年減 2%。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        },
+        {
+          "id": "nike-q2:margin",
+          "document_id": "nike-q2",
+          "paragraph": "margin",
+          "source": "https://investors.nike.com/sec-filings/all-sec-filings/content/0000320187-24-000069/q2fy25exhibit991er.htm",
+          "quote": "集團毛利率下滑 1 個百分點至 43.6%。公告同時列出通路和合併財務表現。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        },
+        {
+          "id": "nike-q2:original",
+          "document_id": "nike-q2",
+          "paragraph": "original",
+          "source": "https://investors.nike.com/sec-filings/all-sec-filings/content/0000320187-24-000069/q2fy25exhibit991er.htm",
+          "quote": "NIKE Direct revenues were $5.0 billion",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        },
+        {
+          "id": "nike-q2:wholesale",
+          "document_id": "nike-q2",
+          "paragraph": "wholesale",
+          "source": "https://investors.nike.com/sec-filings/all-sec-filings/content/0000320187-24-000069/q2fy25exhibit991er.htm",
+          "quote": "批發營收 69 億美元，按報告口徑年減 3%。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        }
+      ]
+    }
+  }
+}

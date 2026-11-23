@@ -1,0 +1,51 @@
+{
+  "source_sha256": {
+    "linkage_depth.py": "6cc1539b908b4deab99c894e8bfd7ffb6e45b5148683c6f08d87f7af9ed2e44a",
+    "linkage_depth_cases.py": "b22a34a9e76bf1db48e56ff2130c0c1df2600a8eebbc047ac952f688c8c8bb5f",
+    "v9_equal.py": "f58527b1a9fae466f6f4790dbb5e9747fe3ae939d5688eda70a6f454aa9913aa",
+    "earnings_execution.py": "40e800f97ee205b6f7e9f65fa388e438a7285f0b4929e5eeb2b5520d63ce3327",
+    "research.py": "bcb38ab5e73f6d919603032e97602690c516242570c8b068802260781dff144a",
+    "adapters.py": "357223c1478356057d1fd3ffbd83791d3f1fc908393304e7ef82a88971cc32d1",
+    "business_linkage.py": "e2b79facb63dc75db1408034f0c84220c78089099bc60f4209d17314e6b6f13e",
+    "schema.py": "5c7d25df12e4b4b2d75c794ef3a90063c54af2eb9f758b7c041c8b36f1702301",
+    "v9_equal_admission.py": "7122cd8450e8d1792d6c193237a246a8a207cfb17dcd6ba86935057c06d90a7f"
+  },
+  "cases_sha256": "734a1ea39552a726a3701f5e649f99f5611a054090c1f6a6b8f2803abe356cc5",
+  "requests_sha256": "60a057ae807496ce97cc34a22becc26a0d99c017d7d2bf3c1dc332325c8a73a4",
+  "generation_model": "gpt-6.2-astra",
+  "grading_model": "gpt-6.2-sol",
+  "effort": "medium",
+  "search": "disabled",
+  "workers": 1,
+  "max_paths": 3,
+  "generation_timeout_seconds": 180,
+  "grading_timeout_seconds": 120,
+  "generation_attempts_per_arm": 1,
+  "grading_attempts_per_pair": 1,
+  "hard_token_cap": null,
+  "grading_prompt": "Independently audit each anonymous report against the supplied point-in-time evidence and frozen case standard. Check all submitted linkages in listed order. Report one CandidateGrade per displayed linkage, with 1-based index. For evidence check both endpoints and whether the factual premise is actually supported, not just cited. For mechanism check a precise directional operating step and a necessary observable condition. For financial_effect check the direction and metric at the correct business, calibrated to the available amounts. For falsifier check a named public source and same-period observable result that discriminates the mechanism from at least one plausible alternate explanation. A milestone may verify the mechanism without certifying financial materiality if the limitations are clear. A missing disclosure is not a falsifier. target_path means the link genuinely addresses the specified standard or an equally supported equivalent. major_error is reserved for an affirmative unsupported claim of resource transfer, cross-company order or customer diversion, an assertion that concurrent guidance proves causation, or material false facts, money or attribution. Mark every such error even if another linkage passes. A hypothesis explicitly conditional on unconfirmed evidence is not an affirmative claim. Evaluate the entire submission for major_error, including the gap. On a negative case set gap_ok only if the gap or a path names missing evidence specific to the trap and explicitly withholds its attribution. A separate evidenced transmission is compatible with that judgment. On a positive case gap_ok is informational only. Score evidence and logic, not style, size, labels or known later results. Return concise Traditional Chinese notes and one verdict per anonymous label.",
+  "rubric": {
+    "rule_check": "每條另核對非空、可見的起點與受影響引文及期限。Harness 使用產品實際發布的欄位，另保留被過濾的候選。",
+    "positive": "至少一條同時通過程式核對、對應預註冊路徑及模型四項語義判讀，且全稿零重大錯誤。",
+    "negative": "指出預註冊陷阱缺少的證據、保留歸因、稿中各條引文均有效，且零重大錯誤。",
+    "gate_pilot": {
+      "pairs": 4,
+      "graded": 4,
+      "harness_exact": 3,
+      "harness_major_max": 0
+    },
+    "gate_holdout": {
+      "pairs": 8,
+      "graded": 8,
+      "harness_positive_exact": 3,
+      "harness_negative_exact": 3,
+      "harness_major_max": 0,
+      "minimum_lead": 2
+    },
+    "truth": "先導與保留集先以已封存裁定加匿名 Sol 單次判讀作流程門檻。人工獨立覆核另計。每案的呈現順序交替。"
+  },
+  "stop": "先導配對與評分通過後才啟動保留集。已開始的失敗呼叫占用額度且不重試。容量或用量錯誤只對尚未開始的工作依公告冷卻，最多 900 秒，缺提示採 30 秒。等待超限即停止該批。未取得完整配對不做模型比較評分。一般中斷只接續未開始的工作。",
+  "max_provider_wait_seconds": 900,
+  "regression": "Ford 和 ASML 使用已保留的 V10 原始有效連動離線驗證，排除計分。",
+  "sealed_at": "2026-11-23T10:26:57.487096+00:00"
+}
