@@ -1,4 +1,5 @@
 from decimal import Decimal
+import re
 from hashlib import sha256
 
 import pytest
@@ -115,3 +116,75 @@ def test_questions_use_case_labels(archive):
     rows = bench.questions(case(archive))
     assert rows[0]["item"] == "revision" and "the fourth quarter" in rows[0]["question"]
     assert rows[-1]["kind"] == "direction" and "the third quarter" in rows[-1]["question"]
+
+
+def extraction(**overrides):
+    figures = {
+        "new": {"document": "acme", "block": "acme:p0001", "quote": "between $179 million and $189 million",
+                "tabular": False, "unit_block": None, "unit_quote": None},
+        "prior": {"document": "acme", "block": "acme:p0001", "quote": "$175 million to $190 million",
+                  "tabular": False, "unit_block": None, "unit_quote": None},
+        "last_actual": {"document": "acme", "block": "acme:p0003", "quote": "180,250", "tabular": True,
+                        "unit_block": "acme:p0002", "unit_quote": "(U.S. $ in thousands)"},
+    } | overrides
+    return bench.Extraction.model_validate({
+        "figures": [{"name": name, **figure} for name, figure in figures.items() if figure is not None],
+        "reason": "已定位",
+    })
+
+
+def test_harness_computes_from_verified_wording(archive):
+    item = case(archive)
+    blocks = bench.case_blocks(item)
+    answers, errors = bench.harness_answers(item, blocks, extraction())
+    assert not errors
+    assert bench.grade(item, bench.gold(item, blocks), answers)["exact"]
+    assert answers["midpoint_change"] == "1500000" and answers["revision"] == "raised"
+
+
+def test_harness_leaves_unproven_items_unknown(archive):
+    item = case(archive)
+    blocks = bench.case_blocks(item)
+    wrong = {"document": "acme", "block": "acme:p0001", "quote": "$176 million to $190 million",
+             "tabular": False, "unit_block": None, "unit_quote": None}
+    answers, errors = bench.harness_answers(item, blocks, extraction(prior=wrong))
+    assert "prior" in errors and answers["revision"] == "unknown"
+    assert answers["sequential"] == "raised"
+    answers, errors = bench.harness_answers(item, blocks, extraction(new=None))
+    assert errors["new"] == "figure not located" and set(answers.values()) == {"unknown"}
+
+
+def test_requests_share_documents_and_hide_gold(archive):
+    item = case(archive)
+    requests = bench.requests_for(item, bench.case_blocks(item))
+    direct, harness = (requests[arm]["prompt"] for arm in bench.ARMS)
+    assert direct.split("\n\n", 1)[1].count("acme:p0001") == harness.split("\n\n", 1)[1].count("acme:p0001") == 1
+    assert "Compared with the prior guidance" in direct and "Compared with the prior guidance" not in harness
+    assert "the issuer's prior guidance for the fourth quarter revenue" in harness
+    assert "1500000" not in direct + harness and "trap" not in direct + harness
+
+
+def test_prompt_examples_match_no_pilot_case():
+    examples = bench.ANSWER_RULES + bench.EXTRACT
+    for item in bench.load_cases():
+        for refs in item.figures.values():
+            assert all(ref.quote not in examples for ref in refs)
+    for number in re.findall(r"-?\d+(?:\.\d+)?", bench.ANSWER_RULES):
+        assert number.lstrip("-") not in {"1500000", "0.82", "7500000", "13500000", "1600000", "2716000"}
+
+
+def test_direct_answers_are_read_by_item(archive):
+    item = case(archive)
+    record = bench.transform("astra", (item, {}), {
+        "answers": [{"item": "revision", "value": "raised"}, {"item": "midpoint_change", "value": "1500000"}],
+        "evidence_ids": ["acme:p0001"], "reason": "中點上修",
+    })
+    assert record["answers"] == {"revision": "raised", "midpoint_change": "1500000"}
+
+
+def test_mcnemar_and_holdout_size():
+    assert bench.mcnemar(6, 0) == 0.03125 and bench.mcnemar(5, 0) == 0.0625 and bench.mcnemar(2, 2) == 1.0
+    assert bench.holdout_size(0, 1, 8) is None and bench.holdout_size(2, 2, 8) is None
+    size = bench.holdout_size(3, 0, 8)
+    assert size is not None and 4 <= size <= 30
+    assert bench.holdout_size(2, 1, 8) > size

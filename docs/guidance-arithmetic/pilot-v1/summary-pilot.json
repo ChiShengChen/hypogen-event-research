@@ -1,0 +1,2111 @@
+{
+  "split": "pilot",
+  "cases": 8,
+  "repeats": 3,
+  "arms": {
+    "astra": {
+      "runs_exact": 24,
+      "runs": 24,
+      "cases_majority_exact": 8,
+      "items_correct": 96,
+      "items": 96,
+      "by_kind": {
+        "amount": [
+          48,
+          48
+        ],
+        "ratio": [
+          24,
+          24
+        ],
+        "direction": [
+          24,
+          24
+        ]
+      },
+      "failed_calls": 0,
+      "unstable_cases": 0
+    },
+    "harness": {
+      "runs_exact": 24,
+      "runs": 24,
+      "cases_majority_exact": 8,
+      "items_correct": 96,
+      "items": 96,
+      "by_kind": {
+        "amount": [
+          48,
+          48
+        ],
+        "ratio": [
+          24,
+          24
+        ],
+        "direction": [
+          24,
+          24
+        ]
+      },
+      "failed_calls": 0,
+      "unstable_cases": 0
+    }
+  },
+  "per_case": {
+    "ntgr_q4_2023": {
+      "astra": 3,
+      "harness": 3
+    },
+    "infn_q4_2023": {
+      "astra": 3,
+      "harness": 3
+    },
+    "bmy_fy2026": {
+      "astra": 3,
+      "harness": 3
+    },
+    "team_q4_fy2025": {
+      "astra": 3,
+      "harness": 3
+    },
+    "fnsr_q1_fy2014": {
+      "astra": 3,
+      "harness": 3
+    },
+    "nvda_q4_fy2019": {
+      "astra": 3,
+      "harness": 3
+    },
+    "amd_q3_2022": {
+      "astra": 3,
+      "harness": 3
+    },
+    "onds_q4_2025": {
+      "astra": 3,
+      "harness": 3
+    }
+  },
+  "discordant_cases": {
+    "harness_only": 0,
+    "astra_only": 0
+  },
+  "mcnemar_p": 1.0,
+  "suggested_holdout_cases": null,
+  "pairs": [
+    {
+      "case": "ntgr_q4_2023",
+      "repeat": 1,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.116,
+          "usage": {
+            "input_tokens": 18818,
+            "cached_input_tokens": 0,
+            "output_tokens": 214,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "1500000",
+              "gold": "1500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "0.82",
+              "gold": "0.008219178082191780821917808219",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "4000000",
+              "gold": "4000000",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "-1000000",
+              "gold": "-1000000",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.818,
+          "usage": {
+            "input_tokens": 18773,
+            "cached_input_tokens": 0,
+            "output_tokens": 230,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "1500000",
+              "gold": "1500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "0.8219178082191780821917808219",
+              "gold": "0.008219178082191780821917808219",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "4000000",
+              "gold": "4000000",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "-1000000",
+              "gold": "-1000000",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "ntgr_q4_2023",
+      "repeat": 2,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 12.92,
+          "usage": {
+            "input_tokens": 18818,
+            "cached_input_tokens": 13824,
+            "output_tokens": 216,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "1500000",
+              "gold": "1500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "0.82",
+              "gold": "0.008219178082191780821917808219",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "4000000",
+              "gold": "4000000",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "-1000000",
+              "gold": "-1000000",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.617,
+          "usage": {
+            "input_tokens": 18767,
+            "cached_input_tokens": 0,
+            "output_tokens": 230,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "1500000",
+              "gold": "1500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "0.8219178082191780821917808219",
+              "gold": "0.008219178082191780821917808219",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "4000000",
+              "gold": "4000000",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "-1000000",
+              "gold": "-1000000",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "ntgr_q4_2023",
+      "repeat": 3,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 10.615,
+          "usage": {
+            "input_tokens": 18816,
+            "cached_input_tokens": 0,
+            "output_tokens": 196,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "1500000",
+              "gold": "1500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "0.82",
+              "gold": "0.008219178082191780821917808219",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "4000000",
+              "gold": "4000000",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "-1000000",
+              "gold": "-1000000",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.617,
+          "usage": {
+            "input_tokens": 18769,
+            "cached_input_tokens": 0,
+            "output_tokens": 226,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "1500000",
+              "gold": "1500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "0.8219178082191780821917808219",
+              "gold": "0.008219178082191780821917808219",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "4000000",
+              "gold": "4000000",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "-1000000",
+              "gold": "-1000000",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "infn_q4_2023",
+      "repeat": 1,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 12.82,
+          "usage": {
+            "input_tokens": 20769,
+            "cached_input_tokens": 0,
+            "output_tokens": 227,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "7500000",
+              "gold": "7500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "1.72",
+              "gold": "0.01720183486238532110091743119",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "14000000",
+              "gold": "14000000",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "1000000",
+              "gold": "1000000",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 10.522,
+          "usage": {
+            "input_tokens": 20724,
+            "cached_input_tokens": 0,
+            "output_tokens": 218,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "7500000",
+              "gold": "7500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "1.720183486238532110091743119",
+              "gold": "0.01720183486238532110091743119",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "14000000",
+              "gold": "14000000",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "1000000",
+              "gold": "1000000",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "infn_q4_2023",
+      "repeat": 2,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.318,
+          "usage": {
+            "input_tokens": 20771,
+            "cached_input_tokens": 0,
+            "output_tokens": 195,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "7500000",
+              "gold": "7500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "1.72",
+              "gold": "0.01720183486238532110091743119",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "14000000",
+              "gold": "14000000",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "1000000",
+              "gold": "1000000",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 12.119,
+          "usage": {
+            "input_tokens": 20722,
+            "cached_input_tokens": 0,
+            "output_tokens": 219,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "7500000",
+              "gold": "7500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "1.720183486238532110091743119",
+              "gold": "0.01720183486238532110091743119",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "14000000",
+              "gold": "14000000",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "1000000",
+              "gold": "1000000",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "infn_q4_2023",
+      "repeat": 3,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 10.714,
+          "usage": {
+            "input_tokens": 20771,
+            "cached_input_tokens": 13824,
+            "output_tokens": 210,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "7500000",
+              "gold": "7500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "1.72",
+              "gold": "0.01720183486238532110091743119",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "14000000",
+              "gold": "14000000",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "1000000",
+              "gold": "1000000",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 13.021,
+          "usage": {
+            "input_tokens": 20724,
+            "cached_input_tokens": 13952,
+            "output_tokens": 218,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "7500000",
+              "gold": "7500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "1.720183486238532110091743119",
+              "gold": "0.01720183486238532110091743119",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "14000000",
+              "gold": "14000000",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "1000000",
+              "gold": "1000000",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "bmy_fy2026",
+      "repeat": 1,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 10.92,
+          "usage": {
+            "input_tokens": 39425,
+            "cached_input_tokens": 0,
+            "output_tokens": 208,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "2750000000",
+              "gold": "2750000000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.88",
+              "gold": "0.05882352941176470588235294118",
+              "correct": true
+            },
+            "width_change": {
+              "kind": "amount",
+              "answer": "-500000000",
+              "gold": "-500000000.0",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.316,
+          "usage": {
+            "input_tokens": 39403,
+            "cached_input_tokens": 0,
+            "output_tokens": 252,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "2750000000.0",
+              "gold": "2750000000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.882352941176470588235294118",
+              "gold": "0.05882352941176470588235294118",
+              "correct": true
+            },
+            "width_change": {
+              "kind": "amount",
+              "answer": "-500000000.0",
+              "gold": "-500000000.0",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "bmy_fy2026",
+      "repeat": 2,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.119,
+          "usage": {
+            "input_tokens": 39429,
+            "cached_input_tokens": 0,
+            "output_tokens": 211,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "2750000000",
+              "gold": "2750000000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.88",
+              "gold": "0.05882352941176470588235294118",
+              "correct": true
+            },
+            "width_change": {
+              "kind": "amount",
+              "answer": "-500000000",
+              "gold": "-500000000.0",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 12.818,
+          "usage": {
+            "input_tokens": 39403,
+            "cached_input_tokens": 0,
+            "output_tokens": 256,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "2750000000.0",
+              "gold": "2750000000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.882352941176470588235294118",
+              "gold": "0.05882352941176470588235294118",
+              "correct": true
+            },
+            "width_change": {
+              "kind": "amount",
+              "answer": "-500000000.0",
+              "gold": "-500000000.0",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "bmy_fy2026",
+      "repeat": 3,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 15.524,
+          "usage": {
+            "input_tokens": 39429,
+            "cached_input_tokens": 0,
+            "output_tokens": 208,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "2750000000",
+              "gold": "2750000000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.88",
+              "gold": "0.05882352941176470588235294118",
+              "correct": true
+            },
+            "width_change": {
+              "kind": "amount",
+              "answer": "-500000000",
+              "gold": "-500000000.0",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 15.119,
+          "usage": {
+            "input_tokens": 39407,
+            "cached_input_tokens": 0,
+            "output_tokens": 254,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "2750000000.0",
+              "gold": "2750000000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.882352941176470588235294118",
+              "gold": "0.05882352941176470588235294118",
+              "correct": true
+            },
+            "width_change": {
+              "kind": "amount",
+              "answer": "-500000000.0",
+              "gold": "-500000000.0",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "team_q4_fy2025",
+      "repeat": 1,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 12.816,
+          "usage": {
+            "input_tokens": 28918,
+            "cached_input_tokens": 0,
+            "output_tokens": 265,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "new_midpoint": {
+              "kind": "amount",
+              "answer": "1354000000",
+              "gold": "1354000000",
+              "correct": true
+            },
+            "sequential": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "sequential_change": {
+              "kind": "amount",
+              "answer": "-2716000",
+              "gold": "-2716000",
+              "correct": true
+            },
+            "sequential_change_ratio": {
+              "kind": "ratio",
+              "answer": "-0.20",
+              "gold": "-0.002001892805863570563036037019",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 10.518,
+          "usage": {
+            "input_tokens": 28843,
+            "cached_input_tokens": 0,
+            "output_tokens": 235,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "new_midpoint": {
+              "kind": "amount",
+              "answer": "1354000000",
+              "gold": "1354000000",
+              "correct": true
+            },
+            "sequential": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "sequential_change": {
+              "kind": "amount",
+              "answer": "-2700000.0",
+              "gold": "-2716000",
+              "correct": true
+            },
+            "sequential_change_ratio": {
+              "kind": "ratio",
+              "answer": "-0.1990123092798702734576546031",
+              "gold": "-0.002001892805863570563036037019",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "team_q4_fy2025",
+      "repeat": 2,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 12.316,
+          "usage": {
+            "input_tokens": 28918,
+            "cached_input_tokens": 0,
+            "output_tokens": 270,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "new_midpoint": {
+              "kind": "amount",
+              "answer": "1354000000",
+              "gold": "1354000000",
+              "correct": true
+            },
+            "sequential": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "sequential_change": {
+              "kind": "amount",
+              "answer": "-2716000",
+              "gold": "-2716000",
+              "correct": true
+            },
+            "sequential_change_ratio": {
+              "kind": "ratio",
+              "answer": "-0.20",
+              "gold": "-0.002001892805863570563036037019",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.416,
+          "usage": {
+            "input_tokens": 28845,
+            "cached_input_tokens": 0,
+            "output_tokens": 252,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "new_midpoint": {
+              "kind": "amount",
+              "answer": "1354000000",
+              "gold": "1354000000",
+              "correct": true
+            },
+            "sequential": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "sequential_change": {
+              "kind": "amount",
+              "answer": "-2700000.0",
+              "gold": "-2716000",
+              "correct": true
+            },
+            "sequential_change_ratio": {
+              "kind": "ratio",
+              "answer": "-0.1990123092798702734576546031",
+              "gold": "-0.002001892805863570563036037019",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "team_q4_fy2025",
+      "repeat": 3,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 15.723,
+          "usage": {
+            "input_tokens": 28918,
+            "cached_input_tokens": 13824,
+            "output_tokens": 268,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "new_midpoint": {
+              "kind": "amount",
+              "answer": "1354000000",
+              "gold": "1354000000",
+              "correct": true
+            },
+            "sequential": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "sequential_change": {
+              "kind": "amount",
+              "answer": "-2716000",
+              "gold": "-2716000",
+              "correct": true
+            },
+            "sequential_change_ratio": {
+              "kind": "ratio",
+              "answer": "-0.20",
+              "gold": "-0.002001892805863570563036037019",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.719,
+          "usage": {
+            "input_tokens": 28845,
+            "cached_input_tokens": 13952,
+            "output_tokens": 246,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "new_midpoint": {
+              "kind": "amount",
+              "answer": "1354000000",
+              "gold": "1354000000",
+              "correct": true
+            },
+            "sequential": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "sequential_change": {
+              "kind": "amount",
+              "answer": "-2700000.0",
+              "gold": "-2716000",
+              "correct": true
+            },
+            "sequential_change_ratio": {
+              "kind": "ratio",
+              "answer": "-0.1990123092798702734576546031",
+              "gold": "-0.002001892805863570563036037019",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "fnsr_q1_fy2014",
+      "repeat": 1,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 10.313,
+          "usage": {
+            "input_tokens": 16030,
+            "cached_input_tokens": 0,
+            "output_tokens": 161,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "13500000",
+              "gold": "13500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.35",
+              "gold": "0.05346534653465346534653465347",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 12.817,
+          "usage": {
+            "input_tokens": 16041,
+            "cached_input_tokens": 13952,
+            "output_tokens": 226,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "13500000",
+              "gold": "13500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.346534653465346534653465347",
+              "gold": "0.05346534653465346534653465347",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "fnsr_q1_fy2014",
+      "repeat": 2,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 9.716,
+          "usage": {
+            "input_tokens": 16028,
+            "cached_input_tokens": 0,
+            "output_tokens": 161,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "13500000",
+              "gold": "13500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.35",
+              "gold": "0.05346534653465346534653465347",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.415,
+          "usage": {
+            "input_tokens": 16043,
+            "cached_input_tokens": 0,
+            "output_tokens": 227,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "13500000",
+              "gold": "13500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.346534653465346534653465347",
+              "gold": "0.05346534653465346534653465347",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "fnsr_q1_fy2014",
+      "repeat": 3,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 9.515,
+          "usage": {
+            "input_tokens": 16030,
+            "cached_input_tokens": 13824,
+            "output_tokens": 161,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "13500000",
+              "gold": "13500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.35",
+              "gold": "0.05346534653465346534653465347",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 12.118,
+          "usage": {
+            "input_tokens": 16043,
+            "cached_input_tokens": 0,
+            "output_tokens": 251,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "13500000",
+              "gold": "13500000",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.346534653465346534653465347",
+              "gold": "0.05346534653465346534653465347",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "nvda_q4_fy2019",
+      "repeat": 1,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.119,
+          "usage": {
+            "input_tokens": 19774,
+            "cached_input_tokens": 0,
+            "output_tokens": 149,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "-500000000",
+              "gold": "-500000000.00",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "-18.52",
+              "gold": "-0.1851851851851851851851851852",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 10.416,
+          "usage": {
+            "input_tokens": 19783,
+            "cached_input_tokens": 0,
+            "output_tokens": 211,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "-500000000.00",
+              "gold": "-500000000.00",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "-18.51851851851851851851851852",
+              "gold": "-0.1851851851851851851851851852",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "nvda_q4_fy2019",
+      "repeat": 2,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.214,
+          "usage": {
+            "input_tokens": 19772,
+            "cached_input_tokens": 0,
+            "output_tokens": 150,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "-500000000",
+              "gold": "-500000000.00",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "-18.52",
+              "gold": "-0.1851851851851851851851851852",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.717,
+          "usage": {
+            "input_tokens": 19785,
+            "cached_input_tokens": 0,
+            "output_tokens": 247,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "-500000000.00",
+              "gold": "-500000000.00",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "-18.51851851851851851851851852",
+              "gold": "-0.1851851851851851851851851852",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "nvda_q4_fy2019",
+      "repeat": 3,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 10.115,
+          "usage": {
+            "input_tokens": 19774,
+            "cached_input_tokens": 0,
+            "output_tokens": 147,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "-500000000",
+              "gold": "-500000000.00",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "-18.52",
+              "gold": "-0.1851851851851851851851851852",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.919,
+          "usage": {
+            "input_tokens": 19789,
+            "cached_input_tokens": 13952,
+            "output_tokens": 217,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "-500000000.00",
+              "gold": "-500000000.00",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "-18.51851851851851851851851852",
+              "gold": "-0.1851851851851851851851851852",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "amd_q3_2022",
+      "repeat": 1,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 9.414,
+          "usage": {
+            "input_tokens": 17794,
+            "cached_input_tokens": 0,
+            "output_tokens": 170,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "-1100000000",
+              "gold": "-1100000000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "-16.42",
+              "gold": "-0.1641791044776119402985074627",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.214,
+          "usage": {
+            "input_tokens": 17813,
+            "cached_input_tokens": 0,
+            "output_tokens": 220,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "-1100000000.0",
+              "gold": "-1100000000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "-16.41791044776119402985074627",
+              "gold": "-0.1641791044776119402985074627",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "amd_q3_2022",
+      "repeat": 2,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 9.614,
+          "usage": {
+            "input_tokens": 17798,
+            "cached_input_tokens": 0,
+            "output_tokens": 142,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "-1100000000",
+              "gold": "-1100000000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "-16.42",
+              "gold": "-0.1641791044776119402985074627",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 9.814,
+          "usage": {
+            "input_tokens": 17813,
+            "cached_input_tokens": 0,
+            "output_tokens": 216,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "-1100000000.0",
+              "gold": "-1100000000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "-16.41791044776119402985074627",
+              "gold": "-0.1641791044776119402985074627",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "amd_q3_2022",
+      "repeat": 3,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 9.713,
+          "usage": {
+            "input_tokens": 17796,
+            "cached_input_tokens": 0,
+            "output_tokens": 164,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "-1100000000",
+              "gold": "-1100000000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "-16.42",
+              "gold": "-0.1641791044776119402985074627",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.014,
+          "usage": {
+            "input_tokens": 17811,
+            "cached_input_tokens": 13952,
+            "output_tokens": 232,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "lowered",
+              "gold": "lowered",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "-1100000000.0",
+              "gold": "-1100000000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "-16.41791044776119402985074627",
+              "gold": "-0.1641791044776119402985074627",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "onds_q4_2025",
+      "repeat": 1,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.114,
+          "usage": {
+            "input_tokens": 19094,
+            "cached_input_tokens": 0,
+            "output_tokens": 217,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "1600000",
+              "gold": "1600000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.71",
+              "gold": "0.05714285714285714285714285714",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "2100000",
+              "gold": "2100000.0",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "1100000",
+              "gold": "1100000.0",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.617,
+          "usage": {
+            "input_tokens": 19047,
+            "cached_input_tokens": 0,
+            "output_tokens": 224,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "1600000.0",
+              "gold": "1600000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.714285714285714285714285714",
+              "gold": "0.05714285714285714285714285714",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "2100000.0",
+              "gold": "2100000.0",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "1100000.0",
+              "gold": "1100000.0",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "onds_q4_2025",
+      "repeat": 2,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 12.718,
+          "usage": {
+            "input_tokens": 19098,
+            "cached_input_tokens": 13824,
+            "output_tokens": 202,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "1600000",
+              "gold": "1600000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.71",
+              "gold": "0.05714285714285714285714285714",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "2100000",
+              "gold": "2100000.0",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "1100000",
+              "gold": "1100000.0",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 12.216,
+          "usage": {
+            "input_tokens": 19051,
+            "cached_input_tokens": 13952,
+            "output_tokens": 214,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "1600000.0",
+              "gold": "1600000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.714285714285714285714285714",
+              "gold": "0.05714285714285714285714285714",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "2100000.0",
+              "gold": "2100000.0",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "1100000.0",
+              "gold": "1100000.0",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    },
+    {
+      "case": "onds_q4_2025",
+      "repeat": 3,
+      "arms": {
+        "astra": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 12.819,
+          "usage": {
+            "input_tokens": 19096,
+            "cached_input_tokens": 13824,
+            "output_tokens": 210,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "1600000",
+              "gold": "1600000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.71",
+              "gold": "0.05714285714285714285714285714",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "2100000",
+              "gold": "2100000.0",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "1100000",
+              "gold": "1100000.0",
+              "correct": true
+            }
+          },
+          "exact": true
+        },
+        "harness": {
+          "status": "completed",
+          "reason": null,
+          "figure_errors": {},
+          "elapsed_seconds": 11.815,
+          "usage": {
+            "input_tokens": 19047,
+            "cached_input_tokens": 0,
+            "output_tokens": 224,
+            "reasoning_output_tokens": 0
+          },
+          "items": {
+            "revision": {
+              "kind": "direction",
+              "answer": "raised",
+              "gold": "raised",
+              "correct": true
+            },
+            "midpoint_change": {
+              "kind": "amount",
+              "answer": "1600000.0",
+              "gold": "1600000.0",
+              "correct": true
+            },
+            "midpoint_change_ratio": {
+              "kind": "ratio",
+              "answer": "5.714285714285714285714285714",
+              "gold": "0.05714285714285714285714285714",
+              "correct": true
+            },
+            "low_change": {
+              "kind": "amount",
+              "answer": "2100000.0",
+              "gold": "2100000.0",
+              "correct": true
+            },
+            "high_change": {
+              "kind": "amount",
+              "answer": "1100000.0",
+              "gold": "1100000.0",
+              "correct": true
+            }
+          },
+          "exact": true
+        }
+      }
+    }
+  ]
+}

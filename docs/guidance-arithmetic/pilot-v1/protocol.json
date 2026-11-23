@@ -1,0 +1,22 @@
+{
+  "sealed_at": "2026-11-23T12:07:32.020494+00:00",
+  "model": "gpt-6.2-astra",
+  "effort": "medium",
+  "timeout_seconds": 180,
+  "repeats": 3,
+  "arms": {
+    "astra": "One call answers every item directly from the archived blocks.",
+    "harness": "One call returns exact wording for the needed figures; code verifies each quote, reads the amount and computes every item. Unproven figures leave dependent items unknown."
+  },
+  "grading": {
+    "amount": "within 1% of gold, floor one hundredth of the case precision",
+    "ratio": "within 1% of gold, floor 0.01 percentage point",
+    "direction": "exact",
+    "case": "exact when every item is correct"
+  },
+  "primary": "Case-level exact rate per arm. Per case the majority of repeats decides; paired cases are compared with an exact two-sided McNemar test on discordant cases.",
+  "stop": "Calls run one at a time, repeat by repeat. A 429, usage limit or capacity error waits for the announced cooldown up to 900 seconds and retries that call once; a second availability error stops dispatch. Other failures count as wrong answers.",
+  "pilot_purpose": "Pilot cases come from announcements used in earlier benchmarks and seen during design. They estimate ceiling and discordance only; the holdout size is set from them and holdout issuers must be new.",
+  "cases_sha256": "316e9f99b401ab676d2c4a290668be2efec77df1bf91cd00faaced9413b7ce5e",
+  "requests_sha256": "ea8271a2b732a6f4d2c41fd3c64442adb6f22e25f71e90922cd5012c0aa59213"
+}
