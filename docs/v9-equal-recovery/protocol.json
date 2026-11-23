@@ -1,0 +1,97 @@
+{
+  "generation_model": "gpt-6.2-astra",
+  "effort": "medium",
+  "generation_timeout_seconds": 180,
+  "search": "disabled",
+  "workers": 1,
+  "review": {
+    "criteria": [
+      "citations",
+      "mechanism",
+      "testable_prediction",
+      "invalidation"
+    ],
+    "major_error": "錯誤或無來源的關鍵事實、口徑或時點錯誤，足以改變研究結論或驗證路徑。",
+    "ready": "兩條假說可查核，四項條件皆通過且無重大錯誤，僅需一般文字編輯。",
+    "per_case": "主要評分每案一位分析師，同一人評兩組。每組列重大錯誤數，記錄完成必要修稿所需秒數。",
+    "gate": {
+      "complete_pairs": 8,
+      "reviewed_pairs": 8,
+      "v9_ready_min": 6,
+      "v9_ready_lead": 2,
+      "v9_major_error_max": "astra_count"
+    }
+  },
+  "baseline_protocol_sha256": "d125dc4311963abcbe1fc2a4a6c9e8709616ef37e4099f20fa19fe9a345baea3",
+  "cases_sha256": "7a47ca4adff625876e116d17eb44a2d212585d116d72759e5e01253a76e105aa",
+  "requests_sha256": "9e542eef1bb0e04edf00cf78f03ccc4ffaacb2cfd9f887cee44d92ed24677917",
+  "source_sha256": {
+    "v9_equal_recovery.py": "3cc5b6b6cf266180e7e2d8d738b2341b610346e3b5e5191afd67177dd68bf2a2",
+    "v9_equal.py": "a29cbe97876d425c300807e6ddd60bf317c3cb94f3a27c40739e7e33d3120d42",
+    "earnings_execution.py": "40e800f97ee205b6f7e9f65fa388e438a7285f0b4929e5eeb2b5520d63ce3327",
+    "v9_equal_admission.py": "7122cd8450e8d1792d6c193237a246a8a207cfb17dcd6ba86935057c06d90a7f",
+    "adapters.py": "081abaa8eceb78bbb9e2386074c580f18059f0e42482e9efb3147804de300083",
+    "research.py": "ac0dd28ee7baae979d250a6656a954ed50a76f5675df77d896bb88eb7b2b111a",
+    "schema.py": "5c7d25df12e4b4b2d75c794ef3a90063c54af2eb9f758b7c041c8b36f1702301",
+    "hypothesis_pilot.py": "f6c5cce6f731b0c5023746074cbda75ff244339d0864fa8f50f7e1e4449cecfe"
+  },
+  "orders": {
+    "V-01": {
+      "first": [
+        "astra",
+        "v9"
+      ],
+      "recovery": [
+        "v9",
+        "astra"
+      ]
+    },
+    "V-02": {
+      "first": [
+        "v9",
+        "astra"
+      ],
+      "recovery": [
+        "astra",
+        "v9"
+      ]
+    },
+    "V-03": {
+      "first": [
+        "astra",
+        "v9"
+      ],
+      "recovery": [
+        "v9",
+        "astra"
+      ]
+    },
+    "V-04": {
+      "first": [
+        "v9",
+        "astra"
+      ],
+      "recovery": [
+        "astra",
+        "v9"
+      ]
+    }
+  },
+  "transient_reasons": [
+    "model_capacity",
+    "per_call_deadline",
+    "rate_limit"
+  ],
+  "max_cooldown_seconds": 900,
+  "fallback_cooldown_seconds": 30,
+  "max_recovery_rounds_per_case": 1,
+  "max_calls_per_arm_per_case": 2,
+  "max_calls": 16,
+  "hard_provider_token_cap": null,
+  "first_endpoint": "四案中首次兩組均有有效回覆的案數。每個已啟動呼叫占額，缺組保留。",
+  "recovery_endpoint": "四案中首次或復原輪各自兩組均有有效回覆的案數。4/4 通過。",
+  "selection": "首次配齊採首次；首次缺組且復原配齊才採復原。兩輪回覆不可混用。",
+  "transient_policy": "暫時性失敗立即結束該案當輪派發。安排復原或下一案前，至少等待 CLI 宣告的秒數。無等待提示時採 30 秒；宣告超過 900 秒則停止整批。復原輪暫時性失敗後，若尚有下一案也須先冷卻。一般中斷只接續尚未啟動的呼叫。",
+  "stop_scope": "只執行四案。每案最多兩輪。生成以外不發出模型呼叫。",
+  "sealed_at": "2026-11-23T09:16:02.699659+00:00"
+}

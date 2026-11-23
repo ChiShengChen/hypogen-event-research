@@ -1,0 +1,349 @@
+{
+  "V-01": {
+    "name": "UPS 客戶量縮與網路重整",
+    "split": "pilot",
+    "anchors": {
+      "ups-q4:volume": "lower its volume by more than 50% by the second half of 2026"
+    },
+    "input": {
+      "event_text": "UPS 宣布計畫削減最大客戶的包裹量，並重新配置美國配送網路。",
+      "as_of": "2025-01-30T23:59:59+00:00",
+      "target": "UPS",
+      "horizon": "2026-03-31",
+      "evidence": [
+        {
+          "id": "ups-q4:guidance",
+          "document_id": "ups-q4",
+          "paragraph": "guidance",
+          "source": "https://investors.ups.com/news-events/press-releases/detail/2135/ups-releases-4q-2024-earnings-and-provides-2025-guidance",
+          "quote": "UPS 預估 2025 全年合併營收約 890 億美元，營業利益率約 10.8%。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2025-01-30T23:59:59+00:00",
+          "obtained_at": "2025-01-30T23:59:59+00:00"
+        },
+        {
+          "id": "ups-q4:network",
+          "document_id": "ups-q4",
+          "paragraph": "network",
+          "source": "https://investors.ups.com/news-events/press-releases/detail/2135/ups-releases-4q-2024-earnings-and-provides-2025-guidance",
+          "quote": "UPS 宣布重整美國網路，並計畫透過多年流程重設創造約 10 億美元節省。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2025-01-30T23:59:59+00:00",
+          "obtained_at": "2025-01-30T23:59:59+00:00"
+        },
+        {
+          "id": "ups-q4:volume",
+          "document_id": "ups-q4",
+          "paragraph": "volume",
+          "source": "https://investors.ups.com/news-events/press-releases/detail/2135/ups-releases-4q-2024-earnings-and-provides-2025-guidance",
+          "quote": "UPS 與最大客戶原則上達成協議，計畫至 2026 年下半年將該客戶包裹量減少逾 50%。2025 年 1 月 1 日起 UPS 將 SurePost 全數改為自行配送。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2025-01-30T23:59:59+00:00",
+          "obtained_at": "2025-01-30T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "UPS 宣布計畫削減最大客戶的包裹量，並重新配置美國配送網路。",
+      "as_of": "2025-01-30T23:59:59Z",
+      "research_target": "UPS",
+      "research_horizon": "2026-03-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "ups-q4",
+          "source": "https://investors.ups.com/news-events/press-releases/detail/2135/ups-releases-4q-2024-earnings-and-provides-2025-guidance",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2025-01-30T23:59:59Z",
+          "obtained_at": "2025-01-30T23:59:59Z",
+          "paragraphs": {
+            "volume": "UPS 與最大客戶原則上達成協議，計畫至 2026 年下半年將該客戶包裹量減少逾 50%。2025 年 1 月 1 日起 UPS 將 SurePost 全數改為自行配送。",
+            "network": "UPS 宣布重整美國網路，並計畫透過多年流程重設創造約 10 億美元節省。",
+            "guidance": "UPS 預估 2025 全年合併營收約 890 億美元，營業利益率約 10.8%。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": []
+  },
+  "V-02": {
+    "name": "Disney 串流與分部指引",
+    "split": "pilot",
+    "anchors": {
+      "dis-fy24:fy25": "Entertainment DTC operating income increase of approximately $875 million versus fiscal 2024"
+    },
+    "input": {
+      "event_text": "Disney 公布 2024 財年第四季財報，並發布下一財年串流和體驗部門指引。",
+      "as_of": "2024-11-14T23:59:59+00:00",
+      "target": "Disney",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "dis-fy24:experiences",
+          "document_id": "dis-fy24",
+          "paragraph": "experiences",
+          "source": "https://investors.thewaltdisneycompany.com/news/news-details/2024/The-Walt-Disney-Company-Reports-Fourth-Quarter-and-Full-Year-Earnings-for-Fiscal-2024-11-14-2024/",
+          "quote": "FY2024 Q4 Experiences 營業利益 17 億美元，年減 6%。公司預計 FY2025 該部門營業利益年增 6% 至 8%，成長偏向下半財年。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-14T23:59:59+00:00",
+          "obtained_at": "2024-11-14T23:59:59+00:00"
+        },
+        {
+          "id": "dis-fy24:fy25",
+          "document_id": "dis-fy24",
+          "paragraph": "fy25",
+          "source": "https://investors.thewaltdisneycompany.com/news/news-details/2024/The-Walt-Disney-Company-Reports-Fourth-Quarter-and-Full-Year-Earnings-for-Fiscal-2024-11-14-2024/",
+          "quote": "管理層預期 FY2025 Entertainment DTC 營業利益年增約 8.75 億美元。比較基期包含印度 DTC 約 2 億美元負面影響。管理層同時預期 FY2025 Q1 Disney+ Core 訂戶季減。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-14T23:59:59+00:00",
+          "obtained_at": "2024-11-14T23:59:59+00:00"
+        },
+        {
+          "id": "dis-fy24:streaming",
+          "document_id": "dis-fy24",
+          "paragraph": "streaming",
+          "source": "https://investors.thewaltdisneycompany.com/news/news-details/2024/The-Walt-Disney-Company-Reports-Fourth-Quarter-and-Full-Year-Earnings-for-Fiscal-2024-11-14-2024/",
+          "quote": "Disney FY2024 Q4 Entertainment DTC 廣告收入年增 14%，營業利益 2.53 億美元。合併 DTC 串流業務營業利益 3.21 億美元，兩者口徑不同。Disney+ Core 季末付費訂戶逾 1.2 億，較上一季增加 440 萬。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-14T23:59:59+00:00",
+          "obtained_at": "2024-11-14T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "Disney 公布 2024 財年第四季財報，並發布下一財年串流和體驗部門指引。",
+      "as_of": "2024-11-14T23:59:59Z",
+      "research_target": "Disney",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "dis-fy24",
+          "source": "https://investors.thewaltdisneycompany.com/news/news-details/2024/The-Walt-Disney-Company-Reports-Fourth-Quarter-and-Full-Year-Earnings-for-Fiscal-2024-11-14-2024/",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-11-14T23:59:59Z",
+          "obtained_at": "2024-11-14T23:59:59Z",
+          "paragraphs": {
+            "streaming": "Disney FY2024 Q4 Entertainment DTC 廣告收入年增 14%，營業利益 2.53 億美元。合併 DTC 串流業務營業利益 3.21 億美元，兩者口徑不同。Disney+ Core 季末付費訂戶逾 1.2 億，較上一季增加 440 萬。",
+            "fy25": "管理層預期 FY2025 Entertainment DTC 營業利益年增約 8.75 億美元。比較基期包含印度 DTC 約 2 億美元負面影響。管理層同時預期 FY2025 Q1 Disney+ Core 訂戶季減。",
+            "experiences": "FY2024 Q4 Experiences 營業利益 17 億美元，年減 6%。公司預計 FY2025 該部門營業利益年增 6% 至 8%，成長偏向下半財年。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": []
+  },
+  "V-03": {
+    "name": "Novo Nordisk 製造據點交易",
+    "split": "pilot",
+    "anchors": {
+      "novo-sites:capacity": "The acquisition is expected to gradually increase Novo Nordisk’s filling capacity from 2026 and onwards."
+    },
+    "input": {
+      "event_text": "Novo Nordisk 宣布簽約收購三座藥品充填及成品製造廠。",
+      "as_of": "2024-02-05T23:59:59+00:00",
+      "target": "Novo Nordisk",
+      "horizon": "2025-06-30",
+      "evidence": [
+        {
+          "id": "novo-sites:acquisition",
+          "document_id": "novo-sites",
+          "paragraph": "acquisition",
+          "source": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=167017&stream=top",
+          "quote": "Novo Nordisk 同意以約 110 億美元預付款向 Novo Holdings 購買三座充填及成品製造廠。該購買與 Novo Holdings 收購 Catalent 的交易相關。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-02-05T23:59:59+00:00",
+          "obtained_at": "2024-02-05T23:59:59+00:00"
+        },
+        {
+          "id": "novo-sites:capacity",
+          "document_id": "novo-sites",
+          "paragraph": "capacity",
+          "source": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=167017&stream=top",
+          "quote": "三座廠當時已與 Novo Nordisk 合作。管理層預期自 2026 年起逐步增加充填產能。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-02-05T23:59:59+00:00",
+          "obtained_at": "2024-02-05T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "Novo Nordisk 宣布簽約收購三座藥品充填及成品製造廠。",
+      "as_of": "2024-02-05T23:59:59Z",
+      "research_target": "Novo Nordisk",
+      "research_horizon": "2025-06-30",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "novo-sites",
+          "source": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=167017&stream=top",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-02-05T23:59:59Z",
+          "obtained_at": "2024-02-05T23:59:59Z",
+          "paragraphs": {
+            "acquisition": "Novo Nordisk 同意以約 110 億美元預付款向 Novo Holdings 購買三座充填及成品製造廠。該購買與 Novo Holdings 收購 Catalent 的交易相關。",
+            "capacity": "三座廠當時已與 Novo Nordisk 合作。管理層預期自 2026 年起逐步增加充填產能。"
+          }
+        },
+        {
+          "id": "novo-cleared",
+          "source": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=915078",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-12-14T23:59:59Z",
+          "obtained_at": "2024-12-14T23:59:59Z",
+          "paragraphs": {
+            "update": "Novo Nordisk 後續公告相關交易已取得完成所需批准，並把三座廠的收購價更新為 117 億美元。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": [
+      {
+        "id": "novo-cleared:update",
+        "document_id": "novo-cleared",
+        "paragraph": "update",
+        "source": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=915078",
+        "quote": "Novo Nordisk 後續公告相關交易已取得完成所需批准，並把三座廠的收購價更新為 117 億美元。",
+        "synthetic": false,
+        "kind": "disclosure",
+        "text_format": "summary",
+        "availability_basis": "replay_day_end",
+        "published_at": "2024-12-14T23:59:59+00:00",
+        "obtained_at": "2024-12-14T23:59:59+00:00"
+      }
+    ]
+  },
+  "V-04": {
+    "name": "Ford 電動車投資重整",
+    "split": "pilot",
+    "anchors": {
+      "ford-ev-strategy:plans": "an all-new commercial van that will begin production in 2026 in Ohio"
+    },
+    "input": {
+      "event_text": "Ford 宣布取消原計畫的純電三排座 SUV，並重排電動車投資。",
+      "as_of": "2024-08-21T23:59:59+00:00",
+      "target": "Ford",
+      "horizon": "2025-10-31",
+      "evidence": [
+        {
+          "id": "ford-ev-8k:charges",
+          "document_id": "ford-ev-8k",
+          "paragraph": "charges",
+          "source": "https://www.sec.gov/Archives/edgar/data/37996/000003799624000150/f-20240819.htm",
+          "quote": "Ford 估計 2024 Q3 將就原計畫純電三排座 SUV 的製造及供應商模具資產認列約 4 億美元減記。另可能產生最多約 15 億美元額外費用及現金支出。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-08-21T23:59:59+00:00",
+          "obtained_at": "2024-08-21T23:59:59+00:00"
+        },
+        {
+          "id": "ford-ev-strategy:plans",
+          "document_id": "ford-ev-strategy",
+          "paragraph": "plans",
+          "source": "https://www.sec.gov/Archives/edgar/data/37996/000003799624000150/exhibit99toaugust2120248.htm",
+          "quote": "Ford 計畫在 2026 年於俄亥俄州開始生產新款純電商用廂型車，隨後於 2027 年推出兩款電動皮卡。公司計畫把純電車相關資本支出占年度資本支出的比例從約 40% 下調至約 30%。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-08-21T23:59:59+00:00",
+          "obtained_at": "2024-08-21T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "Ford 宣布取消原計畫的純電三排座 SUV，並重排電動車投資。",
+      "as_of": "2024-08-21T23:59:59Z",
+      "research_target": "Ford",
+      "research_horizon": "2025-10-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "ford-ev-8k",
+          "source": "https://www.sec.gov/Archives/edgar/data/37996/000003799624000150/f-20240819.htm",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-08-21T23:59:59Z",
+          "obtained_at": "2024-08-21T23:59:59Z",
+          "paragraphs": {
+            "charges": "Ford 估計 2024 Q3 將就原計畫純電三排座 SUV 的製造及供應商模具資產認列約 4 億美元減記。另可能產生最多約 15 億美元額外費用及現金支出。"
+          }
+        },
+        {
+          "id": "ford-ev-strategy",
+          "source": "https://www.sec.gov/Archives/edgar/data/37996/000003799624000150/exhibit99toaugust2120248.htm",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-08-21T23:59:59Z",
+          "obtained_at": "2024-08-21T23:59:59Z",
+          "paragraphs": {
+            "plans": "Ford 計畫在 2026 年於俄亥俄州開始生產新款純電商用廂型車，隨後於 2027 年推出兩款電動皮卡。公司計畫把純電車相關資本支出占年度資本支出的比例從約 40% 下調至約 30%。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": []
+  }
+}
