@@ -1,5 +1,5 @@
 import { exampleLabels, questionBank } from "./question-bank.js";
-import { renderHypothesisTree } from "./hypothesis-tree.js";
+import { disposeHypothesisTree, renderHypothesisTree } from "./hypothesis-tree.js";
 
 const $ = (selector) => document.querySelector(selector);
 const all = (selector) => [...document.querySelectorAll(selector)];
@@ -748,8 +748,10 @@ function selectTab(name) {
     else button.removeAttribute("aria-current");
   });
   const body = $("#tab-body");
+  disposeHypothesisTree(body);
   body.replaceChildren();
   body.closest(".content-grid").dataset.view = name;
+  $("#research").dataset.view = name;
   const report = state.report;
   if (!report) return;
   if (name === "overview") renderOverview(body, report);

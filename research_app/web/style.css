@@ -76,24 +76,42 @@ main { max-width: 1530px; margin: 0 auto; padding: 28px clamp(16px, 3.3vw, 48px)
 .tabs button { min-height: 54px; padding: 0 7px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--muted); font-size: .92rem; white-space: nowrap; }
 .tabs button[aria-current] { color: var(--green); font-weight: 700; border-bottom-color: var(--green); }
 .tab-body { padding: 18px; min-height: 315px; overflow-wrap: anywhere; }
+#research[data-view="tree"] .hero { padding-block: 10px 12px; margin-bottom: 12px; }
+#research[data-view="tree"] .hero h1 { font-size: 1.8rem; }
+#research[data-view="tree"] .hero .eyebrow, #research[data-view="tree"] #metrics { display: none; }
 .content-grid[data-view="tree"] { grid-template-columns: minmax(0, 1fr); }
 .content-grid[data-view="tree"] .tools-column { display: none; }
-.hypothesis-tree-grid { display: grid; grid-template-columns: minmax(240px, 32%) minmax(0, 1fr); gap: 18px; }
-.hypothesis-outline { min-width: 0; max-height: 68vh; overflow: auto; background: var(--soft); border: 1px solid var(--border); border-radius: 10px; padding: 10px; }
-.hypothesis-branches { list-style: none; padding: 0; margin: 0; }
-.hypothesis-branches .hypothesis-branches { margin-left: 11px; padding-left: 11px; border-left: 1px solid #aebfb0; }
-.hypothesis-branches > li { position: relative; }
-.hypothesis-branches .hypothesis-branches > li::before { content: ""; position: absolute; width: 11px; top: 17px; left: -11px; border-top: 1px solid #aebfb0; }
-.hypothesis-node-row { display: flex; gap: 3px; align-items: center; min-width: 140px; margin: 2px 0; }
-.hypothesis-toggle, .hypothesis-leaf { flex: 0 0 23px; text-align: center; color: var(--muted); }
-.hypothesis-toggle { border: 0; background: transparent; padding: 4px 0; border-radius: 6px; }
-.hypothesis-toggle:hover { background: #e0eadf; }
-.hypothesis-node { display: flex; align-items: baseline; gap: 6px; min-width: 0; padding: 6px 8px; border: 1px solid transparent; border-radius: 6px; text-align: left; background: transparent; color: var(--text); }
-.hypothesis-node-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
-.hypothesis-node[aria-current], .hypothesis-node:hover { color: var(--green); border-color: #d0dfd2; background: #fff; }
-.hypothesis-node[aria-current] { font-weight: 700; }
-.hypothesis-node[data-stance="bear"] { color: #8c3f36; }
-.hypothesis-detail { min-width: 0; }
+.hypothesis-tree { container-type: inline-size; }
+.hypothesis-tree-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 30%); gap: 18px; align-items: start; }
+.hypothesis-graph { min-width: 0; border: 1px solid #31443c; border-radius: 11px; overflow: hidden; background: #192623; color: #f4f7f5; }
+.graph-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 12px; border-bottom: 1px solid #34453e; }
+.graph-toolbar h2 { margin: 0; font-size: .94rem; }
+.graph-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
+.graph-scale { min-width: 3.4em; color: #c5d3cb; font-size: .82rem; font-variant-numeric: tabular-nums; text-align: center; }
+.graph-tools button, .graph-node-controls button { border: 1px solid #4a5d54; background: #283a33; color: #e9f2ec; border-radius: 5px; padding: 3px 9px; font-size: .81rem; }
+.graph-tools button:hover, .graph-node-controls button:hover { background: #384f43; }
+.graph-viewport { position: relative; height: clamp(440px, calc(100dvh - 330px), 780px); overflow: hidden; cursor: grab; touch-action: none; user-select: none; background: radial-gradient(circle, #4a5d54 1px, transparent 1.2px) 0 0 / 24px 24px, #15201d; }
+.graph-viewport.graph-panning { cursor: grabbing; }
+.graph-viewport:focus-visible { outline: 2px solid #9bd4a9; outline-offset: -2px; }
+.graph-wires, .graph-plane { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.graph-plane { transform-origin: 0 0; }
+.graph-node { --node-accent: #8caaa0; position: absolute; width: 206px; height: 78px; border: 1px solid #637c70; border-radius: 9px; background: #24352f; pointer-events: auto; cursor: grab; }
+.graph-node[data-kind="root"] { --node-accent: #b9d79c; }
+.graph-node[data-kind="custom"] { --node-accent: #c9b8df; }
+.graph-node[data-stance="bull"] { --node-accent: #a3d2a4; }
+.graph-node[data-stance="bear"] { --node-accent: #eeaf99; }
+.graph-node[data-stance="base"] { --node-accent: #a3cddd; }
+.graph-node[data-stance="wait"] { --node-accent: #dac68f; }
+.graph-node-active { border-color: #c2efc7; box-shadow: 0 0 0 3px #83b99c55; z-index: 1; }
+.graph-node-header { display: flex; height: 31px; align-items: center; justify-content: space-between; gap: 4px; padding: 4px 7px 4px 10px; border-bottom: 1px solid #46594f; border-radius: 8px 8px 0 0; background: #30443a; color: var(--node-accent); font-size: .77rem; font-weight: 700; white-space: nowrap; }
+.graph-node-controls { display: flex; gap: 4px; }
+.graph-node-controls button { padding: 0 5px; min-width: 21px; height: 22px; }
+.graph-node-title { box-sizing: border-box; width: 100%; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; border: 0; border-radius: 0 0 8px 8px; background: transparent; color: #f4f7f5; padding: 5px 10px 0; line-height: 1.3; text-align: left; font-size: .86rem; font-weight: 600; cursor: grab; overflow-wrap: anywhere; }
+.graph-node-title:focus-visible, .graph-node-controls button:focus-visible { outline: 2px solid #c2efc7; outline-offset: -2px; }
+.graph-port { position: absolute; width: 8px; height: 8px; border: 1px solid #17231f; border-radius: 100%; top: calc(50% - 4px); background: var(--node-accent); pointer-events: none; }
+.graph-port-in { left: -5px; }
+.graph-port-out { right: -5px; }
+.hypothesis-detail { min-width: 0; max-height: clamp(480px, calc(100dvh - 290px), 820px); overflow: auto; padding: 0 6px 6px 1px; }
 .hypothesis-detail .notice, .hypothesis-question, .hypothesis-stance { margin-top: 8px; }
 .hypothesis-question { white-space: pre-wrap; }
 .hypothesis-child-links { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 10px 0; }
@@ -101,6 +119,11 @@ main { max-width: 1530px; margin: 0 auto; padding: 28px clamp(16px, 3.3vw, 48px)
 .hypothesis-form { margin-top: 16px; padding-top: 9px; border-top: 1px solid var(--border); }
 .hypothesis-form button { margin-top: 8px; }
 .hypothesis-form .form-note:empty { display: none; }
+@container (max-width: 680px) {
+  .hypothesis-tree-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .graph-viewport { height: 52vh; min-height: 280px; }
+  .hypothesis-detail { max-height: none; }
+}
 .thesis { border-left: 3px solid #759b63; padding: 11px 14px; border-radius: 0 8px 8px 0; background: var(--soft); margin-bottom: 18px; }
 .thesis p { margin-top: 4px; }
 .section-title { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; }
@@ -186,8 +209,6 @@ dialog::backdrop { background: #11231bae; }
   .tools-column { grid-template-columns: minmax(0,1fr); }
   .tabs { padding: 0 8px; gap: 4px; }
   .tab-body { padding: 12px; }
-  .hypothesis-tree-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
-  .hypothesis-outline { max-height: 35vh; }
 }
 
 .top-actions { display: flex; gap: 8px; align-items: center; }

@@ -1,8 +1,16 @@
+import { createHypothesisCanvas } from "./hypothesis-canvas.js";
+
 const expandedByRevision = new Map();
 const selectionByRevision = new Map();
 const pendingByRevision = new Map();
+const canvases = new WeakMap();
 const modes = { followup: "延伸追問", fanout: "展開多立場", custom: "自訂立場" };
 const directions = { up: "增加", down: "減少", flat: "持平", unknown: "待查" };
+
+export function disposeHypothesisTree(body) {
+  canvases.get(body)?.destroy();
+  canvases.delete(body);
+}
 
 export async function renderHypothesisTree(body, { report, request, node, fields, evidenceLinks, enabled }) {
   const key = `${report.report_id}/${report.revision}`;
@@ -32,76 +40,47 @@ export async function renderHypothesisTree(body, { report, request, node, fields
   if (!panel.isConnected) return;
 
   const grid = node("div", null, "hypothesis-tree-grid");
-  const outline = node("nav", null, "hypothesis-outline");
-  outline.setAttribute("aria-label", "假說樹分支");
   const detail = node("section", null, "hypothesis-detail");
   detail.setAttribute("aria-label", "所選節點");
-  grid.append(outline, detail);
-  panel.replaceChildren(grid);
-  const expanded = expandedByRevision.get(key) || new Set(["root", ...nodes.filter(item => item.kind === "stance").map(item => item.id)]);
+  const expanded = expandedByRevision.get(key) ||
+    new Set(nodes.filter(item => ["root", "stance", "fanout", "custom"].includes(item.kind)).map(item => item.id));
   expandedByRevision.set(key, expanded);
   let selected = selectionByRevision.get(key) || "root";
 
+  function select(id, focusForm = false) {
+    selected = id;
+    selectionByRevision.set(key, id);
+    redraw(id);
+    if (focusForm) detail.querySelector("textarea")?.focus();
+  }
+
+  const graph = createHypothesisCanvas({
+    key, node, enabled, select,
+    toggle(id) {
+      if (expanded.has(id)) {
+        expanded.delete(id);
+        const byId = new Map(nodes.map(item => [item.id, item]));
+        for (let parent = byId.get(selected); parent; parent = byId.get(parent.parent_id)) {
+          if (parent.parent_id !== id) continue;
+          selected = id;
+          selectionByRevision.set(key, id);
+          break;
+        }
+      } else {
+        expanded.add(id);
+      }
+      redraw(`toggle:${id}`);
+    },
+  });
+  canvases.set(body, graph);
+  grid.append(graph.element, detail);
+  panel.replaceChildren(grid);
+
   function redraw(focusId = null) {
     const byId = new Map(nodes.map(item => [item.id, item]));
-    const children = new Map();
-    for (const item of nodes) {
-      if (!children.has(item.parent_id)) children.set(item.parent_id, []);
-      children.get(item.parent_id).push(item);
-    }
     if (!byId.has(selected)) selected = "root";
-    const top = node("ul", null, "hypothesis-branches");
-    const stack = [[byId.get("root"), top]];
-    let focusTarget;
-    while (stack.length) {
-      const [item, list] = stack.pop();
-      const li = node("li");
-      const row = node("div", null, "hypothesis-node-row");
-      const descendants = children.get(item.id) || [];
-      if (descendants.length) {
-        const open = expanded.has(item.id);
-        const disclosure = node("button", open ? "−" : "+", "hypothesis-toggle");
-        disclosure.type = "button";
-        disclosure.setAttribute("aria-label", `${open ? "收合" : "展開"} ${item.title}`);
-        disclosure.setAttribute("aria-expanded", String(open));
-        disclosure.addEventListener("click", () => {
-          if (expanded.has(item.id)) expanded.delete(item.id);
-          else expanded.add(item.id);
-          redraw(`toggle:${item.id}`);
-        });
-        if (focusId === `toggle:${item.id}`) focusTarget = disclosure;
-        row.append(disclosure);
-      } else {
-        row.append(node("span", "•", "hypothesis-leaf"));
-      }
-      const select = node("button", null, "hypothesis-node");
-      select.type = "button";
-      select.title = item.title;
-      if (selected === item.id) select.setAttribute("aria-current", "true");
-      select.append(node("span", item.title, "hypothesis-node-title"));
-      if (item.kind === "hypothesis" && item.stance_code) select.dataset.stance = item.stance_code;
-      if (item.kind === "custom") select.append(node("span", "自訂", "badge"));
-      if (byId.get(item.parent_id)?.kind === "fanout") select.append(node("span", item.stance, "badge"));
-      select.addEventListener("click", () => {
-        selected = item.id;
-        selectionByRevision.set(key, selected);
-        redraw(selected);
-      });
-      if (focusId === item.id) focusTarget = select;
-      row.append(select);
-      li.append(row);
-      list.append(li);
-      if (descendants.length && expanded.has(item.id)) {
-        const nested = node("ul", null, "hypothesis-branches");
-        li.append(nested);
-        for (let i = descendants.length - 1; i >= 0; i--) stack.push([descendants[i], nested]);
-      }
-    }
-    const scrollTop = outline.scrollTop;
-    outline.replaceChildren(top);
-    outline.scrollTop = scrollTop;
-    renderDetail(byId.get(selected), children.get(selected) || [], byId);
-    focusTarget?.focus();
+    graph.update(nodes, expanded, selected, focusId);
+    renderDetail(byId.get(selected), nodes.filter(item => item.parent_id === selected), byId);
   }
 
   function renderDetail(item, children, byId) {
@@ -126,9 +105,7 @@ export async function renderHypothesisTree(body, { report, request, node, fields
         action.type = "button";
         action.addEventListener("click", () => {
           expanded.add(item.id);
-          selected = child.id;
-          selectionByRevision.set(key, selected);
-          redraw(selected);
+          select(child.id);
         });
         const li = node("li");
         li.append(action);
