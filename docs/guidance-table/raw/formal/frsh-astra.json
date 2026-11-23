@@ -1,0 +1,63 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "189226000"},
+    {"item": "implied_remainder_new", "value": "189251000"},
+    {"item": "implied_remainder_change", "value": "25000"},
+    {"item": "implied_remainder", "value": "raised"}
+  ],
+  "evidence_ids": [
+    "frsh-prior:p0003",
+    "frsh-prior:p0008",
+    "frsh-latest:p0003",
+    "frsh-latest:p0008"
+  ],
+  "reason": "以美元計，前次全年營收指引中點減去上半年實績及當時的第三季指引中點，得出第四季隱含營收 710000000 − 339274000 − 181500000 = 189226000。最新全年指引中點減去前九個月實績，得出 715100000 − 525849000 = 189251000，較前次上調 25000 美元。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "frsh-prior",
+      "block": "frsh-prior:p0003",
+      "quote": "$707.0 - $713.0",
+      "tabular": true,
+      "unit_block": "frsh-prior:p0003",
+      "unit_quote": "($ in millions, except per share data)"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "frsh-prior",
+      "block": "frsh-prior:p0008",
+      "quote": "$ 339,274",
+      "tabular": true,
+      "unit_block": "frsh-prior:p0008",
+      "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended Six Months Ended June 30, June 30, 2024 2023 2024 2023 Revenue .............................................................................$"
+    },
+    {
+      "name": "prior_interim",
+      "document": "frsh-prior",
+      "block": "frsh-prior:p0003",
+      "quote": "$180.0 - $183.0",
+      "tabular": true,
+      "unit_block": "frsh-prior:p0003",
+      "unit_quote": "($ in millions, except per share data)"
+    },
+    {
+      "name": "new",
+      "document": "frsh-latest",
+      "block": "frsh-latest:p0003",
+      "quote": "$713.6 - $716.6",
+      "tabular": true,
+      "unit_block": "frsh-latest:p0003",
+      "unit_quote": "($ in millions, except per share data)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "frsh-latest",
+      "block": "frsh-latest:p0008",
+      "quote": "$ 525,849",
+      "tabular": true,
+      "unit_block": "frsh-latest:p0008",
+      "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended Nine Months Ended September 30, September 30, 2024 2023 2024 2023 Revenue............................................................................ $"
+    }
+  ],
+  "missing_reason": null
+}

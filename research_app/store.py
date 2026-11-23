@@ -8,6 +8,7 @@ from pathlib import Path
 from uuid import uuid4
 
 from .adapters import AdapterError, EARNINGS_DRIVER_VERSION
+from .scenario_research import scenario_fields
 from .business_linkage import LinkedAnswer, linkage_fields, linkage_refs, merged_linkages, validate_linkages
 from .consensus import parse_consensus
 from .discovery import DISCOVERY_VERSION, collect
@@ -209,7 +210,7 @@ class Store:
             audit["citations"] = [filing_citation(document, block) for block in blocks if block["id"] in refs]
             audit["evidence_ids"] = [item["id"] for item in audit["citations"]]
         return {"as_of": report["as_of"], "report_revision": revision, "incumbent": point["revenue"], "audit": audit,
-                **linkage_fields(report)}
+                **linkage_fields(report), **scenario_fields(report)}
 
     def revenue_revision_check(self, report_id, revision, request):
         report, plan, key, point = self.earnings_revision_inputs(report_id, revision, request.period_end)
@@ -248,7 +249,7 @@ class Store:
                     for metric in ("revenue", "operating_income", "eps")
                 }
         return {"as_of": report["as_of"], "report_revision": revision, "audit": audit,
-                "financial_impact": financial_impact, **linkage_fields(report)}
+                "financial_impact": financial_impact, **linkage_fields(report), **scenario_fields(report)}
 
     def earnings_branch(self, report_id, branch):
         parent = self.revision(report_id, branch.parent_revision)
@@ -402,12 +403,12 @@ class Store:
                                   "overdue" if datetime.fromisoformat(forecast["deadline"]) < now else "pending")
         return {"report_id": report_id, "revision": revision, "earnings": report.get("earnings"),
                 "forecasts": list(logs["forecast"].values()), "reviews": list(logs["review"].values()),
-                **linkage_fields(report)}
+                **linkage_fields(report), **scenario_fields(report)}
 
     @staticmethod
     def checked_answer(adapter, report, question):
         answer = adapter.answer(report, question)
-        data = answer.model_dump()
+        data = answer.model_dump() | scenario_fields(report)
         evidence = {item["id"]: item for item in report["evidence"]}
         if isinstance(answer, LinkedAnswer):
             data["business_linkages"], data["business_linkage_gap"] = validate_linkages(
@@ -555,6 +556,6 @@ class Store:
             ),
             "evidence_ids": [inputs.evidence_id],
             "gaps": report["valuation"]["gaps"],
-            **linkage_fields(report),
+            **linkage_fields(report), **scenario_fields(report),
             **opportunity_fields(report),
         }

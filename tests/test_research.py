@@ -9,7 +9,8 @@ from fastapi.testclient import TestClient
 
 from research_app.adapters import Fixture, Live, configured_adapter
 from research_app.api import create_app
-from research_app.business_linkage import LinkedAnswer, LinkedHypotheses
+from research_app.business_linkage import LinkedAnswer
+from research_app.scenario_research import ScenarioHypotheses
 from research_app.store import Store
 
 FIXTURES = Path(__file__).resolve().parents[1] / "research_app" / "fixtures"
@@ -265,7 +266,9 @@ def test_codex_cli_accepts_snapshot_and_validates_response(tmp_path, monkeypatch
         if "hypotheses" in schema["properties"]:
             draft = Fixture().hypotheses(data).model_dump()
             assert "business_linkages" in schema["required"]
-            response = LinkedHypotheses(**draft, business_linkages=[], business_linkage_gap="待查連動業務。")
+            assert "stance_cases" in schema["required"]
+            response = ScenarioHypotheses(**draft, business_linkages=[], business_linkage_gap="待查連動業務。",
+                                          stance_cases=[])
         else:
             fixture_answer = Fixture().answer(data["report"], data["question"])
             response = LinkedAnswer(
@@ -284,3 +287,4 @@ def test_codex_cli_accepts_snapshot_and_validates_response(tmp_path, monkeypatch
     assert ask(api, created).json()["gaps"]
     assert "qualification:1" not in {entry["id"] for entry in requests[0]["evidence"]}
     assert requests[1]["question"] == "客戶已認證乙嗎？"
+    assert len(requests[1]["stored_research"]["stance_cases"]) == 4

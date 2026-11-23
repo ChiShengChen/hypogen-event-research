@@ -1,0 +1,44 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "423635000"},
+    {"item": "implied_remainder_change", "value": "unknown"},
+    {"item": "implied_remainder", "value": "unknown"}
+  ],
+  "evidence_ids": [
+    "path-prior:p0002",
+    "path-prior:p0008",
+    "path-latest:p0001",
+    "path-latest:p0002"
+  ],
+  "reason": "以美元計，前次全年營收指引中點 1422500000 減去上半年實際營收 651365000，再減去當時第三季指引中點 347500000，得出隱含的第四季營收 423635000。最新公告僅提供第四季指引，因此無法判定全年指引所隱含的第四季營收變動金額與方向。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "path-prior",
+      "block": "path-prior:p0002",
+      "quote": "For the fiscal full year 2025, UiPath is updating its guidance and expects: Revenue in the range of $1.420 billion to $1.425 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "path-prior",
+      "block": "path-prior:p0008",
+      "quote": "Total revenue 316,253 287,310 651,365 576,898",
+      "tabular": true,
+      "unit_block": "path-prior:p0008",
+      "unit_quote": "in thousands, except per share data (unaudited) Three Months Ended Six Months Ended July 31, July 31, 2024 2023 2024 2023 Revenue: Licenses $"
+    },
+    {
+      "name": "prior_interim",
+      "document": "path-prior",
+      "block": "path-prior:p0002",
+      "quote": "For the third quarter fiscal 2025, UiPath expects: Revenue in the range of $345 million to $350 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    }
+  ],
+  "missing_reason": "缺少 2024 年 12 月 5 日公告中的 2025 財年全年營收指引區間或中點。"
+}

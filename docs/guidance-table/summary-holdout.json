@@ -1,0 +1,844 @@
+{
+  "planned": 8,
+  "paired": 8,
+  "metrics": {
+    "current": {
+      "exact": 6,
+      "positive": 2,
+      "negative": 4,
+      "false_adjustments": 0,
+      "numeric_exact": 6,
+      "numeric_with_bad_citation": 0,
+      "false_abstentions": 2
+    },
+    "revised": {
+      "exact": 8,
+      "positive": 4,
+      "negative": 4,
+      "false_adjustments": 0,
+      "numeric_exact": 8,
+      "numeric_with_bad_citation": 0,
+      "false_abstentions": 0
+    },
+    "astra": {
+      "exact": 4,
+      "positive": 3,
+      "negative": 1,
+      "false_adjustments": 3,
+      "numeric_exact": 5,
+      "numeric_with_bad_citation": 1,
+      "false_abstentions": 0
+    }
+  },
+  "passed": true,
+  "scores": {
+    "blze": {
+      "current": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "33647000.0",
+            "correct": false
+          },
+          "implied_remainder_new": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "33658000.0",
+            "correct": false
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "11000.0",
+            "correct": false
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "unknown",
+            "gold": "raised",
+            "correct": false
+          }
+        },
+        "exact": false,
+        "numeric_exact": false,
+        "citation_failures": [
+          [
+            "reported_in_period",
+            "引文不足"
+          ]
+        ],
+        "false_adjustment": false,
+        "false_abstention": true,
+        "failure_dimensions": [
+          "單位",
+          "單位錯",
+          "引文不足"
+        ]
+      },
+      "revised": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "33647000.0",
+            "gold": "33647000.0",
+            "correct": true
+          },
+          "implied_remainder_new": {
+            "kind": "amount",
+            "answer": "33658000.0",
+            "gold": "33658000.0",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "11000.0",
+            "gold": "11000.0",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "raised",
+            "gold": "raised",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      },
+      "astra": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "33647000",
+            "gold": "33647000.0",
+            "correct": true
+          },
+          "implied_remainder_new": {
+            "kind": "amount",
+            "answer": "33658000",
+            "gold": "33658000.0",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "11000",
+            "gold": "11000.0",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "raised",
+            "gold": "raised",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      }
+    },
+    "docn": {
+      "current": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "198794000",
+            "gold": "198794000",
+            "correct": true
+          },
+          "implied_remainder_new": {
+            "kind": "amount",
+            "answer": "200310000",
+            "gold": "200310000",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "1516000",
+            "gold": "1516000",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "raised",
+            "gold": "raised",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      },
+      "revised": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "198794000",
+            "gold": "198794000",
+            "correct": true
+          },
+          "implied_remainder_new": {
+            "kind": "amount",
+            "answer": "200310000",
+            "gold": "200310000",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "1516000",
+            "gold": "1516000",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "raised",
+            "gold": "raised",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      },
+      "astra": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "198794000",
+            "gold": "198794000",
+            "correct": true
+          },
+          "implied_remainder_new": {
+            "kind": "amount",
+            "answer": "200310000",
+            "gold": "200310000",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "1516000",
+            "gold": "1516000",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "raised",
+            "gold": "raised",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      }
+    },
+    "net": {
+      "current": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "454902000.0",
+            "gold": "454902000.0",
+            "correct": true
+          },
+          "implied_remainder_new": {
+            "kind": "amount",
+            "answer": "451820000.0",
+            "gold": "451820000.0",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "-3082000.0",
+            "gold": "-3082000.0",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "lowered",
+            "gold": "lowered",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      },
+      "revised": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "454902000.0",
+            "gold": "454902000.0",
+            "correct": true
+          },
+          "implied_remainder_new": {
+            "kind": "amount",
+            "answer": "451820000.0",
+            "gold": "451820000.0",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "-3082000.0",
+            "gold": "-3082000.0",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "lowered",
+            "gold": "lowered",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      },
+      "astra": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "454902000",
+            "gold": "454902000.0",
+            "correct": true
+          },
+          "implied_remainder_new": {
+            "kind": "amount",
+            "answer": "451820000",
+            "gold": "451820000.0",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "-3082000",
+            "gold": "-3082000.0",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "lowered",
+            "gold": "lowered",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      }
+    },
+    "okta": {
+      "current": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "648000000.000",
+            "correct": false
+          },
+          "implied_remainder_new": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "668000000.000",
+            "correct": false
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "20000000.000",
+            "correct": false
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "unknown",
+            "gold": "raised",
+            "correct": false
+          }
+        },
+        "exact": false,
+        "numeric_exact": false,
+        "citation_failures": [
+          [
+            "prior_reported_in_period",
+            "引文不足"
+          ],
+          [
+            "reported_in_period",
+            "引文不足"
+          ]
+        ],
+        "false_adjustment": false,
+        "false_abstention": true,
+        "failure_dimensions": [
+          "單位",
+          "單位錯",
+          "引文不足"
+        ]
+      },
+      "revised": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "648000000.000",
+            "gold": "648000000.000",
+            "correct": true
+          },
+          "implied_remainder_new": {
+            "kind": "amount",
+            "answer": "668000000.000",
+            "gold": "668000000.000",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "20000000.000",
+            "gold": "20000000.000",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "raised",
+            "gold": "raised",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      },
+      "astra": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "648000000",
+            "gold": "648000000.000",
+            "correct": true
+          },
+          "implied_remainder_new": {
+            "kind": "amount",
+            "answer": "668000000",
+            "gold": "668000000.000",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "20000000",
+            "gold": "20000000.000",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "raised",
+            "gold": "raised",
+            "correct": true
+          }
+        },
+        "exact": false,
+        "numeric_exact": true,
+        "citation_failures": [
+          [
+            "prior_reported_in_period",
+            "引文不足"
+          ],
+          [
+            "reported_in_period",
+            "引文不足"
+          ]
+        ],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": [
+          "引文不足"
+        ]
+      }
+    },
+    "path": {
+      "current": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      },
+      "revised": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      },
+      "astra": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "423635000",
+            "gold": "unknown",
+            "correct": false
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          }
+        },
+        "exact": false,
+        "numeric_exact": false,
+        "citation_failures": [],
+        "false_adjustment": true,
+        "false_abstention": false,
+        "failure_dimensions": [
+          "營收口徑"
+        ]
+      }
+    },
+    "wmt": {
+      "current": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      },
+      "revised": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      },
+      "astra": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "176896000000",
+            "gold": "unknown",
+            "correct": false
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "655700000",
+            "gold": "unknown",
+            "correct": false
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "raised",
+            "gold": "unknown",
+            "correct": false
+          }
+        },
+        "exact": false,
+        "numeric_exact": false,
+        "citation_failures": [
+          [
+            "missing_reason",
+            "引文不足"
+          ]
+        ],
+        "false_adjustment": true,
+        "false_abstention": false,
+        "failure_dimensions": [
+          "引文不足",
+          "營收口徑"
+        ]
+      }
+    },
+    "cdw": {
+      "current": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      },
+      "revised": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      },
+      "astra": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      }
+    },
+    "snow": {
+      "current": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      },
+      "revised": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "unknown",
+            "gold": "unknown",
+            "correct": true
+          }
+        },
+        "exact": true,
+        "numeric_exact": true,
+        "citation_failures": [],
+        "false_adjustment": false,
+        "false_abstention": false,
+        "failure_dimensions": []
+      },
+      "astra": {
+        "items": {
+          "implied_remainder_prior": {
+            "kind": "amount",
+            "answer": "884663000",
+            "gold": "unknown",
+            "correct": false
+          },
+          "implied_remainder_change": {
+            "kind": "amount",
+            "answer": "26218000",
+            "gold": "unknown",
+            "correct": false
+          },
+          "implied_remainder": {
+            "kind": "direction",
+            "answer": "raised",
+            "gold": "unknown",
+            "correct": false
+          }
+        },
+        "exact": false,
+        "numeric_exact": false,
+        "citation_failures": [],
+        "false_adjustment": true,
+        "false_abstention": false,
+        "failure_dimensions": [
+          "營收口徑"
+        ]
+      }
+    }
+  },
+  "improved": true,
+  "leads": true,
+  "failed": []
+}

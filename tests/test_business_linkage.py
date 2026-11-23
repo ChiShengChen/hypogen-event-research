@@ -46,7 +46,7 @@ class ScriptedRankedCodex(RankedCodex):
 
 def test_linkages_publish_by_default_and_filter_unsupported_paths(tmp_path, monkeypatch):
     monkeypatch.setenv("RESEARCH_MODE", "codex")
-    assert configured_adapter().identity["prompt_version"] == 11
+    assert configured_adapter().identity["prompt_version"] == 12
     _, event = load_cases(holdout=True)["V-04"]
     store = Store(tmp_path / "reports.sqlite3")
     previous = store.create(event, Fixture())

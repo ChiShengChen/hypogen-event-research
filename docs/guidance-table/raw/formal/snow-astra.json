@@ -1,0 +1,63 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "884663000"},
+    {"item": "implied_remainder_change", "value": "26218000"},
+    {"item": "implied_remainder", "value": "raised"}
+  ],
+  "evidence_ids": [
+    "snow-prior:p0003",
+    "snow-prior:p0012",
+    "snow-prior:p0013",
+    "snow-latest:p0006",
+    "snow-latest:p0015"
+  ],
+  "reason": "以百萬美元計，前次全年產品營收指引扣除上半年實績及當時第三季指引中點，得出第四季隱含營收 3356 − 1618.837 − (850 + 855) ÷ 2 = 884.663。最新全年指引扣除前九個月實績後為 3430 − 2519.119 = 910.881，因此第四季隱含產品營收上調 26.218 百萬美元。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "snow-prior",
+      "block": "snow-prior:p0003",
+      "quote": "Product revenue $3,356",
+      "tabular": true,
+      "unit_block": "snow-prior:p0003",
+      "unit_quote": "Amount (millions) Year/Year Growth Product revenue $"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "snow-prior",
+      "block": "snow-prior:p0013",
+      "quote": "$1,618,837",
+      "tabular": true,
+      "unit_block": "snow-prior:p0012",
+      "unit_quote": "(in thousands, except per share data and percentages)"
+    },
+    {
+      "name": "prior_interim",
+      "document": "snow-prior",
+      "block": "snow-prior:p0003",
+      "quote": "Product revenue $850 - $855",
+      "tabular": true,
+      "unit_block": "snow-prior:p0003",
+      "unit_quote": "Amount (millions) Year/Year Growth Product revenue $"
+    },
+    {
+      "name": "new",
+      "document": "snow-latest",
+      "block": "snow-latest:p0006",
+      "quote": "Product revenue(2) $3,430",
+      "tabular": true,
+      "unit_block": "snow-latest:p0006",
+      "unit_quote": "Amount (millions) Year/Year Growth Product revenue(2) $"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "snow-latest",
+      "block": "snow-latest:p0015",
+      "quote": "$ 2,519,119",
+      "tabular": true,
+      "unit_block": "snow-latest:p0015",
+      "unit_quote": "(in thousands, except per share data and percentages)"
+    }
+  ],
+  "missing_reason": null
+}

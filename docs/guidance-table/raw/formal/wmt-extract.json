@@ -1,0 +1,32 @@
+{
+  "figures": [
+    {
+      "name": "reported_in_period",
+      "document": "wmt-prior",
+      "block": "wmt-prior:p0001",
+      "quote": "$169.3 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "wmt-latest",
+      "block": "wmt-latest:p0001",
+      "quote": "$169.6 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "wmt-prior",
+      "block": "wmt-prior:p0001",
+      "quote": "$169.3 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    }
+  ],
+  "reason": "沃爾瑪明列第二季及第三季的合併營收，分別為 1,693 億及 1,696 億美元。兩次指引發布時第二季均已結束，第三季則僅在最新指引發布時已結束。兩份公告均未單列第一季營收。全年及第三季的銷售指引僅列固定匯率淨銷售額成長率，未列合併營收的美元金額或區間。"
+}

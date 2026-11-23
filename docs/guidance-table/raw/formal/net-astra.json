@@ -1,0 +1,64 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "454902000"},
+    {"item": "implied_remainder_new", "value": "451820000"},
+    {"item": "implied_remainder_change", "value": "-3082000"},
+    {"item": "implied_remainder", "value": "lowered"}
+  ],
+  "evidence_ids": [
+    "net-prior:p0002",
+    "net-prior:p0004",
+    "net-prior:p0001",
+    "net-latest:p0002",
+    "net-latest:p0004"
+  ],
+  "reason": "以百萬美元計，前次全年營收指引中點扣除上半年實績及第三季指引中點，得出第四季隱含營收 1658 − 779.598 − 423.5 = 454.902。最新全年指引中點扣除前九個月實績，得出 1661.5 − 1209.680 = 451.820。因此第四季隱含營收下調 3.082 百萬美元。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "net-prior",
+      "block": "net-prior:p0002",
+      "quote": "For the full year fiscal 2024, we expect: • Total revenue of $1,657.0 to $1,659.0 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "net-prior",
+      "block": "net-prior:p0004",
+      "quote": "$ 779,598",
+      "tabular": true,
+      "unit_block": "net-prior:p0004",
+      "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended Six Months Ended June 30, June 30, 2024 2023 2024 2023 Revenue $"
+    },
+    {
+      "name": "prior_interim",
+      "document": "net-prior",
+      "block": "net-prior:p0001",
+      "quote": "For the third quarter of fiscal 2024, we expect: • Total revenue of $423.0 to $424.0 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "new",
+      "document": "net-latest",
+      "block": "net-latest:p0002",
+      "quote": "For the full year fiscal 2024, we expect: • Total revenue of $1,661.0 to $1,662.0 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "net-latest",
+      "block": "net-latest:p0004",
+      "quote": "$ 1,209,680",
+      "tabular": true,
+      "unit_block": "net-latest:p0004",
+      "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended Nine Months Ended September 30, September 30, 2024 2023 2024 2023 Revenue $"
+    }
+  ],
+  "missing_reason": null
+}

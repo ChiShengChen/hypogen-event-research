@@ -1,0 +1,64 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "33647000"},
+    {"item": "implied_remainder_new", "value": "33658000"},
+    {"item": "implied_remainder_change", "value": "11000"},
+    {"item": "implied_remainder", "value": "raised"}
+  ],
+  "evidence_ids": [
+    "blze-prior:p0002",
+    "blze-prior:p0004",
+    "blze-latest:p0002",
+    "blze-latest:p0005",
+    "blze-latest:p0006"
+  ],
+  "reason": "以千美元計，兩次全年營收指引的中點均為 127500。前次扣除上半年實績及第三季指引中點，第四季隱含營收為 127500 − 61253 − 32600 = 33647。最新指引扣除前九個月實績後為 127500 − 93842 = 33658，較前次增加 11000 美元。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "blze-prior",
+      "block": "blze-prior:p0002",
+      "quote": "For full-year 2024 we expect: Revenue between $126.5 million to $128.5 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "blze-prior",
+      "block": "blze-prior:p0004",
+      "quote": "$ 61,253",
+      "tabular": true,
+      "unit_block": "blze-prior:p0004",
+      "unit_quote": "(in thousands, except share and per share data) Three Months Ended June 30, Six Months Ended June 30, 2024 2023 2024 2023 (unaudited) Revenue $"
+    },
+    {
+      "name": "prior_interim",
+      "document": "blze-prior",
+      "block": "blze-prior:p0002",
+      "quote": "For the third quarter of 2024 we expect: Revenue between $32.4 million to $32.8 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "new",
+      "document": "blze-latest",
+      "block": "blze-latest:p0002",
+      "quote": "For full-year 2024 we expect: Revenue between $127.0 million to $128.0 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "blze-latest",
+      "block": "blze-latest:p0006",
+      "quote": "$ 93,842",
+      "tabular": true,
+      "unit_block": "blze-latest:p0005",
+      "unit_quote": "(in thousands, except share and per share data)"
+    }
+  ],
+  "missing_reason": null
+}

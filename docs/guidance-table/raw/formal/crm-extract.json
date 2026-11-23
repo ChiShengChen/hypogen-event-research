@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "crm-latest",
+      "block": "crm-latest:p0001",
+      "quote": "$37.8 Billion to $38.0 Billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior",
+      "document": "crm-prior",
+      "block": "crm-prior:p0001",
+      "quote": "$37.7 Billion to $38.0 Billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_interim",
+      "document": "crm-prior",
+      "block": "crm-prior:p0001",
+      "quote": "$9.31 Billion to $9.36 Billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "crm-prior",
+      "block": "crm-prior:p0011",
+      "quote": "$ 9,325",
+      "tabular": true,
+      "unit_block": "crm-prior:p0011",
+      "unit_quote": "(in millions)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "crm-latest",
+      "block": "crm-latest:p0011",
+      "quote": "$ 9,444",
+      "tabular": true,
+      "unit_block": "crm-latest:p0011",
+      "unit_quote": "(in millions)"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "crm-prior",
+      "block": "crm-prior:p0011",
+      "quote": "$ 9,325",
+      "tabular": true,
+      "unit_block": "crm-prior:p0011",
+      "unit_quote": "(in millions)"
+    }
+  ],
+  "reason": "兩份公告均列出全年營收指引區間，第二季公告也列出第三季指引。依各公告發布時點，第二季實績可用於兩次指引，第三季實績僅可用於最新指引。兩份公告均未單列第一季營收，因此省略該季。"
+}

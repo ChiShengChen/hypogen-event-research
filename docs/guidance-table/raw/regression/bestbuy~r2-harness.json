@@ -1,0 +1,50 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "bestbuy-latest",
+      "block": "bestbuy-latest:p0002",
+      "quote": "$41.1 billion to $41.5 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior",
+      "document": "bestbuy-prior",
+      "block": "bestbuy-prior:p0002",
+      "quote": "$41.3 billion to $41.9 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "bestbuy-prior",
+      "block": "bestbuy-prior:p0001",
+      "quote": "$ 9,288",
+      "tabular": true,
+      "unit_block": "bestbuy-prior:p0001",
+      "unit_quote": "($ in millions)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "bestbuy-latest",
+      "block": "bestbuy-latest:p0001",
+      "quote": "$ 9,445",
+      "tabular": true,
+      "unit_block": "bestbuy-latest:p0001",
+      "unit_quote": "($ in millions)"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "bestbuy-prior",
+      "block": "bestbuy-prior:p0001",
+      "quote": "$ 9,288",
+      "tabular": true,
+      "unit_block": "bestbuy-prior:p0001",
+      "unit_quote": "($ in millions)"
+    }
+  ],
+  "reason": "兩份公告均列出 2025 財年全年營收指引區間。第二季公告發布時已揭露第二季合併營收，第三季公告則新增第三季實績。兩份公告均未單列第一季營收。先前對第三季的展望僅列可比銷售變動率及非 GAAP 營業利益率，未提供合併營收金額。"
+}

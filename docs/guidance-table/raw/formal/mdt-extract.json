@@ -1,0 +1,32 @@
+{
+  "figures": [
+    {
+      "name": "reported_in_period",
+      "document": "mdt-prior",
+      "block": "mdt-prior:p0001",
+      "quote": "Medtronic reported Q2 worldwide revenue of $8.403 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "mdt-latest",
+      "block": "mdt-latest:p0001",
+      "quote": "Medtronic reported Q3 worldwide revenue of $8.292 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "mdt-prior",
+      "block": "mdt-prior:p0001",
+      "quote": "Medtronic reported Q2 worldwide revenue of $8.403 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    }
+  ],
+  "reason": "兩份公告均以成長率表述 2025 財年營收指引，未列全年或第三季的營收預估金額。公告直接列出第二季及第三季的全球營收實績；前次發布指引時，第二季實績已公布。第一季營收須由半年累計額扣除第二季金額推算，故未列入。"
+}

@@ -1,0 +1,50 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "low-latest",
+      "block": "low-latest:p0002",
+      "quote": "$83.0 to $83.5 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior",
+      "document": "low-prior",
+      "block": "low-prior:p0002",
+      "quote": "$82.7 to $83.2 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "low-prior",
+      "block": "low-prior:p0004",
+      "quote": "$ 23,586",
+      "tabular": true,
+      "unit_block": "low-prior:p0004",
+      "unit_quote": "In Millions, Except Per Share and Percentage Data"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "low-latest",
+      "block": "low-latest:p0004",
+      "quote": "$ 20,170",
+      "tabular": true,
+      "unit_block": "low-latest:p0004",
+      "unit_quote": "In Millions, Except Per Share and Percentage Data"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "low-prior",
+      "block": "low-prior:p0004",
+      "quote": "$ 23,586",
+      "tabular": true,
+      "unit_block": "low-prior:p0004",
+      "unit_quote": "In Millions, Except Per Share and Percentage Data"
+    }
+  ],
+  "reason": "全年營收指引取自兩次公告的全年銷售額區間。第二季及第三季實績取自合併損益表的單季淨銷售額欄。公告未單列第一季營收，也未提供第三季營收指引，故省略。"
+}

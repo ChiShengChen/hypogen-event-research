@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "frog-latest",
+      "block": "frog-latest:p0002",
+      "quote": "between $425.9 million to $ 426.9 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior",
+      "document": "frog-prior",
+      "block": "frog-prior:p0002",
+      "quote": "between $422 million to $424 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_interim",
+      "document": "frog-prior",
+      "block": "frog-prior:p0002",
+      "quote": "between $105 million and $106 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "frog-prior",
+      "block": "frog-prior:p0007",
+      "quote": "103,043",
+      "tabular": true,
+      "unit_block": "frog-prior:p0007",
+      "unit_quote": "(in thousands, except per share data; unaudited) Three Months Ended June 30, Six Months Ended June 30, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $ 98,404"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "frog-latest",
+      "block": "frog-latest:p0007",
+      "quote": "109,056",
+      "tabular": true,
+      "unit_block": "frog-latest:p0007",
+      "unit_quote": "(in thousands, except per share data; unaudited) Three Months Ended Nine Months Ended September 30, September 30, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $ 103,487"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "frog-prior",
+      "block": "frog-prior:p0007",
+      "quote": "103,043",
+      "tabular": true,
+      "unit_block": "frog-prior:p0007",
+      "unit_quote": "(in thousands, except per share data; unaudited) Three Months Ended June 30, Six Months Ended June 30, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $ 98,404"
+    }
+  ],
+  "reason": "兩份公告均直接列出全年營收指引，第二季公告另列第三季指引。第二季及第三季實績取自合併損益表的單季總訂閱營收，單位為千美元。兩份公告均未單列第一季營收，因此略去該季。"
+}

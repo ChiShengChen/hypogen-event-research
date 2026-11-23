@@ -1,0 +1,194 @@
+{
+  "frsh-prior": {
+    "source": "https://s21.q4cdn.com/987526491/files/doc_events/2024/07/Q2-24-Quarterly-Earnings-Release.pdf",
+    "issuer_or_sec_origin": "https://s21.q4cdn.com/987526491/files/doc_events/2024/07/Q2-24-Quarterly-Earnings-Release.pdf",
+    "pdf": "output/guidance-table/filings/frsh-prior.pdf",
+    "pdf_sha256": "66d143b75b1ec3da38779db5089a014c6bcb537704736d8c89fb912b58d46dce",
+    "text_sha256": "8fed62ef48d18d4c0a20b3116d15d1fdae0c512be2b75ba01f4e2eeb493d8340",
+    "pages": 13
+  },
+  "frsh-latest": {
+    "source": "https://s21.q4cdn.com/987526491/files/doc_events/2024/11/freshworks_third_quarter_2024_earnings_release.pdf",
+    "issuer_or_sec_origin": "https://s21.q4cdn.com/987526491/files/doc_events/2024/11/freshworks_third_quarter_2024_earnings_release.pdf",
+    "pdf": "output/guidance-table/filings/frsh-latest.pdf",
+    "pdf_sha256": "e28f12d8a8b522af2cd2832af5c5dd9efc9a2503aa7021e8c7c35e5991e039c6",
+    "text_sha256": "679200625c98bf24238de457f10aeabfb4e43869b5f56c3f602c00f16ebc4ff7",
+    "pages": 14
+  },
+  "crm-prior": {
+    "source": "https://investor.salesforce.com/files/doc_financials/2025/q2/CRM-Q2-FY25-Earnings-Press-Release-w-financials.pdf",
+    "issuer_or_sec_origin": "https://investor.salesforce.com/files/doc_financials/2025/q2/CRM-Q2-FY25-Earnings-Press-Release-w-financials.pdf",
+    "pdf": "output/guidance-table/filings/crm-prior.pdf",
+    "pdf_sha256": "3f276133381fa582009d160be122714c3aea379a1e10ef4d7a34f733be5281ce",
+    "text_sha256": "17be1adf14cea85540163c284ed15962deeb89d4a96a75271104793b28becedf",
+    "pages": 16
+  },
+  "crm-latest": {
+    "source": "https://investor.salesforce.com/files/doc_financials/2025/q3/CRM-Q3-FY25-Earnings-Press-Release-w-financials.pdf",
+    "issuer_or_sec_origin": "https://investor.salesforce.com/files/doc_financials/2025/q3/CRM-Q3-FY25-Earnings-Press-Release-w-financials.pdf",
+    "pdf": "output/guidance-table/filings/crm-latest.pdf",
+    "pdf_sha256": "8253a977e5adef76512fcc07fed8fac7527590b2a96fb2e114adc57d7316be3a",
+    "text_sha256": "3c543d9046fb0762b1e190d83c404ecca931eb82ead29c8ab279517f3b5761a5",
+    "pages": 16
+  },
+  "low-prior": {
+    "source": "https://corporate.lowes.com/sites/lowes-corp/files/2024-08/q2-2024-earnings-release.pdf",
+    "issuer_or_sec_origin": "https://corporate.lowes.com/sites/lowes-corp/files/2024-08/q2-2024-earnings-release.pdf",
+    "pdf": "output/guidance-table/filings/low-prior.pdf",
+    "pdf_sha256": "b844095b2d360aa94f2683e6522c34d7e4a3bc850095ee7d8a2b8e4a8cf6f7a3",
+    "text_sha256": "b9692656c2a28a7df4b7d4a22926d563f4251b65b1c259e7506fe73461c5f836",
+    "pages": 7
+  },
+  "low-latest": {
+    "source": "https://corporate.lowes.com/sites/lowes-corp/files/2024-11/q3-2024-earnings-release.pdf",
+    "issuer_or_sec_origin": "https://corporate.lowes.com/sites/lowes-corp/files/2024-11/q3-2024-earnings-release.pdf",
+    "pdf": "output/guidance-table/filings/low-latest.pdf",
+    "pdf_sha256": "09bdb89caded95affe2d3dd7b2d254484e7492ad0a4c7498a3542d5f0e6f137d",
+    "text_sha256": "70bca3cfa98eea751e1b44d37f976146e3f2df816a56a402245f05b60ce99e22",
+    "pages": 7
+  },
+  "mdt-prior": {
+    "source": "https://news.medtronic.com/2024-11-19-Medtronic-reports-second-quarter-fiscal-2025-financial-results?asPDF=1",
+    "issuer_or_sec_origin": "https://news.medtronic.com/2024-11-19-Medtronic-reports-second-quarter-fiscal-2025-financial-results?asPDF=1",
+    "pdf": "output/guidance-table/filings/mdt-prior.pdf",
+    "pdf_sha256": "9dbb0da2a730b398137848e77ff0645a6d67314ee72149f0396d663374c985db",
+    "text_sha256": "40312efd2fa546c20de107bb37a60e6ee12d865487b6f7a6f3cad5a21b347ae6",
+    "pages": 9
+  },
+  "mdt-latest": {
+    "source": "https://news.medtronic.com/2025-02-18-Medtronic-reports-third-quarter-fiscal-2025-financial-results?asPDF=1",
+    "issuer_or_sec_origin": "https://news.medtronic.com/2025-02-18-Medtronic-reports-third-quarter-fiscal-2025-financial-results?asPDF=1",
+    "pdf": "output/guidance-table/filings/mdt-latest.pdf",
+    "pdf_sha256": "16bb704fdfbd41ab6bbd1319c14493dc0746045660cfdb524591146e4f7fb10d",
+    "text_sha256": "128c57e36be5c25bc3c42ddc0f0310fcbbb66bd1a8a0569d7b6dd6f553952458",
+    "pages": 8
+  },
+  "blze-prior": {
+    "source": "https://s204.q4cdn.com/590551802/files/doc_news/2024/08/Backblaze-Announces-Second-Quarter-2024-Financial-Results.pdf",
+    "issuer_or_sec_origin": "https://s204.q4cdn.com/590551802/files/doc_news/2024/08/Backblaze-Announces-Second-Quarter-2024-Financial-Results.pdf",
+    "pdf": "output/guidance-table/filings/blze-prior.pdf",
+    "pdf_sha256": "73a69b37ab4a0c3a9a189e00332ef8f9df68fff318ee9085d8fc302ed738d979",
+    "text_sha256": "074cd967fe261ae51732e818efcf49fc816730b500777e495eb159db11fb6240",
+    "pages": 7
+  },
+  "blze-latest": {
+    "source": "https://s204.q4cdn.com/590551802/files/doc_financials/2025/q1/BLZE-Q3-2024-Earnings-Press-Release-1.pdf",
+    "issuer_or_sec_origin": "https://s204.q4cdn.com/590551802/files/doc_financials/2025/q1/BLZE-Q3-2024-Earnings-Press-Release-1.pdf",
+    "pdf": "output/guidance-table/filings/blze-latest.pdf",
+    "pdf_sha256": "c0f0179573e6ffe059596c3a8e56b284e5caa9476bab83ca07bd0a88d4b230e5",
+    "text_sha256": "75653d1c701da1c65247483c03cef2060fe3f7d46f6a52d5530ef243a25a5e51",
+    "pages": 9
+  },
+  "docn-prior": {
+    "source": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001582961/082a1066-1be0-49b0-a692-e13e9e106cac.pdf",
+    "issuer_or_sec_origin": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001582961/082a1066-1be0-49b0-a692-e13e9e106cac.pdf",
+    "pdf": "output/guidance-table/filings/docn-prior.pdf",
+    "pdf_sha256": "1d24ac58c3ae1e1b0939635c9896aada83b7ef5368a543bd7ef120a8b8222fb6",
+    "text_sha256": "874ddadf3385b1c31fe12d897715067dd91b9906a96506feafeb8ec10f7a4227",
+    "pages": 14
+  },
+  "docn-latest": {
+    "source": "https://cdn.prod.nntech.io/company-events/reports/69e45bc4-e04d-32a0-a1b7-ee48f33dc56b/report.pdf",
+    "issuer_or_sec_origin": "https://www.sec.gov/Archives/edgar/data/1582961/000158296124000153/a2024-q3dopressrelease.htm",
+    "pdf": "output/guidance-table/filings/docn-latest.pdf",
+    "pdf_sha256": "37720b4780ad1864d36659024449c2c619bcb8c474cb56851f832c997a5fd214",
+    "text_sha256": "0f10732405ee138b90031b9d3969d12b61b174e737d412b50d5c781a18d11020",
+    "pages": 12
+  },
+  "net-prior": {
+    "source": "https://www.cloudflare.net/files/doc_financials/2024/q2/Q2-24-Exhibit-99-1_final.pdf",
+    "issuer_or_sec_origin": "https://www.cloudflare.net/files/doc_financials/2024/q2/Q2-24-Exhibit-99-1_final.pdf",
+    "pdf": "output/guidance-table/filings/net-prior.pdf",
+    "pdf_sha256": "220bcea3a803cec24cf50942ab6b321728af0c62d71303744ebeb5d761a85ea3",
+    "text_sha256": "2f2e2d2f669ec78a03af1a5f70b83ee4939f687a637e104baac2692df6b999ef",
+    "pages": 12
+  },
+  "net-latest": {
+    "source": "https://cloudflare.net/files/doc_financials/2024/q3/Q3-24-Exhibit-99-1.pdf",
+    "issuer_or_sec_origin": "https://cloudflare.net/files/doc_financials/2024/q3/Q3-24-Exhibit-99-1.pdf",
+    "pdf": "output/guidance-table/filings/net-latest.pdf",
+    "pdf_sha256": "df7bc02ded198abb6aa85f082b79a1231f74a542464aabb529d2974d469058d8",
+    "text_sha256": "23da72012d5b4f2780dade39ded06fbcdbf74d1a4ec9e685676b32c66ce0648e",
+    "pages": 12
+  },
+  "okta-prior": {
+    "source": "https://cdn.prod.nntech.io/company-events/reports/14d748af-eba3-3fa0-b662-8786dd9a178d/report.pdf",
+    "issuer_or_sec_origin": "https://investor.okta.com/news-releases/news-release-details/okta-announces-second-quarter-fiscal-year-2025-financial-results",
+    "pdf": "output/guidance-table/filings/okta-prior.pdf",
+    "pdf_sha256": "ed1ee08e8b687fed697b010410ede578068c462b35c0974ef77a7d1e772359ae",
+    "text_sha256": "0112f94ac856a2aba1073f1a28b0e42084aa89d17f54592ebd497a521113bd20",
+    "pages": 12
+  },
+  "okta-latest": {
+    "source": "https://cdn.prod.nntech.io/company-events/reports/a206ef16-5b5b-33e8-b4ba-a1b1aab065e0/report.pdf",
+    "issuer_or_sec_origin": "https://investor.okta.com/news-releases/news-release-details/okta-announces-third-quarter-fiscal-year-2025-financial-results",
+    "pdf": "output/guidance-table/filings/okta-latest.pdf",
+    "pdf_sha256": "0a8e365556935d3d05aa9a2fc76ae9a9a31b38d939ca9b5dea4f04e4dfa9e8c0",
+    "text_sha256": "1c0e2a082114d42099eb07f5a930915ad1f0681d4a418336f4be72099634d6d1",
+    "pages": 12
+  },
+  "path-prior": {
+    "source": "https://d1io3yog0oux5.cloudfront.net/_2051b5e4c9064e8776da85f780848e5c/uipath/news/2024-09-05_UiPath_Reports_Second_Quarter_Fiscal_2025_358.pdf",
+    "issuer_or_sec_origin": "https://d1io3yog0oux5.cloudfront.net/_2051b5e4c9064e8776da85f780848e5c/uipath/news/2024-09-05_UiPath_Reports_Second_Quarter_Fiscal_2025_358.pdf",
+    "pdf": "output/guidance-table/filings/path-prior.pdf",
+    "pdf_sha256": "7f63bd925bea5adb98aaff03cc35d7efbf7320e2814540dc016e92f7fbca3f37",
+    "text_sha256": "3e9d0b852ac489d241963e1f1a70ae0836ec782c3f1170c8d382a86a97dd792e",
+    "pages": 14
+  },
+  "path-latest": {
+    "source": "https://d1io3yog0oux5.cloudfront.net/_5131cd3f5bd0cd883829934c5dab15cd/uipath/news/2024-12-05_UiPath_Reports_Third_Quarter_Fiscal_2025_373.pdf",
+    "issuer_or_sec_origin": "https://d1io3yog0oux5.cloudfront.net/_5131cd3f5bd0cd883829934c5dab15cd/uipath/news/2024-12-05_UiPath_Reports_Third_Quarter_Fiscal_2025_373.pdf",
+    "pdf": "output/guidance-table/filings/path-latest.pdf",
+    "pdf_sha256": "1758cce28f44155a4bbaf020cc3220d204c8cf3b0eff357024ce99da43b58de2",
+    "text_sha256": "418196ef099b7163101221d87a24d012862c0f49320fa9a7aefb66e903f77298",
+    "pages": 13
+  },
+  "wmt-prior": {
+    "source": "https://stock.walmart.com/_assets/_5813cf69129ed45d080396680f549a44/walmart/db/938/9486/earnings_release/Earnings-Release-2025-Q2.pdf",
+    "issuer_or_sec_origin": "https://stock.walmart.com/_assets/_5813cf69129ed45d080396680f549a44/walmart/db/938/9486/earnings_release/Earnings-Release-2025-Q2.pdf",
+    "pdf": "output/guidance-table/filings/wmt-prior.pdf",
+    "pdf_sha256": "763468a9896ea0397cec686d5412ae7231cb5027a7afba94e851775eace4686e",
+    "text_sha256": "4800dd9626d2a6bb95791544360a9845dedc9090b0387aae300232fa5cd7fdc1",
+    "pages": 18
+  },
+  "wmt-latest": {
+    "source": "https://corporate.walmart.com/content/dam/corporate/documents/newsroom/2024/11/19/walmart-releases-q3-fy25-earnings/q3-fy25-earnings-release.pdf",
+    "issuer_or_sec_origin": "https://corporate.walmart.com/content/dam/corporate/documents/newsroom/2024/11/19/walmart-releases-q3-fy25-earnings/q3-fy25-earnings-release.pdf",
+    "pdf": "output/guidance-table/filings/wmt-latest.pdf",
+    "pdf_sha256": "40cb8081a46b59177b3d63dec870fdccee58b2754718461463c698220323f892",
+    "text_sha256": "fb1425ca8fd4ff00e271c086dea0434b7080b6a0786d36eb4a121b8c4830d854",
+    "pages": 18
+  },
+  "cdw-prior": {
+    "source": "https://s205.q4cdn.com/557255526/files/doc_news/2024/07/1/CDW-2024-6-30-Earnings-Release.pdf",
+    "issuer_or_sec_origin": "https://s205.q4cdn.com/557255526/files/doc_news/2024/07/1/CDW-2024-6-30-Earnings-Release.pdf",
+    "pdf": "output/guidance-table/filings/cdw-prior.pdf",
+    "pdf_sha256": "c6dcd05cc5237a168b93bb862ee09345f623c124b705b56a1511c5b00c927e4c",
+    "text_sha256": "95bb937d01905eb62caafaca43c1f46eb83a1356652f3e26ce8677ac5d4b29ba",
+    "pages": 15
+  },
+  "cdw-latest": {
+    "source": "https://s205.q4cdn.com/557255526/files/doc_financials/2024/q3/CDW-2024-9-30-Earnings-Release.pdf",
+    "issuer_or_sec_origin": "https://s205.q4cdn.com/557255526/files/doc_financials/2024/q3/CDW-2024-9-30-Earnings-Release.pdf",
+    "pdf": "output/guidance-table/filings/cdw-latest.pdf",
+    "pdf_sha256": "e71a674ed1c271d2a85c0f97cee0e31389c36b5baf87db5014a9bd7ca3bbd6a4",
+    "text_sha256": "4d6579c58e5c5bd39166fce5a6cf6546f7e5e03bd76fc161318bb152695e0dfb",
+    "pages": 15
+  },
+  "snow-prior": {
+    "source": "https://cdn.prod.nntech.io/company-events/reports/4ed104a9-7f76-3aac-9c04-5604fb7c734e/report.pdf",
+    "issuer_or_sec_origin": "https://investors.snowflake.com/news/news-details/2024/Snowflake-Reports-Financial-Results-for-the-Second-Quarter-of-Fiscal-2025/default.aspx",
+    "pdf": "output/guidance-table/filings/snow-prior.pdf",
+    "pdf_sha256": "9313bfd14a2646eeb16416c5ad3bc29fc16252ea690c381d02f59333e835d3eb",
+    "text_sha256": "8f386f83acff6dc2a70248b95f9cbd44c0d330d44cb25715849a6c941c984cf4",
+    "pages": 15
+  },
+  "snow-latest": {
+    "source": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001640147/ca80b036-253b-49b4-a6ce-69de8d98b8eb.pdf",
+    "issuer_or_sec_origin": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001640147/ca80b036-253b-49b4-a6ce-69de8d98b8eb.pdf",
+    "pdf": "output/guidance-table/filings/snow-latest.pdf",
+    "pdf_sha256": "8ff6f7e33258ef8a284ccfd5c165d5c397caeb687f8149a935b707e4e3722002",
+    "text_sha256": "15150c4c2a3d34a1bbb735ddf0c024ede6a1dac45c85d68c9c9a4e9c397eb329",
+    "pages": 17
+  }
+}

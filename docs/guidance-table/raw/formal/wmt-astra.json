@@ -1,0 +1,25 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "176896000000"},
+    {"item": "implied_remainder_change", "value": "655700000"},
+    {"item": "implied_remainder", "value": "raised"}
+  ],
+  "evidence_ids": [
+    "wmt-prior:p0005",
+    "wmt-prior:p0012",
+    "wmt-latest:p0005",
+    "wmt-latest:p0012"
+  ],
+  "reason": "按固定匯率合併淨銷售額計算，以下金額均以十億美元為單位。8 月以全年及第三季指引中點推算，第四季為 642.6 × 1.0425 − 327.637 − 159.4 × 1.0375 = 176.896。11 月以更新後的全年指引中點扣除前九個月實績，得 642.6 × 1.0495 − 496.857 = 177.5517。兩者相減，第四季隱含淨銷售額上調 0.6557。",
+  "figures_used": [
+    {"name": "prior", "document": "wmt-prior", "block": "wmt-prior:p0005", "quote": "Net sales: $642.6 billion", "tabular": false, "unit_block": null, "unit_quote": null},
+    {"name": "prior", "document": "wmt-prior", "block": "wmt-prior:p0005", "quote": "Consolidated net sales (cc) Increase 3.75% to 4.75%", "tabular": true, "unit_block": "wmt-prior:p0005", "unit_quote": "Metric FY 2025 (updated) FY 2025 (original)"},
+    {"name": "prior_reported_in_period", "document": "wmt-prior", "block": "wmt-prior:p0012", "quote": "Net sales (cc) $ 29,884 8.3% $ 168,084 4.9% $ 59,332 9.5% $ 327,637 5.3 %", "tabular": true, "unit_block": "wmt-prior:p0012", "unit_quote": "(Dollars in millions)"},
+    {"name": "prior_interim", "document": "wmt-prior", "block": "wmt-prior:p0005", "quote": "Net Sales: $159.4 billion", "tabular": false, "unit_block": null, "unit_quote": null},
+    {"name": "prior_interim", "document": "wmt-prior", "block": "wmt-prior:p0005", "quote": "Consolidated net sales (cc) Increase 3.25% to 4.25%", "tabular": true, "unit_block": "wmt-prior:p0005", "unit_quote": "Metric Q3"},
+    {"name": "new", "document": "wmt-latest", "block": "wmt-latest:p0005", "quote": "Net sales: $642.6 billion", "tabular": false, "unit_block": null, "unit_quote": null},
+    {"name": "new", "document": "wmt-latest", "block": "wmt-latest:p0005", "quote": "Net sales (cc) Increase 4.8% to 5.1%", "tabular": true, "unit_block": "wmt-latest:p0005", "unit_quote": "Consolidated Metric FY 2025 as of Nov. 19, 2024 FY 2025 as of Aug. 15, 2024 FY 2025 as of Feb. 20, 2024"},
+    {"name": "reported_in_period", "document": "wmt-latest", "block": "wmt-latest:p0012", "quote": "Net sales (cc) $ 31,494 12.4% $ 169,220 6.1% $ 90,826 10.5% $496,857 5.6 %", "tabular": true, "unit_block": "wmt-latest:p0012", "unit_quote": "(Dollars in millions)"}
+  ],
+  "missing_reason": null
+}

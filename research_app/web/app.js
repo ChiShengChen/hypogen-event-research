@@ -228,6 +228,30 @@ function businessLinkageBlock(report, scope = null) {
   return fragment;
 }
 
+function scenarioBlock(report) {
+  const fragment = document.createDocumentFragment();
+  if (!report.stance_cases) return fragment;
+  const labels = { bull: "多方", base: "基準", bear: "空方", wait: "觀望" };
+  const directions = { up: "增加", down: "減少", flat: "持平", unknown: "待查" };
+  fragment.append(heading("多立場情境與劇本"));
+  for (const group of report.stance_cases) {
+    fragment.append(node("h3", labels[group.stance]));
+    for (const scenario of group.cases) {
+      const item = node("details", null, "item");
+      item.append(node("summary", scenario.title), fields([
+        ["驅動因素", scenario.driver], ["成立條件", scenario.conditions.join("、")],
+        ["傳導機制", scenario.mechanism], ["比較基準", scenario.baseline],
+        ["財務影響", `${scenario.financial_metric}${directions[scenario.direction]}。${scenario.scale_basis_or_gap}`],
+        ["公開查核", `${scenario.public_source} · ${scenario.observation_period} · ${scenario.public_metric}`],
+        ["覆核日", scenario.review_by], ["可驗證預測", scenario.prediction], ["推翻條件", scenario.falsifier],
+      ]), evidenceLinks(scenario.evidence_ids));
+      fragment.append(item);
+    }
+    if (group.evidence_gap) fragment.append(node("p", group.evidence_gap, "notice"));
+  }
+  return fragment;
+}
+
 function renderOverview(body, report) {
   const assessment = report.assessment || {};
   const intro = node("div", null, "thesis");
@@ -245,7 +269,7 @@ function renderOverview(body, report) {
     }
     body.append(items);
   }
-  body.append(businessLinkageBlock(report), opportunityBlock(report));
+  body.append(businessLinkageBlock(report), scenarioBlock(report), opportunityBlock(report));
 }
 
 function renderSupply(body, report) {
@@ -415,7 +439,7 @@ function renderEarnings(body, report) {
     renderReport(child);
   };
   body.append(heading("盈利預估", `${currency} 百萬／EPS 為每股`));
-  body.append(businessLinkageBlock(report));
+  body.append(businessLinkageBlock(report), scenarioBlock(report));
   for (const quarter of earnings.quarters) {
     body.append(node("h3", quarter.period_end));
     const table = node("table", null, "compare");
@@ -806,7 +830,7 @@ function showAnswer(result) {
     result.gaps.forEach((gap) => gaps.append(node("li", gap)));
     panel.append(gaps);
   }
-  panel.append(businessLinkageBlock(result));
+  panel.append(businessLinkageBlock(result), scenarioBlock(result));
   const messages = {
     no_new_sources: "補搜未取得可納入的新來源。",
     unresolved: "找到其他來源，仍無法回答此問題。",

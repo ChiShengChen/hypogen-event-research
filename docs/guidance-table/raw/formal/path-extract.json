@@ -1,0 +1,50 @@
+{
+  "figures": [
+    {
+      "name": "prior",
+      "document": "path-prior",
+      "block": "path-prior:p0002",
+      "quote": "Revenue in the range of $1.420 billion to $1.425 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_interim",
+      "document": "path-prior",
+      "block": "path-prior:p0002",
+      "quote": "Revenue in the range of $345 million to $350 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "path-prior",
+      "block": "path-prior:p0008",
+      "quote": "316,253",
+      "tabular": true,
+      "unit_block": "path-prior:p0008",
+      "unit_quote": "in thousands, except per share data (unaudited) Three Months Ended Six Months Ended July 31, July 31, 2024 2023 2024 2023 Revenue: Licenses $ 112,251"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "path-latest",
+      "block": "path-latest:p0007",
+      "quote": "354,653",
+      "tabular": true,
+      "unit_block": "path-latest:p0007",
+      "unit_quote": "in thousands, except per share data (unaudited) Three Months Ended October 31, Nine Months Ended October 31, 2024 2023 2024 2023 Revenue: Licenses $ 137,174"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "path-prior",
+      "block": "path-prior:p0008",
+      "quote": "316,253",
+      "tabular": true,
+      "unit_block": "path-prior:p0008",
+      "unit_quote": "in thousands, except per share data (unaudited) Three Months Ended Six Months Ended July 31, July 31, 2024 2023 2024 2023 Revenue: Licenses $ 112,251"
+    }
+  ],
+  "reason": "9 月公告列出 2025 財年全年及第三季營收指引。12 月公告僅提供第四季營收指引，未直接列出更新後的全年金額，因此省略 new。實績採合併營運報表的單季總營收；第二季數字在兩次公告時均已公布，第三季數字於 12 月公布。兩份公告均未單列第一季總營收，因此省略該季。"
+}

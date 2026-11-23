@@ -1,0 +1,32 @@
+{
+  "figures": [
+    {
+      "name": "reported_in_period",
+      "document": "cdw-prior",
+      "block": "cdw-prior:p0007",
+      "quote": "$ 5,423.4",
+      "tabular": true,
+      "unit_block": "cdw-prior:p0007",
+      "unit_quote": "(dollars in millions)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "cdw-latest",
+      "block": "cdw-latest:p0007",
+      "quote": "$ 5,516.6",
+      "tabular": true,
+      "unit_block": "cdw-latest:p0007",
+      "unit_quote": "(dollars in millions)"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "cdw-prior",
+      "block": "cdw-prior:p0007",
+      "quote": "$ 5,423.4",
+      "tabular": true,
+      "unit_block": "cdw-prior:p0007",
+      "unit_quote": "(dollars in millions)"
+    }
+  ],
+  "reason": "兩份公告均列明當季合併淨銷售額。7 月公告時可引用第二季金額，10 月公告時可引用第二季及第三季金額。第一季金額須由上半年累計額倒算，故略去。CDW 僅披露相對美國 IT 市場的成長目標，未提供 2024 全年或第三季的營收指引金額。"
+}

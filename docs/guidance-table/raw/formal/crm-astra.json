@@ -1,0 +1,63 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "10057000000"},
+    {"item": "implied_remainder_new", "value": "9998000000"},
+    {"item": "implied_remainder_change", "value": "-59000000"},
+    {"item": "implied_remainder", "value": "lowered"}
+  ],
+  "evidence_ids": [
+    "crm-prior:p0001",
+    "crm-prior:p0006",
+    "crm-latest:p0001",
+    "crm-latest:p0006"
+  ],
+  "reason": "以百萬美元計，前次全年營收指引中點扣除上半年實績及當時的第三季指引中點，得出第四季隱含營收 37850 − 18458 − 9335 = 10057。最新全年指引中點扣除前九個月實績，得出 37900 − 27902 = 9998。兩者相差 9998 − 10057 = −59，即下修 59000000 美元。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "crm-prior",
+      "block": "crm-prior:p0001",
+      "quote": "Maintains Full Year FY25 Revenue Guidance of $37.7 Billion to $38.0 Billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "crm-prior",
+      "block": "crm-prior:p0006",
+      "quote": "Total revenues 9,325 8,603 18,458 16,850",
+      "tabular": true,
+      "unit_block": "crm-prior:p0006",
+      "unit_quote": "(in millions, except per share data) (Unaudited) 2 Three Months Ended July 31, Six Months Ended July 31, 2024 2023 2024 2023 Revenues: Subscription and support $"
+    },
+    {
+      "name": "prior_interim",
+      "document": "crm-prior",
+      "block": "crm-prior:p0001",
+      "quote": "Initiates Third Quarter FY25 Revenue Guidance of $9.31 Billion to $9.36 Billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "new",
+      "document": "crm-latest",
+      "block": "crm-latest:p0001",
+      "quote": "Raises Low End of Full Year FY25 Revenue Guidance to $37.8 Billion to $38.0 Billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "crm-latest",
+      "block": "crm-latest:p0006",
+      "quote": "Total revenues 9,444 8,720 27,902 25,570",
+      "tabular": true,
+      "unit_block": "crm-latest:p0006",
+      "unit_quote": "(in millions, except per share data) (Unaudited) 3 Three Months Ended October 31, Nine Months Ended October 31, 2024 2023 2024 2023 Revenues: Subscription and support $"
+    }
+  ],
+  "missing_reason": null
+}

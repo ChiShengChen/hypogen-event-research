@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "frsh-latest",
+      "block": "frsh-latest:p0003",
+      "quote": "$713.6 - $716.6",
+      "tabular": true,
+      "unit_block": "frsh-latest:p0003",
+      "unit_quote": "($ in millions, except per share data)"
+    },
+    {
+      "name": "prior",
+      "document": "frsh-prior",
+      "block": "frsh-prior:p0003",
+      "quote": "$707.0 - $713.0",
+      "tabular": true,
+      "unit_block": "frsh-prior:p0003",
+      "unit_quote": "($ in millions, except per share data)"
+    },
+    {
+      "name": "prior_interim",
+      "document": "frsh-prior",
+      "block": "frsh-prior:p0003",
+      "quote": "$180.0 - $183.0",
+      "tabular": true,
+      "unit_block": "frsh-prior:p0003",
+      "unit_quote": "($ in millions, except per share data)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "frsh-prior",
+      "block": "frsh-prior:p0008",
+      "quote": "$ 174,131",
+      "tabular": true,
+      "unit_block": "frsh-prior:p0008",
+      "unit_quote": "(in thousands, except per share data)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "frsh-latest",
+      "block": "frsh-latest:p0008",
+      "quote": "$ 186,575",
+      "tabular": true,
+      "unit_block": "frsh-latest:p0008",
+      "unit_quote": "(in thousands, except per share data)"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "frsh-prior",
+      "block": "frsh-prior:p0008",
+      "quote": "$ 174,131",
+      "tabular": true,
+      "unit_block": "frsh-prior:p0008",
+      "unit_quote": "(in thousands, except per share data)"
+    }
+  ],
+  "reason": "財測取自兩次公告的營收列，保留公司公布的區間。7 月公告時已披露第二季實績，11 月公告時第三季實績也已公布。兩份公告均未單列第一季營收，因此省略第一季。"
+}

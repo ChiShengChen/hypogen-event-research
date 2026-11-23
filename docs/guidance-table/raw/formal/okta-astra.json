@@ -1,0 +1,63 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "648000000"},
+    {"item": "implied_remainder_new", "value": "668000000"},
+    {"item": "implied_remainder_change", "value": "20000000"},
+    {"item": "implied_remainder", "value": "raised"}
+  ],
+  "evidence_ids": [
+    "okta-prior:p0002",
+    "okta-prior:p0007",
+    "okta-latest:p0002",
+    "okta-latest:p0007"
+  ],
+  "reason": "以百萬美元計，前次全年指引中點為 2560，扣除上半年實際營收 1263 及當時第三季指引中點 649，隱含第四季營收為 648。最新全年指引中點為 2596，扣除前九個月實際營收 1928，隱含第四季營收為 668，較前次上調 20。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "okta-prior",
+      "block": "okta-prior:p0002",
+      "quote": "For the full year fiscal 2025, the Company now expects: • Total revenue of $2.555 billion to $2.565 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "okta-prior",
+      "block": "okta-prior:p0007",
+      "quote": "Total revenue 646 556 1,263 1,074",
+      "tabular": true,
+      "unit_block": "okta-prior:p0007",
+      "unit_quote": "(dollars in millions, shares in thousands, except per share data)"
+    },
+    {
+      "name": "prior_interim",
+      "document": "okta-prior",
+      "block": "okta-prior:p0002",
+      "quote": "For the third quarter of fiscal 2025, the Company expects: • Total revenue of $648 million to $650 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "new",
+      "document": "okta-latest",
+      "block": "okta-latest:p0002",
+      "quote": "For the full year fiscal 2025, the Company now expects: • Total revenue of $2.595 billion to $2.597 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "okta-latest",
+      "block": "okta-latest:p0007",
+      "quote": "Total revenue 665 584 1,928 1,658",
+      "tabular": true,
+      "unit_block": "okta-latest:p0007",
+      "unit_quote": "(dollars in millions, shares in thousands, except per share data)"
+    }
+  ],
+  "missing_reason": null
+}

@@ -28,7 +28,7 @@ def read(path):
     return b.equal.hypothesis.read(path)
 
 
-def seal(root, inputs):
+def seal(root, inputs, *, extra_protocol=None, gold_for=None, direct_instruction='', both_directions=True):
     if (root / "protocol.json").exists():
         raise ValueError("本批已封存")
     sealed, requests = {}, {}
@@ -39,7 +39,7 @@ def seal(root, inputs):
     for row in inputs:
         case = b.Case.model_validate(row["case"])
         blocks = b.case_blocks(case)
-        gold = {name: str(value) for name, value in b.gold(case, blocks).items()}
+        gold = {name: str(value) for name, value in (gold_for(row, case, blocks) if gold_for else b.gold(case, blocks)).items()}
         v2 = b.requests_for(case, blocks)
         direct_json = json.loads(v2["astra"]["prompt"].rsplit("\n\n", 1)[-1])
         extract_json = json.loads(v2["harness"]["prompt"].rsplit("\n\n", 1)[-1])
@@ -53,7 +53,7 @@ def seal(root, inputs):
             "the contiguous span from the scale heading up to that currency marker. List exact evidence_ids. "
             "When the outlook comparison cannot be supported, name the specifically missing evidence in missing_reason. "
             "Perform the calculation yourself in this same response."
-        )
+        ) + direct_instruction
         requests[case.id] = {"extract": v2["harness"],
                              "astra": b.equal.make_request(Direct, instruction, direct_json)}
         sealed[case.id] = row | {"case": case.model_dump(mode="json"), "gold": gold}
@@ -65,7 +65,7 @@ def seal(root, inputs):
         raise ValueError("issuer overlap")
     if sum(bool(row["case"]["undetermined"]) for row in by_split["holdout"]) != 4:
         raise ValueError("holdout must be balanced")
-    if not {"raised", "lowered", "unknown"} <= {row["gold"].get(DIRECTION) for row in by_split["pilot"]}:
+    if both_directions and not {"raised", "lowered", "unknown"} <= {row["gold"].get(DIRECTION) for row in by_split["pilot"]}:
         raise ValueError("pilot needs positive revisions both directions and an unsupported case")
     protocol = {
         "sealed_at": b.equal.journal.now(), "hypothesis": "累計期間與財務欄位證據可增加可計算案例全對而維持零誤調。",
@@ -85,6 +85,7 @@ def seal(root, inputs):
         "stop": "先導未過立即停止，保留失敗回傳並輸出未開始的保留集。先導通過後跑完八個保留集即停止。"
                 "同一次擷取並行經兩版驗證器，純 Astra 獨立回覆。服務容量或限流時停止派發，已開始者計入預算。",
     }
+    protocol.update(extra_protocol or {})
     root.mkdir(parents=True, exist_ok=True)
     for targ, value in (("cases", sealed), ("requests", requests), ("protocol", protocol)):
         b.equal.journal.atomic(root / f"{targ}.json", value)
@@ -201,6 +202,8 @@ def phase_status(root, cases, split):
             "negative": sum(m["exact"] and bool(cases[key]["case"]["undetermined"]) for key, m in marks),
             "false_adjustments": sum(m["false_adjustment"] for _, m in marks),
             "numeric_exact": sum(m["numeric_exact"] for _, m in marks),
+            "numeric_with_bad_citation": sum(m["numeric_exact"] and not m["exact"] for _, m in marks),
+            "false_abstentions": sum(m.get("false_abstention", False) for _, m in marks),
         }
     new, old, astra = (metrics[arm] for arm in ("revised", "current", "astra"))
     if split == "pilot":
@@ -212,7 +215,7 @@ def phase_status(root, cases, split):
             "leads": split == "holdout" and passed and new["exact"] - astra["exact"] >= 2, "failed": failed}
 
 
-def run(root, split, stop):
+def run(root, split, stop, *, transform=normalize):
     cases, requests, _ = inputs_at(root)
     if split == "holdout" and not phase_status(root, cases, "pilot")["passed"]:
         print("先導未通過，保留集維持未開始", flush=True)
@@ -228,7 +231,7 @@ def run(root, split, stop):
             job = b.equal.queue_job(root, key, arm)
             record = b.equal.attempt(root, job, payload, requests[key][arm], stop,
                 monotonic() + b.equal.journal.budget(1, 1, b.TIMEOUT), b.TIMEOUT,
-                transform=normalize, model=b.equal.hypothesis.MODEL)
+                transform=transform, model=b.equal.hypothesis.MODEL)
             print(key, arm, record["status"], record.get("reason") or "", flush=True)
             if record.get("reason") in b.equal.AVAILABILITY_ERRORS:
                 stop.set()

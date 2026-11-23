@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "pure-latest",
+      "block": "pure-latest:p0002",
+      "quote": "$3.15B",
+      "tabular": true,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior",
+      "document": "pure-prior",
+      "block": "pure-prior:p0002",
+      "quote": "$3.1B",
+      "tabular": true,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_interim",
+      "document": "pure-prior",
+      "block": "pure-prior:p0002",
+      "quote": "$815M",
+      "tabular": true,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "pure-prior",
+      "block": "pure-prior:p0006",
+      "quote": "763,771",
+      "tabular": true,
+      "unit_block": "pure-prior:p0006",
+      "unit_quote": "(in thousands, except per share data, unaudited) Second Quarter of Fiscal First Two Quarters of Fiscal 2025 2024 2025 2024 Revenue: Product $ 402,595"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "pure-latest",
+      "block": "pure-latest:p0006",
+      "quote": "831,072",
+      "tabular": true,
+      "unit_block": "pure-latest:p0006",
+      "unit_quote": "(in thousands, except per share data, unaudited) Third Quarter of Fiscal First Three Quarters of Fiscal 2025 2024 2025 2024 Revenue: Product $ 454,735"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "pure-prior",
+      "block": "pure-prior:p0006",
+      "quote": "763,771",
+      "tabular": true,
+      "unit_block": "pure-prior:p0006",
+      "unit_quote": "(in thousands, except per share data, unaudited) Second Quarter of Fiscal First Two Quarters of Fiscal 2025 2024 2025 2024 Revenue: Product $ 402,595"
+    }
+  ],
+  "reason": "兩份公告的指引表均在金額欄內標示幣別與單位。合併損益表以千美元列示第二季及第三季的單季總營收。第一季營收僅能由累計數推算，公告未單列，故省略。"
+}

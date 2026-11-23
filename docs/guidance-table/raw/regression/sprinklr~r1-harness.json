@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "sprinklr-latest",
+      "block": "sprinklr-latest:p0002",
+      "quote": "between $793.9 million and $794.9 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior",
+      "document": "sprinklr-prior",
+      "block": "sprinklr-prior:p0002",
+      "quote": "between $785 million and $787 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_interim",
+      "document": "sprinklr-prior",
+      "block": "sprinklr-prior:p0002",
+      "quote": "between $196 million and $197 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "sprinklr-prior",
+      "block": "sprinklr-prior:p0006",
+      "quote": "197,208",
+      "tabular": true,
+      "unit_block": "sprinklr-prior:p0006",
+      "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended July 31, Six Months Ended July 31, 2024 2023 2024 2023 Revenue: Subscription $ 177,859"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "sprinklr-latest",
+      "block": "sprinklr-latest:p0006",
+      "quote": "200,689",
+      "tabular": true,
+      "unit_block": "sprinklr-latest:p0006",
+      "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended October Nine Months Ended October 31, 31, 2024 2023 2024 2023 Revenue: Subscription $ 180,634"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "sprinklr-prior",
+      "block": "sprinklr-prior:p0006",
+      "quote": "197,208",
+      "tabular": true,
+      "unit_block": "sprinklr-prior:p0006",
+      "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended July 31, Six Months Ended July 31, 2024 2023 2024 2023 Revenue: Subscription $ 177,859"
+    }
+  ],
+  "reason": "指引採用公告所列的總營收區間。第二季單季總營收為 197,208 千美元，兩次發布指引時均已公布；第三季的 200,689 千美元在最新公告才公布。兩份公告均未直接列出第一季單季總營收，因此省略該季。"
+}

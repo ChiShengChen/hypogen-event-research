@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "docn-latest",
+      "block": "docn-latest:p0002",
+      "quote": "$775 to $777 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior",
+      "document": "docn-prior",
+      "block": "docn-prior:p0005",
+      "quote": "$770 to $775 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_interim",
+      "document": "docn-prior",
+      "block": "docn-prior:p0005",
+      "quote": "$196 to $197 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "docn-prior",
+      "block": "docn-prior:p0010",
+      "quote": "$ 192,476",
+      "tabular": true,
+      "unit_block": "docn-prior:p0010",
+      "unit_quote": "(in thousands, except per share amounts)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "docn-latest",
+      "block": "docn-latest:p0007",
+      "quote": "$ 198,484",
+      "tabular": true,
+      "unit_block": "docn-latest:p0007",
+      "unit_quote": "(in thousands, except per share amounts)"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "docn-prior",
+      "block": "docn-prior:p0010",
+      "quote": "$ 192,476",
+      "tabular": true,
+      "unit_block": "docn-prior:p0010",
+      "unit_quote": "(in thousands, except per share amounts)"
+    }
+  ],
+  "reason": "11 月公告調高了 2024 全年營收指引；8 月公告列有前次全年指引及第三季指引。依合併損益表的單季欄位，8 月時可引用第二季實績，11 月時可引用第二季及第三季實績。兩份公告均未單列第一季營收，故省略該季。"
+}

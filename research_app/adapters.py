@@ -10,6 +10,7 @@ from pydantic import ValidationError
 from .business_linkage import (
     BusinessLinkageGeneration, LinkedAnswer, LinkedHypotheses, RankedBusinessLinkageGeneration, linkage_fields,
 )
+from .scenario_research import ScenarioHypotheses, ScenarioResearchGeneration, scenario_fields
 from .schema import Answer, DetailedAnswer, DriverDraft, Hypotheses
 
 EARNINGS_DRIVER_VERSION = 4
@@ -242,6 +243,8 @@ class ModelAdapter:
             "disclosed_calculations": context.get("disclosed_calculations", []),
             "question": question,
         }
+        if getattr(self, "supports_stance_cases", False):
+            payload["stored_research"].update(scenario_fields(context))
         if context.get("earnings"):
             payload["earnings_revision"] = context["earnings"]
         instruction = (
@@ -261,6 +264,12 @@ class ModelAdapter:
             "Distinguish confirmed event attribution from general supplier or customer relationships. "
             "Use exact evidence IDs, and list only unresolved gaps directly needed by the question."
         )
+        if getattr(self, "supports_stance_cases", False):
+            instruction += (
+                " For questions about stances, use the stored conditional cases, financial directions, "
+                " published evidence, activation conditions and falsifiers. Identify any evidence gap from the "
+                " selected case and distinguish the research scenario from realized results."
+            )
         response_schema = DetailedAnswer
         if getattr(self, "supports_business_linkages", False):
             response_schema = getattr(self, "answer_schema", LinkedAnswer)
@@ -330,7 +339,7 @@ class Live(ModelAdapter):
                         {"role": "user", "content": json.dumps(data, ensure_ascii=False)},
                     ],
                 },
-                timeout=180 if schema in (LinkedHypotheses, LinkedAnswer) else 30,
+                timeout=180 if schema in (LinkedHypotheses, LinkedAnswer, ScenarioHypotheses) else 30,
             )
             response.raise_for_status()
             return schema.model_validate_json(response.json()["choices"][0]["message"]["content"])
@@ -376,7 +385,7 @@ class Codex(ModelAdapter):
             + json.dumps(data, ensure_ascii=False)
         )
         timeout = self.call_timeout or (120 if search else 90)
-        if self.call_timeout is None and schema in (LinkedHypotheses, LinkedAnswer):
+        if self.call_timeout is None and schema in (LinkedHypotheses, LinkedAnswer, ScenarioHypotheses):
             timeout = 180
         try:
             with TemporaryDirectory(prefix="research-codex-") as directory:
@@ -455,6 +464,14 @@ class RankedCodex(RankedBusinessLinkageGeneration, Codex):
     pass
 
 
+class ScenarioLive(ScenarioResearchGeneration, Live):
+    pass
+
+
+class ScenarioCodex(ScenarioResearchGeneration, Codex):
+    pass
+
+
 class LinkedFixture(Fixture):
     identity = {**Fixture.identity, "prompt_version": BusinessLinkageGeneration.prompt_version}
 
@@ -468,7 +485,7 @@ def configured_adapter():
     if mode == "fixture":
         return LinkedFixture()
     if mode == "live":
-        return RankedLive()
+        return ScenarioLive()
     if mode == "codex":
-        return RankedCodex()
+        return ScenarioCodex()
     raise ValueError("RESEARCH_MODE must be fixture, live, or codex")

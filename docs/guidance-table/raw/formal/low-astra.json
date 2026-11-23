@@ -1,0 +1,53 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "unknown"},
+    {"item": "implied_remainder_change", "value": "unknown"},
+    {"item": "implied_remainder", "value": "unknown"}
+  ],
+  "evidence_ids": [
+    "low-prior:p0002",
+    "low-prior:p0004",
+    "low-latest:p0002",
+    "low-latest:p0004"
+  ],
+  "reason": "以百萬美元計，8 月全年營收指引中點扣除上半年實績為 82950 − 44950 = 38000，涵蓋第三、四季合計。11 月指引中點扣除前九個月實績為 83250 − 65120 = 18130，即最新隱含的第四季營收。因無法從 8 月公告單獨算出第四季營收，變動金額與方向均無法判定。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "low-prior",
+      "block": "low-prior:p0002",
+      "quote": "Total sales of $82.7 to $83.2 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "low-prior",
+      "block": "low-prior:p0004",
+      "quote": "$ 44,950",
+      "tabular": true,
+      "unit_block": "low-prior:p0004",
+      "unit_quote": "In Millions, Except Per Share and Percentage Data Three Months Ended Six Months Ended August 2, 2024 August 4, 2023 August 2, 2024 August 4, 2023 Current Earnings Amount % Sales Amount % Sales Amount % Sales Amount % Sales Net sales $"
+    },
+    {
+      "name": "new",
+      "document": "low-latest",
+      "block": "low-latest:p0002",
+      "quote": "Total sales of $83.0 to $83.5 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "low-latest",
+      "block": "low-latest:p0004",
+      "quote": "$ 65,120",
+      "tabular": true,
+      "unit_block": "low-latest:p0004",
+      "unit_quote": "In Millions, Except Per Share and Percentage Data Three Months Ended Nine Months Ended November 1, 2024 November 3, 2023 November 1, 2024 November 3, 2023 Current Earnings Amount % Sales Amount % Sales Amount % Sales Amount % Sales Net sales $"
+    }
+  ],
+  "missing_reason": "8 月公告未提供當時的 2024 財年第三季營收指引，無法從下半年合計金額中扣除第三季預估營收。"
+}

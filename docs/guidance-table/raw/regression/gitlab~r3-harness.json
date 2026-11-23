@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "gitlab-latest",
+      "block": "gitlab-latest:p0003",
+      "quote": "$753 - $754",
+      "tabular": true,
+      "unit_block": "gitlab-latest:p0002",
+      "unit_quote": "( in millions, except share and per share data)"
+    },
+    {
+      "name": "prior",
+      "document": "gitlab-prior",
+      "block": "gitlab-prior:p0003",
+      "quote": "$742.0 - $744.0",
+      "tabular": true,
+      "unit_block": "gitlab-prior:p0002",
+      "unit_quote": "(in millions, except share and per share data)"
+    },
+    {
+      "name": "prior_interim",
+      "document": "gitlab-prior",
+      "block": "gitlab-prior:p0003",
+      "quote": "$187.0 - $188.0",
+      "tabular": true,
+      "unit_block": "gitlab-prior:p0002",
+      "unit_quote": "(in millions, except share and per share data)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "gitlab-prior",
+      "block": "gitlab-prior:p0007",
+      "quote": "182,584",
+      "tabular": true,
+      "unit_block": "gitlab-prior:p0007",
+      "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended July 31, Six Months Ended July 31, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $ 163,181"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "gitlab-latest",
+      "block": "gitlab-latest:p0007",
+      "quote": "196,047",
+      "tabular": true,
+      "unit_block": "gitlab-latest:p0007",
+      "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended Nine Months Ended October 31, October 31, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $ 175,257"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "gitlab-prior",
+      "block": "gitlab-prior:p0007",
+      "quote": "182,584",
+      "tabular": true,
+      "unit_block": "gitlab-prior:p0007",
+      "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended July 31, Six Months Ended July 31, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $ 163,181"
+    }
+  ],
+  "reason": "全年及第三季營收指引均引用展望表的原始區間，單位為百萬美元。第二季與第三季實績取自合併損益表的單季總營收，單位為千美元。兩份公告均未單列第一季總營收，因此略去。"
+}

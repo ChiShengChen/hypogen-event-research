@@ -1,0 +1,52 @@
+{
+  "sealed_at": "2026-11-23T14:19:34.731371+00:00",
+  "hypothesis": "跨頁欄位對齊與合併營收組成核對可多答對正例並維持零誤調。",
+  "model": "gpt-6.2-astra",
+  "effort": "medium",
+  "search": false,
+  "timeout_seconds": 180,
+  "single_worker": true,
+  "one_attempt_per_arm": true,
+  "source_sha256": {
+    "benchmarks/guidance_arithmetic.py": "ec3463791b7bc018c831452d1e23c07817b2bd6e98bc952bbf264300406ddab1",
+    "benchmarks/guidance_ytd.py": "61adc7d6a47bc48529056951dda10c07bf38d1da460f55bfd3d58d4ddf12a11d",
+    "benchmarks/guidance_ytd_run.py": "f8665792b554302bb3493af181a1a6fd5f72e313b0f1047c6347f9522d2b4c4a",
+    "research_app/guidance_arithmetic.py": "554af69edec311b28a286f7264c12893e803c9259133d70600f6aec7eece7982",
+    "research_app/financial_units.py": "59983e5833b4413e5938d0e2e0f05abad939554a4ebb42f7392e4bf17bdd5539"
+  },
+  "cases_sha256": "b2a0517c66daac8da8a05404c65c6cb852c096378a6d2212aff5818aaabfe6c5",
+  "requests_sha256": "598af4063c9460d14888a4e139f3419ba9bdd6fa2ddeb6d5763c28a09ee8fb20",
+  "primary": "新舊隱含金額、差額、方向及來源欄位或證據不足理由須同時正確。時間及幣別錯不可得分。",
+  "tolerance": "金額採既有 1% 或封存精度 1/100 的較大者。方向完全一致。Astra 逐欄給引用。",
+  "citation": "正例須支持五項可見的金額基礎，核對封存原文字面與可接受欄位。負例須明確 unknown、提出本案缺少的條件並指向點時公告。",
+  "pilot_gate": {
+    "complete": 4,
+    "new_exact_min": 3,
+    "new_positive_min": 1,
+    "false_adjustments_max": 0
+  },
+  "holdout_gate": {
+    "complete": 8,
+    "new_positive_min": 3,
+    "new_negative_min": 3,
+    "false_adjustments_max": 0
+  },
+  "improvement": "通過保留集基本門檻、正例比現版多至少一案且負例不退步。",
+  "lead": "通過保留集基本門檻、全對數比純 Astra 多至少兩案。",
+  "stop": "先導未過立即停止，保留失敗回傳並輸出未開始的保留集。先導通過後跑完八個保留集即停止。同一次擷取並行經兩版驗證器，純 Astra 獨立回覆。服務容量或限流時停止派發，已開始者計入預算。",
+  "source_ledger_sha256": "932fc26e8d811e875103321b0d56912d97a75510d2eca2b62865d4ddf3479477",
+  "baseline": "98e9139",
+  "implementation_sha256": {
+    "benchmarks/guidance_table_run.py": "a245a3ea6d5e073e18fbf190adb97a3aea103b595f2d36d0f7b800381d4b08fc",
+    "benchmarks/guidance_tables.py": "b14090d15ad3010d7a0b4550f31b5ffa3963f676b319107e2b96ee63156bf09f",
+    "benchmarks/guidance_ytd_run.py": "f8665792b554302bb3493af181a1a6fd5f72e313b0f1047c6347f9522d2b4c4a",
+    "benchmarks/guidance_table_cases.py": "cad5013d9654343f1557c3f01d25fe3b2cad430afcc2ef306391de5e7b22f09a"
+  },
+  "citation_equivalence": "同來源相同時點的原文頁、核可金額與對應欄。跨頁同時列出表頭、倍率及數值頁。金額的可接受字面形式逐欄封存。負例須附公告與具體缺項。",
+  "separate_metrics": [
+    "numeric_exact",
+    "numeric_with_bad_citation",
+    "false_abstentions",
+    "false_adjustments"
+  ]
+}

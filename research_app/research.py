@@ -5,6 +5,7 @@ from decimal import Decimal, ROUND_CEILING, ROUND_FLOOR, ROUND_HALF_UP, localcon
 from .adapters import AdapterError
 from .business_linkage import LinkedHypotheses, validate_linkages
 from .earnings import complete_plan, render_earnings, validate_plan
+from .scenario_research import ScenarioHypotheses, scenario_lines, verify_stance_cases
 from .schema import CompanyExposure, TradeOpportunity
 
 FORMULA_VERSION = 2
@@ -326,6 +327,8 @@ def build_report(event, adapter, inputs=None, *, discovery=None):
         report["business_linkages"], report["business_linkage_gap"] = validate_linkages(
             generated, report, evidence, company_key,
         )
+    if isinstance(generated, ScenarioHypotheses):
+        report["stance_cases"] = verify_stance_cases(generated, report, context["evidence"], company_key)
     report["adapter"] = adapter.identity
     report["report_version"] = REPORT_VERSION
     if discovery is not None:
@@ -497,6 +500,7 @@ def render(report):
             f"- 可驗證預測　{h['prediction']}", f"- 推翻條件　{h['invalidation']}",
             f"- 依據　{refs}", "",
         ])
+    lines.extend(scenario_lines(report, cite))
     if "business_linkages" in report:
         lines.extend(["## 連動業務假說", ""])
         for path in report["business_linkages"]:

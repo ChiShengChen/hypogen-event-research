@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "mndy-latest",
+      "block": "mndy-latest:p0002",
+      "quote": "$964 million to $966 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior",
+      "document": "mndy-prior",
+      "block": "mndy-prior:p0006",
+      "quote": "$956 million to $961 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_interim",
+      "document": "mndy-prior",
+      "block": "mndy-prior:p0005",
+      "quote": "$243 million to $247 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "mndy-prior",
+      "block": "mndy-prior:p0005",
+      "quote": "Second quarter revenue of $236.1 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "mndy-latest",
+      "block": "mndy-latest:p0001",
+      "quote": "Third quarter revenue of $251.0 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "mndy-prior",
+      "block": "mndy-prior:p0005",
+      "quote": "Second quarter revenue of $236.1 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    }
+  ],
+  "reason": "8 月公告列出全年及第三季營收指引，11 月公告更新全年指引。第二季實績在兩次發布時均已公布，第三季實績於 11 月公布。兩份公告均未單獨列出第一季營收，故省略該季。"
+}

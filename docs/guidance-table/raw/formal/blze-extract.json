@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "blze-latest",
+      "block": "blze-latest:p0002",
+      "quote": "between $127.0 million to $128.0 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior",
+      "document": "blze-prior",
+      "block": "blze-prior:p0002",
+      "quote": "between $126.5 million to $128.5 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_interim",
+      "document": "blze-prior",
+      "block": "blze-prior:p0002",
+      "quote": "between $32.4 million to $32.8 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "blze-prior",
+      "block": "blze-prior:p0004",
+      "quote": "$ 31,285",
+      "tabular": true,
+      "unit_block": "blze-prior:p0004",
+      "unit_quote": "(in thousands, except share and per share data)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "blze-latest",
+      "block": "blze-latest:p0006",
+      "quote": "$ 32,589",
+      "tabular": true,
+      "unit_block": "blze-latest:p0005",
+      "unit_quote": "(in thousands, except share and per share data)"
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "blze-prior",
+      "block": "blze-prior:p0004",
+      "quote": "$ 31,285",
+      "tabular": true,
+      "unit_block": "blze-prior:p0004",
+      "unit_quote": "(in thousands, except share and per share data)"
+    }
+  ],
+  "reason": "兩份公告均直接列出全年營收指引，前次公告也列出第三季指引。第二季合併營收在兩次指引發布時均已公布，第三季實績則於最新公告公布。所附公告未單列第一季營收，故省略該季。"
+}

@@ -1,0 +1,37 @@
+﻿case,split,arm,status,exact,numeric_exact,false_adjustment,false_abstention,citation_failures,failure_dimensions
+frsh,pilot,current,scored,False,False,False,True,prior_reported_in_period 引文不足／reported_in_period 引文不足,引文不足
+frsh,pilot,revised,scored,True,True,False,False,,
+frsh,pilot,astra,scored,True,True,False,False,,
+crm,pilot,current,scored,True,True,False,False,,
+crm,pilot,revised,scored,False,False,False,True,prior_reported_in_period 引文不足／reported_in_period 引文不足,單位、單位錯、引文不足
+crm,pilot,astra,scored,False,True,False,False,prior_reported_in_period 引文不足／reported_in_period 引文不足,引文不足
+low,pilot,current,scored,True,True,False,False,,
+low,pilot,revised,scored,True,True,False,False,,
+low,pilot,astra,scored,True,True,False,False,,
+mdt,pilot,current,scored,True,True,False,False,,
+mdt,pilot,revised,scored,True,True,False,False,,
+mdt,pilot,astra,scored,True,True,False,False,,
+blze,holdout,current,scored,False,False,False,True,reported_in_period 引文不足,單位、單位錯、引文不足
+blze,holdout,revised,scored,True,True,False,False,,
+blze,holdout,astra,scored,True,True,False,False,,
+docn,holdout,current,scored,True,True,False,False,,
+docn,holdout,revised,scored,True,True,False,False,,
+docn,holdout,astra,scored,True,True,False,False,,
+net,holdout,current,scored,True,True,False,False,,
+net,holdout,revised,scored,True,True,False,False,,
+net,holdout,astra,scored,True,True,False,False,,
+okta,holdout,current,scored,False,False,False,True,prior_reported_in_period 引文不足／reported_in_period 引文不足,單位、單位錯、引文不足
+okta,holdout,revised,scored,True,True,False,False,,
+okta,holdout,astra,scored,False,True,False,False,prior_reported_in_period 引文不足／reported_in_period 引文不足,引文不足
+path,holdout,current,scored,True,True,False,False,,
+path,holdout,revised,scored,True,True,False,False,,
+path,holdout,astra,scored,False,False,True,False,,營收口徑
+wmt,holdout,current,scored,True,True,False,False,,
+wmt,holdout,revised,scored,True,True,False,False,,
+wmt,holdout,astra,scored,False,False,True,False,missing_reason 引文不足,引文不足、營收口徑
+cdw,holdout,current,scored,True,True,False,False,,
+cdw,holdout,revised,scored,True,True,False,False,,
+cdw,holdout,astra,scored,True,True,False,False,,
+snow,holdout,current,scored,True,True,False,False,,
+snow,holdout,revised,scored,True,True,False,False,,
+snow,holdout,astra,scored,False,False,True,False,,營收口徑

@@ -1,0 +1,53 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "unknown"},
+    {"item": "implied_remainder_change", "value": "unknown"},
+    {"item": "implied_remainder", "value": "unknown"}
+  ],
+  "evidence_ids": [
+    "mdt-prior:p0001",
+    "mdt-prior:p0003",
+    "mdt-latest:p0001",
+    "mdt-latest:p0003"
+  ],
+  "reason": "計入其他營收與匯率影響後，前次與最新的全年營收成長率中點分別為（3.4%＋3.9%）÷2＝3.65% 及（3.4%＋3.8%）÷2＝3.60%。前次公告時僅有前六個月實績，即使知道全年營收金額，扣除該實績也只能得到第三、四季合計。最新公告提供的第三季實績在前次公告時尚未知，因此無法判定第四季隱含營收的前次金額、變動額或方向。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "mdt-prior",
+      "block": "mdt-prior:p0001",
+      "quote": "FY25 revenue growth on an adjusted basis would be in the range of 3.4% to 3.9%.",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "mdt-prior",
+      "block": "mdt-prior:p0003",
+      "quote": "$ 16,318",
+      "tabular": true,
+      "unit_block": "mdt-prior:p0003",
+      "unit_quote": "(in millions, except per share data) October 25, 2024 October 27, 2023 October 25, 2024 October 27, 2023 Net sales $"
+    },
+    {
+      "name": "new",
+      "document": "mdt-latest",
+      "block": "mdt-latest:p0001",
+      "quote": "FY25 revenue growth would be in the range of 3.4% to 3.8%.",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "mdt-latest",
+      "block": "mdt-latest:p0003",
+      "quote": "$ 24,610",
+      "tabular": true,
+      "unit_block": "mdt-latest:p0003",
+      "unit_quote": "(in millions, except per share data) 2025 2024 2025 2024 Net sales $"
+    }
+  ],
+  "missing_reason": "兩份公告均缺少 FY25 全年合併營收的美元指引金額，亦缺少將成長率換算為金額所需的同口徑 FY24 全年營收基數。前次公告另缺少 FY25 第三季合併營收指引，無法從當時的下半年預期中單獨推算第四季。"
+}

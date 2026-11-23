@@ -1,0 +1,63 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "198794000"},
+    {"item": "implied_remainder_new", "value": "200310000"},
+    {"item": "implied_remainder_change", "value": "1516000"},
+    {"item": "implied_remainder", "value": "raised"}
+  ],
+  "evidence_ids": [
+    "docn-prior:p0005",
+    "docn-prior:p0010",
+    "docn-latest:p0002",
+    "docn-latest:p0007"
+  ],
+  "reason": "以美元計，前次全年營收指引中點扣除上半年實績及當時的第三季指引中點，得出第四季隱含營收 772500000 − 377206000 − 196500000 = 198794000。最新全年指引中點扣除前九個月實績，得出 776000000 − 575690000 = 200310000，較前次上調 1516000 美元。",
+  "figures_used": [
+    {
+      "name": "prior",
+      "document": "docn-prior",
+      "block": "docn-prior:p0005",
+      "quote": "Total revenue of $770 to $775 million.",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "docn-prior",
+      "block": "docn-prior:p0010",
+      "quote": "$ 377,206",
+      "tabular": true,
+      "unit_block": "docn-prior:p0010",
+      "unit_quote": "(in thousands, except per share amounts) (unaudited) Three Months Ended Six Months Ended June 30, June 30, 2024 2023 2024 2023 Revenue $"
+    },
+    {
+      "name": "prior_interim",
+      "document": "docn-prior",
+      "block": "docn-prior:p0005",
+      "quote": "Total revenue of $196 to $197 million.",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "new",
+      "document": "docn-latest",
+      "block": "docn-latest:p0002",
+      "quote": "Increasing total revenue guidance of $775 to $777 million.",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "docn-latest",
+      "block": "docn-latest:p0007",
+      "quote": "$ 575,690",
+      "tabular": true,
+      "unit_block": "docn-latest:p0007",
+      "unit_quote": "(in thousands, except per share amounts) (unaudited) Three Months Ended Nine Months Ended September 30, September 30, 2024 2023 2024 2023 Revenue $"
+    }
+  ],
+  "missing_reason": null
+}

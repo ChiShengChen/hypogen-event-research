@@ -1,0 +1,1108 @@
+[
+  {
+    "case": "frsh",
+    "operand": "reported_in_period",
+    "document": "frsh-latest",
+    "published_at": "2024-11-06T23:59:59-05:00",
+    "report_end": "2024-09-30",
+    "fiscal_year": 2024,
+    "quarters": [
+      1,
+      2,
+      3
+    ],
+    "header": "  Nine Months Ended September 30, 2024          2023",
+    "table": {
+      "block": "frsh-latest:p0008",
+      "line": 2,
+      "quote": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+      "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/11/freshworks_third_quarter_2024_earnings_release.pdf#page=8"
+    },
+    "heading_sources": [
+      {
+        "block": "frsh-latest:p0008",
+        "line": 3,
+        "quote": "(in thousands, except per share data)",
+        "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/11/freshworks_third_quarter_2024_earnings_release.pdf#page=8"
+      },
+      {
+        "block": "frsh-latest:p0008",
+        "line": 4,
+        "quote": "(unaudited)",
+        "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/11/freshworks_third_quarter_2024_earnings_release.pdf#page=8"
+      },
+      {
+        "block": "frsh-latest:p0008",
+        "line": 5,
+        "quote": "Three Months Ended         Nine Months Ended",
+        "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/11/freshworks_third_quarter_2024_earnings_release.pdf#page=8"
+      },
+      {
+        "block": "frsh-latest:p0008",
+        "line": 6,
+        "quote": "September 30,             September 30,",
+        "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/11/freshworks_third_quarter_2024_earnings_release.pdf#page=8"
+      },
+      {
+        "block": "frsh-latest:p0008",
+        "line": 7,
+        "quote": "2024          2023         2024          2023",
+        "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/11/freshworks_third_quarter_2024_earnings_release.pdf#page=8"
+      }
+    ],
+    "unit_sources": [
+      {
+        "block": "frsh-latest:p0008",
+        "line": 3,
+        "quote": "(in thousands, except per share data)",
+        "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/11/freshworks_third_quarter_2024_earnings_release.pdf#page=8"
+      }
+    ],
+    "currency_source": {
+      "block": "frsh-latest:p0008",
+      "line": 8,
+      "quote": "Revenue............................................................................ $   186,575 $     153,550 $    525,849 $     436,321",
+      "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/11/freshworks_third_quarter_2024_earnings_release.pdf#page=8"
+    },
+    "row": {
+      "block": "frsh-latest:p0008",
+      "line": 8,
+      "quote": "Revenue............................................................................ $   186,575 $     153,550 $    525,849 $     436,321",
+      "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/11/freshworks_third_quarter_2024_earnings_release.pdf#page=8"
+    },
+    "column": 3,
+    "value": "525849000",
+    "raw": "525,849",
+    "multiplier": 1000,
+    "component_rows": []
+  },
+  {
+    "case": "frsh",
+    "operand": "prior_reported_in_period",
+    "document": "frsh-prior",
+    "published_at": "2024-07-30T23:59:59-04:00",
+    "report_end": "2024-06-30",
+    "fiscal_year": 2024,
+    "quarters": [
+      1,
+      2
+    ],
+    "header": "  Six Months Ended June 30, 2024          2023",
+    "table": {
+      "block": "frsh-prior:p0008",
+      "line": 2,
+      "quote": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+      "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/07/Q2-24-Quarterly-Earnings-Release.pdf#page=8"
+    },
+    "heading_sources": [
+      {
+        "block": "frsh-prior:p0008",
+        "line": 3,
+        "quote": "(in thousands, except per share data)",
+        "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/07/Q2-24-Quarterly-Earnings-Release.pdf#page=8"
+      },
+      {
+        "block": "frsh-prior:p0008",
+        "line": 4,
+        "quote": "(unaudited)",
+        "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/07/Q2-24-Quarterly-Earnings-Release.pdf#page=8"
+      },
+      {
+        "block": "frsh-prior:p0008",
+        "line": 5,
+        "quote": "Three Months Ended          Six Months Ended",
+        "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/07/Q2-24-Quarterly-Earnings-Release.pdf#page=8"
+      },
+      {
+        "block": "frsh-prior:p0008",
+        "line": 6,
+        "quote": "June 30,                   June 30,",
+        "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/07/Q2-24-Quarterly-Earnings-Release.pdf#page=8"
+      },
+      {
+        "block": "frsh-prior:p0008",
+        "line": 7,
+        "quote": "2024          2023         2024          2023",
+        "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/07/Q2-24-Quarterly-Earnings-Release.pdf#page=8"
+      }
+    ],
+    "unit_sources": [
+      {
+        "block": "frsh-prior:p0008",
+        "line": 3,
+        "quote": "(in thousands, except per share data)",
+        "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/07/Q2-24-Quarterly-Earnings-Release.pdf#page=8"
+      }
+    ],
+    "currency_source": {
+      "block": "frsh-prior:p0008",
+      "line": 8,
+      "quote": "Revenue .............................................................................$    174,131 $     145,079 $    339,274 $     282,771",
+      "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/07/Q2-24-Quarterly-Earnings-Release.pdf#page=8"
+    },
+    "row": {
+      "block": "frsh-prior:p0008",
+      "line": 8,
+      "quote": "Revenue .............................................................................$    174,131 $     145,079 $    339,274 $     282,771",
+      "url": "https://s21.q4cdn.com/987526491/files/doc_events/2024/07/Q2-24-Quarterly-Earnings-Release.pdf#page=8"
+    },
+    "column": 3,
+    "value": "339274000",
+    "raw": "339,274",
+    "multiplier": 1000,
+    "component_rows": []
+  },
+  {
+    "case": "mdt",
+    "operand": "reported_in_period",
+    "document": "mdt-latest",
+    "published_at": "2025-02-18T23:59:59-05:00",
+    "report_end": "2025-01-24",
+    "fiscal_year": 2025,
+    "quarters": [
+      1,
+      2,
+      3
+    ],
+    "header": " Nine months ended January 24,              January 26, 2025                     2024",
+    "table": {
+      "block": "mdt-latest:p0003",
+      "line": 37,
+      "quote": "CONSOLIDATED STATEMENTS OF INCOME",
+      "url": "https://news.medtronic.com/2025-02-18-Medtronic-reports-third-quarter-fiscal-2025-financial-results?asPDF=1#page=3"
+    },
+    "heading_sources": [
+      {
+        "block": "mdt-latest:p0003",
+        "line": 38,
+        "quote": "(Unaudited)",
+        "url": "https://news.medtronic.com/2025-02-18-Medtronic-reports-third-quarter-fiscal-2025-financial-results?asPDF=1#page=3"
+      },
+      {
+        "block": "mdt-latest:p0003",
+        "line": 39,
+        "quote": "Three months ended                             Nine months ended",
+        "url": "https://news.medtronic.com/2025-02-18-Medtronic-reports-third-quarter-fiscal-2025-financial-results?asPDF=1#page=3"
+      },
+      {
+        "block": "mdt-latest:p0003",
+        "line": 40,
+        "quote": "January 24,           January 26,              January 24,              January 26,",
+        "url": "https://news.medtronic.com/2025-02-18-Medtronic-reports-third-quarter-fiscal-2025-financial-results?asPDF=1#page=3"
+      },
+      {
+        "block": "mdt-latest:p0003",
+        "line": 41,
+        "quote": "(in millions, except per share data)                                          2025                     2024                  2025                     2024",
+        "url": "https://news.medtronic.com/2025-02-18-Medtronic-reports-third-quarter-fiscal-2025-financial-results?asPDF=1#page=3"
+      }
+    ],
+    "unit_sources": [
+      {
+        "block": "mdt-latest:p0003",
+        "line": 41,
+        "quote": "(in millions, except per share data)                                          2025                     2024                  2025                     2024",
+        "url": "https://news.medtronic.com/2025-02-18-Medtronic-reports-third-quarter-fiscal-2025-financial-results?asPDF=1#page=3"
+      }
+    ],
+    "currency_source": {
+      "block": "mdt-latest:p0003",
+      "line": 42,
+      "quote": "Net sales                                                              $            8,292    $            8,089       $        24,610          $        23,775",
+      "url": "https://news.medtronic.com/2025-02-18-Medtronic-reports-third-quarter-fiscal-2025-financial-results?asPDF=1#page=3"
+    },
+    "row": {
+      "block": "mdt-latest:p0003",
+      "line": 42,
+      "quote": "Net sales                                                              $            8,292    $            8,089       $        24,610          $        23,775",
+      "url": "https://news.medtronic.com/2025-02-18-Medtronic-reports-third-quarter-fiscal-2025-financial-results?asPDF=1#page=3"
+    },
+    "column": 3,
+    "value": "24610000000",
+    "raw": "24,610",
+    "multiplier": 1000000,
+    "component_rows": []
+  },
+  {
+    "case": "blze",
+    "operand": "reported_in_period",
+    "document": "blze-latest",
+    "published_at": "2024-11-07T23:59:59-05:00",
+    "report_end": "2024-09-30",
+    "fiscal_year": 2024,
+    "quarters": [
+      1,
+      2,
+      3
+    ],
+    "header": " Nine Months Ended September 30, 2024        2023",
+    "table": {
+      "block": "blze-latest:p0005",
+      "line": 49,
+      "quote": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE LOSS",
+      "url": "https://s204.q4cdn.com/590551802/files/doc_financials/2025/q1/BLZE-Q3-2024-Earnings-Press-Release-1.pdf#page=5"
+    },
+    "heading_sources": [
+      {
+        "block": "blze-latest:p0005",
+        "line": 50,
+        "quote": "(in thousands, except share and per share data)",
+        "url": "https://s204.q4cdn.com/590551802/files/doc_financials/2025/q1/BLZE-Q3-2024-Earnings-Press-Release-1.pdf#page=5"
+      },
+      {
+        "block": "blze-latest:p0006",
+        "line": 1,
+        "quote": "Three Months Ended              Nine Months Ended",
+        "url": "https://s204.q4cdn.com/590551802/files/doc_financials/2025/q1/BLZE-Q3-2024-Earnings-Press-Release-1.pdf#page=6"
+      },
+      {
+        "block": "blze-latest:p0006",
+        "line": 2,
+        "quote": "September 30,                   September 30,",
+        "url": "https://s204.q4cdn.com/590551802/files/doc_financials/2025/q1/BLZE-Q3-2024-Earnings-Press-Release-1.pdf#page=6"
+      },
+      {
+        "block": "blze-latest:p0006",
+        "line": 3,
+        "quote": "2024         2023               2024        2023",
+        "url": "https://s204.q4cdn.com/590551802/files/doc_financials/2025/q1/BLZE-Q3-2024-Earnings-Press-Release-1.pdf#page=6"
+      }
+    ],
+    "unit_sources": [
+      {
+        "block": "blze-latest:p0005",
+        "line": 50,
+        "quote": "(in thousands, except share and per share data)",
+        "url": "https://s204.q4cdn.com/590551802/files/doc_financials/2025/q1/BLZE-Q3-2024-Earnings-Press-Release-1.pdf#page=5"
+      }
+    ],
+    "currency_source": {
+      "block": "blze-latest:p0006",
+      "line": 5,
+      "quote": "Revenue                                                     $      32,589 $        25,299 $      93,842 $          73,282",
+      "url": "https://s204.q4cdn.com/590551802/files/doc_financials/2025/q1/BLZE-Q3-2024-Earnings-Press-Release-1.pdf#page=6"
+    },
+    "row": {
+      "block": "blze-latest:p0006",
+      "line": 5,
+      "quote": "Revenue                                                     $      32,589 $        25,299 $      93,842 $          73,282",
+      "url": "https://s204.q4cdn.com/590551802/files/doc_financials/2025/q1/BLZE-Q3-2024-Earnings-Press-Release-1.pdf#page=6"
+    },
+    "column": 3,
+    "value": "93842000",
+    "raw": "93,842",
+    "multiplier": 1000,
+    "component_rows": []
+  },
+  {
+    "case": "blze",
+    "operand": "prior_reported_in_period",
+    "document": "blze-prior",
+    "published_at": "2024-08-08T23:59:59-04:00",
+    "report_end": "2024-06-30",
+    "fiscal_year": 2024,
+    "quarters": [
+      1,
+      2
+    ],
+    "header": " Six Months Ended June 30, 2024                2023",
+    "table": {
+      "block": "blze-prior:p0004",
+      "line": 42,
+      "quote": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+      "url": "https://s204.q4cdn.com/590551802/files/doc_news/2024/08/Backblaze-Announces-Second-Quarter-2024-Financial-Results.pdf#page=4"
+    },
+    "heading_sources": [
+      {
+        "block": "blze-prior:p0004",
+        "line": 43,
+        "quote": "(in thousands, except share and per share data)",
+        "url": "https://s204.q4cdn.com/590551802/files/doc_news/2024/08/Backblaze-Announces-Second-Quarter-2024-Financial-Results.pdf#page=4"
+      },
+      {
+        "block": "blze-prior:p0004",
+        "line": 44,
+        "quote": "Three Months Ended June 30,                Six Months Ended June 30,",
+        "url": "https://s204.q4cdn.com/590551802/files/doc_news/2024/08/Backblaze-Announces-Second-Quarter-2024-Financial-Results.pdf#page=4"
+      },
+      {
+        "block": "blze-prior:p0004",
+        "line": 45,
+        "quote": "2024                  2023                 2024                2023",
+        "url": "https://s204.q4cdn.com/590551802/files/doc_news/2024/08/Backblaze-Announces-Second-Quarter-2024-Financial-Results.pdf#page=4"
+      }
+    ],
+    "unit_sources": [
+      {
+        "block": "blze-prior:p0004",
+        "line": 43,
+        "quote": "(in thousands, except share and per share data)",
+        "url": "https://s204.q4cdn.com/590551802/files/doc_news/2024/08/Backblaze-Announces-Second-Quarter-2024-Financial-Results.pdf#page=4"
+      }
+    ],
+    "currency_source": {
+      "block": "blze-prior:p0004",
+      "line": 47,
+      "quote": "Revenue                                                                    $         31,285    $          24,589     $            61,253    $       47,983",
+      "url": "https://s204.q4cdn.com/590551802/files/doc_news/2024/08/Backblaze-Announces-Second-Quarter-2024-Financial-Results.pdf#page=4"
+    },
+    "row": {
+      "block": "blze-prior:p0004",
+      "line": 47,
+      "quote": "Revenue                                                                    $         31,285    $          24,589     $            61,253    $       47,983",
+      "url": "https://s204.q4cdn.com/590551802/files/doc_news/2024/08/Backblaze-Announces-Second-Quarter-2024-Financial-Results.pdf#page=4"
+    },
+    "column": 3,
+    "value": "61253000",
+    "raw": "61,253",
+    "multiplier": 1000,
+    "component_rows": []
+  },
+  {
+    "case": "docn",
+    "operand": "reported_in_period",
+    "document": "docn-latest",
+    "published_at": "2024-11-04T23:59:59-05:00",
+    "report_end": "2024-09-30",
+    "fiscal_year": 2024,
+    "quarters": [
+      1,
+      2,
+      3
+    ],
+    "header": "  Nine Months Ended September 30, 2024            2023",
+    "table": {
+      "block": "docn-latest:p0007",
+      "line": 2,
+      "quote": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+      "url": "https://cdn.prod.nntech.io/company-events/reports/69e45bc4-e04d-32a0-a1b7-ee48f33dc56b/report.pdf#page=7"
+    },
+    "heading_sources": [
+      {
+        "block": "docn-latest:p0007",
+        "line": 3,
+        "quote": "(in thousands, except per share amounts)",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/69e45bc4-e04d-32a0-a1b7-ee48f33dc56b/report.pdf#page=7"
+      },
+      {
+        "block": "docn-latest:p0007",
+        "line": 4,
+        "quote": "(unaudited)",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/69e45bc4-e04d-32a0-a1b7-ee48f33dc56b/report.pdf#page=7"
+      },
+      {
+        "block": "docn-latest:p0007",
+        "line": 5,
+        "quote": "Three Months Ended                Nine Months Ended",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/69e45bc4-e04d-32a0-a1b7-ee48f33dc56b/report.pdf#page=7"
+      },
+      {
+        "block": "docn-latest:p0007",
+        "line": 6,
+        "quote": "September 30,                    September 30,",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/69e45bc4-e04d-32a0-a1b7-ee48f33dc56b/report.pdf#page=7"
+      },
+      {
+        "block": "docn-latest:p0007",
+        "line": 7,
+        "quote": "2024            2023             2024            2023",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/69e45bc4-e04d-32a0-a1b7-ee48f33dc56b/report.pdf#page=7"
+      }
+    ],
+    "unit_sources": [
+      {
+        "block": "docn-latest:p0007",
+        "line": 3,
+        "quote": "(in thousands, except per share amounts)",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/69e45bc4-e04d-32a0-a1b7-ee48f33dc56b/report.pdf#page=7"
+      }
+    ],
+    "currency_source": {
+      "block": "docn-latest:p0007",
+      "line": 8,
+      "quote": "Revenue                                                     $        198,484 $        177,062    $     575,690 $       512,010",
+      "url": "https://cdn.prod.nntech.io/company-events/reports/69e45bc4-e04d-32a0-a1b7-ee48f33dc56b/report.pdf#page=7"
+    },
+    "row": {
+      "block": "docn-latest:p0007",
+      "line": 8,
+      "quote": "Revenue                                                     $        198,484 $        177,062    $     575,690 $       512,010",
+      "url": "https://cdn.prod.nntech.io/company-events/reports/69e45bc4-e04d-32a0-a1b7-ee48f33dc56b/report.pdf#page=7"
+    },
+    "column": 3,
+    "value": "575690000",
+    "raw": "575,690",
+    "multiplier": 1000,
+    "component_rows": []
+  },
+  {
+    "case": "docn",
+    "operand": "prior_reported_in_period",
+    "document": "docn-prior",
+    "published_at": "2024-08-08T23:59:59-04:00",
+    "report_end": "2024-06-30",
+    "fiscal_year": 2024,
+    "quarters": [
+      1,
+      2
+    ],
+    "header": "  Six Months Ended June 30, 2024            2023",
+    "table": {
+      "block": "docn-prior:p0010",
+      "line": 2,
+      "quote": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001582961/082a1066-1be0-49b0-a692-e13e9e106cac.pdf#page=10"
+    },
+    "heading_sources": [
+      {
+        "block": "docn-prior:p0010",
+        "line": 3,
+        "quote": "(in thousands, except per share amounts)",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001582961/082a1066-1be0-49b0-a692-e13e9e106cac.pdf#page=10"
+      },
+      {
+        "block": "docn-prior:p0010",
+        "line": 4,
+        "quote": "(unaudited)",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001582961/082a1066-1be0-49b0-a692-e13e9e106cac.pdf#page=10"
+      },
+      {
+        "block": "docn-prior:p0010",
+        "line": 5,
+        "quote": "Three Months Ended                   Six Months Ended",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001582961/082a1066-1be0-49b0-a692-e13e9e106cac.pdf#page=10"
+      },
+      {
+        "block": "docn-prior:p0010",
+        "line": 6,
+        "quote": "June 30,                           June 30,",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001582961/082a1066-1be0-49b0-a692-e13e9e106cac.pdf#page=10"
+      },
+      {
+        "block": "docn-prior:p0010",
+        "line": 7,
+        "quote": "2024             2023               2024            2023",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001582961/082a1066-1be0-49b0-a692-e13e9e106cac.pdf#page=10"
+      }
+    ],
+    "unit_sources": [
+      {
+        "block": "docn-prior:p0010",
+        "line": 3,
+        "quote": "(in thousands, except per share amounts)",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001582961/082a1066-1be0-49b0-a692-e13e9e106cac.pdf#page=10"
+      }
+    ],
+    "currency_source": {
+      "block": "docn-prior:p0010",
+      "line": 8,
+      "quote": "Revenue                                                                  $         192,476 $        169,814      $     377,206 $        334,948",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001582961/082a1066-1be0-49b0-a692-e13e9e106cac.pdf#page=10"
+    },
+    "row": {
+      "block": "docn-prior:p0010",
+      "line": 8,
+      "quote": "Revenue                                                                  $         192,476 $        169,814      $     377,206 $        334,948",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001582961/082a1066-1be0-49b0-a692-e13e9e106cac.pdf#page=10"
+    },
+    "column": 3,
+    "value": "377206000",
+    "raw": "377,206",
+    "multiplier": 1000,
+    "component_rows": []
+  },
+  {
+    "case": "net",
+    "operand": "reported_in_period",
+    "document": "net-latest",
+    "published_at": "2024-11-07T23:59:59-05:00",
+    "report_end": "2024-09-30",
+    "fiscal_year": 2024,
+    "quarters": [
+      1,
+      2,
+      3
+    ],
+    "header": "  Nine Months Ended September 30, 2024              2023",
+    "table": {
+      "block": "net-latest:p0004",
+      "line": 2,
+      "quote": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+      "url": "https://cloudflare.net/files/doc_financials/2024/q3/Q3-24-Exhibit-99-1.pdf#page=4"
+    },
+    "heading_sources": [
+      {
+        "block": "net-latest:p0004",
+        "line": 3,
+        "quote": "(in thousands, except per share data)",
+        "url": "https://cloudflare.net/files/doc_financials/2024/q3/Q3-24-Exhibit-99-1.pdf#page=4"
+      },
+      {
+        "block": "net-latest:p0004",
+        "line": 4,
+        "quote": "(unaudited)",
+        "url": "https://cloudflare.net/files/doc_financials/2024/q3/Q3-24-Exhibit-99-1.pdf#page=4"
+      },
+      {
+        "block": "net-latest:p0004",
+        "line": 5,
+        "quote": "Three Months Ended                  Nine Months Ended",
+        "url": "https://cloudflare.net/files/doc_financials/2024/q3/Q3-24-Exhibit-99-1.pdf#page=4"
+      },
+      {
+        "block": "net-latest:p0004",
+        "line": 6,
+        "quote": "September 30,                      September 30,",
+        "url": "https://cloudflare.net/files/doc_financials/2024/q3/Q3-24-Exhibit-99-1.pdf#page=4"
+      },
+      {
+        "block": "net-latest:p0004",
+        "line": 7,
+        "quote": "2024              2023              2024              2023",
+        "url": "https://cloudflare.net/files/doc_financials/2024/q3/Q3-24-Exhibit-99-1.pdf#page=4"
+      }
+    ],
+    "unit_sources": [
+      {
+        "block": "net-latest:p0004",
+        "line": 3,
+        "quote": "(in thousands, except per share data)",
+        "url": "https://cloudflare.net/files/doc_financials/2024/q3/Q3-24-Exhibit-99-1.pdf#page=4"
+      }
+    ],
+    "currency_source": {
+      "block": "net-latest:p0004",
+      "line": 8,
+      "quote": "Revenue                                                               $    430,082      $    335,603      $   1,209,680     $    934,272",
+      "url": "https://cloudflare.net/files/doc_financials/2024/q3/Q3-24-Exhibit-99-1.pdf#page=4"
+    },
+    "row": {
+      "block": "net-latest:p0004",
+      "line": 8,
+      "quote": "Revenue                                                               $    430,082      $    335,603      $   1,209,680     $    934,272",
+      "url": "https://cloudflare.net/files/doc_financials/2024/q3/Q3-24-Exhibit-99-1.pdf#page=4"
+    },
+    "column": 3,
+    "value": "1209680000",
+    "raw": "1,209,680",
+    "multiplier": 1000,
+    "component_rows": []
+  },
+  {
+    "case": "net",
+    "operand": "prior_reported_in_period",
+    "document": "net-prior",
+    "published_at": "2024-08-01T23:59:59-04:00",
+    "report_end": "2024-06-30",
+    "fiscal_year": 2024,
+    "quarters": [
+      1,
+      2
+    ],
+    "header": "  Six Months Ended June 30, 2024              2023",
+    "table": {
+      "block": "net-prior:p0004",
+      "line": 2,
+      "quote": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+      "url": "https://www.cloudflare.net/files/doc_financials/2024/q2/Q2-24-Exhibit-99-1_final.pdf#page=4"
+    },
+    "heading_sources": [
+      {
+        "block": "net-prior:p0004",
+        "line": 3,
+        "quote": "(in thousands, except per share data)",
+        "url": "https://www.cloudflare.net/files/doc_financials/2024/q2/Q2-24-Exhibit-99-1_final.pdf#page=4"
+      },
+      {
+        "block": "net-prior:p0004",
+        "line": 4,
+        "quote": "(unaudited)",
+        "url": "https://www.cloudflare.net/files/doc_financials/2024/q2/Q2-24-Exhibit-99-1_final.pdf#page=4"
+      },
+      {
+        "block": "net-prior:p0004",
+        "line": 5,
+        "quote": "Three Months Ended                   Six Months Ended",
+        "url": "https://www.cloudflare.net/files/doc_financials/2024/q2/Q2-24-Exhibit-99-1_final.pdf#page=4"
+      },
+      {
+        "block": "net-prior:p0004",
+        "line": 6,
+        "quote": "June 30,                            June 30,",
+        "url": "https://www.cloudflare.net/files/doc_financials/2024/q2/Q2-24-Exhibit-99-1_final.pdf#page=4"
+      },
+      {
+        "block": "net-prior:p0004",
+        "line": 7,
+        "quote": "2024              2023              2024              2023",
+        "url": "https://www.cloudflare.net/files/doc_financials/2024/q2/Q2-24-Exhibit-99-1_final.pdf#page=4"
+      }
+    ],
+    "unit_sources": [
+      {
+        "block": "net-prior:p0004",
+        "line": 3,
+        "quote": "(in thousands, except per share data)",
+        "url": "https://www.cloudflare.net/files/doc_financials/2024/q2/Q2-24-Exhibit-99-1_final.pdf#page=4"
+      }
+    ],
+    "currency_source": {
+      "block": "net-prior:p0004",
+      "line": 8,
+      "quote": "Revenue                                                               $    400,996      $    308,494      $    779,598      $    598,669",
+      "url": "https://www.cloudflare.net/files/doc_financials/2024/q2/Q2-24-Exhibit-99-1_final.pdf#page=4"
+    },
+    "row": {
+      "block": "net-prior:p0004",
+      "line": 8,
+      "quote": "Revenue                                                               $    400,996      $    308,494      $    779,598      $    598,669",
+      "url": "https://www.cloudflare.net/files/doc_financials/2024/q2/Q2-24-Exhibit-99-1_final.pdf#page=4"
+    },
+    "column": 3,
+    "value": "779598000",
+    "raw": "779,598",
+    "multiplier": 1000,
+    "component_rows": []
+  },
+  {
+    "case": "okta",
+    "operand": "reported_in_period",
+    "document": "okta-latest",
+    "published_at": "2024-12-03T23:59:59-05:00",
+    "report_end": "2024-10-31",
+    "fiscal_year": 2025,
+    "quarters": [
+      1,
+      2,
+      3
+    ],
+    "header": "  Nine Months Ended October 31, 2024              2023",
+    "table": {
+      "block": "okta-latest:p0007",
+      "line": 2,
+      "quote": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+      "url": "https://cdn.prod.nntech.io/company-events/reports/a206ef16-5b5b-33e8-b4ba-a1b1aab065e0/report.pdf#page=7"
+    },
+    "heading_sources": [
+      {
+        "block": "okta-latest:p0007",
+        "line": 3,
+        "quote": "(dollars in millions, shares in thousands, except per share data)",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/a206ef16-5b5b-33e8-b4ba-a1b1aab065e0/report.pdf#page=7"
+      },
+      {
+        "block": "okta-latest:p0007",
+        "line": 4,
+        "quote": "(unaudited)",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/a206ef16-5b5b-33e8-b4ba-a1b1aab065e0/report.pdf#page=7"
+      },
+      {
+        "block": "okta-latest:p0007",
+        "line": 5,
+        "quote": "Three Months Ended                 Nine Months Ended",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/a206ef16-5b5b-33e8-b4ba-a1b1aab065e0/report.pdf#page=7"
+      },
+      {
+        "block": "okta-latest:p0007",
+        "line": 6,
+        "quote": "October 31,                        October 31,",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/a206ef16-5b5b-33e8-b4ba-a1b1aab065e0/report.pdf#page=7"
+      },
+      {
+        "block": "okta-latest:p0007",
+        "line": 7,
+        "quote": "2024             2023             2024              2023",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/a206ef16-5b5b-33e8-b4ba-a1b1aab065e0/report.pdf#page=7"
+      }
+    ],
+    "unit_sources": [
+      {
+        "block": "okta-latest:p0007",
+        "line": 3,
+        "quote": "(dollars in millions, shares in thousands, except per share data)",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/a206ef16-5b5b-33e8-b4ba-a1b1aab065e0/report.pdf#page=7"
+      }
+    ],
+    "currency_source": {
+      "block": "okta-latest:p0007",
+      "line": 9,
+      "quote": "Subscription                                                       $           651    $           569   $      1,886    $        1,614",
+      "url": "https://cdn.prod.nntech.io/company-events/reports/a206ef16-5b5b-33e8-b4ba-a1b1aab065e0/report.pdf#page=7"
+    },
+    "row": {
+      "block": "okta-latest:p0007",
+      "line": 11,
+      "quote": "Total revenue                                                                    665                584          1,928             1,658",
+      "url": "https://cdn.prod.nntech.io/company-events/reports/a206ef16-5b5b-33e8-b4ba-a1b1aab065e0/report.pdf#page=7"
+    },
+    "column": 3,
+    "value": "1928000000",
+    "raw": "1,928",
+    "multiplier": 1000000,
+    "component_rows": []
+  },
+  {
+    "case": "okta",
+    "operand": "prior_reported_in_period",
+    "document": "okta-prior",
+    "published_at": "2024-08-28T23:59:59-04:00",
+    "report_end": "2024-07-31",
+    "fiscal_year": 2025,
+    "quarters": [
+      1,
+      2
+    ],
+    "header": "  Six Months Ended July 31, 2024            2023",
+    "table": {
+      "block": "okta-prior:p0007",
+      "line": 2,
+      "quote": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS",
+      "url": "https://cdn.prod.nntech.io/company-events/reports/14d748af-eba3-3fa0-b662-8786dd9a178d/report.pdf#page=7"
+    },
+    "heading_sources": [
+      {
+        "block": "okta-prior:p0007",
+        "line": 3,
+        "quote": "(dollars in millions, shares in thousands, except per share data)",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/14d748af-eba3-3fa0-b662-8786dd9a178d/report.pdf#page=7"
+      },
+      {
+        "block": "okta-prior:p0007",
+        "line": 4,
+        "quote": "(unaudited)",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/14d748af-eba3-3fa0-b662-8786dd9a178d/report.pdf#page=7"
+      },
+      {
+        "block": "okta-prior:p0007",
+        "line": 5,
+        "quote": "Three Months Ended                  Six Months Ended",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/14d748af-eba3-3fa0-b662-8786dd9a178d/report.pdf#page=7"
+      },
+      {
+        "block": "okta-prior:p0007",
+        "line": 6,
+        "quote": "July 31,                           July 31,",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/14d748af-eba3-3fa0-b662-8786dd9a178d/report.pdf#page=7"
+      },
+      {
+        "block": "okta-prior:p0007",
+        "line": 7,
+        "quote": "2024            2023               2024            2023",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/14d748af-eba3-3fa0-b662-8786dd9a178d/report.pdf#page=7"
+      }
+    ],
+    "unit_sources": [
+      {
+        "block": "okta-prior:p0007",
+        "line": 3,
+        "quote": "(dollars in millions, shares in thousands, except per share data)",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/14d748af-eba3-3fa0-b662-8786dd9a178d/report.pdf#page=7"
+      }
+    ],
+    "currency_source": {
+      "block": "okta-prior:p0007",
+      "line": 9,
+      "quote": "Subscription                                                       $           632    $          542     $      1,235    $      1,045",
+      "url": "https://cdn.prod.nntech.io/company-events/reports/14d748af-eba3-3fa0-b662-8786dd9a178d/report.pdf#page=7"
+    },
+    "row": {
+      "block": "okta-prior:p0007",
+      "line": 11,
+      "quote": "Total revenue                                                                    646               556            1,263           1,074",
+      "url": "https://cdn.prod.nntech.io/company-events/reports/14d748af-eba3-3fa0-b662-8786dd9a178d/report.pdf#page=7"
+    },
+    "column": 3,
+    "value": "1263000000",
+    "raw": "1,263",
+    "multiplier": 1000000,
+    "component_rows": []
+  },
+  {
+    "case": "path",
+    "operand": "reported_in_period",
+    "document": "path-latest",
+    "published_at": "2024-12-05T23:59:59-05:00",
+    "report_end": "2024-10-31",
+    "fiscal_year": 2025,
+    "quarters": [
+      1,
+      2,
+      3
+    ],
+    "header": "  Nine Months Ended October 31, 2024            2023",
+    "table": {
+      "block": "path-latest:p0007",
+      "line": 2,
+      "quote": "Condensed Consolidated Statements of Operations",
+      "url": "https://d1io3yog0oux5.cloudfront.net/_5131cd3f5bd0cd883829934c5dab15cd/uipath/news/2024-12-05_UiPath_Reports_Third_Quarter_Fiscal_2025_373.pdf#page=7"
+    },
+    "heading_sources": [
+      {
+        "block": "path-latest:p0007",
+        "line": 3,
+        "quote": "in thousands, except per share data",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_5131cd3f5bd0cd883829934c5dab15cd/uipath/news/2024-12-05_UiPath_Reports_Third_Quarter_Fiscal_2025_373.pdf#page=7"
+      },
+      {
+        "block": "path-latest:p0007",
+        "line": 4,
+        "quote": "(unaudited)",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_5131cd3f5bd0cd883829934c5dab15cd/uipath/news/2024-12-05_UiPath_Reports_Third_Quarter_Fiscal_2025_373.pdf#page=7"
+      },
+      {
+        "block": "path-latest:p0007",
+        "line": 5,
+        "quote": "Three Months Ended October 31,         Nine Months Ended October 31,",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_5131cd3f5bd0cd883829934c5dab15cd/uipath/news/2024-12-05_UiPath_Reports_Third_Quarter_Fiscal_2025_373.pdf#page=7"
+      },
+      {
+        "block": "path-latest:p0007",
+        "line": 6,
+        "quote": "2024             2023                  2024            2023",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_5131cd3f5bd0cd883829934c5dab15cd/uipath/news/2024-12-05_UiPath_Reports_Third_Quarter_Fiscal_2025_373.pdf#page=7"
+      }
+    ],
+    "unit_sources": [
+      {
+        "block": "path-latest:p0007",
+        "line": 3,
+        "quote": "in thousands, except per share data",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_5131cd3f5bd0cd883829934c5dab15cd/uipath/news/2024-12-05_UiPath_Reports_Third_Quarter_Fiscal_2025_373.pdf#page=7"
+      }
+    ],
+    "currency_source": {
+      "block": "path-latest:p0007",
+      "line": 8,
+      "quote": "Licenses                                           $         137,174    $     148,068     $         389,553    $    401,407",
+      "url": "https://d1io3yog0oux5.cloudfront.net/_5131cd3f5bd0cd883829934c5dab15cd/uipath/news/2024-12-05_UiPath_Reports_Third_Quarter_Fiscal_2025_373.pdf#page=7"
+    },
+    "row": {
+      "block": "path-latest:p0007",
+      "line": 11,
+      "quote": "Total revenue                                            354,653          325,921             1,006,018         902,819",
+      "url": "https://d1io3yog0oux5.cloudfront.net/_5131cd3f5bd0cd883829934c5dab15cd/uipath/news/2024-12-05_UiPath_Reports_Third_Quarter_Fiscal_2025_373.pdf#page=7"
+    },
+    "column": 3,
+    "value": "1006018000",
+    "raw": "1,006,018",
+    "multiplier": 1000,
+    "component_rows": []
+  },
+  {
+    "case": "path",
+    "operand": "prior_reported_in_period",
+    "document": "path-prior",
+    "published_at": "2024-09-05T23:59:59-04:00",
+    "report_end": "2024-07-31",
+    "fiscal_year": 2025,
+    "quarters": [
+      1,
+      2
+    ],
+    "header": "  Six Months Ended July 31, 2024           2023",
+    "table": {
+      "block": "path-prior:p0008",
+      "line": 2,
+      "quote": "Condensed Consolidated Statements of Operations",
+      "url": "https://d1io3yog0oux5.cloudfront.net/_2051b5e4c9064e8776da85f780848e5c/uipath/news/2024-09-05_UiPath_Reports_Second_Quarter_Fiscal_2025_358.pdf#page=8"
+    },
+    "heading_sources": [
+      {
+        "block": "path-prior:p0008",
+        "line": 3,
+        "quote": "in thousands, except per share data",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_2051b5e4c9064e8776da85f780848e5c/uipath/news/2024-09-05_UiPath_Reports_Second_Quarter_Fiscal_2025_358.pdf#page=8"
+      },
+      {
+        "block": "path-prior:p0008",
+        "line": 4,
+        "quote": "(unaudited)",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_2051b5e4c9064e8776da85f780848e5c/uipath/news/2024-09-05_UiPath_Reports_Second_Quarter_Fiscal_2025_358.pdf#page=8"
+      },
+      {
+        "block": "path-prior:p0008",
+        "line": 5,
+        "quote": "Three Months Ended              Six Months Ended",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_2051b5e4c9064e8776da85f780848e5c/uipath/news/2024-09-05_UiPath_Reports_Second_Quarter_Fiscal_2025_358.pdf#page=8"
+      },
+      {
+        "block": "path-prior:p0008",
+        "line": 6,
+        "quote": "July 31,                       July 31,",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_2051b5e4c9064e8776da85f780848e5c/uipath/news/2024-09-05_UiPath_Reports_Second_Quarter_Fiscal_2025_358.pdf#page=8"
+      },
+      {
+        "block": "path-prior:p0008",
+        "line": 7,
+        "quote": "2024           2023            2024           2023",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_2051b5e4c9064e8776da85f780848e5c/uipath/news/2024-09-05_UiPath_Reports_Second_Quarter_Fiscal_2025_358.pdf#page=8"
+      }
+    ],
+    "unit_sources": [
+      {
+        "block": "path-prior:p0008",
+        "line": 3,
+        "quote": "in thousands, except per share data",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_2051b5e4c9064e8776da85f780848e5c/uipath/news/2024-09-05_UiPath_Reports_Second_Quarter_Fiscal_2025_358.pdf#page=8"
+      }
+    ],
+    "currency_source": {
+      "block": "path-prior:p0008",
+      "line": 9,
+      "quote": "Licenses                                                     $   112,251     $   119,300    $   252,379     $   253,339",
+      "url": "https://d1io3yog0oux5.cloudfront.net/_2051b5e4c9064e8776da85f780848e5c/uipath/news/2024-09-05_UiPath_Reports_Second_Quarter_Fiscal_2025_358.pdf#page=8"
+    },
+    "row": {
+      "block": "path-prior:p0008",
+      "line": 12,
+      "quote": "Total revenue                                              316,253         287,310        651,365         576,898",
+      "url": "https://d1io3yog0oux5.cloudfront.net/_2051b5e4c9064e8776da85f780848e5c/uipath/news/2024-09-05_UiPath_Reports_Second_Quarter_Fiscal_2025_358.pdf#page=8"
+    },
+    "column": 3,
+    "value": "651365000",
+    "raw": "651,365",
+    "multiplier": 1000,
+    "component_rows": []
+  },
+  {
+    "case": "snow",
+    "operand": "reported_in_period",
+    "document": "snow-latest",
+    "published_at": "2024-11-20T23:59:59-05:00",
+    "report_end": "2024-10-31",
+    "fiscal_year": 2025,
+    "quarters": [
+      1,
+      2,
+      3
+    ],
+    "header": "  Nine Months Ended October 31, 2024                  2023",
+    "table": {
+      "block": "snow-latest:p0012",
+      "line": 2,
+      "quote": "Condensed Consolidated Statements of Operations",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001640147/ca80b036-253b-49b4-a6ce-69de8d98b8eb.pdf#page=12"
+    },
+    "heading_sources": [
+      {
+        "block": "snow-latest:p0012",
+        "line": 3,
+        "quote": "(in thousands, except per share data)",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001640147/ca80b036-253b-49b4-a6ce-69de8d98b8eb.pdf#page=12"
+      },
+      {
+        "block": "snow-latest:p0012",
+        "line": 4,
+        "quote": "(unaudited)",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001640147/ca80b036-253b-49b4-a6ce-69de8d98b8eb.pdf#page=12"
+      },
+      {
+        "block": "snow-latest:p0012",
+        "line": 5,
+        "quote": "Three Months Ended October 31,               Nine Months Ended October 31,",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001640147/ca80b036-253b-49b4-a6ce-69de8d98b8eb.pdf#page=12"
+      },
+      {
+        "block": "snow-latest:p0012",
+        "line": 6,
+        "quote": "2024                   2023                  2024                  2023",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001640147/ca80b036-253b-49b4-a6ce-69de8d98b8eb.pdf#page=12"
+      }
+    ],
+    "unit_sources": [
+      {
+        "block": "snow-latest:p0012",
+        "line": 3,
+        "quote": "(in thousands, except per share data)",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001640147/ca80b036-253b-49b4-a6ce-69de8d98b8eb.pdf#page=12"
+      }
+    ],
+    "currency_source": {
+      "block": "snow-latest:p0012",
+      "line": 7,
+      "quote": "Revenue                                                                  $            942,094   $            734,173   $       2,639,626     $       2,031,790",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001640147/ca80b036-253b-49b4-a6ce-69de8d98b8eb.pdf#page=12"
+    },
+    "row": {
+      "block": "snow-latest:p0012",
+      "line": 7,
+      "quote": "Revenue                                                                  $            942,094   $            734,173   $       2,639,626     $       2,031,790",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001640147/ca80b036-253b-49b4-a6ce-69de8d98b8eb.pdf#page=12"
+    },
+    "column": 3,
+    "value": "2639626000",
+    "raw": "2,639,626",
+    "multiplier": 1000,
+    "component_rows": []
+  },
+  {
+    "case": "snow",
+    "operand": "prior_reported_in_period",
+    "document": "snow-prior",
+    "published_at": "2024-08-21T23:59:59-04:00",
+    "report_end": "2024-07-31",
+    "fiscal_year": 2025,
+    "quarters": [
+      1,
+      2
+    ],
+    "header": "  Six Months Ended July 31, 2024                2023",
+    "table": {
+      "block": "snow-prior:p0009",
+      "line": 2,
+      "quote": "Condensed Consolidated Statements of Operations",
+      "url": "https://cdn.prod.nntech.io/company-events/reports/4ed104a9-7f76-3aac-9c04-5604fb7c734e/report.pdf#page=9"
+    },
+    "heading_sources": [
+      {
+        "block": "snow-prior:p0009",
+        "line": 3,
+        "quote": "(in thousands, except per share data)",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/4ed104a9-7f76-3aac-9c04-5604fb7c734e/report.pdf#page=9"
+      },
+      {
+        "block": "snow-prior:p0009",
+        "line": 4,
+        "quote": "(unaudited)",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/4ed104a9-7f76-3aac-9c04-5604fb7c734e/report.pdf#page=9"
+      },
+      {
+        "block": "snow-prior:p0009",
+        "line": 5,
+        "quote": "Three Months Ended July 31,              Six Months Ended July 31,",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/4ed104a9-7f76-3aac-9c04-5604fb7c734e/report.pdf#page=9"
+      },
+      {
+        "block": "snow-prior:p0009",
+        "line": 6,
+        "quote": "2024               2023                 2024                2023",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/4ed104a9-7f76-3aac-9c04-5604fb7c734e/report.pdf#page=9"
+      }
+    ],
+    "unit_sources": [
+      {
+        "block": "snow-prior:p0009",
+        "line": 3,
+        "quote": "(in thousands, except per share data)",
+        "url": "https://cdn.prod.nntech.io/company-events/reports/4ed104a9-7f76-3aac-9c04-5604fb7c734e/report.pdf#page=9"
+      }
+    ],
+    "currency_source": {
+      "block": "snow-prior:p0009",
+      "line": 7,
+      "quote": "Revenue                                                        $        868,823    $       674,018     $      1,697,532    $      1,297,617",
+      "url": "https://cdn.prod.nntech.io/company-events/reports/4ed104a9-7f76-3aac-9c04-5604fb7c734e/report.pdf#page=9"
+    },
+    "row": {
+      "block": "snow-prior:p0009",
+      "line": 7,
+      "quote": "Revenue                                                        $        868,823    $       674,018     $      1,697,532    $      1,297,617",
+      "url": "https://cdn.prod.nntech.io/company-events/reports/4ed104a9-7f76-3aac-9c04-5604fb7c734e/report.pdf#page=9"
+    },
+    "column": 3,
+    "value": "1697532000",
+    "raw": "1,697,532",
+    "multiplier": 1000,
+    "component_rows": []
+  }
+]

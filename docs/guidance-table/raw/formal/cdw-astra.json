@@ -1,0 +1,35 @@
+{
+  "answers": [
+    {"item": "implied_remainder_prior", "value": "unknown"},
+    {"item": "implied_remainder_change", "value": "unknown"},
+    {"item": "implied_remainder", "value": "unknown"}
+  ],
+  "evidence_ids": [
+    "cdw-prior:p0001",
+    "cdw-prior:p0006",
+    "cdw-latest:p0001",
+    "cdw-latest:p0006"
+  ],
+  "reason": "前次隱含的第四季營收須以當時的全年營收指引中點，減去上半年實績及當時的第三季營收指引中點。最新隱含值則須以最新全年指引中點減去前九個月實績。兩次公告均僅列出按固定匯率計算、成長率高於美國 IT 市場 200 至 300 個基點的相對目標，無法據此算出第四季隱含營收、變動金額或方向。",
+  "figures_used": [
+    {
+      "name": "prior_reported_in_period",
+      "document": "cdw-prior",
+      "block": "cdw-prior:p0006",
+      "quote": "$ 10,296.1",
+      "tabular": true,
+      "unit_block": "cdw-prior:p0006",
+      "unit_quote": "(dollars and shares in millions, except per-share amounts)"
+    },
+    {
+      "name": "reported_in_period",
+      "document": "cdw-latest",
+      "block": "cdw-latest:p0006",
+      "quote": "$ 15,812.7",
+      "tabular": true,
+      "unit_block": "cdw-latest:p0006",
+      "unit_quote": "(dollars and shares in millions, except per-share amounts)"
+    }
+  ],
+  "missing_reason": "缺少 7 月及 10 月各自的 2024 財年合併營收指引金額或區間，也缺少 7 月對第三季合併營收的指引金額或區間。"
+}

@@ -1,0 +1,32 @@
+{
+  "figures": [
+    {
+      "name": "reported_in_period",
+      "document": "snow-prior",
+      "block": "snow-prior:p0001",
+      "quote": "Revenue for the quarter was $868.8 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "snow-latest",
+      "block": "snow-latest:p0004",
+      "quote": "Revenue for the quarter was $942.1 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "snow-prior",
+      "block": "snow-prior:p0001",
+      "quote": "Revenue for the quarter was $868.8 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    }
+  ],
+  "reason": "兩份公告的全年指引及先前的第三季指引均僅涵蓋產品營收，未提供合併總營收指引。公告直接列出第二季與第三季的合併總營收；先前公告發布時，第三季尚未結束。第一季的單季金額須由半年累計數扣除第二季金額推算，故省略。"
+}

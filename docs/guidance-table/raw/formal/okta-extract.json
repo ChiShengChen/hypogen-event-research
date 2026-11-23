@@ -1,0 +1,59 @@
+{
+  "figures": [
+    {
+      "name": "new",
+      "document": "okta-latest",
+      "block": "okta-latest:p0002",
+      "quote": "$2.595 billion to $2.597 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior",
+      "document": "okta-prior",
+      "block": "okta-prior:p0002",
+      "quote": "$2.555 billion to $2.565 billion",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_interim",
+      "document": "okta-prior",
+      "block": "okta-prior:p0002",
+      "quote": "$648 million to $650 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "okta-prior",
+      "block": "okta-prior:p0001",
+      "quote": "$646 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "reported_in_period",
+      "document": "okta-latest",
+      "block": "okta-latest:p0001",
+      "quote": "$665 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    },
+    {
+      "name": "prior_reported_in_period",
+      "document": "okta-prior",
+      "block": "okta-prior:p0001",
+      "quote": "$646 million",
+      "tabular": false,
+      "unit_block": null,
+      "unit_quote": null
+    }
+  ],
+  "reason": "兩次公告均列明 2025 財年全年總營收指引，8 月公告另列第三季指引。8 月時已公布第二季實績，12 月時又已公布第三季實績。兩份公告均未單獨列出第一季總營收，故省略該季。"
+}
