@@ -78,6 +78,22 @@ def collect(event, adapter, *, question=None, unanswered=(), parent_evidence=())
                          "Search separately for the upstream, downstream and alternatives angles. Use up to "
                          "three search queries and three page opens in this round."),
     ]
+    linkage = getattr(adapter, "supports_business_linkages", False) and question is None
+    intake = {}
+    if linkage:
+        name, task = tasks[1]
+        tasks[1] = (name, task + " If timing or corrections are already addressed, use this round to look "
+                               "for another named business, product or channel and a disclosed operating link "
+                               "such as shared resources, capacity, distribution or purchasing. Prefer a public "
+                               "metric that can distinguish the link from unrelated segment performance. You "
+                               "may reopen an intake disclosure if its supplied summaries omit a relevant "
+                               "original passage. When using the same URL return only the additional operating "
+                               "information with its original publication date.")
+        for doc in event.documents:
+            if doc.kind == "disclosure" and not doc.synthetic and max(doc.published_at, doc.obtained_at) <= cutoff:
+                key = source_key(doc.source)
+                if key is not None:
+                    intake[key] = doc
     if question is not None:
         context.update({
             "question": question, "unanswered_gaps": list(unanswered),
@@ -90,14 +106,27 @@ def collect(event, adapter, *, question=None, unanswered=(), parent_evidence=())
                   "For a document with no cover date, use the issuer's dated publication announcement "
                   "that links to that exact document and search both URLs. Mention that provenance "
                   "in the summary. Do not use hindsight or later results to answer an earlier cutoff.")]
+        if getattr(adapter, "supports_business_linkages", False):
+            name, task = tasks[0]
+            tasks[0] = (name, task + " If the gap is about a linked business, find evidence for the precise "
+                                     "transfer, affected operation, public metric, or competing explanation.")
     gaps = []
+    supplemented = set()
     for stage, task in tasks:
         instruction = shared if stage != "supply_chain" else shared.replace(
             "at most two search queries and two page opens per round", "at most three search queries and three page opens per round"
         )
+        previous_summaries = []
+        if stage == "follow_up" and linkage:
+            previous_summaries.extend([text[:650] for doc in intake.values()
+                                       for text in doc.paragraphs.values()][:8])
+        if stage == "supply_chain" or (stage == "follow_up" and linkage):
+            previous_summaries.extend(doc.paragraphs["summary"] for doc in sources)
         result, trace = adapter.search(SearchPass, instruction + task, {
             **context, "prior_gaps": gaps, "accepted_urls": [doc.source for doc in sources],
-            "previous_public_summaries": [doc.paragraphs["summary"] for doc in sources] if stage == "supply_chain" else [],
+            "previous_public_summaries": previous_summaries,
+            **({"intake_disclosure_urls": [doc.source for key, doc in intake.items() if allowed(key)][:8]}
+               if stage == "follow_up" and linkage else {}),
         })
         retrieved_at = datetime.now(timezone.utc)
         observed = {
@@ -111,7 +140,11 @@ def collect(event, adapter, *, question=None, unanswered=(), parent_evidence=())
             if key not in observed or not allowed(key):
                 counts["unverified_url"] += 1
                 continue
-            if key in seen:
+            original = intake.get(key) if stage == "follow_up" and linkage else None
+            supplement = (original is not None and key not in supplemented
+                          and candidate.published_on == original.published_at.date()
+                          and candidate.summary not in original.paragraphs.values())
+            if key in seen and not supplement:
                 counts["duplicate"] += 1
                 continue
             # A date-only disclosure is considered available at the end of its UTC calendar date.
@@ -131,6 +164,8 @@ def collect(event, adapter, *, question=None, unanswered=(), parent_evidence=())
                 published_at=published, obtained_at=obtained, paragraphs={"summary": candidate.summary},
             ))
             seen.add(key)
+            if supplement:
+                supplemented.add(key)
             used_ids.add(doc_id)
             accepted_ids.append(f"{doc_id}:summary")
             counts["accepted"] += 1

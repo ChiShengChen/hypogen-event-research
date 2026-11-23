@@ -523,7 +523,7 @@ def link_model_drivers(drivers, hypotheses):
     return retained, links
 
 
-def calculate_earnings(plan, as_of, evidence, *, hypotheses=(), claims=()):
+def calculate_earnings(plan, as_of, evidence, *, hypotheses=(), claims=(), business_linkages=()):
     visible = validate_plan(plan, as_of, evidence)
     by_stance = {row["stance"]: row for row in hypotheses}
     refs = {row["id"]: row.get("evidence_id") for row in claims}
@@ -537,6 +537,15 @@ def calculate_earnings(plan, as_of, evidence, *, hypotheses=(), claims=()):
             **link.model_dump(mode="json"), "source_overlap": sorted(hypothesis_refs.intersection(link.evidence_ids)),
             "hypothesis_prediction": hypothesis["prediction"], "effects": [],
         }
+        inputs = set(link.evidence_ids)
+        related = [
+            {"affected_company": path["affected_company"], "affected_business": path["affected_business"],
+             "evidence_ids": sorted(inputs.intersection(path["origin_evidence_ids"] + path["affected_evidence_ids"]))}
+            for path in business_linkages if path["scope"] == "internal" and path["linked_stance"] == link.hypothesis_stance
+            and inputs.intersection(path["origin_evidence_ids"]) and inputs.intersection(path["affected_evidence_ids"])
+        ]
+        if related:
+            audit[link.id]["related_business_linkages"] = related
     quarterly, guidance_audit = [], []
     bridge_audit = None
     profiles = {profile.period_end: profile for profile in plan.eps_assumptions}
@@ -612,7 +621,8 @@ def calculate_earnings(plan, as_of, evidence, *, hypotheses=(), claims=()):
 
 
 def complete_plan(plan, as_of, context, adapter):
-    review = {"hypotheses": context.get("hypotheses", ()), "claims": context.get("claims", ())}
+    review = {"hypotheses": context.get("hypotheses", ()), "claims": context.get("claims", ()),
+              "business_linkages": context.get("business_linkages", ())}
     if not plan.generate_drivers:
         return calculate_earnings(plan, as_of, context["evidence"], **review)
     validate_plan(plan, as_of, context["evidence"])
@@ -628,6 +638,8 @@ def complete_plan(plan, as_of, context, adapter):
         "evidence": [row for row in context["evidence"] if row["kind"] == "disclosure" and not row["synthetic"]],
         "baseline": plan.model_dump(mode="json", exclude=excluded),
         **({"hypotheses": list(review["hypotheses"])} if review["hypotheses"] else {}),
+        **({"business_linkages": review["business_linkages"],
+            "business_linkage_gap": context.get("business_linkage_gap")} if "business_linkages" in context else {}),
     })
     expected = {(quarter.period_end, name) for quarter in plan.quarters for name in SCENARIOS}
     if {(driver.period_end, driver.scenario) for driver in result.drivers} != expected:
@@ -842,6 +854,8 @@ def render_earnings(earnings, cite):
             ]
             if not link["source_overlap"]:
                 lines.append("  - 連結來源與假說原引文無交集，待研究員確認關聯。")
+            for path in link.get("related_business_linkages", []):
+                lines.append(f"  - 共用連動證據　{path['affected_company']} · {path['affected_business']} {source_line(path)}")
             if shift := link["recognition_shift"]:
                 lines.append(f"  - 移轉 {shift['units']} 台，自 {shift['from_period']} 至 "
                              f"{shift['to_period']}。{shift['recognition_basis']}")

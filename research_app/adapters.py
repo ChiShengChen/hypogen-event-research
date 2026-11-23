@@ -7,6 +7,7 @@ from tempfile import TemporaryDirectory
 import httpx
 from pydantic import ValidationError
 
+from .business_linkage import BusinessLinkageGeneration, LinkedAnswer, LinkedHypotheses, linkage_fields
 from .schema import Answer, DetailedAnswer, DriverDraft, Hypotheses
 
 EARNINGS_DRIVER_VERSION = 4
@@ -102,9 +103,11 @@ class Fixture:
 
 class ModelAdapter:
     prompt_version = 9
+    hypothesis_schema = Hypotheses
+    hypothesis_extension = ""
 
     def hypotheses(self, context):
-        return self._generate(Hypotheses, (
+        return self._generate(self.hypothesis_schema, (
             "Write concise Traditional Chinese for an equity research analyst. Return an assessment and "
             "one bull and one bear operating hypothesis for the same research target and period. "
             "Copy target and horizon exactly when explicitly supplied. "
@@ -177,7 +180,7 @@ class ModelAdapter:
             "operational, and avoid unsupported stock directions, dated events, probabilities, or calculations. "
             "Before finalizing, check that the two hypotheses change what a researcher would monitor, "
             "and that each contrary result can be checked within the same scope as its prediction."
-        ), context)
+        ) + self.hypothesis_extension, context)
 
     def earnings_drivers(self, context):
         version = getattr(self, "earnings_driver_version", EARNINGS_DRIVER_VERSION)
@@ -193,6 +196,15 @@ class ModelAdapter:
             eps_rules = (
                 "The calculation applies any supplied EPS assumptions separately. "
                 "Exclude nonoperating adjustments and discrete taxes from operating expenses. "
+            )
+        linkage_rules = ""
+        if context.get("business_linkages"):
+            linkage_rules = (
+                " Treat linked-business hypotheses as conditional. Use an internal linkage in a numeric driver "
+                "only if its evidence and a compatible segment/period support a quantified assumption. "
+                "Cite evidence from both ends, state the basis of the number, and keep unquantified exposure "
+                "in the rationale. A counterparty's results cannot be booked as the issuer's results. "
+                "Avoid reusing a linked impact already included in the baseline or a supplied driver."
             )
         return self._generate(DriverDraft, (
             "Draft bear, base and bull forecast adjustments for each supplied quarter in Traditional Chinese. "
@@ -215,7 +227,7 @@ class ModelAdapter:
             "Distinguish the issuer's guidance from market consensus. In each rationale name a public "
             "observation with its timeframe and the opposite result, or explicitly describe the missing disclosure. "
             "Return all three cases for each quarter."
-        ), context)
+        ) + linkage_rules, context)
 
     def answer(self, context, question):
         assessment = context.get("assessment", {})
@@ -247,11 +259,29 @@ class ModelAdapter:
             "Distinguish confirmed event attribution from general supplier or customer relationships. "
             "Use exact evidence IDs, and list only unresolved gaps directly needed by the question."
         )
-        result = self._generate(DetailedAnswer, instruction, payload)
+        response_schema = DetailedAnswer
+        if getattr(self, "supports_business_linkages", False):
+            response_schema = LinkedAnswer
+            payload["stored_research"].update(linkage_fields(context))
+            if context.get("linkage_refresh_evidence_ids"):
+                payload["new_evidence_ids"] = context["linkage_refresh_evidence_ids"]
+            payload["report"]["horizon"] = context.get("horizon")
+            instruction += (
+                " For relevant questions about business changes, explain how a named downstream or internal "
+                "operating change would affect the thesis, the condition for transmission, and a competing "
+                "explanation. Use the stored linkages as hypotheses. If the question or new evidence supports "
+                "a material additional or revised linkage, return it in business_linkages. Copy the exact "
+                "origin and affected business names from their respective visible citations and copy the target "
+                "exactly for internal links. For external links, the other company must appear in affected "
+                "evidence. Include a test and falsifier with the same public metric, period and ISO review "
+                "deadline. If new_evidence_ids are provided, linkages for publication must cite at least one. "
+                "Return an empty list if there is no supported update and null for an irrelevant linkage gap."
+            )
+        result = self._generate(response_schema, instruction, payload)
         missing = [part.requirement for part in result.coverage if part.status == "missing"]
         if not missing:
             return result
-        supplement = self._generate(DetailedAnswer, (
+        supplement = self._generate(response_schema, (
             instruction + " Reply only with the missing pieces in missing_requirements. "
             "Do not repeat the initial answer. Copy each missing requirement verbatim in coverage."
         ), {**payload, "initial_answer": result.answer, "missing_requirements": missing})
@@ -261,6 +291,9 @@ class ModelAdapter:
         result.answer = result.answer + "\n\n" + supplement.answer
         result.evidence_ids = list(dict.fromkeys(result.evidence_ids + supplement.evidence_ids))
         result.calculation_ids = list(dict.fromkeys(result.calculation_ids + supplement.calculation_ids))
+        if isinstance(result, LinkedAnswer) and isinstance(supplement, LinkedAnswer):
+            result.business_linkages = [*result.business_linkages, *supplement.business_linkages][:3]
+            result.business_linkage_gap = result.business_linkage_gap or supplement.business_linkage_gap
         result.gaps = list(dict.fromkeys(result.gaps + supplement.gaps))
         result.gaps.extend(f"回答仍未完整涵蓋：{part.requirement}" for part in result.coverage
                            if part.status == "missing")
@@ -294,7 +327,7 @@ class Live(ModelAdapter):
                         {"role": "user", "content": json.dumps(data, ensure_ascii=False)},
                     ],
                 },
-                timeout=30,
+                timeout=180 if schema in (LinkedHypotheses, LinkedAnswer) else 30,
             )
             response.raise_for_status()
             return schema.model_validate_json(response.json()["choices"][0]["message"]["content"])
@@ -339,6 +372,9 @@ class Codex(ModelAdapter):
             "Return only the JSON object required by the response schema.\n\n"
             + json.dumps(data, ensure_ascii=False)
         )
+        timeout = self.call_timeout or (120 if search else 90)
+        if self.call_timeout is None and schema in (LinkedHypotheses, LinkedAnswer):
+            timeout = 180
         try:
             with TemporaryDirectory(prefix="research-codex-") as directory:
                 workdir = Path(directory)
@@ -364,7 +400,7 @@ class Codex(ModelAdapter):
                     command.extend(["--model", self.model])
                 result = subprocess.run(
                     [*command, "-"], cwd=workdir, input=prompt, encoding="utf-8",
-                    capture_output=True, timeout=self.call_timeout or (120 if search else 90),
+                    capture_output=True, timeout=timeout,
                 )
                 events = [json.loads(line) for line in result.stdout.splitlines()
                           if line.strip()] if search or self.audit else []
@@ -400,12 +436,28 @@ class Codex(ModelAdapter):
             raise AdapterError("Codex CLI 回應無法解析或不符合資料結構") from exc
 
 
+class LinkedLive(BusinessLinkageGeneration, Live):
+    pass
+
+
+class LinkedCodex(BusinessLinkageGeneration, Codex):
+    pass
+
+
+class LinkedFixture(Fixture):
+    identity = {**Fixture.identity, "prompt_version": BusinessLinkageGeneration.prompt_version}
+
+    def hypotheses(self, context):
+        return LinkedHypotheses(**super().hypotheses(context).model_dump(), business_linkages=[],
+                                business_linkage_gap="本機示範未生成業務連動。請使用模型模式分析可查核的公開披露。")
+
+
 def configured_adapter():
     mode = os.getenv("RESEARCH_MODE", "fixture")
     if mode == "fixture":
-        return Fixture()
+        return LinkedFixture()
     if mode == "live":
-        return Live()
+        return LinkedLive()
     if mode == "codex":
-        return Codex()
+        return LinkedCodex()
     raise ValueError("RESEARCH_MODE must be fixture, live, or codex")

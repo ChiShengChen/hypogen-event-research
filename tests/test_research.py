@@ -9,7 +9,7 @@ from fastapi.testclient import TestClient
 
 from research_app.adapters import Fixture, Live, configured_adapter
 from research_app.api import create_app
-from research_app.schema import DetailedAnswer
+from research_app.business_linkage import LinkedAnswer, LinkedHypotheses
 from research_app.store import Store
 
 FIXTURES = Path(__file__).resolve().parents[1] / "research_app" / "fixtures"
@@ -263,11 +263,13 @@ def test_codex_cli_accepts_snapshot_and_validates_response(tmp_path, monkeypatch
         requests.append(data)
         schema = json.loads(Path(command[command.index("--output-schema") + 1]).read_text())
         if "hypotheses" in schema["properties"]:
-            response = Fixture().hypotheses(data)
+            draft = Fixture().hypotheses(data).model_dump()
+            assert "business_linkages" in schema["required"]
+            response = LinkedHypotheses(**draft, business_linkages=[], business_linkage_gap="待查連動業務。")
         else:
             fixture_answer = Fixture().answer(data["report"], data["question"])
-            response = DetailedAnswer(
-                **fixture_answer.model_dump(), calculation_ids=[],
+            response = LinkedAnswer(
+                **fixture_answer.model_dump(), calculation_ids=[], business_linkages=[], business_linkage_gap=None,
                 coverage=[{"requirement": "認證時點", "status": "unavailable"}],
             )
         output = Path(command[command.index("--output-last-message") + 1])

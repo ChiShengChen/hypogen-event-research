@@ -8,6 +8,7 @@ from pathlib import Path
 from uuid import uuid4
 
 from .adapters import AdapterError, EARNINGS_DRIVER_VERSION
+from .business_linkage import LinkedAnswer, linkage_fields, linkage_refs, merged_linkages, validate_linkages
 from .consensus import parse_consensus
 from .discovery import DISCOVERY_VERSION, collect
 from .earnings import EarningsError, available_evidence, calculate_earnings, operating_numbers, resolve_forecast
@@ -16,7 +17,7 @@ from .full_revision import (
     _source_url,
 )
 from .research import (
-    FORMULA_VERSION, REPORT_VERSION, apply_financial_scenario, build_report, document_evidence,
+    FORMULA_VERSION, REPORT_VERSION, apply_financial_scenario, build_report, company_key, document_evidence,
     render, render_followups,
 )
 from .revision_bridge import RevisionQuote, RevisionRequest, evaluate_revision
@@ -207,7 +208,8 @@ class Store:
             refs = set(extraction.evidence_ids)
             audit["citations"] = [filing_citation(document, block) for block in blocks if block["id"] in refs]
             audit["evidence_ids"] = [item["id"] for item in audit["citations"]]
-        return {"as_of": report["as_of"], "report_revision": revision, "incumbent": point["revenue"], "audit": audit}
+        return {"as_of": report["as_of"], "report_revision": revision, "incumbent": point["revenue"], "audit": audit,
+                **linkage_fields(report)}
 
     def revenue_revision_check(self, report_id, revision, request):
         report, plan, key, point = self.earnings_revision_inputs(report_id, revision, request.period_end)
@@ -246,7 +248,7 @@ class Store:
                     for metric in ("revenue", "operating_income", "eps")
                 }
         return {"as_of": report["as_of"], "report_revision": revision, "audit": audit,
-                "financial_impact": financial_impact}
+                "financial_impact": financial_impact, **linkage_fields(report)}
 
     def earnings_branch(self, report_id, branch):
         parent = self.revision(report_id, branch.parent_revision)
@@ -310,6 +312,7 @@ class Store:
         earnings = calculate_earnings(
             plan, datetime.fromisoformat(parent["as_of"]), parent["evidence"],
             hypotheses=parent["hypotheses"], claims=parent["claims"],
+            business_linkages=parent.get("business_linkages", ()),
         )
         earnings["driver_origin"] = ("analyst_branch" if kind == "earnings_scenario"
                                      else parent["earnings"].get("driver_origin", "input"))
@@ -398,12 +401,18 @@ class Store:
             forecast["status"] = (forecast["resolution"]["outcome"] if forecast["resolution"] else
                                   "overdue" if datetime.fromisoformat(forecast["deadline"]) < now else "pending")
         return {"report_id": report_id, "revision": revision, "earnings": report.get("earnings"),
-                "forecasts": list(logs["forecast"].values()), "reviews": list(logs["review"].values())}
+                "forecasts": list(logs["forecast"].values()), "reviews": list(logs["review"].values()),
+                **linkage_fields(report)}
 
     @staticmethod
     def checked_answer(adapter, report, question):
         answer = adapter.answer(report, question)
         data = answer.model_dump()
+        evidence = {item["id"]: item for item in report["evidence"]}
+        if isinstance(answer, LinkedAnswer):
+            data["business_linkages"], data["business_linkage_gap"] = validate_linkages(
+                answer, report, evidence, company_key, note_missing=bool(answer.business_linkages),
+            )
         calculations = {item["id"]: item for item in report.get("disclosed_calculations", [])}
         selected = list(dict.fromkeys(data.pop("calculation_ids", [])))
         if set(selected) - calculations.keys():
@@ -424,7 +433,7 @@ class Store:
             data["evidence_ids"] = list(dict.fromkeys(data["evidence_ids"] + item["evidence_ids"]))
         if selected:
             data["calculations"] = [calculations[key] for key in selected]
-        if set(data["evidence_ids"]) - {item["id"] for item in report["evidence"]}:
+        if set(data["evidence_ids"]) - evidence.keys():
             raise AdapterError("模型回答使用了不存在或不可見的證據引用")
         if not data["evidence_ids"] and not data["gaps"]:
             raise AdapterError("無引文的模型回答必須列明證據缺口")
@@ -432,24 +441,49 @@ class Store:
 
     def answer_question(self, report_id, parent, question, adapter):
         initial = self.checked_answer(adapter, parent, question.question)
+        if "business_linkages" in initial:
+            initial.update(merged_linkages(parent, initial["business_linkages"], initial["business_linkage_gap"], company_key))
+        else:
+            initial.update(linkage_fields(parent))
+
+        def finish_initial(**extra):
+            result = {**initial, **extra}
+            if initial.get("business_linkages") and initial["business_linkages"] != parent.get("business_linkages"):
+                followup = {"parent_revision": question.parent_revision, "question": question.question,
+                            "answer": initial, "added_evidence_ids": []}
+                report = {**parent, **linkage_fields(initial), "revision_kind": "linkage_follow_up",
+                          "evidence_followups": [*parent.get("evidence_followups", []), followup]}
+                report["markdown"] = render(report)
+                result["child_revision"] = self.save_child(report_id, question.parent_revision, report)
+            return result
+
         if question.evidence_search == "off" or not initial["gaps"]:
-            return initial
+            return finish_initial()
         event = self.event(report_id)
         if event.search_mode == "off" or not callable(getattr(adapter, "search", None)):
-            return initial
+            return finish_initial()
         try:
             found, audit = collect(event, adapter, question=question.question,
                                    unanswered=initial["gaps"], parent_evidence=parent["evidence"])
         except AdapterError:
-            return {**initial, "evidence_search": {"status": "failed"}}
+            return finish_initial(evidence_search={"status": "failed"})
         if not found:
-            return {**initial, "evidence_search": {"status": "no_new_sources", **audit}}
+            return finish_initial(evidence_search={"status": "no_new_sources", **audit})
         added = [item for doc in found for item in document_evidence(doc)]
         report = {**parent, "evidence": parent["evidence"] + added}
-        refined = self.checked_answer(adapter, report, question.question)
         new_refs = {item["id"] for item in added}
-        if not new_refs.intersection(refined["evidence_ids"]):
-            return {**initial, "evidence_search": {"status": "unresolved", **audit}}
+        refined = self.checked_answer(adapter, report | {"linkage_refresh_evidence_ids": sorted(new_refs)}, question.question)
+        refreshed = [path for path in refined.get("business_linkages", []) if new_refs.intersection(linkage_refs(path))]
+        if not new_refs.intersection(refined["evidence_ids"]) and not refreshed:
+            return finish_initial(evidence_search={"status": "unresolved", **audit})
+        can_refresh = "business_linkages" in refined
+        if can_refresh:
+            report.update(merged_linkages(initial, refreshed, refined["business_linkage_gap"], company_key))
+            report["claims"] = [*parent["claims"], *(
+                {"id": f"fact:{item['id']}", "kind": "fact", "text": item["quote"], "evidence_id": item["id"]}
+                for item in added
+            )]
+            refined.update(linkage_fields(report))
         followup = {
             "parent_revision": question.parent_revision, "question": question.question,
             "answer": refined, "added_evidence_ids": sorted(new_refs), "discovery": audit,
@@ -457,11 +491,14 @@ class Store:
         original_followups = parent.get("evidence_followups", [])
         report["evidence_followups"] = [*original_followups, followup]
         report["revision_kind"] = "evidence_follow_up"
-        report["markdown"] = parent["markdown"] + render_followups({
-            "evidence": report["evidence"], "evidence_followups": [followup],
-        })
+        if can_refresh:
+            report["markdown"] = render(report)
+        else:
+            report["markdown"] = parent["markdown"] + render_followups({
+                "evidence": report["evidence"], "evidence_followups": [followup],
+            })
         child = self.save_child(report_id, question.parent_revision, report)
-        return {**refined, "child_revision": child, "evidence_search": {"status": "published", **audit}}
+        return {**linkage_fields(report), **refined, "child_revision": child, "evidence_search": {"status": "published", **audit}}
 
     def question(self, report_id, question, adapter):
         parent = self.revision(report_id, question.parent_revision)
@@ -481,8 +518,8 @@ class Store:
                 included = {item["id"] for item in report["evidence"]}
                 report["evidence"].extend(item for item in parent["evidence"] if item["id"] not in included)
         changes = []
-        for section in ("model_inputs", "model_outputs", "hypotheses", "assessment", "claims"):
-            before, after = parent.get(section), report[section]
+        for section in ("model_inputs", "model_outputs", "hypotheses", "assessment", "claims", "business_linkages"):
+            before, after = parent.get(section), report.get(section)
             if isinstance(before, dict):
                 changes.extend(
                     {"field": f"{section}.{field}", "before": before.get(field), "after": after.get(field)}
@@ -518,5 +555,6 @@ class Store:
             ),
             "evidence_ids": [inputs.evidence_id],
             "gaps": report["valuation"]["gaps"],
+            **linkage_fields(report),
             **opportunity_fields(report),
         }

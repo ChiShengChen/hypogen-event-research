@@ -104,9 +104,8 @@ function keepReport(report) {
 
 function versionName(entry) {
   if (entry.revision === 1) return "原稿";
-  if (entry.kind === "earnings_scenario") return "盈利重算";
-  if (entry.kind === "earnings_consensus") return "共識快照";
-  return entry.kind === "scenario" ? "情境重算" : entry.kind === "evidence_follow_up" ? "補搜證據" : "研究版本";
+  return { earnings_scenario: "盈利重算", earnings_consensus: "共識快照", scenario: "情境重算",
+    evidence_follow_up: "補搜證據", linkage_follow_up: "業務連動追問" }[entry.kind] || "研究版本";
 }
 
 function versionButton(entry, includeTarget) {
@@ -201,11 +200,38 @@ function opportunityBlock(report) {
   return fragment;
 }
 
+function businessLinkageBlock(report, scope = null) {
+  const fragment = document.createDocumentFragment();
+  if (!report.business_linkages) return fragment;
+  const paths = scope ? report.business_linkages.filter(path => path.scope === scope) : report.business_linkages;
+  if (scope && !paths.length) return fragment;
+  fragment.append(heading("連動業務假說"));
+  const items = node("div", null, "cards");
+  for (const path of paths) {
+    const item = node("article", null, "item");
+    const head = node("div", null, "item-header");
+    const scopeLabel = path.scope === "internal" ? "公司內部" : "其他公司";
+    head.append(node("h3", `${path.origin_business} → ${path.affected_company} · ${path.affected_business}`),
+      node("span", `${scopeLabel} · ${stances[path.linked_stance]}`, "badge"));
+    item.append(head, fields([
+      ["傳導機制", path.mechanism], ["必要條件", path.condition], ["比較基準", path.baseline],
+      ["財務影響", path.financial_effect], ["其他解釋", path.alternative_explanation],
+      ["公開查核", `${path.public_source} · ${path.observation_period} · ${path.metric}`],
+      ["可驗證預測", path.prediction], ["推翻條件", path.invalidation], ["覆核期限", path.deadline],
+    ]), node("p", "起點證據", "small"), evidenceLinks(path.origin_evidence_ids),
+    node("p", "受影響業務證據", "small"), evidenceLinks(path.affected_evidence_ids));
+    items.append(item);
+  }
+  if (items.childNodes.length) fragment.append(items);
+  if (report.business_linkage_gap) fragment.append(node("p", report.business_linkage_gap, "notice"));
+  return fragment;
+}
+
 function renderOverview(body, report) {
   const assessment = report.assessment || {};
   const intro = node("div", null, "thesis");
   intro.append(node("h2", "核心判斷"), node("p", assessment.thesis || "查閱報告全文以取得原始研究結論。"));
-  body.append(intro, fields([["首要待查", assessment.key_gap], ["下一步", assessment.next_check]]), opportunityBlock(report));
+  body.append(intro, fields([["首要待查", assessment.key_gap], ["下一步", assessment.next_check]]));
   if (report.hypotheses?.length) {
     body.append(heading("多空假說"));
     const items = node("div", null, "cards");
@@ -218,10 +244,12 @@ function renderOverview(body, report) {
     }
     body.append(items);
   }
+  body.append(businessLinkageBlock(report), opportunityBlock(report));
 }
 
 function renderSupply(body, report) {
   body.append(opportunityBlock(report));
+  body.append(businessLinkageBlock(report, "counterparty"));
   const companies = report.assessment?.supply_chain || [];
   body.append(heading("供應鏈公司", `${companies.length} 家`));
   if (!companies.length) body.append(node("p", "本版本沒有可列名的公司關係。", "notice"));
@@ -386,6 +414,7 @@ function renderEarnings(body, report) {
     renderReport(child);
   };
   body.append(heading("盈利預估", `${currency} 百萬／EPS 為每股`));
+  body.append(businessLinkageBlock(report));
   for (const quarter of earnings.quarters) {
     body.append(node("h3", quarter.period_end));
     const table = node("table", null, "compare");
@@ -575,6 +604,10 @@ function renderEarnings(body, report) {
         ["模型條件", link.assumption], ["公開查核", link.public_check], ["反證", link.falsifier], ...impacts,
       ]), evidenceLinks(link.evidence_ids));
       if (!link.source_overlap.length) item.append(node("p", "與原假說引文無交集，待覆核。", "notice"));
+      for (const path of link.related_business_linkages || []) {
+        item.append(node("p", `共用連動證據 · ${path.affected_company} · ${path.affected_business}`, "small"),
+          evidenceLinks(path.evidence_ids));
+      }
       body.append(item);
     }
     if (earnings.unlinked_driver_inputs?.length) {
@@ -772,6 +805,7 @@ function showAnswer(result) {
     result.gaps.forEach((gap) => gaps.append(node("li", gap)));
     panel.append(gaps);
   }
+  panel.append(businessLinkageBlock(result));
   const messages = {
     no_new_sources: "補搜未取得可納入的新來源。",
     unresolved: "找到其他來源，仍無法回答此問題。",

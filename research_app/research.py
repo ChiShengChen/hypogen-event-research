@@ -3,6 +3,7 @@ from datetime import timezone
 from decimal import Decimal, ROUND_CEILING, ROUND_FLOOR, ROUND_HALF_UP, localcontext
 
 from .adapters import AdapterError
+from .business_linkage import LinkedHypotheses, validate_linkages
 from .earnings import complete_plan, render_earnings, validate_plan
 from .schema import CompanyExposure, TradeOpportunity
 
@@ -320,6 +321,11 @@ def build_report(event, adapter, inputs=None, *, discovery=None):
     report["assessment"].update(trade_opportunities(
         generated.assessment, report, {item["id"]: item for item in context["evidence"]},
     ))
+    if isinstance(generated, LinkedHypotheses):
+        evidence = {item["id"]: item for item in context["evidence"]}
+        report["business_linkages"], report["business_linkage_gap"] = validate_linkages(
+            generated, report, evidence, company_key,
+        )
     report["adapter"] = adapter.identity
     report["report_version"] = REPORT_VERSION
     if discovery is not None:
@@ -491,6 +497,25 @@ def render(report):
             f"- 可驗證預測　{h['prediction']}", f"- 推翻條件　{h['invalidation']}",
             f"- 依據　{refs}", "",
         ])
+    if "business_linkages" in report:
+        lines.extend(["## 連動業務假說", ""])
+        for path in report["business_linkages"]:
+            origin_refs = "、".join(cite(ref) for ref in path["origin_evidence_ids"])
+            affected_refs = "、".join(cite(ref) for ref in path["affected_evidence_ids"])
+            stance = {"bull": "多方", "bear": "空方"}[path["linked_stance"]]
+            lines.extend([
+                f"### {path['origin_business']} → {path['affected_company']} · {path['affected_business']}", "",
+                f"- 關聯假說　{stance}",
+                f"- 起點證據　{origin_refs}", f"- 受影響業務證據　{affected_refs}",
+                f"- 傳導與必要條件　{path['mechanism']} {path['condition']}",
+                f"- 基準與財務影響　{path['baseline']} {path['financial_effect']}",
+                f"- 其他解釋　{path['alternative_explanation']}",
+                f"- 公開查核　{path['public_source']}，{path['observation_period']}的{path['metric']}。"
+                f"預測：{path['prediction']} 覆核期限 {path['deadline']}。",
+                f"- 推翻條件　{path['invalidation']}", "",
+            ])
+        if gap := report.get("business_linkage_gap"):
+            lines.extend([f"**待查**　{gap}", ""])
     lines.extend(["## 財務橋接", "", *financial_lines(
         inputs, outputs, cite(inputs["evidence_id"]) if inputs else None,
     ), ""])
@@ -539,7 +564,8 @@ def render_followups(report):
     evidence = {item["id"]: item for item in report["evidence"]}
     for followup in report.get("evidence_followups", []):
         answer = followup["answer"]
-        lines.extend(["", "## 追問補搜", "", followup["question"], "", answer["answer"], ""])
+        heading = "追問補搜" if followup.get("added_evidence_ids") else "業務連動追問"
+        lines.extend(["", f"## {heading}", "", followup["question"], "", answer["answer"], ""])
         for ref in answer["evidence_ids"]:
             item = evidence[ref]
             label = f"[{ref}]({item['source']})" if item["source"].startswith("https://") else f"`{ref}`"
