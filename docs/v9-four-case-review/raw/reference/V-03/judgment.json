@@ -1,0 +1,106 @@
+{
+  "orders": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "B",
+      "A"
+    ]
+  ],
+  "passes": [
+    {
+      "A": {
+        "label": "A",
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2,
+        "rationale": "短期供應假說以公司公布的擴產時程及銷售展望為觀察指標，仍難直接量化三廠對可銷售藥品數量的貢獻。",
+        "disqualifiers": []
+      },
+      "B": {
+        "label": "B",
+        "evidence": 2,
+        "mechanism": 1,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2,
+        "rationale": "第一項假說以交割驗證控制權移轉，但因既有客戶承諾及可調度產能未揭露，取得排產權後會如何改善營運仍不明確。",
+        "disqualifiers": []
+      }
+    },
+    {
+      "B": {
+        "label": "B",
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2,
+        "rationale": "第一案以交割確認三廠控制權移轉，實際可調度的充填產能與排產效益仍待驗證。",
+        "disqualifiers": []
+      },
+      "A": {
+        "label": "A",
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 1,
+        "invalidation": 2,
+        "distinctness": 2,
+        "rationale": "第二案預測交割時的實付金額，但涵蓋交割日的現金流量資料可能在期限後才公布，也可能未單列三廠價款。",
+        "disqualifiers": []
+      }
+    }
+  ],
+  "styles": {
+    "astra-direct": {
+      "score": 9.5,
+      "dimensions": {
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 1.5,
+        "invalidation": 2,
+        "distinctness": 2
+      },
+      "pass_scores": [
+        10,
+        9
+      ],
+      "rationales": [
+        "短期供應假說以公司公布的擴產時程及銷售展望為觀察指標，仍難直接量化三廠對可銷售藥品數量的貢獻。",
+        "第二案預測交割時的實付金額，但涵蓋交割日的現金流量資料可能在期限後才公布，也可能未單列三廠價款。"
+      ],
+      "gate": {
+        "invalid_references": {},
+        "confirmed_flags": [],
+        "candidates": []
+      }
+    },
+    "current-harness": {
+      "score": 9.5,
+      "dimensions": {
+        "evidence": 2,
+        "mechanism": 1.5,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2
+      },
+      "pass_scores": [
+        9,
+        10
+      ],
+      "rationales": [
+        "第一項假說以交割驗證控制權移轉，但因既有客戶承諾及可調度產能未揭露，取得排產權後會如何改善營運仍不明確。",
+        "第一案以交割確認三廠控制權移轉，實際可調度的充填產能與排產效益仍待驗證。"
+      ],
+      "gate": {
+        "invalid_references": {},
+        "confirmed_flags": [],
+        "candidates": []
+      }
+    }
+  }
+}

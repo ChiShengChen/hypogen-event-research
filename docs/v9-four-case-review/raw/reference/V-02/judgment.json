@@ -1,0 +1,106 @@
+{
+  "orders": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "B",
+      "A"
+    ]
+  ],
+  "passes": [
+    {
+      "A": {
+        "label": "A",
+        "evidence": 2,
+        "mechanism": 1,
+        "prediction": 2,
+        "invalidation": 1,
+        "distinctness": 2,
+        "rationale": "候選一預測全年營業利益增加約 8.75 億美元，反證卻改用扣除印度 DTC 基期影響後是否年增，口徑與門檻均有落差。候選二的低基期能解釋年增額如何放大，但獲利回升仍是前提。",
+        "disqualifiers": []
+      },
+      "B": {
+        "label": "B",
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2,
+        "rationale": "兩案都能用全年財報的明確門檻驗證，但全年營業利益只能判定是否達標，無法量化廣告的獲利貢獻，也無法確認體驗部門的疲弱是否延續至下半年。",
+        "disqualifiers": []
+      }
+    },
+    {
+      "B": {
+        "label": "B",
+        "evidence": 2,
+        "mechanism": 1,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2,
+        "rationale": "體驗部門假說以獲利疲弱延續解釋全年增幅低於指引，仍缺少客流、每客消費或成本如何壓低下半年獲利的因果鏈。",
+        "disqualifiers": []
+      },
+      "A": {
+        "label": "A",
+        "evidence": 2,
+        "mechanism": 1,
+        "prediction": 1,
+        "invalidation": 1,
+        "distinctness": 2,
+        "rationale": "串流全年預測採財報口徑，失效條件卻改用扣除印度基期影響後的口徑，且未指定可核對調整值的披露。約 8.75 億美元的預測也未界定容許偏差。",
+        "disqualifiers": []
+      }
+    }
+  ],
+  "styles": {
+    "astra-direct": {
+      "score": 7.5,
+      "dimensions": {
+        "evidence": 2,
+        "mechanism": 1,
+        "prediction": 1.5,
+        "invalidation": 1,
+        "distinctness": 2
+      },
+      "pass_scores": [
+        8,
+        7
+      ],
+      "rationales": [
+        "候選一預測全年營業利益增加約 8.75 億美元，反證卻改用扣除印度 DTC 基期影響後是否年增，口徑與門檻均有落差。候選二的低基期能解釋年增額如何放大，但獲利回升仍是前提。",
+        "串流全年預測採財報口徑，失效條件卻改用扣除印度基期影響後的口徑，且未指定可核對調整值的披露。約 8.75 億美元的預測也未界定容許偏差。"
+      ],
+      "gate": {
+        "invalid_references": {},
+        "confirmed_flags": [],
+        "candidates": []
+      }
+    },
+    "current-harness": {
+      "score": 9.5,
+      "dimensions": {
+        "evidence": 2,
+        "mechanism": 1.5,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2
+      },
+      "pass_scores": [
+        10,
+        9
+      ],
+      "rationales": [
+        "兩案都能用全年財報的明確門檻驗證，但全年營業利益只能判定是否達標，無法量化廣告的獲利貢獻，也無法確認體驗部門的疲弱是否延續至下半年。",
+        "體驗部門假說以獲利疲弱延續解釋全年增幅低於指引，仍缺少客流、每客消費或成本如何壓低下半年獲利的因果鏈。"
+      ],
+      "gate": {
+        "invalid_references": {},
+        "confirmed_flags": [],
+        "candidates": []
+      }
+    }
+  }
+}

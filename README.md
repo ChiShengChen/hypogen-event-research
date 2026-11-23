@@ -248,6 +248,8 @@ python -m benchmarks.hypothesis_pilot --head-to-head
 python -m benchmarks.hypothesis_pilot --head-to-head --holdout
 ```
 
+四案研究問題、封存引文、兩組原始回覆、兩次模型評分與本次重跑結果整理在 [V9 四案對照與覆核](/docs/v9-four-case-review/README.md)。另備 [分析師匿名 PDF](/docs/v9-four-case-review/analyst-review.pdf) 與 [評分表](/docs/v9-four-case-review/review-form.csv)。人工覆核者可先用匿名包評分，提交後再用公開問答核對。
+
 ### 盈利預測、估值與研究員覆核
 
 工作台的「ASML 盈利預測」案例提供兩季盈利、可獨立修改的情境、市場預期比較及年度本益比分析。案例重演 2024 Q3 公告當天。原始公告是實際資料，認列台數、單台收入、估值倍數與年度模型 EPS 是明列的回放假設。缺少歷史市場共識或當時股價時，報告會保留缺口。

@@ -1,0 +1,106 @@
+{
+  "orders": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "B",
+      "A"
+    ]
+  ],
+  "passes": [
+    {
+      "A": {
+        "label": "A",
+        "evidence": 2,
+        "mechanism": 1,
+        "prediction": 2,
+        "invalidation": 1,
+        "distinctness": 2,
+        "rationale": "第二案的低比較基期只解釋年增率為何可能較高，未交代體驗部門獲利回升的營運來源。第一案也未界定訂戶季增或持平時如何判定預測失準，且全年獲利「明顯低於」的門檻不明確。",
+        "disqualifiers": []
+      },
+      "B": {
+        "label": "B",
+        "evidence": 2,
+        "mechanism": 1,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2,
+        "rationale": "第二案假設體驗部門的獲利改善遞延至下一財年，但未指出哪項營運因素會造成遞延。全年低於 6% 可判定預測是否命中，卻無法單憑該數字確認遞延。",
+        "disqualifiers": []
+      }
+    },
+    {
+      "B": {
+        "label": "B",
+        "evidence": 2,
+        "mechanism": 1,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2,
+        "rationale": "體驗部門的假設從前期疲弱推到下半年獲利回升遞延，但缺少造成遞延的營運因素。全年成長率只能判定是否低於指引下緣。",
+        "disqualifiers": []
+      },
+      "A": {
+        "label": "A",
+        "evidence": 2,
+        "mechanism": 1,
+        "prediction": 1,
+        "invalidation": 1,
+        "distinctness": 2,
+        "rationale": "財報提供查核管道，但兩個假設都未訂明查核截止日。串流假設也未定義全年增額低到何種程度算失準，或把訂戶持平或增加列為反證。",
+        "disqualifiers": []
+      }
+    }
+  ],
+  "styles": {
+    "astra-direct": {
+      "score": 7.5,
+      "dimensions": {
+        "evidence": 2,
+        "mechanism": 1,
+        "prediction": 1.5,
+        "invalidation": 1,
+        "distinctness": 2
+      },
+      "pass_scores": [
+        8,
+        7
+      ],
+      "rationales": [
+        "第二案的低比較基期只解釋年增率為何可能較高，未交代體驗部門獲利回升的營運來源。第一案也未界定訂戶季增或持平時如何判定預測失準，且全年獲利「明顯低於」的門檻不明確。",
+        "財報提供查核管道，但兩個假設都未訂明查核截止日。串流假設也未定義全年增額低到何種程度算失準，或把訂戶持平或增加列為反證。"
+      ],
+      "gate": {
+        "invalid_references": {},
+        "confirmed_flags": [],
+        "candidates": []
+      }
+    },
+    "current-harness": {
+      "score": 9,
+      "dimensions": {
+        "evidence": 2,
+        "mechanism": 1,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2
+      },
+      "pass_scores": [
+        9,
+        9
+      ],
+      "rationales": [
+        "第二案假設體驗部門的獲利改善遞延至下一財年，但未指出哪項營運因素會造成遞延。全年低於 6% 可判定預測是否命中，卻無法單憑該數字確認遞延。",
+        "體驗部門的假設從前期疲弱推到下半年獲利回升遞延，但缺少造成遞延的營運因素。全年成長率只能判定是否低於指引下緣。"
+      ],
+      "gate": {
+        "invalid_references": {},
+        "confirmed_flags": [],
+        "candidates": []
+      }
+    }
+  }
+}

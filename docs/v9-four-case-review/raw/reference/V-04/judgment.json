@@ -1,0 +1,106 @@
+{
+  "orders": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "B",
+      "A"
+    ]
+  ],
+  "passes": [
+    {
+      "A": {
+        "label": "A",
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2,
+        "rationale": "兩案各有可觀察的反證，但「重大差距」與「明顯偏離」均未量化，介於預測值與明確反證之間的結果仍難判定。",
+        "disqualifiers": []
+      },
+      "B": {
+        "label": "B",
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2,
+        "rationale": "首案須等 Ford 公開同口徑的 2024 全年純電車資本支出實際占比。若公司只重申約 30% 的規劃值，全年占比是否下降仍無法驗證。",
+        "disqualifiers": []
+      }
+    },
+    {
+      "B": {
+        "label": "B",
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2,
+        "rationale": "資本配置假說能否驗證，取決於 Ford 是否公開 2024 全年同口徑的純電車資本支出實際占比。即使占比下降，也無法單憑此數字估計取消該 SUV 的貢獻。",
+        "disqualifiers": []
+      },
+      "A": {
+        "label": "A",
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 2,
+        "invalidation": 1,
+        "distinctness": 2,
+        "rationale": "兩項失效條件均未界定多大差距才算重大。第二項預測看截止日的最新指引，期限內一度調回約 40% 仍可能在截止日前改回約 30%。",
+        "disqualifiers": []
+      }
+    }
+  ],
+  "styles": {
+    "astra-direct": {
+      "score": 9.5,
+      "dimensions": {
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 2,
+        "invalidation": 1.5,
+        "distinctness": 2
+      },
+      "pass_scores": [
+        10,
+        9
+      ],
+      "rationales": [
+        "兩案各有可觀察的反證，但「重大差距」與「明顯偏離」均未量化，介於預測值與明確反證之間的結果仍難判定。",
+        "兩項失效條件均未界定多大差距才算重大。第二項預測看截止日的最新指引，期限內一度調回約 40% 仍可能在截止日前改回約 30%。"
+      ],
+      "gate": {
+        "invalid_references": {},
+        "confirmed_flags": [],
+        "candidates": []
+      }
+    },
+    "current-harness": {
+      "score": 10,
+      "dimensions": {
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2
+      },
+      "pass_scores": [
+        10,
+        10
+      ],
+      "rationales": [
+        "首案須等 Ford 公開同口徑的 2024 全年純電車資本支出實際占比。若公司只重申約 30% 的規劃值，全年占比是否下降仍無法驗證。",
+        "資本配置假說能否驗證，取決於 Ford 是否公開 2024 全年同口徑的純電車資本支出實際占比。即使占比下降，也無法單憑此數字估計取消該 SUV 的貢獻。"
+      ],
+      "gate": {
+        "invalid_references": {},
+        "confirmed_flags": [],
+        "candidates": []
+      }
+    }
+  }
+}

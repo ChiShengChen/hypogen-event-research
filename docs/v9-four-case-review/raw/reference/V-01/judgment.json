@@ -1,0 +1,106 @@
+{
+  "orders": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "B",
+      "A"
+    ]
+  ],
+  "passes": [
+    {
+      "A": {
+        "label": "A",
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 1,
+        "invalidation": 1,
+        "distinctness": 2,
+        "rationale": "兩案分別檢驗客戶組合對每件收入的影響，以及運能調整對每件成本的影響。第一案未指明第四季件量與收入的查閱管道，且反證須先確認最大客戶的件量占比下降。第二案的全年利益率門檻可核對，但未交代如何取得運能利用率或每件成本資料。",
+        "disqualifiers": []
+      },
+      "B": {
+        "label": "B",
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2,
+        "rationale": "兩案分別以全年業績公告及說明檢驗網路節省與客戶減量，並為同一期間的財務指標設定明確的預測與反證門檻。主要限制是合併利益率與營收只能作為代理指標，個別因素的貢獻仍取決於 UPS 是否明確揭露。",
+        "disqualifiers": []
+      }
+    },
+    {
+      "B": {
+        "label": "B",
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2,
+        "rationale": "兩案最大的限制在於歸因。合併利益率與營收可用來檢驗是否跨過各自的門檻，但仍須仰賴 UPS 明確說明，才能判斷網路重整或客戶減量的個別影響。",
+        "disqualifiers": []
+      },
+      "A": {
+        "label": "A",
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 1,
+        "invalidation": 1,
+        "distinctness": 2,
+        "rationale": "最薄弱的是機制所需資料的可得性。第一案未指明如何取得最大客戶的同期件量占比，第二案未指明如何從公開資料取得運能利用率或每件成本。整體每件收入與合併利益率只能檢驗部分預測。",
+        "disqualifiers": []
+      }
+    }
+  ],
+  "styles": {
+    "astra-direct": {
+      "score": 8,
+      "dimensions": {
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 1,
+        "invalidation": 1,
+        "distinctness": 2
+      },
+      "pass_scores": [
+        8,
+        8
+      ],
+      "rationales": [
+        "兩案分別檢驗客戶組合對每件收入的影響，以及運能調整對每件成本的影響。第一案未指明第四季件量與收入的查閱管道，且反證須先確認最大客戶的件量占比下降。第二案的全年利益率門檻可核對，但未交代如何取得運能利用率或每件成本資料。",
+        "最薄弱的是機制所需資料的可得性。第一案未指明如何取得最大客戶的同期件量占比，第二案未指明如何從公開資料取得運能利用率或每件成本。整體每件收入與合併利益率只能檢驗部分預測。"
+      ],
+      "gate": {
+        "invalid_references": {},
+        "confirmed_flags": [],
+        "candidates": []
+      }
+    },
+    "current-harness": {
+      "score": 10,
+      "dimensions": {
+        "evidence": 2,
+        "mechanism": 2,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2
+      },
+      "pass_scores": [
+        10,
+        10
+      ],
+      "rationales": [
+        "兩案分別以全年業績公告及說明檢驗網路節省與客戶減量，並為同一期間的財務指標設定明確的預測與反證門檻。主要限制是合併利益率與營收只能作為代理指標，個別因素的貢獻仍取決於 UPS 是否明確揭露。",
+        "兩案最大的限制在於歸因。合併利益率與營收可用來檢驗是否跨過各自的門檻，但仍須仰賴 UPS 明確說明，才能判斷網路重整或客戶減量的個別影響。"
+      ],
+      "gate": {
+        "invalid_references": {},
+        "confirmed_flags": [],
+        "candidates": []
+      }
+    }
+  }
+}

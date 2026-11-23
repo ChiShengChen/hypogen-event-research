@@ -1,0 +1,29 @@
+{
+  "hypotheses": {
+    "first": {
+      "company": "Novo Nordisk",
+      "mechanism": "三座廠已為 Novo Nordisk 提供服務，管理層預期自 2026 年起才逐步增加充填產能。因此，即使研究期間內完成交割，所有權移轉本身對當期可銷售藥品數量的貢獻應有限。",
+      "catalyst": "截至 2025 年 6 月 30 日，公司更新三廠的擴產時程或銷售展望。",
+      "prediction": "預期截至 2025 年 6 月 30 日，公司仍將三廠新增充填產能的起點列為 2026 年或以後，研究期內的銷售展望不會因該新增產能而上修。",
+      "invalidation": "若公司在研究期內將新增產能的起點提前至 2025 年，或明確因三廠提前增產而上修銷售展望，則推翻此假說。",
+      "materiality": "估算研究期內營收時，若將三廠原已提供的充填服務全數計為收購帶來的新增供應，會高估交易的短期營收貢獻。",
+      "evidence_ids": [
+        "novo-sites:capacity",
+        "novo-sites:acquisition"
+      ]
+    },
+    "second": {
+      "company": "Novo Nordisk",
+      "mechanism": "三廠交易約定約 110 億美元預付款，且與 Novo Holdings 收購 Catalent 的交易相連。若研究期內交割並付款，現金支出將早於管理層預期的新增充填產能。",
+      "catalyst": "Novo Holdings 收購 Catalent 的交易進展，以及 Novo Nordisk 在 2025 年 6 月 30 日前對三廠交割與付款狀態的披露。",
+      "prediction": "若三廠於 2025 年 6 月 30 日前交割，預期 Novo Nordisk 在交割時須支付約 110 億美元，可用交割公告或涵蓋交割日的現金流量資料核對。若屆時仍未交割，則本期預測的付款觸發條件尚未成立。",
+      "invalidation": "若研究期內已交割，但公司披露大部分價款已遞延至 2025 年 6 月 30 日後支付，或交割時支付的金額顯著低於約 110 億美元，則推翻此假說。",
+      "materiality": "若研究期內付款，估值模型須在新產能貢獻營收前納入約 110 億美元的資金需求。交割時點因此會影響期末現金或融資需求的估算。",
+      "evidence_ids": [
+        "novo-sites:acquisition",
+        "novo-sites:capacity"
+      ]
+    }
+  },
+  "seconds": 18.59
+}

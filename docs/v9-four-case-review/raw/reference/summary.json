@@ -1,0 +1,41 @@
+{
+  "completed_cases": 4,
+  "planned_cases": 4,
+  "baseline": "astra-direct",
+  "styles": {
+    "astra-direct": {
+      "mean_out_of_10": 8.62,
+      "dimension_means": {
+        "evidence": 2,
+        "mechanism": 1.75,
+        "prediction": 1.5,
+        "invalidation": 1.38,
+        "distinctness": 2
+      },
+      "eligible": 4,
+      "versus_baseline": null,
+      "median_seconds": 20.05,
+      "order_inversions_vs_baseline": null,
+      "rating_order_mean_absolute_difference": 0.75
+    },
+    "current-harness": {
+      "mean_out_of_10": 9.75,
+      "dimension_means": {
+        "evidence": 2,
+        "mechanism": 1.75,
+        "prediction": 2,
+        "invalidation": 2,
+        "distinctness": 2
+      },
+      "eligible": 4,
+      "versus_baseline": [
+        3,
+        1,
+        0
+      ],
+      "median_seconds": 40.11,
+      "order_inversions_vs_baseline": 1,
+      "rating_order_mean_absolute_difference": 0.5
+    }
+  }
+}
