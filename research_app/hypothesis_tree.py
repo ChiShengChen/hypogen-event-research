@@ -5,6 +5,7 @@ from uuid import uuid4
 
 from pydantic import Field, model_validator
 
+from .hypothesis_inputs import BranchInput
 from .scenario_research import STANCE_LABELS, ScenarioCase, Stance, case_supported
 from .schema import Nonempty, Schema
 
@@ -14,13 +15,18 @@ ROOT = "root"
 class TreeQuestion(Schema):
     parent_id: str = Field(min_length=1, max_length=80)
     mode: Literal["followup", "fanout", "custom"]
-    question: str = Field(min_length=1, max_length=2400)
+    question: str = Field(default="", max_length=2400)
     stance: str | None = Field(default=None, min_length=1, max_length=80)
+    inputs: list[BranchInput] = Field(default_factory=list, max_length=6)
 
     @model_validator(mode="after")
     def check_stance(self):
         if (self.mode == "custom") != (self.stance is not None):
             raise ValueError("只有自訂立場須填寫立場名稱")
+        if not self.question:
+            if not self.inputs:
+                raise ValueError("請輸入問題或加入一個資料泡泡")
+            self.question = "結合這次的輸入與所選分支，提出新的條件式假說。"
         return self
 
 
@@ -46,6 +52,10 @@ TREE_PROMPT = (
     "up to four hypotheses across bull, base, bear and wait. For followup, develop the selected node without "
     "repeating its mechanism. For custom, actively test the analyst premise and explain what evidence would "
     "invalidate it. Return gaps and leave hypotheses empty where a credible evidence-backed case is unavailable."
+    " Use selected_hypothesis as the previous hypothesis. Integrate any relevant branch inputs and show what "
+    "they change in its causal chain or falsifier. Analyst opinions and uploads without an availability date are "
+    "conditional premises. Cite only IDs in evidence, distinguish user-dated uploads from public news, and describe "
+    "missing confirmation explicitly."
 )
 
 
@@ -74,7 +84,7 @@ def branch_path(nodes, parent_id):
     return path[::-1]
 
 
-def branch_context(report, path, query):
+def branch_context(report, path, query, inputs=()):
     branch = []
     for item in path[-6:]:
         case = item.get("case", {})
@@ -82,10 +92,22 @@ def branch_context(report, path, query):
                       {key: case[key] for key in ("conditions", "mechanism", "prediction", "falsifier")
                        if key in case})
     parent = path[-1]
+    selected_case = next((node["case"] for node in reversed(path) if "case" in node), None)
+    inherited = [row for node in path for row in node.get("inputs", []) if row["status"] != "excluded"]
+    inherited_kept = {row["id"]: row for row in inherited[-8:]}
+    if selected_case:
+        inherited_kept.update((row["id"], row) for row in inherited if row["id"] in selected_case["evidence_ids"])
+    branch_inputs = [*inherited_kept.values(), *(row for row in inputs if row["status"] != "excluded")]
+    evidence = [row for row in report["evidence"] if row["kind"] == "disclosure" and not row["synthetic"]]
+    evidence.extend({"id": row["id"], "kind": row["kind"], "source": row.get("url", row["title"]),
+                     "available_on": row["available_on"], "basis": row["note"], "quote": row["text"]}
+                    for row in branch_inputs if row["status"] == "usable")
     return {
         **{key: report[key] for key in ("target", "event_text", "as_of", "horizon")},
-        "evidence": [row for row in report["evidence"] if row["kind"] == "disclosure" and not row["synthetic"]],
+        "evidence": evidence,
         "ancestor_context": branch,
+        "selected_hypothesis": selected_case,
+        "conditional_inputs": [row for row in branch_inputs if row["status"] == "context"],
         "mode": query.mode,
         "question": query.question,
         "selected_stance": query.stance or parent.get("stance"),
@@ -93,7 +115,7 @@ def branch_context(report, path, query):
     }
 
 
-def result_nodes(report, path, query, draft, context, normalize):
+def result_nodes(report, path, query, draft, context, normalize, inputs=()):
     parent = path[-1]
     query_id = uuid4().hex
     stance = context["selected_stance"]
@@ -101,7 +123,7 @@ def result_nodes(report, path, query, draft, context, normalize):
     group = {"id": query_id, "parent_id": parent["id"], "kind": query.mode, "stance": stance,
              "stance_code": parent.get("stance_code") if query.mode == "followup" else None,
              "title": query.stance or query.question, "question": query.question, "premise": premise,
-             "gaps": list(draft.gaps)}
+             "gaps": list(draft.gaps), "inputs": list(inputs)}
     eligible = {row["id"] for row in context["evidence"]}
     mechanisms = {normalize(item["case"]["mechanism"]) for item in path if "case" in item}
     stances, children = set(), []

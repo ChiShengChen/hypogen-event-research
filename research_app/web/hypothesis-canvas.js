@@ -119,12 +119,22 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
       const endY = view.y + (child.y + CARD_HEIGHT / 2) * view.scale;
       const bend = Math.max(24, Math.abs(endX - startX) / 2);
       const highlight = path.has(item.id) || item.parent_id === selected;
+      const isInput = item.kind === "input";
+      pen.setLineDash(isInput ? [4, 5] : []);
       pen.strokeStyle = highlight ? "#9bd4a9" : "#657971";
       pen.lineWidth = highlight ? 2.5 : 1.5;
       pen.beginPath();
       pen.moveTo(startX, startY);
       pen.bezierCurveTo(startX + bend, startY, endX - bend, endY, endX, endY);
       pen.stroke();
+      if (isInput) {
+        pen.fillStyle = pen.strokeStyle;
+        pen.beginPath();
+        pen.moveTo(startX + 4, startY);
+        pen.lineTo(startX + 11, startY - 4);
+        pen.lineTo(startX + 11, startY + 4);
+        pen.fill();
+      }
     }
   }
 
@@ -211,9 +221,11 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
       if (item.stance_code) card.dataset.stance = item.stance_code;
       if (item.id === selected) card.classList.add("graph-node-active");
       if (item.parent_id !== null) card.append(node("span", null, "graph-port graph-port-in"));
-      if ((graph.children.get(item.id) || []).length || enabled) card.append(node("span", null, "graph-port graph-port-out"));
+      if ((graph.children.get(item.id) || []).length || (enabled && !item.input)) card.append(node("span", null, "graph-port graph-port-out"));
       const header = node("div", null, "graph-node-header");
-      header.append(node("span", LABELS[item.kind] || item.stance || "假說"));
+      header.append(node("span", item.input ?
+        (item.input.status === "excluded" ? "輸入泡泡 · 未納入" : "輸入泡泡") :
+        LABELS[item.kind] || item.stance || "假說"));
       const actions = node("div", null, "graph-node-controls");
       if (graph.children.has(item.id)) {
         const open = expanded.has(item.id);
@@ -223,7 +235,7 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
         if (focusId === `toggle:${item.id}`) focusTarget = control;
         actions.append(control);
       }
-      if (enabled) {
+      if (enabled && !item.input) {
         const add = button("↗", `在 ${item.title} 開分支`, () => select(item.id, true));
         add.dataset.graphAction = "branch";
         actions.append(add);
@@ -240,7 +252,7 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
     }
     plane.replaceChildren(fragment);
     if (!view) fit();
-    if (focusId) reveal(selected);
+    if (focusId) reveal(locations.has(focusId) ? focusId : selected);
     focusTarget?.focus({ preventScroll: true });
     paint();
   }

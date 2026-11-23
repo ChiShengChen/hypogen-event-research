@@ -1,3 +1,4 @@
+from base64 import b64encode
 import json
 from pathlib import Path
 
@@ -69,3 +70,62 @@ def test_hypothesis_tree_preserves_custom_premise_across_deep_branches(tmp_path)
         assert client.get("/reports/test/revisions/1").json()["stance_cases"] == report["stance_cases"]
     reloaded = Store(store.path).hypothesis_tree("test", 1)["nodes"]
     assert {node["id"] for node in reloaded} >= {custom["id"], current["id"], bear["id"]}
+
+
+def test_branch_inputs_keep_dated_evidence_and_opinions_separate(tmp_path):
+    report = json.loads(Path("docs/guidance-table/scenario-draft.json").read_text())
+    store = Store(tmp_path / "inputs.sqlite")
+    with store.connection() as db:
+        db.execute("INSERT INTO runs VALUES ('test', 'run', 'key', '{}')")
+        db.execute("INSERT INTO revisions VALUES ('test', 1, NULL, ?)", (encode(report),))
+
+    listed = "https://example.com/news"
+    later = "https://example.com/later"
+    unverified = "https://example.com/unverified"
+
+    class WithInputs(BranchRecorder):
+        def search(self, schema, instruction, context):
+            assert context["urls"] == [listed, later, unverified]
+            return schema(sources=[
+                {"url": listed, "title": "原新聞", "published_on": "2024-10-14", "summary": "可核對的摘要"},
+                {"url": later, "title": "後來的消息", "published_on": "2024-11-01", "summary": "截點後內文"},
+                {"url": unverified, "title": "未觀察", "published_on": "2024-10-14", "summary": "無工具回傳"},
+            ]), [{"results": [{"url": listed}, {"url": later}]}]
+
+        def _generate(self, schema, instruction, context):
+            draft = super()._generate(schema, instruction, context)
+            candidate = draft.hypotheses[0]
+            uploads = [row["id"] for row in context["evidence"] if row["kind"] == "file"]
+            if not uploads:
+                return draft
+            return schema(hypotheses=[
+                candidate.model_copy(update={"evidence_ids": uploads}),
+                candidate.model_copy(update={"mechanism": "引用條件推演", "evidence_ids": [
+                    row["id"] for row in context["conditional_inputs"] if row["kind"] == "opinion"]}),
+            ], gaps=[])
+
+    upload = b64encode("amount,year\n40,2024".encode()).decode()
+    adapter = WithInputs(report)
+    url = "/reports/test/revisions/1/hypothesis-tree"
+    with TestClient(create_app(store, adapter)) as client:
+        response = client.post(url, json={"parent_id": "scenario:bull:0", "mode": "followup", "inputs": [
+            *({"kind": "news", "url": value} for value in (listed, later, unverified)),
+            {"kind": "file", "filename": "figure.csv", "data": upload, "available_on": "2024-10-13"},
+            {"kind": "file", "filename": "notes.csv", "data": upload},
+            {"kind": "opinion", "text": "延後交付並非取消"},
+        ]})
+        assert response.status_code == 200, response.text
+        group, child = response.json()["nodes"]
+        assert [item["status"] for item in group["inputs"]] == [
+            "usable", "excluded", "excluded", "usable", "context", "context",
+        ]
+        assert upload not in response.text and "截點後內文" not in response.text
+        assert child["case"]["evidence_ids"] == [group["inputs"][3]["id"]]
+        assert adapter.contexts[-1]["selected_hypothesis"] == report["stance_cases"][0]["cases"][0]
+        assert [row["kind"] for row in adapter.contexts[-1]["conditional_inputs"]] == ["file", "opinion"]
+        assert client.post(url, json={"parent_id": child["id"], "mode": "followup", "question": "再查一步"}).status_code == 200
+        assert any(row["id"] == group["inputs"][3]["id"] for row in adapter.contexts[-1]["evidence"])
+        assert client.post(url, json={"parent_id": "scenario:bear:0", "mode": "followup", "question": "旁支"}).status_code == 200
+        assert not any(row["id"] == group["inputs"][3]["id"] for row in adapter.contexts[-1]["evidence"])
+    saved = Store(store.path).hypothesis_tree("test", 1)["nodes"]
+    assert next(node for node in saved if node["id"] == group["id"])["inputs"] == group["inputs"]

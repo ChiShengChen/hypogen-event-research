@@ -18,6 +18,7 @@ from .full_revision import (
     _source_url,
 )
 from .hypothesis_tree import branch_context, branch_path, result_nodes, seed_nodes
+from .hypothesis_inputs import NewsInput, prepare_inputs, resolve_links
 from .research import (
     FORMULA_VERSION, REPORT_VERSION, apply_financial_scenario, build_report, company_key, document_evidence,
     render, render_followups,
@@ -184,9 +185,19 @@ class Store:
         generate = getattr(adapter, "branch_hypotheses", None)
         if not callable(generate):
             raise AdapterError("產生假說分支需要 Codex CLI 或模型 API 模式")
-        context = branch_context(report, path, query)
+        findings = {}
+        urls = list(dict.fromkeys(item.url for item in query.inputs if isinstance(item, NewsInput)))
+        search = getattr(adapter, "search", None)
+        if urls and callable(search):
+            try:
+                findings = resolve_links(search, urls, query.question, report["as_of"])
+            except AdapterError:
+                # The user may continue with the parent and other available inputs.
+                findings = {}
+        inputs = prepare_inputs(query, report["as_of"], findings)
+        context = branch_context(report, path, query, inputs)
         draft = generate(context)
-        nodes = result_nodes(report, path, query, draft, context, company_key)
+        nodes = result_nodes(report, path, query, draft, context, company_key, inputs)
         with self.connection() as db:
             db.executemany(
                 "INSERT INTO hypothesis_nodes (report_id, revision, node_id, payload) VALUES (?, ?, ?, ?)",
