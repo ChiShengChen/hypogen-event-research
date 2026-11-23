@@ -1,0 +1,154 @@
+[
+  {
+    "id": "infn_q4_2023_update",
+    "split": "pilot",
+    "issuer": "Infinera Corporation",
+    "ticker": "INFN",
+    "event_at": "2024-03-06T16:04:43-05:00",
+    "as_of": "2024-03-06T16:04:43-05:00",
+    "fiscal_label": "fourth quarter ended December 30, 2023",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2023-12-30",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "public_guidance_assumption",
+      "amount": "436000000",
+      "available_at": "2023-11-08T16:15:32-05:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1138639/000113863923000195/infn-110823xex991.htm",
+      "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1138639/000113863923000195/0001138639-23-000195-index.htm",
+      "rationale": "Frozen midpoint of original companywide December-quarter guidance ($421 million to $451 million) furnished on November 8."
+    },
+    "documents": [
+      {
+        "id": "infn_q4_2023_update-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1138639/000113863924000048/infn-3624xex991.htm",
+        "path": "output/earnings-verifier/filings/pilot/infn.htm",
+        "sha256": "f9e8c113db98ab45e49b76b672e9ea0f57abf26d844a1cc6e8a24c8f2ec9668d",
+        "media_type": "text/html",
+        "published_at": "2024-03-06T16:04:43-05:00",
+        "obtained_at": "2024-03-06T16:04:43-05:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1138639/000113863924000048/0001138639-24-000048-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "fnsr_q1_fy2014_update",
+    "split": "pilot",
+    "issuer": "Finisar Corporation",
+    "ticker": "FNSR",
+    "event_at": "2013-08-06T17:28:48-04:00",
+    "as_of": "2013-08-06T17:28:48-04:00",
+    "fiscal_label": "first fiscal quarter, ended July 28, 2013",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2013-07-28",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "public_guidance_assumption",
+      "amount": "252500000",
+      "available_at": "2013-06-19T16:00:51-04:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1094739/000110262413000726/finisarcorporation.htm",
+      "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1094739/000110262413000726/0001102624-13-000726-index.htm",
+      "rationale": "Frozen midpoint of the June 19 first-quarter fiscal 2014 revenue outlook ($245 million to $260 million)."
+    },
+    "documents": [
+      {
+        "id": "fnsr_q1_fy2014_update-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1094739/000110262413000929/finisarcorporation.htm",
+        "path": "output/earnings-verifier/filings/pilot/fnsr.htm",
+        "sha256": "3a94e6eb7c43a1a8a56ab91838e7b2143d58832924b5bc6826eed24b7bd0ba12",
+        "media_type": "text/html",
+        "published_at": "2013-08-06T17:28:48-04:00",
+        "obtained_at": "2013-08-06T17:28:48-04:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1094739/000110262413000929/0001102624-13-000929-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "ai_q4_fy2023_update",
+    "split": "pilot",
+    "issuer": "C3.ai, Inc.",
+    "ticker": "AI",
+    "event_at": "2023-05-15T07:02:00-04:00",
+    "as_of": "2023-05-15T07:02:00-04:00",
+    "fiscal_label": "fourth fiscal quarter and fiscal year ended April 30, 2023",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2023-04-30",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "public_guidance_assumption",
+      "amount": "71000000",
+      "available_at": "2023-03-02T16:12:25-05:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1577526/000162828023006047/ex991-fy23xq3earnings.htm",
+      "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1577526/000162828023006047/0001628280-23-006047-index.htm",
+      "rationale": "Frozen midpoint of companywide fourth-quarter revenue guidance ($70 million to $72 million) furnished on March 2."
+    },
+    "documents": [
+      {
+        "id": "ai_q4_fy2023_update-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1577526/000162828023017993/may15announcement.htm",
+        "path": "output/earnings-verifier/filings/pilot/ai.htm",
+        "sha256": "e167c2a89894229b03ce13eb61b170ad7e2eecf757ca5ac2fa9596a1328085c5",
+        "media_type": "text/html",
+        "published_at": "2023-05-15T07:02:00-04:00",
+        "obtained_at": "2023-05-15T07:02:00-04:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1577526/000162828023017993/0001628280-23-017993-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "lif_q4_2025_operational_update",
+    "split": "pilot",
+    "issuer": "Life360, Inc.",
+    "ticker": "LIF",
+    "event_at": "2026-01-22T16:32:03-05:00",
+    "as_of": "2026-01-22T16:32:03-05:00",
+    "fiscal_label": "Q4 2025",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2025-12-31",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "public_guidance_assumption",
+      "amount": "135998000",
+      "available_at": "2025-11-10T16:10:45-05:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1581760/000158176025000225/a11102025ex991life360inc.htm",
+      "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1581760/000158176025000225/0001581760-25-000225-index.htm",
+      "rationale": "Frozen analyst-style proxy from the November release, not company-issued quarterly guidance. The midpoint of the $474–485 million annual outlook less $343.502 million in nine-month consolidated revenue is $135.998 million."
+    },
+    "documents": [
+      {
+        "id": "lif_q4_2025_operational_update-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1581760/000158176026000006/life360globenewswirerele.htm",
+        "path": "output/earnings-verifier/filings/pilot/life.htm",
+        "sha256": "2c18e339321fd67eff200b2fd8fc698a98f14425251dc59d8016f760f465abb1",
+        "media_type": "text/html",
+        "published_at": "2026-01-22T16:32:03-05:00",
+        "obtained_at": "2026-01-22T16:32:03-05:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1581760/000158176026000006/0001581760-26-000006-index.htm"
+      }
+    ]
+  }
+]

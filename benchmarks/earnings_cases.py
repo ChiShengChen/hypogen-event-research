@@ -113,11 +113,14 @@ def make_case(ticker, cik, event, targets, previous):
             "actual": actual}
 
 
-def load_cases(folder: Path):
+def load_cases(folder: Path, selections=None):
     all_cases = []
-    for ticker, cik in TICKERS.items():
+    selections = selections or {ticker: range(2019, 2025) for ticker in TICKERS}
+    cik_by_ticker = {**TICKERS, "NVDA": "0001045810"}
+    for ticker, years in selections.items():
+        cik = cik_by_ticker[ticker]
         filings = filing_index(json.loads((folder / f"{ticker}.json").read_text()))
-        for year in range(2019, 2025):
+        for year in years:
             events = [row for row in filings.values() if row["end"].year == year and row["fp"] == "Q1"]
             if len(events) != 1:
                 raise ValueError(f"{ticker} {year}: expected one Q1 filing, got {len(events)}")

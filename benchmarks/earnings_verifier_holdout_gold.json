@@ -1,0 +1,83 @@
+{
+  "ilmn_q4_2025_preliminary": {
+    "disposition": "eligible",
+    "new_low": "1155000000",
+    "new_high": "1155000000",
+    "delta": "51000000",
+    "source_ids": [
+      "ilmn_q4_2025_preliminary-release"
+    ],
+    "required_text": [
+      [
+        "preliminary fourth quarter 2025 results",
+        "december 28, 2025",
+        "Fourth Quarter and Fiscal Year 2025"
+      ],
+      [
+        "$1.155 billion",
+        "$1,155",
+        "$ 1,155"
+      ]
+    ],
+    "reason": "The quarter-specific consolidated preliminary figure is $1.155 billion. $1.100 billion is the ex-China amount; $4.339 billion is the full fiscal year; constant-currency sales are also separate.",
+    "amount_text": [
+      "$1.155 billion",
+      "$1,155",
+      "$ 1,155"
+    ]
+  },
+  "idcc_q4_2023_preliminary": {
+    "disposition": "eligible",
+    "new_low": "105000000",
+    "new_high": "105000000",
+    "delta": "1000000",
+    "source_ids": [
+      "idcc_q4_2023_preliminary-release"
+    ],
+    "required_text": [
+      [
+        "Q4 2023 Preliminary Results",
+        "quarter ended December 31, 2023",
+        "Fourth Quarter 2023"
+      ],
+      "approximately $105 million"
+    ],
+    "reason": "The explicit $105 million preliminary Q4 point is valid despite the accompanying comparison to prior guidance. The starting point is $104 million, so the residual is +$1 million. The release also includes a separate Q1 2024 range.",
+    "amount_text": "approximately $105 million"
+  },
+  "prgs_q1_fy2026_guidance": {
+    "disposition": "eligible",
+    "new_low": "244000000",
+    "new_high": "250000000",
+    "delta": "5985000",
+    "source_ids": [
+      "prgs_q1_fy2026_guidance-release"
+    ],
+    "required_text": [
+      [
+        "Q1 2026 Guidance",
+        "fiscal first quarter ending February 28, 2026"
+      ],
+      "$244 - $250"
+    ],
+    "reason": "The quarter-specific upper header identifies guidance versus historical actuals. The GAAP subcolumn has the new $244–$250 million range. The nearest bound is $244 million. Identical non-GAAP numbers are not independent support for the GAAP basis.",
+    "amount_text": "$244 - $250",
+    "selected_cell_text": "$244 - $250"
+  },
+  "ptc_q4_fy2016_preliminary": {
+    "disposition": "blocked",
+    "new_low": null,
+    "new_high": null,
+    "delta": "0",
+    "source_ids": [
+      "ptc_q4_fy2016_preliminary-release"
+    ],
+    "required_text": [
+      [
+        "below the low end of our prior guidance",
+        "GAAP and non-GAAP revenue, and GAAP and non-GAAP EPS to be below"
+      ]
+    ],
+    "reason": "The update gives one-sided GAAP revenue commentary. The explicit $139–$142 million interval concerns bookings. There is no complete current revenue point/range, so no numerical adjustment is authorized."
+  }
+}

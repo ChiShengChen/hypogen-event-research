@@ -2,7 +2,7 @@ from datetime import date
 from decimal import Decimal
 from typing import Annotated, Literal
 
-from pydantic import AwareDatetime, BaseModel, ConfigDict, Field, model_validator
+from pydantic import AwareDatetime, BaseModel, ConfigDict, Field, model_serializer, model_validator
 
 
 class Schema(BaseModel):
@@ -138,6 +138,95 @@ class EPSAssumptions(Schema):
             raise ValueError("常態稅率須介於零與一之間，且稀釋股數須為正")
         if len({row.label for row in self.one_offs}) != len(self.one_offs):
             raise ValueError("一次性項目不可重複列入")
+        return self
+
+
+class RevenueObservation(SourcedAssumption):
+    period_end: date
+    fiscal_quarter: Annotated[int, Field(ge=1, le=4)]
+    value: Annotated[Amount, Field(gt=0)]
+
+
+class RevenueAdjustment(SourcedAssumption):
+    id: Annotated[str, Field(pattern=r"^[a-zA-Z0-9_-]+$", max_length=64)]
+    segment: Nonempty
+    driver: Literal["volume", "price", "mix", "recognition", "scope"]
+    public_check: Nonempty
+    falsifier: Nonempty
+
+
+class RevenueTurnSignal(Schema):
+    driver: Literal["volume", "price", "mix", "capacity", "recognition"]
+    direction: Literal["up", "down"]
+    available_at: AwareDatetime
+    evidence_ids: list[Nonempty] = Field(min_length=1)
+    observation: Nonempty
+
+
+class RevenueResidualInput(Schema):
+    id: Annotated[str, Field(pattern=r"^[a-zA-Z0-9_-]+$", max_length=64)]
+    segment: Nonempty
+    driver: Literal["volume", "price", "mix", "capacity", "recognition", "scope"]
+    period_end: date | None = None
+    incremental_revenue: Amount
+    incremental_gross_margin: Annotated[Amount, Field(ge=-1, le=1)] | None = None
+    incremental_opex: Amount = Decimal(0)
+    basis_incremental_to_incumbent: bool
+    source_family: Nonempty
+    mechanism: Nonempty
+    available_at: AwareDatetime
+    evidence_ids: list[Nonempty] = Field(min_length=1)
+    rationale: Nonempty
+    public_check: Nonempty
+    falsifier: Nonempty
+
+    @model_validator(mode="after")
+    def check_change(self):
+        if not self.incremental_revenue:
+            raise ValueError("T+2 分部營收增減項須量化非零營收差額")
+        return self
+
+
+class RevenueBridge(Schema):
+    period_end: date
+    currency: Currency
+    basis: Literal["US_GAAP", "IFRS", "adjusted"]
+    near_fiscal_quarter: Annotated[int, Field(ge=1, le=4)]
+    far_fiscal_quarter: Annotated[int, Field(ge=1, le=4)]
+    method: Literal[
+        "seasonal_prior", "latest_run_rate", "guided_seasonal", "guided_absolute", "year_on_year",
+        "confirmed_turn", "residual_a", "residual_b",
+    ]
+    history: list[RevenueObservation] = Field(min_length=1, max_length=24)
+    adjustments: list[RevenueAdjustment] = Field(default_factory=list, max_length=12)
+    operating_signals: list[RevenueTurnSignal] = Field(default_factory=list, max_length=4)
+    residual_inputs: list[RevenueResidualInput] = Field(default_factory=list, max_length=12)
+
+    @model_serializer(mode="wrap")
+    def keep_existing_snapshots(self, handler):
+        value = handler(self)
+        if not self.operating_signals:
+            value.pop("operating_signals", None)
+        if not self.residual_inputs:
+            value.pop("residual_inputs", None)
+        return value
+
+    @model_validator(mode="after")
+    def check_bridge(self):
+        if self.far_fiscal_quarter != self.near_fiscal_quarter % 4 + 1:
+            raise ValueError("營收橋接須使用連續財年季度")
+        if len({row.period_end for row in self.history}) != len(self.history):
+            raise ValueError("季營收歷史不得重複")
+        if len({row.id for row in self.adjustments}) != len(self.adjustments):
+            raise ValueError("營收調整 ID 不可重複")
+        if len({row.id for row in self.residual_inputs}) != len(self.residual_inputs):
+            raise ValueError("T+2 分部增減項 ID 不可重複")
+        if any(row.period_end and row.period_end != self.period_end for row in self.residual_inputs):
+            raise ValueError("T+2 分部增減項須落在第二預測季")
+        if self.method == "residual_b" and self.adjustments:
+            raise ValueError("殘差方案 B 只接受標為相對既有預測增量的分部資料")
+        if self.method == "residual_a" and self.adjustments:
+            raise ValueError("殘差方案 A 以已公布營收與歷史季節基準重算")
         return self
 
 
@@ -313,6 +402,7 @@ class EarningsPlan(Schema):
     driver_links: list[HypothesisDriverLink] = Field(default_factory=list, max_length=20)
     eps_assumptions: list[EPSAssumptions] = Field(default_factory=list, max_length=2)
     calibrate_guidance: bool | None = None
+    revenue_bridge: RevenueBridge | None = None
 
     @model_validator(mode="after")
     def check_periods(self):
@@ -329,6 +419,8 @@ class EarningsPlan(Schema):
         eps_periods = {row.period_end for row in self.eps_assumptions}
         if not eps_periods <= periods or len(eps_periods) != len(self.eps_assumptions):
             raise ValueError("EPS 假設須對應既有預測季度且不可重複")
+        if self.revenue_bridge and (len(periods) != 2 or self.revenue_bridge.period_end != max(periods)):
+            raise ValueError("營收橋接須對應第二個預測季度")
         return self
 
 
@@ -339,10 +431,11 @@ class EarningsBranch(Schema):
     eps_assumptions: list[EPSAssumptions] = Field(default_factory=list, max_length=2)
     calibrate_guidance: bool | None = None
     issuer_guidance: list[EstimateReference] = Field(default_factory=list, max_length=8)
+    revenue_bridge: RevenueBridge | None = None
 
     @model_validator(mode="after")
     def check_changes(self):
-        if not (self.drivers or self.driver_links or self.eps_assumptions or self.issuer_guidance
+        if not (self.drivers or self.driver_links or self.eps_assumptions or self.issuer_guidance or self.revenue_bridge
                 or self.calibrate_guidance is not None):
             raise ValueError("須提供要修改的盈利模型輸入")
         if len({row.id for row in self.driver_links}) != len(self.driver_links):

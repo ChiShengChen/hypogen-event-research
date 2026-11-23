@@ -19,16 +19,18 @@ from pydantic import AwareDatetime, Field
 
 from benchmarks.earnings_cases import TICKERS, baseline, disclosure, filing_index
 from benchmarks.earnings_equal import ARMS, VERSION, blind_records, direct_points, project_rows, recalculate_direct, score_rows
+from benchmarks.earnings_horizon_inputs import add_revenue_history, revenue_history
 from benchmarks.earnings_inputs import add_eps_assumptions, add_guidance, financial_history, load_guidance
 from benchmarks.public_pilot import EFFORT, MODEL, write_json
 from research_app.adapters import Codex, EARNINGS_DRIVER_VERSION
-from research_app.earnings import METRICS, SCENARIOS, EarningsError, available_evidence, complete_plan, validate_plan
+from research_app.earnings import METRICS, SCENARIOS, EarningsError, available_evidence, calculate_earnings, complete_plan, validate_plan
 from research_app.research import build_context
-from research_app.schema import Amount, Event, Nonempty, Schema
+from research_app.schema import Amount, EarningsPlan, Event, Nonempty, RevenueBridge, Schema
 
 PROTOCOL = {"version": VERSION, "arms": ARMS, "model": MODEL, "reasoning_effort": EFFORT,
             "earnings_driver_version": EARNINGS_DRIVER_VERSION, "events_per_issuer": 6,
             "issuers": TICKERS, "future_quarters": 2, "scenarios": SCENARIOS}
+RESIDUAL_ARMS = ("astra", "harness", "residual_a", "residual_b")
 # Fiscal endpoints are fixed in the initial enrollment, ahead of the outcomes.
 INITIAL_PERIODS = {
     "AMD": ("2026-12-26", "2027-03-27"),
@@ -65,7 +67,7 @@ def canonical(value):
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
 
-def summarize_reviews(rows, key):
+def summarize_reviews(rows, key, *, arms=ARMS):
     entries = {}
     for row in rows:
         if any(row.get(field) is None for field in ("case", "candidate", "major_error", "public_check", "seconds")):
@@ -87,7 +89,7 @@ def summarize_reviews(rows, key):
         except (ValueError, InvalidOperation) as exc:
             raise EarningsError("覆核須填寫 0/1 的錯誤與可驗證性，以及有效秒數") from exc
         entries[identity] = (int(values[0]), int(values[1]), float(elapsed))
-    completed = [case_id for case_id in key if all(entries.get((case_id, arm)) is not None for arm in ARMS)]
+    completed = [case_id for case_id in key if all(entries.get((case_id, arm)) is not None for arm in arms)]
     return {
         "paired_cases": len(completed),
         "arms": {
@@ -96,13 +98,13 @@ def summarize_reviews(rows, key):
                 "public_check_rate": mean(entries[(case_id, arm)][1] for case_id in completed),
                 "median_seconds": median(entries[(case_id, arm)][2] for case_id in completed),
             }
-            for arm in ARMS if completed
+            for arm in arms if completed
         },
     }
 
 
 class Cohort:
-    def __init__(self, folder):
+    def __init__(self, folder, *, horizon=False, residual=False):
         self.folder = Path(folder)
         self.folder.mkdir(parents=True, exist_ok=True)
         self.path = self.folder / "cohort.sqlite3"
@@ -125,14 +127,26 @@ class Cohort:
             """)
             manifest = db.execute("SELECT manifest FROM protocol WHERE id=1").fetchone()
             if not manifest:
-                value = {"protocol": PROTOCOL, "frozen_at": utc_now().isoformat()}
+                protocol = {**PROTOCOL, **({"revenue_bridge_version": 1} if horizon or residual else {})}
+                if residual:
+                    protocol.update(arms=RESIDUAL_ARMS, revenue_residual_version=1)
+                value = {"protocol": protocol, "frozen_at": utc_now().isoformat()}
                 db.execute("INSERT OR IGNORE INTO protocol VALUES (1,?)", (canonical(value),))
                 manifest = db.execute("SELECT manifest FROM protocol WHERE id=1").fetchone()
             self.manifest = json.loads(manifest[0])
             registered = self.manifest["protocol"]
             self.driver_version = registered["earnings_driver_version"]
+            self.horizon = registered.get("revenue_bridge_version") == 1
+            self.residual = registered.get("revenue_residual_version") == 1
+            self.arms = RESIDUAL_ARMS if self.residual else ARMS
+            expected = {**PROTOCOL, "earnings_driver_version": self.driver_version}
+            if self.horizon:
+                expected["revenue_bridge_version"] = 1
+            if self.residual:
+                expected.update(arms=self.arms, revenue_residual_version=1)
             if (self.driver_version not in {3, EARNINGS_DRIVER_VERSION}
-                    or canonical(registered) != canonical({**PROTOCOL, "earnings_driver_version": self.driver_version})):
+                    or (horizon and not self.horizon) or (residual and not self.residual)
+                    or canonical(registered) != canonical(expected)):
                 raise EarningsError("前瞻組方案已鎖定。請使用相同版本或在新目錄建立另一組。")
 
     @contextmanager
@@ -154,6 +168,14 @@ class Cohort:
             raise EarningsError("隊列須使用兩季凍結基準及模型驅動")
         if self.driver_version == 3 and (plan.eps_assumptions or plan.calibrate_guidance is not None):
             raise EarningsError("此隊列已鎖定舊模型。新 EPS 與指引方案須放入新隊列。")
+        if bool(plan.revenue_bridge) != self.horizon:
+            raise EarningsError("營收橋接和隊列封存的方案版本不符")
+        if plan.revenue_bridge and plan.revenue_bridge.method == "confirmed_turn":
+            raise EarningsError("轉折候選須另行驗收，現有隊列已鎖定季節橋接方案")
+        if plan.revenue_bridge and plan.revenue_bridge.method in RESIDUAL_ARMS[2:] and not self.residual:
+            raise EarningsError("修正候選須登記到獨立的修正方案隊列")
+        if self.residual and plan.revenue_bridge.adjustments:
+            raise EarningsError("修正隊列的分部輸入須使用 residual_inputs")
         if plan.event_at > event.as_of or event.as_of > now:
             raise EarningsError("事件和快照必須已可取得")
         if any(quarter.period_end <= now.date() for quarter in plan.quarters):
@@ -165,6 +187,8 @@ class Cohort:
             raise EarningsError("須附隊列公司在事件日的原始 SEC 申報")
         validate_plan(plan, event.as_of, build_context(event)["evidence"])
         snapshot = event.model_dump(mode="json")
+        if not self.horizon:
+            snapshot["earnings_plan"].pop("revenue_bridge")
         if self.driver_version == 3:
             snapshot["earnings_plan"].pop("eps_assumptions")
             snapshot["earnings_plan"].pop("calibrate_guidance")
@@ -212,12 +236,12 @@ class Cohort:
             if any(date.fromisoformat(period) <= now.date() for period in periods):
                 raise EarningsError("預測未在觀測期結束前完成")
             expected = {(period, scenario) for period in periods for scenario in SCENARIOS}
-            if set(result) != set(ARMS) or any(
+            if set(result) != set(self.arms) or any(
                 len(arm["points"]) != len(expected) or
                 {(row["period_end"], row["scenario"]) for row in arm["points"]} != expected
                 for arm in result.values()
             ):
-                raise EarningsError("三組須完整交付相同兩季三情境")
+                raise EarningsError(f"{'四組' if self.residual else '三組'}須完整交付相同兩季三情境")
             visible = {row["id"]: row for row in build_context(event)["evidence"]}
             for arm in result.values():
                 for point in arm["points"]:
@@ -275,22 +299,34 @@ class Cohort:
                 raise EarningsError(f"{row['case_id']} 快照或預測的完整性檢查失敗")
         snapshots = [{key: row[key] for key in row.keys() if key not in ("event", "forecasts")} for row in rows]
         outputs = {row["case_id"]: json.loads(row["forecasts"]) for row in rows if row["forecasts"]}
-        cases = [{"id": row["case_id"], "context": build_context(Event.model_validate_json(row["event"]))} for row in rows]
-        review, key = blind_records(cases, outputs)
+        events = {row["case_id"]: Event.model_validate_json(row["event"]) for row in rows}
+        cases = [{"id": case_id, "context": build_context(event)} for case_id, event in events.items()]
+        review, key = blind_records(cases, outputs, arms=self.arms)
         expected = [(ticker, index, f"{ticker}-{index:02}") for ticker in TICKERS for index in range(1, 7)]
         by_id = {row["case_id"]: row for row in snapshots}
         slots = [{"case": case_id, "company": ticker, "slot": index,
                   "status": ("sealed" if by_id[case_id]["sealed_at"] else "enrolled") if case_id in by_id else "awaiting_release"}
                  for ticker, index, case_id in expected]
-        observations = []
+        observations, by_horizon = [], {1: [], 2: []}
         for case_id, actual in actuals:
+            periods = sorted(q.period_end.isoformat() for q in events[case_id].earnings_plan.quarters)
+            step = periods.index(actual["period_end"]) + 1
             for arm, result in outputs[case_id].items():
                 base = next(point for point in result["points"] if point["scenario"] == "base"
                             and point["period_end"] == actual["period_end"])
                 observations.append((arm, base, actual))
-        metrics = score_rows(observations) if observations else {}
+                by_horizon[step].append((arm, base, actual))
+        metrics = score_rows(observations, arms=self.arms) if observations else {}
         summary = {"planned": len(slots), "enrolled": len(rows), "sealed": len(outputs),
                    "resolved_quarters": len(actuals), "metrics": metrics, "slots": slots}
+        if self.residual:
+            summary["metrics_by_horizon"] = {str(step): score_rows(values, arms=self.arms) if values else {}
+                                             for step, values in by_horizon.items()}
+            summary["cases_with_adjustment"] = {
+                method: sum(Decimal(((result[method].get("audit") or {}).get("residual") or {}).get("delta") or "0") != 0
+                            for result in outputs.values())
+                for method in RESIDUAL_ARMS[2:]
+            }
         for name, value in (("protocol", self.manifest), ("snapshots", snapshots),
                             ("blind-review", review), ("review-key", key)):
             write_json(self.folder / f"{name}.json", value)
@@ -305,14 +341,17 @@ class Cohort:
                                          for case_id, arms in key.items() for label in arms
                                          if (case_id, label) not in existing)
         with review_form.open(newline="", encoding="utf-8-sig") as stream:
-            summary["human_review"] = summarize_reviews(csv.DictReader(stream), key)
+            summary["human_review"] = summarize_reviews(csv.DictReader(stream), key, arms=self.arms)
         write_json(self.folder / "status.json", summary)
+        group_count = "四組" if self.residual else "三組"
         (self.folder / "status.md").write_text("\n".join([
             "# 半導體前瞻盈利對照", "",
             f"方案鎖定 {self.manifest['frozen_at']}。預留 {len(slots)} 案，"
-            f"已登記 {len(rows)} 案，已封存三組預測 {len(outputs)} 案，已取得 {len(actuals)} 季實績。",
-            f"三組都完成人工覆核的事件有 {summary['human_review']['paired_cases']} 案。",
-            "三組均交兩季三情境，未到期的季數不參與誤差平均。", "",
+            f"已登記 {len(rows)} 案，已封存{group_count}預測 {len(outputs)} 案，已取得 {len(actuals)} 季實績。",
+            f"{group_count}都完成人工覆核的事件有 {summary['human_review']['paired_cases']} 案。",
+            f"{group_count}均交兩季三情境，未到期的季數不參與誤差平均。", "",
+            *([f"已封存案例中，A 調整 {summary['cases_with_adjustment']['residual_a']} 案，"
+               f"B 調整 {summary['cases_with_adjustment']['residual_b']} 案。", ""] if self.residual else []),
             "| 案例 | 公司 | 狀態 |", "|---|---|---|",
             *(f"| {row['case']} | {row['company']} | {row['status']} |" for row in slots),
         ]) + "\n", encoding="utf-8")
@@ -346,23 +385,68 @@ def initial_case(folder, ticker, now):
     })
 
 
-def run_case(case_id, event, driver_version=EARNINGS_DRIVER_VERSION):
+def residual_forecasts(event, context, astra, incumbent):
+    output = {"astra": {"points": astra}, "harness": {"points": project_rows(incumbent)}}
+    frozen = EarningsPlan.model_validate(incumbent["inputs"])
+    for method in RESIDUAL_ARMS[2:]:
+        bridge = RevenueBridge.model_validate({**event.earnings_plan.revenue_bridge.model_dump(), "method": method})
+        challenger = frozen.model_copy(update={"revenue_bridge": bridge})
+        trial = calculate_earnings(challenger, event.as_of, context["evidence"])
+        output[method] = {"points": project_rows(trial), "audit": trial.get("revenue_bridge")}
+    return output
+
+
+def run_case(case_id, event, driver_version=EARNINGS_DRIVER_VERSION, *, residual=False):
     context = build_context(event)
     adapter = Codex(reasoning_effort=EFFORT, earnings_driver_version=driver_version)
     astra = direct_points(event, context, adapter)
-    calc = recalculate_direct(event, context, astra)
+    plan = event.earnings_plan.model_copy(update={"revenue_bridge": None})
+    if residual:
+        incumbent = complete_plan(plan, event.as_of, context, adapter)
+        return case_id, residual_forecasts(event, context, astra, incumbent)
+    calc = recalculate_direct(event.model_copy(update={"earnings_plan": plan}), context, astra)
     harness = project_rows(complete_plan(event.earnings_plan, event.as_of, context, adapter))
     return case_id, {arm: {"points": points} for arm, points in zip(ARMS, (astra, calc, harness))}
+
+
+def seed_frozen_inputs(cohort, source):
+    if not cohort.residual:
+        raise EarningsError("舊快照匯入僅用於獨立的修正方案隊列")
+    path = (source / "cohort.sqlite3").resolve()
+    if path == cohort.path.resolve():
+        raise EarningsError("來源與修正隊列資料庫必須分開")
+    with sqlite3.connect(path.as_uri() + "?mode=ro", uri=True) as db:
+        source_protocol = json.loads(db.execute("SELECT manifest FROM protocol WHERE id=1").fetchone()[0])["protocol"]
+        if source_protocol.get("revenue_bridge_version") != 1 or source_protocol.get("revenue_residual_version"):
+            raise EarningsError("須使用已封存的季節橋接隊列作為快照來源")
+        snapshots = db.execute(
+            "SELECT c.ticker,c.accession,c.event,c.snapshot_sha256,s.sealed_at "
+            "FROM cases c JOIN submissions s USING (case_id) WHERE c.slot=1 ORDER BY c.case_id"
+        ).fetchall()
+    with cohort.connection() as db:
+        known = {row["accession"] for row in db.execute("SELECT accession FROM cases")}
+    for ticker, accession, payload, digest, sealed_at in snapshots:
+        if accession in known or INITIAL_ACCESSIONS.get(ticker) != accession:
+            continue
+        if sha256(payload.encode()).hexdigest() != digest:
+            raise EarningsError("季節橋接來源快照的雜湊不符")
+        event = Event.model_validate_json(payload)
+        if datetime.fromisoformat(sealed_at).date() >= min(q.period_end for q in event.earnings_plan.quarters):
+            raise EarningsError("季節橋接來源快照未在期末前封存")
+        print("enrolled", cohort.enroll(ticker, accession, event, utc_now()), flush=True)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=Path("output/earnings-prospective"))
+    parser.add_argument("--horizon", action="store_true", help="新建使用第二預測季營收橋接的獨立隊列")
+    parser.add_argument("--residual", action="store_true", help="新建含 T+2 修正 A/B 的四組獨立隊列")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("status")
     seed = commands.add_parser("seed")
     seed.add_argument("--sec-dir", type=Path, default=Path("output/earnings-benchmark/sec"))
     seed.add_argument("--guidance", type=Path)
+    seed.add_argument("--from-cohort", type=Path, help="匯入既有季節橋接隊列已封存的原始事件")
     enroll = commands.add_parser("enroll")
     enroll.add_argument("ticker", choices=tuple(TICKERS))
     enroll.add_argument("accession")
@@ -372,12 +456,18 @@ def main():
     resolve.add_argument("case")
     resolve.add_argument("actual", type=Path)
     args = parser.parse_args()
-    cohort = Cohort(args.output)
+    cohort = Cohort(args.output, horizon=args.horizon, residual=args.residual)
+    if args.command == "seed" and args.from_cohort:
+        seed_frozen_inputs(cohort, args.from_cohort)
+        summary = cohort.export()
+        print({key: value for key, value in summary.items() if key != "slots"})
+        return
     if args.command == "seed":
         existing = {row["company"] for row in cohort.export()["slots"] if row["status"] != "awaiting_release"}
         if args.guidance and cohort.driver_version == 3:
             parser.error("舊方案維持原始輸入，加入公司指引請建立新隊列")
         history = financial_history(args.sec_dir) if cohort.driver_version != 3 and set(INITIAL_PERIODS) - existing else {}
+        revenue = revenue_history(args.sec_dir, INITIAL_PERIODS) if cohort.horizon and history else {}
         guide = load_guidance(args.guidance) if args.guidance else {}
         for ticker in INITIAL_PERIODS:
             if ticker not in existing:
@@ -386,6 +476,8 @@ def main():
                 if history:
                     rows = guide.get(f"{ticker}-01", [])
                     event = add_eps_assumptions(add_guidance(event, rows), ticker, history, rows)
+                if revenue:
+                    event = add_revenue_history(event, ticker, revenue[ticker], (4, 1), "guided_absolute")
                 print("enrolled", cohort.enroll(ticker, accession, event, now), flush=True)
     elif args.command == "enroll":
         print("enrolled", cohort.enroll(args.ticker, args.accession,
@@ -396,7 +488,7 @@ def main():
         os.environ["RESEARCH_CODEX_MODEL"] = MODEL
         failures = []
         with ThreadPoolExecutor(max_workers=5) as pool:
-            jobs = {pool.submit(run_case, case_id, event, cohort.driver_version): case_id
+            jobs = {pool.submit(run_case, case_id, event, cohort.driver_version, residual=cohort.residual): case_id
                     for case_id, event in cohort.unsealed()}
             for job in as_completed(jobs):
                 try:

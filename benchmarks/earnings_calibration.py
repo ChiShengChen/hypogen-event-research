@@ -172,7 +172,9 @@ def main():
         parser.error("固定預測回放須使用原第 3 版 Astra 對照的輸出資料夾")
     cases = list(prepare(args.sec_dir, args.guidance))
     args.output.mkdir(parents=True, exist_ok=True)
-    write_json(args.output / "inputs.json", {case["id"]: case["event"].model_dump(mode="json") for case in cases})
+    write_json(args.output / "inputs.json", {case["id"]: case["event"].model_dump(
+        mode="json", exclude={"earnings_plan": {"revenue_bridge"}}
+    ) for case in cases})
     legacy = {case["id"]: legacy_replay(args.legacy, case) for case in cases}
     write_json(args.output / "fixed-predictions.json", legacy)
     fresh_dir = args.output / "fresh"

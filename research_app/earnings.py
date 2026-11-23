@@ -1,13 +1,22 @@
 """Point-in-time earnings revisions, scenario valuation, and forecast resolution."""
 from calendar import monthrange
+from collections import Counter
 from decimal import Decimal, localcontext
 from datetime import datetime
+import re
+
+from .discovery import source_key
+from .revenue import RESIDUAL_METHODS, bridge_forecast, residual_persistence
 
 from .schema import DriverDraft, DriverImpact, EarningsPlan, EstimateDriver, HypothesisDriverLink
 
 SCENARIOS = ("bear", "base", "bull")
 METRICS = {"revenue": "營收", "gross_margin": "毛利率", "operating_income": "營業利益", "eps": "稀釋 EPS"}
 EPS_INPUTS = {"tax_rate": "常態有效稅率", "diluted_shares": "稀釋股數", "recurring_nonoperating": "經常性營業外損益"}
+REVENUE_METHODS = {"latest_run_rate": "最近單季營收", "seasonal_prior": "去年同季營收",
+                   "guided_seasonal": "指引中點乘歷史季節比率", "guided_absolute": "指引中點加歷史季節差額",
+                   "year_on_year": "以最新年增率調整去年同季", "confirmed_turn": "雙訊號轉折調整",
+                   "residual_a": "季節偏離延續修正", "residual_b": "季節與分部收入增量修正"}
 
 
 class EarningsError(ValueError):
@@ -46,6 +55,27 @@ def validate_plan(plan, as_of, evidence):
             if item.available_at > as_of:
                 raise EarningsError("EPS 假設可得時間晚於研究截止時點")
             available_evidence(item.evidence_ids, visible, item.available_at)
+    if bridge := plan.revenue_bridge:
+        near, far = sorted(plan.quarters, key=lambda row: row.period_end)
+        if (bridge.currency, bridge.basis) != (plan.currency, plan.basis):
+            raise EarningsError("第二預測季營收橋接的幣別或會計口徑不符")
+        if any(item.period_end >= near.period_end or item.period_end > item.available_at.date() for item in bridge.history):
+            raise EarningsError("營收歷史必須早於首個預測季")
+        for item in [*bridge.history, *bridge.adjustments, *bridge.operating_signals, *bridge.residual_inputs]:
+            if item.available_at > as_of:
+                raise EarningsError("營收橋接來源晚於研究截止時點")
+            available_evidence(item.evidence_ids, visible, item.available_at)
+        if any(item.segment not in far.segment_revenue for item in [*bridge.adjustments, *bridge.residual_inputs]):
+            raise EarningsError("營收橋接調整對應不到財務分部")
+        recognition = {item.segment for item in [*bridge.adjustments, *bridge.residual_inputs] if item.driver == "recognition"}
+        if any(shift and shift.segment in recognition and far.period_end in {shift.from_period, shift.to_period}
+               for shift in (link.recognition_shift for link in plan.driver_links)):
+            raise EarningsError("營收橋接與跨季認列連結可能重複計入")
+        if bridge.method == "residual_b" and any(
+            driver.period_end == far.period_end and driver.shipment_changes.keys() & recognition
+            for driver in plan.drivers
+        ):
+            raise EarningsError("T+2 分部認列增量和既有台數調整可能重複計入")
     if valuation := plan.valuation:
         ref = valuation.annual_base_eps
         key = ref.key
@@ -171,6 +201,200 @@ def calibrate_drivers(quarter, drivers, guidance):
             update["gross_margin_delta"] = driver.gross_margin_delta + changes["gross_margin"]
         calibrated[scenario] = driver.model_copy(update=update) if update else driver
     return calibrated, audit
+
+
+def bridge_drivers(quarter, drivers, bridge, guide):
+    base = drivers.get("base")
+    if base is None:
+        return drivers, None
+    base_revenue = operating_numbers(quarter, base)["revenue"]
+    if base_revenue <= 0:
+        raise EarningsError("第二預測季草擬營收須為正值")
+    try:
+        anchor_total, audit = bridge_forecast(bridge, guide, base_revenue)
+    except ValueError as exc:
+        raise EarningsError(str(exc)) from exc
+    factor = Decimal(audit["anchor"]) / base_revenue
+    if factor == 1 and not audit["adjustments"]:
+        audit["original_draft"] = format(base_revenue, "f")
+        return drivers, audit
+    calibrated = {}
+    for scenario, driver in drivers.items():
+        raw = operating_numbers(quarter, driver)
+        deltas = {name: driver.segment_revenue_delta.get(name, Decimal(0)) + value * (factor - 1)
+                  for name, value in raw["segment_revenue"].items()}
+        for item in audit["adjustments"]:
+            deltas[item["segment"]] += Decimal(item["value"])
+        calibrated[scenario] = driver.model_copy(update={"segment_revenue_delta": deltas})
+    audit["original_draft"] = format(base_revenue, "f")
+    audit["before_hypothesis_links"] = format(anchor_total, "f")
+    return calibrated, audit
+
+
+def residual_source_keys(refs, visible):
+    keys = set()
+    for ref in refs:
+        doc = visible[ref]
+        keys.add(("document", doc.get("document_id") or ref.split(":", 1)[0]))
+        if parsed := source_key(doc.get("source", "")):
+            host, path, _ = parsed
+            accession = re.match(r"/archives/edgar/data/\d+/(\d{18})(?:/|$)", path, re.IGNORECASE)
+            if host == "sec.gov" and accession:
+                keys.add(("accession", accession[1]))
+            else:
+                keys.add(("url", host, path))
+    return keys
+
+
+def residual_components(bridge, visible):
+    """Disqualify overlapping increments rather than choosing between their rows."""
+    candidates = [row for row in bridge.residual_inputs if row.basis_incremental_to_incumbent]
+    keys = {}
+    for row in candidates:
+        scope = (row.segment.casefold(), row.driver)
+        family = " ".join(row.source_family.casefold().split())
+        mechanism = " ".join(row.mechanism.casefold().split())
+        keys[row.id] = {("mechanism", mechanism), ("family", *scope, family),
+                        *(("source", *scope, *source) for source in residual_source_keys(row.evidence_ids, visible))}
+    counts = Counter(key for entries in keys.values() for key in entries)
+    applied, skipped = [], []
+    for row in bridge.residual_inputs:
+        if not row.basis_incremental_to_incumbent:
+            reason = "未確認為既有預測尚未納入的分部收入。"
+        elif any(counts[key] > 1 for key in keys[row.id]):
+            reason = "同一機制、來源文件或來源家族的分部驅動重複。"
+        else:
+            applied.append(row)
+            continue
+        skipped.append((row, reason))
+    return applied, skipped
+
+
+def apply_earnings_residual(quarter, drivers, factor, items):
+    adjusted = {}
+    for scenario, driver in drivers.items():
+        if factor == 1 and not items:
+            adjusted[scenario] = driver
+            continue
+        raw = operating_numbers(quarter, driver)
+        segments = driver.segment_revenue_delta.copy()
+        for name, amount in raw["segment_revenue"].items():
+            segments[name] = segments.get(name, Decimal(0)) + amount * (factor - 1)
+        revenue = raw["revenue"] * factor
+        profit = raw["gross_profit"] * factor
+        opex_delta = driver.opex_delta
+        for item in items:
+            segments[item.segment] += item.incremental_revenue
+            revenue += item.incremental_revenue
+            margin = item.incremental_gross_margin
+            profit += item.incremental_revenue * (raw["gross_margin"] if margin is None else margin)
+            opex_delta += item.incremental_opex
+        if revenue <= 0:
+            raise EarningsError("修正後有情境營收不為正值")
+        revised = driver.model_copy(update={
+            "segment_revenue_delta": segments, "gross_margin_delta": profit / revenue - quarter.gross_margin,
+            "opex_delta": opex_delta,
+        })
+        operating_numbers(quarter, revised)
+        adjusted[scenario] = revised
+    return adjusted
+
+
+def residual_drivers(quarter, drivers, bridge, guide, direct_guide, visible, profile):
+    base = drivers.get("base")
+    if base is None:
+        return drivers, None
+    baseline = operating_numbers(quarter, base, profile)
+    revenue = baseline["revenue"]
+    persistence, audit = residual_persistence(bridge, guide, revenue, direct_guide=direct_guide)
+    factor = (revenue + persistence) / revenue if persistence else Decimal(1)
+    items, skipped = [], []
+    blocked = audit["status"] in {"missing_baseline", "issuer_guidance"}
+    if bridge.method == "residual_b":
+        if blocked:
+            skipped = [(row, audit["reason"]) for row in bridge.residual_inputs]
+        else:
+            items, skipped = residual_components(bridge, visible)
+    adjusted = drivers
+    try:
+        adjusted = apply_earnings_residual(quarter, drivers, factor, items)
+    except EarningsError:
+        skipped.extend((row, "各情境重算後的分部營收、毛利率或費用超出有效範圍。") for row in items)
+        items = []
+        try:
+            adjusted = apply_earnings_residual(quarter, drivers, factor, items)
+        except EarningsError:
+            factor, persistence = Decimal(1), Decimal(0)
+        audit.update(status="infeasible", reason="至少一個情境的財務數值超出有效範圍，保留有效的原估或延續修正。")
+    result = operating_numbers(quarter, adjusted["base"], profile)
+    audit["baseline_financials"] = numbers_json(baseline)
+    audit["revised_financials"] = numbers_json(result)
+    audit["estimate"] = format(result["revenue"], "f")
+    audit["delta"] = format(result["revenue"] - revenue, "f")
+    if bridge.method == "residual_b":
+        audit["segment_input_count"] = len(bridge.residual_inputs)
+        audit["segment_applied_count"] = len(items)
+        audit["segment_status"] = "applied" if items else "withheld" if bridge.residual_inputs else "missing_evidence"
+    if items:
+        audit.update(status="applied", reason="採用可核對且未重複的 T+2 分部收入增量。")
+    audit["components"] = [{
+        "id": "persistence", "kind": "persistence", "status": "applied" if persistence else "skipped",
+        "delta": format(persistence, "f"), "evidence_ids": audit["evidence_ids"],
+    }]
+    for item in items:
+        audit["components"].append({**item.model_dump(mode="json"), "period_end": bridge.period_end.isoformat(),
+                                    "kind": "segment", "status": "applied", "delta": format(item.incremental_revenue, "f")})
+    for item, reason in skipped:
+        audit["components"].append({**item.model_dump(mode="json"), "period_end": bridge.period_end.isoformat(),
+                                    "kind": "segment", "status": "skipped", "delta": "0", "reason": reason})
+    audit["ablation"] = []
+    removable = ([("persistence", Decimal(1), items)] if persistence else []) + [
+        (item.id, factor, [other for other in items if other.id != item.id]) for item in items
+    ]
+    for name, kept_factor, kept_items in removable:
+        try:
+            remaining = apply_earnings_residual(quarter, drivers, kept_factor, kept_items)
+            metrics = operating_numbers(quarter, remaining["base"], profile)
+        except EarningsError:
+            audit["ablation"].append({"id": name, "status": "infeasible", "reason": "單項移除後的財務數值無法重算。"})
+        else:
+            keys = (*METRICS, "gross_profit", "opex")
+            audit["ablation"].append({"id": name, "status": "ok",
+                                      "without": numbers_json({key: metrics[key] for key in keys})})
+    refs = list(dict.fromkeys([*audit["evidence_ids"], *(ref for row in items for ref in row.evidence_ids)]))
+    audit["evidence_ids"] = refs
+    return adjusted, {
+        "period_end": bridge.period_end.isoformat(), "method": bridge.method,
+        "requested_method": bridge.method, "original_draft": audit["baseline"],
+        "anchor": format(revenue + persistence, "f"), "anchor_evidence_ids": refs, "alternatives": {},
+        "adjustments": [{**row.model_dump(mode="json"), "value": format(row.incremental_revenue, "f"),
+                         "method": row.rationale} for row in items],
+        "before_hypothesis_links": audit["estimate"], "residual": audit,
+    }
+
+
+def revenue_expectations(plan, quarter, base):
+    """Keep the historical forecast distinct from the pre-event market snapshot."""
+    if base is None:
+        return {}
+    period = quarter.period_end
+    matches = [item for item in plan.references if item.kind in {"consensus", "internal"} and item.key.metric == "revenue"
+               and item.key.period_end == period and item.key.duration == "quarter" and item.key.scope == "consolidated"
+               and (item.key.currency, item.key.basis) == (plan.currency, plan.basis)]
+    latest, internal = {}, None
+    for item in sorted(matches, key=lambda row: row.available_at):
+        if item.kind == "internal":
+            internal = item
+        else:
+            latest[item.provider or item.label] = item
+    prior = (internal.low + internal.high) / 2 if internal else sum(quarter.segment_revenue.values())
+    return {
+        "before": format(prior, "f"), "after": format(base, "f"),
+        "before_label": "事件前內部預估" if internal else "原財務基準",
+        "before_evidence_ids": internal.evidence_ids if internal else quarter.evidence_ids,
+        "consensus": [{"reference": row.model_dump(mode="json"),
+                       "delta": format(base - (row.low + row.high) / 2, "f")} for row in latest.values()],
+    }
 
 
 def numbers_json(numbers):
@@ -300,7 +524,7 @@ def link_model_drivers(drivers, hypotheses):
 
 
 def calculate_earnings(plan, as_of, evidence, *, hypotheses=(), claims=()):
-    validate_plan(plan, as_of, evidence)
+    visible = validate_plan(plan, as_of, evidence)
     by_stance = {row["stance"]: row for row in hypotheses}
     refs = {row["id"]: row.get("evidence_id") for row in claims}
     audit = {}
@@ -314,8 +538,11 @@ def calculate_earnings(plan, as_of, evidence, *, hypotheses=(), claims=()):
             "hypothesis_prediction": hypothesis["prediction"], "effects": [],
         }
     quarterly, guidance_audit = [], []
+    bridge_audit = None
     profiles = {profile.period_end: profile for profile in plan.eps_assumptions}
-    guidance = issuer_guidance(plan) if plan.calibrate_guidance else {}
+    eligible_guidance = issuer_guidance(plan) if plan.calibrate_guidance or plan.revenue_bridge else {}
+    guidance = eligible_guidance if plan.calibrate_guidance else {}
+    near_period = min((quarter.period_end for quarter in plan.quarters), default=None)
     with localcontext() as ctx:
         ctx.prec = 50
         for quarter in sorted(plan.quarters, key=lambda value: value.period_end):
@@ -325,11 +552,27 @@ def calculate_earnings(plan, as_of, evidence, *, hypotheses=(), claims=()):
             if guidance:
                 drivers, entries = calibrate_drivers(quarter, drivers, guidance)
                 guidance_audit.extend(entries)
-            scenarios = {}
+            bridge = plan.revenue_bridge
+            is_bridge_quarter = bridge and quarter.period_end == bridge.period_end
+            uses_residual = is_bridge_quarter and bridge.method in RESIDUAL_METHODS
+            if is_bridge_quarter and not uses_residual:
+                direct_guide = eligible_guidance.get((quarter.period_end, "revenue"))
+                if direct_guide is None:
+                    drivers, bridge_audit = bridge_drivers(
+                        quarter, drivers, bridge, eligible_guidance.get((near_period, "revenue"))
+                    )
+            compiled = {}
             for scenario in SCENARIOS:
                 driver = compile_driver(plan, quarter.period_end, scenario, audit, quarter, drivers.get(scenario), profile)
-                if driver is None:
-                    continue
+                if driver is not None:
+                    compiled[scenario] = driver
+            if uses_residual:
+                compiled, bridge_audit = residual_drivers(
+                    quarter, compiled, bridge, eligible_guidance.get((near_period, "revenue")),
+                    eligible_guidance.get((quarter.period_end, "revenue")), visible, profile,
+                )
+            scenarios = {}
+            for scenario, driver in compiled.items():
                 revised = operating_numbers(quarter, driver, profile)
                 delta = {key: revised[key] - baseline[key] for key in revised if key != "segment_revenue"}
                 delta["segment_revenue"] = {
@@ -337,17 +580,24 @@ def calculate_earnings(plan, as_of, evidence, *, hypotheses=(), claims=()):
                     for name, prior in baseline["segment_revenue"].items()
                 }
                 scenarios[scenario] = {"revised": revised, "delta": delta}
-            quarterly.append({"period_end": quarter.period_end, "baseline": baseline, "scenarios": scenarios})
+            expectation = revenue_expectations(plan, quarter, scenarios.get("base", {}).get("revised", {}).get("revenue"))
+            quarterly.append({"period_end": quarter.period_end, "baseline": baseline, "scenarios": scenarios,
+                              "revenue_expectations": expectation})
+            if bridge_audit and quarter.period_end.isoformat() == bridge_audit["period_end"]:
+                bridge_audit["segment_revenue"] = numbers_json(scenarios["base"]["revised"]["segment_revenue"])
+                bridge_audit["after_hypothesis_links"] = format(scenarios["base"]["revised"]["revenue"], "f")
         return {
             "inputs": plan.model_dump(mode="json"),
             "comparisons": comparison_rows(plan),
             "quarters": [
                 {"period_end": row["period_end"].isoformat(), "baseline": numbers_json(row["baseline"]),
-                 "scenarios": numbers_json(row["scenarios"])} for row in quarterly
+                 "scenarios": numbers_json(row["scenarios"]),
+                 **({"revenue_expectations": row["revenue_expectations"]} if plan.revenue_bridge else {})} for row in quarterly
             ],
             "valuation": valuation_rows(plan, quarterly),
             "driver_audit": list(audit.values()),
             **({"guidance_calibration": guidance_audit} if guidance_audit else {}),
+            **({"revenue_bridge": bridge_audit} if bridge_audit else {}),
             "unlinked_driver_inputs": [
                 {"period_end": driver.period_end.isoformat(), "scenario": driver.scenario}
                 for driver in plan.drivers if any(driver.segment_revenue_delta.values())
@@ -370,7 +620,9 @@ def complete_plan(plan, as_of, context, adapter):
     if draft is None:
         raise EarningsError("此模型模式不支援草擬預測驅動")
     legacy = getattr(adapter, "earnings_driver_version", None) == 3
-    excluded = {"eps_assumptions", "calibrate_guidance"} if legacy else set()
+    excluded = {"revenue_bridge"}
+    if legacy:
+        excluded.update({"eps_assumptions", "calibrate_guidance"})
     result: DriverDraft = draft({
         "target": context["target"], "event": context["event_text"], "as_of": context["as_of"],
         "evidence": [row for row in context["evidence"] if row["kind"] == "disclosure" and not row["synthetic"]],
@@ -492,6 +744,60 @@ def render_earnings(earnings, cite):
                 cells.append(f"{fmt(revised[key], unit)}（{difference}）")
             lines.append(f"| {label} | {' | '.join(cells)} |")
         lines.append("")
+        if expectation := row.get("revenue_expectations"):
+            prior = fmt(expectation["before"], "revenue")
+            revised = fmt(expectation["after"], "revenue")
+            prior_refs = "、".join(cite(ref) for ref in expectation["before_evidence_ids"])
+            lines.append(f"- {expectation['before_label']} {prior} → 事件後營收基準 {revised}。{prior_refs}")
+            for item in expectation["consensus"]:
+                reference = item["reference"]
+                lines.append(f"  - {reference['label']}，原區間 {fmt(reference['low'], 'revenue')} 至 "
+                             f"{fmt(reference['high'], 'revenue')}，事件後預估與共識中點差 {fmt(item['delta'], 'revenue')}。"
+                             f"{source_line(reference)}")
+            if not expectation["consensus"]:
+                lines.append("  - 這一季未取得同口徑點時市場共識。")
+        bridge = earnings.get("revenue_bridge")
+        if bridge and bridge["period_end"] == period:
+            refs = "、".join(cite(ref) for ref in bridge["anchor_evidence_ids"])
+            lines.append(f"- 第二預測季營收從草擬 {fmt(bridge['original_draft'], 'revenue')}，以 "
+                         f"{REVENUE_METHODS[bridge['method']]} {fmt(bridge['anchor'], 'revenue')} 為基礎，"
+                         f"套用調整後為 {fmt(bridge['after_hypothesis_links'], 'revenue')}。{refs}")
+            if turn := bridge.get("turn"):
+                state = {"up": "上行", "down": "下行", "unconfirmed": "訊號未達門檻", "missing_signal": "缺少可比訊號"}
+                lines.append(f"  - 轉折判定為{state[turn['status']]}，相對原草擬營收自動調整 "
+                             f"{fmt(turn['delta'], 'revenue')}。{turn.get('reason', '')} {turn['public_check']} {turn['falsifier']}")
+                if turn["guidance_surprise"] is not None:
+                    lines.append(f"  - 指引相對季節基準偏離 {fmt(turn['guidance_surprise'], 'gross_margin')}，"
+                                 f"最新實績相對季節基準偏離 {fmt(turn['reported_surprise'], 'gross_margin')}。")
+                for item in turn.get("operating_signals", []):
+                    lines.append(f"  - 營運訊號 {item['observation']}。{source_line(item)}")
+            if residual := bridge.get("residual"):
+                before = residual["baseline_financials"]
+                after = residual["revised_financials"]
+                lines.append(
+                    f"  - {residual['reason']} 營收變動 {fmt(residual['delta'], 'revenue')}，稀釋 EPS "
+                    f"由 {fmt(before['eps'], 'eps')} 至 {fmt(after['eps'], 'eps')}。"
+                )
+                if residual["normal_far"] is not None:
+                    lines.append(f"  - 歷史季節路徑 {fmt(residual['normal_far'], 'revenue')}，近期營收路徑 "
+                                 f"{fmt(residual['recent_far'], 'revenue')}，估計延續比例 "
+                                 f"{fmt(residual['persistence'], 'gross_margin')}。")
+                if residual.get("segment_status") == "missing_evidence":
+                    lines.append("  - 本案未取得可證明尚未納入原估的量化 T+2 分部收入增量。")
+                for component in residual["components"]:
+                    if component["status"] == "skipped" and component.get("reason"):
+                        lines.append(f"  - {component['id']} 未採用。{component['reason']}")
+                for ablation in residual["ablation"]:
+                    if ablation["status"] == "ok":
+                        without = ablation["without"]
+                        lines.append(f"  - 移除 {ablation['id']} 時，營收 {fmt(without['revenue'], 'revenue')}，"
+                                     f"稀釋 EPS {fmt(without['eps'], 'eps')}。")
+                lines.append(f"  - {residual['public_check']} {residual['falsifier']}")
+            for item in bridge["adjustments"]:
+                lines.append(f"  - {item['segment']} {fmt(item['value'], 'revenue')}。{item['method']} {source_line(item)}")
+                lines.append(f"    - 查核 {item['public_check']}。反證 {item['falsifier']}。")
+            if not bridge["adjustments"]:
+                lines.append("  - 本季沒有可單列且可量化的分部增減項。")
         for entry in earnings.get("guidance_calibration", []):
             if entry["period_end"] == period:
                 key, reference = entry["metric"], entry["reference"]

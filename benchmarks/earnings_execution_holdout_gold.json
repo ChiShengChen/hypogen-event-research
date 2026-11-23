@@ -1,0 +1,66 @@
+{
+  "docu_sec_2026-10-31": {
+    "disposition": "eligible",
+    "new_low": "886000000",
+    "new_high": "890000000",
+    "delta": "10254000",
+    "source_ids": [
+      "docu_sec_2026-10-31-release"
+    ],
+    "required_text": [
+      "Three Months Ended October 31, 2026",
+      "$886 | to | $890",
+      "in millions, except percentages"
+    ],
+    "amount_text": "$886 | to | $890",
+    "reason": "Quarter-specific consolidated issuer guidance. Use the nearest endpoint only if the frozen proxy is outside the interval."
+  },
+  "team_sec_2025-06-30": {
+    "disposition": "noop",
+    "new_low": "1349000000",
+    "new_high": "1359000000",
+    "delta": "0",
+    "source_ids": [
+      "team_sec_2025-06-30-release"
+    ],
+    "required_text": [
+      "Fourth Quarter Fiscal Year 2025",
+      "$1,349 million to $1,359 million"
+    ],
+    "amount_text": "$1,349 million to $1,359 million",
+    "reason": "Quarter-specific consolidated issuer guidance. Use the nearest endpoint only if the frozen proxy is outside the interval."
+  },
+  "okta_sec_2025-04-30": {
+    "disposition": "eligible",
+    "new_low": "678000000",
+    "new_high": "680000000",
+    "delta": "-2000000",
+    "source_ids": [
+      "okta_sec_2025-04-30-release"
+    ],
+    "required_text": [
+      "first quarter of fiscal 2026",
+      "$678 million to $680 million"
+    ],
+    "amount_text": "$678 million to $680 million",
+    "reason": "Quarter-specific consolidated issuer guidance. Use the nearest endpoint only if the frozen proxy is outside the interval."
+  },
+  "snow_sec_2025-04-30": {
+    "disposition": "blocked",
+    "new_low": null,
+    "new_high": null,
+    "delta": "0",
+    "source_ids": [
+      "snow_sec_2025-04-30-release"
+    ],
+    "required_text": [
+      "First Quarter Fiscal 2026 GAAP Guidance",
+      [
+        "Product revenue | $955 - $960",
+        "Product revenue excludes our professional services"
+      ]
+    ],
+    "amount_text": null,
+    "reason": "The release guides product revenue, excluding professional services and other revenue. The target is consolidated total revenue."
+  }
+}

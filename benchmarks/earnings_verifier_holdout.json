@@ -1,0 +1,150 @@
+[
+  {
+    "id": "ilmn_q4_2025_preliminary",
+    "split": "holdout",
+    "issuer": "Illumina, Inc.",
+    "ticker": "ILMN",
+    "event_at": "2026-01-13T09:11:40-05:00",
+    "as_of": "2026-01-13T09:11:40-05:00",
+    "fiscal_label": "fourth quarter 2025",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2025-12-28",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "historical_same_quarter_proxy",
+      "amount": "1104000000",
+      "available_at": "2025-02-06T23:59:59-05:00",
+      "source_url": "https://www.illumina.com/company/news-center/press-releases/2025/e9a651e4-513f-4fbd-8617-2fb4b92cfe37.html",
+      "rationale": "Frozen flat-year comparison proxy based on GAAP consolidated December 2024 quarterly total revenue of $1,104 million in the February 6, 2025 consolidated statement. This is an analytical proxy rather than company guidance."
+    },
+    "documents": [
+      {
+        "id": "ilmn_q4_2025_preliminary-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080326000009/ex991pressrelease1132026.htm",
+        "path": "output/earnings-verifier/filings/holdout/ilmn.htm",
+        "sha256": "5cb13dd167cf36275e18d8c147f9e59dac3df909c42e5578cc3d4ff2c5a999ca",
+        "media_type": "text/html",
+        "published_at": "2026-01-13T09:11:40-05:00",
+        "obtained_at": "2026-01-13T09:11:40-05:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080326000009/0001110803-26-000009-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "idcc_q4_2023_preliminary",
+    "split": "holdout",
+    "issuer": "InterDigital, Inc.",
+    "ticker": "IDCC",
+    "event_at": "2024-01-16T08:33:34-05:00",
+    "as_of": "2024-01-16T08:33:34-05:00",
+    "fiscal_label": "Q4 2023",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2023-12-31",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "public_guidance_assumption",
+      "amount": "104000000",
+      "available_at": "2023-11-02T23:59:59-04:00",
+      "source_url": "https://ir.interdigital.com/news-events/press-releases/news-details/2023/InterDigital-Announces-Financial-Results-for-Third-Quarter-2023/",
+      "rationale": "Frozen midpoint of November 2 public Q4 2023 revenue guidance of $102 million to $106 million, represented at end of its Eastern publication day."
+    },
+    "documents": [
+      {
+        "id": "idcc_q4_2023_preliminary-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1405495/000140549524000007/ex99111624pressrelease.htm",
+        "path": "output/earnings-verifier/filings/holdout/idcc.htm",
+        "sha256": "869edc24644d3204172630a43200231b35af1be831ee35d687baec2d81294a0f",
+        "media_type": "text/html",
+        "published_at": "2024-01-16T08:33:34-05:00",
+        "obtained_at": "2024-01-16T08:33:34-05:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1405495/000140549524000007/0001405495-24-000007-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "prgs_q1_fy2026_guidance",
+    "split": "holdout",
+    "issuer": "Progress Software Corporation",
+    "ticker": "PRGS",
+    "event_at": "2026-01-20T16:07:00-05:00",
+    "as_of": "2026-01-20T16:07:00-05:00",
+    "fiscal_label": "Q1 2026",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2026-02-28",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "historical_same_quarter_proxy",
+      "amount": "238015000",
+      "available_at": "2025-03-31T23:59:59-04:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/876167/000087616725000051/exhibit991-q12025earningsr.htm",
+      "rationale": "Frozen flat-year comparison proxy based on $238.015 million GAAP consolidated Q1 2025 revenue in the March 31, 2025 issuer release, represented at end of the Eastern release day. This is an analytical proxy rather than company guidance."
+    },
+    "documents": [
+      {
+        "id": "prgs_q1_fy2026_guidance-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/876167/000087616726000007/exhibit991-q42025earningsr.htm",
+        "path": "output/earnings-verifier/filings/holdout/prgs.htm",
+        "sha256": "b054e6eea7d89cd51d0c92cdff611ec092fdaaaf75f63db748a7ee124a139439",
+        "media_type": "text/html",
+        "published_at": "2026-01-20T16:07:00-05:00",
+        "obtained_at": "2026-01-20T16:07:00-05:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/876167/000087616726000007/0000876167-26-000007-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "ptc_q4_fy2016_preliminary",
+    "split": "holdout",
+    "issuer": "PTC Inc.",
+    "ticker": "PTC",
+    "event_at": "2016-10-03T09:00:17-04:00",
+    "as_of": "2016-10-03T09:00:17-04:00",
+    "fiscal_label": "fourth fiscal quarter ended September 30, 2016",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2016-09-30",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "public_guidance_assumption",
+      "amount": "307500000",
+      "available_at": "2016-07-20T23:59:59-04:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/857005/000165495416000922/premarks.htm",
+      "rationale": "Frozen midpoint of PTC’s July 20 prepared remarks Q4 FY2016 total revenue guide of $305 million to $310 million, explicitly on a GAAP basis by release convention and represented at end of the Eastern publication day."
+    },
+    "documents": [
+      {
+        "id": "ptc_q4_fy2016_preliminary-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/857005/000165495416002562/a161002q4preannouncementf.htm",
+        "path": "output/earnings-verifier/filings/holdout/ptc.htm",
+        "sha256": "931e6c78107e86be7ce627c75f6719bf6a63acbcefa6d56f0260243f42311aa6",
+        "media_type": "text/html",
+        "published_at": "2016-10-03T09:00:17-04:00",
+        "obtained_at": "2016-10-03T09:00:17-04:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/857005/000165495416002562/0001654954-16-002562-index.htm"
+      }
+    ]
+  }
+]

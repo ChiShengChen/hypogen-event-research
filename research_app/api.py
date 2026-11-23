@@ -1,18 +1,38 @@
 import os
+from datetime import date
 from functools import lru_cache
 from pathlib import Path
 
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import ValidationError
+from pydantic import AwareDatetime, Field, ValidationError
 
 from .adapters import AdapterError, configured_adapter
 from .earnings import EarningsError
-from .schema import ConsensusImport, EarningsBranch, Event, ForecastRegistration, ForecastResolution, Question, ResearchReview
+from .revision_bridge import RevisionQuote
+from .schema import ConsensusImport, EarningsBranch, Event, ForecastRegistration, ForecastResolution, Question, ResearchReview, Schema
 from .store import MissingReport, Store
 
 PACKAGE = Path(__file__).resolve().parent
+
+
+class RevenueRevisionCheck(Schema):
+    period_end: date
+    event_at: AwareDatetime | None = None
+    fiscal_label: str | None = Field(default=None, min_length=1, max_length=90)
+    original: RevisionQuote | None = None
+    disclosure: RevisionQuote | None = None
+
+
+class FullRevenueRevisionCheck(Schema):
+    period_end: date
+    event_at: AwareDatetime | None = None
+    fiscal_label: str | None = Field(default=None, min_length=1, max_length=90)
+    source_url: str = Field(min_length=8, max_length=2048)
+    published_at: AwareDatetime
+    obtained_at: AwareDatetime
+    html: str = Field(min_length=1, max_length=2_000_000)
 
 
 @lru_cache
@@ -95,6 +115,15 @@ def create_app(store=None, adapter=None):
     @app.get("/reports/{id}/revisions/{v}/earnings")
     def earnings_status(id: str, v: int, db=Depends(storage)):
         return db.earnings_status(id, v)
+
+    @app.post("/reports/{id}/revisions/{v}/earnings/revision-check")
+    def revenue_revision_check(id: str, v: int, body: RevenueRevisionCheck, db=Depends(storage)):
+        return db.revenue_revision_check(id, v, body)
+
+    @app.post("/reports/{id}/revisions/{v}/earnings/full-revision-check")
+    def full_revenue_revision_check(id: str, v: int, body: FullRevenueRevisionCheck,
+                                    db=Depends(storage), engine=Depends(generator)):
+        return db.full_revenue_revision_check(id, v, body, engine)
 
     @app.post("/reports/{id}/earnings/branches")
     def earnings_branch(id: str, body: EarningsBranch, db=Depends(storage)):

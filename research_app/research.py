@@ -388,6 +388,17 @@ def render(report):
         f"- **首要待證**　{assessment['key_gap']}",
         f"- **下一個查核點**　{assessment['next_check']}",
     ]
+    if bridge := report.get("earnings", {}).get("revenue_bridge"):
+        quarter = next(row for row in report["earnings"]["quarters"] if row["period_end"] == bridge["period_end"])
+        value = quarter["scenarios"]["base"]["revised"]
+        currency = report["earnings"]["inputs"]["currency"]
+        lines.append(f"- **第二預測季財務影響**　截至 {bridge['period_end']} 的基準營收 "
+                     f"{Decimal(value['revenue']) / 1_000_000:,.1f} 百萬 {currency}，"
+                     f"稀釋 EPS 為 {Decimal(value['eps']):,.2f} {currency}／股。")
+        material = sorted(bridge["adjustments"], key=lambda item: abs(Decimal(item["value"])), reverse=True)[:2]
+        for item in material:
+            refs = "、".join(cite(ref) for ref in item["evidence_ids"])
+            lines.append(f"  - {item['segment']}　查核 {item['public_check']}。反證 {item['falsifier']}。{refs}")
     if inputs:
         eps = Decimal(outputs["incremental_eps"])
         positive = outputs["min_profitable_lots"]

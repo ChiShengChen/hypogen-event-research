@@ -1,0 +1,12 @@
+case,available_on,source_family,driver,source,observation,remaining_gap
+AMD-2022-Q2,2022-08-02,amd,price,https://ir.amd.com/news-events/press-releases/detail/1084/amd-reports-second-quarter-2022-financial-results,第二季客戶端處理器平均售價年增；公司歸因於較高階 Ryzen 行動處理器的產品組合。,未揭露第四季售價或對現有合併預測的增量。
+AMD-2023-Q2,2023-08-01,amd,volume,https://ir.amd.com/news-events/press-releases/detail/1146/amd-reports-second-quarter-2023-financial-results,第二季第四代 EPYC CPU 營收近乎季增一倍；第三代產品與資料中心其他產品變動抵銷部分增幅。,缺少第四季出貨量和產品單價。
+INTC-2022-Q2,2022-07-28,intel,guidance,https://www.intc.com/news-events/press-releases/detail/1563/intel-reports-second-quarter-2022-financial-results,全年營收指引下修至 650 至 680 億美元，第三季指引為 150 至 160 億美元，管理層指出景氣急降和執行問題。,全年和第三季指引可推算第四季的合併區間；未揭露可與既有預測去重的分部增量。
+INTC-2023-Q2,2023-07-27,intel,volume,https://www.intc.com/news-events/press-releases/detail/1637/intel-reports-second-quarter-2023-financial-results,第二季資料中心與 AI 分部營收為 40.04 億美元，年減約 15%。,已實現的分部年減不等同第四季出貨變化。
+MU-2022-Q2,2022-03-29,micron,volume,https://investors.micron.com/news/press-release/2022/Micron-Technology-Inc--Reports-Results-for-the-Second-Quarter-of-Fiscal-2022-03-29-2022/default.aspx,第二季營收與毛利率超越公司此前指引上緣，管理層仍預期本財年營收創紀錄。,合併結果缺少可映射到第四季的分部量價變動。
+MU-2024-Q2,2024-03-20,micron,volume,https://investors.micron.com/static-files/c531bd08-22cd-4d6b-9540-f8aa72459716,Micron 預期 HBM 在 2024 財年貢獻數億美元營收，並於財年第三季開始改善 DRAM 及整體毛利率。,未將全年 HBM 營收拆成第四季，且無法確認既有合併模型已反映多少。
+MU-2024-Q2,2023-11-13,nvidia,recognition,https://nvidianews.nvidia.com/news/nvidia-supercharges-hopper-the-worlds-leading-ai-computing-platform,NVIDIA 預期 H200 系統於 2024 曆年第二季開始出貨，產品採用 141GB HBM3e。,客戶產品上市支持時程，未公開 Micron 的供貨份額、ASP 或第四季認列額。
+NVDA-2019-Q2,2019-08-15,nvidia,mix,https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2020,NVIDIA 公布合併營收季增 16%，管理層說明即時光線追蹤 GPU 市場的產品進展。,產品發布缺少可分配至第四季的出貨和認列數。
+NVDA-2021-Q2,2021-08-18,nvidia,mix,https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2022,第二季 Gaming 營收季增 11%，Data Center 營收季增 16%。,同份公告的兩項事實不能獨立佐證第四季增量。
+TXN-2022-Q2,2022-07-26,texas-instruments,mix,https://www.ti.com/en-us/about-ti/newsroom/news-releases/2022/2022-07-26-ti-reports-second-quarter-2022-financial-results-and-shareholder-returns,TI 第二季合併營收 52.12 億美元，年增 14%。,單季合併年增與第三季指引無法隔離第四季分部量價。
+TXN-2024-Q2,2024-07-23,texas-instruments,mix,https://www.ti.com/en-us/about-ti/newsroom/news-releases/2024/2024-07-23-ti-reports-second-quarter-2024-financial-results-and-shareholder-returns,TI 第二季合併營收由一年前 45.31 億美元降至 38.22 億美元。,當期年減未確定第四季需求復甦幅度或新增認列。

@@ -1,0 +1,214 @@
+[
+  {
+    "id": "holx_q1_fy2024_jan_preliminary",
+    "split": "holdout",
+    "issuer": "Hologic, Inc.",
+    "ticker": "HOLX",
+    "fiscal_label": "first fiscal quarter ended December 30, 2023",
+    "as_of": "2024-01-07T23:59:59-05:00",
+    "event_at": "2024-01-07T23:59:59-05:00",
+    "target": {
+      "period_end": "2023-12-30",
+      "basis": "US_GAAP",
+      "currency": "USD",
+      "metric": "revenue",
+      "scope": "consolidated",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "published_guidance_midpoint",
+      "amount": "972500000",
+      "available_at": "2023-11-09T23:59:59-05:00",
+      "evidence_ids": [
+        "holx_nov09_revenue_guidance"
+      ],
+      "rationale": "Midpoint of the November 9 Q1 dollar revenue guidance table. The January 7 issuer release was distributed by Business Wire; only the release dates are used in the replay."
+    },
+    "evidence": [
+      {
+        "id": "holx_nov09_revenue_guidance",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/859737/000115752323001706/a53797393_ex991.htm",
+        "published_at": "2023-11-09T23:59:59-05:00",
+        "obtained_at": "2023-11-09T23:59:59-05:00",
+        "timestamp_basis": "replay_day_end",
+        "text": "Q1 2024\nRevenue | $960 - $985\nall dollar figures are in millions, except EPS"
+      },
+      {
+        "id": "holx_jan07_preliminary_quarter",
+        "source_url": "https://www.businesswire.com/news/home/20240107245505/en/Hologic-Announces-Preliminary-Revenue-Results-for-First-Quarter-of-Fiscal-2024",
+        "published_at": "2024-01-07T23:59:59-05:00",
+        "obtained_at": "2024-01-07T23:59:59-05:00",
+        "timestamp_basis": "replay_day_end",
+        "text": "preliminary revenue results for its first fiscal quarter ended December 30, 2023."
+      },
+      {
+        "id": "holx_jan07_total_revenues",
+        "source_url": "https://www.businesswire.com/news/home/20240107245505/en/Hologic-Announces-Preliminary-Revenue-Results-for-First-Quarter-of-Fiscal-2024",
+        "published_at": "2024-01-07T23:59:59-05:00",
+        "obtained_at": "2024-01-07T23:59:59-05:00",
+        "timestamp_basis": "replay_day_end",
+        "text": "The Company expects to report total revenues of approximately $1,013.1 million"
+      }
+    ]
+  },
+  {
+    "id": "adtn_q2_2026_jul_preliminary",
+    "split": "holdout",
+    "issuer": "ADTRAN Holdings, Inc.",
+    "ticker": "ADTN",
+    "fiscal_label": "fiscal quarter ended June 30, 2026",
+    "as_of": "2026-07-22T23:59:59-04:00",
+    "event_at": "2026-07-22T07:02:14-04:00",
+    "target": {
+      "period_end": "2026-06-30",
+      "basis": "US_GAAP",
+      "currency": "USD",
+      "metric": "revenue",
+      "scope": "consolidated",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "published_guidance_midpoint",
+      "amount": "293000000",
+      "available_at": "2026-05-04T23:59:59-04:00",
+      "evidence_ids": [
+        "adtn_may04_q2_revenue_guidance"
+      ],
+      "rationale": "Midpoint of the May 4 Q2 company revenue guidance. The notice carries a July 21 dateline; this replay uses the later, verifiable EDGAR acceptance of the actual exhibit on July 22."
+    },
+    "evidence": [
+      {
+        "id": "adtn_may04_q2_revenue_guidance",
+        "source_url": "https://investors.adtran.com/news/news-details/2026/ADTRAN-Holdings-Inc--reports-first-quarter-2026-financial-results/",
+        "published_at": "2026-05-04T23:59:59-04:00",
+        "obtained_at": "2026-05-04T23:59:59-04:00",
+        "timestamp_basis": "replay_day_end",
+        "text": "For the second quarter of 2026, the Company expects revenue to be within a range of $283.0 million to $303.0 million."
+      },
+      {
+        "id": "adtn_jul22_preliminary_quarter",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/926282/000119312526311290/adtn-ex99_1.htm",
+        "published_at": "2026-07-22T07:02:14-04:00",
+        "obtained_at": "2026-07-22T07:02:14-04:00",
+        "timestamp_basis": "sec_acceptance_time",
+        "text": "for the fiscal quarter ended June 30, 2026.",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/926282/000119312526311290/0001193125-26-311290-index.htm"
+      },
+      {
+        "id": "adtn_jul22_preliminary_revenue",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/926282/000119312526311290/adtn-ex99_1.htm",
+        "published_at": "2026-07-22T07:02:14-04:00",
+        "obtained_at": "2026-07-22T07:02:14-04:00",
+        "timestamp_basis": "sec_acceptance_time",
+        "text": "preliminary revenue is expected to be in the range of $280.0 million to $282.0 million",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/926282/000119312526311290/0001193125-26-311290-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "intt_q2_2026_jul_preliminary",
+    "split": "holdout",
+    "issuer": "InTest Corporation",
+    "ticker": "INTT",
+    "fiscal_label": "second quarter ended June 30, 2026",
+    "as_of": "2026-07-31T23:59:59-04:00",
+    "event_at": "2026-07-31T08:00:00-04:00",
+    "target": {
+      "period_end": "2026-06-30",
+      "basis": "US_GAAP",
+      "currency": "USD",
+      "metric": "revenue",
+      "scope": "consolidated",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "published_guidance_midpoint",
+      "amount": "33000000",
+      "available_at": "2026-05-05T06:15:00-04:00",
+      "evidence_ids": [
+        "intt_may05_q2_revenue_guidance"
+      ],
+      "rationale": "Midpoint of the May 5 Q2 company revenue guidance. Both releases disclose the publication times on the issuer's IR site."
+    },
+    "evidence": [
+      {
+        "id": "intt_may05_q2_revenue_guidance",
+        "source_url": "https://ir.intest.com/news-releases/news-release-details/intest-reports-strong-first-quarter-2026-revenue-339-million-eps",
+        "published_at": "2026-05-05T06:15:00-04:00",
+        "obtained_at": "2026-05-05T06:15:00-04:00",
+        "timestamp_basis": "issuer_published_time",
+        "text": "For Q2 26, InTest projects revenue to be $32 million to $34 million"
+      },
+      {
+        "id": "intt_jul31_preliminary_quarter",
+        "source_url": "https://ir.intest.com/news-releases/news-release-details/intest-reports-preliminary-second-quarter-2026-results",
+        "published_at": "2026-07-31T08:00:00-04:00",
+        "obtained_at": "2026-07-31T08:00:00-04:00",
+        "timestamp_basis": "issuer_published_time",
+        "text": "Preliminary Second Quarter 2026 Results\nfor the second quarter ended June 30, 2026"
+      },
+      {
+        "id": "intt_jul31_preliminary_revenue",
+        "source_url": "https://ir.intest.com/news-releases/news-release-details/intest-reports-preliminary-second-quarter-2026-results",
+        "published_at": "2026-07-31T08:00:00-04:00",
+        "obtained_at": "2026-07-31T08:00:00-04:00",
+        "timestamp_basis": "issuer_published_time",
+        "text": "revenue is expected to be approximately $35 million"
+      }
+    ]
+  },
+  {
+    "id": "msft_q4_fy2022_jun_fx",
+    "split": "holdout",
+    "issuer": "Microsoft Corporation",
+    "ticker": "MSFT",
+    "fiscal_label": "fourth quarter of fiscal year 2022",
+    "as_of": "2022-06-02T23:59:59-04:00",
+    "event_at": "2022-06-02T09:01:35-04:00",
+    "target": {
+      "period_end": "2022-06-30",
+      "basis": "US_GAAP",
+      "currency": "USD",
+      "metric": "revenue",
+      "scope": "consolidated",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "benchmark_incumbent_control",
+      "amount": "52800000000",
+      "available_at": "2022-04-26T23:59:59-04:00",
+      "evidence_ids": [
+        "msft_apr26_segment_guidance"
+      ],
+      "rationale": "Benchmark control computed from the public April 26 segment ranges. Adding the lower bounds and upper bounds gives $52.40–53.20 billion; the control uses their midpoint. It is a derived comparable, not an explicit companywide forecast."
+    },
+    "evidence": [
+      {
+        "id": "msft_apr26_segment_guidance",
+        "source_url": "https://www.microsoft.com/en-us/investor/events/fy-2022/earnings-fy-2022-q3",
+        "published_at": "2022-04-26T23:59:59-04:00",
+        "obtained_at": "2022-04-26T23:59:59-04:00",
+        "timestamp_basis": "replay_day_end",
+        "text": "Productivity and Business Processes\n$16.65 and $16.9 billion\nIntelligent Cloud\n$21.1 and $21.35 billion\nMore Personal Computing\n$14.65 and $14.95 billion"
+      },
+      {
+        "id": "msft_jun02_8k_quarter",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312522165839/d295016d8k.htm",
+        "published_at": "2022-06-02T09:01:35-04:00",
+        "obtained_at": "2022-06-02T09:01:35-04:00",
+        "timestamp_basis": "sec_acceptance_time",
+        "text": "updated our guidance for the quarter ending June 30, 2022",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312522165839/0001193125-22-165839-index.htm"
+      },
+      {
+        "id": "msft_jun02_fx_revenue_note",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312522165839/d295016dex991.htm",
+        "published_at": "2022-06-02T09:01:35-04:00",
+        "obtained_at": "2022-06-02T09:01:35-04:00",
+        "timestamp_basis": "sec_acceptance_time",
+        "text": "Revised Guidance Range\nRevenue* | $51.94 | $52.74\n* Calculated as no explicit guidance provided.\nfourth quarter of fiscal year 2022\n$ in billions",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312522165839/0001193125-22-165839-index.htm"
+      }
+    ]
+  }
+]

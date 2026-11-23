@@ -1,0 +1,153 @@
+[
+  {
+    "id": "ntgr_q4_2023_preliminary",
+    "split": "holdout",
+    "issuer": "NETGEAR, Inc.",
+    "ticker": "NTGR",
+    "event_at": "2024-01-31T16:11:43-05:00",
+    "as_of": "2024-01-31T16:11:43-05:00",
+    "fiscal_label": "fourth quarter of 2023",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2023-12-31",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "public_guidance_assumption",
+      "amount": "182500000",
+      "available_at": "2023-10-25T23:59:59-04:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1122904/000095017023055191/ntgr-ex99_1.htm",
+      "rationale": "Frozen midpoint of companywide Q4 net-revenue guidance of $175 million to $190 million in the October 25 release. Prior guidance date is represented at end of its US Eastern publication day."
+    },
+    "documents": [
+      {
+        "id": "ntgr_q4_2023_preliminary-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1122904/000095017024009393/ntgr-ex99_1.htm",
+        "path": "output/earnings-full-revision/filings/holdout/ntgr_q4_2023_preliminary.htm",
+        "sha256": "be53622cde6380add373550b2aae3993b711d5b0646956932cc04d4ab34acdec",
+        "media_type": "text/html",
+        "published_at": "2024-01-31T16:11:43-05:00",
+        "obtained_at": "2024-01-31T16:11:43-05:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1122904/000095017024009393/0000950170-24-009393-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "onds_q4_2025_preliminary",
+    "split": "holdout",
+    "issuer": "Ondas Inc.",
+    "ticker": "ONDS",
+    "event_at": "2026-03-09T08:50:48-04:00",
+    "as_of": "2026-03-09T08:50:48-04:00",
+    "fiscal_label": "fourth quarter of 2025",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2025-12-31",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "public_guidance_assumption",
+      "amount": "28000000",
+      "available_at": "2026-01-16T23:59:59-05:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1646188/000121390026004939/ea027315201ex99-1_ondas.htm",
+      "rationale": "Frozen midpoint of the company's January 16 Investor Day slide 7 preliminary Q4 2025 revenue range ($27.0 million to $29.0 million). Prior guidance date is represented at end of the publication day."
+    },
+    "documents": [
+      {
+        "id": "onds_q4_2025_preliminary-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1646188/000121390026024945/ea028051201ex99-1.htm",
+        "path": "output/earnings-full-revision/filings/holdout/onds_q4_2025_preliminary.htm",
+        "sha256": "04ce6f0e2d8466442b456b7cae0e634b79999a13291125fb06ea9258b86de664",
+        "media_type": "text/html",
+        "published_at": "2026-03-09T08:50:48-04:00",
+        "obtained_at": "2026-03-09T08:50:48-04:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1646188/000121390026024945/0001213900-26-024945-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "saic_q4_fy2026_preliminary",
+    "split": "holdout",
+    "issuer": "Science Applications International Corporation",
+    "ticker": "SAIC",
+    "event_at": "2026-02-11T06:55:57-05:00",
+    "as_of": "2026-02-11T06:55:57-05:00",
+    "fiscal_label": "Q4 FY26",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2026-01-30",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "public_guidance_assumption",
+      "amount": "1788000000",
+      "available_at": "2025-12-04T23:59:59-05:00",
+      "source_url": "https://investors.saic.com/news-releases/news-release-details/saic-announces-third-quarter-fiscal-year-2026-results",
+      "rationale": "Analyst-style arithmetic proxy, not a company-issued quarterly guide. Midpoint of the December 4 fiscal 2026 revenue guide ($7.275–$7.325 billion) minus $5.512 billion of GAAP revenue already reported for the first nine months. Prior guidance date is represented at end of publication day."
+    },
+    "documents": [
+      {
+        "id": "saic_q4_fy2026_preliminary-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1571123/000157112326000008/saic8k02112026-exhibit991.htm",
+        "path": "output/earnings-full-revision/filings/holdout/saic_q4_fy2026_preliminary.htm",
+        "sha256": "3c1763641cc223940781ae922d6e2d0b09ba2380b3941e70abf701f0593fcc87",
+        "media_type": "text/html",
+        "published_at": "2026-02-11T06:55:57-05:00",
+        "obtained_at": "2026-02-11T06:55:57-05:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1571123/000157112326000008/0001571123-26-000008-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "vnce_q4_fy2025_holiday_update",
+    "split": "holdout",
+    "issuer": "Vince Holding Corp.",
+    "ticker": "VNCE",
+    "event_at": "2026-01-12T07:01:28-05:00",
+    "as_of": "2026-01-12T07:01:28-05:00",
+    "fiscal_label": "fiscal quarter ending January 31, 2026",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2026-01-31",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "public_guidance_assumption",
+      "amount": "83947500",
+      "available_at": "2025-12-09T23:59:59-05:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1579157/000119312525311904/vnce-ex99_1.htm",
+      "rationale": "Arithmetic proxy from $79.950 million of prior-year Q4 sales multiplied by 1.05, the midpoint of the December 9 Q4 growth guidance of 3–7%. Prior guidance date is represented at end of publication day.",
+      "supporting_source_urls": [
+        "https://investors.vince.com/press-releases/press-release-details/2025/Vince-Holding-Corp--Reports-Fourth-Quarter-and-Fiscal-Year-2024-Results/default.aspx"
+      ]
+    },
+    "documents": [
+      {
+        "id": "vnce_q4_fy2025_holiday_update-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1579157/000119312526009731/vnce-ex99_1.htm",
+        "path": "output/earnings-full-revision/filings/holdout/vnce_q4_fy2025_holiday_update.htm",
+        "sha256": "f97558ebec847c703e99c478aeaeb38a51050448cbaef99194b9aee335f55d64",
+        "media_type": "text/html",
+        "published_at": "2026-01-12T07:01:28-05:00",
+        "obtained_at": "2026-01-12T07:01:28-05:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1579157/000119312526009731/0001193125-26-009731-index.htm"
+      }
+    ]
+  }
+]

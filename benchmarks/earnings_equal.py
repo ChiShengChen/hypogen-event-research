@@ -49,6 +49,7 @@ class PointPacket(Schema):
 def project_rows(result):
     drafts = {(row["period_end"], row["scenario"]): row for row in result["inputs"]["drivers"]}
     profiles = {row["period_end"]: row for row in result["inputs"].get("eps_assumptions", [])}
+    bridge = result.get("revenue_bridge")
     points = []
     for row in result["quarters"]:
         period = row["period_end"]
@@ -60,6 +61,17 @@ def project_rows(result):
         if guides:
             labels = "、".join(METRICS[entry["metric"]] for entry in guides)
             notes.append(f"{labels}情境已按同季公司指引中點校準。")
+        if bridge and bridge["period_end"] == period:
+            sources.extend(bridge["anchor_evidence_ids"])
+            sources.extend(ref for item in bridge["adjustments"] for ref in item["evidence_ids"])
+            if residual := bridge.get("residual"):
+                sources.extend(residual["evidence_ids"])
+                notes.append("第二個預測季包含有來源的營收修正。" if residual["status"] == "applied"
+                             else f"第二個預測季未套用營收修正。{residual['reason']}")
+            elif (turn := bridge.get("turn")) and turn["status"] in {"unconfirmed", "missing_signal"}:
+                notes.append("轉折訊號未達門檻，第二個預測季營收沿用原草擬值。")
+            else:
+                notes.append("第二個預測季營收以原始季報的基準及可追溯調整重算。")
         if profile:
             for item in [profile["tax_rate"], profile["diluted_shares"], profile["recurring_nonoperating"], *profile["one_offs"]]:
                 sources.extend(item["evidence_ids"])
@@ -75,7 +87,9 @@ def project_rows(result):
 
 def direct_points(event, context, adapter):
     plan = event.earnings_plan
-    excluded = {"eps_assumptions", "calibrate_guidance"} if getattr(adapter, "earnings_driver_version", None) == 3 else set()
+    excluded = {"revenue_bridge"}
+    if getattr(adapter, "earnings_driver_version", None) == 3:
+        excluded.update({"eps_assumptions", "calibrate_guidance"})
     packet = adapter._generate(PointPacket, INSTRUCTION, {
         "target": context["target"], "event": context["event_text"], "as_of": context["as_of"],
         "evidence": context["evidence"], "baseline": plan.model_dump(mode="json", exclude=excluded),
@@ -147,15 +161,15 @@ def calculator_arm(folder, case):
     write_json(root / "calculator.json", result)
 
 
-def blind_records(cases, results):
+def blind_records(cases, results, *, arms=ARMS):
     review, key = [], {}
     for case in cases:
         case_id = case["id"]
         if case_id not in results:
             continue
-        offset = hashlib.sha256(case_id.encode()).digest()[0] % len(ARMS)
-        order = ARMS[offset:] + ARMS[:offset]
-        key[case_id] = dict(zip(("A", "B", "C"), order))
+        offset = hashlib.sha256(case_id.encode()).digest()[0] % len(arms)
+        order = arms[offset:] + arms[:offset]
+        key[case_id] = dict(zip("ABCD", order))
         review.append({
             "case": case_id, "as_of": case["context"]["as_of"], "event": case["context"]["event_text"],
             "evidence": case["context"]["evidence"],

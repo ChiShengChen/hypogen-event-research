@@ -1,0 +1,81 @@
+{
+  "infn_q4_2023_update": {
+    "disposition": "noop",
+    "new_low": "435000000",
+    "new_high": "452000000",
+    "delta": "0",
+    "source_ids": [
+      "infn_q4_2023_update-release"
+    ],
+    "required_text": [
+      [
+        "fourth quarter ended December 30, 2023",
+        "Preliminary Unaudited Fourth Quarter 2023 Financial Results"
+      ],
+      "$435 million to $452 million"
+    ],
+    "reason": "The complete Q4 preliminary range covers the incumbent. The same sentence states the old range for comparison. The March-quarter outlook is a distinct period.",
+    "amount_text": "$435 million to $452 million"
+  },
+  "fnsr_q1_fy2014_update": {
+    "disposition": "eligible",
+    "new_low": "266000000",
+    "new_high": "266000000",
+    "delta": "13500000",
+    "source_ids": [
+      "fnsr_q1_fy2014_update-release"
+    ],
+    "required_text": [
+      "first fiscal quarter, ended July 28, 2013",
+      "approximately $266 million"
+    ],
+    "reason": "The company stated a new preliminary revenue point. The comparison to earlier guidance in the same sentence gives the old range only.",
+    "amount_text": "approximately $266 million"
+  },
+  "ai_q4_fy2023_update": {
+    "disposition": "eligible",
+    "new_low": "72100000",
+    "new_high": "72400000",
+    "delta": "1100000",
+    "source_ids": [
+      "ai_q4_fy2023_update-release"
+    ],
+    "required_text": [
+      [
+        "fourth fiscal quarter and fiscal year ended April 30, 2023",
+        "Three Months Ended April 30, 2023",
+        "Fiscal Fourth Quarter 2023 Preliminary Business Update"
+      ],
+      [
+        "$72.1 million - $72.4 million",
+        "$72.1 - $72.4"
+      ]
+    ],
+    "reason": "The current preliminary quarterly column inherits million-dollar units from the lower header tier. Either the quarterly prose or the fully scoped table is acceptable. The prior column and full-year table are distinct.",
+    "amount_text": [
+      "$72.1 million - $72.4 million",
+      "$72.1 - $72.4"
+    ],
+    "selected_cell_text": "$72.1 - $72.4"
+  },
+  "lif_q4_2025_operational_update": {
+    "disposition": "blocked",
+    "new_low": null,
+    "new_high": null,
+    "delta": "0",
+    "source_ids": [
+      "lif_q4_2025_operational_update-release"
+    ],
+    "required_text": [
+      [
+        "Full Year 2025 Revenue: $486-489 million",
+        "Full Year 2025 Revenue and Adjusted EBITDA to exceed prior guidance"
+      ],
+      [
+        "Q4 2025 Monthly Active Users of 95.8 million",
+        "operational update on key performance metrics for Q4 and full year 2025"
+      ]
+    ],
+    "reason": "Quarterly disclosures concern user/subscription operating metrics. The numeric revenue range is explicitly full-year. Even with the nine-month legacy number available, the benchmark does not treat a derived quarterly residual as a new issuer guide."
+  }
+}

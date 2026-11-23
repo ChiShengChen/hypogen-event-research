@@ -1,0 +1,58 @@
+{
+  "ntgr_q4_2023_preliminary": {
+    "disposition": "noop",
+    "new_low": "179000000",
+    "new_high": "189000000",
+    "delta": "0",
+    "source_ids": [
+      "ntgr_q4_2023_preliminary-release"
+    ],
+    "required_text": [
+      "fourth quarter of 2023",
+      "$179 million and $189 million"
+    ],
+    "reason": "The initial guidance midpoint falls inside both endpoints of the updated quarterly range. Keep the incumbent rather than treating a narrowed band as a nonzero revision."
+  },
+  "onds_q4_2025_preliminary": {
+    "disposition": "eligible",
+    "new_low": "29100000",
+    "new_high": "30100000",
+    "delta": "1100000",
+    "source_ids": [
+      "onds_q4_2025_preliminary-release"
+    ],
+    "required_text": [
+      "fourth quarter of 2025",
+      "$29.1 and $30.1 million"
+    ],
+    "reason": "Use the company's quarterly preliminary range in the body. Ignore the side-by-side prior range and annual guidance in the same release. The closest new bound is $29.1 million."
+  },
+  "saic_q4_fy2026_preliminary": {
+    "disposition": "eligible",
+    "new_low": "1745000000",
+    "new_high": "1745000000",
+    "delta": "-43000000",
+    "source_ids": [
+      "saic_q4_fy2026_preliminary-release"
+    ],
+    "required_text": [
+      "Q4 FY26 Results",
+      "$1.745B"
+    ],
+    "reason": "The preliminary table contains distinct quarterly, full-year and prior annual columns. The Q4 FY26 entry is an approximate point estimate. The subsequent FY27 guidance table is a different fiscal year and duration."
+  },
+  "vnce_q4_fy2025_holiday_update": {
+    "disposition": "blocked",
+    "new_low": null,
+    "new_high": null,
+    "delta": "0",
+    "source_ids": [
+      "vnce_q4_fy2025_holiday_update-release"
+    ],
+    "required_text": [
+      "nine-week holiday period ended January 3, 2026",
+      "total company net sales have trended in line with prior guidance"
+    ],
+    "reason": "The 5.3% growth figure is for the nine-week holiday period. The qualitative Q4 remark supplies no new quarterly dollar point or range. Retain the incumbent without marking the disclosure numeric."
+  }
+}

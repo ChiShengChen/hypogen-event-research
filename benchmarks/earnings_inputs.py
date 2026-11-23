@@ -35,9 +35,9 @@ def accounting_facts(company_facts):
     return index
 
 
-def financial_history(sec_dir):
+def financial_history(sec_dir, tickers=TICKERS):
     history = {}
-    for ticker in TICKERS:
+    for ticker in tickers:
         data = json.loads((sec_dir / f"{ticker}.json").read_text(encoding="utf-8"))
         history[ticker] = filing_index(data).values(), accounting_facts(data)
     return history
@@ -81,7 +81,7 @@ def add_guidance(event, rows):
     return event.model_copy(update={"documents": documents, "earnings_plan": plan})
 
 
-def add_eps_assumptions(event, ticker, history, issuer_rows=()):
+def add_eps_assumptions(event, ticker, history, issuer_rows=(), *, cik=None):
     filings, facts = history[ticker]
     recent = sorted((row for row in filings if end_of_day(row["filed"]) <= event.as_of),
                     key=lambda row: row["end"], reverse=True)[:4]
@@ -105,7 +105,7 @@ def add_eps_assumptions(event, ticker, history, issuer_rows=()):
             values.append(f"所得稅費用 {expense[0]} 美元（{expense[1]}）。")
         document = Document(
             id=doc_id,
-            source=f"https://www.sec.gov/Archives/edgar/data/{int(TICKERS[ticker])}/{accession.replace('-', '')}/{accession}-index.htm",
+            source=f"https://www.sec.gov/Archives/edgar/data/{int(cik or TICKERS[ticker])}/{accession.replace('-', '')}/{accession}-index.htm",
             kind="disclosure", text_format="summary", availability_basis="replay_day_end",
             published_at=recorded_at, obtained_at=recorded_at,
             paragraphs={"accounting": f"截至 {key[1]} 的 US GAAP 單季。{''.join(values)}"},

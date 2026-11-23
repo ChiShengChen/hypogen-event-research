@@ -6,7 +6,7 @@ from pathlib import Path
 from fastapi.testclient import TestClient
 import pytest
 
-from benchmarks.earnings_prospective import ARMS, INITIAL_ACCESSIONS, ActualQuarter, Cohort
+from benchmarks.earnings_prospective import ARMS, INITIAL_ACCESSIONS, RESIDUAL_ARMS, ActualQuarter, Cohort
 from research_app.adapters import Fixture
 from research_app.api import create_app
 from research_app.earnings import EarningsError
@@ -88,7 +88,8 @@ def test_consensus_import_preserves_capture_and_same_scope(tmp_path):
         assert all(row["baseline"]["kind"] != "consensus" for row in mismatched["earnings"]["comparisons"])
 
 
-def test_prospective_ledger_locks_complete_forecasts_before_result(tmp_path):
+@pytest.mark.parametrize("residual", [False, True])
+def test_prospective_ledger_locks_complete_forecasts_before_result(tmp_path, residual):
     source = "https://www.sec.gov/Archives/edgar/data/2488/000000248826000191/amd-20260926.htm"
     event_at = "2026-11-04T23:59:59Z"
     period = "2026-12-26"
@@ -106,8 +107,18 @@ def test_prospective_ledger_locks_complete_forecasts_before_result(tmp_path):
                                         "evidence_ids": ["baseline:ref"], "method": "測試資料"}
                                        for end in (period, "2027-03-27")]},
     })
+    if residual:
+        raw = plan.model_dump()
+        raw["earnings_plan"]["revenue_bridge"] = {
+            "period_end": "2027-03-27", "currency": "USD", "basis": "US_GAAP",
+            "near_fiscal_quarter": 4, "far_fiscal_quarter": 1, "method": "guided_absolute",
+            "history": [{"period_end": "2026-06-30", "fiscal_quarter": 2, "value": 100,
+                         "available_at": baseline_date, "evidence_ids": ["baseline:ref"], "method": "測試資料"}],
+        }
+        plan = Event.model_validate(raw)
     now = datetime(2026, 11, 23, tzinfo=timezone.utc)
-    cohort = Cohort(tmp_path)
+    cohort = Cohort(tmp_path, residual=residual)
+    arms = RESIDUAL_ARMS if residual else ARMS
     case = cohort.enroll("AMD", INITIAL_ACCESSIONS["AMD"], plan, now)
     assert case == "AMD-01"
     assert cohort.enroll("AMD", INITIAL_ACCESSIONS["AMD"], plan, now) == case
@@ -116,8 +127,8 @@ def test_prospective_ledger_locks_complete_forecasts_before_result(tmp_path):
     points = [{"period_end": end, "scenario": scenario, "revenue": "100", "gross_margin": "0.5",
                "operating_income": "30", "eps": "2.4", "rationale": "測試", "evidence_ids": ["event:fact"]}
               for end in (period, "2027-03-27") for scenario in ("bear", "base", "bull")]
-    outputs = {arm: {"points": points} for arm in ARMS}
-    with pytest.raises(EarningsError, match="三組"):
+    outputs = {arm: {"points": points} for arm in arms}
+    with pytest.raises(EarningsError, match="四組" if residual else "三組"):
         cohort.seal(case, {"astra": outputs["astra"]}, now)
     cohort.seal(case, outputs, now)
     result = ActualQuarter(period_end=period, duration="quarter", currency="USD", basis="US_GAAP", scope="consolidated",
@@ -132,4 +143,8 @@ def test_prospective_ledger_locks_complete_forecasts_before_result(tmp_path):
         cohort.resolve(case, result.model_copy(update={"eps": Decimal("2.5")}), later)
     summary = cohort.export()
     assert (summary["planned"], summary["sealed"], summary["resolved_quarters"]) == (30, 1, 1)
-    assert summary["metrics"]["eps"] == {arm: 0 for arm in ARMS}
+    assert summary["metrics"]["eps"] == {arm: 0 for arm in arms}
+    if residual:
+        assert summary["metrics_by_horizon"]["1"]["eps"] == summary["metrics"]["eps"]
+        assert summary["metrics_by_horizon"]["2"] == {}
+        assert Cohort(tmp_path).arms == RESIDUAL_ARMS

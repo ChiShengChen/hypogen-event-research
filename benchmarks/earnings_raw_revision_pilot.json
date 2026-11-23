@@ -1,0 +1,210 @@
+[
+  {
+    "id": "amd_q3_2022",
+    "split": "pilot",
+    "issuer": "Advanced Micro Devices, Inc.",
+    "ticker": "AMD",
+    "as_of": "2022-10-06T23:59:59-04:00",
+    "event_at": "2022-10-06T16:17:00-04:00",
+    "target": {
+      "period_end": "2022-09-24",
+      "basis": "US_GAAP",
+      "currency": "USD",
+      "metric": "revenue",
+      "scope": "consolidated",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "published_guidance_midpoint",
+      "amount": "6700000000",
+      "available_at": "2022-08-02T16:05:00-04:00",
+      "evidence_ids": [
+        "amd_aug02_guidance"
+      ],
+      "rationale": "Midpoint of AMD's August 2 company guidance. Both release times come from AMD's investor relations release archive."
+    },
+    "evidence": [
+      {
+        "id": "amd_aug02_guidance",
+        "source_url": "https://ir.amd.com/news-events/press-releases/detail/1084/amd-reports-second-quarter-2022-financial-results",
+        "published_at": "2022-08-02T16:05:00-04:00",
+        "obtained_at": "2022-08-02T16:05:00-04:00",
+        "timestamp_basis": "issuer_published_time",
+        "text": "For the third quarter of 2022, AMD expects revenue to be approximately $6.7 billion, plus or minus $200 million"
+      },
+      {
+        "id": "amd_oct06_context",
+        "source_url": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-22-000163/q322earnings_prelimxfina.htm",
+        "published_at": "2022-10-06T16:17:00-04:00",
+        "obtained_at": "2022-10-06T16:17:00-04:00",
+        "timestamp_basis": "issuer_published_time",
+        "text": "today announced selected preliminary financial results for the third quarter of 2022."
+      },
+      {
+        "id": "amd_oct06_update",
+        "source_url": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-22-000163/q322earnings_prelimxfina.htm",
+        "published_at": "2022-10-06T16:17:00-04:00",
+        "obtained_at": "2022-10-06T16:17:00-04:00",
+        "timestamp_basis": "issuer_published_time",
+        "text": "Third quarter revenue is expected to be approximately $5.6 billion"
+      }
+    ],
+    "fiscal_label": "third quarter of 2022"
+  },
+  {
+    "id": "smci_q2_fy2024",
+    "split": "pilot",
+    "issuer": "Super Micro Computer, Inc.",
+    "ticker": "SMCI",
+    "as_of": "2024-01-18T23:59:59-05:00",
+    "event_at": "2024-01-18T23:59:59-05:00",
+    "target": {
+      "period_end": "2023-12-31",
+      "basis": "US_GAAP",
+      "currency": "USD",
+      "metric": "revenue",
+      "scope": "consolidated",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "published_guidance_midpoint",
+      "amount": "2800000000",
+      "available_at": "2023-11-01T23:59:59-04:00",
+      "evidence_ids": [
+        "smci_nov01_guidance"
+      ],
+      "rationale": "Midpoint of Supermicro's November 1 guidance for companywide net sales. The issuer's GAAP financial statements label its consolidated top line net sales."
+    },
+    "evidence": [
+      {
+        "id": "smci_nov01_guidance",
+        "source_url": "https://ir.supermicro.com/news/news-details/2023/Supermicro-Announces-First-Quarter-Fiscal-Year-2024-Financial-Results/default.aspx",
+        "published_at": "2023-11-01T23:59:59-04:00",
+        "obtained_at": "2023-11-01T23:59:59-04:00",
+        "timestamp_basis": "us_eastern_end_of_day_availability_proxy",
+        "text": "For the second quarter of fiscal year 2024 ending December 31, 2023, the Company expects net sales of $2.7 billion to $2.9 billion"
+      },
+      {
+        "id": "smci_jan18_context",
+        "source_url": "https://ir.supermicro.com/news/news-details/2024/Supermicro-Provides-Second-Quarter-Fiscal-2024-Business-Update/default.aspx",
+        "published_at": "2024-01-18T23:59:59-05:00",
+        "obtained_at": "2024-01-18T23:59:59-05:00",
+        "timestamp_basis": "us_eastern_end_of_day_availability_proxy",
+        "text": "second quarter of fiscal year 2024, ended December 31, 2023."
+      },
+      {
+        "id": "smci_jan18_update",
+        "source_url": "https://ir.supermicro.com/news/news-details/2024/Supermicro-Provides-Second-Quarter-Fiscal-2024-Business-Update/default.aspx",
+        "published_at": "2024-01-18T23:59:59-05:00",
+        "obtained_at": "2024-01-18T23:59:59-05:00",
+        "timestamp_basis": "us_eastern_end_of_day_availability_proxy",
+        "text": "Expected Range | Prior Guidance\nNet Sales | $3.6B to $3.65B | $2.7B to $2.9B"
+      }
+    ],
+    "fiscal_label": "second quarter of fiscal year 2024"
+  },
+  {
+    "id": "intc_q4_2022",
+    "split": "pilot",
+    "issuer": "Intel Corporation",
+    "ticker": "INTC",
+    "as_of": "2022-07-29T23:59:59-04:00",
+    "event_at": "2022-07-28T23:59:59-04:00",
+    "target": {
+      "period_end": "2022-12-31",
+      "basis": "US_GAAP",
+      "currency": "USD",
+      "metric": "revenue",
+      "scope": "consolidated",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "benchmark_incumbent_control",
+      "amount": "16300000000",
+      "available_at": "2022-07-28T12:00:00-04:00",
+      "evidence_ids": [
+        "intc_apr28_outlook"
+      ],
+      "rationale": "Fixed benchmark incumbent taken from the existing historical replay's Q4 as-of estimate. July 28 noon is the declared counterfactual benchmark snapshot time. This amount is not attributed to Intel, company consensus, or a contemporaneous analyst. The April outlook is cited as preceding source context. It covers the fiscal year and does not supply the benchmark incumbent amount."
+    },
+    "evidence": [
+      {
+        "id": "intc_apr28_outlook",
+        "source_url": "https://www.intc.com/news-events/press-releases/detail/1541/intel-reports-first-quarter-2022-financial-results",
+        "published_at": "2022-04-28T23:59:59-04:00",
+        "obtained_at": "2022-04-28T23:59:59-04:00",
+        "timestamp_basis": "us_eastern_end_of_day_availability_proxy",
+        "text": "Business Outlook\nQ2 2022 | GAAP | Non-GAAP\nRevenue | $18.0 billion | $18.0 billion\nFull-Year 2022 | GAAP | Non-GAAP\nRevenue | $76.0 billion | $76.0 billion"
+      },
+      {
+        "id": "intc_jul28_outlook",
+        "source_url": "https://www.intc.com/news-events/press-releases/detail/1563/intel-reports-second-quarter-2022-financial-results",
+        "published_at": "2022-07-28T23:59:59-04:00",
+        "obtained_at": "2022-07-28T23:59:59-04:00",
+        "timestamp_basis": "us_eastern_end_of_day_availability_proxy",
+        "text": "Business Outlook\nQ3 2022 | GAAP | Non-GAAP\nRevenue | $15-16 billion | $15-16 billion\nFull-Year 2022 | GAAP | Non-GAAP\nRevenue | $65-68 billion | $65-68 billion"
+      },
+      {
+        "id": "intc_jul29_filings",
+        "source_url": "https://www.intc.com/filings-reports/annual-reports/content/0000050863-22-000030/0000050863-22-000030.pdf",
+        "published_at": "2022-07-29T23:59:59-04:00",
+        "obtained_at": "2022-07-29T23:59:59-04:00",
+        "timestamp_basis": "us_eastern_end_of_day_availability_proxy",
+        "text": "Consolidated Condensed Statements of Income\nThree Months Ended | Six Months Ended\nJul 2, 2022 | Jun 26, 2021 | Jul 2, 2022 | Jun 26, 2021\nNet revenue $ 15,321 $ 19,631 $ 33,674 $ 39,304"
+      }
+    ],
+    "fiscal_label": "Q4 2022"
+  },
+  {
+    "id": "nvda_q4_fy2019_reflected",
+    "split": "pilot",
+    "issuer": "NVIDIA Corporation",
+    "ticker": "NVDA",
+    "as_of": "2019-01-28T23:59:59-05:00",
+    "event_at": "2019-01-28T23:59:59-05:00",
+    "target": {
+      "period_end": "2019-01-27",
+      "basis": "US_GAAP",
+      "currency": "USD",
+      "metric": "revenue",
+      "scope": "consolidated",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "benchmark_incumbent_control",
+      "amount": "2200000000",
+      "available_at": "2019-01-28T23:59:59-05:00",
+      "evidence_ids": [
+        "nvda_jan28_update"
+      ],
+      "rationale": "Declared benchmark incumbent constructed from the Jan 28 company release to test whether the same update is applied twice. The $2.20 billion incumbent is a control, while the original November outlook was $2.70 billion."
+    },
+    "evidence": [
+      {
+        "id": "nvda_nov15_guidance",
+        "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2019-6747552",
+        "published_at": "2018-11-15T23:59:59-05:00",
+        "obtained_at": "2018-11-15T23:59:59-05:00",
+        "timestamp_basis": "us_eastern_end_of_day_availability_proxy",
+        "text": "NVIDIA’s outlook for the fourth quarter of fiscal 2019 is as follows:\nRevenue is expected to be $2.70 billion, plus or minus 2 percent."
+      },
+      {
+        "id": "nvda_jan28_context",
+        "source_url": "https://nvidianews.nvidia.com/news/nvidia-updates-financial-guidance-for-fourth-quarter-of-fiscal-year-2019",
+        "published_at": "2019-01-28T23:59:59-05:00",
+        "obtained_at": "2019-01-28T23:59:59-05:00",
+        "timestamp_basis": "us_eastern_end_of_day_availability_proxy",
+        "text": "for the quarter and fiscal year ended Jan. 27, 2019."
+      },
+      {
+        "id": "nvda_jan28_update",
+        "source_url": "https://nvidianews.nvidia.com/news/nvidia-updates-financial-guidance-for-fourth-quarter-of-fiscal-year-2019",
+        "published_at": "2019-01-28T23:59:59-05:00",
+        "obtained_at": "2019-01-28T23:59:59-05:00",
+        "timestamp_basis": "us_eastern_end_of_day_availability_proxy",
+        "text": "Previous Q4 Fiscal 2019 Guidance | Updated Q4 Fiscal 2019 Guidance\nRevenue | $2.70 billion, plus or minus 2% | $2.20 billion, plus or minus 2%"
+      }
+    ],
+    "fiscal_label": "Q4 Fiscal 2019"
+  }
+]

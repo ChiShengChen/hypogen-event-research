@@ -347,6 +347,114 @@ python -m benchmarks.earnings_prospective --output output/earnings-calibration-p
 
 新方案已另行封存 AMD、Intel 和 TI 三案的預測，等待實績與研究員覆核。
 
+#### 第二預測季營收橋接
+
+對有兩個預測季的報告，可在「盈利與覆核」選「編輯第二預測季營收橋接」，或在事件的 `earnings_plan.revenue_bridge` 送入資料。每筆歷史營收附財年季度、原始來源與當時可得時間。可逐筆加上分部的量、價格、組合、認列或合併範圍調整。填寫調整時也須提供公開查核與反證。工作台顯示原草擬值、選用基準、各項調整、最後營收與可比的點時共識。已有第二預測季合併營收指引時，使用既有公司指引校準流程。
+
+以 2019–2024 年的 30 案比較五種簡單基準，選出「第一預測季指引中點加歷史同季節轉換金額中位數」。另以較晚的八案與選模時未使用的三個 NVIDIA 案驗收。同一證據下，第二預測季營收 MAE 為純 Astra **39.74 億美元**、現版 Harness **40.84 億美元**、橋接版 **40.76 億美元**。橋接版比純 Astra 多約 2.6% 誤差，沒有達到低 5% 的門檻，故作為選用方案。三個各自搜尋的案例兩組均遵守兩次搜尋與兩次開頁上限。這三案的營收誤差也由 Astra 較低。
+
+```bash
+python -m benchmarks.earnings_horizon --run-model
+python -m benchmarks.earnings_horizon_search
+python -m benchmarks.earnings_prospective --output output/earnings-horizon-prospective --horizon seed --guidance benchmarks/earnings_guidance_prospective.csv
+python -m benchmarks.earnings_prospective --output output/earnings-horizon-prospective run
+```
+
+驗收使用同一份 SEC Company Facts 資料夾，另需 `NVDA.json`。保留集的點時指引在 [歷史指引快照](benchmarks/earnings_guidance_horizon.csv)。`output/earnings-horizon/` 保存凍結的輸入、開發集診斷、各案橋接與匿名覆核表。兩位分析師填寫 `review-form.csv` 後，以不帶 `--run-model` 的驗收命令更新重大錯誤率、引文支持率、查核可行性與修稿時間。新版與既有隊列各自保存；新版已封存首批三案。
+
+#### T+2 景氣轉折試驗
+
+已有營收歷史的報告可在「盈利與覆核」選「套用 T+2 轉折偵測」。方法 `confirmed_turn` 比較公司指引與前幾年相同財季轉換的季節基準。指引偏離至少 12%，且當期實績偏離至少 8% 或同向公開營運資料提供支撐時，才調整原本的第二預測季營收與 EPS。自動調整以指引偏差金額的一半為基礎，上限為原營收預測的 15%。支援量、價、組合、產能及認列訊號，須填寫在研究截止前可見的來源。證據不足或互相衝突時，報告原稿營收、原因及下次查核項目。
+
+```bash
+python -m benchmarks.earnings_turns --run-model
+```
+
+12 案診斷表與引文輸出到 `output/earnings-turns/signals.csv`。另測 8 個不同申報事件，兩組使用相同資料。轉折規則在保留集觸發 0 案，漏掉 4 案上行，4 案正常季度均維持原估。這批保留集沒有下行結果，故下行表現只在診斷集與程式測例中可見。現版 Harness 的 T+2 營收平均絕對誤差為 20.85 億美元，低於純 Astra 的 22.26 億美元。轉折規則未改動任何保留集的營收數字，仍為選用功能。
+
+#### T+2 預測修正 A／B
+
+已有營收歷史的研究稿可在「盈利與覆核」建立「試算 T+2 修正 A」或「試算 T+2 修正 B」子版。A 以歷史季節轉換估計當期營收偏離，將可延續的部分與現版已反映的金額比較。B 可再加入 `revenue_bridge.residual_inputs` 中有當時來源、可量化且明確屬原預測未納入的分部增減項。相同原始文件、申報或經濟機制的重複項會被標記。第二預測季已有可比公司指引時，採用既有指引流程。報告顯示原預測、採用或撤回條件、調整金額，以及移除單項後的營收與 EPS。
+
+```bash
+python -m benchmarks.earnings_residual --run-model
+python -m benchmarks.earnings_prospective --output output/earnings-residual-prospective --residual seed --from-cohort output/earnings-horizon-prospective
+python -m benchmarks.earnings_prospective --output output/earnings-residual-prospective run
+```
+
+10 個不同申報事件以相同點時證據比較四組。各公司等權並按最後已公開營收標準化的 T+2 平均絕對誤差為純 Astra **11.490%**、現版 Harness **10.798%**、A／B **11.059%**。兩候選只調整一案並增加誤差，均未達歷史門檻。B 在這批案例沒有可確認的增量金額，11 個公開營運訊號留作研究查核。保留集來源及結果取值記錄在 [事件清冊](benchmarks/earnings_residual_cases.csv) 與 [營運來源清冊](benchmarks/earnings_residual_driver_ledger.csv)。
+
+輸出在 `output/earnings-residual/`，含逐案的 `adjustments.csv`、候選與資料快照及雙人盲評表。四組前瞻隊列已分開封存 AMD、Intel、TI 三案，實績追蹤按期別計分。
+
+#### 核對公告後的營收剩餘差額
+
+在「盈利與覆核」打開指定季度的「核對新披露」。工作台讀取此版本已儲存的基準情境，接受 `original`（選填）和 `disclosure`。每筆需附 `key`、`available_at`、貨幣原始單位的 `low` 與 `high`，以及 `evidence_ids`。引文要在研究截止前可得，並明列同財季、合併範圍、會計基礎、幣別與公司營收指引區間。若現估落在已查核區間內，剩餘調整為零；區間外只試算至最接近的邊界；證據不足時暫緩。可試算案件會按現版毛利率、費用、稅務與股數假設列出營業利益和 EPS 的影響。這是只讀試算，報告版本由分析師另行管理。
+
+```bash
+python -m benchmarks.earnings_revision --run-model --out output/earnings-revision-rerun
+```
+
+以八個真實公告事件做點時回放。四案先導和四案發行人互斥的保留集均通過流程門檻。保留集主指標為新版 Harness 4/4、純 Astra 4/4、現版沿用封存預估 0/4，三組皆零誤調。保留集金額正確率由現版 2/4 提升至新版 4/4。兩組模型看相同的來源整理文本，各用本機 Codex 的 GPT-6.2 Astra medium 一次，停用搜尋，CLI 未另外限制詞元。比較以同口徑指引及差額為準，現版沿用凍結估值，並有明示的對照估值。嚴格領先純 Astra 的門檻未通過，發布後實績和分析師盲評仍待累積。
+
+案例與原始公告連結保存在 [資料快照](benchmarks/earnings_revision_cases.json)；事先鎖定的規則、實際詞元、逐案模型回傳及判定保存在 `output/earnings-revision/`。
+
+#### 用原始公告核對跨段財季與指引表格
+
+原文跨段時，在「核對新披露」的 JSON 加入 `fiscal_label` 和 `disclosure.native_proof`。`fiscal_label` 是經覆核的公告財季名稱，可用原文的精確期末日期代替。`amount_ref` 和 `context_ref` 分別連至同一份公告的數值與財季原文，兩者均列入 `evidence_ids`。引用表格時，把原欄名與營收列依原本的順序保存成同一引文，以 `|` 分隔欄位，填入相同的 `amount_ref` 與 `header_ref`，並從第一個數值欄起以 `column: 0` 計。跨段核對目前用於已確認採美元、美國 GAAP 及合併口徑的發行人，支援公告中的百分比容許區間。此步驟使用報告已封存的原文摘錄。
+
+```bash
+python -m benchmarks.earnings_raw_revision --run-model --out output/earnings-raw-revision-rerun
+```
+
+在所有模型使用同一點時原文與凍結現估、各用一次本機 Codex 的 GPT-6.2 Astra medium 下，原文覆核的保留集全對數由現版 1/4 提升至新版 3/4，純 Astra 為 4/4。三組均零誤調。新版通過流程門檻。Hologic 的擷取確認了原文，驗證器漏認複數 `revenues`，嚴格領先門檻未通過。每案的原文、模型輸出、程式雜湊及個案審計保存在 `output/earnings-raw-revision/`。
+
+#### 從完整公司公告覆核營收指引
+
+在 Codex CLI 或模型 API 模式下，打開「盈利與覆核 → 從完整公告覆核」，上傳完整 HTML 並填入公告來源與點時資訊。系統依序保留公告正文和表格列，請模型標出當季新指引的位置，從所選原文核對並計算上下限與剩餘差額。財季映射可填公告使用的名稱。工作台會顯示可展開的原文、段落定位碼與原始公告連結。試算使用已封存的現估，適用於美元、美國 GAAP 的單季合併營收。
+
+```bash
+python -m benchmarks.earnings_full_revision --run-model --out output/earnings-full-revision-rerun
+```
+
+先導 5 案的全對數依序為現版 2/5、新版 4/5、純 Astra 5/5，通過先導門檻。四家未參與調整的保留發行人分別為 0/4、1/4、3/4，均零誤調，新版未達既定 3/4 的保留集門檻。保留集有兩案定位正確但驗證器因前次指引比較子句與多層表頭而暫緩。完整公告快照、規則、逐案模型回傳和匿名覆核包置於 `output/earnings-full-revision/`，公告清冊則在 [先導](benchmarks/earnings_full_pilot.json) 與 [保留](benchmarks/earnings_full_holdout.json) 資料檔。Hologic 納入回歸測試，未計入兩組案例。
+
+#### 同句指引比較與多層表頭
+
+完整公告驗證器先辨識完整的新指引，再處理後接的舊指引比較。單側門檻及只有舊數字的句子仍暫緩。表格保留 HTML 的合併跨欄、跨列及空欄，按數值的實際位置核對各層財季、會計口徑與初步或更新標記。工作台結果包含所選數值欄和原文連結。
+
+```bash
+python -m benchmarks.earnings_verifier --run-model --out output/earnings-verifier-rerun
+```
+
+重跑使用本機封存的公告 HTML 和上一版驗證器 `output/earnings-verifier/frozen/full_revision_before.py`。同一次 Astra 定位供新舊驗證器重播，另用一次同模型及同預算的純 Astra 回答。Ondas、SAIC 和 Hologic 僅作回歸。逐案的定位、驗證、金額及引文結果保存在 `output/earnings-verifier/`。
+
+新版先導 3/4、現版 1/4、純 Astra 4/4。保留集新版及現版都是 1/4，純 Astra 4/4；新版有一筆 Progress 的金額單位誤讀。公告以左欄標示百萬美元，新版將區間誤當成美元，未通過零誤調和 75% 門檻。工作台提供原文試算供試驗覆核。評測報告保存封存版本、誤判原文與先導彙總錯誤的更正紀錄。
+
+#### 完整公告的金額單位核對
+
+營收差額以原文數字和已核對的幣別與倍率計算。倍率可來自金額本身、營收列標籤、同一表格的共用左欄、覆蓋選定數值欄的表頭或表格標題。工作台會列出原數、換算後美元區間和單位引文，並提供來源連結。遇到倍率或幣別缺失、矛盾或作用範圍不明時，結果暫緩並列明原因。
+
+```bash
+python -m benchmarks.earnings_units --run-model --out output/earnings-units-rerun
+```
+
+重跑使用 `output/earnings-units/` 的封存公告與上一版驗證器。兩版驗證器共用同一次 Astra 定位，純 Astra 在相同模型預算下獨立作答。Progress、Ondas、SAIC、Hologic 僅作回歸。預註冊、逐案原文、回傳、評分與匿名覆核包均隨本機輸出保存。
+
+先導現版 2/4，新版與純 Astra 均 4/4，零誤調。保留集八次呼叫中四次逾時，另四次在主程序收到 SIGTERM 時未留下回覆，四案皆無可評結果。Progress 的封存定位回放已還原正確的 +5,985,000 美元差額。保留集執行未達回覆完整性門檻，樣本外比較仍待驗證。
+
+#### 長公告評測與中斷續跑
+
+`earnings_execution` 沿用封存的金額驗證器。先跑診斷量測，再依序封存、執行先導和保留集。保留集端點會重新核對先導門檻。新保留集的 SEC 公告原檔與可用時間保存在 `output/earnings-execution/filings/`，四案現估採用同份公告在截止時已公布的最近一季合併營收作為比較基準。
+
+```bash
+python -m benchmarks.earnings_execution --phase diagnose
+python -m benchmarks.earnings_execution --phase seal
+python -m benchmarks.earnings_execution --phase pilot
+python -m benchmarks.earnings_execution --phase holdout
+```
+
+每次正式呼叫保存排隊、準備與開始時間，執行中寫入 CLI 事件與標準錯誤，結束後原子寫入逐次回傳。每批時限依工作數與並行度計算，四個工作槽處理八次呼叫的上限為 560 秒。收到中斷訊號時，開始過的呼叫保留為已占用額度。用同一目錄重執行該階段，可接續尚未啟動的工作。逐次時序匯總見 `execution.csv`。
+
 ## 專案結構
 
 | 路徑 | 內容 |

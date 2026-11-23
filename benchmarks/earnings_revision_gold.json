@@ -1,0 +1,82 @@
+{
+  "amd_q3_2022": {
+    "disposition": "eligible",
+    "new_low": "5600000000",
+    "new_high": "5600000000",
+    "delta": "-1100000000",
+    "evidence_ids": [
+      "amd_oct06_update"
+    ],
+    "reason": "AMD provided a newer comparable preliminary point estimate. The disclosed precision is $0.1 billion."
+  },
+  "smci_q2_fy2024": {
+    "disposition": "eligible",
+    "new_low": "3600000000",
+    "new_high": "3650000000",
+    "delta": "800000000",
+    "evidence_ids": [
+      "smci_jan18_update"
+    ],
+    "reason": "The updated companywide net-sales range begins at $3.60 billion. Applying the predeclared nearest-bound rule to the $2.80 billion incumbent gives +$800 million."
+  },
+  "intc_q4_2022": {
+    "disposition": "blocked",
+    "new_low": null,
+    "new_high": null,
+    "delta": "0",
+    "evidence_ids": [
+      "intc_jul28_outlook"
+    ],
+    "reason": "The guidance concerns the third quarter and full fiscal year. Subtraction can produce an analyst-implied Q4 interval, but the release did not issue a Q4 point or a Q4 range."
+  },
+  "nvda_q4_fy2019_reflected": {
+    "disposition": "noop",
+    "new_low": "2156000000",
+    "new_high": "2244000000",
+    "delta": "0",
+    "evidence_ids": [
+      "nvda_jan28_update"
+    ],
+    "reason": "The controlled incumbent already includes the Jan 28 midpoint and explicitly references the same source. Applying the older $2.70 billion to $2.20 billion difference again would double-count the revision."
+  },
+  "lulu_q4_fy2022": {
+    "disposition": "eligible",
+    "new_low": "2660000000",
+    "new_high": "2700000000",
+    "delta": "30000000",
+    "evidence_ids": [
+      "lulu_jan09_update"
+    ],
+    "reason": "The updated companywide range begins at $2.660 billion. Applying the predeclared nearest-bound rule to the $2.630 billion incumbent gives +$30 million."
+  },
+  "fsly_q3_2020": {
+    "disposition": "eligible",
+    "new_low": "70000000",
+    "new_high": "71000000",
+    "delta": "-3500000",
+    "evidence_ids": [
+      "fsly_oct14_update"
+    ],
+    "reason": "The updated companywide range ends at $71.0 million. Applying the predeclared nearest-bound rule to the $74.5 million incumbent gives −$3.5 million."
+  },
+  "mu_q4_fy2022": {
+    "disposition": "blocked",
+    "new_low": null,
+    "new_high": null,
+    "delta": "0",
+    "evidence_ids": [
+      "mu_aug09_update"
+    ],
+    "reason": "At or below the previous lower bound is directional information. It does not supply a midpoint, and the model may not treat $6.8 billion as a fresh point estimate."
+  },
+  "snap_q2_2022": {
+    "disposition": "blocked",
+    "new_low": null,
+    "new_high": null,
+    "delta": "0",
+    "evidence_ids": [
+      "snap_may23_update"
+    ],
+    "reason": "The update gives a one-sided warning on the prior growth guidance. Converting that prior guidance to dollars still yields no new replacement midpoint."
+  }
+}

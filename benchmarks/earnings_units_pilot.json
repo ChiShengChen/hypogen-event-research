@@ -1,0 +1,154 @@
+[
+  {
+    "id": "adsk_q3_fy2027_outlook",
+    "split": "pilot",
+    "issuer": "Autodesk, Inc.",
+    "ticker": "ADSK",
+    "event_at": "2026-08-27T16:05:06-04:00",
+    "as_of": "2026-08-27T16:05:06-04:00",
+    "fiscal_label": "Q3 FY27",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2026-10-31",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "historical_same_quarter_reference",
+      "amount": "1853000000",
+      "available_at": "2025-11-25T16:03:21-05:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/q326pressrelease.htm",
+      "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/0000769397-25-000126-index.htm",
+      "rationale": "Frozen same-quarter prior-year US-GAAP actual as a historical reference proxy; the FY2026 third quarter Consolidated Statements of Operations report total net revenue of $1,853 million for October 31, 2025."
+    },
+    "documents": [
+      {
+        "id": "adsk_q3_fy2027_outlook-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000059/q227pressrelease.htm",
+        "path": "output/earnings-units/filings/pilot/adsk.htm",
+        "sha256": "257f747a132922b6b59cc379c1a5197765914c834e5289141a6d3c51d179fc21",
+        "media_type": "text/html",
+        "published_at": "2026-08-27T16:05:06-04:00",
+        "obtained_at": "2026-08-27T16:05:06-04:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939726000059/0000769397-26-000059-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "iot_q3_fy2027_outlook",
+    "split": "pilot",
+    "issuer": "Samsara Inc.",
+    "ticker": "IOT",
+    "event_at": "2026-09-03T16:10:23-04:00",
+    "as_of": "2026-09-03T16:10:23-04:00",
+    "fiscal_label": "Q3 FY2027",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2026-10-31",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "historical_same_quarter_reference",
+      "amount": "416000000",
+      "available_at": "2025-12-04T16:12:46-05:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/samsaraepr-q32026.htm",
+      "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/0001628280-25-055355-index.htm",
+      "rationale": "Frozen same-quarter prior-year consolidated revenue proxy of $416.0 million from the FY2026 third-quarter issuer release, at that release’s published precision. Target quarter end follows the FY2027 calendar and first three 13-week fiscal quarters."
+    },
+    "documents": [
+      {
+        "id": "iot_q3_fy2027_outlook-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm",
+        "path": "output/earnings-units/filings/pilot/iot.htm",
+        "sha256": "9ccafe44acf07325492849531c35546c4b087de3d7c5ccfe05747bef285a100b",
+        "media_type": "text/html",
+        "published_at": "2026-09-03T16:10:23-04:00",
+        "obtained_at": "2026-09-03T16:10:23-04:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/0001628280-26-060438-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "ntnx_q1_fy2027_outlook",
+    "split": "pilot",
+    "issuer": "Nutanix, Inc.",
+    "ticker": "NTNX",
+    "event_at": "2026-08-26T16:01:18-04:00",
+    "as_of": "2026-08-26T16:01:18-04:00",
+    "fiscal_label": "First Quarter Fiscal 2027",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2026-10-31",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "historical_same_quarter_reference",
+      "amount": "670600000",
+      "available_at": "2025-11-25T16:01:29-05:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1618732/000117184325007590/exh_991.htm",
+      "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1618732/000117184325007590/0001171843-25-007590-index.htm",
+      "rationale": "Frozen same-quarter prior-year consolidated revenue proxy of $670.6 million from the FY2026 first-quarter issuer release, at that release’s published precision."
+    },
+    "documents": [
+      {
+        "id": "ntnx_q1_fy2027_outlook-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1618732/000117184326005752/exh_991.htm",
+        "path": "output/earnings-units/filings/pilot/ntnx.htm",
+        "sha256": "876c4e25a7fc897a530d3c92205f31db5b186c5c150b10fdb2120611569d43be",
+        "media_type": "text/html",
+        "published_at": "2026-08-26T16:01:18-04:00",
+        "obtained_at": "2026-08-26T16:01:18-04:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1618732/000117184326005752/0001171843-26-005752-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "bmy_q3_2026_annual_only",
+    "split": "pilot",
+    "issuer": "Bristol-Myers Squibb Company",
+    "ticker": "BMY",
+    "event_at": "2026-07-30T07:05:39-04:00",
+    "as_of": "2026-07-30T07:05:39-04:00",
+    "fiscal_label": "third quarter of 2026",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2026-09-30",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "historical_same_quarter_reference",
+      "amount": "12222000000",
+      "available_at": "2025-10-30T07:09:00-04:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427225000147/a2025q3ex991.htm",
+      "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427225000147/0000014272-25-000147-index.htm",
+      "rationale": "Frozen same-quarter prior-year consolidated actual proxy. The October 30, 2025 release reports $12,222 million of total revenues in its third-quarter revenue table."
+    },
+    "documents": [
+      {
+        "id": "bmy_q3_2026_annual_only-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427226000018/a2026q2ex991-filing.htm",
+        "path": "output/earnings-units/filings/pilot/bmy.htm",
+        "sha256": "ef8d67ef82b399ee54d28ceb80b526fd5c081178a7fb63c334f0cb06d232daae",
+        "media_type": "text/html",
+        "published_at": "2026-07-30T07:05:39-04:00",
+        "obtained_at": "2026-07-30T07:05:39-04:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427226000018/0000014272-26-000018-index.htm"
+      }
+    ]
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "holx_q1_fy2024_jan_preliminary": {
+    "disposition": "eligible",
+    "new_low": "1013100000",
+    "new_high": "1013100000",
+    "delta": "40600000",
+    "evidence_ids": [
+      "holx_jan07_preliminary_quarter",
+      "holx_jan07_total_revenues"
+    ],
+    "reason": "A comparable issuer-level preliminary GAAP-basis total revenue point supersedes the original guide. The constant-currency and organic measures in the release are different from the reported total."
+  },
+  "adtn_q2_2026_jul_preliminary": {
+    "disposition": "eligible",
+    "new_low": "280000000",
+    "new_high": "282000000",
+    "delta": "-11000000",
+    "evidence_ids": [
+      "adtn_jul22_preliminary_quarter",
+      "adtn_jul22_preliminary_revenue"
+    ],
+    "reason": "The current Q2 preliminary company revenue range is below the incumbent and is distinct from the Q3 outlook. The nearest new bound is 282 million."
+  },
+  "intt_q2_2026_jul_preliminary": {
+    "disposition": "eligible",
+    "new_low": "35000000",
+    "new_high": "35000000",
+    "delta": "2000000",
+    "evidence_ids": [
+      "intt_jul31_preliminary_quarter",
+      "intt_jul31_preliminary_revenue"
+    ],
+    "reason": "The current preliminary point is for the completed second quarter and is separate from the same release's full-year outlook and first-quarter gross-margin correction."
+  },
+  "msft_q4_fy2022_jun_fx": {
+    "disposition": "blocked",
+    "new_low": null,
+    "new_high": null,
+    "delta": "0",
+    "evidence_ids": [
+      "msft_jun02_fx_revenue_note"
+    ],
+    "reason": "The issuer's footnote explicitly marks the apparent quarterly total-revenue range as calculated because explicit guidance was unavailable. The policy requires an explicit management range or preliminary point."
+  }
+}

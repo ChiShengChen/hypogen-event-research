@@ -1,0 +1,214 @@
+[
+  {
+    "id": "amd_q3_2022",
+    "issuer": "Advanced Micro Devices, Inc.",
+    "ticker": "AMD",
+    "as_of": "2022-10-06T23:59:59-04:00",
+    "event_at": "2022-10-06T16:17:00-04:00",
+    "target": {
+      "period_end": "2022-09-24",
+      "basis": "US_GAAP",
+      "currency": "USD",
+      "metric": "revenue",
+      "scope": "consolidated",
+      "duration": "quarter"
+    },
+    "fiscal_label": "third quarter of 2022",
+    "split": "pilot",
+    "baseline": {
+      "kind": "published_guidance_midpoint",
+      "amount": "6700000000",
+      "available_at": "2022-08-02T16:05:00-04:00",
+      "evidence_ids": [
+        "amd_aug02_guidance"
+      ],
+      "rationale": "Midpoint of AMD's August 2 company guidance. Both release times come from AMD's investor relations release archive.",
+      "source_url": "https://ir.amd.com/news-events/press-releases/detail/1084/amd-reports-second-quarter-2022-financial-results"
+    },
+    "documents": [
+      {
+        "id": "amd_20221006_991",
+        "source_url": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-22-000163/q322earnings_prelimxfina.htm",
+        "capture_url": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-22-000163/q322earnings_prelimxfina.htm",
+        "content_type": "text/html",
+        "path": "output/earnings-full-revision/filings/pilot/amd-oct06.htm",
+        "sha256": "1bfe1e5c0a31cae97771d90943ed1b72607e61a1b452c0e4210bdf51de8cd12c",
+        "published_at": "2022-10-06T16:17:00-04:00",
+        "obtained_at": "2022-10-06T16:17:00-04:00",
+        "timestamp_basis": "issuer_published_time",
+        "archive_acquired_at": "2026-11-23T05:15:37.530000+00:00",
+        "capture_format": "downloaded_html"
+      }
+    ]
+  },
+  {
+    "id": "smci_q2_fy2024",
+    "issuer": "Super Micro Computer, Inc.",
+    "ticker": "SMCI",
+    "as_of": "2024-01-18T23:59:59-05:00",
+    "event_at": "2024-01-18T23:59:59-05:00",
+    "target": {
+      "period_end": "2023-12-31",
+      "basis": "US_GAAP",
+      "currency": "USD",
+      "metric": "revenue",
+      "scope": "consolidated",
+      "duration": "quarter"
+    },
+    "fiscal_label": "second quarter of fiscal year 2024",
+    "split": "pilot",
+    "baseline": {
+      "kind": "published_guidance_midpoint",
+      "amount": "2800000000",
+      "available_at": "2023-11-01T23:59:59-04:00",
+      "evidence_ids": [
+        "smci_nov01_guidance"
+      ],
+      "rationale": "Midpoint of Supermicro's November 1 guidance for companywide net sales. The issuer's GAAP financial statements label its consolidated top line net sales.",
+      "source_url": "https://ir.supermicro.com/news/news-details/2023/Supermicro-Announces-First-Quarter-Fiscal-Year-2024-Financial-Results/default.aspx"
+    },
+    "documents": [
+      {
+        "id": "smci_20240118_991",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1375365/000137536524000002/exhibit991_20231231preanno.htm",
+        "capture_url": "https://content-archive.fast-edgar.com/20240118/A3L2922CZ229J2Z2222T22ZJJPSOSZ225262/exhibit991_20231231preanno.htm",
+        "content_type": "text/html",
+        "path": "output/earnings-full-revision/filings/pilot/smci-jan18-ex991.htm",
+        "sha256": "3262cc0ece84038f2fb6ddee45df83619495e3bce5b1c7d6fa6c558e23842ccc",
+        "published_at": "2024-01-18T23:59:59-05:00",
+        "obtained_at": "2024-01-18T23:59:59-05:00",
+        "timestamp_basis": "us_eastern_end_of_day_availability_proxy",
+        "archive_acquired_at": "2026-11-23T05:16:56.280000+00:00",
+        "capture_format": "downloaded_html"
+      }
+    ]
+  },
+  {
+    "id": "intc_q4_2022",
+    "issuer": "Intel Corporation",
+    "ticker": "INTC",
+    "as_of": "2022-07-29T23:59:59-04:00",
+    "event_at": "2022-07-28T23:59:59-04:00",
+    "target": {
+      "period_end": "2022-12-31",
+      "basis": "US_GAAP",
+      "currency": "USD",
+      "metric": "revenue",
+      "scope": "consolidated",
+      "duration": "quarter"
+    },
+    "fiscal_label": "Q4 2022",
+    "split": "pilot",
+    "baseline": {
+      "kind": "benchmark_incumbent_control",
+      "amount": "16300000000",
+      "available_at": "2022-07-28T12:00:00-04:00",
+      "evidence_ids": [
+        "intc_apr28_outlook"
+      ],
+      "rationale": "Fixed benchmark incumbent taken from the existing historical replay's Q4 as-of estimate. July 28 noon is the declared counterfactual benchmark snapshot time. This amount is not attributed to Intel, company consensus, or a contemporaneous analyst. The April outlook is cited as preceding source context. It covers the fiscal year and does not supply the benchmark incumbent amount.",
+      "source_url": "https://www.intc.com/news-events/press-releases/detail/1541/intel-reports-first-quarter-2022-financial-results"
+    },
+    "documents": [
+      {
+        "id": "intc_20220728_release",
+        "source_url": "https://www.intc.com/news-events/press-releases/detail/1563/intel-reports-second-quarter-2022-financial-results",
+        "capture_url": "https://www.intc.com/news-events/press-releases/detail/1563/intel-reports-second-quarter-2022-financial-results",
+        "content_type": "text/html",
+        "path": "output/earnings-full-revision/filings/pilot/intc-jul28.htm",
+        "sha256": "b3d254106c8ba5cb31d35165f5f62785e557107469da949e9d010a2edd56314b",
+        "published_at": "2022-07-28T23:59:59-04:00",
+        "obtained_at": "2022-07-28T23:59:59-04:00",
+        "timestamp_basis": "us_eastern_end_of_day_availability_proxy",
+        "archive_acquired_at": "2026-11-23T05:16:24.600000+00:00",
+        "capture_format": "downloaded_html"
+      }
+    ]
+  },
+  {
+    "id": "nvda_q4_fy2019_reflected",
+    "issuer": "NVIDIA Corporation",
+    "ticker": "NVDA",
+    "as_of": "2019-01-28T23:59:59-05:00",
+    "event_at": "2019-01-28T23:59:59-05:00",
+    "target": {
+      "period_end": "2019-01-27",
+      "basis": "US_GAAP",
+      "currency": "USD",
+      "metric": "revenue",
+      "scope": "consolidated",
+      "duration": "quarter"
+    },
+    "fiscal_label": "Q4 Fiscal 2019",
+    "split": "pilot",
+    "baseline": {
+      "kind": "benchmark_incumbent_control",
+      "amount": "2200000000",
+      "available_at": "2019-01-28T23:59:59-05:00",
+      "evidence_ids": [
+        "nvda_jan28_update"
+      ],
+      "rationale": "Declared benchmark incumbent constructed from the Jan 28 company release to test whether the same update is applied twice. The $2.20 billion incumbent is a control, while the original November outlook was $2.70 billion.",
+      "source_url": "https://nvidianews.nvidia.com/news/nvidia-updates-financial-guidance-for-fourth-quarter-of-fiscal-year-2019"
+    },
+    "documents": [
+      {
+        "id": "nvda_20190128_release",
+        "source_url": "https://nvidianews.nvidia.com/news/nvidia-updates-financial-guidance-for-fourth-quarter-of-fiscal-year-2019",
+        "capture_url": "https://nvidianews.nvidia.com/news/nvidia-updates-financial-guidance-for-fourth-quarter-of-fiscal-year-2019",
+        "content_type": "text/html",
+        "path": "output/earnings-full-revision/filings/pilot/nvda-jan28.htm",
+        "sha256": "9e0bd37856272bbf2d725a527198b17bfdc5a14e69831f25074e3d2a4d565539",
+        "published_at": "2019-01-28T23:59:59-05:00",
+        "obtained_at": "2019-01-28T23:59:59-05:00",
+        "timestamp_basis": "us_eastern_end_of_day_availability_proxy",
+        "archive_acquired_at": "2026-11-23T05:16:24.630000+00:00",
+        "capture_format": "downloaded_html"
+      }
+    ]
+  },
+  {
+    "id": "mu_q4_fy2022",
+    "issuer": "Micron Technology, Inc.",
+    "ticker": "MU",
+    "as_of": "2022-08-09T23:59:59-04:00",
+    "event_at": "2022-08-09T23:59:59-04:00",
+    "target": {
+      "period_end": "2022-09-01",
+      "basis": "US_GAAP",
+      "currency": "USD",
+      "metric": "revenue",
+      "scope": "consolidated",
+      "duration": "quarter"
+    },
+    "fiscal_label": "FQ4 22",
+    "split": "pilot",
+    "baseline": {
+      "kind": "published_guidance_midpoint",
+      "amount": "7200000000",
+      "available_at": "2022-06-30T23:59:59-04:00",
+      "evidence_ids": [
+        "mu_jun30_guidance"
+      ],
+      "rationale": "Midpoint of Micron's June 30 guidance range for FQ4 2022.",
+      "source_url": "https://investors.micron.com/static-files/042a9564-b069-4698-b434-1e5caf5ff18d"
+    },
+    "documents": [
+      {
+        "id": "mu_20220809_8k",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312522000039/mu-20220809.htm",
+        "capture_url": "https://r.jina.ai/https://www.sec.gov/Archives/edgar/data/723125/000072312522000039/mu-20220809.htm",
+        "content_type": "text/html",
+        "path": "output/earnings-full-revision/filings/pilot/mu-aug09-rendered.htm",
+        "sha256": "280e8c0d19458aa4ff7573a9c1d98203bb9ff26c4c22c5d4ee6750794a2ef5e3",
+        "published_at": "2022-08-09T23:59:59-04:00",
+        "obtained_at": "2022-08-09T23:59:59-04:00",
+        "timestamp_basis": "us_eastern_end_of_day_availability_proxy",
+        "archive_acquired_at": "2026-11-23T05:18:12.990000+00:00",
+        "capture_format": "full_rendered_text_wrapped_as_paragraphs",
+        "captured_path": "output/earnings-full-revision/filings/pilot/mu-aug09-rendered.txt",
+        "captured_sha256": "39826cebffa297ba7ee11285ed1ae4a1be33de4e09199642aeba6f24afb6d23d"
+      }
+    ]
+  }
+]

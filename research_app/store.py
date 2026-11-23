@@ -3,19 +3,24 @@ import json
 import sqlite3
 from contextlib import contextmanager
 from datetime import datetime, timezone
-from decimal import Decimal
+from decimal import Decimal, localcontext
 from pathlib import Path
 from uuid import uuid4
 
 from .adapters import AdapterError, EARNINGS_DRIVER_VERSION
 from .consensus import parse_consensus
 from .discovery import DISCOVERY_VERSION, collect
-from .earnings import EarningsError, available_evidence, calculate_earnings, resolve_forecast
+from .earnings import EarningsError, available_evidence, calculate_earnings, operating_numbers, resolve_forecast
+from .full_revision import (
+    FILING_SELECTION_PROMPT, FilingExtraction, check_filing_revision, filing_citation, parse_filing,
+    _source_url,
+)
 from .research import (
     FORMULA_VERSION, REPORT_VERSION, apply_financial_scenario, build_report, document_evidence,
     render, render_followups,
 )
-from .schema import EarningsPlan, Event, FinancialInputs, ForecastRegistration
+from .revision_bridge import RevisionQuote, RevisionRequest, evaluate_revision
+from .schema import EarningsPlan, Event, FinancialInputs, ForecastRegistration, MetricKey
 
 
 class MissingReport(Exception):
@@ -87,6 +92,8 @@ class Store:
                 plan_payload.pop("eps_assumptions")
             if plan_payload["calibrate_guidance"] is None:
                 plan_payload.pop("calibrate_guidance")
+            if plan_payload["revenue_bridge"] is None:
+                plan_payload.pop("revenue_bridge")
             references = plan_payload["references"] + plan_payload["event_values"]
             if plan_payload["valuation"]:
                 references.append(plan_payload["valuation"]["annual_base_eps"])
@@ -156,6 +163,91 @@ class Store:
                        (report_id, revision, parent_revision, encode(data)))
         return revision
 
+    def earnings_revision_inputs(self, report_id, revision, period_end):
+        report = self.revision(report_id, revision)
+        if "earnings" not in report:
+            raise EarningsError("此版本缺少盈利預測")
+        earnings = report["earnings"]
+        period = period_end.isoformat()
+        target = next((row for row in earnings["quarters"] if row["period_end"] == period), None)
+        base = target["scenarios"].get("base") if target else None
+        if base is None:
+            raise EarningsError("指定季度缺少基準情境")
+        plan = EarningsPlan.model_validate(earnings["inputs"])
+        key = MetricKey(metric="revenue", period_end=period_end, duration="quarter",
+                        scope="consolidated", basis=plan.basis, currency=plan.currency)
+        return report, plan, key, base["revised"]
+
+    def full_revenue_revision_check(self, report_id, revision, request, adapter):
+        report, plan, key, point = self.earnings_revision_inputs(report_id, revision, request.period_end)
+        cutoff = datetime.fromisoformat(report["as_of"])
+        event_at = request.event_at or plan.event_at
+        if not _source_url(request.source_url):
+            raise EarningsError("請提供公司或 SEC 公告的 HTTPS 來源")
+        if not event_at <= request.published_at <= request.obtained_at <= cutoff:
+            raise EarningsError("公告公開與取得時間須位於事件和報告截止時間之間")
+        if (key.currency, key.basis) != ("USD", "US_GAAP"):
+            raise EarningsError("完整公告覆核目前支援美元、美國 GAAP 的單季合併營收")
+        if adapter.identity["mode"] == "fixture":
+            raise EarningsError("完整公告覆核需要 Codex CLI 或模型 API 模式")
+        blocks = parse_filing(request.html, document_id="release")
+        if not blocks:
+            raise EarningsError("HTML 未含可讀取的公告內文")
+        document = {"id": "release", "source_url": request.source_url,
+                    "published_at": request.published_at.isoformat(), "obtained_at": request.obtained_at.isoformat(),
+                    "blocks": blocks}
+        extraction = adapter._generate(FilingExtraction, FILING_SELECTION_PROMPT, {
+            "target": key.model_dump(mode="json"), "baseline": {"amount": point["revenue"], "available_at": report["as_of"]},
+            "event_at": event_at.isoformat(), "as_of": report["as_of"], "fiscal_label": request.fiscal_label,
+            "documents": [document],
+        })
+        audit = check_filing_revision(key=key, incumbent=point["revenue"], event_at=event_at, as_of=cutoff,
+                                      documents=[document], selection=extraction.selection, fiscal_label=request.fiscal_label)
+        if extraction.selection is None:
+            refs = set(extraction.evidence_ids)
+            audit["citations"] = [filing_citation(document, block) for block in blocks if block["id"] in refs]
+            audit["evidence_ids"] = [item["id"] for item in audit["citations"]]
+        return {"as_of": report["as_of"], "report_revision": revision, "incumbent": point["revenue"], "audit": audit}
+
+    def revenue_revision_check(self, report_id, revision, request):
+        report, plan, key, point = self.earnings_revision_inputs(report_id, revision, request.period_end)
+        quarter = next(row for row in plan.quarters if row.period_end == request.period_end)
+        driver = next((row for row in plan.drivers if row.scenario == "base" and row.period_end == request.period_end), None)
+        profile = next((row for row in plan.eps_assumptions if row.period_end == request.period_end), None)
+        cutoff = datetime.fromisoformat(report["as_of"])
+        incumbent_refs = list(dict.fromkeys(driver.evidence_ids if driver else quarter.evidence_ids))
+        if len(incumbent_refs) > 12:
+            raise EarningsError("現版預估引用超過試算可逐筆核對的 12 項上限。")
+        with localcontext() as ctx:
+            ctx.prec = 50
+            amount = Decimal(point["revenue"]).quantize(Decimal("0.00000001")).normalize()
+            incumbent = RevisionQuote(key=key, available_at=cutoff, low=amount, high=amount,
+                                      evidence_ids=incumbent_refs)
+            audit = evaluate_revision(
+                RevisionRequest(key=key, event_at=request.event_at or plan.event_at, incumbent=incumbent,
+                                original=request.original, disclosure=request.disclosure),
+                report["evidence"], as_of=cutoff, fiscal_label=request.fiscal_label,
+            )
+            financial_impact = None
+            if audit["status"] == "eligible":
+                revised = quarter.model_copy(update={
+                    "segment_revenue": {"consolidated": Decimal(audit["revised"])},
+                    "gross_margin": Decimal(point["gross_margin"]),
+                    "opex": Decimal(point["opex"]),
+                })
+                scenario = operating_numbers(revised, profile=profile)
+                financial_impact = {
+                    metric: {"before": point[metric], "after": format(scenario[metric], "f")}
+                    for metric in ("revenue", "operating_income", "eps")
+                }
+            elif audit["status"] == "noop":
+                financial_impact = {
+                    metric: {"before": point[metric], "after": point[metric]}
+                    for metric in ("revenue", "operating_income", "eps")
+                }
+        return {"as_of": report["as_of"], "report_revision": revision, "audit": audit,
+                "financial_impact": financial_impact}
+
     def earnings_branch(self, report_id, branch):
         parent = self.revision(report_id, branch.parent_revision)
         if "earnings" not in parent:
@@ -187,9 +279,12 @@ class Store:
                 bucket.append(data)
         if len(pre_event) > 40 or len(current) > 20:
             raise EarningsError("加入指引後超過此版本的基準或事件數字上限")
+        bridge = branch.revenue_bridge.model_dump(mode="json") if branch.revenue_bridge else old.get("revenue_bridge")
+        if bridge and (len(old["quarters"]) != 2 or bridge["period_end"] != max(row["period_end"] for row in old["quarters"])):
+            raise EarningsError("營收橋接須對應第二個預測季度")
         plan = EarningsPlan.model_validate({**old, "drivers": list(drivers.values()), "driver_links": list(links.values()),
                                            "eps_assumptions": list(profiles.values()), "calibrate_guidance": calibrate,
-                                           "references": pre_event, "event_values": current})
+                                           "references": pre_event, "event_values": current, "revenue_bridge": bridge})
         return self._save_earnings_child(report_id, parent, plan, "earnings_scenario")
 
     def earnings_consensus(self, report_id, request):

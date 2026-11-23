@@ -1,0 +1,81 @@
+{
+  "adsk_q3_fy2027_outlook": {
+    "disposition": "eligible",
+    "new_low": "2125000000",
+    "new_high": "2140000000",
+    "delta": "272000000",
+    "source_ids": [
+      "adsk_q3_fy2027_outlook-release"
+    ],
+    "required_text": [
+      [
+        "Q3 FY27 Guidance Metrics",
+        "ending October 31, 2026",
+        "Third Quarter Fiscal 2027"
+      ],
+      "Revenue (in millions)",
+      "$2,125 - $2,140"
+    ],
+    "reason": "The quarterly row states the applicable multiplier explicitly in the metric label. The separate full-year table is out of scope.",
+    "amount_text": "$2,125 - $2,140",
+    "selected_cell_text": "$2,125 - $2,140",
+    "unit_text": "Revenue (in millions)",
+    "unit_multiplier": "1000000"
+  },
+  "iot_q3_fy2027_outlook": {
+    "disposition": "eligible",
+    "new_low": "514000000",
+    "new_high": "516000000",
+    "delta": "98000000",
+    "source_ids": [
+      "iot_q3_fy2027_outlook-release"
+    ],
+    "required_text": [
+      [
+        "Q3 FY2027 Outlook",
+        "For the third quarter and fiscal year 2027, Samsara expects the following"
+      ],
+      "$514 million – $516 million"
+    ],
+    "reason": "Both endpoints are scaled in the quarterly revenue cell. The adjacent annual cell carries billion-dollar and different period values.",
+    "amount_text": "$514 million – $516 million",
+    "selected_cell_text": "$514 million – $516 million",
+    "unit_text": "$514 million – $516 million",
+    "unit_multiplier": "1000000"
+  },
+  "ntnx_q1_fy2027_outlook": {
+    "disposition": "eligible",
+    "new_low": "755000000",
+    "new_high": "765000000",
+    "delta": "84400000",
+    "source_ids": [
+      "ntnx_q1_fy2027_outlook-release"
+    ],
+    "required_text": [
+      "First Quarter Fiscal 2027 Outlook",
+      "$755 - $765 million"
+    ],
+    "reason": "Immediate caption scopes the one-value-column quarterly table. A single trailing million-dollar multiplier scales both endpoints. Ignore the separate annual billion-dollar guidance table.",
+    "amount_text": "$755 - $765 million",
+    "selected_cell_text": "$755 - $765 million",
+    "unit_text": "$755 - $765 million",
+    "unit_multiplier": "1000000"
+  },
+  "bmy_q3_2026_annual_only": {
+    "disposition": "blocked",
+    "new_low": null,
+    "new_high": null,
+    "delta": "0",
+    "source_ids": [
+      "bmy_q3_2026_annual_only-release"
+    ],
+    "required_text": [
+      [
+        "Raises Full-Year Outlook",
+        "increasing its full-year, non-GAAP revenue guidance",
+        "2026 Financial Guidance"
+      ]
+    ],
+    "reason": "Only full-year numeric guidance is supplied. The amounts in labeled quarterly million-dollar tables are prior actuals, not third-quarter 2026 guidance."
+  }
+}

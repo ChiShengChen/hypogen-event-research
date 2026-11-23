@@ -1,0 +1,99 @@
+{
+  "mtz_q3_2026_guidance": {
+    "disposition": "eligible",
+    "new_low": "4930000000",
+    "new_high": "4930000000",
+    "delta": "963052000",
+    "source_ids": [
+      "mtz_q3_2026_guidance-release"
+    ],
+    "required_text": [
+      [
+        "3Q'26E"
+      ],
+      [
+        "Dollars in millions, except per share amounts"
+      ],
+      [
+        "$4,930"
+      ]
+    ],
+    "reason": "The 2026 Financial Guidance Update states a Q3 estimate of 4,930 in the table’s shared million-dollar scale. Its second column is the annual forecast. Segment tables and past statements are outside this selection.",
+    "amount_text": "$4,930",
+    "selected_cell_text": "$4,930",
+    "unit_text": "Dollars in millions, except per share amounts",
+    "unit_multiplier": "1000000"
+  },
+  "caly_q4_2026_guidance": {
+    "disposition": "eligible",
+    "new_low": "328000000",
+    "new_high": "341000000",
+    "delta": "-26500000",
+    "source_ids": [
+      "caly_q4_2026_guidance-release"
+    ],
+    "required_text": [
+      [
+        "2026 FOURTH QUARTER OUTLOOK",
+        "Q4 2026 Estimate"
+      ],
+      [
+        "(in millions)"
+      ],
+      [
+        "$328 to $341"
+      ]
+    ],
+    "reason": "The quarterly Consolidated Net Sales row is reported under a million-dollar table convention. Use the Q4 2026 estimate rather than the as-reported prior year or the separately captioned annual outlook.",
+    "amount_text": "$328 to $341",
+    "selected_cell_text": "$328 to $341",
+    "unit_text": "(in millions)",
+    "unit_multiplier": "1000000"
+  },
+  "niq_q3_2026_guidance": {
+    "disposition": "eligible",
+    "new_low": "1105000000",
+    "new_high": "1108000000",
+    "delta": "52400000",
+    "source_ids": [
+      "niq_q3_2026_guidance-release"
+    ],
+    "required_text": [
+      [
+        "Third Quarter Guidance",
+        "Third Quarter and Full Year 2026 Outlook"
+      ],
+      [
+        "$1,105M - $1,108M"
+      ]
+    ],
+    "reason": "The as-reported consolidated revenue row applies a million-dollar suffix to both quarterly guidance endpoints. The matching shared table convention corroborates it. Full-year and constant-currency columns are not interchangeable.",
+    "amount_text": "$1,105M - $1,108M",
+    "selected_cell_text": "$1,105M - $1,108M",
+    "unit_text": [
+      "$1,105M - $1,108M",
+      "(in millions, except per share data)"
+    ],
+    "unit_multiplier": "1000000"
+  },
+  "lqdt_q1_fy2027_guidance": {
+    "disposition": "blocked",
+    "new_low": null,
+    "new_high": null,
+    "delta": "0",
+    "source_ids": [
+      "lqdt_q1_fy2027_guidance-release"
+    ],
+    "required_text": [
+      [
+        "Our Q1-FY27 guidance is as follows",
+        "Q1-FY27 Guidance"
+      ],
+      [
+        "Consolidated revenue as a percentage of GMV is expected to be in the high-teens",
+        "$580 to $640"
+      ]
+    ],
+    "reason": "The quarterly income, EBITDA and GMV guidance table does not give absolute consolidated revenue. The qualitative high-teens revenue-to-GMV ratio supplies neither numeric ratio endpoints nor absolute revenue. Arithmetic would create a new proxy, not an issuer-disclosed bound."
+  }
+}

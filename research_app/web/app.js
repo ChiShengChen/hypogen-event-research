@@ -293,6 +293,89 @@ function jsonAction(title, value, handler) {
   return details;
 }
 
+function fullFilingAction(path, quarter, report) {
+  const details = node("details", null, "item");
+  const title = `從完整公告覆核 ${quarter.period_end}`;
+  const form = node("form");
+  const fieldsForUpload = [
+    ["html", "公司公告 HTML", "file", ""],
+    ["source_url", "公告來源網址", "url", ""],
+    ["published_at", "公開時間（ISO 8601）", "text", ""],
+    ["obtained_at", "當時取得時間（ISO 8601）", "text", ""],
+    ["event_at", "事件時間（ISO 8601）", "text", report.earnings.inputs.event_at],
+    ["fiscal_label", "公告內的財季名稱（選填）", "text", ""],
+  ];
+  const controls = {};
+  for (const [key, labelText, type, value] of fieldsForUpload) {
+    const label = node("label", labelText);
+    const input = node("input");
+    input.type = type;
+    input.required = key !== "fiscal_label";
+    input.value = value;
+    if (type === "file") input.accept = ".html,.htm,text/html";
+    controls[key] = input;
+    label.append(input);
+    form.append(label);
+  }
+  const button = node("button", "覆核公告", "button primary");
+  button.type = "submit";
+  form.append(button);
+  const result = node("div");
+  result.setAttribute("aria-live", "polite");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    perform(async () => {
+      const file = controls.html.files[0];
+      if (file.size > 2000000) throw new Error("請選擇 2 MB 以內的 HTML 公告。");
+      const payload = Object.fromEntries(Object.entries(controls).map(([key, input]) => [key, input.value || null]));
+      payload.period_end = quarter.period_end;
+      payload.html = await file.text();
+      result.replaceChildren();
+      const { audit, incumbent } = await request(`${path}/earnings/full-revision-check`, payload);
+      const fmt = (value) => value === null ? "—" : numberText(Number(value) / 1e6);
+      const statuses = { eligible: "可試算剩餘差額", noop: "維持現估", blocked: "暫緩調整" };
+      const { column } = audit.location || {};
+      result.append(fields([
+        ["核對結果", statuses[audit.status]], ["說明", audit.reason], ["封存現估（百萬美元）", fmt(incumbent)],
+        ["新指引區間（百萬美元）", audit.new_low === null ? "—" : `${fmt(audit.new_low)}–${fmt(audit.new_high)}`],
+        ["剩餘差額（百萬美元）", fmt(audit.remaining_delta)],
+        ["表格數值欄", Number.isInteger(column) ? `第 ${column + 1} 欄` : null],
+      ]));
+      const proof = audit.unit_proof;
+      if (proof) {
+        const multipliers = [...new Set(proof.multipliers)].map((value) => `×${numberText(value)}`);
+        result.append(fields([
+          ["金額原文", proof.raw_text], ["核對幣別", proof.currency], ["金額倍率", multipliers.join("、")],
+          ["換算後區間（美元）", proof.normalized_low !== null
+            ? `${numberText(proof.normalized_low)}–${numberText(proof.normalized_high)}` : null],
+        ]));
+        const labels = { inline: "金額原文", shared_left_label: "共用列標籤", column_header: "欄位表頭",
+          table_title: "表格標題", row_label: "營收列標籤" };
+        for (const source of proof.sources) {
+          const link = node("a", `${labels[source.scope]} · ${source.quote}`);
+          link.href = source.link;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          const row = node("p");
+          row.append(link);
+          result.append(row);
+        }
+      }
+      for (const citation of audit.citations) {
+        const evidence = node("details", null, "item");
+        const link = node("a", "開啟公告中的原文");
+        link.href = citation.link;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        evidence.append(node("summary", citation.id), node("blockquote", citation.quote), link);
+        result.append(evidence);
+      }
+    }, "正在定位公告和試算營收…");
+  });
+  details.append(node("summary", title), node("p", "試驗版。覆核時請比對原文的財季、表頭及金額單位。"), form, result);
+  return details;
+}
+
 function renderEarnings(body, report) {
   const { earnings } = report;
   const currency = earnings.inputs.currency;
@@ -323,6 +406,94 @@ function renderEarnings(body, report) {
     const wrapper = node("div", null, "scroll-table");
     wrapper.append(table);
     body.append(wrapper);
+    const expectation = quarter.revenue_expectations;
+    if (expectation?.before !== undefined) {
+      const view = node("div", null, "item");
+      view.append(fields([
+        [expectation.before_label, format(expectation.before, "revenue")],
+        ["事件後營收基準", format(expectation.after, "revenue")],
+      ]), evidenceLinks(expectation.before_evidence_ids));
+      for (const item of expectation.consensus) {
+        const ref = item.reference;
+        view.append(fields([[ref.label, `${format(ref.low, "revenue")}–${format(ref.high, "revenue")}｜與中點差 ${format(item.delta, "revenue")}`]]),
+          evidenceLinks(ref.evidence_ids));
+      }
+      if (!expectation.consensus.length) view.append(node("p", "這一季未取得同口徑點時市場共識。"));
+      body.append(view);
+    }
+    const bridge = earnings.revenue_bridge;
+    if (bridge?.period_end === quarter.period_end) {
+      const item = node("details", null, "item");
+      const labels = {
+        latest_run_rate: "最近單季營收", seasonal_prior: "去年同季營收", guided_seasonal: "指引中點乘歷史季節比率",
+        guided_absolute: "指引中點加歷史季節差額", year_on_year: "以最新年增率調整去年同季",
+        confirmed_turn: "雙訊號轉折調整", residual_a: "A · 近期衝擊延續", residual_b: "B · 衝擊延續與分部調整",
+      };
+      item.append(node("summary", "第二預測季營收橋接"), fields([
+        ["模型草擬", format(bridge.original_draft, "revenue")],
+        [labels[bridge.method], format(bridge.anchor, "revenue")],
+        ["最後營收", format(bridge.after_hypothesis_links, "revenue")],
+      ]), evidenceLinks(bridge.anchor_evidence_ids));
+      if (bridge.turn) {
+        const turn = bridge.turn;
+        const states = { up: "上行", down: "下行", unconfirmed: "訊號未達門檻", missing_signal: "缺少可比訊號" };
+        item.append(fields([
+          ["轉折判定", states[turn.status]],
+          ["指引偏離", format(turn.guidance_surprise ?? undefined, "gross_margin")],
+          ["已公布營收偏離", format(turn.reported_surprise ?? undefined, "gross_margin")],
+          ["自動調整", format(turn.delta, "revenue")],
+          ["公開查核", turn.public_check], ["撤回條件", turn.falsifier],
+        ]));
+        if (turn.reason) item.append(node("p", turn.reason));
+        for (const signal of turn.operating_signals || []) {
+          item.append(node("p", signal.observation), evidenceLinks(signal.evidence_ids));
+        }
+      }
+      if (bridge.residual) {
+        const trial = bridge.residual;
+        const statuses = {
+          applied: "採用", no_adjustment: "沿用基準", missing_history: "缺少可比歷史",
+          issuer_guidance: "已有當季公司指引", missing_baseline: "缺少基準", infeasible: "財務假設無法對帳",
+        };
+        item.append(fields([
+          ["修正狀態", statuses[trial.status]],
+          ["現版基準", format(trial.baseline ?? undefined, "revenue")],
+          ["營收修正", format(trial.delta ?? undefined, "revenue")],
+          ["修正後營收", format(trial.estimate ?? undefined, "revenue")],
+        ]), evidenceLinks(trial.evidence_ids || []));
+        if (trial.reason) item.append(node("p", trial.reason));
+        if (trial.public_check && trial.falsifier) {
+          item.append(fields([["下一個公開查核", trial.public_check], ["撤回條件", trial.falsifier]]));
+        }
+        for (const part of trial.components || []) {
+          const name = part.segment || "近期衝擊";
+          const details = [[name, format(part.delta ?? undefined, "revenue")]];
+          if (part.reason || part.rationale) details.push(["依據", part.reason || part.rationale]);
+          if (part.public_check && part.falsifier) details.push(["公開查核", part.public_check], ["撤回條件", part.falsifier]);
+          item.append(fields(details), evidenceLinks(part.evidence_ids || []));
+        }
+        if (trial.method === "residual_b" && !(trial.components || []).some((part) =>
+          part.kind === "segment" && part.status === "applied")) {
+          item.append(node("p", "尚無確認為現版未納入的分部調整。"));
+        }
+        for (const part of trial.ablation || []) {
+          if (part.without) {
+            item.append(fields([[
+              `移除 ${part.id}`,
+              `營收 ${format(part.without.revenue, "revenue")} 百萬，EPS ${format(part.without.eps, "eps")}`,
+            ]]));
+          }
+        }
+      }
+      for (const adjustment of bridge.residual ? [] : bridge.adjustments) {
+        item.append(fields([
+          [adjustment.segment, format(adjustment.value, "revenue")],
+          ["依據", adjustment.method], ["公開查核", adjustment.public_check], ["反證", adjustment.falsifier],
+        ]), evidenceLinks(adjustment.evidence_ids));
+      }
+      if (!bridge.adjustments.length && !bridge.residual) item.append(node("p", "本季沒有可單列且可量化的分部增減項。"));
+      body.append(item);
+    }
     for (const entry of (earnings.guidance_calibration || []).filter((row) => row.period_end === quarter.period_end)) {
       const record = node("div", null, "item");
       record.append(fields([[
@@ -330,6 +501,45 @@ function renderEarnings(body, report) {
         `${format(entry.draft_base, entry.metric)} → ${format(entry.calibrated_base, entry.metric)}`,
       ]]), evidenceLinks(entry.reference.evidence_ids));
       body.append(record);
+    }
+    if (quarter.scenarios.base) {
+      const key = { metric: "revenue", period_end: quarter.period_end, duration: "quarter", scope: "consolidated",
+        basis: earnings.inputs.basis, currency };
+      const guidance = (entries) => {
+        const ref = entries.find(({ kind, key: scope }) => kind === "issuer_guidance" &&
+          Object.keys(key).every((field) => key[field] === scope[field]));
+        return ref ? { key, available_at: ref.available_at, low: ref.low, high: ref.high, evidence_ids: ref.evidence_ids } : null;
+      };
+      const result = node("div");
+      result.setAttribute("aria-live", "polite");
+      const check = jsonAction(`核對 ${quarter.period_end} 新披露`, {
+        period_end: quarter.period_end, event_at: earnings.inputs.event_at, fiscal_label: null,
+        original: guidance(earnings.inputs.references || []),
+        disclosure: guidance(earnings.inputs.event_values || []),
+      }, async (payload) => {
+        result.replaceChildren();
+        const { audit, financial_impact } = await request(`${path}/earnings/revision-check`, payload);
+        const status = { eligible: "可試算剩餘差額", noop: "維持現估", blocked: "暫緩調整" };
+        const range = (quote) => quote ? `${format(quote.low, "revenue")}–${format(quote.high, "revenue")}` : "—";
+        result.append(fields([
+          ["核對結果", status[audit.status]],
+          ["說明", audit.reason],
+          ["公告使用的財季名稱", audit.fiscal_label],
+          ["事件前指引區間", range(audit.original)],
+          ["公告指引中點變動", format(audit.event_change?.midpoint_delta ?? undefined, "revenue")],
+          ["現版營收", format(audit.incumbent.low, "revenue")],
+          ["新指引區間", range(audit.disclosure)],
+          ["剩餘差額", format(audit.remaining_delta ?? undefined, "revenue")],
+        ]), evidenceLinks(audit.evidence_ids));
+        if (financial_impact) {
+          result.append(fields(Object.entries(financial_impact).map(([metric, values]) =>
+            [financialMetric[metric], `${format(values.before, metric)} → ${format(values.after, metric)}`])));
+        }
+      });
+      check.querySelector("summary").after(node("p", "使用此版已封存的證據。引文跨段時，填入公告的財季名稱和原文定位；表格依原欄順序填欄位。"));
+      check.append(result);
+      body.append(check);
+      if (key.currency === "USD" && key.basis === "US_GAAP") body.append(fullFilingAction(path, quarter, report));
     }
     const profile = (earnings.inputs.eps_assumptions || []).find((row) => row.period_end === quarter.period_end);
     if (profile) {
@@ -398,6 +608,28 @@ function renderEarnings(body, report) {
         basis: earnings.inputs.basis, currency },
       kind: "issuer_guidance", label: "", available_at: report.as_of, low: "", high: "", evidence_ids: [],
     }] }, earningsBranch));
+    if (earnings.inputs.quarters.length === 2) {
+      const [, far] = earnings.quarters;
+      const bridge = earnings.inputs.revenue_bridge || {
+        period_end: far.period_end, currency, basis: earnings.inputs.basis,
+        near_fiscal_quarter: null, far_fiscal_quarter: null, method: "guided_absolute", history: [{
+          period_end: "", fiscal_quarter: null, value: "", available_at: first.available_at, evidence_ids: [], method: "",
+        }], adjustments: [],
+      };
+      body.append(jsonAction("編輯第二預測季營收橋接", { revenue_bridge: bridge }, earningsBranch));
+      if (earnings.inputs.revenue_bridge && bridge.method !== "confirmed_turn") {
+        body.append(jsonAction("套用 T+2 轉折偵測", { revenue_bridge: { ...bridge, method: "confirmed_turn" } }, earningsBranch));
+      }
+      if (earnings.inputs.revenue_bridge && !bridge.adjustments.length) {
+        if (bridge.method !== "residual_a") {
+          body.append(jsonAction("試算 T+2 修正 A", { revenue_bridge: { ...bridge, method: "residual_a", residual_inputs: [] } },
+            earningsBranch));
+        }
+        if (bridge.method !== "residual_b") {
+          body.append(jsonAction("試算 T+2 修正 B", { revenue_bridge: { ...bridge, method: "residual_b" } }, earningsBranch));
+        }
+      }
+    }
   }
   body.append(jsonAction("匯入點時共識 CSV", {
     target: report.target, provider: "", source_url: "", captured_at: "",

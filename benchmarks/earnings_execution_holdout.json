@@ -1,0 +1,150 @@
+[
+  {
+    "id": "docu_sec_2026-10-31",
+    "split": "holdout",
+    "ticker": "DOCU",
+    "issuer": "DocuSign, Inc.",
+    "event_at": "2026-09-03T16:09:53-04:00",
+    "as_of": "2026-09-03T16:09:53-04:00",
+    "fiscal_label": "Three Months Ended October 31, 2026",
+    "baseline": {
+      "amount": "875746000",
+      "available_at": "2026-09-03T16:09:53-04:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000088/q227ex-991er.htm",
+      "kind": "last_reported_quarter_proxy",
+      "rationale": "Freeze the latest reported quarterly consolidated revenue as known at the EDGAR cutoff. It is a benchmark run-rate proxy, not a market estimate."
+    },
+    "target": {
+      "metric": "revenue",
+      "duration": "quarter",
+      "period_end": "2026-10-31",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP"
+    },
+    "documents": [
+      {
+        "id": "docu_sec_2026-10-31-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000088/q227ex-991er.htm",
+        "path": "output/earnings-execution/filings/docu.htm",
+        "sha256": "270df1b50068b7c516e1b329168ead012ec5db9c1648f11d91972e08fcf0152e",
+        "media_type": "text/html",
+        "published_at": "2026-09-03T16:09:53-04:00",
+        "obtained_at": "2026-09-03T16:09:53-04:00",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000088/0001261333-26-000088-index.htm",
+        "timestamp_basis": "sec_edgar_filing_accepted"
+      }
+    ]
+  },
+  {
+    "id": "team_sec_2025-06-30",
+    "split": "holdout",
+    "ticker": "TEAM",
+    "issuer": "Atlassian Corporation",
+    "event_at": "2025-05-01T16:10:24-04:00",
+    "as_of": "2025-05-01T16:10:24-04:00",
+    "fiscal_label": "Fourth Quarter Fiscal Year 2025",
+    "baseline": {
+      "amount": "1356700000",
+      "available_at": "2025-05-01T16:10:24-04:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1650372/000165037225000018/ex991q3fy25.htm",
+      "kind": "last_reported_quarter_proxy",
+      "rationale": "Freeze the latest reported quarterly consolidated revenue as known at the EDGAR cutoff. It is a benchmark run-rate proxy, not a market estimate."
+    },
+    "target": {
+      "metric": "revenue",
+      "duration": "quarter",
+      "period_end": "2025-06-30",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP"
+    },
+    "documents": [
+      {
+        "id": "team_sec_2025-06-30-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1650372/000165037225000018/ex991q3fy25.htm",
+        "path": "output/earnings-execution/filings/team.htm",
+        "sha256": "65219058bfbe47ea92009449db8249cb548fb81004b62ec145727e99a6285782",
+        "media_type": "text/html",
+        "published_at": "2025-05-01T16:10:24-04:00",
+        "obtained_at": "2025-05-01T16:10:24-04:00",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1650372/000165037225000018/0001650372-25-000018-index.htm",
+        "timestamp_basis": "sec_edgar_filing_accepted"
+      }
+    ]
+  },
+  {
+    "id": "okta_sec_2025-04-30",
+    "split": "holdout",
+    "ticker": "OKTA",
+    "issuer": "Okta, Inc.",
+    "event_at": "2025-03-03T16:02:06-05:00",
+    "as_of": "2025-03-03T16:02:06-05:00",
+    "fiscal_label": "first quarter of fiscal 2026",
+    "baseline": {
+      "amount": "682000000",
+      "available_at": "2025-03-03T16:02:06-05:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000043/okta-1312025_ex991.htm",
+      "kind": "last_reported_quarter_proxy",
+      "rationale": "Freeze the latest reported quarterly consolidated revenue as known at the EDGAR cutoff. It is a benchmark run-rate proxy, not a market estimate."
+    },
+    "target": {
+      "metric": "revenue",
+      "duration": "quarter",
+      "period_end": "2025-04-30",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP"
+    },
+    "documents": [
+      {
+        "id": "okta_sec_2025-04-30-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000043/okta-1312025_ex991.htm",
+        "path": "output/earnings-execution/filings/okta.htm",
+        "sha256": "c73866bee57a9a5937aa393264a9b6755cc8d059f07d80e84fbb7577842f31ba",
+        "media_type": "text/html",
+        "published_at": "2025-03-03T16:02:06-05:00",
+        "obtained_at": "2025-03-03T16:02:06-05:00",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000043/0001660134-25-000043-index.htm",
+        "timestamp_basis": "sec_edgar_filing_accepted"
+      }
+    ]
+  },
+  {
+    "id": "snow_sec_2025-04-30",
+    "split": "holdout",
+    "ticker": "SNOW",
+    "issuer": "Snowflake Inc.",
+    "event_at": "2025-02-26T16:07:28-05:00",
+    "as_of": "2025-02-26T16:07:28-05:00",
+    "fiscal_label": "First Quarter Fiscal 2026",
+    "baseline": {
+      "amount": "986800000",
+      "available_at": "2025-02-26T16:07:28-05:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1640147/000164014725000016/fy2025q4earnings.htm",
+      "kind": "last_reported_quarter_proxy",
+      "rationale": "Freeze the latest reported quarterly consolidated revenue as known at the EDGAR cutoff. It is a benchmark run-rate proxy, not a market estimate."
+    },
+    "target": {
+      "metric": "revenue",
+      "duration": "quarter",
+      "period_end": "2025-04-30",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP"
+    },
+    "documents": [
+      {
+        "id": "snow_sec_2025-04-30-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1640147/000164014725000016/fy2025q4earnings.htm",
+        "path": "output/earnings-execution/filings/snow.htm",
+        "sha256": "63d07563933638188543e50ca478840457d7ce60f631c193f6f478c30b81f2fb",
+        "media_type": "text/html",
+        "published_at": "2025-02-26T16:07:28-05:00",
+        "obtained_at": "2025-02-26T16:07:28-05:00",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1640147/000164014725000016/0001640147-25-000016-index.htm",
+        "timestamp_basis": "sec_edgar_filing_accepted"
+      }
+    ]
+  }
+]

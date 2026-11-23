@@ -1,0 +1,150 @@
+[
+  {
+    "id": "mtz_q3_2026_guidance",
+    "split": "holdout",
+    "issuer": "MasTec, Inc.",
+    "ticker": "MTZ",
+    "event_at": "2026-07-30T16:28:22-04:00",
+    "as_of": "2026-07-30T16:28:22-04:00",
+    "fiscal_label": "3Q'26E",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2026-09-30",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "historical_same_quarter_proxy",
+      "amount": "3966948000",
+      "available_at": "2025-10-30T16:14:00-04:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/15615/000001561525000128/mtz-20250930.htm",
+      "rationale": "Flat-year comparison proxy for the target quarter, frozen from GAAP consolidated revenue of $3,966,948 thousand in the 2025 Q3 Form 10-Q. No company future forecast is claimed."
+    },
+    "documents": [
+      {
+        "id": "mtz_q3_2026_guidance-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/15615/000001561526000095/mtz630268-kex991.htm",
+        "path": "output/earnings-units/filings/holdout/mtz.htm",
+        "sha256": "b91e5f16e997f9f0655c9493dcfd3f3fba9120521dad82c65dd6a82f7e2b3fa1",
+        "media_type": "text/html",
+        "published_at": "2026-07-30T16:28:22-04:00",
+        "obtained_at": "2026-07-30T16:28:22-04:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/15615/000001561526000095/0000015615-26-000095-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "caly_q4_2026_guidance",
+    "split": "holdout",
+    "issuer": "Callaway Golf Company",
+    "ticker": "CALY",
+    "event_at": "2026-11-05T16:18:20-05:00",
+    "as_of": "2026-11-05T16:18:20-05:00",
+    "fiscal_label": "Q4 2026",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2026-12-31",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "historical_same_quarter_proxy",
+      "amount": "367500000",
+      "available_at": "2026-02-12T16:50:24-05:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/837465/000083746526000007/earningsreleaseq42025.htm",
+      "rationale": "Flat-year comparison proxy from the prior-year consolidated continuing-operations net sales of $367.5 million after retroactive reclassification of the disposed businesses, from the Q4 2025 release."
+    },
+    "documents": [
+      {
+        "id": "caly_q4_2026_guidance-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/837465/000083746526000025/earningsreleaseq32026.htm",
+        "path": "output/earnings-units/filings/holdout/caly.htm",
+        "sha256": "4d84196fcae80f81d8d0e9b8c291ba2e0a03d79539ee23083c4c83f97a93365e",
+        "media_type": "text/html",
+        "published_at": "2026-11-05T16:18:20-05:00",
+        "obtained_at": "2026-11-05T16:18:20-05:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/837465/000083746526000025/0000837465-26-000025-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "niq_q3_2026_guidance",
+    "split": "holdout",
+    "issuer": "NIQ Global Intelligence plc",
+    "ticker": "NIQ",
+    "event_at": "2026-08-10T16:05:49-04:00",
+    "as_of": "2026-08-10T16:05:49-04:00",
+    "fiscal_label": "Third Quarter Guidance",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2026-09-30",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "historical_same_quarter_proxy",
+      "amount": "1052600000",
+      "available_at": "2025-11-13T07:01:38-05:00",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2054696/000162828025051837/niqpressrelease-q325.htm",
+      "rationale": "Frozen flat-year benchmark from prior-year as-reported consolidated total revenue of $1,052.6 million, furnished on EDGAR with the 2025 Q3 release."
+    },
+    "documents": [
+      {
+        "id": "niq_q3_2026_guidance-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/2054696/000162828026055207/niqpressrelease-q226.htm",
+        "path": "output/earnings-units/filings/holdout/niq.htm",
+        "sha256": "6140a175c1a2dbcd0fcd8f3686426f7b522d1f2333c8973b614bff391c4a7c03",
+        "media_type": "text/html",
+        "published_at": "2026-08-10T16:05:49-04:00",
+        "obtained_at": "2026-08-10T16:05:49-04:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/2054696/000162828026055207/0001628280-26-055207-index.htm"
+      }
+    ]
+  },
+  {
+    "id": "lqdt_q1_fy2027_guidance",
+    "split": "holdout",
+    "issuer": "Liquidity Services, Inc.",
+    "ticker": "LQDT",
+    "event_at": "2026-11-19T07:00:36-05:00",
+    "as_of": "2026-11-19T07:00:36-05:00",
+    "fiscal_label": "Q1-FY27",
+    "target": {
+      "metric": "revenue",
+      "period_end": "2026-12-31",
+      "scope": "consolidated",
+      "currency": "USD",
+      "basis": "US_GAAP",
+      "duration": "quarter"
+    },
+    "baseline": {
+      "kind": "historical_same_quarter_proxy",
+      "amount": "121200000",
+      "available_at": "2026-02-05T23:59:59-05:00",
+      "source_url": "https://investors.liquidityservices.com/node/21476",
+      "rationale": "Rounded flat-year comparison proxy from prior-year reported quarterly consolidated revenue of $121.2 million, available by the end of the issuer publication day."
+    },
+    "documents": [
+      {
+        "id": "lqdt_q1_fy2027_guidance-release",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1235468/000119312526467778/lqdt-ex99_1.htm",
+        "path": "output/earnings-units/filings/holdout/lqdt.htm",
+        "sha256": "8c0b4a28c5d7986a506294ecfe723c0b473a0aa5373c4436f93e2d83862e1c46",
+        "media_type": "text/html",
+        "published_at": "2026-11-19T07:00:36-05:00",
+        "obtained_at": "2026-11-19T07:00:36-05:00",
+        "timestamp_basis": "sec_edgar_filing_accepted",
+        "timestamp_source_url": "https://www.sec.gov/Archives/edgar/data/1235468/000119312526467778/0001193125-26-467778-index.htm"
+      }
+    ]
+  }
+]
