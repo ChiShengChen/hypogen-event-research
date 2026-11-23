@@ -49,7 +49,7 @@ export async function renderHypothesisTree(body, { report, request, node, fields
   expandedByRevision.set(key, expanded);
   const drafts = draftsByRevision.get(key) || new Map();
   draftsByRevision.set(key, drafts);
-  const latestWithInputs = nodes.findLast(item => item.inputs?.length);
+  const latestWithInputs = nodes.slice().reverse().find(item => item.inputs?.length);
   let selected = selectionByRevision.get(key) || latestWithInputs?.id || "root";
   if (!selectionByRevision.has(key) && latestWithInputs) {
     const byId = new Map(nodes.map(item => [item.id, item]));

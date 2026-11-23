@@ -69,6 +69,8 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
   let view;
   let fitting = true;
   let gesture;
+  let pinch;
+  const touches = new Map();
   let spacePan = false;
   let frame = 0;
 
@@ -169,14 +171,28 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
     paint();
   }
 
-  function focusSelected() {
+  function centerSelected(scale) {
     const p = locations.get(selected);
-    if (!view || !p) return;
-    const scale = Math.max(0.9, view.scale);
-    view = { scale, x: viewport.clientWidth / 2 - (p.x + CARD_WIDTH / 2) * scale,
-      y: viewport.clientHeight / 2 - (p.y + CARD_HEIGHT / 2) * scale };
+    const { clientWidth: width, clientHeight: height } = viewport;
+    if (!p || !width || !height) return;
+    const visibleScale = Math.max(0.045, Math.min(scale, (width - 28) / CARD_WIDTH, (height - 28) / CARD_HEIGHT));
+    view = { scale: visibleScale, x: width / 2 - (p.x + CARD_WIDTH / 2) * visibleScale,
+      y: height / 2 - (p.y + CARD_HEIGHT / 2) * visibleScale };
     fitting = false;
     paint();
+  }
+
+  function focusSelected() {
+    centerSelected(Math.max(0.9, view?.scale ?? 0));
+  }
+
+  function initialView() {
+    const width = viewport.clientWidth;
+    if (width && width <= 520 && locations.has(selected)) {
+      centerSelected(0.9);
+    } else {
+      fit();
+    }
   }
 
   function reveal(id) {
@@ -251,15 +267,41 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
       fragment.append(card);
     }
     plane.replaceChildren(fragment);
-    if (!view) fit();
+    if (!view) initialView();
     if (focusId) reveal(locations.has(focusId) ? focusId : selected);
     focusTarget?.focus({ preventScroll: true });
     paint();
   }
 
+  function touchGeometry(ids) {
+    const [first, second] = ids.map(id => touches.get(id));
+    const rect = viewport.getBoundingClientRect();
+    return {
+      x: (first.x + second.x) / 2 - rect.left,
+      y: (first.y + second.y) / 2 - rect.top,
+      distance: Math.max(1, Math.hypot(first.x - second.x, first.y - second.y)),
+    };
+  }
+
   viewport.addEventListener("pointerdown", event => {
-    if (!view || gesture || (event.button !== 0 && event.button !== 1)) return;
-    if (event.button === 0 && !spacePan && event.target.closest("[data-graph-action]")) return;
+    if (!view || (event.button !== 0 && event.button !== 1)) return;
+    if (event.button === 0 && !spacePan && !touches.size && event.target.closest("[data-graph-action]")) return;
+    if (event.pointerType === "touch") {
+      touches.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      if (touches.size > 1) {
+        viewport.setPointerCapture(event.pointerId);
+        if (!pinch) {
+          const ids = [...touches.keys()].slice(0, 2);
+          if (gesture?.id && gesture.moved) saveOffsets();
+          gesture = null;
+          pinch = { ids, at: touchGeometry(ids), start: { ...view } };
+          viewport.classList.add("graph-panning");
+        }
+        event.preventDefault();
+        return;
+      }
+    }
+    if (gesture || pinch) return;
     const id = event.button === 0 && !spacePan ? event.target.closest("[data-node-id]")?.dataset.nodeId : null;
     gesture = { pointer: event.pointerId, x: event.clientX, y: event.clientY, id, moved: false,
       start: { ...view }, offset: offsets.get(id) || { x: 0, y: 0 }, point: locations.get(id) };
@@ -268,6 +310,19 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
     event.preventDefault();
   });
   viewport.addEventListener("pointermove", event => {
+    if (touches.has(event.pointerId)) {
+      touches.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      if (pinch?.ids.includes(event.pointerId)) {
+        const next = touchGeometry(pinch.ids);
+        const { start, at } = pinch;
+        const scale = Math.max(0.045, Math.min(2, start.scale * next.distance / at.distance));
+        const ratio = scale / start.scale;
+        view = { scale, x: next.x - (at.x - start.x) * ratio, y: next.y - (at.y - start.y) * ratio };
+        fitting = false;
+        paint();
+        return;
+      }
+    }
     if (gesture?.pointer !== event.pointerId) return;
     const dx = event.clientX - gesture.x;
     const dy = event.clientY - gesture.y;
@@ -288,6 +343,11 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
     paint();
   });
   function endGesture(event) {
+    touches.delete(event.pointerId);
+    if (pinch?.ids.includes(event.pointerId)) {
+      pinch = null;
+      viewport.classList.remove("graph-panning");
+    }
     if (gesture?.pointer !== event.pointerId) return;
     const { id, moved } = gesture;
     gesture = null;
@@ -297,6 +357,7 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
   }
   viewport.addEventListener("pointerup", endGesture);
   viewport.addEventListener("pointercancel", endGesture);
+  viewport.addEventListener("lostpointercapture", endGesture);
   viewport.addEventListener("wheel", event => {
     event.preventDefault();
     const rect = viewport.getBoundingClientRect();
@@ -332,8 +393,10 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
       if (lastUpdate) update(...lastUpdate);
       fit();
     }));
-  const observer = new ResizeObserver(() => fitting ? fit() : paint());
-  observer.observe(viewport);
+  const resize = () => !view ? initialView() : fitting ? fit() : paint();
+  const observer = typeof ResizeObserver === "function" ? new ResizeObserver(resize) : null;
+  if (observer) observer.observe(viewport);
+  else window.addEventListener("resize", resize);
   return {
     element,
     update(...args) {
@@ -341,7 +404,8 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
       update(...args);
     },
     destroy() {
-      observer.disconnect();
+      observer?.disconnect();
+      if (!observer) window.removeEventListener("resize", resize);
       cancelAnimationFrame(frame);
     },
   };
