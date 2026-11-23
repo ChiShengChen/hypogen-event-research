@@ -1,0 +1,91 @@
+{
+  "business_linkages": [
+    {
+      "linked_stance": "bear",
+      "scope": "internal",
+      "origin_business": "Ice Cream",
+      "origin_evidence_ids": ["ul-q1:portfolio"],
+      "affected_company": "Unilever",
+      "affected_business": "集團生產力計畫",
+      "affected_evidence_ids": ["ul-q1:portfolio"],
+      "mechanism": "公司預期生產力節省可抵銷分拆造成的營運協同損失。若共用作業先行拆開、節省較晚實現，集團須先承擔成本，即使分拆最終如期完成也一樣。",
+      "baseline": "若維持原有共用作業，集團無須以生產力節省填補此次分拆新增的協同損失。",
+      "condition": "分拆已造成持續性協同損失，且同期間實現的生產力節省不足以抵銷。",
+      "financial_effect": "兩者淨額為負會壓低集團營業利益。三年約 8 億歐元是節省目標，當期節省與協同損失均缺金額。",
+      "alternative_explanation": "一次性分拆費用也可能壓低利益。須查公司是否分列一次性費用與持續性協同損失，再與同期已實現節省比較。",
+      "metric": "同期間已實現生產力節省減持續性分拆協同損失，或公司明示兩者是否已相抵。",
+      "observation_period": "2025 年上半年",
+      "public_source": "Unilever 半年度業績中的分拆與生產力進度說明。若僅更新三年目標，淨額仍待查。",
+      "deadline": "2025-12-31",
+      "prediction": "Unilever 揭露 2025 年上半年實現的節省低於同期持續性分拆協同損失。",
+      "invalidation": "Unilever 揭露 2025 年上半年實現的節省等於或高於同期持續性分拆協同損失。"
+    }
+  ],
+  "business_linkage_gap": "公司已說明節省的抵銷用途，但未揭露實現時程、協同損失金額或各事業分攤。若公開資料缺乏同口徑比較，須取得內部成本調節表。也無資料顯示節省會轉投 Beauty & Wellbeing。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "第一季更新顯示 Health & Wellbeing 與 Prestige Beauty 持續雙位數成長，同季 Beauty & Wellbeing 銷量年增 5.6%。若兩項業務的成長持續帶動事業群銷量，相較銷量持平，新增銷量可支撐基礎銷售。兩項業務各自的量價貢獻與利潤率未知。",
+      "target": "Unilever",
+      "horizon": "2025-12-31",
+      "catalyst": "2024 年 4 月 25 日第一季交易更新揭露成長來源。以 Unilever 次季交易更新或半年度業績覆核動能是否延續，最遲於 2024 年底檢查。",
+      "prediction": "2024 年第二季 Beauty & Wellbeing 銷量年增率高於零。第一季的 5.6% 為參照值。事業群銷量是代理指標，無法單獨歸因於兩項業務。",
+      "invalidation": "Unilever 揭露 2024 年第二季 Beauty & Wellbeing 銷量年增率為零或負值。",
+      "claim_ids": ["fact:ul-q1:beauty", "fact:ul-q1:original"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "Ice Cream 分拆使 Unilever 必須拆解原先共用的營運安排。若建立獨立作業耗時超出規劃，集團將延長過渡管理期，拖延分拆完成。維持原組織時無此轉換負擔，額外成本規模未披露。",
+      "target": "Unilever",
+      "horizon": "2025-12-31",
+      "catalyst": "4 月 25 日更新重申計畫於 2025 年底前完成分拆。由後續策略更新至 2025 年 12 月 31 日，查 Unilever 分拆時程及完成公告。",
+      "prediction": "截至 2025 年 12 月 31 日，Unilever 已公開將 Ice Cream 分拆完成時間延至 2025 年後，或明示年底仍在過渡期、尚未完成。延期可驗證執行結果，原因仍須公司說明。",
+      "invalidation": "Unilever 於 2025 年 12 月 31 日前公告 Ice Cream 分拆已於期限內完成。若僅重申目標或未更新，結果仍待查。",
+      "claim_ids": ["fact:ul-q1:portfolio"]
+    }
+  ],
+  "assessment": {
+    "thesis": "Beauty & Wellbeing 第一季銷量年增 5.6%，為基礎銷售提供支撐，集團獲利能否同步受惠，仍取決於 Ice Cream 分拆過渡成本與生產力節省的實現時差。",
+    "key_gap": "分拆造成的持續性協同損失有多大，生產力節省何時足以抵銷？現有揭露只有三年節省目標。",
+    "next_check": "先查 4 月 25 日交易更新後首份 Unilever 半年度業績，核對第二季 Beauty & Wellbeing 銷量年增率，並查策略進度有否揭露同期已實現節省及分拆成本。銷量可由公開揭露覆核，精算淨成本可能需要內部資料。",
+    "evidence_limits": [
+      {
+        "evidence_id": "ul-q1:beauty",
+        "limit": "支持第一季事業群基礎銷售年增 7.4%、銷量年增 5.6%，並指出兩項成長來源。未分列兩者各自銷量或獲利貢獻。"
+      },
+      {
+        "evidence_id": "ul-q1:original",
+        "limit": "同份更新的英文摘句確認 7.4% 指基礎銷售成長，僅能核對口徑，無獨立佐證或利潤資訊。"
+      },
+      {
+        "evidence_id": "ul-q1:portfolio",
+        "limit": "支持分拆時程目標及生產力計畫已啟動。三年約 8 億歐元節省與抵銷協同損失均屬前瞻說法，實現金額及分拆完成情形仍待後續揭露。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "Beauty & Wellbeing 第二季銷量年增率，以及公司對 Health & Wellbeing、Prestige Beauty 的成長說明。",
+        "source_to_watch": "Unilever 次季交易更新或半年度業績的事業群回顧。",
+        "window": "第一季更新後一季，於 2024 年底前覆核。",
+        "impact_on_thesis": "銷量續增可提高對事業群動能的信心。若公司也點名兩項業務帶動成長，可加強歸因，但仍無法量化利潤。",
+        "evidence_ids": ["ul-q1:beauty"]
+      },
+      {
+        "metric": "Ice Cream 分拆預計完成時間是否延後，以及公司是否公告完成。",
+        "source_to_watch": "Unilever 交易更新、策略進度及分拆公告。",
+        "window": "自第一季更新至 2025 年 12 月 31 日。",
+        "impact_on_thesis": "明示延期支持執行風險，如期完成則推翻延期假設。維持目標僅反映管理層當時預期。",
+        "evidence_ids": ["ul-q1:portfolio"]
+      },
+      {
+        "metric": "集團已實現的生產力節省是否足以抵銷同期持續性分拆協同損失。",
+        "source_to_watch": "Unilever 半年度業績及生產力計畫進度更新。",
+        "window": "檢視 2025 年上半年，於 2025 年底前覆核可得揭露。",
+        "impact_on_thesis": "若公司明示節省落後於協同損失，則提高對獲利承壓的信心。只有累計節省或三年目標時，無法判斷淨影響。",
+        "evidence_ids": ["ul-q1:portfolio"]
+      }
+    ],
+    "supply_chain": [],
+    "trade_opportunities": []
+  }
+}

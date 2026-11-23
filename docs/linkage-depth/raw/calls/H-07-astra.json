@@ -1,0 +1,138 @@
+{
+  "case": "H-07",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:49:58.634869+00:00",
+  "queued_epoch": 1795430998.6348898,
+  "started_at": "2026-11-23T10:49:58.649866+00:00",
+  "request_sha256": "657076217f469cb2afd42552eb979c2ae54453cba24eb1464d2abd79e3b3e2b4",
+  "queue_seconds": 0.01,
+  "preparation_seconds": 0.006,
+  "prompt_bytes": 2515,
+  "returncode": 0,
+  "cli_elapsed_seconds": 74.408,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "Peloton 的服飾銷售通路",
+        "origin_evidence_ids": [
+          "lulu-pton:sales"
+        ],
+        "affected_company": "lululemon",
+        "affected_business": "共同品牌運動服飾的銷售與毛利",
+        "affected_evidence_ids": [
+          "lulu-pton:terms",
+          "lulu-pton:sales"
+        ],
+        "mechanism": "Peloton 通路若能觸及原先不會向 lululemon 購買服飾的消費者，首批商品售出後的補單可為 lululemon 帶來新增收入。",
+        "baseline": "公告確認 lululemon 將成為 Peloton 的主要運動服飾合作夥伴，並揭露上市計畫。首批訂單、售價及毛利率均待查證。",
+        "condition": "Peloton 通路須帶來新增需求，且新增毛利足以抵銷既有通路因訂單轉移而減少的毛利。",
+        "financial_effect": "若條件成立，lululemon 服飾毛利額可增加。供貨價格、銷售規模及通路移轉幅度未知，無法估算金額。",
+        "alternative_explanation": "既有 lululemon 顧客可能改在 Peloton 購買。即使聯名商品補貨，公司整體服飾毛利也可能持平或下降。",
+        "metric": "首批上市後的補貨或追加訂單，以及公司可歸因於此合作的新增銷售與毛利。",
+        "observation_period": "2023 年 9 月 27 日公告後至 2024 年 12 月 31 日",
+        "public_source": "Peloton 官方商品頁、雙方後續合作公告及 lululemon 財報說明會。",
+        "deadline": "2024-12-31",
+        "prediction": "若新增需求持續，首批上市後應能觀察到補貨或追加訂單。若公司另行揭露合作帶來的新增毛利為正，即可支持獲利假說。",
+        "invalidation": "若雙方確認取消上市，或 lululemon 揭露通路移轉造成的毛利減少已抵銷合作貢獻，則此增益假說失效。僅有上架紀錄時，獲利效果仍待驗證。"
+      },
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "Peloton 數位健身課程供應",
+        "origin_evidence_ids": [
+          "lulu-pton:original",
+          "lulu-pton:terms"
+        ],
+        "affected_company": "lululemon",
+        "affected_business": "lululemon Studio All-Access 會員訂閱",
+        "affected_evidence_ids": [
+          "lulu-pton:subscription"
+        ],
+        "mechanism": "既有會員若認為同價可取得的 Peloton 課程值得續訂，lululemon 可藉由延長付費月份保留訂閱收入。",
+        "baseline": "公告預定自 2023 年 11 月 1 日起按當時同價提供課程。供應資料未列出導入前的續訂率。",
+        "condition": "新增課程須能留住原本會退訂的會員，且保留收入須高於新增內容及履約成本，才會改善獲利。",
+        "financial_effect": "同價條件下，既有會員收入的改善來自付費月份增加。淨利方向仍取決於支付給 Peloton 的費用及其他履約成本。",
+        "alternative_explanation": "續訂率也可能隨會員年資或季節變動。單看導入前後的整體會員數，無法辨認課程效果。",
+        "metric": "可比年資 All-Access 會員的續訂率、付費月份，以及每名會員的內容成本。",
+        "observation_period": "以 2023 年 11 月 1 日預定導入日為界，比較導入前後可比期間，追蹤至 2024 年 12 月 31 日。",
+        "public_source": "lululemon Studio 會員公告、lululemon 定期財報及財報說明會。",
+        "deadline": "2024-12-31",
+        "prediction": "若課程提升留存，可比會員導入後的續訂率應高於導入前，並帶來較多付費月份。",
+        "invalidation": "若可比會員續訂率及付費月份均未改善，則留存假說缺乏支持。若新增成本超過保留收入，則獲利改善假說失效。"
+      }
+    ],
+    "business_linkage_gap": "兩條業務連結均來自同一份公告。服飾端缺少訂單與通路別毛利，訂閱端缺少可比會員留存與內容費用，尚無法判斷哪一端對 lululemon 獲利較重要。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "Peloton 的服飾銷售通路",
+        "origin_evidence_ids": [
+          "lulu-pton:sales"
+        ],
+        "affected_company": "lululemon",
+        "affected_business": "共同品牌運動服飾的銷售與毛利",
+        "affected_evidence_ids": [
+          "lulu-pton:terms",
+          "lulu-pton:sales"
+        ],
+        "mechanism": "Peloton 通路若能觸及原先不會向 lululemon 購買服飾的消費者，首批商品售出後的補單可為 lululemon 帶來新增收入。",
+        "baseline": "公告確認 lululemon 將成為 Peloton 的主要運動服飾合作夥伴，並揭露上市計畫。首批訂單、售價及毛利率均待查證。",
+        "condition": "Peloton 通路須帶來新增需求，且新增毛利足以抵銷既有通路因訂單轉移而減少的毛利。",
+        "financial_effect": "若條件成立，lululemon 服飾毛利額可增加。供貨價格、銷售規模及通路移轉幅度未知，無法估算金額。",
+        "alternative_explanation": "既有 lululemon 顧客可能改在 Peloton 購買。即使聯名商品補貨，公司整體服飾毛利也可能持平或下降。",
+        "metric": "首批上市後的補貨或追加訂單，以及公司可歸因於此合作的新增銷售與毛利。",
+        "observation_period": "2023 年 9 月 27 日公告後至 2024 年 12 月 31 日",
+        "public_source": "Peloton 官方商品頁、雙方後續合作公告及 lululemon 財報說明會。",
+        "deadline": "2024-12-31",
+        "prediction": "若新增需求持續，首批上市後應能觀察到補貨或追加訂單。若公司另行揭露合作帶來的新增毛利為正，即可支持獲利假說。",
+        "invalidation": "若雙方確認取消上市，或 lululemon 揭露通路移轉造成的毛利減少已抵銷合作貢獻，則此增益假說失效。僅有上架紀錄時，獲利效果仍待驗證。"
+      },
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "Peloton 數位健身課程供應",
+        "origin_evidence_ids": [
+          "lulu-pton:original",
+          "lulu-pton:terms"
+        ],
+        "affected_company": "lululemon",
+        "affected_business": "lululemon Studio All-Access 會員訂閱",
+        "affected_evidence_ids": [
+          "lulu-pton:subscription"
+        ],
+        "mechanism": "既有會員若認為同價可取得的 Peloton 課程值得續訂，lululemon 可藉由延長付費月份保留訂閱收入。",
+        "baseline": "公告預定自 2023 年 11 月 1 日起按當時同價提供課程。供應資料未列出導入前的續訂率。",
+        "condition": "新增課程須能留住原本會退訂的會員，且保留收入須高於新增內容及履約成本，才會改善獲利。",
+        "financial_effect": "同價條件下，既有會員收入的改善來自付費月份增加。淨利方向仍取決於支付給 Peloton 的費用及其他履約成本。",
+        "alternative_explanation": "續訂率也可能隨會員年資或季節變動。單看導入前後的整體會員數，無法辨認課程效果。",
+        "metric": "可比年資 All-Access 會員的續訂率、付費月份，以及每名會員的內容成本。",
+        "observation_period": "以 2023 年 11 月 1 日預定導入日為界，比較導入前後可比期間，追蹤至 2024 年 12 月 31 日。",
+        "public_source": "lululemon Studio 會員公告、lululemon 定期財報及財報說明會。",
+        "deadline": "2024-12-31",
+        "prediction": "若課程提升留存，可比會員導入後的續訂率應高於導入前，並帶來較多付費月份。",
+        "invalidation": "若可比會員續訂率及付費月份均未改善，則留存假說缺乏支持。若新增成本超過保留收入，則獲利改善假說失效。"
+      }
+    ],
+    "business_linkage_gap": "兩條業務連結均來自同一份公告。服飾端缺少訂單與通路別毛利，訂閱端缺少可比會員留存與內容費用，尚無法判斷哪一端對 lululemon 獲利較重要。"
+  },
+  "elapsed_seconds": 74.411,
+  "usage": {
+    "input_tokens": 16943,
+    "cached_input_tokens": 15360,
+    "output_tokens": 3042,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.763,
+    "turn.started": 1.272,
+    "item.completed": 73.934,
+    "turn.completed": 73.968
+  },
+  "finished_at": "2026-11-23T10:51:13.063357+00:00"
+}

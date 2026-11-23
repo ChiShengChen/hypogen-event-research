@@ -1,0 +1,18 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出同店跨品類購物籃資料缺口，明確保留美妝是否帶動食品或日用品購買的判斷。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "將美妝是否帶動食品飲料或必需品銷售留待驗證，並指出需要同筆交易的跨品類購買率及比較基期。"
+    }
+  ]
+}

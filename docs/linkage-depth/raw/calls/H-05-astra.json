@@ -1,0 +1,88 @@
+{
+  "case": "H-05",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:45:39.922942+00:00",
+  "queued_epoch": 1795430739.9229531,
+  "started_at": "2026-11-23T10:45:39.965036+00:00",
+  "request_sha256": "86b9e8afee77bb9309e8795aa2b1589874c35e686d976ec271c859be53cce8c6",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.033,
+  "prompt_bytes": 2777,
+  "returncode": 0,
+  "cli_elapsed_seconds": 70.139,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "Uber 在 Austin 與 Atlanta 的車隊管理服務",
+        "origin_evidence_ids": [
+          "uber-av:fleet"
+        ],
+        "affected_company": "Uber",
+        "affected_business": "兩市的 Uber app 叫車業務",
+        "affected_evidence_ids": [
+          "uber-av:network",
+          "uber-av:scale"
+        ],
+        "mechanism": "Uber 負責清潔、維修與車庫營運。若這些工作能讓更多車輛在需求高峰可供派遣，Uber app 就有機會承接原本因缺車而無法完成的行程。",
+        "baseline": "截至 2024 年 9 月 13 日，兩市服務仍屬規劃。公告未提供上線前兩市的 Uber 總行程、候車時間或未能派車的訂單數。",
+        "condition": "Waymo 完成測試並投入服務，新增車輛在供給不足的時段接單，且新增行程帶給 Uber 的收益足以覆蓋追加營運成本。",
+        "financial_effect": "若上述條件成立，新增行程可提高當地叫車業務的貢獻。僅憑自駕行程數，無法估計 Uber 的增量收益。",
+        "alternative_explanation": "乘客可能從人類駕駛轉搭 Waymo。即使全市總行程增加，也可能來自同期需求成長。",
+        "metric": "按城市比較上線前後尖峰時段的 Waymo 完成行程、Uber 全平台完成行程及候車時間。若有可比資料，再對照尚未提供服務的區域。",
+        "observation_period": "各市實際上線前後的可比期間，追蹤至 2025 年底",
+        "public_source": "Uber 與 Waymo 的城市上線公告、營運更新及 Uber 財報說明會，以實際揭露的城市資料為準。",
+        "deadline": "2025-12-31",
+        "prediction": "若自駕車確實補足尖峰供給，服務區的候車時間應縮短，全平台完成行程相對可比區域也應增加。",
+        "invalidation": "若可比資料顯示 Waymo 增加的行程由人類駕駛行程等量轉出，且尖峰候車時間未改善，則補足供給的解釋失去支持。若缺少城市資料，則此項仍待驗證。"
+      }
+    ],
+    "business_linkage_gap": "公告未交代車隊管理報酬、成本分攤方式或訂單替代率，無法把車隊規模換算為 Uber 的獲利。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "Uber 在 Austin 與 Atlanta 的車隊管理服務",
+        "origin_evidence_ids": [
+          "uber-av:fleet"
+        ],
+        "affected_company": "Uber",
+        "affected_business": "兩市的 Uber app 叫車業務",
+        "affected_evidence_ids": [
+          "uber-av:network",
+          "uber-av:scale"
+        ],
+        "mechanism": "Uber 負責清潔、維修與車庫營運。若這些工作能讓更多車輛在需求高峰可供派遣，Uber app 就有機會承接原本因缺車而無法完成的行程。",
+        "baseline": "截至 2024 年 9 月 13 日，兩市服務仍屬規劃。公告未提供上線前兩市的 Uber 總行程、候車時間或未能派車的訂單數。",
+        "condition": "Waymo 完成測試並投入服務，新增車輛在供給不足的時段接單，且新增行程帶給 Uber 的收益足以覆蓋追加營運成本。",
+        "financial_effect": "若上述條件成立，新增行程可提高當地叫車業務的貢獻。僅憑自駕行程數，無法估計 Uber 的增量收益。",
+        "alternative_explanation": "乘客可能從人類駕駛轉搭 Waymo。即使全市總行程增加，也可能來自同期需求成長。",
+        "metric": "按城市比較上線前後尖峰時段的 Waymo 完成行程、Uber 全平台完成行程及候車時間。若有可比資料，再對照尚未提供服務的區域。",
+        "observation_period": "各市實際上線前後的可比期間，追蹤至 2025 年底",
+        "public_source": "Uber 與 Waymo 的城市上線公告、營運更新及 Uber 財報說明會，以實際揭露的城市資料為準。",
+        "deadline": "2025-12-31",
+        "prediction": "若自駕車確實補足尖峰供給，服務區的候車時間應縮短，全平台完成行程相對可比區域也應增加。",
+        "invalidation": "若可比資料顯示 Waymo 增加的行程由人類駕駛行程等量轉出，且尖峰候車時間未改善，則補足供給的解釋失去支持。若缺少城市資料，則此項仍待驗證。"
+      }
+    ],
+    "business_linkage_gap": "公告未交代車隊管理報酬、成本分攤方式或訂單替代率，無法把車隊規模換算為 Uber 的獲利。"
+  },
+  "elapsed_seconds": 70.14,
+  "usage": {
+    "input_tokens": 16979,
+    "cached_input_tokens": 0,
+    "output_tokens": 2915,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.175,
+    "turn.started": 1.474,
+    "item.completed": 69.724,
+    "turn.completed": 69.757
+  },
+  "finished_at": "2026-11-23T10:46:50.127325+00:00"
+}

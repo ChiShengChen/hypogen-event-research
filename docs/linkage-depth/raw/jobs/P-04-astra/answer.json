@@ -1,0 +1,87 @@
+{
+  "business_linkages": [],
+  "business_linkage_gap": "兩個北美分部同季的營業利益走勢相反，但現有資料未揭露共同客戶的採購變化、跨品類促銷或資源移轉，無從判定零食業務的變化是否影響飲料業務。",
+  "hypotheses": [
+    {
+      "stance": "bear",
+      "mechanism": "若北美零食營收持續下滑，而成本未能同步下降，Frito-Lay North America（FLNA）的營業利益可能持續承壓。成本調整速度是待驗證的解釋。",
+      "target": "PepsiCo 的 FLNA 分部獲利",
+      "horizon": "2024 年第四季，後續追蹤至 2025-06-30",
+      "catalyst": "PepsiCo 公布第四季分部業績及可比性調整。",
+      "prediction": "第四季 FLNA 核心固定匯率營業利益仍較上年同期下降。",
+      "invalidation": "第四季該指標持平或成長，即推翻獲利續降的預測。若營收續降而獲利回升，應優先檢查成本與產品組合的變化。",
+      "claim_ids": ["pep-q3:flna", "pep-q3:outlook"]
+    },
+    {
+      "stance": "bull",
+      "mechanism": "PepsiCo Beverages North America（PBNA）第三季在 GAAP 營收約持平、有機營收年增 1% 的情況下，核心固定匯率營業利益年增 7%。若成本控制或產品組合帶來的效益可以延續，溫和的營收成長仍可能支撐獲利成長。兩項效益的實際貢獻有待分部說明確認。",
+      "target": "PepsiCo 的 PBNA 分部獲利",
+      "horizon": "2024 年第四季，後續追蹤至 2025-06-30",
+      "catalyst": "PepsiCo 公布第四季 PBNA 有機營收及核心固定匯率營業利益。",
+      "prediction": "第四季 PBNA 核心固定匯率營業利益維持正年增率。",
+      "invalidation": "第四季該指標年增率降至零或轉負，即推翻獲利續增的預測。",
+      "claim_ids": ["pep-q3:pbna"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024-10-08，PepsiCo 第三季北美零食獲利走弱，北美飲料獲利成長。FLNA 的 GAAP 營收年減 1%、核心固定匯率營業利益年減 9%。PBNA 的 GAAP 營收約持平，核心固定匯率營業利益年增 7%。兩者對集團獲利的影響取決於各自的利益基數，僅憑這兩個增減率無法判定飲料業務補回多少零食業務的減額。集團層級宜維持觀望。",
+    "key_gap": "提供的摘要缺少兩分部的可比營業利益金額，也缺少集團全年展望的新舊數值，因此無法量化兩分部的淨貢獻或本次展望修訂幅度。",
+    "next_check": "先核對第三季財報的分部利益表與可比性調整，取得兩分部去年同期的利益基數，換算同口徑的利益增減額。再比對公司前後兩次全年展望的指標、數值與假設。",
+    "evidence_limits": [
+      {
+        "evidence_id": "pep-q3:flna",
+        "limit": "GAAP 營收與核心固定匯率營業利益採用不同口徑。兩個年增率的差距無法直接換算為營業利益率變動，摘要也未拆分銷量、價格與成本影響。"
+      },
+      {
+        "evidence_id": "pep-q3:original",
+        "limit": "摘錄僅列分部名稱 Frito-Lay North America，可用於辨識分部，未提供額外業績數據。"
+      },
+      {
+        "evidence_id": "pep-q3:outlook",
+        "limit": "摘要確認展望適用於集團全年，未列修訂方向、幅度或分部預測值。"
+      },
+      {
+        "evidence_id": "pep-q3:pbna",
+        "limit": "摘要未量化飲料獲利成長的來源及金額，單季增幅也不足以判定其持續性。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "FLNA 與 PBNA 在相同可比口徑下的營業利益年增減額，以及兩者合計的正負方向",
+        "source_to_watch": "PepsiCo 2024 年第三季財報分部表及可比性調整表",
+        "window": "第三季財報覆核時",
+        "impact_on_thesis": "若 PBNA 利益增額達到 FLNA 減額，可確認飲料在這兩個分部的合計數中補足零食缺口。若低於減額，差額即為兩分部的合計拖累。",
+        "evidence_ids": ["pep-q3:flna", "pep-q3:pbna", "pep-q3:outlook"]
+      },
+      {
+        "metric": "集團全年展望各項指標的新舊數值及計算口徑",
+        "source_to_watch": "PepsiCo 第三季財報展望段落及前一次公司展望公告",
+        "window": "以 2024-10-08 截止時點已公布的兩版展望比對",
+        "impact_on_thesis": "逐項確認哪些目標調整、哪些維持，才能判斷公司對全年營收與獲利的預期是否同向變動。",
+        "evidence_ids": ["pep-q3:outlook"]
+      },
+      {
+        "metric": "兩分部逐季的核心固定匯率營業利益年增率，以及公司揭露的主要變動原因",
+        "source_to_watch": "PepsiCo 後續季度財報的分部表、可比性調整及管理層說明",
+        "window": "先以 2024 年第四季檢驗預測，再追蹤截至 2025-06-30 已公布的季度",
+        "impact_on_thesis": "FLNA 續降且 PBNA 續增將支持分化延續。任一分部改變方向，便須重估其對集團獲利的貢獻。",
+        "evidence_ids": ["pep-q3:flna", "pep-q3:pbna"]
+      }
+    ],
+    "supply_chain": [],
+    "trade_opportunities": [
+      {
+        "company": "PepsiCo",
+        "direction": "watch",
+        "earnings_path": "FLNA 獲利回穩可減輕集團壓力，PBNA 若維持成長則可增加利益貢獻。對集團的淨影響仍取決於分部規模及其他業務表現。",
+        "catalyst": "下一次分部業績及集團展望更新。",
+        "trigger": "若 FLNA 核心固定匯率營業利益止跌、PBNA 同指標續增，且集團獲利展望同步改善，重新評估偏多情境。",
+        "invalidation": "若 FLNA 利益續降且減額超過 PBNA 增額，或集團下修獲利展望，偏多條件即告失效。",
+        "evidence_gap": "現有資料缺少分部利益金額、集團展望數值、估值與市場預期，亦未提供上市代號佐證。",
+        "ticker": null,
+        "listing_evidence_id": null,
+        "evidence_ids": ["pep-q3:flna", "pep-q3:pbna", "pep-q3:outlook"]
+      }
+    ]
+  }
+}

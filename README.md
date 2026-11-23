@@ -112,6 +112,19 @@ python -m research_app.demo --codex --output output/codex
 
 Codex 與模型 API 模式在首稿產生「連動業務假說」，分別列事件起點、受影響業務、必要條件、財務影響、其他解釋與可查核的預測。開啟搜尋時，首稿會在既有補查輪次追查相關業務。追問沿用該版引文，有新的可驗證假說時另存子版。情境重算、盈利重算、共識匯入、指引核對與 Markdown 匯出都帶出對應版本的連動和引文。盈利草稿可使用有量化依據的內部連動，實際試算仍以該版的金額參數和適用口徑為準。工作台從「概觀」、「盈利」或供應鏈頁面即可開啟相應證據。
 
+#### 跨業務假說深度 benchmark
+
+封存 4 案先導與 8 案保留集，發行人互異，正負各半。兩組使用相同 Astra medium、點時原文節錄與同期摘要，各一次呼叫、180 秒上限。題目只給事件，兩組採相同輸出結構。程式檢查引文與時間，匿名 Sol 評審評估兩端證據、因果必要條件、財務方向和反證，另記負例缺口與重大錯誤。Ford、ASML 只做離線回歸。 [評測報告與完整紀錄](docs/linkage-depth/README.md)
+
+先導 4/4 配對，兩組均 3/4 全對。保留集 8/8 配對，兩組均 **6/8 全對、零重大錯誤**。Harness 正例 **2/4**、負例 **4/4**，純 Astra 正例 **4/4**、負例 **2/4**。Harness 未達預註冊領先門檻，正例漏掉 Microsoft 的 Azure 支出傳導和 lululemon 的服飾通路或留存路徑。兩組生成和 Sol 判讀共 36 次全部完成。人工盲評 **0 案**，可送評 **12 案**。 [評測 PDF](docs/linkage-depth/report.pdf) · [逐案 QA](docs/linkage-depth/QA.md) · [匿名覆核 PDF](docs/linkage-depth/analyst-review.pdf) · [空白評分表](docs/linkage-depth/review-form.csv)
+
+```bash
+python -m benchmarks.linkage_depth --out output/linkage-depth-new --phase seal
+python -m benchmarks.linkage_depth --out output/linkage-depth-new --phase pilot
+python -m benchmarks.linkage_depth --out output/linkage-depth-new --phase holdout
+python -m benchmarks.linkage_depth --out output/linkage-depth-new --phase report
+```
+
 可為伺服器設定搜尋預設值。啟用後，使用者只需送事件與研究截止時點。
 
 ```bash

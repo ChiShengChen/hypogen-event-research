@@ -1,0 +1,86 @@
+{
+  "case": "H-08",
+  "call": "harness",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:52:55.389327+00:00",
+  "queued_epoch": 1795431175.3893366,
+  "started_at": "2026-11-23T10:52:55.402060+00:00",
+  "request_sha256": "b310e6e1d07bbd8c8f7528eb1f49fbf98e62736e7e70bb8f95f87873738c7a6a",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.004,
+  "prompt_bytes": 11929,
+  "returncode": 0,
+  "cli_elapsed_seconds": 57.348,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "NIKE Brand Digital",
+        "origin_evidence_ids": [
+          "nike-q2:direct"
+        ],
+        "affected_company": "NIKE",
+        "affected_business": "批發",
+        "affected_evidence_ids": [
+          "nike-q2:wholesale"
+        ],
+        "mechanism": "第二財季數位銷售年減 21%，批發營收僅年減 3%。若數位銷售疲弱促使 NIKE 將部分商品改配批發，且通路商決定增購，NIKE 交貨並符合認列條件後，批發可抵銷部分直營營收壓力。",
+        "baseline": "若配貨維持原狀，批發不會因這項調整取得增量。第二財季批發營收為 69 億美元，按報告口徑年減 3%。",
+        "condition": "NIKE 實際調整配貨，通路商選擇增購，且 NIKE 在第三財季認列增量營收。通路商也可能延後採購、消化庫存或採購其他品牌。",
+        "financial_effect": "若條件成立，批發營收高於維持原配貨時的水準。增購量、批發實現價格及被取代的直營銷售額未揭露，無法估算集團淨收益。",
+        "alternative_explanation": "通路商按原計畫補貨也可能帶動批發回升。須比對 NIKE 對配貨調整及通路商實際承接的公開說明，才能區分兩者。",
+        "metric": "NIKE 批發營收按報告口徑的年增率，作為通路承接需求的代理指標，無法識別轉單量或終端零售銷量。",
+        "observation_period": "2025 財年第三季，相對第二季的年增率",
+        "public_source": "NIKE 投資人關係網站公布的季度財報及通路說明",
+        "deadline": "2025-06-30",
+        "prediction": "第三財季批發營收年增率高於 −3%。若公司亦確認改配與通路商承接，可提高對批發抵銷直營壓力的信心。",
+        "invalidation": "第三財季批發營收年增率為 −3% 或更低，否定預期的通路層級改善。若僅缺少配貨說明，則改配原因仍待確認。"
+      }
+    ],
+    "business_linkage_gap": "公開數字未揭露數位與批發之間的商品配額、通路商增購量或各通路毛利率。即使批發回升，也無法據此量化配貨對集團獲利的貢獻。資料亦未具名供應商、批發客戶或同業。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "NIKE Brand Digital",
+        "origin_evidence_ids": [
+          "nike-q2:direct"
+        ],
+        "affected_company": "NIKE",
+        "affected_business": "批發",
+        "affected_evidence_ids": [
+          "nike-q2:wholesale"
+        ],
+        "mechanism": "第二財季數位銷售年減 21%，批發營收僅年減 3%。若數位銷售疲弱促使 NIKE 將部分商品改配批發，且通路商決定增購，NIKE 交貨並符合認列條件後，批發可抵銷部分直營營收壓力。",
+        "baseline": "若配貨維持原狀，批發不會因這項調整取得增量。第二財季批發營收為 69 億美元，按報告口徑年減 3%。",
+        "condition": "NIKE 實際調整配貨，通路商選擇增購，且 NIKE 在第三財季認列增量營收。通路商也可能延後採購、消化庫存或採購其他品牌。",
+        "financial_effect": "若條件成立，批發營收高於維持原配貨時的水準。增購量、批發實現價格及被取代的直營銷售額未揭露，無法估算集團淨收益。",
+        "alternative_explanation": "通路商按原計畫補貨也可能帶動批發回升。須比對 NIKE 對配貨調整及通路商實際承接的公開說明，才能區分兩者。",
+        "metric": "NIKE 批發營收按報告口徑的年增率，作為通路承接需求的代理指標，無法識別轉單量或終端零售銷量。",
+        "observation_period": "2025 財年第三季，相對第二季的年增率",
+        "public_source": "NIKE 投資人關係網站公布的季度財報及通路說明",
+        "deadline": "2025-06-30",
+        "prediction": "第三財季批發營收年增率高於 −3%。若公司亦確認改配與通路商承接，可提高對批發抵銷直營壓力的信心。",
+        "invalidation": "第三財季批發營收年增率為 −3% 或更低，否定預期的通路層級改善。若僅缺少配貨說明，則改配原因仍待確認。"
+      }
+    ],
+    "business_linkage_gap": "公開數字未揭露數位與批發之間的商品配額、通路商增購量或各通路毛利率。即使批發回升，也無法據此量化配貨對集團獲利的貢獻。資料亦未具名供應商、批發客戶或同業。"
+  },
+  "elapsed_seconds": 57.35,
+  "usage": {
+    "input_tokens": 18750,
+    "cached_input_tokens": 0,
+    "output_tokens": 2405,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.17,
+    "turn.started": 1.324,
+    "item.completed": 56.776,
+    "turn.completed": 56.816
+  },
+  "finished_at": "2026-11-23T10:53:52.753908+00:00"
+}

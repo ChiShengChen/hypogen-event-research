@@ -1,0 +1,36 @@
+{
+  "case": "P-04",
+  "call": "harness",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:34:23.742361+00:00",
+  "queued_epoch": 1795430063.742377,
+  "started_at": "2026-11-23T10:34:23.759316+00:00",
+  "request_sha256": "1aa29cbd889e4c9554fae168002dc51fa489c9d59ea452090d05f7e4b8f60edb",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.009,
+  "prompt_bytes": 11997,
+  "returncode": 0,
+  "cli_elapsed_seconds": 46.517,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "Frito-Lay North America 與 PepsiCo Beverages North America 的分部表可核對各自表現，但要判斷一方是否因另一方承壓而受益，仍缺管理層對預算或產能實際移轉方向、時點及受影響分部的說明。兩部門利益增速一升一降，無法辨識資源移轉。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "Frito-Lay North America 與 PepsiCo Beverages North America 的分部表可核對各自表現，但要判斷一方是否因另一方承壓而受益，仍缺管理層對預算或產能實際移轉方向、時點及受影響分部的說明。兩部門利益增速一升一降，無法辨識資源移轉。"
+  },
+  "elapsed_seconds": 46.519,
+  "usage": {
+    "input_tokens": 18785,
+    "cached_input_tokens": 0,
+    "output_tokens": 1714,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.183,
+    "turn.started": 1.345,
+    "item.completed": 45.882,
+    "turn.completed": 45.917
+  },
+  "finished_at": "2026-11-23T10:35:10.280703+00:00"
+}

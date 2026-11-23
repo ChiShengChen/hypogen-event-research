@@ -1,0 +1,44 @@
+{
+  "case": "H-04",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:45:29.078515+00:00",
+  "queued_epoch": 1795430729.0785267,
+  "started_at": "2026-11-23T10:45:29.358440+00:00",
+  "request_sha256": "53ec5de1274984e68286915dd9a70fd61c99ce845c52d2be0d0800614a259b25",
+  "queue_seconds": 0.204,
+  "preparation_seconds": 0.077,
+  "prompt_bytes": 5089,
+  "returncode": 0,
+  "cli_elapsed_seconds": 10.419,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出同店跨品類購物籃資料缺口，明確保留美妝是否帶動食品或日用品購買的判斷。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "將美妝是否帶動食品飲料或必需品銷售留待驗證，並指出需要同筆交易的跨品類購買率及比較基期。"
+    }
+  },
+  "elapsed_seconds": 10.421,
+  "usage": {
+    "input_tokens": 16150,
+    "cached_input_tokens": 0,
+    "output_tokens": 263,
+    "reasoning_output_tokens": 91
+  },
+  "event_seconds": {
+    "thread.started": 1.129,
+    "turn.started": 1.299,
+    "item.completed": 9.909,
+    "turn.completed": 9.957
+  },
+  "finished_at": "2026-11-23T10:45:39.803793+00:00"
+}

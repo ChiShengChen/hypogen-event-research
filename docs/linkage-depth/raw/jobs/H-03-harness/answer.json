@@ -1,0 +1,89 @@
+{
+  "business_linkages": [
+    {
+      "linked_stance": "bull",
+      "scope": "internal",
+      "origin_business": "SmartCast",
+      "origin_evidence_ids": ["wmt-vizio:event"],
+      "affected_company": "Walmart",
+      "affected_business": "Walmart Connect",
+      "affected_evidence_ids": ["wmt-vizio:agency", "wmt-vizio:original"],
+      "mechanism": "收購把 SmartCast 納入集團。若 Walmart Connect 取得可銷售的電視廣告版位，且廣告主決定投放，Walmart Connect 可增加一個實際交付廣告的通路。",
+      "baseline": "若交易未改變銷售安排，SmartCast 可沿用原通路銷售。公告未交代交割前兩平台的合作範圍。",
+      "condition": "Walmart Connect 須取得版位並完成投放，廣告主也須選用該通路。集團收入要有增量，還需新增預算或原本無法售出的版位。",
+      "financial_effect": "新增付費投放可提高廣告收入。缺少新增支出、成交價格、原通路收入及收入歸屬，無法估計淨增額。",
+      "alternative_explanation": "既有 VIZIO 廣告改由 Walmart Connect 銷售，也可能產生投放案例。可查 Walmart 是否說明該活動帶來追加預算。",
+      "metric": "由 Walmart Connect 銷售、已在 SmartCast 實際投放的公開案例，作為通路採用代理指標。",
+      "observation_period": "2024-12-03 交割公告後至 2025-12-31",
+      "public_source": "Walmart 公司新聞稿或 Walmart Connect 公開廣告主案例。",
+      "deadline": "2025-12-31",
+      "prediction": "期內可見至少一例由 Walmart Connect 銷售且已在 SmartCast 投放的廣告。",
+      "invalidation": "Walmart 明確確認截至同一期末，經 Walmart Connect 銷售並在 SmartCast 實際投放的廣告仍為零。"
+    }
+  ],
+  "business_linkage_gap": "Platform+ 在公告時貢獻 VIZIO 全部毛利。要判斷新通路是否排擠其原有廣告，需有同口徑的原通路與新增通路收入及毛利。資料未顯示 Walmart 會公開此拆分。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "交割讓 Walmart 可把 SmartCast 電視版位納入 Walmart Connect 的銷售範圍。相較維持既有安排，若新增可購買的版位吸引額外投放，廣告交付後可帶來增量收入。管理層預期成長，但未披露可售量、價格或新增預算。",
+      "target": "Walmart",
+      "horizon": "2025-12-31",
+      "catalyst": "以 2024-12-03 交割為起點，至 2025-12-31 查 Walmart 公司新聞稿及 Walmart Connect 廣告產品公告，確認新增版位何時開放購買。",
+      "prediction": "期內 Walmart Connect 至少開放一項明確標為交割後新增、可購買 SmartCast 版位的廣告產品。這項里程碑只驗證可售性，訂單、實際投放及收入認列各需另證。",
+      "invalidation": "Walmart 明確說明截至 2025-12-31，Walmart Connect 交割後新增且已開放購買的 SmartCast 廣告產品仍為零。",
+      "claim_ids": ["fact:wmt-vizio:event", "fact:wmt-vizio:agency", "fact:wmt-vizio:original"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "交割前兩平台可各自服務廣告主。若收購後銷售跨平台活動，但成效報告仍須分開產製再核對，Walmart 每次交付跨平台報告就可能增加服務工時，壓低該類活動的貢獻毛利。成本取決於活動數與額外工時，兩者均待查。",
+      "target": "Walmart",
+      "horizon": "2025-12-31",
+      "catalyst": "交割後首次推出涵蓋 SmartCast 的 Walmart Connect 跨平台活動時，查其公開產品說明及活動衡量指南，並於 2025-12-31 覆核當時適用的報告流程。",
+      "prediction": "若期內推出此類活動，至期末 Walmart Connect 的公開說明仍顯示，同一活動的 SmartCast 與其他 Walmart Connect 版位須分別出具成效報告並另行核對。流程是成本代理指標，不能量出工時。",
+      "invalidation": "若期內推出此類活動，而截至同一期末 Walmart Connect 的說明顯示同一活動的兩類版位已能直接產出統一報告、無須另行核對，即推翻此瓶頸假設。若未推出或流程未公開，則無法判定。",
+      "claim_ids": ["fact:wmt-vizio:event", "fact:wmt-vizio:agency"]
+    }
+  ],
+  "assessment": {
+    "thesis": "Walmart 已完成收購 VIZIO，廣告獲利能否增加，取決於 Walmart Connect 能否透過 SmartCast 吸引新增付費投放，以及跨平台服務成本會抵銷多少收益。",
+    "key_gap": "最重要的是分辨新增廣告毛利與併入既有 Platform+ 毛利。若 Walmart 未披露同口徑收入及成本拆分，精確歸因需非公開的活動收入與成本紀錄。",
+    "next_check": "以 Walmart 2024-12-03 收購完成公告為基準，查交割後至 2025-12-31 的首份 Walmart Connect 產品更新，核對 SmartCast 版位是否已開放購買，再查有無已投放案例。",
+    "evidence_limits": [
+      {"evidence_id": "wmt-vizio:event", "limit": "確認交易完成及 VIZIO 提供 SmartCast，未交代廣告版位的銷售權與上線進度。"},
+      {"evidence_id": "wmt-vizio:agency", "limit": "支持管理層的廣告成長預期。技術整合進度與服務成本仍未知。"},
+      {"evidence_id": "wmt-vizio:original", "limit": "同一公告的原文確認成長目標指向 Walmart Connect，未給出成長幅度或期限。"},
+      {"evidence_id": "wmt-vizio:platform", "limit": "Platform+ 主要經營廣告，公告時占 VIZIO 全部毛利。這個占比無法推算 Walmart 的新增毛利。"}
+    ],
+    "public_checks": [
+      {
+        "metric": "新增 SmartCast 版位是否開放購買，是否已有實際投放案例。",
+        "source_to_watch": "Walmart 公司新聞稿、Walmart Connect 廣告產品公告與案例。",
+        "window": "交割後各次產品更新，至 2025-12-31 覆核。",
+        "impact_on_thesis": "開放購買支持銷售機制，實際投放再支持採用。兩者均無法辨識新增預算或已認列收入。",
+        "evidence_ids": ["wmt-vizio:event", "wmt-vizio:original"]
+      },
+      {
+        "metric": "涵蓋 SmartCast 的跨平台活動能否直接產出統一成效報告。",
+        "source_to_watch": "Walmart Connect 對外產品說明或廣告活動衡量指南。",
+        "window": "相關產品推出時至 2025-12-31，查期末適用版本。",
+        "impact_on_thesis": "需另行核對支持服務成本風險，直接出具統一報告則削弱此假設。若公開文件未說明流程，成本風險仍待查。",
+        "evidence_ids": ["wmt-vizio:agency", "wmt-vizio:event"]
+      }
+    ],
+    "supply_chain": [
+      {
+        "company": "VIZIO",
+        "role": "upstream",
+        "status": "candidate",
+        "product_scope": "SmartCast 連網電視作業系統及可能經 Walmart Connect 銷售的廣告版位。",
+        "relationship": "Walmart 已收購 VIZIO，VIZIO 提供 SmartCast。集團內的版位供應安排仍待證實。",
+        "transmission": "若 Walmart 將 SmartCast 版位授予 Walmart Connect 銷售，且廣告主選用，便可經該通路投放。",
+        "materiality": "Platform+ 占公告時 VIZIO 全部毛利，但 SmartCast 版位的毛利貢獻及 Walmart 可獲得的增量均未知。",
+        "public_check": "交割後至 2025-12-31 查 Walmart Connect 產品公告與案例是否指明 SmartCast 版位及實際投放。",
+        "gap": "缺少可售版位範圍、原通路重疊程度及收入歸屬。",
+        "evidence_ids": ["wmt-vizio:event", "wmt-vizio:platform", "wmt-vizio:agency"]
+      }
+    ],
+    "trade_opportunities": []
+  }
+}

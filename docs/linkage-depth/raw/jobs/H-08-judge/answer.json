@@ -1,0 +1,40 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持數位銷售年減 21% 與批發營收年減 3%。改配、增購及認列均列為條件，批發營收增量方向明確，集團淨影響仍無法量化。NIKE 第三季若公開確認改配及通路商實際承接，可區分改配與例行補貨。單看批發年增率只能檢驗整體改善。"
+        }
+      ],
+      "note": "指出缺少通路配額與實際增購量，並明確保留改配歸因。"
+    },
+    {
+      "label": "B",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持通路營收與集團毛利率讀數，直營占兩通路營收約 42%。直營毛利率較高時，占比下降會對集團毛利率形成壓力，幅度仍未知。若 NIKE 同季公告明示通路組合貢獻為零或為正，即可排除該季由此機制拖累毛利率。"
+        }
+      ],
+      "note": "已保留毛利歸因，但未點明缺少同款同市場、通路配置或顧客遷移證據，也未明確保留相同顧客轉往批發的歸因。"
+    }
+  ]
+}

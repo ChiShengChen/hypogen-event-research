@@ -1,0 +1,74 @@
+{
+  "business_linkages": [],
+  "business_linkage_gap": "Beauty、Food & Beverage 與 Essentials 的可比銷售均有成長，但品類增幅無法辨識美妝客是否順帶購買食品或日用品，也無法辨識預算排擠。驗證需有 Target 披露同店跨品類購物籃變化，或取得非公開的交易明細並比較相似客群。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "第三季 Beauty 可比銷售增逾 6%，高於全店的 0.3%。若這部分需求延續，相較於 Beauty 銷售持平的情境，將支撐整體可比銷售。公告揭示已實現的銷售差異。後續需求延續是研究假設，其營收貢獻幅度與獲利效果仍取決於 Beauty 的銷售權重及毛利率。",
+      "target": "Target",
+      "horizon": "2025-06-30",
+      "catalyst": "以 2024-11-20 第三季業績為起點，於 Target 發布 2024 財年第四季業績時檢查品類表現，最遲於 2025-06-30 覆核。",
+      "prediction": "Target 第四季業績公告或業績說明會若披露品類數據，預期 Beauty 第四季可比銷售年增率高於零。這可確認美妝銷售持續提供正貢獻，貢獻金額仍待品類權重。",
+      "invalidation": "Target 披露同一財季 Beauty 可比銷售年增率為零或負值。若僅披露全店數據，品類假設仍待驗證。",
+      "claim_ids": ["fact:tgt-q3:beauty", "fact:tgt-q3:original", "fact:tgt-q3:overall"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "第三季客流增 2.4%，全店可比銷售僅增 0.3%，顯示平均每筆交易金額承壓。若第四季新增交易仍偏向較小購物籃，相較於相同客流且平均交易金額持平的情境，每次來客帶來的銷售較少，限制營收成長。公告未拆分件數與單價，也無法量化每筆交易的獲利影響。",
+      "target": "Target",
+      "horizon": "2025-06-30",
+      "catalyst": "2024-11-20 業績揭示客流與銷售增幅落差。於 Target 發布 2024 財年第四季業績時，以同一可比基礎覆核兩者，最遲於 2025-06-30 檢查。",
+      "prediction": "Target 第四季全店可比銷售年增率仍低於同期可比客流年增率，顯示平均每筆交易金額年減。此差距可追蹤購物籃金額，無法辨識由哪類顧客或商品造成。",
+      "invalidation": "Target 第四季全店可比銷售年增率等於或高於同期可比客流年增率，表示同口徑平均每筆交易金額持平或增加。若缺少同口徑客流數據，則無法判定。",
+      "claim_ids": ["fact:tgt-q3:overall"]
+    }
+  ],
+  "assessment": {
+    "thesis": "Target 第三季的 Beauty 銷售成長可支撐營收，但全店客流增幅高於可比銷售增幅，第四季的營收表現也取決於平均每筆交易金額能否回穩。",
+    "key_gap": "最重要的未知是 Beauty 成長帶來多少全店毛利。估算需有品類銷售權重與毛利率，若 Target 未公開拆分，量化須依賴非公開品類帳務資料。",
+    "next_check": "在 Target 公布 2024 財年第四季業績後、2025-06-30 前，讀取該季業績公告，比對全店可比銷售與客流年增率，並核對 Beauty 可比銷售及合併毛利率。第四季判斷均為研究情境，所附公告只提供第三季實績。",
+    "evidence_limits": [
+      {
+        "evidence_id": "tgt-q3:beauty",
+        "limit": "第三季 Beauty 可比銷售增逾 6%，Food & Beverage 與 Essentials 均增低個位數。缺少品類權重、毛利及同筆交易資料。"
+      },
+      {
+        "evidence_id": "tgt-q3:original",
+        "limit": "英文摘句確認逾 6% 指 Beauty 可比銷售增幅，與中文摘要出自同一段公告，未增加獨立觀察。"
+      },
+      {
+        "evidence_id": "tgt-q3:overall",
+        "limit": "第三季全店可比銷售增 0.3%、客流增 2.4%，可檢查平均交易金額方向。全店數字無法辨識美妝客的消費行為。"
+      },
+      {
+        "evidence_id": "tgt-q3:margin",
+        "limit": "第三季合併毛利率年減 0.2 個百分點，提供全店獲利能力基準，無法歸因於 Beauty 或購物籃變化。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "Beauty 可比銷售年增率",
+        "source_to_watch": "Target 季度業績公告或業績說明會的品類回顧",
+        "window": "2024 財年第四季業績發布後至 2025-06-30",
+        "impact_on_thesis": "正成長支持美妝需求延續，持平或下滑削弱此判斷。品類權重決定對全店的貢獻幅度。",
+        "evidence_ids": ["tgt-q3:beauty", "tgt-q3:original"]
+      },
+      {
+        "metric": "全店可比銷售與可比客流的年增率差距",
+        "source_to_watch": "Target 季度業績公告的可比銷售與客流數據",
+        "window": "2024 財年第四季業績發布後至 2025-06-30",
+        "impact_on_thesis": "銷售增幅持續落後客流，支持平均交易金額承壓。銷售增幅追平或超過客流，則推翻第四季購物籃縮小假設。",
+        "evidence_ids": ["tgt-q3:overall"]
+      },
+      {
+        "metric": "合併毛利率年變動，以第三季年減 0.2 個百分點為基準",
+        "source_to_watch": "Target 季度業績公告的合併毛利率",
+        "window": "2024 財年第四季業績發布後至 2025-06-30",
+        "impact_on_thesis": "若毛利率轉為年增，對全店毛利率回穩的信心提高。若降幅擴大，則信心降低。此指標僅為全店獲利能力的代理，無法拆出美妝貢獻。",
+        "evidence_ids": ["tgt-q3:margin"]
+      }
+    ],
+    "supply_chain": [],
+    "trade_opportunities": []
+  }
+}

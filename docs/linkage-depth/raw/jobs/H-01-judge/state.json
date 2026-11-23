@@ -1,0 +1,66 @@
+{
+  "case": "H-01",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:38:40.466111+00:00",
+  "queued_epoch": 1795430320.4661217,
+  "started_at": "2026-11-23T10:38:40.492031+00:00",
+  "request_sha256": "3a983beb6a27023859ea0f8e898314443f9d384fb82fcf058b3502d4ac11af0d",
+  "queue_seconds": 0.01,
+  "preparation_seconds": 0.016,
+  "prompt_bytes": 9484,
+  "returncode": 0,
+  "cli_elapsed_seconds": 16.231,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 LSEG 遷移至 Azure 及十年最低支出承諾。正式上線可驗證遷移，新增雲端營收仍須新增計費用量佐證。期內公開確認遷移延後或計費用量持平，均可推翻期內新增用量假設。"
+        }
+      ],
+      "note": "符合指定路徑，且未將十年最低支出均攤為已認列營收。缺口說明整合的付費方式、採用基準與收入歸屬仍待揭露。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 Teams 與 Workspace 的整合計畫。LSEG 產品公告可區分正式對外開放與僅限試用，驗證新增入口。Workspace 營收增量取決於可歸因的付費或續約。此路徑未涵蓋 Azure 遷移與雲端需求。"
+        }
+      ],
+      "note": "缺口指出缺少共用人力、預算與資源調度證據，並明確保留對兩案是否互相排擠的判斷。"
+    }
+  },
+  "elapsed_seconds": 16.232,
+  "usage": {
+    "input_tokens": 17371,
+    "cached_input_tokens": 0,
+    "output_tokens": 558,
+    "reasoning_output_tokens": 97
+  },
+  "event_seconds": {
+    "thread.started": 0.71,
+    "turn.started": 1.397,
+    "item.completed": 15.717,
+    "turn.completed": 15.765
+  },
+  "finished_at": "2026-11-23T10:38:56.725876+00:00"
+}

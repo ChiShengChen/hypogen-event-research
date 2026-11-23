@@ -1,0 +1,65 @@
+{
+  "business_linkages": [
+    {
+      "linked_stance": "bull",
+      "scope": "internal",
+      "origin_business": "robotaxi 開發",
+      "origin_evidence_ids": ["gm-av:event"],
+      "affected_company": "General Motors",
+      "affected_business": "Super Cruise",
+      "affected_evidence_ids": ["gm-av:business"],
+      "mechanism": "停止資助 robotaxi 開發後，若 GM 將具備適用技能的工程人員調入 Super Cruise 車型導入專案，便可能在削減總支出的同時擴大可搭載車款。",
+      "baseline": "2024-12-10 公告時已有逾 20 款車提供 Super Cruise。即使維持原策略，既有車型計畫也可能帶來新增車款。",
+      "condition": "GM 實際將 Cruise 人員配置到 Super Cruise，且這項調度促成至少一款原計畫以外的車型導入，或使既定導入提前。",
+      "financial_effect": "新增可搭載車款可擴大潛在收入來源。實際收入貢獻取決於車輛交付、消費者選配、定價與收入認列，現有資料無法估算。",
+      "alternative_explanation": "新車款可能依重整前的產品計畫如期推出。須比對 GM 對原定時程的說明，以及產品更新是否明確將新增或提前導入歸因於團隊調度。",
+      "metric": "GM 明確歸因於團隊調度、且已新增或提前提供 Super Cruise 的車款數。公開車款名單僅是供應範圍的代理指標。",
+      "observation_period": "2024-12-10 公告後至 2025-12-31，以期間內已公開的車型上市及重整更新為準。",
+      "public_source": "GM Newsroom 的 Super Cruise 車型公告及 GM 財報說明會的工程團隊配置說明。",
+      "deadline": "2025-12-31",
+      "prediction": "期間內至少一款車已提供 Super Cruise，且 GM 確認團隊調度使該款新增或提前導入。",
+      "invalidation": "GM 確認截至覆核日，團隊調度促成的新增或提前導入車款數為零。若只公布車款而未解釋調度影響，歸因仍待查。"
+    }
+  ],
+  "business_linkage_gap": "GM 未披露 Super Cruise 承接的人力、原定車型時程或各車款的收益。若公司未公開說明調度成效，判斷是否加快導入需要非公開的人力配置與專案時程紀錄。材料也未指名承受訂單變動的外部供應商或客戶。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "相較於繼續資助 Cruise 的 robotaxi 開發，退出該項開發可省下持續投入的支出。若節省額高於新增整合與留任成本，GM 的持續性支出將下降。公司預期重整完成後每年少支出逾 10 億美元，2025 年內實現多少仍取決於停支時點與一次性成本。",
+      "target": "General Motors",
+      "horizon": "2025-12-31",
+      "catalyst": "2024-12-10 宣布停止資助，公司當時預期於 2025 年上半年完成重整。從上半年結束後的 GM 季度財報及說明會追蹤實際節省進度。",
+      "prediction": "截至 2025-12-31，GM 在已公開的重整更新中確認，相對於延續原計畫，已實現的持續性支出節省按年化計超過 10 億美元。",
+      "invalidation": "GM 就同一期間及原計畫基準確認，截至覆核日已實現的年化持續性支出節省為 10 億美元或以下。重申長期指引或僅披露累計節省額，均不足以判定。",
+      "claim_ids": ["fact:gm-av:event", "fact:gm-av:cost"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "原架構下兩支技術團隊可依各自權責運作。合併要求重新分配工程任務與決策權，若交接耗時，GM 可能已停止 robotaxi 投入，卻仍錯過自身重整時程。過渡期延長可能增加協調與留任成本，金額未披露。",
+      "target": "General Motors",
+      "horizon": "2025-12-31",
+      "catalyst": "以 GM 原預期的 2025 年上半年完成時點為界，檢查其後至年底公布的 GM 重整公告、季度財報或說明會。",
+      "prediction": "GM 公開確認，截至 2025-06-30，Cruise LLC 與 GM 技術團隊仍有交接工作待完成，導致重整延至下半年。",
+      "invalidation": "GM 在 2025-12-31 前公開確認，兩支技術團隊已完成交接，且重整於 2025-06-30 或之前完成。若只確認法律實體變更，工程交接進度仍待查。",
+      "claim_ids": ["fact:gm-av:event", "fact:gm-av:original", "fact:gm-av:cost"]
+    }
+  ],
+  "assessment": {
+    "thesis": "GM 停止資助 robotaxi 開發可降低持續性支出，而技術團隊能否按期完成交接，決定公司能多快把重整轉化為營運效益。",
+    "key_gap": "逾 10 億美元是重整完成後的年度支出節省指引；最重要的未知數是 2025 年實際停支多少，以及整合支出抵銷多少。",
+    "next_check": "先查 2025 年上半年結束後 GM 首次季度財報及說明會，核對重整完成日期、已實現的年化節省與當期整合費用。若只更新指引，精算 2025 年淨節省仍需非公開的原計畫預算與實際支出明細。",
+    "evidence_limits": [
+      {"evidence_id": "gm-av:event", "limit": "支持停止資助的策略公告及團隊整合意向，未確認實際停支或完成交接日期。"},
+      {"evidence_id": "gm-av:cost", "limit": "支持上半年完成及每年節省逾 10 億美元的條件式預期，未提供 2025 年實績或一次性費用。"},
+      {"evidence_id": "gm-av:business", "limit": "支持公告時已有逾 20 款車提供 Super Cruise，以及推進個人用車駕駛輔助的方向。可搭載車款數無法衡量交付、採用或認列收入。"},
+      {"evidence_id": "gm-av:original", "limit": "同一公告英文原文確認 GM 持有 Cruise LLC 多數股權並擬整合技術團隊，未交代人員去向或新增資源配置。"}
+    ],
+    "public_checks": [
+      {"metric": "重整實際完成日期，以及技術團隊是否完成交接。", "source_to_watch": "GM Newsroom 重整公告、GM 季度財報及說明會。", "window": "2025 年上半年結束後至 2025-12-31。", "impact_on_thesis": "上半年完成交接及重整會削弱執行延誤假設。GM 若確認交接導致延期，則提高該假設可信度，成本影響仍待量化。", "evidence_ids": ["gm-av:event", "gm-av:original", "gm-av:cost"]},
+      {"metric": "GM 已實現的年化持續性支出節省，相對公司逾 10 億美元的年度目標。", "source_to_watch": "GM 季度財報、財報說明會或更新原指引的公司公告。", "window": "原定 2025 年上半年完成時點後，至年底已公開的更新。", "impact_on_thesis": "已實現的年化節省達標會強化持續降支判斷。若只重申目標，仍須等待實績，當期獲利另受一次性費用及會計認列影響。", "evidence_ids": ["gm-av:cost"]},
+      {"metric": "公告後實際新增提供 Super Cruise 的車款，以及 GM 對導入時程的說明。", "source_to_watch": "GM Newsroom 的車型與 Super Cruise 產品公告。", "window": "自策略公告後逐次檢查車型上市更新，至 2025-12-31。", "impact_on_thesis": "新車款可確認供應範圍擴大。只有 GM 將新增或提前導入連結到團隊調度，才提高對重整效益的信心，採用量與收入仍待查。", "evidence_ids": ["gm-av:business", "gm-av:event"]}
+    ],
+    "supply_chain": [],
+    "trade_opportunities": []
+  }
+}

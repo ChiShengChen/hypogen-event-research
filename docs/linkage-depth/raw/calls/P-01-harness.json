@@ -1,0 +1,86 @@
+{
+  "case": "P-01",
+  "call": "harness",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:28:02.954114+00:00",
+  "queued_epoch": 1795429682.9541452,
+  "started_at": "2026-11-23T10:28:03.010945+00:00",
+  "request_sha256": "9654fdcfaca299c9196c32df62a75b4146397fc576133d1608f5d91af79c0d98",
+  "queue_seconds": 0.01,
+  "preparation_seconds": 0.047,
+  "prompt_bytes": 12085,
+  "returncode": 0,
+  "cli_elapsed_seconds": 65.295,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "robotaxi 開發",
+        "origin_evidence_ids": [
+          "gm-av:event"
+        ],
+        "affected_company": "General Motors",
+        "affected_business": "Super Cruise",
+        "affected_evidence_ids": [
+          "gm-av:business"
+        ],
+        "mechanism": "停止資助 robotaxi 開發後，若 GM 將具備適用技能的工程人員調入 Super Cruise 車型導入專案，便可能在削減總支出的同時擴大可搭載車款。",
+        "baseline": "2024-12-10 公告時已有逾 20 款車提供 Super Cruise。即使維持原策略，既有車型計畫也可能帶來新增車款。",
+        "condition": "GM 實際將 Cruise 人員配置到 Super Cruise，且這項調度促成至少一款原計畫以外的車型導入，或使既定導入提前。",
+        "financial_effect": "新增可搭載車款可擴大潛在收入來源。實際收入貢獻取決於車輛交付、消費者選配、定價與收入認列，現有資料無法估算。",
+        "alternative_explanation": "新車款可能依重整前的產品計畫如期推出。須比對 GM 對原定時程的說明，以及產品更新是否明確將新增或提前導入歸因於團隊調度。",
+        "metric": "GM 明確歸因於團隊調度、且已新增或提前提供 Super Cruise 的車款數。公開車款名單僅是供應範圍的代理指標。",
+        "observation_period": "2024-12-10 公告後至 2025-12-31，以期間內已公開的車型上市及重整更新為準。",
+        "public_source": "GM Newsroom 的 Super Cruise 車型公告及 GM 財報說明會的工程團隊配置說明。",
+        "deadline": "2025-12-31",
+        "prediction": "期間內至少一款車已提供 Super Cruise，且 GM 確認團隊調度使該款新增或提前導入。",
+        "invalidation": "GM 確認截至覆核日，團隊調度促成的新增或提前導入車款數為零。若只公布車款而未解釋調度影響，歸因仍待查。"
+      }
+    ],
+    "business_linkage_gap": "GM 未披露 Super Cruise 承接的人力、原定車型時程或各車款的收益。若公司未公開說明調度成效，判斷是否加快導入需要非公開的人力配置與專案時程紀錄。材料也未指名承受訂單變動的外部供應商或客戶。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "robotaxi 開發",
+        "origin_evidence_ids": [
+          "gm-av:event"
+        ],
+        "affected_company": "General Motors",
+        "affected_business": "Super Cruise",
+        "affected_evidence_ids": [
+          "gm-av:business"
+        ],
+        "mechanism": "停止資助 robotaxi 開發後，若 GM 將具備適用技能的工程人員調入 Super Cruise 車型導入專案，便可能在削減總支出的同時擴大可搭載車款。",
+        "baseline": "2024-12-10 公告時已有逾 20 款車提供 Super Cruise。即使維持原策略，既有車型計畫也可能帶來新增車款。",
+        "condition": "GM 實際將 Cruise 人員配置到 Super Cruise，且這項調度促成至少一款原計畫以外的車型導入，或使既定導入提前。",
+        "financial_effect": "新增可搭載車款可擴大潛在收入來源。實際收入貢獻取決於車輛交付、消費者選配、定價與收入認列，現有資料無法估算。",
+        "alternative_explanation": "新車款可能依重整前的產品計畫如期推出。須比對 GM 對原定時程的說明，以及產品更新是否明確將新增或提前導入歸因於團隊調度。",
+        "metric": "GM 明確歸因於團隊調度、且已新增或提前提供 Super Cruise 的車款數。公開車款名單僅是供應範圍的代理指標。",
+        "observation_period": "2024-12-10 公告後至 2025-12-31，以期間內已公開的車型上市及重整更新為準。",
+        "public_source": "GM Newsroom 的 Super Cruise 車型公告及 GM 財報說明會的工程團隊配置說明。",
+        "deadline": "2025-12-31",
+        "prediction": "期間內至少一款車已提供 Super Cruise，且 GM 確認團隊調度使該款新增或提前導入。",
+        "invalidation": "GM 確認截至覆核日，團隊調度促成的新增或提前導入車款數為零。若只公布車款而未解釋調度影響，歸因仍待查。"
+      }
+    ],
+    "business_linkage_gap": "GM 未披露 Super Cruise 承接的人力、原定車型時程或各車款的收益。若公司未公開說明調度成效，判斷是否加快導入需要非公開的人力配置與專案時程紀錄。材料也未指名承受訂單變動的外部供應商或客戶。"
+  },
+  "elapsed_seconds": 65.297,
+  "usage": {
+    "input_tokens": 18759,
+    "cached_input_tokens": 0,
+    "output_tokens": 2302,
+    "reasoning_output_tokens": 68
+  },
+  "event_seconds": {
+    "thread.started": 0.681,
+    "turn.started": 1.265,
+    "item.completed": 64.799,
+    "turn.completed": 64.84
+  },
+  "finished_at": "2026-11-23T10:29:08.310223+00:00"
+}

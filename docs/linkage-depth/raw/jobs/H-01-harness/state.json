@@ -1,0 +1,86 @@
+{
+  "case": "H-01",
+  "call": "harness",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:37:14.231742+00:00",
+  "queued_epoch": 1795430234.2317607,
+  "started_at": "2026-11-23T10:37:14.248861+00:00",
+  "request_sha256": "28c3c51e07820ffa68983c98136a7c45605a7cc94268b8f0b81a02e34f0d3f87",
+  "queue_seconds": 0.01,
+  "preparation_seconds": 0.008,
+  "prompt_bytes": 12778,
+  "returncode": 0,
+  "cli_elapsed_seconds": 86.182,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "Teams",
+        "origin_evidence_ids": [
+          "ms-lseg:migration"
+        ],
+        "affected_company": "LSEG",
+        "affected_business": "Workspace",
+        "affected_evidence_ids": [
+          "ms-lseg:migration"
+        ],
+        "mechanism": "雙方已公布整合計畫。若 LSEG 將 Workspace 功能透過 Teams 正式交付給外部客戶，合作便在 Azure 遷移之外，另為 LSEG 增加一個產品使用入口。",
+        "baseline": "截至 2022-12-12，公告僅列整合計畫。若未推進整合，Workspace 客戶仍循既有入口使用服務。",
+        "condition": "雙方須完成整合並開放外部客戶使用。客戶還須因此新增付費席位或續約，才有營收效益。",
+        "financial_effect": "若新入口帶來原本不會發生的付費或續約，LSEG 的 Workspace 營收可增加。缺少可使用席位、付費轉換及定價資料，無法估算金額。",
+        "alternative_explanation": "既有客戶也可能只把相同用量移至 Teams。可由 LSEG 對新增付費席位或續約原因的公開說明區分，單憑功能上線無法判定。",
+        "metric": "LSEG 的 Workspace 發布說明中，Teams 整合功能的對外開放狀態。這是通路交付的代理指標，無法歸因席位或營收。",
+        "observation_period": "2022-12-12 公告後至 2024-12-31，以期內最後一次明確說明功能狀態的更新覆核。",
+        "public_source": "LSEG 的 Workspace 產品公告或雙方合作進度公告。",
+        "deadline": "2024-12-31",
+        "prediction": "期內公告確認至少一項 Workspace 整合功能已透過 Teams 正式提供給外部客戶，支持合作已延伸至產品通路。",
+        "invalidation": "涵蓋期末狀態的公開更新確認同一整合仍全數限於試用、已取消，或首次正式開放時間落在期後。缺少更新則維持未決。"
+      }
+    ],
+    "business_linkage_gap": "Azure 遷移與 Workspace 整合同列於公告，但未揭露共用工程人力、預算或資源調度，無法判定一案是否排擠另一案。亦缺 Teams 或 Microsoft 365 因整合而新增付費的資料。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "Teams",
+        "origin_evidence_ids": [
+          "ms-lseg:migration"
+        ],
+        "affected_company": "LSEG",
+        "affected_business": "Workspace",
+        "affected_evidence_ids": [
+          "ms-lseg:migration"
+        ],
+        "mechanism": "雙方已公布整合計畫。若 LSEG 將 Workspace 功能透過 Teams 正式交付給外部客戶，合作便在 Azure 遷移之外，另為 LSEG 增加一個產品使用入口。",
+        "baseline": "截至 2022-12-12，公告僅列整合計畫。若未推進整合，Workspace 客戶仍循既有入口使用服務。",
+        "condition": "雙方須完成整合並開放外部客戶使用。客戶還須因此新增付費席位或續約，才有營收效益。",
+        "financial_effect": "若新入口帶來原本不會發生的付費或續約，LSEG 的 Workspace 營收可增加。缺少可使用席位、付費轉換及定價資料，無法估算金額。",
+        "alternative_explanation": "既有客戶也可能只把相同用量移至 Teams。可由 LSEG 對新增付費席位或續約原因的公開說明區分，單憑功能上線無法判定。",
+        "metric": "LSEG 的 Workspace 發布說明中，Teams 整合功能的對外開放狀態。這是通路交付的代理指標，無法歸因席位或營收。",
+        "observation_period": "2022-12-12 公告後至 2024-12-31，以期內最後一次明確說明功能狀態的更新覆核。",
+        "public_source": "LSEG 的 Workspace 產品公告或雙方合作進度公告。",
+        "deadline": "2024-12-31",
+        "prediction": "期內公告確認至少一項 Workspace 整合功能已透過 Teams 正式提供給外部客戶，支持合作已延伸至產品通路。",
+        "invalidation": "涵蓋期末狀態的公開更新確認同一整合仍全數限於試用、已取消，或首次正式開放時間落在期後。缺少更新則維持未決。"
+      }
+    ],
+    "business_linkage_gap": "Azure 遷移與 Workspace 整合同列於公告，但未揭露共用工程人力、預算或資源調度，無法判定一案是否排擠另一案。亦缺 Teams 或 Microsoft 365 因整合而新增付費的資料。"
+  },
+  "elapsed_seconds": 86.184,
+  "usage": {
+    "input_tokens": 18861,
+    "cached_input_tokens": 15360,
+    "output_tokens": 2716,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.741,
+    "turn.started": 1.348,
+    "item.completed": 85.744,
+    "turn.completed": 85.77
+  },
+  "finished_at": "2026-11-23T10:38:40.435426+00:00"
+}

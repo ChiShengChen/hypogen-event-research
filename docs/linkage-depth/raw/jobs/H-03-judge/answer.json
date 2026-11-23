@@ -1,0 +1,40 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持兩端業務及管理層目標。以 SmartCast 版位可購和客戶追加支出為條件，推估 Walmart Connect 廣告收入方向。若 Walmart 在期限內確認尚未開放投放或支出全來自既有預算移轉，即可推翻相應假設。"
+        }
+      ],
+      "note": "缺口具體指出仍需確認上線、採用及可比口徑的新增支出。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 SmartCast 與 Walmart Connect 兩端，可售版位及付費投放列為條件。Walmart 同期公布的具名投放案例可區分通路採用與單純併表，確認零投放則可推翻採用預測。收入淨增額仍須釐清預算來源、價格及收入歸屬。"
+        }
+      ],
+      "note": "缺口將毛利歸於 VIZIO，並指出判斷原通路是否遭排擠所需的可比資料。"
+    }
+  ]
+}

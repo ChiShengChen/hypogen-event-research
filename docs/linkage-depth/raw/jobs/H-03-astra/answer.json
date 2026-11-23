@@ -1,0 +1,108 @@
+{
+  "business_linkages": [
+    {
+      "linked_stance": "bull",
+      "scope": "internal",
+      "origin_business": "VIZIO 的 SmartCast 連網電視作業系統與以廣告為主的 Platform+ 業務",
+      "origin_evidence_ids": ["wmt-vizio:event", "wmt-vizio:platform"],
+      "affected_company": "Walmart",
+      "affected_business": "Walmart Connect 廣告業務",
+      "affected_evidence_ids": ["wmt-vizio:agency", "wmt-vizio:original"],
+      "mechanism": "若 Walmart Connect 能讓客戶透過既有投放流程購買 SmartCast 廣告版位，客戶可能將額外的連網電視廣告預算交給 Walmart Connect。",
+      "baseline": "截至 2024 年 12 月 3 日，Walmart 已完成收購。Platform+ 在收購前已有廣告業務，評估整合效益時須扣除這部分既有收入。",
+      "condition": "SmartCast 版位透過 Walmart Connect 開放付費投放，且客戶增加總支出。",
+      "financial_effect": "新增投放可帶動 Walmart Connect 廣告收入。對 Walmart 營業利益的貢獻取決於新增收入的毛利及整合成本。",
+      "alternative_explanation": "若客戶只是把原先投在 Platform+ 或 Walmart Connect 其他版位的預算移至新方案，方案可以有銷售額，而 Walmart 的廣告總收入仍可能沒有增量。",
+      "metric": "已開放購買的 SmartCast 版位、實際付費投放，以及公司可歸因於整合的新增廣告收入。",
+      "observation_period": "2024 年 12 月 4 日至 2025 年 12 月 31 日期間公開的資料",
+      "public_source": "Walmart Connect 廣告產品公告、Walmart 季度業績資料及法說會說明",
+      "deadline": "2025-12-31",
+      "prediction": "若整合帶來額外需求，期限內應能找到客戶透過 Walmart Connect 購買 SmartCast 廣告的公開案例，並在可比口徑的收入說明中看到新增支出的證據。",
+      "invalidation": "若公司確認至期限仍未開放投放，則期限內由此管道帶動收入的假設失效。若已開放，但公司確認相關支出全數來自既有預算移轉，則新增收入假設失效。"
+    }
+  ],
+  "business_linkage_gap": "公告交代了兩項業務的關係與管理層目標。研究員仍需取得共同投放方案的上線日期、實際採用情況，以及區分既有 Platform+ 收入與新增支出的資料。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "SmartCast 若能為 Walmart Connect 客戶提供可購買的連網電視版位，並吸引額外預算，便可加快廣告收入成長。",
+      "target": "Walmart Connect 的可比廣告收入成長",
+      "horizon": "截至 2025 年 12 月 31 日",
+      "catalyst": "Walmart Connect 公布 SmartCast 付費投放方案，並說明客戶採用與支出情況。",
+      "prediction": "公司揭露經由新方案取得的額外支出，且在排除既有 Platform+ 收入後，仍能辨認整合帶來的正向收入貢獻。",
+      "invalidation": "若公司確認投放方案延至期限後，或確認新方案只有既有預算移轉，則此期間的成長機制失效。",
+      "claim_ids": ["wmt-vizio:event", "wmt-vizio:agency", "wmt-vizio:platform"]
+    },
+    {
+      "stance": "wait",
+      "mechanism": "Platform+ 在交易前已產生毛利。合併後即使廣告業務規模擴大，仍須拆出既有業務貢獻與新增成本，才能估算整合對獲利的影響。",
+      "target": "Walmart 可歸因於廣告整合的營業利益",
+      "horizon": "截至 2025 年 12 月 31 日",
+      "catalyst": "Walmart 在業績資料中說明 VIZIO 的併表影響、整合後新增廣告收入及相關成本。",
+      "prediction": "若期間內僅披露合併廣告收入或產品上線消息，研究員仍無法據以量化整合帶來的營業利益。",
+      "invalidation": "若公司提供可核對的新增毛利與整合成本，或直接量化整合對營業利益的貢獻，即可更新獲利估計並結束觀望。",
+      "claim_ids": ["wmt-vizio:platform", "wmt-vizio:agency"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024 年 12 月 3 日，Walmart 已完成收購 VIZIO，取得 SmartCast 與已有廣告業務的 Platform+。管理層預期交易可加快 Walmart Connect 成長。首稿維持觀望，判斷依據是新方案能否吸引額外廣告支出，以及這些收入能否在扣除整合成本後增加營業利益。",
+    "key_gap": "公告沒有提供整合進度、Platform+ 既有廣告收入金額或整合成本。Platform+ 占 VIZIO 全部毛利，分母是 VIZIO 的毛利總額；該比例無法換算為 Platform+ 毛利率或 Walmart 的獲利增幅。",
+    "next_check": "先查 Walmart Connect 首份涉及 SmartCast 的產品公告，確認客戶何時能實際付費投放。再查該日期後的首份 Walmart 業績說明，核對廣告收入範圍、VIZIO 併表貢獻與新增客戶支出。",
+    "evidence_limits": [
+      {
+        "evidence_id": "wmt-vizio:event",
+        "limit": "支持交易完成及 SmartCast 的產品定位，未交代廣告投放方案的上線日期。"
+      },
+      {
+        "evidence_id": "wmt-vizio:agency",
+        "limit": "記錄管理層對 Walmart Connect 成長的預期，未提供成長幅度、實現期限或整合成果。"
+      },
+      {
+        "evidence_id": "wmt-vizio:original",
+        "limit": "所列英文措辭與管理層預期出自同一公告，只能用來核對表述，不能作為獨立佐證。"
+      },
+      {
+        "evidence_id": "wmt-vizio:platform",
+        "limit": "全部毛利採 VIZIO 口徑。Platform+ 以廣告為主，但資料未拆出廣告本身的毛利或提供絕對金額。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "SmartCast 版位可購買日期，以及透過 Walmart Connect 完成的付費投放案例",
+        "source_to_watch": "Walmart Connect 產品公告與公開客戶案例",
+        "window": "交割後至 2025 年 12 月 31 日",
+        "impact_on_thesis": "可購買日期驗證商業上線，付費案例驗證採用。判斷收入增量仍需核對支出來源。",
+        "evidence_ids": ["wmt-vizio:event", "wmt-vizio:agency"]
+      },
+      {
+        "metric": "廣告收入的報告範圍、VIZIO 既有收入的併表貢獻，以及扣除後可歸因於整合的收入變動",
+        "source_to_watch": "Walmart 季度業績公告及法說會說明",
+        "window": "交割後首份業績公告起，至 2025 年 12 月 31 日前已公布的各期",
+        "impact_on_thesis": "若客戶增加總支出，且公司能將增量連結至新方案，則支持成長假設。若僅有合併增速，歸因仍待確認。",
+        "evidence_ids": ["wmt-vizio:original", "wmt-vizio:platform"]
+      },
+      {
+        "metric": "整合帶來的新增毛利與相關成本，或公司直接揭露的營業利益貢獻",
+        "source_to_watch": "Walmart 財務報告及業績說明",
+        "window": "截至 2025 年 12 月 31 日已公開的報告",
+        "impact_on_thesis": "新增毛利高於相關成本才支持當期獲利改善。若缺少成本或毛利資料，保留對獲利幅度的判斷。",
+        "evidence_ids": ["wmt-vizio:platform", "wmt-vizio:agency"]
+      }
+    ],
+    "supply_chain": [],
+    "trade_opportunities": [
+      {
+        "company": "Walmart",
+        "direction": "watch",
+        "earnings_path": "SmartCast 付費投放吸引額外預算後，新增廣告毛利若超過整合成本，可提高 Walmart 營業利益。",
+        "catalyst": "Walmart Connect 公布商用投放案例，Walmart 隨後說明營收與成本貢獻。",
+        "trigger": "取得可核對的額外廣告支出與正向營業利益貢獻後，重新評估偏多條件。",
+        "invalidation": "若至 2025 年底公司確認上線延後，或新增毛利遭相關成本抵銷，則該期間由整合帶動獲利的理由失效。",
+        "evidence_gap": "資料缺少增量獲利、估值及市場預期，尚無法判定潛在獲利改善是否已反映於股價。",
+        "ticker": null,
+        "listing_evidence_id": null,
+        "evidence_ids": ["wmt-vizio:event", "wmt-vizio:agency", "wmt-vizio:platform"]
+      }
+    ]
+  }
+}

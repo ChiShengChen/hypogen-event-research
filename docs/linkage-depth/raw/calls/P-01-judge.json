@@ -1,0 +1,66 @@
+{
+  "case": "P-01",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:29:08.316232+00:00",
+  "queued_epoch": 1795429748.3162482,
+  "started_at": "2026-11-23T10:29:08.350097+00:00",
+  "request_sha256": "74a5a2451f1cadd45316e369e16271f1f95d0b904ccd07d02abbca1e0b5a8b40",
+  "queue_seconds": 0.012,
+  "preparation_seconds": 0.022,
+  "prompt_bytes": 8901,
+  "returncode": 0,
+  "cli_elapsed_seconds": 16.349,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持停止資助與擬議整併，也支持 Super Cruise 已覆蓋逾 20 款車。若 GM 確認新增車款全由原團隊獨立完成，即可推翻整合團隊參與導入的預測。參與導入可驗證資源連動，增量營收仍取決於銷量、選用率與實收價格。"
+        }
+      ],
+      "note": "缺口指出人員配置、預算與原定時程尚未披露，保留對實際調度及財務貢獻的判斷。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持兩端業務及擬議整併，實際調度仍列為條件。以 GM 車型公告和財報說明會查核期內是否有因調度而新增或提前的導入，可區分既定上市計畫。營收上行空間取決於交付、選配、定價及認列，金額尚無法估算。"
+        }
+      ],
+      "note": "缺口指出人力配置、原定車型時程與各車款收益尚未披露，保留對導入加速的歸因。"
+    }
+  },
+  "elapsed_seconds": 16.351,
+  "usage": {
+    "input_tokens": 17279,
+    "cached_input_tokens": 0,
+    "output_tokens": 550,
+    "reasoning_output_tokens": 73
+  },
+  "event_seconds": {
+    "thread.started": 0.72,
+    "turn.started": 1.338,
+    "item.completed": 15.84,
+    "turn.completed": 15.89
+  },
+  "finished_at": "2026-11-23T10:29:24.703178+00:00"
+}

@@ -1,0 +1,86 @@
+{
+  "case": "H-07",
+  "call": "harness",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:51:13.072763+00:00",
+  "queued_epoch": 1795431073.0727787,
+  "started_at": "2026-11-23T10:51:13.086714+00:00",
+  "request_sha256": "10c6fbb73923575c89b7bee310a668793f7b314d3daf2fba245e2ea7891e8aca",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.005,
+  "prompt_bytes": 12137,
+  "returncode": 0,
+  "cli_elapsed_seconds": 74.985,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bear",
+        "scope": "internal",
+        "origin_business": "digital fitness content",
+        "origin_evidence_ids": [
+          "lulu-pton:original"
+        ],
+        "affected_company": "lululemon",
+        "affected_business": "lululemon Studio All-Access",
+        "affected_evidence_ids": [
+          "lulu-pton:subscription"
+        ],
+        "mechanism": "若獨家課程接入延誤，且 lululemon 因此向受影響會員提供帳單抵免，內容交付問題就會傳至訂閱收費。",
+        "baseline": "公告安排自 2023-11-01 起按當時同價提供課程。若如期接入，便沒有因這次延誤而補償的理由。",
+        "condition": "須先確認接入延誤，再確認 lululemon 決定就該延誤抵免會費。延誤本身不會自動降低收費。",
+        "financial_effect": "抵免會降低適用會員當期應付會費。總額取決於抵免金額、適用人數及期數，三者均未披露。",
+        "alternative_explanation": "一般促銷也可能降低會費。核對會員通知是否把抵免事由及適用對象明訂為受轉換延誤影響的會員。",
+        "metric": "受影響 All-Access 會員在延誤所涉帳期，公開收費條款所列的延誤抵免額是否大於零。",
+        "observation_period": "2023-11-01 至 2024-12-31，查核期間內已出具公開收費說明的受影響帳期。",
+        "public_source": "lululemon 官方 Studio 會員服務公告、公開收費條款或合作更新。",
+        "deadline": "2024-12-31",
+        "prediction": "若出現接入延誤，預期 lululemon 公開列明至少一個受影響帳期有正額延誤抵免。",
+        "invalidation": "若已確認延誤，且 lululemon 公開說明同批會員在所涉帳期均照原額收費、延誤抵免為零，則推翻收費傳導。若無公開帳務說明，結果待查。"
+      }
+    ],
+    "business_linkage_gap": "公告沒有揭露獨家內容費用、自製內容成本或預算去向，無法檢驗節省的資源是否轉投服飾。會員抵免也只是條件情境，公開條款最多可驗證收費安排，實際入帳總額仍需公司披露或非公開帳務紀錄。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bear",
+        "scope": "internal",
+        "origin_business": "digital fitness content",
+        "origin_evidence_ids": [
+          "lulu-pton:original"
+        ],
+        "affected_company": "lululemon",
+        "affected_business": "lululemon Studio All-Access",
+        "affected_evidence_ids": [
+          "lulu-pton:subscription"
+        ],
+        "mechanism": "若獨家課程接入延誤，且 lululemon 因此向受影響會員提供帳單抵免，內容交付問題就會傳至訂閱收費。",
+        "baseline": "公告安排自 2023-11-01 起按當時同價提供課程。若如期接入，便沒有因這次延誤而補償的理由。",
+        "condition": "須先確認接入延誤，再確認 lululemon 決定就該延誤抵免會費。延誤本身不會自動降低收費。",
+        "financial_effect": "抵免會降低適用會員當期應付會費。總額取決於抵免金額、適用人數及期數，三者均未披露。",
+        "alternative_explanation": "一般促銷也可能降低會費。核對會員通知是否把抵免事由及適用對象明訂為受轉換延誤影響的會員。",
+        "metric": "受影響 All-Access 會員在延誤所涉帳期，公開收費條款所列的延誤抵免額是否大於零。",
+        "observation_period": "2023-11-01 至 2024-12-31，查核期間內已出具公開收費說明的受影響帳期。",
+        "public_source": "lululemon 官方 Studio 會員服務公告、公開收費條款或合作更新。",
+        "deadline": "2024-12-31",
+        "prediction": "若出現接入延誤，預期 lululemon 公開列明至少一個受影響帳期有正額延誤抵免。",
+        "invalidation": "若已確認延誤，且 lululemon 公開說明同批會員在所涉帳期均照原額收費、延誤抵免為零，則推翻收費傳導。若無公開帳務說明，結果待查。"
+      }
+    ],
+    "business_linkage_gap": "公告沒有揭露獨家內容費用、自製內容成本或預算去向，無法檢驗節省的資源是否轉投服飾。會員抵免也只是條件情境，公開條款最多可驗證收費安排，實際入帳總額仍需公司披露或非公開帳務紀錄。"
+  },
+  "elapsed_seconds": 74.987,
+  "usage": {
+    "input_tokens": 18768,
+    "cached_input_tokens": 15360,
+    "output_tokens": 2764,
+    "reasoning_output_tokens": 158
+  },
+  "event_seconds": {
+    "thread.started": 0.181,
+    "turn.started": 1.319,
+    "item.completed": 74.511,
+    "turn.completed": 74.555
+  },
+  "finished_at": "2026-11-23T10:52:28.075539+00:00"
+}

@@ -1,0 +1,36 @@
+{
+  "case": "H-02",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:40:09.862097+00:00",
+  "queued_epoch": 1795430409.8621202,
+  "started_at": "2026-11-23T10:40:09.877430+00:00",
+  "request_sha256": "14fdc8ad6c6cbcaab4d0dc5c85bd61d7f6bcb3c57628ea64445010d10d782709",
+  "queue_seconds": 0.01,
+  "preparation_seconds": 0.006,
+  "prompt_bytes": 2475,
+  "returncode": 0,
+  "cli_elapsed_seconds": 69.453,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告可確認 Dell、HPE、Lenovo 與 Supermicro 均參與 NVIDIA 相關系統市場。要判斷 Dell 接單是否排擠同業，仍需同一客戶採購案的得失標紀錄，或同一批次晶片在各廠間的配額變動。現有資料也缺少 Dell 的產品別出貨與毛利基準，無法估算對其他業務的影響。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告可確認 Dell、HPE、Lenovo 與 Supermicro 均參與 NVIDIA 相關系統市場。要判斷 Dell 接單是否排擠同業，仍需同一客戶採購案的得失標紀錄，或同一批次晶片在各廠間的配額變動。現有資料也缺少 Dell 的產品別出貨與毛利基準，無法估算對其他業務的影響。"
+  },
+  "elapsed_seconds": 69.455,
+  "usage": {
+    "input_tokens": 16874,
+    "cached_input_tokens": 15360,
+    "output_tokens": 2897,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.722,
+    "turn.started": 1.679,
+    "item.completed": 69.0,
+    "turn.completed": 69.035
+  },
+  "finished_at": "2026-11-23T10:41:19.334136+00:00"
+}

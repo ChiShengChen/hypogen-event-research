@@ -1,0 +1,88 @@
+{
+  "case": "P-01",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:26:57.752471+00:00",
+  "queued_epoch": 1795429617.752481,
+  "started_at": "2026-11-23T10:26:58.129393+00:00",
+  "request_sha256": "60228bf05f00b54208086cf1f76c59d291f35a5a8c123819d01b5d298c514978",
+  "queue_seconds": 0.033,
+  "preparation_seconds": 0.344,
+  "prompt_bytes": 2488,
+  "returncode": 0,
+  "cli_elapsed_seconds": 64.801,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "Cruise 的 robotaxi 開發",
+        "origin_evidence_ids": [
+          "gm-av:event",
+          "gm-av:original"
+        ],
+        "affected_company": "General Motors",
+        "affected_business": "以 Super Cruise 為基礎的個人用車駕駛輔助業務",
+        "affected_evidence_ids": [
+          "gm-av:business"
+        ],
+        "mechanism": "停止資助 robotaxi 開發後，GM 擬整合兩支技術團隊。若 Cruise 人員投入個人用車專案，Super Cruise 可利用既有車款平台，將研發成果推向更多量產車款。",
+        "baseline": "截至 2024 年 12 月 10 日，Super Cruise 已提供給逾 20 款車。公告未列出確切款數或完整名單。",
+        "condition": "整合團隊須實際參與 Super Cruise 的車款導入，且新增車款須在觀察期內開放客戶選用。",
+        "financial_effect": "新增車款可擴大能夠選用 Super Cruise 的客群。營收增量取決於相關車款銷量、選用率及實收價格，現有資料不足以估算。",
+        "alternative_explanation": "新增車款也可能源自整合前已排定的產品計畫。若只有上市公告，仍需另查整合團隊的貢獻。",
+        "metric": "公告後首次提供 Super Cruise 的量產車款數，以及 GM 是否說明整合團隊參與該車款導入。",
+        "observation_period": "2024 年 12 月 11 日至 2025 年 12 月 31 日",
+        "public_source": "GM 車款上市公告、Super Cruise 適用車款資訊及法說會對團隊分工的說明",
+        "deadline": "2025-12-31",
+        "prediction": "截至 2025 年底，至少一款先前未提供 Super Cruise 的量產車款開放選用，且 GM 公開說明整合團隊參與其導入。",
+        "invalidation": "若截至年底沒有新增車款，或 GM 確認新增車款均由整合前的原團隊獨立完成，則此項預測失效。若僅缺少分工揭露，則因果關係仍待驗證。"
+      }
+    ],
+    "business_linkage_gap": "公告交代了兩支團隊的整合意向，但未披露 Cruise 人員將投入哪些 Super Cruise 專案、相關預算或原定上市時程。現有資料也未指認受影響的外部供應商或客戶。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "Cruise 的 robotaxi 開發",
+        "origin_evidence_ids": [
+          "gm-av:event",
+          "gm-av:original"
+        ],
+        "affected_company": "General Motors",
+        "affected_business": "以 Super Cruise 為基礎的個人用車駕駛輔助業務",
+        "affected_evidence_ids": [
+          "gm-av:business"
+        ],
+        "mechanism": "停止資助 robotaxi 開發後，GM 擬整合兩支技術團隊。若 Cruise 人員投入個人用車專案，Super Cruise 可利用既有車款平台，將研發成果推向更多量產車款。",
+        "baseline": "截至 2024 年 12 月 10 日，Super Cruise 已提供給逾 20 款車。公告未列出確切款數或完整名單。",
+        "condition": "整合團隊須實際參與 Super Cruise 的車款導入，且新增車款須在觀察期內開放客戶選用。",
+        "financial_effect": "新增車款可擴大能夠選用 Super Cruise 的客群。營收增量取決於相關車款銷量、選用率及實收價格，現有資料不足以估算。",
+        "alternative_explanation": "新增車款也可能源自整合前已排定的產品計畫。若只有上市公告，仍需另查整合團隊的貢獻。",
+        "metric": "公告後首次提供 Super Cruise 的量產車款數，以及 GM 是否說明整合團隊參與該車款導入。",
+        "observation_period": "2024 年 12 月 11 日至 2025 年 12 月 31 日",
+        "public_source": "GM 車款上市公告、Super Cruise 適用車款資訊及法說會對團隊分工的說明",
+        "deadline": "2025-12-31",
+        "prediction": "截至 2025 年底，至少一款先前未提供 Super Cruise 的量產車款開放選用，且 GM 公開說明整合團隊參與其導入。",
+        "invalidation": "若截至年底沒有新增車款，或 GM 確認新增車款均由整合前的原團隊獨立完成，則此項預測失效。若僅缺少分工揭露，則因果關係仍待驗證。"
+      }
+    ],
+    "business_linkage_gap": "公告交代了兩支團隊的整合意向，但未披露 Cruise 人員將投入哪些 Super Cruise 專案、相關預算或原定上市時程。現有資料也未指認受影響的外部供應商或客戶。"
+  },
+  "elapsed_seconds": 64.808,
+  "usage": {
+    "input_tokens": 16931,
+    "cached_input_tokens": 0,
+    "output_tokens": 2422,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.756,
+    "turn.started": 1.446,
+    "item.completed": 64.227,
+    "turn.completed": 64.271
+  },
+  "finished_at": "2026-11-23T10:28:02.939707+00:00"
+}

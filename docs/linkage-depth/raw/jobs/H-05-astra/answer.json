@@ -1,0 +1,131 @@
+{
+  "business_linkages": [
+    {
+      "linked_stance": "bull",
+      "scope": "internal",
+      "origin_business": "Uber 在 Austin 與 Atlanta 的車隊管理服務",
+      "origin_evidence_ids": ["uber-av:fleet"],
+      "affected_company": "Uber",
+      "affected_business": "兩市的 Uber app 叫車業務",
+      "affected_evidence_ids": ["uber-av:network", "uber-av:scale"],
+      "mechanism": "Uber 負責清潔、維修與車庫營運。若這些工作能讓更多車輛在需求高峰可供派遣，Uber app 就有機會承接原本因缺車而無法完成的行程。",
+      "baseline": "截至 2024 年 9 月 13 日，兩市服務仍屬規劃。公告未提供上線前兩市的 Uber 總行程、候車時間或未能派車的訂單數。",
+      "condition": "Waymo 完成測試並投入服務，新增車輛在供給不足的時段接單，且新增行程帶給 Uber 的收益足以覆蓋追加營運成本。",
+      "financial_effect": "若上述條件成立，新增行程可提高當地叫車業務的貢獻。僅憑自駕行程數，無法估計 Uber 的增量收益。",
+      "alternative_explanation": "乘客可能從人類駕駛轉搭 Waymo。即使全市總行程增加，也可能來自同期需求成長。",
+      "metric": "按城市比較上線前後尖峰時段的 Waymo 完成行程、Uber 全平台完成行程及候車時間。若有可比資料，再對照尚未提供服務的區域。",
+      "observation_period": "各市實際上線前後的可比期間，追蹤至 2025 年底",
+      "public_source": "Uber 與 Waymo 的城市上線公告、營運更新及 Uber 財報說明會，以實際揭露的城市資料為準。",
+      "deadline": "2025-12-31",
+      "prediction": "若自駕車確實補足尖峰供給，服務區的候車時間應縮短，全平台完成行程相對可比區域也應增加。",
+      "invalidation": "若可比資料顯示 Waymo 增加的行程由人類駕駛行程等量轉出，且尖峰候車時間未改善，則補足供給的解釋失去支持。若缺少城市資料，則此項仍待驗證。"
+    }
+  ],
+  "business_linkage_gap": "公告未交代車隊管理報酬、成本分攤方式或訂單替代率，無法把車隊規模換算為 Uber 的獲利。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "兩市的 Waymo 叫車服務規劃由 Uber app 獨家提供。若新增運力承接原本流失的訂單，且每趟增量貢獻為正，Uber 可從合作取得獲利增量。",
+      "target": "Uber 在 Austin 與 Atlanta 的叫車業務貢獻",
+      "horizon": "2025-12-31",
+      "catalyst": "兩市按計畫開放乘客叫車，並揭露實際服務量及營運經濟性。",
+      "prediction": "可比期間內，服務區的 Uber 總完成行程隨 Waymo 運力增加，合作收益扣除追加成本後為正。",
+      "invalidation": "若新增 Waymo 行程完全取代既有 Uber 行程，或新增收益不足以覆蓋追加成本，則此獲利路徑不成立。",
+      "claim_ids": ["uber-av:network", "uber-av:fleet", "uber-av:scale"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "若 Uber 須先支出車庫與維運費用，而服務延後或每車完成行程偏少，合作初期的收入可能不足以覆蓋成本。",
+      "target": "Uber 兩市合作項目的營運貢獻",
+      "horizon": "2025-12-31",
+      "catalyst": "上線時程、實際投入車數、完成行程及車隊管理報酬陸續揭露。",
+      "prediction": "若 Uber 承擔未獲補償的前期支出且車輛使用率偏低，合作項目在觀察期內的累計貢獻將為負。",
+      "invalidation": "若揭露顯示，即使在初期行程量下，Uber 的合作收入也足以覆蓋其承擔的全部增量成本，此下行情境即不成立。",
+      "claim_ids": ["uber-av:fleet", "uber-av:scale"]
+    },
+    {
+      "stance": "wait",
+      "mechanism": "公告已確立兩市的乘客入口與雙方分工。判斷獲利方向仍取決於實際新增需求、合約報酬與成本。",
+      "target": "本次合作對 Uber 整體獲利的影響",
+      "horizon": "2025-12-31",
+      "catalyst": "首批商業營運數據或合約經濟條件公開。",
+      "prediction": "若後續僅確認上線或公布車數，研究員可驗證執行進度，對整體獲利的方向與幅度仍應保留判斷。",
+      "invalidation": "若 Uber 揭露可歸因於合作的增量獲利，或提供足以重建該數字的行程、收益與成本資料，即可重新評估。",
+      "claim_ids": ["uber-av:network", "uber-av:fleet", "uber-av:scale"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024 年 9 月 13 日，首稿判斷為觀望。Uber 與 Waymo 規劃自 2025 年起在 Austin、Atlanta 透過 Uber app 獨家提供 Waymo 叫車服務。Uber 因此取得兩市該服務的乘客入口，也承接車隊管理工作。對獲利最重要的問題是，這批車能帶來多少原本無法完成的訂單，以及 Uber 從中取得多少淨收益。",
+    "key_gap": "欠缺兩市上線前的需求基準、實際行程、既有訂單轉移比例、雙方費率與維運成本分攤。數百輛是日後擴張規劃，公告沒有設定 2025 年底的達標車數。",
+    "next_check": "先逐城核對一般乘客可透過 Uber app 實際叫車的日期。若公布行程數，再查清該數字涵蓋 Waymo 或全平台、哪些區域及多長期間，才能判斷新增需求。",
+    "evidence_limits": [
+      {
+        "evidence_id": "uber-av:network",
+        "limit": "支持兩市的上線規劃與通路安排。實際上線日、獨家期限及其他城市的安排均待查。"
+      },
+      {
+        "evidence_id": "uber-av:fleet",
+        "limit": "列出 Uber 的車隊管理職責及 Waymo 對 Waymo Driver 的測試與操作責任，未交代資產所有權、各項費用由誰負擔或如何計價。"
+      },
+      {
+        "evidence_id": "uber-av:original",
+        "limit": "英文片段僅確認 Uber 將提供車隊管理服務，與其餘摘錄來自同一份公告，無法提供獨立佐證。"
+      },
+      {
+        "evidence_id": "uber-av:scale",
+        "limit": "數百輛是未來規模描述。摘錄未提供達標日期、兩市配置、實際行程、費率或單趟貢獻。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "兩市各自的商業上線日、服務範圍及可供乘客叫車的實際車數",
+        "source_to_watch": "Uber 與 Waymo 的城市服務公告及營運更新",
+        "window": "2025 年內逐城核對，至 12 月 31 日",
+        "impact_on_thesis": "上線可驗證合作進度。若延後，2025 年可累積行程與收益的期間就會縮短。",
+        "evidence_ids": ["uber-av:network", "uber-av:scale"]
+      },
+      {
+        "metric": "同區、同時段的 Waymo 完成行程、Uber 總完成行程與候車時間",
+        "source_to_watch": "Uber 公開營運數據、財報說明會及 Waymo 城市營運更新",
+        "window": "各市上線前後至 2025 年底，採可比期間",
+        "impact_on_thesis": "若總行程相對可比區域增加且候車時間縮短，則支持新增運力承接未滿足需求。僅公布 Waymo 行程時，訂單替代率仍未知。",
+        "evidence_ids": ["uber-av:network", "uber-av:scale"]
+      },
+      {
+        "metric": "Uber 可取得的行程及車隊管理報酬，扣除其負擔的清潔、維修、車庫等增量成本後的貢獻",
+        "source_to_watch": "Uber 財報、財報說明會及雙方公開的合作條款",
+        "window": "截至 2025 年 12 月 31 日已公開的資料",
+        "impact_on_thesis": "正貢獻可支持合作項目的獲利論點。評估對 Uber 整體的重要性，還需核對實際營運量及既有行程被取代的影響。",
+        "evidence_ids": ["uber-av:fleet", "uber-av:scale"]
+      }
+    ],
+    "supply_chain": [
+      {
+        "company": "Waymo",
+        "role": "upstream",
+        "status": "disclosed_relationship",
+        "product_scope": "Austin 與 Atlanta 合作服務所用的 Waymo Driver",
+        "relationship": "Waymo 負責自動駕駛系統的測試與操作，Uber 提供乘客叫車入口並管理車隊。",
+        "transmission": "Waymo 的測試與操作進度會影響可投入服務的運力，進而影響 Uber 可派出的自駕行程量。",
+        "materiality": "Waymo 直接影響兩市合作能否上線。雙方整體獲利對此合作的敏感度尚無從量化。",
+        "public_check": "逐城核對實際服務日期、營運車數及已完成行程。",
+        "gap": "未揭露車輛配置、雙方費率及實際營運量。",
+        "evidence_ids": ["uber-av:fleet", "uber-av:network", "uber-av:scale"]
+      }
+    ],
+    "trade_opportunities": [
+      {
+        "company": "Uber",
+        "direction": "watch",
+        "earnings_path": "兩市自駕運力若帶來淨新增訂單，且行程收益與車隊管理報酬足以覆蓋成本，才有依據上修合作的獲利估計。",
+        "catalyst": "兩市商業上線，並首次揭露可歸因於合作的營運量與貢獻。",
+        "trigger": "當公開資料可估算扣除既有行程替代後的增量獲利，並判斷其對 Uber 整體獲利的重要性時，重新評估交易方向。",
+        "invalidation": "若兩市合作取消，則移除此事件的觀察項目。若截至期限僅有上線與車數資料，獲利論點維持未驗證。",
+        "evidence_gap": "缺少收益分配、維運成本、需求替代率與估值資料，亦無上市代號佐證。",
+        "ticker": null,
+        "listing_evidence_id": null,
+        "evidence_ids": ["uber-av:network", "uber-av:fleet", "uber-av:scale"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "business_linkages": [],
+  "business_linkage_gap": "公告列出多家系統廠，但未指出 Dell 哪項既有產品會因 Blackwell 導入而讓出產能或預算，也未揭露客戶在 Dell 與同業間的採購分配。要檢驗第二層影響，需有 Dell 指明受影響產品與資源調整，或客戶公開具名的採購轉向、產品及期間。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "若 Dell 將公告所述技術整合為可正式訂購的 Blackwell 伺服器，相較於僅供應既有平台，客戶便多一項可向 Dell 採購的配置。客戶實際追加採購、Dell 完成交付並符合認列條件後，才可能增加伺服器營收。增量取決於新增需求占比、數量及單價。",
+      "target": "Dell Technologies",
+      "horizon": "2025-06-30",
+      "catalyst": "以 2024-06-02 NVIDIA 平台公告為起點，至 2025-06-30 覆核 Dell 產品公告或官方產品頁是否將具名 Blackwell 伺服器由預告推進至正式可訂購。",
+      "prediction": "截至 2025-06-30，Dell 至少有一款具名 Blackwell 伺服器公開開放正式訂購。這能驗證產品已進入銷售階段，實際接單、交付及認列金額仍待查。",
+      "invalidation": "若 Dell 公開確認截至 2025-06-30，其 Blackwell 伺服器全數仍處預覽或預告階段，正式開放訂購的機型為零，即推翻預測。未找到產品頁則結果待查。",
+      "claim_ids": ["fact:nv-system:dell", "fact:nv-system:platform"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "新平台導入增加系統驗證與零組件到位的要求。若其中一項拖延已排定的首批交付，即使產品已開放訂購，Dell 仍可能比原定交付時程更晚符合營收認列條件。這是執行情境，公告未證實供應短缺，受影響訂單金額亦未知。",
+      "target": "Dell Technologies",
+      "horizon": "2025-06-30",
+      "catalyst": "公告後若 Dell 首次為具名 Blackwell 伺服器列出截至 2025-06-30 已屆期的首批交付窗口，即以該原始窗口為基準，於窗口屆滿後至 2025-06-30 核對 Dell 產品進度公告或法說說明。",
+      "prediction": "Dell 公開確認該機型首批實際交付晚於原始窗口，或在窗口屆滿時確認尚未交付，並將延誤歸因於新平台驗證或零組件到位。交付延誤可驗證執行風險，跨期營收影響仍須認列資料。",
+      "invalidation": "若 Dell 於 2025-06-30 前確認同款機型在同一原始窗口內已完成首批交付，即推翻延誤預測。若缺原始窗口、實際交付狀態或延誤原因，則相應環節待查。",
+      "claim_ids": ["fact:nv-system:dell", "fact:nv-system:platform"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024-06-02，NVIDIA 公告顯示 Dell 伺服器可採用相關平台；能否新增營收，取決於 Dell 將產品推進至可訂購、客戶追加採購及 Dell 如期交付。",
+    "key_gap": "最重要的是 Blackwell 交付有多少屬新增需求、有多少取代 Dell 既有機型。若 Dell 未公開量化，估算淨營收貢獻需非公開的產品別訂單、交付與認列資料。",
+    "next_check": "自 2024-06-02 公告後至 2025-06-30，查 Dell 首份具名 Blackwell 伺服器產品公告或官方產品頁，記錄正式可訂購狀態及首批交付窗口，再以 Dell 後續公開說明核對實際交付。",
+    "evidence_limits": [
+      {"evidence_id": "nv-system:dell", "limit": "支持 Dell、Hewlett Packard Enterprise 與 Lenovo 的伺服器可使用相關技術，未提供各廠正式上市、接單或交付紀錄。"},
+      {"evidence_id": "nv-system:original", "limit": "同一公告的英文名單可核對三家公司名稱，無法獨立佐證商業進度。"},
+      {"evidence_id": "nv-system:peer", "limit": "支持 Supermicro 供應以 NVIDIA GPU 與網路為基礎的產品，未證實與 Dell 機型可互換或服務同一批客戶。"},
+      {"evidence_id": "nv-system:platform", "limit": "支持 NVIDIA 公告談及 Blackwell 與系統設計平台的產業採用情形，未揭露 Dell 晶片配額、客戶訂單或財務指引。"}
+    ],
+    "public_checks": [
+      {"metric": "Dell 具名 Blackwell 伺服器是否正式開放訂購", "source_to_watch": "Dell 官方產品頁與上市公告", "window": "平台公告後至 2025-06-30，依產品狀態更新覆核。", "impact_on_thesis": "可訂購提高產品商業化的可信度。此里程碑無法證明已有訂單或新增營收。", "evidence_ids": ["nv-system:dell", "nv-system:platform"]},
+      {"metric": "同款 Dell 伺服器首批實際交付相對於原始公開窗口的早晚", "source_to_watch": "Dell 產品進度公告或公開法說說明", "window": "限於 2025-06-30 前已屆期的窗口，於屆期後至研究截止日覆核。", "impact_on_thesis": "準時交付降低首批延誤疑慮。具名延誤及平台相關原因提高執行風險的可信度。若 Dell 僅公布整體伺服器營收，仍無法判定該機型交付進度。", "evidence_ids": ["nv-system:dell", "nv-system:platform"]}
+    ],
+    "supply_chain": [
+      {"company": "NVIDIA", "role": "upstream", "status": "candidate", "product_scope": "Dell 伺服器可採用的 Blackwell 與系統設計平台。", "relationship": "NVIDIA 公告具名 Dell 並說明技術適用性，未揭露直接供貨安排。", "transmission": "若 Dell 將平台商品化並實際取得所需元件，可支持系統交付。", "materiality": "未揭露供貨量、單價或 Dell 占比。", "public_check": "核對 NVIDIA 平台更新及 Dell 具名機型的配置與交付公告。", "gap": "Dell 實際配置、供貨路徑及配額。", "evidence_ids": ["nv-system:dell", "nv-system:platform"]},
+      {"company": "Hewlett Packard Enterprise", "role": "alternative", "status": "comparable_only", "product_scope": "可採用相關資料中心技術的同業伺服器。", "relationship": "與 Dell 同列 NVIDIA 公告。", "transmission": "具名機型若正式上市，可比較兩廠導入時程。採購轉移另需客戶實際分配。", "materiality": "缺少可替代配置、客戶分配及交易金額。", "public_check": "查 Hewlett Packard Enterprise 官方產品頁的機型、配置與可訂購狀態。", "gap": "相同工作負載下的可替代性及客戶選擇。", "evidence_ids": ["nv-system:dell", "nv-system:original"]},
+      {"company": "Lenovo", "role": "alternative", "status": "comparable_only", "product_scope": "可採用相關資料中心技術的同業伺服器。", "relationship": "NVIDIA 同時列名 Lenovo 與 Dell。", "transmission": "若 Lenovo 公布具名產品供應進度，可比較平台落地速度。客戶仍可延後採購或另選供應商。", "materiality": "未披露重疊客戶、可承接數量或收入。", "public_check": "查 Lenovo 官方產品公告所列配置與供應狀態。", "gap": "可比較配置、實際交付與客戶分配。", "evidence_ids": ["nv-system:dell", "nv-system:original"]},
+      {"company": "Supermicro", "role": "alternative", "status": "comparable_only", "product_scope": "以 NVIDIA GPU 與網路為基礎的系統產品。", "relationship": "同一公告具名的系統廠，與 Dell 的產品重疊程度待查。", "transmission": "若公布具名 Blackwell 系統，可對照 Dell 商品化進度。客戶轉單仍需可替代產品及實際採購決定。", "materiality": "未揭露特定機型銷量或訂單轉移金額。", "public_check": "查 Supermicro 官方產品公告是否明列 Blackwell 配置及正式供應狀態。", "gap": "對應機型、交付能力及客戶選擇。", "evidence_ids": ["nv-system:peer", "nv-system:platform"]}
+    ],
+    "trade_opportunities": [
+      {"company": "NVIDIA", "direction": "watch", "earnings_path": "Dell 系統實際放量才可能增加平台元件需求，對 NVIDIA 的淨增量取決於是否排擠其他出貨。", "catalyst": "平台公告後至 2025-06-30 的 Dell 上市及交付更新。", "trigger": "Dell 確認具名 Blackwell 配置已開始交付，可上修對平台落地的信心。", "invalidation": "Dell 確認該配置於同一期間取消或截至期末仍未開始交付。", "evidence_gap": "缺 Dell 對應元件數量、NVIDIA 增量收益及估值資料。", "ticker": null, "listing_evidence_id": null, "evidence_ids": ["nv-system:dell", "nv-system:platform"]},
+      {"company": "Supermicro", "direction": "watch", "earnings_path": "具名 Blackwell 系統上市可擴充可售產品，營收取決於客戶實際採購與交付。", "catalyst": "至 2025-06-30 的 Supermicro 產品更新。", "trigger": "官方確認至少一款具名 Blackwell 系統已正式可訂購。", "invalidation": "公司確認截至同一截止日所有該類系統仍僅供預覽。", "evidence_gap": "缺與 Dell 的可替代性、增量收入及估值依據。", "ticker": null, "listing_evidence_id": null, "evidence_ids": ["nv-system:peer", "nv-system:platform"]},
+      {"company": "Hewlett Packard Enterprise", "direction": "watch", "earnings_path": "具名機型進入銷售可增加採購選項，轉為營收仍需接單與履約。", "catalyst": "至 2025-06-30 的官方伺服器上市公告。", "trigger": "公司確認具名 Blackwell 伺服器正式開放訂購。", "invalidation": "公司確認截至同一截止日該系列全數尚未開放訂購。", "evidence_gap": "缺客戶分配、產品增量獲利與估值資料。", "ticker": null, "listing_evidence_id": null, "evidence_ids": ["nv-system:dell", "nv-system:original", "nv-system:platform"]},
+      {"company": "Lenovo", "direction": "watch", "earnings_path": "平台導入若形成新增系統交付，才可能增加伺服器收入。", "catalyst": "至 2025-06-30 的 Lenovo 產品供應更新。", "trigger": "公司確認具名 Blackwell 伺服器已開始交付。", "invalidation": "公司確認截至同一截止日該系列仍未開始交付。", "evidence_gap": "缺交付規模、既有機型替代率及估值資料。", "ticker": null, "listing_evidence_id": null, "evidence_ids": ["nv-system:dell", "nv-system:original", "nv-system:platform"]}
+    ]
+  }
+}

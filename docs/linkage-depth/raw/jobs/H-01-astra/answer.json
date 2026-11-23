@@ -1,0 +1,111 @@
+{
+  "business_linkages": [
+    {
+      "linked_stance": "bull",
+      "scope": "counterparty",
+      "origin_business": "LSEG 資料平台與關鍵科技基礎設施",
+      "origin_evidence_ids": ["ms-lseg:migration", "ms-lseg:contract"],
+      "affected_company": "Microsoft",
+      "affected_business": "Azure 雲端基礎設施服務",
+      "affected_evidence_ids": ["ms-lseg:migration", "ms-lseg:original"],
+      "mechanism": "LSEG 將正式營運的工作負載遷至 Azure 後，持續運作所需的運算與儲存服務可帶動 Microsoft 的計費用量。",
+      "baseline": "截至 2022 年 12 月 12 日，公告揭露遷移計畫及十年最低雲端相關支出承諾。LSEG 原有 Azure 用量與已上線工作負載數量均未知。",
+      "condition": "至少一項資料平台或關鍵基礎設施在觀察期內進入正式營運，且帶來超過原有水準的 Azure 計費用量。",
+      "financial_effect": "新增用量可隨服務交付貢獻 Microsoft 雲端營收。貢獻金額取決於實際用量與定價，對營業利益的影響還取決於服務成本。",
+      "alternative_explanation": "LSEG 原有的 Microsoft 雲端採購若可計入最低承諾，即使履約支出增加，新增 Azure 營收仍可能遠低於承諾總額。",
+      "metric": "LSEG 或 Microsoft 公開確認已在 Azure 正式營運的具名工作負載數，以及雙方若有揭露的相關用量或支出變化。",
+      "observation_period": "2022 年 12 月 13 日至 2024 年 12 月 31 日",
+      "public_source": "LSEG 與 Microsoft 的合作進度公告、財報及業績簡報",
+      "deadline": "2024-12-31",
+      "prediction": "預期截至 2024 年底，至少一方會確認一項具名工作負載已在 Azure 正式營運。這可驗證遷移進度，營收增量仍須用量或支出資料佐證。",
+      "invalidation": "若雙方明確表示全部正式遷移已延至 2024 年後，或揭露遷移後相關計費用量未增加，則期內帶動新增用量的假設失效。單純缺乏披露只能列為未驗證。"
+    }
+  ],
+  "business_linkage_gap": "Workspace 與 Teams／Microsoft 365 的整合仍屬計畫。付費方式、採用基準與收入歸屬均待揭露，因此無法估算這項整合對任一方的新增營收。",
+  "hypotheses": [
+    {
+      "stance": "wait",
+      "mechanism": "LSEG 的十年支出承諾提高 Microsoft 對該客戶長期需求的可見度。要上修截至 2024 年底的獲利預估，仍須知道期內交付多少服務、其中多少屬新增採購，以及交付成本。",
+      "target": "Microsoft 截至 2024 年底的雲端營收與營業利益預估",
+      "horizon": "2024-12-31",
+      "catalyst": "LSEG 揭露首批正式遷移的時間、範圍與相關支出，或 Microsoft 量化合作帶來的當期財務貢獻。",
+      "prediction": "預期到 2024 年底，研究員較能從公開資料核實遷移里程碑，仍難單憑十年承諾推算期內營業利益。",
+      "invalidation": "若雙方揭露足以區分原有採購與新增用量的分期金額，且提供相應成本或利潤貢獻，便可量化期內影響並重新評估觀望立場。",
+      "claim_ids": ["ms-lseg:contract", "ms-lseg:original", "ms-lseg:migration"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2022 年 12 月 12 日，LSEG 已承諾十年內向 Microsoft 支付合計至少 28 億美元的雲端相關支出。對 Microsoft 而言，最早可驗證的商業進展是 LSEG 將正式工作負載遷入 Azure。現有資料支持長期客戶需求，尚不足以上修截至 2024 年底的獲利預估。",
+    "key_gap": "28 億美元涵蓋的服務組合、逐年支出安排、原有採購占比與交付成本均未知。即使將總額除以十年得到每年 2.8 億美元，這個算術平均值也無法代表任一年度的 Azure 新增營收。",
+    "next_check": "優先查核 LSEG 下一份業績報告是否指明哪項正式工作負載已遷入 Azure、何時上線，以及相關雲端支出相較遷移前有何變化。",
+    "evidence_limits": [
+      {
+        "evidence_id": "ms-lseg:contract",
+        "limit": "十年合計最低額並未提供逐年支出、收入認列時點或利潤率。"
+      },
+      {
+        "evidence_id": "ms-lseg:original",
+        "limit": "原文以「minimum cloud-related spend with Microsoft」界定承諾範圍，未列出 Azure 所占比例。這段文字與合約摘要出自同一公告。"
+      },
+      {
+        "evidence_id": "ms-lseg:migration",
+        "limit": "公告列出基礎設施遷移與產品整合計畫，未提供正式上線日期、付費用量或採用率。"
+      },
+      {
+        "evidence_id": "ms-lseg:equity",
+        "limit": "Microsoft 擬取得 LSEG 約 4% 股份。截止時點資料僅支持擬議投資，持股金額或投資收益均應與雲端營收分開估算。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "具名正式工作負載的上線日期、範圍與遷移狀態",
+        "source_to_watch": "LSEG 財報、業績簡報及雙方合作進度公告",
+        "window": "公告後至 2024 年 12 月 31 日",
+        "impact_on_thesis": "正式上線支持 Azure 已開始承接營運需求。若公開資訊僅提及測試，期內用量貢獻仍待驗證。",
+        "evidence_ids": ["ms-lseg:migration"]
+      },
+      {
+        "metric": "期內對 Microsoft 的實際雲端支出、其中 Azure 占比及相較既有採購的增量",
+        "source_to_watch": "LSEG 財報附註與業績說明，以及 Microsoft 公開的合作財務更新",
+        "window": "截至 2024 年 12 月 31 日已公布的報告",
+        "impact_on_thesis": "若能核對同口徑的支出基準與新增用量，可縮小營收估算範圍。若只重申十年總額，則維持觀望。",
+        "evidence_ids": ["ms-lseg:contract", "ms-lseg:original", "ms-lseg:migration"]
+      },
+      {
+        "metric": "Workspace 整合功能的商用日期、付費客戶數及收費方式",
+        "source_to_watch": "LSEG Workspace 與 Microsoft 365 產品公告及雙方業績簡報",
+        "window": "公告後至 2024 年 12 月 31 日",
+        "impact_on_thesis": "商用上線可驗證產品交付。若另有付費採用與收入歸屬資料，才可估算整合對 Microsoft 的營收貢獻。",
+        "evidence_ids": ["ms-lseg:migration"]
+      }
+    ],
+    "supply_chain": [
+      {
+        "company": "London Stock Exchange Group（LSEG）",
+        "role": "downstream",
+        "status": "disclosed_relationship",
+        "product_scope": "Microsoft 雲端相關服務，涵蓋計畫遷移至 Azure 的資料平台與其他關鍵科技基礎設施。",
+        "relationship": "LSEG 是具最低支出承諾的客戶，也是 Workspace 整合計畫的合作方。",
+        "transmission": "LSEG 的遷移時程決定相關工作負載何時開始使用 Azure，後續計費用量影響 Microsoft 的服務營收。",
+        "materiality": "已知合約尺度為十年合計至少 28 億美元。對 Microsoft 在 2024 年底前營收與利益的重大性仍無法量化。",
+        "public_check": "查核 LSEG 是否同步揭露正式上線範圍與可比較的雲端支出。",
+        "gap": "缺少既有採購基準、逐期支出及服務別分配。",
+        "evidence_ids": ["ms-lseg:contract", "ms-lseg:migration", "ms-lseg:original"]
+      }
+    ],
+    "trade_opportunities": [
+      {
+        "company": "Microsoft",
+        "direction": "watch",
+        "earnings_path": "LSEG 正式遷移後的新增計費用量可貢獻雲端營收，扣除相關交付成本後才形成營業利益。",
+        "catalyst": "雙方首次就正式工作負載及相關支出發布可核對的進度更新。",
+        "trigger": "若正式上線與高於原有基準的採購均獲確認，且披露金額足以評估對 Microsoft 獲利的影響，再評估偏多交易。",
+        "invalidation": "若遷移延至研究期後，或公開資料顯示承諾主要由既有採購滿足，則調降對期內新增營收的預期。",
+        "evidence_gap": "現有資料缺少分期增量、成本、估值及市場預期，無法判定股價是否低估合作效益。",
+        "ticker": null,
+        "listing_evidence_id": null,
+        "evidence_ids": ["ms-lseg:contract", "ms-lseg:migration", "ms-lseg:original"]
+      }
+    ]
+  }
+}

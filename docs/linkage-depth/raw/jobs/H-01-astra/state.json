@@ -1,0 +1,90 @@
+{
+  "case": "H-01",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:36:06.327761+00:00",
+  "queued_epoch": 1795430166.3277705,
+  "started_at": "2026-11-23T10:36:06.341062+00:00",
+  "request_sha256": "1b20f67d91847c2c8410ceef36507c607389b88c40d4a1a139cb39e8bd5a8a45",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.005,
+  "prompt_bytes": 3165,
+  "returncode": 0,
+  "cli_elapsed_seconds": 67.38,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "LSEG 資料平台與關鍵科技基礎設施",
+        "origin_evidence_ids": [
+          "ms-lseg:migration",
+          "ms-lseg:contract"
+        ],
+        "affected_company": "Microsoft",
+        "affected_business": "Azure 雲端基礎設施服務",
+        "affected_evidence_ids": [
+          "ms-lseg:migration",
+          "ms-lseg:original"
+        ],
+        "mechanism": "LSEG 將正式營運的工作負載遷至 Azure 後，持續運作所需的運算與儲存服務可帶動 Microsoft 的計費用量。",
+        "baseline": "截至 2022 年 12 月 12 日，公告揭露遷移計畫及十年最低雲端相關支出承諾。LSEG 原有 Azure 用量與已上線工作負載數量均未知。",
+        "condition": "至少一項資料平台或關鍵基礎設施在觀察期內進入正式營運，且帶來超過原有水準的 Azure 計費用量。",
+        "financial_effect": "新增用量可隨服務交付貢獻 Microsoft 雲端營收。貢獻金額取決於實際用量與定價，對營業利益的影響還取決於服務成本。",
+        "alternative_explanation": "LSEG 原有的 Microsoft 雲端採購若可計入最低承諾，即使履約支出增加，新增 Azure 營收仍可能遠低於承諾總額。",
+        "metric": "LSEG 或 Microsoft 公開確認已在 Azure 正式營運的具名工作負載數，以及雙方若有揭露的相關用量或支出變化。",
+        "observation_period": "2022 年 12 月 13 日至 2024 年 12 月 31 日",
+        "public_source": "LSEG 與 Microsoft 的合作進度公告、財報及業績簡報",
+        "deadline": "2024-12-31",
+        "prediction": "預期截至 2024 年底，至少一方會確認一項具名工作負載已在 Azure 正式營運。這可驗證遷移進度，營收增量仍須用量或支出資料佐證。",
+        "invalidation": "若雙方明確表示全部正式遷移已延至 2024 年後，或揭露遷移後相關計費用量未增加，則期內帶動新增用量的假設失效。單純缺乏披露只能列為未驗證。"
+      }
+    ],
+    "business_linkage_gap": "Workspace 與 Teams／Microsoft 365 的整合仍屬計畫。付費方式、採用基準與收入歸屬均待揭露，因此無法估算這項整合對任一方的新增營收。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "LSEG 資料平台與關鍵科技基礎設施",
+        "origin_evidence_ids": [
+          "ms-lseg:migration",
+          "ms-lseg:contract"
+        ],
+        "affected_company": "Microsoft",
+        "affected_business": "Azure 雲端基礎設施服務",
+        "affected_evidence_ids": [
+          "ms-lseg:migration",
+          "ms-lseg:original"
+        ],
+        "mechanism": "LSEG 將正式營運的工作負載遷至 Azure 後，持續運作所需的運算與儲存服務可帶動 Microsoft 的計費用量。",
+        "baseline": "截至 2022 年 12 月 12 日，公告揭露遷移計畫及十年最低雲端相關支出承諾。LSEG 原有 Azure 用量與已上線工作負載數量均未知。",
+        "condition": "至少一項資料平台或關鍵基礎設施在觀察期內進入正式營運，且帶來超過原有水準的 Azure 計費用量。",
+        "financial_effect": "新增用量可隨服務交付貢獻 Microsoft 雲端營收。貢獻金額取決於實際用量與定價，對營業利益的影響還取決於服務成本。",
+        "alternative_explanation": "LSEG 原有的 Microsoft 雲端採購若可計入最低承諾，即使履約支出增加，新增 Azure 營收仍可能遠低於承諾總額。",
+        "metric": "LSEG 或 Microsoft 公開確認已在 Azure 正式營運的具名工作負載數，以及雙方若有揭露的相關用量或支出變化。",
+        "observation_period": "2022 年 12 月 13 日至 2024 年 12 月 31 日",
+        "public_source": "LSEG 與 Microsoft 的合作進度公告、財報及業績簡報",
+        "deadline": "2024-12-31",
+        "prediction": "預期截至 2024 年底，至少一方會確認一項具名工作負載已在 Azure 正式營運。這可驗證遷移進度，營收增量仍須用量或支出資料佐證。",
+        "invalidation": "若雙方明確表示全部正式遷移已延至 2024 年後，或揭露遷移後相關計費用量未增加，則期內帶動新增用量的假設失效。單純缺乏披露只能列為未驗證。"
+      }
+    ],
+    "business_linkage_gap": "Workspace 與 Teams／Microsoft 365 的整合仍屬計畫。付費方式、採用基準與收入歸屬均待揭露，因此無法估算這項整合對任一方的新增營收。"
+  },
+  "elapsed_seconds": 67.381,
+  "usage": {
+    "input_tokens": 17040,
+    "cached_input_tokens": 0,
+    "output_tokens": 2493,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.184,
+    "turn.started": 1.323,
+    "item.completed": 66.939,
+    "turn.completed": 66.975
+  },
+  "finished_at": "2026-11-23T10:37:13.724659+00:00"
+}

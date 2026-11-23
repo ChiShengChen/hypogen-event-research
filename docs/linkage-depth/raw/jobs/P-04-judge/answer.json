@@ -1,0 +1,18 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出缺少預算或產能移轉的方向、時點與受影響分部，並明確保留歸因。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出缺少共同客戶採購、跨品類促銷或資源移轉的證據，並明確保留歸因。"
+    }
+  ]
+}

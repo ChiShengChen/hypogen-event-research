@@ -1,0 +1,66 @@
+{
+  "case": "P-02",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:31:13.558878+00:00",
+  "queued_epoch": 1795429873.558889,
+  "started_at": "2026-11-23T10:31:13.792322+00:00",
+  "request_sha256": "a6091a4ce730737d2a29964de5c33ad5ff590a76ed1162f885822827fb51a81d",
+  "queue_seconds": 0.116,
+  "preparation_seconds": 0.118,
+  "prompt_bytes": 8146,
+  "returncode": 0,
+  "cli_elapsed_seconds": 18.745,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持分拆計畫及集團預期以節省抵銷協同損失。若同期節省落後於持續性協同損失，集團營業利益承壓。約 8 億歐元是三年目標。若半年報分列一次性費用，並顯示同期節省已足以抵銷持續性損失，即可推翻預測。"
+        }
+      ],
+      "note": "缺口指出缺少事業分攤及節省轉投 Beauty & Wellbeing 的證據，因此未把該事業既有成長歸因於分拆或節省。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持集團的抵銷預期。保留業務須在協同損失發生時已實現經常性節省，營業利益才會高於僅承受損失的情境。若公司公告顯示同期間已有協同損失但相關節省為零，即可推翻部分抵銷的預測，即使業務組合變動推高集團利潤率。"
+        }
+      ],
+      "note": "缺口指出保留業務的節省分攤與金額未明，但未指出流向 Beauty & Wellbeing 的撥款或支出證據缺失，也未明確排除對該事業既有成長的歸因。"
+    }
+  },
+  "elapsed_seconds": 18.746,
+  "usage": {
+    "input_tokens": 17083,
+    "cached_input_tokens": 0,
+    "output_tokens": 669,
+    "reasoning_output_tokens": 149
+  },
+  "event_seconds": {
+    "thread.started": 0.78,
+    "turn.started": 1.33,
+    "item.completed": 18.19,
+    "turn.completed": 18.242
+  },
+  "finished_at": "2026-11-23T10:31:32.541103+00:00"
+}

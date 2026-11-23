@@ -1,0 +1,36 @@
+{
+  "case": "H-06",
+  "call": "harness",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:48:20.935379+00:00",
+  "queued_epoch": 1795430900.935393,
+  "started_at": "2026-11-23T10:48:20.950075+00:00",
+  "request_sha256": "9ba74d6054db504856f1f8d11ad7522e3463d5b02455da08126b20a4f27aaa51",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.006,
+  "prompt_bytes": 12923,
+  "returncode": 0,
+  "cli_elapsed_seconds": 44.209,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "分拆公告未揭露 FedEx 母公司可取得的現金、資本支出重配金額或承接資源的具名業務。第二季已完成的 10 億美元回購也無法證明分拆資金流向。要檢驗跨業務影響，需有 FedEx 公開指明資源由哪項業務移往哪項業務，以及重配前後的金額或產能。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "分拆公告未揭露 FedEx 母公司可取得的現金、資本支出重配金額或承接資源的具名業務。第二季已完成的 10 億美元回購也無法證明分拆資金流向。要檢驗跨業務影響，需有 FedEx 公開指明資源由哪項業務移往哪項業務，以及重配前後的金額或產能。"
+  },
+  "elapsed_seconds": 44.211,
+  "usage": {
+    "input_tokens": 19014,
+    "cached_input_tokens": 0,
+    "output_tokens": 1633,
+    "reasoning_output_tokens": 25
+  },
+  "event_seconds": {
+    "thread.started": 0.188,
+    "turn.started": 1.296,
+    "item.completed": 43.667,
+    "turn.completed": 43.714
+  },
+  "finished_at": "2026-11-23T10:49:05.162903+00:00"
+}

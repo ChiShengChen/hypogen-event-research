@@ -1,0 +1,86 @@
+{
+  "case": "P-02",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:30:19.780004+00:00",
+  "queued_epoch": 1795429819.7800238,
+  "started_at": "2026-11-23T10:30:19.796912+00:00",
+  "request_sha256": "1a049b33533a68496fa9e10589dfc35ec0449a97855790cbbab329fe779c28a4",
+  "queue_seconds": 0.01,
+  "preparation_seconds": 0.008,
+  "prompt_bytes": 2119,
+  "returncode": 0,
+  "cli_elapsed_seconds": 53.75,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "Ice Cream 分拆",
+        "origin_evidence_ids": [
+          "ul-q1:portfolio"
+        ],
+        "affected_company": "Unilever",
+        "affected_business": "分拆後保留業務的營運成本",
+        "affected_evidence_ids": [
+          "ul-q1:portfolio"
+        ],
+        "mechanism": "Ice Cream 分拆會使集團失去部分營運協同效益。若生產力計畫及時降低保留業務的經常性成本，就能減輕分拆對營業利益的壓力。",
+        "baseline": "截至 2024 年 4 月 25 日，公司預期三年節省約 8 億歐元，並預期可抵銷分拆造成的營運協同損失。協同損失金額及節省額的年度分布仍待揭露。",
+        "condition": "分拆於研究期內完成，且可歸屬保留業務的經常性節省在協同損失發生時已生效。",
+        "financial_effect": "相較於僅承受協同損失的情境，保留業務的經常性營業利益較高。一次性分拆與重組費用另行核算。",
+        "alternative_explanation": "即使集團利潤率上升，也可能源於分拆後業務組合改變，單一利潤率數字無法辨認節省額。",
+        "metric": "以相同業務範圍及期間計算，保留業務已實現的經常性節省額減去已發生的營運協同損失，單位為歐元。",
+        "observation_period": "2024 年 4 月 25 日至 2025 年 12 月 31 日間已公開的分拆及財務進度更新",
+        "public_source": "Unilever 業績公告、生產力計畫進度及 Ice Cream 分拆公告",
+        "deadline": "2025-12-31",
+        "prediction": "若分拆按期完成，預期截至分拆時已生效的節省至少可部分抵銷同期協同損失。完全抵銷仍取決於三年計畫的執行進度。",
+        "invalidation": "若公司披露分拆時協同損失已發生，而保留業務尚未實現任何相關節省，則同期部分抵銷的預測失效。若公司未提供可比數據，結論維持待驗證。"
+      }
+    ],
+    "business_linkage_gap": "公司僅揭露集團層級的節省目標。保留業務可分得多少節省、何時入帳，以及分拆會損失多少協同效益，均無法由現有資料量化。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "Ice Cream 分拆",
+        "origin_evidence_ids": [
+          "ul-q1:portfolio"
+        ],
+        "affected_company": "Unilever",
+        "affected_business": "分拆後保留業務的營運成本",
+        "affected_evidence_ids": [
+          "ul-q1:portfolio"
+        ],
+        "mechanism": "Ice Cream 分拆會使集團失去部分營運協同效益。若生產力計畫及時降低保留業務的經常性成本，就能減輕分拆對營業利益的壓力。",
+        "baseline": "截至 2024 年 4 月 25 日，公司預期三年節省約 8 億歐元，並預期可抵銷分拆造成的營運協同損失。協同損失金額及節省額的年度分布仍待揭露。",
+        "condition": "分拆於研究期內完成，且可歸屬保留業務的經常性節省在協同損失發生時已生效。",
+        "financial_effect": "相較於僅承受協同損失的情境，保留業務的經常性營業利益較高。一次性分拆與重組費用另行核算。",
+        "alternative_explanation": "即使集團利潤率上升，也可能源於分拆後業務組合改變，單一利潤率數字無法辨認節省額。",
+        "metric": "以相同業務範圍及期間計算，保留業務已實現的經常性節省額減去已發生的營運協同損失，單位為歐元。",
+        "observation_period": "2024 年 4 月 25 日至 2025 年 12 月 31 日間已公開的分拆及財務進度更新",
+        "public_source": "Unilever 業績公告、生產力計畫進度及 Ice Cream 分拆公告",
+        "deadline": "2025-12-31",
+        "prediction": "若分拆按期完成，預期截至分拆時已生效的節省至少可部分抵銷同期協同損失。完全抵銷仍取決於三年計畫的執行進度。",
+        "invalidation": "若公司披露分拆時協同損失已發生，而保留業務尚未實現任何相關節省，則同期部分抵銷的預測失效。若公司未提供可比數據，結論維持待驗證。"
+      }
+    ],
+    "business_linkage_gap": "公司僅揭露集團層級的節省目標。保留業務可分得多少節省、何時入帳，以及分拆會損失多少協同效益，均無法由現有資料量化。"
+  },
+  "elapsed_seconds": 53.752,
+  "usage": {
+    "input_tokens": 16786,
+    "cached_input_tokens": 0,
+    "output_tokens": 2352,
+    "reasoning_output_tokens": 26
+  },
+  "event_seconds": {
+    "thread.started": 0.714,
+    "turn.started": 1.53,
+    "item.completed": 53.229,
+    "turn.completed": 53.269
+  },
+  "finished_at": "2026-11-23T10:31:13.551049+00:00"
+}

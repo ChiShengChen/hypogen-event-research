@@ -1,0 +1,108 @@
+{
+  "business_linkages": [
+    {
+      "linked_stance": "bull",
+      "scope": "internal",
+      "origin_business": "Cruise 的 robotaxi 開發",
+      "origin_evidence_ids": ["gm-av:event", "gm-av:original"],
+      "affected_company": "General Motors",
+      "affected_business": "以 Super Cruise 為基礎的個人用車駕駛輔助業務",
+      "affected_evidence_ids": ["gm-av:business"],
+      "mechanism": "停止資助 robotaxi 開發後，GM 擬整合兩支技術團隊。若 Cruise 人員投入個人用車專案，Super Cruise 可利用既有車款平台，將研發成果推向更多量產車款。",
+      "baseline": "截至 2024 年 12 月 10 日，Super Cruise 已提供給逾 20 款車。公告未列出確切款數或完整名單。",
+      "condition": "整合團隊須實際參與 Super Cruise 的車款導入，且新增車款須在觀察期內開放客戶選用。",
+      "financial_effect": "新增車款可擴大能夠選用 Super Cruise 的客群。營收增量取決於相關車款銷量、選用率及實收價格，現有資料不足以估算。",
+      "alternative_explanation": "新增車款也可能源自整合前已排定的產品計畫。若只有上市公告，仍需另查整合團隊的貢獻。",
+      "metric": "公告後首次提供 Super Cruise 的量產車款數，以及 GM 是否說明整合團隊參與該車款導入。",
+      "observation_period": "2024 年 12 月 11 日至 2025 年 12 月 31 日",
+      "public_source": "GM 車款上市公告、Super Cruise 適用車款資訊及法說會對團隊分工的說明",
+      "deadline": "2025-12-31",
+      "prediction": "截至 2025 年底，至少一款先前未提供 Super Cruise 的量產車款開放選用，且 GM 公開說明整合團隊參與其導入。",
+      "invalidation": "若截至年底沒有新增車款，或 GM 確認新增車款均由整合前的原團隊獨立完成，則此項預測失效。若僅缺少分工揭露，則因果關係仍待驗證。"
+    }
+  ],
+  "business_linkage_gap": "公告交代了兩支團隊的整合意向，但未披露 Cruise 人員將投入哪些 Super Cruise 專案、相關預算或原定上市時程。現有資料也未指認受影響的外部供應商或客戶。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "停止資助 robotaxi 開發並完成重整，可降低 GM 持續投入自動駕駛業務的支出。效益大小取決於完成時點及保留的研發支出。",
+      "target": "General Motors 的年度支出水準",
+      "horizon": "至 2025 年 12 月 31 日",
+      "catalyst": "GM 原預期於 2025 年上半年完成重整，首個檢驗點是公司對完成日期及節支進度的更新。",
+      "prediction": "GM 於 2025 年上半年完成重整，並於年底前提供重整後年度支出較原計畫減少逾 10 億美元的量化依據。2025 曆年實際節支額另依生效月份核對。",
+      "invalidation": "若重整延至下半年，則時程預測失效。若 GM 將重整後年度節支預期下修至 10 億美元或以下，則金額預測亦失效。",
+      "claim_ids": ["gm-av:event", "gm-av:cost"]
+    },
+    {
+      "stance": "wait",
+      "mechanism": "Super Cruise 已覆蓋逾 20 款車，但要把研發整合轉為收入，仍須有更多客戶實際選用或付費。",
+      "target": "General Motors 的 Super Cruise 收入貢獻",
+      "horizon": "至 2025 年 12 月 31 日",
+      "catalyst": "GM 更新適用車款、客戶選用情形或相關收入。",
+      "prediction": "預期至年底可先從車款公告觀察產品擴展，整合帶來的增量收入仍難單獨估算。",
+      "invalidation": "若 GM 提供可比的付費採用量及實收價格，並說明哪些增量來自整合後的產品，或直接量化相關增量收入，即可重新估算。",
+      "claim_ids": ["gm-av:business", "gm-av:event"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024 年 12 月 10 日，GM 已宣布停止資助 Cruise 的 robotaxi 開發。對 2025 年最可檢驗的財務影響是支出下降。公司預期重整完成後每年可減少逾 10 億美元支出，2025 年內能實現多少則取決於完成時點與過渡成本。Super Cruise 提供了研發成果進入量產車款的途徑，收入貢獻仍待客戶採用數據驗證。",
+    "key_gap": "缺少重整前的可比支出基準、一次性成本及逐季節支金額，尚無法把年度節支目標換算為 2025 年獲利或現金流增量。",
+    "next_check": "先查 GM 對 2025 年上半年重整進度的首次公開更新，核對實際完成日期，並分別記錄重整後年度節支估計、當期已實現節支與一次性成本。",
+    "evidence_limits": [
+      {
+        "evidence_id": "gm-av:event",
+        "limit": "公告確立停止資助的決策及團隊整合計畫，實際停止支出及完成人員整合的日期仍待確認。"
+      },
+      {
+        "evidence_id": "gm-av:original",
+        "limit": "英文摘句中的 majority-owned 說明 GM 持有 Cruise 多數股權，intends to combine 表示整合意向。此摘句與其他段落出自同一份公告。"
+      },
+      {
+        "evidence_id": "gm-av:cost",
+        "limit": "逾 10 億美元是按計畫完成重整後的年度支出降幅預期。公告摘要未提供 2025 年認列時程、費用分類或現金支出明細。"
+      },
+      {
+        "evidence_id": "gm-av:business",
+        "limit": "逾 20 款衡量產品覆蓋範圍。資料缺少各款銷量、客戶選用率、定價與收入。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "實際重整完成日，以及相對 2025 年 6 月 30 日的提前或延後天數",
+        "source_to_watch": "GM 重整進度公告及季度法說會",
+        "window": "2025 年上半年及其後首份季度業績更新",
+        "impact_on_thesis": "若完成時間延後，應縮短 2025 年可享有完整節支效果的期間，再核對公司是否調整年度目標。",
+        "evidence_ids": ["gm-av:event", "gm-av:cost"]
+      },
+      {
+        "metric": "重整後年度支出降幅、2025 年累計已實現節支及一次性重整成本，均以美元計",
+        "source_to_watch": "GM 季報、業績公告及法說會對支出變動的說明",
+        "window": "重整完成後至 2025 年 12 月 31 日已公開的資料",
+        "impact_on_thesis": "以年度降幅核對逾 10 億美元目標，再用當期節支與重整成本評估期內淨效益。未披露項目保留為未知。",
+        "evidence_ids": ["gm-av:cost"]
+      },
+      {
+        "metric": "首次開放選用 Super Cruise 的車款數、整合團隊參與情形，以及公司披露的客戶選用量",
+        "source_to_watch": "GM 量產車款公告、Super Cruise 車款清單及業績說明",
+        "window": "公告次日至 2025 年 12 月 31 日",
+        "impact_on_thesis": "車款資料可驗證覆蓋擴大，團隊分工與選用量則分別用來檢驗整合貢獻及收入機會。",
+        "evidence_ids": ["gm-av:business", "gm-av:original"]
+      }
+    ],
+    "supply_chain": [],
+    "trade_opportunities": [
+      {
+        "company": "General Motors",
+        "direction": "long_if",
+        "earnings_path": "若省下的開發支出原列為當期費用，且節省金額超過新增研發費用與一次性重整費用，營業利益可隨之改善。",
+        "catalyst": "GM 公布重整完成後首份可量化節支效果的業績更新。",
+        "trigger": "公司確認重整完成，提供可比基準支持每年逾 10 億美元的支出降幅，且當期費用明細顯示扣除重整與新增研發費用後已有淨節省。",
+        "invalidation": "若年度支出降幅下修至 10 億美元或以下，或費用明細顯示新增投入持續抵銷節省，則此做多條件失效。",
+        "evidence_gap": "現有資料缺少費用與資本支出的拆分、重整成本及市場估值，無法判斷每股盈餘增幅或股價已反映多少節支。",
+        "ticker": null,
+        "listing_evidence_id": null,
+        "evidence_ids": ["gm-av:cost", "gm-av:event"]
+      }
+    ]
+  }
+}

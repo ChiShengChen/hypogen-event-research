@@ -1,0 +1,18 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出母公司實收現金、資源重配金額及承接業務均未披露，並明確拒絕用已完成的 10 億美元回購推定分拆資金流向。"
+    },
+    {
+      "label": "B",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [],
+      "note": "正確將回購描述為歷史事項，但所列缺口集中於共享成本與服務協議，未指出實收款、分配條款或資金用途缺口，也未明確排除將回購歸因於分拆。"
+    }
+  ]
+}

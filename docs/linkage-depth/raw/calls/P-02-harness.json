@@ -1,0 +1,86 @@
+{
+  "case": "P-02",
+  "call": "harness",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:29:24.720511+00:00",
+  "queued_epoch": 1795429764.7205253,
+  "started_at": "2026-11-23T10:29:24.735501+00:00",
+  "request_sha256": "5a9f0383a031b15baf8d5cf1ef08cff6300bbef66bb1a2192fadef0643708cb1",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.007,
+  "prompt_bytes": 11533,
+  "returncode": 0,
+  "cli_elapsed_seconds": 55.035,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bear",
+        "scope": "internal",
+        "origin_business": "Ice Cream",
+        "origin_evidence_ids": [
+          "ul-q1:portfolio"
+        ],
+        "affected_company": "Unilever",
+        "affected_business": "集團生產力計畫",
+        "affected_evidence_ids": [
+          "ul-q1:portfolio"
+        ],
+        "mechanism": "公司預期生產力節省可抵銷分拆造成的營運協同損失。若共用作業先行拆開、節省較晚實現，集團須先承擔成本，即使分拆最終如期完成也一樣。",
+        "baseline": "若維持原有共用作業，集團無須以生產力節省填補此次分拆新增的協同損失。",
+        "condition": "分拆已造成持續性協同損失，且同期間實現的生產力節省不足以抵銷。",
+        "financial_effect": "兩者淨額為負會壓低集團營業利益。三年約 8 億歐元是節省目標，當期節省與協同損失均缺金額。",
+        "alternative_explanation": "一次性分拆費用也可能壓低利益。須查公司是否分列一次性費用與持續性協同損失，再與同期已實現節省比較。",
+        "metric": "同期間已實現生產力節省減持續性分拆協同損失，或公司明示兩者是否已相抵。",
+        "observation_period": "2025 年上半年",
+        "public_source": "Unilever 半年度業績中的分拆與生產力進度說明。若僅更新三年目標，淨額仍待查。",
+        "deadline": "2025-12-31",
+        "prediction": "Unilever 揭露 2025 年上半年實現的節省低於同期持續性分拆協同損失。",
+        "invalidation": "Unilever 揭露 2025 年上半年實現的節省等於或高於同期持續性分拆協同損失。"
+      }
+    ],
+    "business_linkage_gap": "公司已說明節省的抵銷用途，但未揭露實現時程、協同損失金額或各事業分攤。若公開資料缺乏同口徑比較，須取得內部成本調節表。也無資料顯示節省會轉投 Beauty & Wellbeing。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bear",
+        "scope": "internal",
+        "origin_business": "Ice Cream",
+        "origin_evidence_ids": [
+          "ul-q1:portfolio"
+        ],
+        "affected_company": "Unilever",
+        "affected_business": "集團生產力計畫",
+        "affected_evidence_ids": [
+          "ul-q1:portfolio"
+        ],
+        "mechanism": "公司預期生產力節省可抵銷分拆造成的營運協同損失。若共用作業先行拆開、節省較晚實現，集團須先承擔成本，即使分拆最終如期完成也一樣。",
+        "baseline": "若維持原有共用作業，集團無須以生產力節省填補此次分拆新增的協同損失。",
+        "condition": "分拆已造成持續性協同損失，且同期間實現的生產力節省不足以抵銷。",
+        "financial_effect": "兩者淨額為負會壓低集團營業利益。三年約 8 億歐元是節省目標，當期節省與協同損失均缺金額。",
+        "alternative_explanation": "一次性分拆費用也可能壓低利益。須查公司是否分列一次性費用與持續性協同損失，再與同期已實現節省比較。",
+        "metric": "同期間已實現生產力節省減持續性分拆協同損失，或公司明示兩者是否已相抵。",
+        "observation_period": "2025 年上半年",
+        "public_source": "Unilever 半年度業績中的分拆與生產力進度說明。若僅更新三年目標，淨額仍待查。",
+        "deadline": "2025-12-31",
+        "prediction": "Unilever 揭露 2025 年上半年實現的節省低於同期持續性分拆協同損失。",
+        "invalidation": "Unilever 揭露 2025 年上半年實現的節省等於或高於同期持續性分拆協同損失。"
+      }
+    ],
+    "business_linkage_gap": "公司已說明節省的抵銷用途，但未揭露實現時程、協同損失金額或各事業分攤。若公開資料缺乏同口徑比較，須取得內部成本調節表。也無資料顯示節省會轉投 Beauty & Wellbeing。"
+  },
+  "elapsed_seconds": 55.037,
+  "usage": {
+    "input_tokens": 18575,
+    "cached_input_tokens": 0,
+    "output_tokens": 2257,
+    "reasoning_output_tokens": 115
+  },
+  "event_seconds": {
+    "thread.started": 0.194,
+    "turn.started": 1.302,
+    "item.completed": 54.502,
+    "turn.completed": 54.552
+  },
+  "finished_at": "2026-11-23T10:30:19.774352+00:00"
+}

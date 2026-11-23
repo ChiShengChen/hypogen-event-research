@@ -1,0 +1,133 @@
+{
+  "business_linkages": [
+    {
+      "linked_stance": "bull",
+      "scope": "counterparty",
+      "origin_business": "Anthropic 的基礎模型訓練",
+      "origin_evidence_ids": ["amzn-ai:event", "amzn-ai:compute"],
+      "affected_company": "Amazon",
+      "affected_business": "AWS 的 Trainium 訓練運算服務",
+      "affected_evidence_ids": ["amzn-ai:compute", "amzn-ai:original"],
+      "mechanism": "Anthropic 若將新增的模型訓練工作交由 AWS 的 Trainium 執行，且按用量付費，AWS 可從這批工作取得額外運算收入。",
+      "baseline": "截至 2024 年 11 月 22 日，AWS 已是 Anthropic 的主要雲端供應商，此次再獲指定為主要訓練合作夥伴。公告未提供既有付費用量。",
+      "condition": "後續訓練須實際使用 Trainium，且相較既有安排增加 Anthropic 在 AWS 的付費運算支出。",
+      "financial_effect": "新增付費支出可帶動 AWS 營收。營業利益貢獻另取決於實收價格、硬體折舊及營運成本，現有資料無法估算。",
+      "alternative_explanation": "Anthropic 可能把原已付費的 AWS 訓練工作移至 Trainium。如此即使 Trainium 用量上升，AWS 從 Anthropic 取得的總收入仍可能持平。",
+      "metric": "Anthropic 實際以 Trainium 訓練的模型或工作負載，以及該公司在 AWS 的付費訓練支出相較公告前的變化。",
+      "observation_period": "2024 年 11 月 23 日至 2025 年 12 月 31 日",
+      "public_source": "Amazon、AWS 或 Anthropic 的技術公告，以及 Amazon 財報或法說會對相關付費用量的說明。",
+      "deadline": "2025-12-31",
+      "prediction": "期限內至少有一項公開揭露可辨識 Anthropic 已以 Trainium 執行具體訓練工作。若另有可比較的付費支出增量，才支持 AWS 營收受益。",
+      "invalidation": "若雙方揭露相關訓練已取消或延至期限之後，期間內落地的預測即失效。若確認僅替換既有 AWS 運算且支出未增，則新增營收的推論失效。"
+    }
+  ],
+  "business_linkage_gap": "訓練端缺少公告前後可比較的付費支出。通路端僅知 AWS 客戶已可經 Bedrock 使用 Claude，缺少推論用量、計價及收入分配，兩端對 AWS 營收的貢獻均待核實。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "主要訓練夥伴地位與共同開發 Trainium 軟硬體的安排，提高 Anthropic 將後續訓練工作交給 AWS 的可能性。新增付費用量是營收上行的必要條件。",
+      "target": "Amazon 的 AWS 訓練運算收入",
+      "horizon": "2025-12-31",
+      "catalyst": "雙方首次揭露 Anthropic 在 Trainium 上實際執行的具體訓練工作，以及相應用量或支出。",
+      "prediction": "截至期限可辨識至少一項實際訓練工作。若揭露同口徑支出，其相較公告前應有增量，方符合收入上行情境。",
+      "invalidation": "若訓練計畫取消、延後至 2026 年以後，或已披露的工作只是 AWS 內部遷移且未增加付費支出，則相應的落地或收入預測失效。",
+      "claim_ids": ["amzn-ai:event", "amzn-ai:original", "amzn-ai:compute"]
+    },
+    {
+      "stance": "wait",
+      "mechanism": "Bedrock 已提供 Claude。此次合作要透過該通路增加 AWS 營收，仍需客戶增加付費使用，且 AWS 能從增量使用取得收入。",
+      "target": "Amazon 經 Bedrock 提供 Claude 的收入",
+      "horizon": "2025-12-31",
+      "catalyst": "AWS 公布可歸屬於 Claude 的 Bedrock 付費用量及收入，並給出可比較的前期數字。",
+      "prediction": "若客戶擴大採用且 AWS 每單位實收收入穩定，Claude 在 Bedrock 的付費用量與對應收入應同向增加。",
+      "invalidation": "若同口徑資料顯示用量持平，或用量增加而 AWS 對應收入持平或下降，則該通路的收入上行情境不成立。僅有 Bedrock 整體成長時，判斷仍待驗證。",
+      "claim_ids": ["amzn-ai:channel"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024 年 11 月 22 日，Amazon 宣布再投資 Anthropic 40 億美元，AWS 在既有主要雲端供應商關係上取得主要訓練合作夥伴地位。至 2025 年底，最值得驗證的是這項安排能否為 AWS 帶來新增付費訓練工作。40 億美元屬策略投資金額，無法據以估算 AWS 訂單、營收或獲利。",
+    "key_gap": "公告未列保證用量、單價、既有支出或可歸屬營收。即使後續證實採用 Trainium，仍需分辨新增訓練需求與既有 AWS 工作遷移。",
+    "next_check": "先從雙方後續公告找出具體模型、晶片及實際訓練時間，再查 Amazon 財報或法說會有無相對既有支出的增量。若只能確認部署，就只更新技術採用判斷。",
+    "evidence_limits": [
+      {
+        "evidence_id": "amzn-ai:event",
+        "limit": "支持追加投資金額與合作角色。主要夥伴稱謂無法確定獨家性、採購占比或最低支出。"
+      },
+      {
+        "evidence_id": "amzn-ai:original",
+        "limit": "英文摘句確認「primary training partner」用語，與事件摘要出自同一公告，不能作為獨立佐證。"
+      },
+      {
+        "evidence_id": "amzn-ai:compute",
+        "limit": "揭露未來使用 Trainium、Inferentia 與共同開發的計畫。實際工作量、上線日期及成本效益仍待揭露。"
+      },
+      {
+        "evidence_id": "amzn-ai:channel",
+        "limit": "支持 Bedrock 已提供 Claude。公告未列保證雲端用量、單價或 AWS 認列的收入，無法量化本次事件帶來的通路增量。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "可辨識模型或工作負載、晶片種類、用途及實際執行日期",
+        "source_to_watch": "AWS 與 Anthropic 的模型發布及技術公告",
+        "window": "公告次日至 2025 年 12 月 31 日",
+        "impact_on_thesis": "可確認訓練或部署進度。Inferentia 推論部署只支持推論採用，驗證 Trainium 訓練仍須訓練案例。",
+        "evidence_ids": ["amzn-ai:compute", "amzn-ai:original"]
+      },
+      {
+        "metric": "Anthropic 在 AWS 的付費訓練用量、實收價格或相關收入，相較公告前的同口徑變化",
+        "source_to_watch": "Amazon 財報、法說會及雙方後續商業公告",
+        "window": "僅採計截至 2025 年 12 月 31 日已公開的資料",
+        "impact_on_thesis": "可歸屬的收入增量支持看多假設。若只取得 AWS 部門總營收，仍無法判定 Anthropic 的貢獻。",
+        "evidence_ids": ["amzn-ai:event", "amzn-ai:compute", "amzn-ai:channel"]
+      },
+      {
+        "metric": "Bedrock 上 Claude 的付費推論用量與 AWS 對應收入",
+        "source_to_watch": "AWS 的 Bedrock 業務更新及 Amazon 法說會",
+        "window": "公告次日至 2025 年 12 月 31 日",
+        "impact_on_thesis": "前後期可比較的用量與收入若同步增加，支持通路受益。僅新增可選模型無法驗證收入成長。",
+        "evidence_ids": ["amzn-ai:channel"]
+      }
+    ],
+    "supply_chain": [
+      {
+        "company": "Anthropic",
+        "role": "downstream",
+        "status": "disclosed_relationship",
+        "product_scope": "AWS 模型訓練及部署運算服務，涉及 Trainium 與 Inferentia",
+        "relationship": "Anthropic 是 AWS 的雲端客戶，已指定 AWS 為主要訓練夥伴，並表示將使用其晶片訓練及部署未來模型。",
+        "transmission": "Anthropic 的模型工作若增加其在 AWS 的付費運算支出，可帶動 AWS 服務收入。",
+        "materiality": "合作角色已明確，收入規模無法由追加投資額推算。",
+        "public_check": "比對雙方揭露的實際工作負載、用量及支出變化。",
+        "gap": "缺既有運算支出、合約用量、實收單價及運算成本。",
+        "evidence_ids": ["amzn-ai:event", "amzn-ai:compute"]
+      },
+      {
+        "company": "Anthropic",
+        "role": "upstream",
+        "status": "disclosed_relationship",
+        "product_scope": "經 Amazon Bedrock 提供的 Claude 模型",
+        "relationship": "從 Bedrock 的產品供應來看，Anthropic 提供模型，AWS 客戶可經 Bedrock 使用 Claude。",
+        "transmission": "客戶若擴大 Claude 的付費使用，AWS 可依商業條款取得相應收入。",
+        "materiality": "Claude 已有分銷通路，現有資料不足以衡量其對 Bedrock 或 AWS 的收入貢獻。",
+        "public_check": "查核 Claude 在 Bedrock 的付費用量與對應收入是否增加。",
+        "gap": "缺模型別用量、前期基準及收入分配條款。",
+        "evidence_ids": ["amzn-ai:channel"]
+      }
+    ],
+    "trade_opportunities": [
+      {
+        "company": "Amazon",
+        "direction": "watch",
+        "earnings_path": "先確認 Anthropic 帶來的 AWS 增量收入，再檢視運算成本能否讓該收入轉為營業利益。",
+        "catalyst": "雙方公布實際 Trainium 訓練案例，隨後揭露相應的付費支出或 AWS 收入變化。",
+        "trigger": "若具體工作已執行，且可確認新增付費收入及正向利益貢獻，再評估轉為條件式看多。",
+        "invalidation": "若工作僅由 AWS 既有資源遷移且總支出持平，或新增成本抵銷新增收入，則這條獲利上行路徑失效。",
+        "evidence_gap": "缺可歸屬收入、成本、估值及市場預期，亦無上市代號佐證。",
+        "ticker": null,
+        "listing_evidence_id": null,
+        "evidence_ids": ["amzn-ai:event", "amzn-ai:compute", "amzn-ai:channel"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "case": "P-03",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:34:00.540572+00:00",
+  "queued_epoch": 1795430040.5405946,
+  "started_at": "2026-11-23T10:34:00.609853+00:00",
+  "request_sha256": "a598650bd11d09dd486b0305e6713253bcb3dc406f137adf41049bcc7df6d31f",
+  "queue_seconds": 0.013,
+  "preparation_seconds": 0.056,
+  "prompt_bytes": 9101,
+  "returncode": 0,
+  "cli_elapsed_seconds": 23.063,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 Anthropic 擬採用 AWS Trainium。具名訓練可驗證落地，AWS 營收增量另需可比的付費支出。期內若公開確認工作取消、延後，或僅替換既有 AWS 算力且支出持平，即可推翻相應推論。"
+        }
+      ],
+      "note": "缺口涵蓋訓練支出基準及 Bedrock 用量與計價，兩端的 AWS 營收貢獻均待驗證。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": false,
+          "major_error": false,
+          "note": "公告支持 Trainium 訓練計畫及既有 Claude 通路。新版供應須帶來淨新增付費推論，才支持 Bedrock 營收增加。公開核對同版訓練與上架可檢驗里程碑，但沿用既有發行安排也可能產生同一結果，無法據此辨別上架原因。"
+        }
+      ],
+      "note": "缺口指出用量基準、增量付費用量及分潤條款仍未確認，合作的毛利貢獻無法估算。"
+    }
+  },
+  "elapsed_seconds": 23.065,
+  "usage": {
+    "input_tokens": 17324,
+    "cached_input_tokens": 0,
+    "output_tokens": 836,
+    "reasoning_output_tokens": 376
+  },
+  "event_seconds": {
+    "thread.started": 0.732,
+    "turn.started": 1.383,
+    "item.completed": 22.486,
+    "turn.completed": 22.545
+  },
+  "finished_at": "2026-11-23T10:34:23.724237+00:00"
+}

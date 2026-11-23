@@ -1,0 +1,90 @@
+{
+  "pilot": {
+    "planned": 4,
+    "paired": 4,
+    "graded": 4,
+    "metrics": {
+      "astra": {
+        "exact": 3,
+        "positive": 2,
+        "negative": 1,
+        "major": 0
+      },
+      "harness": {
+        "exact": 3,
+        "positive": 1,
+        "negative": 2,
+        "major": 0
+      }
+    },
+    "pass": true
+  },
+  "holdout": {
+    "planned": 8,
+    "paired": 8,
+    "graded": 8,
+    "metrics": {
+      "astra": {
+        "exact": 6,
+        "positive": 4,
+        "negative": 2,
+        "major": 0
+      },
+      "harness": {
+        "exact": 6,
+        "positive": 2,
+        "negative": 4,
+        "major": 0
+      }
+    },
+    "pass": false
+  },
+  "human_completed": 0,
+  "blind_pairs": 12,
+  "published_rule_candidates": 17,
+  "published_rule_passed": 17,
+  "usage": {
+    "astra": {
+      "started": 12,
+      "returned": 12,
+      "timeout": 0,
+      "availability": 0,
+      "elapsed_seconds": 726.26,
+      "metered": 12,
+      "usage": {
+        "input_tokens": 203324,
+        "cached_input_tokens": 46080,
+        "output_tokens": 29463,
+        "reasoning_output_tokens": 54
+      }
+    },
+    "harness": {
+      "started": 12,
+      "returned": 12,
+      "timeout": 0,
+      "availability": 0,
+      "elapsed_seconds": 756.915,
+      "metered": 12,
+      "usage": {
+        "input_tokens": 225131,
+        "cached_input_tokens": 46080,
+        "output_tokens": 28634,
+        "reasoning_output_tokens": 556
+      }
+    },
+    "judge": {
+      "started": 12,
+      "returned": 12,
+      "timeout": 0,
+      "availability": 0,
+      "elapsed_seconds": 218.251,
+      "metered": 12,
+      "usage": {
+        "input_tokens": 203677,
+        "cached_input_tokens": 27904,
+        "output_tokens": 7436,
+        "reasoning_output_tokens": 2691
+      }
+    }
+  }
+}

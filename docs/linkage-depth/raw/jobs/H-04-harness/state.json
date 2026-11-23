@@ -1,0 +1,36 @@
+{
+  "case": "H-04",
+  "call": "harness",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:43:51.914121+00:00",
+  "queued_epoch": 1795430631.9141338,
+  "started_at": "2026-11-23T10:43:52.055705+00:00",
+  "request_sha256": "a7f06c49e4f3a3fdf562f68efb9a84a6ef28eabb90faaedf1d603aac0badd6ab",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.133,
+  "prompt_bytes": 11822,
+  "returncode": 0,
+  "cli_elapsed_seconds": 49.59,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "Beauty、Food & Beverage 與 Essentials 的可比銷售均有成長，但品類增幅無法辨識美妝客是否順帶購買食品或日用品，也無法辨識預算排擠。驗證需有 Target 披露同店跨品類購物籃變化，或取得非公開的交易明細並比較相似客群。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "Beauty、Food & Beverage 與 Essentials 的可比銷售均有成長，但品類增幅無法辨識美妝客是否順帶購買食品或日用品，也無法辨識預算排擠。驗證需有 Target 披露同店跨品類購物籃變化，或取得非公開的交易明細並比較相似客群。"
+  },
+  "elapsed_seconds": 49.592,
+  "usage": {
+    "input_tokens": 18689,
+    "cached_input_tokens": 0,
+    "output_tokens": 1834,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.173,
+    "turn.started": 1.699,
+    "item.completed": 49.078,
+    "turn.completed": 49.117
+  },
+  "finished_at": "2026-11-23T10:44:41.649360+00:00"
+}

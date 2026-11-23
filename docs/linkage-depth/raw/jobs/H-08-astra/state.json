@@ -1,0 +1,88 @@
+{
+  "case": "H-08",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:53:52.781555+00:00",
+  "queued_epoch": 1795431232.781568,
+  "started_at": "2026-11-23T10:53:52.797515+00:00",
+  "request_sha256": "4eec3b986f01da80b3b29e5f0eaffa4befeda680c52916258b7d67b079e795c2",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.007,
+  "prompt_bytes": 2453,
+  "returncode": 0,
+  "cli_elapsed_seconds": 56.758,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bear",
+        "scope": "internal",
+        "origin_business": "NIKE Direct，尤其是 NIKE Brand Digital",
+        "origin_evidence_ids": [
+          "nike-q2:direct"
+        ],
+        "affected_company": "NIKE",
+        "affected_business": "集團毛利",
+        "affected_evidence_ids": [
+          "nike-q2:wholesale",
+          "nike-q2:margin"
+        ],
+        "mechanism": "若直營通路的毛利率高於批發，直營營收降幅持續大於批發，就會降低高毛利通路的營收占比，對集團毛利率形成壓力。資料未揭露兩個通路的毛利率差距。",
+        "baseline": "2025 財年第二季，NIKE Direct 營收為 50 億美元，年減 13%，批發營收為 69 億美元，年減 3%。以兩者營收合計為分母，直營占比約為 42.0%。同期集團毛利率為 43.6%，年減 1 個百分點。",
+        "condition": "後續季度直營營收年增率仍低於批發，且直營毛利率較高。",
+        "financial_effect": "在各通路毛利率及其他業務表現相同的情況下，直營占比下降會壓低集團毛利率。現有資料無法估算影響的基點數。",
+        "alternative_explanation": "折扣加深、產品組合改變或單位成本上升，也可能使集團毛利率下降。第二季通路營收與毛利率同步變動，無法區分各因素的貢獻。",
+        "metric": "按報告口徑比較直營與批發營收年增率，並核對集團毛利率的年變動及公司對變動原因的說明。",
+        "observation_period": "2025 財年第三季，以及截至 2025 年 6 月 30 日已公布的第四季資料。",
+        "public_source": "NIKE 投資人關係網站公布的季度業績公告及隨附財務說明。",
+        "deadline": "2025-06-30",
+        "prediction": "下一個公布季度，直營營收年增率仍低於批發，集團毛利率仍低於去年同期。若公司另指出通路組合對毛利率有負面貢獻，才有直接的歸因依據。",
+        "invalidation": "若下一季直營營收年增率追平或超過批發，或集團毛利率持平或上升，該季聯合預測即失準。若公司明示通路組合對毛利率貢獻為零或為正，則推翻該季的機制判斷。"
+      }
+    ],
+    "business_linkage_gap": "公告未提供分通路毛利率、通路組合對毛利率的量化貢獻，或具名批發客戶與供應商的訂單資料。批發營收也無法直接衡量零售商對消費者的銷售。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bear",
+        "scope": "internal",
+        "origin_business": "NIKE Direct，尤其是 NIKE Brand Digital",
+        "origin_evidence_ids": [
+          "nike-q2:direct"
+        ],
+        "affected_company": "NIKE",
+        "affected_business": "集團毛利",
+        "affected_evidence_ids": [
+          "nike-q2:wholesale",
+          "nike-q2:margin"
+        ],
+        "mechanism": "若直營通路的毛利率高於批發，直營營收降幅持續大於批發，就會降低高毛利通路的營收占比，對集團毛利率形成壓力。資料未揭露兩個通路的毛利率差距。",
+        "baseline": "2025 財年第二季，NIKE Direct 營收為 50 億美元，年減 13%，批發營收為 69 億美元，年減 3%。以兩者營收合計為分母，直營占比約為 42.0%。同期集團毛利率為 43.6%，年減 1 個百分點。",
+        "condition": "後續季度直營營收年增率仍低於批發，且直營毛利率較高。",
+        "financial_effect": "在各通路毛利率及其他業務表現相同的情況下，直營占比下降會壓低集團毛利率。現有資料無法估算影響的基點數。",
+        "alternative_explanation": "折扣加深、產品組合改變或單位成本上升，也可能使集團毛利率下降。第二季通路營收與毛利率同步變動，無法區分各因素的貢獻。",
+        "metric": "按報告口徑比較直營與批發營收年增率，並核對集團毛利率的年變動及公司對變動原因的說明。",
+        "observation_period": "2025 財年第三季，以及截至 2025 年 6 月 30 日已公布的第四季資料。",
+        "public_source": "NIKE 投資人關係網站公布的季度業績公告及隨附財務說明。",
+        "deadline": "2025-06-30",
+        "prediction": "下一個公布季度，直營營收年增率仍低於批發，集團毛利率仍低於去年同期。若公司另指出通路組合對毛利率有負面貢獻，才有直接的歸因依據。",
+        "invalidation": "若下一季直營營收年增率追平或超過批發，或集團毛利率持平或上升，該季聯合預測即失準。若公司明示通路組合對毛利率貢獻為零或為正，則推翻該季的機制判斷。"
+      }
+    ],
+    "business_linkage_gap": "公告未提供分通路毛利率、通路組合對毛利率的量化貢獻，或具名批發客戶與供應商的訂單資料。批發營收也無法直接衡量零售商對消費者的銷售。"
+  },
+  "elapsed_seconds": 56.76,
+  "usage": {
+    "input_tokens": 16939,
+    "cached_input_tokens": 15360,
+    "output_tokens": 2522,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.705,
+    "turn.started": 1.42,
+    "item.completed": 55.957,
+    "turn.completed": 55.958
+  },
+  "finished_at": "2026-11-23T10:54:49.559301+00:00"
+}

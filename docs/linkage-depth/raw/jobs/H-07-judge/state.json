@@ -1,0 +1,76 @@
+{
+  "case": "H-07",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:52:28.087961+00:00",
+  "queued_epoch": 1795431148.087988,
+  "started_at": "2026-11-23T10:52:28.102365+00:00",
+  "request_sha256": "27801f0967c4fa193df151f9838b39b839aff56f61f7cd7d62d8c901c60603e7",
+  "queue_seconds": 0.011,
+  "preparation_seconds": 0.004,
+  "prompt_bytes": 10470,
+  "returncode": 0,
+  "cli_elapsed_seconds": 27.266,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 Peloton 通路與聯名服飾上市計畫。補貨可驗證後續需求，增量毛利仍須扣除既有通路移轉的損失。若 lululemon 在財報說明會揭露同期移轉損失已抵銷合作貢獻，即推翻毛利增益。"
+        },
+        {
+          "index": 2,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持獨家供應與同價導入計畫。若課程留住原會退訂的會員，付費月份與訂閱收入可增加，獲利則取決於新增成本。財報或法說若顯示可比年資會員在導入後的續訂率及付費月份均未改善，即削弱留存假說。"
+        }
+      ],
+      "note": "兩條路徑均符合標準。缺口指出通路毛利、可比會員留存及內容成本仍待披露，因此保留對獲利重要性的判斷。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持獨家內容供應與同價接入計畫。延誤和抵免均為未確認的條件，未建立標準所指的內容成本或留存路徑。若因延誤抵免，受影響會員當期應付會費將降低，金額未明。官方同期條款可區分延誤補償與一般促銷，確認照原額收費即可推翻收費傳導。"
+        }
+      ],
+      "note": "缺口指出內容成本與預算去向均未披露，保留對資源轉投服飾的歸因，也明確限制了公開收費條款可驗證的範圍。"
+    }
+  },
+  "elapsed_seconds": 27.268,
+  "usage": {
+    "input_tokens": 17801,
+    "cached_input_tokens": 13952,
+    "output_tokens": 1050,
+    "reasoning_output_tokens": 410
+  },
+  "event_seconds": {
+    "thread.started": 0.78,
+    "turn.started": 1.63,
+    "item.completed": 26.72,
+    "turn.completed": 26.774
+  },
+  "finished_at": "2026-11-23T10:52:55.371964+00:00"
+}

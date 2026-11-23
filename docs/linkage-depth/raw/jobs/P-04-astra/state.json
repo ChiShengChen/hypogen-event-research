@@ -1,0 +1,36 @@
+{
+  "case": "P-04",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:35:10.295693+00:00",
+  "queued_epoch": 1795430110.2957106,
+  "started_at": "2026-11-23T10:35:10.313710+00:00",
+  "request_sha256": "327e9d79f8a74c0df77a065cf581d7c70f2ce3341fe2c39e7db1add853d1397d",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.009,
+  "prompt_bytes": 2511,
+  "returncode": 0,
+  "cli_elapsed_seconds": 46.824,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "兩個北美分部同季的營業利益走勢相反，但現有資料未揭露共同客戶的採購變化、跨品類促銷或資源移轉，無從判定零食業務的變化是否影響飲料業務。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "兩個北美分部同季的營業利益走勢相反，但現有資料未揭露共同客戶的採購變化、跨品類促銷或資源移轉，無從判定零食業務的變化是否影響飲料業務。"
+  },
+  "elapsed_seconds": 46.828,
+  "usage": {
+    "input_tokens": 16976,
+    "cached_input_tokens": 0,
+    "output_tokens": 1978,
+    "reasoning_output_tokens": 28
+  },
+  "event_seconds": {
+    "thread.started": 0.991,
+    "turn.started": 1.379,
+    "item.completed": 46.297,
+    "turn.completed": 46.334
+  },
+  "finished_at": "2026-11-23T10:35:57.144128+00:00"
+}

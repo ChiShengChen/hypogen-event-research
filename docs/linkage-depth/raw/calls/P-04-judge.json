@@ -1,0 +1,44 @@
+{
+  "case": "P-04",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:35:57.151544+00:00",
+  "queued_epoch": 1795430157.1515684,
+  "started_at": "2026-11-23T10:35:57.166268+00:00",
+  "request_sha256": "0142e7b3f6dd11ac5521dc45f1fbfa7ea137fb3eed93de0ae3af334ff645e341",
+  "queue_seconds": 0.011,
+  "preparation_seconds": 0.004,
+  "prompt_bytes": 5211,
+  "returncode": 0,
+  "cli_elapsed_seconds": 8.82,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出缺少預算或產能移轉的方向、時點與受影響分部，並明確保留歸因。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出缺少共同客戶採購、跨品類促銷或資源移轉的證據，並明確保留歸因。"
+    }
+  },
+  "elapsed_seconds": 8.822,
+  "usage": {
+    "input_tokens": 16224,
+    "cached_input_tokens": 0,
+    "output_tokens": 159,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.693,
+    "turn.started": 1.418,
+    "item.completed": 8.298,
+    "turn.completed": 8.299
+  },
+  "finished_at": "2026-11-23T10:36:05.989511+00:00"
+}

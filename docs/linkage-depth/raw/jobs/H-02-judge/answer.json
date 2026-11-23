@@ -1,0 +1,18 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "未提交連結。指出公告未揭露 Dell 與同業間的採購分配，並要求具名客戶、產品與期間的改單證據，保留訂單轉移歸因。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "未提交連結。將同一客戶採購案的得失標紀錄或同批晶片的配額變動列為判斷條件，保留 Dell 接單排擠同業的歸因。"
+    }
+  ]
+}

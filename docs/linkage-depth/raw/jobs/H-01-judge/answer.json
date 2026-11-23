@@ -1,0 +1,40 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 LSEG 遷移至 Azure 及十年最低支出承諾。正式上線可驗證遷移，新增雲端營收仍須新增計費用量佐證。期內公開確認遷移延後或計費用量持平，均可推翻期內新增用量假設。"
+        }
+      ],
+      "note": "符合指定路徑，且未將十年最低支出均攤為已認列營收。缺口說明整合的付費方式、採用基準與收入歸屬仍待揭露。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 Teams 與 Workspace 的整合計畫。LSEG 產品公告可區分正式對外開放與僅限試用，驗證新增入口。Workspace 營收增量取決於可歸因的付費或續約。此路徑未涵蓋 Azure 遷移與雲端需求。"
+        }
+      ],
+      "note": "缺口指出缺少共用人力、預算與資源調度證據，並明確保留對兩案是否互相排擠的判斷。"
+    }
+  ]
+}

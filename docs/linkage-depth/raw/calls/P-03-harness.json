@@ -1,0 +1,88 @@
+{
+  "case": "P-03",
+  "call": "harness",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:32:43.649354+00:00",
+  "queued_epoch": 1795429963.649365,
+  "started_at": "2026-11-23T10:32:43.683954+00:00",
+  "request_sha256": "d5c201e07363d9b8c37057320f13aea54e8e99b191478984858693692abff0f8",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.026,
+  "prompt_bytes": 12200,
+  "returncode": 0,
+  "cli_elapsed_seconds": 76.71,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "AWS Trainium",
+        "origin_evidence_ids": [
+          "amzn-ai:compute",
+          "amzn-ai:event"
+        ],
+        "affected_company": "Amazon",
+        "affected_business": "Amazon Bedrock",
+        "affected_evidence_ids": [
+          "amzn-ai:channel"
+        ],
+        "mechanism": "若 Anthropic 將新一代 Claude 的實際訓練工作交給 Trainium，並選擇透過 Bedrock 發行該模型，AWS 就能在訓練之外，向使用該模型的客戶收取推論費用。",
+        "baseline": "投資公告前已有 Claude 的 Bedrock 通路。沿用既有合作也可能有新版上架。",
+        "condition": "須能核對同一模型確實使用 Trainium 訓練、Anthropic 決定透過 Bedrock 發行，且 AWS 客戶的付費使用相對既有版本有淨增加。",
+        "financial_effect": "新增付費推論可增加 Bedrock 營收。淨貢獻取決於用量、價格、模型分潤及舊版用量被替代的程度，公告均未量化。",
+        "alternative_explanation": "依既有發行安排推出新版，也會使 Bedrock 型錄增加。對照同一版本的訓練說明與上架公告，可辨識訓練合作是否延伸至通路；增量需求仍須用量資料。",
+        "metric": "公開確認以 Trainium 訓練、且在 Bedrock 正式開放付費使用的新增 Claude 版本數，作為通路延伸的代理指標。",
+        "observation_period": "2024-11-22 公告後至 2025-12-31，以同一模型版本核對兩端。",
+        "public_source": "Anthropic 模型發布說明、Amazon／AWS 合作進度與 Amazon Bedrock 模型上市公告。",
+        "deadline": "2025-12-31",
+        "prediction": "至少一個新版本同時符合兩項條件，支持訓練合作延伸至 Bedrock 的判斷。上架本身無法歸因付費用量或營收增幅。",
+        "invalidation": "若雙方對期內符合訓練條件的版本有完整公開交代，且可核實截至期限均未在 Bedrock 正式開放付費使用，則該版本數為零，推翻期內通路延伸預測。"
+      }
+    ],
+    "business_linkage_gap": "即使同一版本完成訓練並上架，仍缺少既有通路下的用量基準、客戶新增付費用量與分潤條款，無法估計合作為 Bedrock 增加多少毛利。亦無資料可追蹤共同開發是否排擠 AWS 其他專案。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "AWS Trainium",
+        "origin_evidence_ids": [
+          "amzn-ai:compute",
+          "amzn-ai:event"
+        ],
+        "affected_company": "Amazon",
+        "affected_business": "Amazon Bedrock",
+        "affected_evidence_ids": [
+          "amzn-ai:channel"
+        ],
+        "mechanism": "若 Anthropic 將新一代 Claude 的實際訓練工作交給 Trainium，並選擇透過 Bedrock 發行該模型，AWS 就能在訓練之外，向使用該模型的客戶收取推論費用。",
+        "baseline": "投資公告前已有 Claude 的 Bedrock 通路。沿用既有合作也可能有新版上架。",
+        "condition": "須能核對同一模型確實使用 Trainium 訓練、Anthropic 決定透過 Bedrock 發行，且 AWS 客戶的付費使用相對既有版本有淨增加。",
+        "financial_effect": "新增付費推論可增加 Bedrock 營收。淨貢獻取決於用量、價格、模型分潤及舊版用量被替代的程度，公告均未量化。",
+        "alternative_explanation": "依既有發行安排推出新版，也會使 Bedrock 型錄增加。對照同一版本的訓練說明與上架公告，可辨識訓練合作是否延伸至通路；增量需求仍須用量資料。",
+        "metric": "公開確認以 Trainium 訓練、且在 Bedrock 正式開放付費使用的新增 Claude 版本數，作為通路延伸的代理指標。",
+        "observation_period": "2024-11-22 公告後至 2025-12-31，以同一模型版本核對兩端。",
+        "public_source": "Anthropic 模型發布說明、Amazon／AWS 合作進度與 Amazon Bedrock 模型上市公告。",
+        "deadline": "2025-12-31",
+        "prediction": "至少一個新版本同時符合兩項條件，支持訓練合作延伸至 Bedrock 的判斷。上架本身無法歸因付費用量或營收增幅。",
+        "invalidation": "若雙方對期內符合訓練條件的版本有完整公開交代，且可核實截至期限均未在 Bedrock 正式開放付費使用，則該版本數為零，推翻期內通路延伸預測。"
+      }
+    ],
+    "business_linkage_gap": "即使同一版本完成訓練並上架，仍缺少既有通路下的用量基準、客戶新增付費用量與分潤條款，無法估計合作為 Bedrock 增加多少毛利。亦無資料可追蹤共同開發是否排擠 AWS 其他專案。"
+  },
+  "elapsed_seconds": 76.713,
+  "usage": {
+    "input_tokens": 18757,
+    "cached_input_tokens": 0,
+    "output_tokens": 2775,
+    "reasoning_output_tokens": 87
+  },
+  "event_seconds": {
+    "thread.started": 0.741,
+    "turn.started": 1.372,
+    "item.completed": 76.186,
+    "turn.completed": 76.242
+  },
+  "finished_at": "2026-11-23T10:34:00.398368+00:00"
+}

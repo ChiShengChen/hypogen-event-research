@@ -1,0 +1,66 @@
+{
+  "case": "H-03",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:43:30.393786+00:00",
+  "queued_epoch": 1795430610.3937943,
+  "started_at": "2026-11-23T10:43:30.431716+00:00",
+  "request_sha256": "41ae0cc45a795a6129877a2217bc6d91533b71b6bcd3fe819ca977b80700c869",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.029,
+  "prompt_bytes": 8725,
+  "returncode": 0,
+  "cli_elapsed_seconds": 21.442,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持兩端業務及管理層目標。以 SmartCast 版位可購和客戶追加支出為條件，推估 Walmart Connect 廣告收入方向。若 Walmart 在期限內確認尚未開放投放或支出全來自既有預算移轉，即可推翻相應假設。"
+        }
+      ],
+      "note": "缺口具體指出仍需確認上線、採用及可比口徑的新增支出。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 SmartCast 與 Walmart Connect 兩端，可售版位及付費投放列為條件。Walmart 同期公布的具名投放案例可區分通路採用與單純併表，確認零投放則可推翻採用預測。收入淨增額仍須釐清預算來源、價格及收入歸屬。"
+        }
+      ],
+      "note": "缺口將毛利歸於 VIZIO，並指出判斷原通路是否遭排擠所需的可比資料。"
+    }
+  },
+  "elapsed_seconds": 21.443,
+  "usage": {
+    "input_tokens": 17183,
+    "cached_input_tokens": 13952,
+    "output_tokens": 718,
+    "reasoning_output_tokens": 282
+  },
+  "event_seconds": {
+    "thread.started": 0.169,
+    "turn.started": 1.25,
+    "item.completed": 20.822,
+    "turn.completed": 20.879
+  },
+  "finished_at": "2026-11-23T10:43:51.876182+00:00"
+}

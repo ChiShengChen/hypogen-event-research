@@ -1,0 +1,40 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 Uber 的車隊管理職責及兩市獨家叫車計畫。若車輛上線後填補尖峰缺口，且新增行程收益覆蓋追加成本，當地叫車業務貢獻可提高。可用具名營運更新及財報說明會查核同期間資料。若人類駕駛行程等量減少且候車時間未改善，則削弱補足供給的解釋。"
+        }
+      ],
+      "note": "缺口指出管理報酬、成本分攤與訂單替代率仍未知，因此無法由車隊規模推算 Uber 獲利。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持兩市獨家叫車計畫與 Uber 的車庫營運職責。若車庫先啟用且 Uber 在開放叫車前承擔未獲補償的支出，車隊管理初期營業現金流將受壓。若具名城市營運更新顯示兩市車庫均於叫車開放當日或之後啟用，即推翻前置營運預測。現金流仍須以付款責任與時點驗證。"
+        }
+      ],
+      "note": "缺口點明啟用日期可能未公開，並保留成本分攤及收款時點的不確定性，也明確保留跨業務資源調撥的歸因。"
+    }
+  ]
+}

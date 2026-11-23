@@ -1,0 +1,36 @@
+{
+  "case": "H-02",
+  "call": "harness",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:38:56.760074+00:00",
+  "queued_epoch": 1795430336.760084,
+  "started_at": "2026-11-23T10:38:56.799922+00:00",
+  "request_sha256": "694b1263e6fb9d53459e435b597d5a891dc53e3ebefcffe3ea1809b56d16aa4f",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.031,
+  "prompt_bytes": 12046,
+  "returncode": 0,
+  "cli_elapsed_seconds": 72.943,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告列出多家系統廠，但未指出 Dell 哪項既有產品會因 Blackwell 導入而讓出產能或預算，也未揭露客戶在 Dell 與同業間的採購分配。要檢驗第二層影響，需有 Dell 指明受影響產品與資源調整，或客戶公開具名的採購轉向、產品及期間。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告列出多家系統廠，但未指出 Dell 哪項既有產品會因 Blackwell 導入而讓出產能或預算，也未揭露客戶在 Dell 與同業間的採購分配。要檢驗第二層影響，需有 Dell 指明受影響產品與資源調整，或客戶公開具名的採購轉向、產品及期間。"
+  },
+  "elapsed_seconds": 72.946,
+  "usage": {
+    "input_tokens": 18669,
+    "cached_input_tokens": 15360,
+    "output_tokens": 3105,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.165,
+    "turn.started": 1.419,
+    "item.completed": 72.414,
+    "turn.completed": 72.448
+  },
+  "finished_at": "2026-11-23T10:40:09.747908+00:00"
+}

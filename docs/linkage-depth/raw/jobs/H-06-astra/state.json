@@ -1,0 +1,36 @@
+{
+  "case": "H-06",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:49:05.273677+00:00",
+  "queued_epoch": 1795430945.2736938,
+  "started_at": "2026-11-23T10:49:05.502368+00:00",
+  "request_sha256": "2c537cbab04997e900567fb718280256cdf83392e83e2a8ee96c5d124df8c4ab",
+  "queue_seconds": 0.166,
+  "preparation_seconds": 0.062,
+  "prompt_bytes": 3201,
+  "returncode": 0,
+  "cli_elapsed_seconds": 43.014,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "現有資料只揭露分拆意向與集團層級的歷史回購。要判斷分拆對留存業務的獲利影響，仍需共享成本、分拆後費用負擔或雙方服務協議的資料。公告也未具名揭露受影響的供應商或客戶。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "現有資料只揭露分拆意向與集團層級的歷史回購。要判斷分拆對留存業務的獲利影響，仍需共享成本、分拆後費用負擔或雙方服務協議的資料。公告也未具名揭露受影響的供應商或客戶。"
+  },
+  "elapsed_seconds": 43.015,
+  "usage": {
+    "input_tokens": 17142,
+    "cached_input_tokens": 0,
+    "output_tokens": 1701,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.709,
+    "turn.started": 1.336,
+    "item.completed": 42.406,
+    "turn.completed": 42.436
+  },
+  "finished_at": "2026-11-23T10:49:48.519536+00:00"
+}

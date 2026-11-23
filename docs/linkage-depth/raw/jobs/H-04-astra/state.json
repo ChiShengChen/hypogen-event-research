@@ -1,0 +1,36 @@
+{
+  "case": "H-04",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T10:44:41.666430+00:00",
+  "queued_epoch": 1795430681.6664443,
+  "started_at": "2026-11-23T10:44:41.680206+00:00",
+  "request_sha256": "abd032d1b615f10b6ee22464e478e48c0ed98932aee8b54afe024b0c99022be8",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.005,
+  "prompt_bytes": 2391,
+  "returncode": 0,
+  "cli_elapsed_seconds": 47.289,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告僅列品類及合併業績。要驗證美妝是否帶動食品飲料或民生必需品銷售，需要同筆交易的跨品類購買率及比較基期。資料也未具名供應商或揭露採購額，無法將美妝成長連結至特定交易對手的獲利。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告僅列品類及合併業績。要驗證美妝是否帶動食品飲料或民生必需品銷售，需要同筆交易的跨品類購買率及比較基期。資料也未具名供應商或揭露採購額，無法將美妝成長連結至特定交易對手的獲利。"
+  },
+  "elapsed_seconds": 47.29,
+  "usage": {
+    "input_tokens": 16896,
+    "cached_input_tokens": 0,
+    "output_tokens": 1869,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.693,
+    "turn.started": 1.453,
+    "item.completed": 46.725,
+    "turn.completed": 46.749
+  },
+  "finished_at": "2026-11-23T10:45:28.972620+00:00"
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "case": "ford-enriched",
+    "source_sha256": "181ec8c5c63161399ae912c7ddc3762f2c0b03a172047fccd06e21c68e0bc73c",
+    "checked_paths": 1,
+    "passed": true,
+    "findings": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "Kentucky 1 電池廠",
+        "origin_evidence_ids": [
+          "ford-ev-strategy:kentucky-batteries"
+        ],
+        "affected_company": "Ford",
+        "affected_business": "E-Transit",
+        "affected_evidence_ids": [
+          "ford-ev-strategy:kentucky-batteries"
+        ],
+        "mechanism": "電動車投資重排涵蓋電池採購時程。管理層預期 Kentucky 1 可提早帶來成本改善。若 Ford 將 E-Transit 的實際用量配置給該廠並開始裝車，這款商用車可較原方案提早受益，補強資本配置調整的營運理由。",
+        "baseline": "沿用原供應安排，成本改善按原時程發生。Ford 未量化原時程與新方案的時間差。",
+        "condition": "Kentucky 1 可供貨、Ford 實際配置 E-Transit 用量，且裝車電池的到廠成本低於原方案。投產能力本身無法確定採購決策。",
+        "financial_effect": "較低的到廠電池成本可改善採用該電池之 E-Transit 的單車毛利。缺少單位成本差、採用數量與投產費用，總額無法估算。",
+        "alternative_explanation": "產品組合或其他零件降價亦可改善商用車獲利。Ford 點名 E-Transit 已接受 Kentucky 1 供貨可辨識採購變化，成本歸因仍須公司說明電池成本差異。",
+        "metric": "Ford 是否確認 Kentucky 1 已開始向 E-Transit 供應電池，作為成本改善途徑的代理指標。",
+        "observation_period": "2025 年年中預定供應時點至 2025-10-31",
+        "public_source": "Ford 投資人或營運公告中的 Kentucky 1 與 E-Transit 供應進度",
+        "deadline": "2025-10-31",
+        "prediction": "截至複核日，Ford 公開確認 Kentucky 1 已開始向 E-Transit 供貨。此里程碑僅驗證供應途徑。",
+        "invalidation": "若 Ford 明確表示截至同日 Kentucky 1 尚未向 E-Transit 供貨，則期間內的供應假設失效。僅確認其他車款供貨時，E-Transit 仍待查。",
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/37996/000003799624000150/exhibit99toaugust2120248.htm"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "asml",
+    "source_sha256": "31afe95910e1a86a6a23cb75702cde5059425419ff3cc3f0da2fdeb43ff79c8e",
+    "checked_paths": 1,
+    "passed": true,
+    "findings": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "TWINSCAN EXE:5200",
+        "origin_evidence_ids": [
+          "high-na-order:order"
+        ],
+        "affected_company": "Intel",
+        "affected_business": "High-NA EUV 量產",
+        "affected_evidence_ids": [
+          "high-na-order:order"
+        ],
+        "mechanism": "在 ASML 揭示先進邏輯擴產延後的背景下，若 Intel 仍將已訂設備投入量產，就能驗證至少一個具名客戶持續導入新製程，並提高對後續設備需求的信心。追加採購仍需 Intel 另作決策。",
+        "baseline": "已確認首筆採購單，2025 年量產是合作目標。維持在採購或測試階段時，尚無該機型量產使用的效益。",
+        "condition": "Intel 須完成設備與製程驗證，並決定將 EXE:5200 用於量產。",
+        "financial_effect": "量產使用可提高 Intel 該設備的資本利用率。折舊、良率、產量及付款時程未知，無法估算毛利或自由現金流淨額。",
+        "alternative_explanation": "Intel 也曾購買 EXE:5000，一般 High-NA 進度可能只是前代機型測試。需由公告同時指明 EXE:5200 與量產用途。",
+        "metric": "Intel 公開確認 EXE:5200 進入量產使用的里程碑。",
+        "observation_period": "2025 年 1 至 12 月",
+        "public_source": "Intel 製程進度公告或 Intel 與 ASML 聯合公告",
+        "deadline": "2025-12-31",
+        "prediction": "Intel 在 2025 年內公開確認 EXE:5200 已用於量產。",
+        "invalidation": "Intel 公開確認截至 2025 年底 EXE:5200 仍限於測試，或已將量產時程延至 2026 年以後。若僅揭露到貨或未更新，結果未決。",
+        "sources": [
+          "https://investor.asml.com/news-releases/news-release-details/intel-and-asml-strengthen-their-collaboration-drive-high-na-manufacturing-2025"
+        ]
+      }
+    ]
+  }
+]
