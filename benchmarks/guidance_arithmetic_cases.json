@@ -1,0 +1,212 @@
+[
+  {
+    "id": "ntgr_q4_2023",
+    "split": "pilot",
+    "issuer": "NETGEAR, Inc.",
+    "ticker": "NTGR",
+    "event_at": "2024-01-31T16:11:43-05:00",
+    "as_of": "2024-01-31T16:11:43-05:00",
+    "precision": "1000000",
+    "labels": {"period": "the fourth quarter of 2023"},
+    "documents": [{
+      "id": "ntgr_q4_2023_preliminary-release",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1122904/000095017024009393/ntgr-ex99_1.htm",
+      "path": "output/earnings-full-revision/filings/holdout/ntgr_q4_2023_preliminary.htm",
+      "sha256": "be53622cde6380add373550b2aae3993b711d5b0646956932cc04d4ab34acdec",
+      "published_at": "2024-01-31T16:11:43-05:00",
+      "obtained_at": "2024-01-31T16:11:43-05:00"
+    }],
+    "figures": {
+      "new": [{"document": "ntgr_q4_2023_preliminary-release", "block": "ntgr_q4_2023_preliminary-release:p0007",
+               "quote": "between $179 million and $189 million"}],
+      "prior": [{"document": "ntgr_q4_2023_preliminary-release", "block": "ntgr_q4_2023_preliminary-release:p0007",
+                 "quote": "$175 million to $190 million"}]
+    },
+    "items": ["revision", "midpoint_change", "midpoint_change_ratio", "low_change", "high_change"],
+    "trap": "The high end falls by $1 million while the midpoint rises."
+  },
+  {
+    "id": "infn_q4_2023",
+    "split": "pilot",
+    "issuer": "Infinera Corporation",
+    "ticker": "INFN",
+    "event_at": "2024-03-06T16:04:43-05:00",
+    "as_of": "2024-03-06T16:04:43-05:00",
+    "precision": "1000000",
+    "labels": {"period": "the fourth quarter of 2023"},
+    "documents": [{
+      "id": "infn_q4_2023_update-release",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1138639/000113863924000048/infn-3624xex991.htm",
+      "path": "output/earnings-verifier/filings/pilot/infn.htm",
+      "sha256": "f9e8c113db98ab45e49b76b672e9ea0f57abf26d844a1cc6e8a24c8f2ec9668d",
+      "published_at": "2024-03-06T16:04:43-05:00",
+      "obtained_at": "2024-03-06T16:04:43-05:00"
+    }],
+    "figures": {
+      "new": [{"document": "infn_q4_2023_update-release", "block": "infn_q4_2023_update-release:p0006",
+               "quote": "$435 million to $452 million"}],
+      "prior": [{"document": "infn_q4_2023_update-release", "block": "infn_q4_2023_update-release:p0006",
+                 "quote": "$421 million to $451 million"}]
+    },
+    "items": ["revision", "midpoint_change", "midpoint_change_ratio", "low_change", "high_change"],
+    "trap": "The low end rises $14 million but the high end only $1 million; first-quarter 2024 guidance sits in a nearby bullet."
+  },
+  {
+    "id": "bmy_fy2026",
+    "split": "pilot",
+    "issuer": "Bristol-Myers Squibb Company",
+    "ticker": "BMY",
+    "event_at": "2026-07-30T07:05:39-04:00",
+    "as_of": "2026-07-30T07:05:39-04:00",
+    "precision": "100000000",
+    "labels": {"period": "full-year 2026 non-GAAP"},
+    "documents": [{
+      "id": "bmy_q3_2026_annual_only-release",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/14272/000001427226000018/a2026q2ex991-filing.htm",
+      "path": "output/earnings-units/filings/pilot/bmy.htm",
+      "sha256": "ef8d67ef82b399ee54d28ceb80b526fd5c081178a7fb63c334f0cb06d232daae",
+      "published_at": "2026-07-30T07:05:39-04:00",
+      "obtained_at": "2026-07-30T07:05:39-04:00"
+    }],
+    "figures": {
+      "new": [{"document": "bmy_q3_2026_annual_only-release", "block": "bmy_q3_2026_annual_only-release:p0111",
+               "quote": "approximately $49.0 billion to $50.0 billion"}],
+      "prior": [{"document": "bmy_q3_2026_annual_only-release", "block": "bmy_q3_2026_annual_only-release:p0111",
+                 "quote": "approximately $46.0 billion to $47.5 billion"}]
+    },
+    "items": ["revision", "midpoint_change", "midpoint_change_ratio", "width_change"],
+    "trap": "Billion-scale approximate ranges; the range narrows by $0.5 billion while both ends rise."
+  },
+  {
+    "id": "team_q4_fy2025",
+    "split": "pilot",
+    "issuer": "Atlassian Corporation",
+    "ticker": "TEAM",
+    "event_at": "2025-05-01T16:10:24-04:00",
+    "as_of": "2025-05-01T16:10:24-04:00",
+    "precision": "1000000",
+    "labels": {
+      "period": "the fourth quarter of fiscal 2025",
+      "last_period": "the third quarter of fiscal 2025 (three months ended March 31, 2025)"
+    },
+    "documents": [{
+      "id": "team_sec_2025-06-30-release",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1650372/000165037225000018/ex991q3fy25.htm",
+      "path": "output/earnings-execution/filings/team.htm",
+      "sha256": "65219058bfbe47ea92009449db8249cb548fb81004b62ec145727e99a6285782",
+      "published_at": "2025-05-01T16:10:24-04:00",
+      "obtained_at": "2025-05-01T16:10:24-04:00"
+    }],
+    "figures": {
+      "new": [{"document": "team_sec_2025-06-30-release", "block": "team_sec_2025-06-30-release:p0039",
+               "quote": "$1,349 million to $1,359 million"}],
+      "last_actual": [{"document": "team_sec_2025-06-30-release", "block": "team_sec_2025-06-30-release:p0087",
+                       "quote": "1,356,716", "tabular": true,
+                       "unit_block": "team_sec_2025-06-30-release:p0080",
+                       "unit_quote": "(U.S. $ and shares in thousands, except per share data)"}]
+    },
+    "items": ["new_midpoint", "sequential", "sequential_change", "sequential_change_ratio"],
+    "trap": "Strong year-over-year growth, yet the guidance midpoint sits just below the quarter just reported; actuals are in thousands, guidance in millions."
+  },
+  {
+    "id": "fnsr_q1_fy2014",
+    "split": "pilot",
+    "issuer": "Finisar Corporation",
+    "ticker": "FNSR",
+    "event_at": "2013-08-06T17:28:48-04:00",
+    "as_of": "2013-08-06T17:28:48-04:00",
+    "precision": "1000000",
+    "labels": {"period": "the first quarter of fiscal 2014 (ended July 28, 2013)"},
+    "documents": [{
+      "id": "fnsr_q1_fy2014_update-release",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1094739/000110262413000929/finisarcorporation.htm",
+      "path": "output/earnings-verifier/filings/pilot/fnsr.htm",
+      "sha256": "3a94e6eb7c43a1a8a56ab91838e7b2143d58832924b5bc6826eed24b7bd0ba12",
+      "published_at": "2013-08-06T17:28:48-04:00",
+      "obtained_at": "2013-08-06T17:28:48-04:00"
+    }],
+    "figures": {
+      "new": [{"document": "fnsr_q1_fy2014_update-release", "block": "fnsr_q1_fy2014_update-release:p0003",
+               "quote": "approximately $266 million"}],
+      "prior": [{"document": "fnsr_q1_fy2014_update-release", "block": "fnsr_q1_fy2014_update-release:p0003",
+                 "quote": "$245 to $260 million"}]
+    },
+    "items": ["revision", "midpoint_change", "midpoint_change_ratio"],
+    "trap": "A point estimate is compared with a range whose low end omits the unit."
+  },
+  {
+    "id": "nvda_q4_fy2019",
+    "split": "pilot",
+    "issuer": "NVIDIA Corporation",
+    "ticker": "NVDA",
+    "event_at": "2019-01-28T23:59:59-05:00",
+    "as_of": "2019-01-28T23:59:59-05:00",
+    "precision": "10000000",
+    "labels": {"period": "the fourth quarter of fiscal 2019"},
+    "documents": [{
+      "id": "nvda_20190128_release",
+      "source_url": "https://nvidianews.nvidia.com/news/nvidia-updates-financial-guidance-for-fourth-quarter-of-fiscal-year-2019",
+      "path": "output/earnings-full-revision/filings/pilot/nvda-jan28.htm",
+      "sha256": "9e0bd37856272bbf2d725a527198b17bfdc5a14e69831f25074e3d2a4d565539",
+      "published_at": "2019-01-28T23:59:59-05:00",
+      "obtained_at": "2019-01-28T23:59:59-05:00"
+    }],
+    "figures": {
+      "new": [{"document": "nvda_20190128_release", "block": "nvda_20190128_release:p0003", "quote": "$2.20 billion"}],
+      "prior": [{"document": "nvda_20190128_release", "block": "nvda_20190128_release:p0003", "quote": "$2.70 billion"}]
+    },
+    "items": ["revision", "midpoint_change", "midpoint_change_ratio"],
+    "trap": "Control case: a plainly stated cut."
+  },
+  {
+    "id": "amd_q3_2022",
+    "split": "pilot",
+    "issuer": "Advanced Micro Devices, Inc.",
+    "ticker": "AMD",
+    "event_at": "2022-10-06T16:17:00-04:00",
+    "as_of": "2022-10-06T23:59:59-04:00",
+    "precision": "100000000",
+    "labels": {"period": "the third quarter of 2022"},
+    "documents": [{
+      "id": "amd_20221006_991",
+      "source_url": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-22-000163/q322earnings_prelimxfina.htm",
+      "path": "output/earnings-full-revision/filings/pilot/amd-oct06.htm",
+      "sha256": "1bfe1e5c0a31cae97771d90943ed1b72607e61a1b452c0e4210bdf51de8cd12c",
+      "published_at": "2022-10-06T16:17:00-04:00",
+      "obtained_at": "2022-10-06T16:17:00-04:00"
+    }],
+    "figures": {
+      "new": [{"document": "amd_20221006_991", "block": "amd_20221006_991:p0007", "quote": "approximately $5.6 billion"}],
+      "prior": [{"document": "amd_20221006_991", "block": "amd_20221006_991:p0007",
+                 "quote": "$6.7 billion plus or minus $200 million"}]
+    },
+    "items": ["revision", "midpoint_change", "midpoint_change_ratio"],
+    "trap": "The prior range is written as a midpoint plus or minus a spread."
+  },
+  {
+    "id": "onds_q4_2025",
+    "split": "pilot",
+    "issuer": "Ondas Holdings Inc.",
+    "ticker": "ONDS",
+    "event_at": "2026-03-09T08:50:48-04:00",
+    "as_of": "2026-03-09T08:50:48-04:00",
+    "precision": "100000",
+    "labels": {"period": "the fourth quarter of 2025"},
+    "documents": [{
+      "id": "onds_q4_2025_preliminary-release",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1646188/000121390026024945/ea028051201ex99-1.htm",
+      "path": "output/earnings-full-revision/filings/holdout/onds_q4_2025_preliminary.htm",
+      "sha256": "04ce6f0e2d8466442b456b7cae0e634b79999a13291125fb06ea9258b86de664",
+      "published_at": "2026-03-09T08:50:48-04:00",
+      "obtained_at": "2026-03-09T08:50:48-04:00"
+    }],
+    "figures": {
+      "new": [{"document": "onds_q4_2025_preliminary-release", "block": "onds_q4_2025_preliminary-release:p0010",
+               "quote": "between $29.1 and $30.1 million"}],
+      "prior": [{"document": "onds_q4_2025_preliminary-release", "block": "onds_q4_2025_preliminary-release:p0010",
+                 "quote": "$27 to $29 million"}]
+    },
+    "items": ["revision", "midpoint_change", "midpoint_change_ratio", "low_change", "high_change"],
+    "trap": "The same release also updates full-year 2025 and reiterates 2026 ranges."
+  }
+]
