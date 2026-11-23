@@ -1,0 +1,90 @@
+{
+  "case": "verx",
+  "family": "astra",
+  "status": "completed",
+  "started_at": "2026-11-23T19:06:45.590615+00:00",
+  "request_sha256": "24f0eaa0c1d148a0e862681ed8cc09c0106a950fbf77c56061eff14ec1a32a73",
+  "call": "astra",
+  "queued_at": "2026-11-23T19:06:45.016209+00:00",
+  "queued_epoch": 1795460805.0162838,
+  "queue_seconds": 0.242,
+  "preparation_seconds": 0.334,
+  "prompt_bytes": 145500,
+  "returncode": 0,
+  "cli_elapsed_seconds": 10.847,
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 2,
+        "row": 6,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "654000000",
+        "high_usd": "660000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 8,
+        "row": 11,
+        "indices": [
+          3
+        ],
+        "low_usd": "317885000",
+        "high_usd": "317885000"
+      },
+      {
+        "role": "prior_q3",
+        "page": 2,
+        "row": 3,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "164000000",
+        "high_usd": "167000000"
+      },
+      {
+        "role": "latest_annual",
+        "page": 2,
+        "row": 6,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "663300000",
+        "high_usd": "666300000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 8,
+        "row": 11,
+        "indices": [
+          3
+        ],
+        "low_usd": "488320000",
+        "high_usd": "488320000"
+      }
+    ],
+    "prior_q4": "173615000",
+    "latest_q4": "176480000",
+    "change": "2865000",
+    "direction": "raised"
+  },
+  "elapsed_seconds": 10.866,
+  "usage": {
+    "input_tokens": 50858,
+    "cached_input_tokens": 14336,
+    "output_tokens": 279,
+    "reasoning_output_tokens": 37
+  },
+  "event_seconds": {
+    "thread.started": 0.668,
+    "turn.started": 1.655,
+    "item.completed": 10.42,
+    "turn.completed": 10.429
+  },
+  "finished_at": "2026-11-23T19:06:56.601952+00:00"
+}

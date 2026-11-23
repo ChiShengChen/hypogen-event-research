@@ -1,0 +1,66 @@
+{
+  "case": "sprinklr-latest_shift",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T18:05:41.675600+00:00",
+  "queued_epoch": 1795457141.6756554,
+  "started_at": "2026-11-23T18:06:11.444568+00:00",
+  "request_sha256": "5e69e3cb8ed13d9c5da29f440918ee5417570cb40a9fba689cb90ff267f9eefe",
+  "queue_seconds": 29.753,
+  "preparation_seconds": 0.017,
+  "prompt_bytes": 3553,
+  "returncode": 0,
+  "cli_elapsed_seconds": 10.757,
+  "response": {
+    "operands": [
+      {
+        "role": "prior_annual",
+        "card_id": "C7e986f6e",
+        "low": "785000000",
+        "high": "787000000"
+      },
+      {
+        "role": "prior_ytd",
+        "card_id": "Cb67bb30d",
+        "low": "393166000",
+        "high": "393166000"
+      },
+      {
+        "role": "prior_q3",
+        "card_id": "C1712d8ab",
+        "low": "196000000",
+        "high": "197000000"
+      },
+      {
+        "role": "latest_annual",
+        "card_id": "C2377e957",
+        "low": "793900000",
+        "high": "794900000"
+      },
+      {
+        "role": "latest_ytd",
+        "card_id": "Cbf20330a",
+        "low": "599855000",
+        "high": "599855000"
+      }
+    ],
+    "prior_q4": "196334000",
+    "latest_q4": "194545000",
+    "change": "-1789000",
+    "direction": "lowered"
+  },
+  "elapsed_seconds": 10.778,
+  "usage": {
+    "input_tokens": 16168,
+    "cached_input_tokens": 0,
+    "output_tokens": 242,
+    "reasoning_output_tokens": 36
+  },
+  "event_seconds": {
+    "thread.started": 1.178,
+    "turn.started": 1.675,
+    "item.completed": 10.355,
+    "turn.completed": 10.366
+  },
+  "finished_at": "2026-11-23T18:06:22.228175+00:00"
+}

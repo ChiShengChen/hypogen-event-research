@@ -1,0 +1,91 @@
+{
+  "case": "latest_shift",
+  "family": "claude",
+  "mode": "full",
+  "status": "completed",
+  "started_at": "2026-11-23T18:37:18.088291+00:00",
+  "request_sha256": "0af1d586139031fdc9ea8dace228eb0a1956d13adda3d72aab759259157e0ebf",
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 3,
+        "row": 13,
+        "indices": [
+          3,
+          4
+        ],
+        "low_usd": "833000000",
+        "high_usd": "837000000"
+      },
+      {
+        "role": "prior_q3",
+        "page": 3,
+        "row": 13,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "209000000",
+        "high_usd": "211000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 8,
+        "row": 9,
+        "indices": [
+          3
+        ],
+        "low_usd": "413092000",
+        "high_usd": "413092000"
+      },
+      {
+        "role": "latest_annual",
+        "page": 3,
+        "row": 16,
+        "indices": [
+          3,
+          4
+        ],
+        "low_usd": "839000000",
+        "high_usd": "841000000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 8,
+        "row": 9,
+        "indices": [
+          3
+        ],
+        "low_usd": "633746000",
+        "high_usd": "633746000"
+      }
+    ],
+    "prior_q4": "211908000",
+    "latest_q4": "206254000",
+    "change": "-5654000",
+    "direction": "lowered"
+  },
+  "usage": {
+    "input_tokens": 36691,
+    "output_tokens": 6160,
+    "cached_input_tokens": 6876
+  },
+  "elapsed_seconds": 76.59433784999419,
+  "model_usage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 3,
+      "outputTokens": 6160,
+      "cacheReadInputTokens": 6876,
+      "cacheCreationInputTokens": 29812,
+      "webSearchRequests": 0,
+      "costUSD": 0.2733438,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 5399,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "planned": 14,
+  "started": 14,
+  "matched_issuers": [
+    "dt",
+    "gddy",
+    "infa",
+    "qlys",
+    "verx",
+    "wk",
+    "yext"
+  ],
+  "model_results": {
+    "astra": {
+      "available": {
+        "completed": 7,
+        "delta_exact": {
+          "k": 7,
+          "n": 7,
+          "wilson95": [
+            0.6456611570247934,
+            1.0
+          ]
+        },
+        "fully_grounded": {
+          "k": 7,
+          "n": 7,
+          "wilson95": [
+            0.6456611570247934,
+            1.0
+          ]
+        },
+        "absolute_pair_correct": {
+          "k": 7,
+          "n": 7,
+          "wilson95": [
+            0.6456611570247934,
+            1.0
+          ]
+        },
+        "delta_only_overcredit": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "numeric_mask_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "exact_cancellation_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "unsupported_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "citation_only_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "tolerance_only_masks_wrong_level": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        }
+      },
+      "matched": {
+        "completed": 7,
+        "delta_exact": {
+          "k": 7,
+          "n": 7,
+          "wilson95": [
+            0.6456611570247934,
+            1.0
+          ]
+        },
+        "fully_grounded": {
+          "k": 7,
+          "n": 7,
+          "wilson95": [
+            0.6456611570247934,
+            1.0
+          ]
+        },
+        "absolute_pair_correct": {
+          "k": 7,
+          "n": 7,
+          "wilson95": [
+            0.6456611570247934,
+            1.0
+          ]
+        },
+        "delta_only_overcredit": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "numeric_mask_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "exact_cancellation_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "unsupported_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "citation_only_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "tolerance_only_masks_wrong_level": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        }
+      }
+    },
+    "claude": {
+      "available": {
+        "completed": 7,
+        "delta_exact": {
+          "k": 7,
+          "n": 7,
+          "wilson95": [
+            0.6456611570247934,
+            1.0
+          ]
+        },
+        "fully_grounded": {
+          "k": 7,
+          "n": 7,
+          "wilson95": [
+            0.6456611570247934,
+            1.0
+          ]
+        },
+        "absolute_pair_correct": {
+          "k": 7,
+          "n": 7,
+          "wilson95": [
+            0.6456611570247934,
+            1.0
+          ]
+        },
+        "delta_only_overcredit": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "numeric_mask_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "exact_cancellation_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "unsupported_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "citation_only_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "tolerance_only_masks_wrong_level": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        }
+      },
+      "matched": {
+        "completed": 7,
+        "delta_exact": {
+          "k": 7,
+          "n": 7,
+          "wilson95": [
+            0.6456611570247934,
+            1.0
+          ]
+        },
+        "fully_grounded": {
+          "k": 7,
+          "n": 7,
+          "wilson95": [
+            0.6456611570247934,
+            1.0
+          ]
+        },
+        "absolute_pair_correct": {
+          "k": 7,
+          "n": 7,
+          "wilson95": [
+            0.6456611570247934,
+            1.0
+          ]
+        },
+        "delta_only_overcredit": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "numeric_mask_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "exact_cancellation_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "unsupported_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "citation_only_given_exact_delta": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        },
+        "tolerance_only_masks_wrong_level": {
+          "k": 0,
+          "n": 7,
+          "wilson95": [
+            0.0,
+            0.35433884297520657
+          ]
+        }
+      }
+    }
+  },
+  "leader": {
+    "delta_exact": [
+      "astra",
+      "claude"
+    ],
+    "fully_grounded": [
+      "astra",
+      "claude"
+    ]
+  }
+}

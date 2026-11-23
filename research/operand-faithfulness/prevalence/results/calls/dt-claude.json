@@ -1,0 +1,90 @@
+{
+  "case": "dt",
+  "family": "claude",
+  "status": "completed",
+  "started_at": "2026-11-23T19:05:59.315121+00:00",
+  "request_sha256": "6253e1650271af94d743daa468dea99c1a6a023ecbe406d3b075befce3bfaddb",
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 2,
+        "row": 37,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "1665000000",
+        "high_usd": "1675000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 3,
+        "row": 39,
+        "indices": [
+          3
+        ],
+        "low_usd": "817349000",
+        "high_usd": "817349000"
+      },
+      {
+        "role": "prior_q3",
+        "page": 2,
+        "row": 22,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "425000000",
+        "high_usd": "428000000"
+      },
+      {
+        "role": "latest_annual",
+        "page": 2,
+        "row": 39,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "1686000000",
+        "high_usd": "1691000000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 3,
+        "row": 37,
+        "indices": [
+          3
+        ],
+        "low_usd": "1253518000",
+        "high_usd": "1253518000"
+      }
+    ],
+    "prior_q4": "426151000",
+    "latest_q4": "434982000",
+    "change": "8831000",
+    "direction": "raised"
+  },
+  "usage": {
+    "input_tokens": 44672,
+    "output_tokens": 3760,
+    "cached_input_tokens": 6876
+  },
+  "elapsed_seconds": 46.62410736002494,
+  "model_usage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 3,
+      "outputTokens": 3760,
+      "cacheReadInputTokens": 6876,
+      "cacheCreationInputTokens": 37793,
+      "webSearchRequests": 0,
+      "costUSD": 0.28522980000000003,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 3274,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  }
+}

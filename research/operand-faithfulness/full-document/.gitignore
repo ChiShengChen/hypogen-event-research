@@ -1,0 +1,4 @@
+sources/*.pdf
+sources/*.download
+results/jobs/
+results/.lock

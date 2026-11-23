@@ -1,0 +1,90 @@
+{
+  "case": "verx",
+  "family": "claude",
+  "status": "completed",
+  "started_at": "2026-11-23T19:09:19.224388+00:00",
+  "request_sha256": "24f0eaa0c1d148a0e862681ed8cc09c0106a950fbf77c56061eff14ec1a32a73",
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 2,
+        "row": 6,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "654000000",
+        "high_usd": "660000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 8,
+        "row": 11,
+        "indices": [
+          3
+        ],
+        "low_usd": "317885000",
+        "high_usd": "317885000"
+      },
+      {
+        "role": "prior_q3",
+        "page": 2,
+        "row": 3,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "164000000",
+        "high_usd": "167000000"
+      },
+      {
+        "role": "latest_annual",
+        "page": 2,
+        "row": 6,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "663300000",
+        "high_usd": "666300000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 8,
+        "row": 11,
+        "indices": [
+          3
+        ],
+        "low_usd": "488320000",
+        "high_usd": "488320000"
+      }
+    ],
+    "prior_q4": "173615000",
+    "latest_q4": "176480000",
+    "change": "2865000",
+    "direction": "raised"
+  },
+  "usage": {
+    "input_tokens": 47614,
+    "output_tokens": 2307,
+    "cached_input_tokens": 6876
+  },
+  "elapsed_seconds": 28.65021817293018,
+  "model_usage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 3,
+      "outputTokens": 2307,
+      "cacheReadInputTokens": 6876,
+      "cacheCreationInputTokens": 40735,
+      "webSearchRequests": 0,
+      "costUSD": 0.2810868,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 1827,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  }
+}

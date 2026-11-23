@@ -1,0 +1,182 @@
+[
+  {
+    "case": "gitlab",
+    "repeat": 1,
+    "arm": "astra",
+    "prior_correct": true,
+    "latest_correct": true,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": false
+  },
+  {
+    "case": "gitlab",
+    "repeat": 1,
+    "arm": "harness",
+    "prior_correct": false,
+    "latest_correct": false,
+    "change_correct": false,
+    "direction_correct": true,
+    "masked_error": false
+  },
+  {
+    "case": "gitlab",
+    "repeat": 2,
+    "arm": "astra",
+    "prior_correct": true,
+    "latest_correct": true,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": false
+  },
+  {
+    "case": "gitlab",
+    "repeat": 2,
+    "arm": "harness",
+    "prior_correct": false,
+    "latest_correct": false,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": true
+  },
+  {
+    "case": "gitlab",
+    "repeat": 3,
+    "arm": "astra",
+    "prior_correct": true,
+    "latest_correct": true,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": false
+  },
+  {
+    "case": "gitlab",
+    "repeat": 3,
+    "arm": "harness",
+    "prior_correct": false,
+    "latest_correct": false,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": true
+  },
+  {
+    "case": "pure",
+    "repeat": 1,
+    "arm": "astra",
+    "prior_correct": true,
+    "latest_correct": true,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": false
+  },
+  {
+    "case": "pure",
+    "repeat": 1,
+    "arm": "harness",
+    "prior_correct": false,
+    "latest_correct": false,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": true
+  },
+  {
+    "case": "pure",
+    "repeat": 2,
+    "arm": "astra",
+    "prior_correct": true,
+    "latest_correct": true,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": false
+  },
+  {
+    "case": "pure",
+    "repeat": 2,
+    "arm": "harness",
+    "prior_correct": false,
+    "latest_correct": false,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": true
+  },
+  {
+    "case": "pure",
+    "repeat": 3,
+    "arm": "astra",
+    "prior_correct": true,
+    "latest_correct": true,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": false
+  },
+  {
+    "case": "pure",
+    "repeat": 3,
+    "arm": "harness",
+    "prior_correct": false,
+    "latest_correct": false,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": true
+  },
+  {
+    "case": "sprinklr",
+    "repeat": 1,
+    "arm": "astra",
+    "prior_correct": true,
+    "latest_correct": true,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": false
+  },
+  {
+    "case": "sprinklr",
+    "repeat": 1,
+    "arm": "harness",
+    "prior_correct": false,
+    "latest_correct": false,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": true
+  },
+  {
+    "case": "sprinklr",
+    "repeat": 2,
+    "arm": "astra",
+    "prior_correct": true,
+    "latest_correct": true,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": false
+  },
+  {
+    "case": "sprinklr",
+    "repeat": 2,
+    "arm": "harness",
+    "prior_correct": false,
+    "latest_correct": false,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": true
+  },
+  {
+    "case": "sprinklr",
+    "repeat": 3,
+    "arm": "astra",
+    "prior_correct": true,
+    "latest_correct": true,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": false
+  },
+  {
+    "case": "sprinklr",
+    "repeat": 3,
+    "arm": "harness",
+    "prior_correct": false,
+    "latest_correct": false,
+    "change_correct": true,
+    "direction_correct": true,
+    "masked_error": true
+  }
+]

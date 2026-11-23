@@ -1,0 +1,66 @@
+{
+  "case": "gitlab-base",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T18:05:41.507472+00:00",
+  "queued_epoch": 1795457141.507568,
+  "started_at": "2026-11-23T18:05:42.036179+00:00",
+  "request_sha256": "874e7ef59c04228605518c418518500655fa3a262d09b235ba9450535ebde799",
+  "queue_seconds": 0.418,
+  "preparation_seconds": 0.111,
+  "prompt_bytes": 3557,
+  "returncode": 0,
+  "cli_elapsed_seconds": 9.958,
+  "response": {
+    "operands": [
+      {
+        "role": "prior_annual",
+        "card_id": "C4c7a655e",
+        "low": "742000000",
+        "high": "744000000"
+      },
+      {
+        "role": "prior_ytd",
+        "card_id": "C3ac5a87b",
+        "low": "351771000",
+        "high": "351771000"
+      },
+      {
+        "role": "prior_q3",
+        "card_id": "C5c0315f5",
+        "low": "187000000",
+        "high": "188000000"
+      },
+      {
+        "role": "latest_annual",
+        "card_id": "C45bad455",
+        "low": "753000000",
+        "high": "754000000"
+      },
+      {
+        "role": "latest_ytd",
+        "card_id": "C8c149be3",
+        "low": "547818000",
+        "high": "547818000"
+      }
+    ],
+    "prior_q4": "203729000",
+    "latest_q4": "205682000",
+    "change": "1953000",
+    "direction": "raised"
+  },
+  "elapsed_seconds": 9.976,
+  "usage": {
+    "input_tokens": 16182,
+    "cached_input_tokens": 0,
+    "output_tokens": 244,
+    "reasoning_output_tokens": 37
+  },
+  "event_seconds": {
+    "thread.started": 0.823,
+    "turn.started": 1.695,
+    "item.completed": 9.512,
+    "turn.completed": 9.523
+  },
+  "finished_at": "2026-11-23T18:05:52.017604+00:00"
+}

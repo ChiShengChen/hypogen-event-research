@@ -1,0 +1,91 @@
+{
+  "case": "yelp",
+  "family": "claude",
+  "mode": "oracle",
+  "status": "completed",
+  "started_at": "2026-11-23T18:31:24.589600+00:00",
+  "request_sha256": "bb56758e3eab9c0347ddd3a8a091c0376585f7ec4745a928c7c492f042bc2fe6",
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 15,
+        "row": 31,
+        "indices": [
+          3,
+          4
+        ],
+        "low_usd": "1410000000",
+        "high_usd": "1425000000"
+      },
+      {
+        "role": "prior_q3",
+        "page": 15,
+        "row": 31,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "357000000",
+        "high_usd": "362000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 18,
+        "row": 6,
+        "indices": [
+          3
+        ],
+        "low_usd": "689768000",
+        "high_usd": "689768000"
+      },
+      {
+        "role": "latest_annual",
+        "page": 14,
+        "row": 30,
+        "indices": [
+          3,
+          4
+        ],
+        "low_usd": "1397000000",
+        "high_usd": "1402000000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 17,
+        "row": 6,
+        "indices": [
+          3
+        ],
+        "low_usd": "1050112000",
+        "high_usd": "1050112000"
+      }
+    ],
+    "prior_q4": "368232000",
+    "latest_q4": "349388000",
+    "change": "-18844000",
+    "direction": "lowered"
+  },
+  "usage": {
+    "input_tokens": 48876,
+    "output_tokens": 3388,
+    "cached_input_tokens": 6876
+  },
+  "elapsed_seconds": 37.823305550031364,
+  "model_usage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 3,
+      "outputTokens": 3388,
+      "cacheReadInputTokens": 6876,
+      "cacheCreationInputTokens": 41997,
+      "webSearchRequests": 0,
+      "costUSD": 0.3048738,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 2900,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  }
+}

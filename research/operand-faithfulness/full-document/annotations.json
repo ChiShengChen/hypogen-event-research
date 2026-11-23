@@ -1,0 +1,92 @@
+[
+  {
+    "id": "rpd", "issuer": "Rapid7", "split": "pilot", "fiscal_year": 2024, "report_year": 2024,
+    "dates": {"prior": "2024-08-06", "latest": "2024-11-06"}, "missing": {},
+    "operands": {
+      "prior_annual": [["3:13", [3, 4], 1000000, ["3:9", "3:10"]]],
+      "prior_q3": [["3:13", [1, 2], 1000000, ["3:9", "3:10"]]],
+      "prior_ytd": [["8:9", [3], 1000, ["8:2", "8:3", "8:4", "8:5"]]],
+      "latest_annual": [["3:16", [3, 4], 1000000, ["3:12", "3:13"]]],
+      "latest_ytd": [["8:9", [3], 1000, ["8:2", "8:3", "8:4", "8:5"]]]
+    }
+  },
+  {
+    "id": "yelp", "issuer": "Yelp", "split": "pilot", "fiscal_year": 2024, "report_year": 2024,
+    "dates": {"prior": "2024-08-08", "latest": "2024-11-07"}, "missing": {},
+    "operands": {
+      "prior_annual": [["15:31", [3, 4], 1000000000, ["15:28", "15:29", "15:31"]]],
+      "prior_q3": [["15:31", [1, 2], 1000000, ["15:28", "15:29", "15:31"]]],
+      "prior_ytd": [["18:6", [3], 1000, ["18:1", "18:2", "18:3", "18:4", "18:5"]], ["20:16", [3], 1000, ["20:2", "20:3", "20:4", "20:5"]]],
+      "latest_annual": [["14:30", [3, 4], 1000000000, ["14:27", "14:28", "14:30"]]],
+      "latest_ytd": [["17:6", [3], 1000, ["17:1", "17:2", "17:3", "17:4", "17:5"]], ["19:16", [3], 1000, ["19:2", "19:3", "19:4", "19:5"]]]
+    }
+  },
+  {
+    "id": "aap", "issuer": "Advance Auto Parts", "split": "pilot", "fiscal_year": 2024, "report_year": 2024,
+    "dates": {"prior": "2024-08-22", "latest": "2024-11-14"},
+    "missing": {
+      "prior_q3": "Prior 2:11–2:25 supplies annual guidance and no separate third-quarter absolute sales outlook.",
+      "latest_annual": "Latest 3:1–3:6 provides an approximate continuing-operations-only point following Worldpac's disposal.",
+      "latest_ytd": "Latest 1:17–1:19 applies continuing-operations scope to the sales row at 7:6. Full-consolidation revenue is not established."
+    },
+    "operands": {
+      "prior_annual": [["2:14", [1, 2], 1000000, ["2:11", "2:13"]]],
+      "prior_q3": [],
+      "prior_ytd": [["5:6", [3], 1000, ["5:2", "5:3", "5:4", "5:5"]]],
+      "latest_annual": [], "latest_ytd": []
+    }
+  },
+  {
+    "id": "zd", "issuer": "Ziff Davis", "split": "holdout", "fiscal_year": 2024, "report_year": 2024,
+    "dates": {"prior": "2024-08-07", "latest": "2024-11-07"},
+    "missing": {"prior_q3": "Prior 2:1–2:7 reaffirms annual guidance, with no absolute third-quarter revenue outlook."},
+    "operands": {
+      "prior_annual": [["2:5", [1, 2], 1000000, ["2:1", "2:2", "2:4"]]],
+      "prior_q3": [],
+      "prior_ytd": [["4:6", [3], 1000, ["4:2", "4:3", "4:4", "4:5"]]],
+      "latest_annual": [["2:13", [1, 2], 1000000, ["2:9", "2:10", "2:12"]]],
+      "latest_ytd": [["5:7", [3], 1000, ["5:2", "5:3", "5:4", "5:6"]]]
+    }
+  },
+  {
+    "id": "chwy", "issuer": "Chewy", "split": "holdout", "fiscal_year": 2024, "report_year": 2024,
+    "dates": {"prior": "2024-08-28", "latest": "2024-12-04"},
+    "missing": {
+      "prior_annual": "The prior release has no absolute fiscal-year sales guidance.",
+      "prior_q3": "The prior release has no absolute Q3 sales guidance.",
+      "latest_annual": "The latest release has no absolute fiscal-year sales guidance. Discussion of results versus guidance furnishes no forecast bound."
+    },
+    "operands": {
+      "prior_annual": [], "prior_q3": [],
+      "prior_ytd": [["4:8", [3], 1000, ["4:2", "4:3", "4:5", "4:6", "4:7"]]],
+      "latest_annual": [],
+      "latest_ytd": [["4:8", [3], 1000, ["4:2", "4:3", "4:5", "4:6", "4:7"]]]
+    }
+  },
+  {
+    "id": "wsm", "issuer": "Williams-Sonoma", "split": "holdout", "fiscal_year": 2024, "report_year": 2024,
+    "dates": {"prior": "2024-08-22", "latest": "2024-11-20"},
+    "missing": {
+      "prior_annual": "Prior 2:11–2:16 supplies only a revenue growth range in percent.",
+      "prior_q3": "The prior outlook provides no separate absolute third-quarter revenue range.",
+      "latest_annual": "Latest 2:14–2:18 supplies only a full-year revenue decline range in percent."
+    },
+    "operands": {
+      "prior_annual": [], "prior_q3": [],
+      "prior_ytd": [["6:6", [3], 1000, ["6:1", "6:2", "6:3", "6:4", "6:5"]]],
+      "latest_annual": [],
+      "latest_ytd": [["5:6", [3], 1000, ["5:1", "5:2", "5:3", "5:4", "5:5"]]]
+    }
+  },
+  {
+    "id": "rblx", "issuer": "Roblox", "split": "holdout", "fiscal_year": 2024, "report_year": 2024,
+    "dates": {"prior": "2024-08-01", "latest": "2024-10-31"}, "missing": {},
+    "operands": {
+      "prior_annual": [["10:8", [3, 4], 1000, ["10:1", "10:3", "10:4", "10:5", "10:6"]], ["2:20", [1, 2], 1000000, ["2:6", "2:7", "2:19", "2:20"]]],
+      "prior_q3": [["10:8", [1, 2], 1000, ["10:1", "10:3", "10:4", "10:5", "10:6"]], ["2:9", [1, 2], 1000000, ["2:6", "2:7", "2:8", "2:9"]]],
+      "prior_ytd": [["5:8", [3], 1000, ["5:2", "5:3", "5:5", "5:6", "5:7"]], ["8:7", [3], 1000, ["8:3", "8:4", "8:5", "8:6"]]],
+      "latest_annual": [["10:8", [3, 4], 1000, ["10:1", "10:3", "10:4", "10:5", "10:6"]]],
+      "latest_ytd": [["5:8", [3], 1000, ["5:2", "5:3", "5:5", "5:6", "5:7"]], ["8:7", [3], 1000, ["8:3", "8:4", "8:5", "8:6"]]]
+    }
+  }
+]

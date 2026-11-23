@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "dt-astra",
+    "case": "dt",
+    "family": "astra",
+    "response": {
+      "evidence": [
+        {
+          "role": "prior_annual",
+          "page": 2,
+          "row": 37,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "1665000000",
+          "high_usd": "1675000000"
+        },
+        {
+          "role": "prior_ytd",
+          "page": 3,
+          "row": 39,
+          "indices": [
+            3
+          ],
+          "low_usd": "817349000",
+          "high_usd": "817349000"
+        },
+        {
+          "role": "prior_q3",
+          "page": 2,
+          "row": 22,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "425000000",
+          "high_usd": "428000000"
+        },
+        {
+          "role": "latest_annual",
+          "page": 2,
+          "row": 39,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "1686000000",
+          "high_usd": "1691000000"
+        },
+        {
+          "role": "latest_ytd",
+          "page": 3,
+          "row": 37,
+          "indices": [
+            3
+          ],
+          "low_usd": "1253518000",
+          "high_usd": "1253518000"
+        }
+      ],
+      "prior_q4": "426151000",
+      "latest_q4": "434982000",
+      "change": "8831000",
+      "direction": "raised"
+    },
+    "expected": {
+      "prior_q4": "426151000",
+      "latest_q4": "434982000",
+      "change": "8831000",
+      "direction": "raised"
+    },
+    "values_usd": {
+      "prior_q4": "426151000",
+      "latest_q4": "434982000",
+      "change": "8831000"
+    },
+    "signed_errors_usd": {
+      "prior_q4": "0",
+      "latest_q4": "0",
+      "change": "0"
+    },
+    "operand_status": {
+      "prior_annual": "ok",
+      "prior_q3": "ok",
+      "prior_ytd": "ok",
+      "latest_annual": "ok",
+      "latest_ytd": "ok"
+    },
+    "delta_exact": true,
+    "levels_exact": true,
+    "direction_exact": true,
+    "all_grounded": true,
+    "exact_cancel": false,
+    "numeric_mask": false,
+    "delta_self_consistent": true,
+    "delta_within_tolerance": true,
+    "tolerance_only_masks_wrong_level": false,
+    "delta_with_unsupported_evidence": false,
+    "delta_with_citation_problem_only": false
+  },
+  {
+    "id": "dt-claude",
+    "case": "dt",
+    "family": "claude",
+    "response": {
+      "evidence": [
+        {
+          "role": "prior_annual",
+          "page": 2,
+          "row": 37,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "1665000000",
+          "high_usd": "1675000000"
+        },
+        {
+          "role": "prior_ytd",
+          "page": 3,
+          "row": 39,
+          "indices": [
+            3
+          ],
+          "low_usd": "817349000",
+          "high_usd": "817349000"
+        },
+        {
+          "role": "prior_q3",
+          "page": 2,
+          "row": 22,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "425000000",
+          "high_usd": "428000000"
+        },
+        {
+          "role": "latest_annual",
+          "page": 2,
+          "row": 39,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "1686000000",
+          "high_usd": "1691000000"
+        },
+        {
+          "role": "latest_ytd",
+          "page": 3,
+          "row": 37,
+          "indices": [
+            3
+          ],
+          "low_usd": "1253518000",
+          "high_usd": "1253518000"
+        }
+      ],
+      "prior_q4": "426151000",
+      "latest_q4": "434982000",
+      "change": "8831000",
+      "direction": "raised"
+    },
+    "expected": {
+      "prior_q4": "426151000",
+      "latest_q4": "434982000",
+      "change": "8831000",
+      "direction": "raised"
+    },
+    "values_usd": {
+      "prior_q4": "426151000",
+      "latest_q4": "434982000",
+      "change": "8831000"
+    },
+    "signed_errors_usd": {
+      "prior_q4": "0",
+      "latest_q4": "0",
+      "change": "0"
+    },
+    "operand_status": {
+      "prior_annual": "ok",
+      "prior_q3": "ok",
+      "prior_ytd": "ok",
+      "latest_annual": "ok",
+      "latest_ytd": "ok"
+    },
+    "delta_exact": true,
+    "levels_exact": true,
+    "direction_exact": true,
+    "all_grounded": true,
+    "exact_cancel": false,
+    "numeric_mask": false,
+    "delta_self_consistent": true,
+    "delta_within_tolerance": true,
+    "tolerance_only_masks_wrong_level": false,
+    "delta_with_unsupported_evidence": false,
+    "delta_with_citation_problem_only": false
+  },
+  {
+    "id": "gddy-astra",
+    "case": "gddy",
+    "family": "astra",
+    "response": {
+      "evidence": [
+        {
+          "role": "prior_annual",
+          "page": 2,
+          "row": 9,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "4525000000",
+          "high_usd": "4565000000"
+        },
+        {
+          "role": "prior_ytd",
+          "page": 1,
+          "row": 21,
+          "indices": [
+            3
+          ],
+          "low_usd": "2233000000",
+          "high_usd": "2233000000"
+        },
+        {
+          "role": "prior_q3",
+          "page": 2,
+          "row": 7,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "1130000000",
+          "high_usd": "1150000000"
+        },
+        {
+          "role": "latest_annual",
+          "page": 2,
+          "row": 3,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "4545000000",
+          "high_usd": "4565000000"
+        },
+        {
+          "role": "latest_ytd",
+          "page": 1,
+          "row": 19,
+          "indices": [
+            3
+          ],
+          "low_usd": "3380600000",
+          "high_usd": "3380600000"
+        }
+      ],
+      "prior_q4": "1172000000",
+      "latest_q4": "1174400000",
+      "change": "2400000",
+      "direction": "raised"
+    },
+    "expected": {
+      "prior_q4": "1172000000.000",
+      "latest_q4": "1174400000.000",
+      "change": "2400000.000",
+      "direction": "raised"
+    },
+    "values_usd": {
+      "prior_q4": "1172000000",
+      "latest_q4": "1174400000",
+      "change": "2400000"
+    },
+    "signed_errors_usd": {
+      "prior_q4": "0.000",
+      "latest_q4": "0.000",
+      "change": "0.000"
+    },
+    "operand_status": {
+      "prior_annual": "ok",
+      "prior_q3": "ok",
+      "prior_ytd": "ok",
+      "latest_annual": "ok",
+      "latest_ytd": "ok"
+    },
+    "delta_exact": true,
+    "levels_exact": true,
+    "direction_exact": true,
+    "all_grounded": true,
+    "exact_cancel": false,
+    "numeric_mask": false,
+    "delta_self_consistent": true,
+    "delta_within_tolerance": true,
+    "tolerance_only_masks_wrong_level": false,
+    "delta_with_unsupported_evidence": false,
+    "delta_with_citation_problem_only": false
+  },
+  {
+    "id": "gddy-claude",
+    "case": "gddy",
+    "family": "claude",
+    "response": {
+      "evidence": [
+        {
+          "role": "prior_annual",
+          "page": 2,
+          "row": 9,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "4525000000",
+          "high_usd": "4565000000"
+        },
+        {
+          "role": "prior_ytd",
+          "page": 1,
+          "row": 21,
+          "indices": [
+            3
+          ],
+          "low_usd": "2233000000",
+          "high_usd": "2233000000"
+        },
+        {
+          "role": "prior_q3",
+          "page": 2,
+          "row": 7,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "1130000000",
+          "high_usd": "1150000000"
+        },
+        {
+          "role": "latest_annual",
+          "page": 2,
+          "row": 3,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "4545000000",
+          "high_usd": "4565000000"
+        },
+        {
+          "role": "latest_ytd",
+          "page": 1,
+          "row": 19,
+          "indices": [
+            3
+          ],
+          "low_usd": "3380600000",
+          "high_usd": "3380600000"
+        }
+      ],
+      "prior_q4": "\"1172000000\"",
+      "latest_q4": "\"1174400000\"",
+      "change": "\"2400000\"",
+      "direction": "raised"
+    },
+    "expected": {
+      "prior_q4": "1172000000.000",
+      "latest_q4": "1174400000.000",
+      "change": "2400000.000",
+      "direction": "raised"
+    },
+    "values_usd": {
+      "prior_q4": "1172000000",
+      "latest_q4": "1174400000",
+      "change": "2400000"
+    },
+    "signed_errors_usd": {
+      "prior_q4": "0.000",
+      "latest_q4": "0.000",
+      "change": "0.000"
+    },
+    "operand_status": {
+      "prior_annual": "ok",
+      "prior_q3": "ok",
+      "prior_ytd": "ok",
+      "latest_annual": "ok",
+      "latest_ytd": "ok"
+    },
+    "delta_exact": true,
+    "levels_exact": true,
+    "direction_exact": true,
+    "all_grounded": true,
+    "exact_cancel": false,
+    "numeric_mask": false,
+    "delta_self_consistent": true,
+    "delta_within_tolerance": true,
+    "tolerance_only_masks_wrong_level": false,
+    "delta_with_unsupported_evidence": false,
+    "delta_with_citation_problem_only": false
+  },
+  {
+    "id": "infa-astra",
+    "case": "infa",
+    "family": "astra",
+    "response": {
+      "evidence": [
+        {
+          "role": "prior_annual",
+          "page": 2,
+          "row": 8,
+          "indices": [
+            3,
+            4
+          ],
+          "low_usd": "1660000000",
+          "high_usd": "1680000000"
+        },
+        {
+          "role": "prior_ytd",
+          "page": 3,
+          "row": 32,
+          "indices": [
+            3
+          ],
+          "low_usd": "789232000",
+          "high_usd": "789232000"
+        },
+        {
+          "role": "prior_q3",
+          "page": 2,
+          "row": 2,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "412000000",
+          "high_usd": "428000000"
+        },
+        {
+          "role": "latest_annual",
+          "page": 2,
+          "row": 10,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "1660000000",
+          "high_usd": "1680000000"
+        },
+        {
+          "role": "latest_ytd",
+          "page": 3,
+          "row": 34,
+          "indices": [
+            3
+          ],
+          "low_usd": "1211713000",
+          "high_usd": "1211713000"
+        }
+      ],
+      "prior_q4": "460768000",
+      "latest_q4": "458287000",
+      "change": "-2481000",
+      "direction": "lowered"
+    },
+    "expected": {
+      "prior_q4": "460768000.000",
+      "latest_q4": "458287000.000",
+      "change": "-2481000.000",
+      "direction": "lowered"
+    },
+    "values_usd": {
+      "prior_q4": "460768000",
+      "latest_q4": "458287000",
+      "change": "-2481000"
+    },
+    "signed_errors_usd": {
+      "prior_q4": "0.000",
+      "latest_q4": "0.000",
+      "change": "0.000"
+    },
+    "operand_status": {
+      "prior_annual": "ok",
+      "prior_q3": "ok",
+      "prior_ytd": "ok",
+      "latest_annual": "ok",
+      "latest_ytd": "ok"
+    },
+    "delta_exact": true,
+    "levels_exact": true,
+    "direction_exact": true,
+    "all_grounded": true,
+    "exact_cancel": false,
+    "numeric_mask": false,
+    "delta_self_consistent": true,
+    "delta_within_tolerance": true,
+    "tolerance_only_masks_wrong_level": false,
+    "delta_with_unsupported_evidence": false,
+    "delta_with_citation_problem_only": false
+  },
+  {
+    "id": "infa-claude",
+    "case": "infa",
+    "family": "claude",
+    "response": {
+      "evidence": [
+        {
+          "role": "prior_annual",
+          "page": 2,
+          "row": 8,
+          "indices": [
+            3,
+            4
+          ],
+          "low_usd": "1660000000",
+          "high_usd": "1680000000"
+        },
+        {
+          "role": "prior_ytd",
+          "page": 3,
+          "row": 32,
+          "indices": [
+            3
+          ],
+          "low_usd": "789232000",
+          "high_usd": "789232000"
+        },
+        {
+          "role": "prior_q3",
+          "page": 2,
+          "row": 2,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "412000000",
+          "high_usd": "428000000"
+        },
+        {
+          "role": "latest_annual",
+          "page": 2,
+          "row": 10,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "1660000000",
+          "high_usd": "1680000000"
+        },
+        {
+          "role": "latest_ytd",
+          "page": 3,
+          "row": 34,
+          "indices": [
+            3
+          ],
+          "low_usd": "1211713000",
+          "high_usd": "1211713000"
+        }
+      ],
+      "prior_q4": "\"460768000\"",
+      "latest_q4": "\"458287000\"",
+      "change": "\"-2481000\"",
+      "direction": "lowered"
+    },
+    "expected": {
+      "prior_q4": "460768000.000",
+      "latest_q4": "458287000.000",
+      "change": "-2481000.000",
+      "direction": "lowered"
+    },
+    "values_usd": {
+      "prior_q4": "460768000",
+      "latest_q4": "458287000",
+      "change": "-2481000"
+    },
+    "signed_errors_usd": {
+      "prior_q4": "0.000",
+      "latest_q4": "0.000",
+      "change": "0.000"
+    },
+    "operand_status": {
+      "prior_annual": "ok",
+      "prior_q3": "ok",
+      "prior_ytd": "ok",
+      "latest_annual": "ok",
+      "latest_ytd": "ok"
+    },
+    "delta_exact": true,
+    "levels_exact": true,
+    "direction_exact": true,
+    "all_grounded": true,
+    "exact_cancel": false,
+    "numeric_mask": false,
+    "delta_self_consistent": true,
+    "delta_within_tolerance": true,
+    "tolerance_only_masks_wrong_level": false,
+    "delta_with_unsupported_evidence": false,
+    "delta_with_citation_problem_only": false
+  },
+  {
+    "id": "qlys-astra",
+    "case": "qlys",
+    "family": "astra",
+    "response": {
+      "evidence": [
+        {
+          "role": "prior_annual",
+          "page": 2,
+          "row": 38,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "597500000",
+          "high_usd": "601500000"
+        },
+        {
+          "role": "prior_ytd",
+          "page": 6,
+          "row": 8,
+          "indices": [
+            3
+          ],
+          "low_usd": "294513000",
+          "high_usd": "294513000"
+        },
+        {
+          "role": "prior_q3",
+          "page": 2,
+          "row": 32,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "149800000",
+          "high_usd": "151800000"
+        },
+        {
+          "role": "latest_annual",
+          "page": 1,
+          "row": 4,
+          "indices": [
+            2,
+            3
+          ],
+          "low_usd": "602900000",
+          "high_usd": "605900000"
+        },
+        {
+          "role": "latest_ytd",
+          "page": 6,
+          "row": 8,
+          "indices": [
+            3
+          ],
+          "low_usd": "448380000",
+          "high_usd": "448380000"
+        }
+      ],
+      "prior_q4": "154187000",
+      "latest_q4": "156020000",
+      "change": "1833000",
+      "direction": "raised"
+    },
+    "expected": {
+      "prior_q4": "154187000.0",
+      "latest_q4": "156020000.0",
+      "change": "1833000.0",
+      "direction": "raised"
+    },
+    "values_usd": {
+      "prior_q4": "154187000",
+      "latest_q4": "156020000",
+      "change": "1833000"
+    },
+    "signed_errors_usd": {
+      "prior_q4": "0.0",
+      "latest_q4": "0.0",
+      "change": "0.0"
+    },
+    "operand_status": {
+      "prior_annual": "ok",
+      "prior_q3": "ok",
+      "prior_ytd": "ok",
+      "latest_annual": "ok",
+      "latest_ytd": "ok"
+    },
+    "delta_exact": true,
+    "levels_exact": true,
+    "direction_exact": true,
+    "all_grounded": true,
+    "exact_cancel": false,
+    "numeric_mask": false,
+    "delta_self_consistent": true,
+    "delta_within_tolerance": true,
+    "tolerance_only_masks_wrong_level": false,
+    "delta_with_unsupported_evidence": false,
+    "delta_with_citation_problem_only": false
+  },
+  {
+    "id": "qlys-claude",
+    "case": "qlys",
+    "family": "claude",
+    "response": {
+      "evidence": [
+        {
+          "role": "prior_annual",
+          "page": 2,
+          "row": 38,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "597500000",
+          "high_usd": "601500000"
+        },
+        {
+          "role": "prior_ytd",
+          "page": 6,
+          "row": 8,
+          "indices": [
+            3
+          ],
+          "low_usd": "294513000",
+          "high_usd": "294513000"
+        },
+        {
+          "role": "prior_q3",
+          "page": 2,
+          "row": 32,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "149800000",
+          "high_usd": "151800000"
+        },
+        {
+          "role": "latest_annual",
+          "page": 1,
+          "row": 4,
+          "indices": [
+            2,
+            3
+          ],
+          "low_usd": "602900000",
+          "high_usd": "605900000"
+        },
+        {
+          "role": "latest_ytd",
+          "page": 6,
+          "row": 8,
+          "indices": [
+            3
+          ],
+          "low_usd": "448380000",
+          "high_usd": "448380000"
+        }
+      ],
+      "prior_q4": "154187000",
+      "latest_q4": "156020000",
+      "change": "1833000",
+      "direction": "raised"
+    },
+    "expected": {
+      "prior_q4": "154187000.0",
+      "latest_q4": "156020000.0",
+      "change": "1833000.0",
+      "direction": "raised"
+    },
+    "values_usd": {
+      "prior_q4": "154187000",
+      "latest_q4": "156020000",
+      "change": "1833000"
+    },
+    "signed_errors_usd": {
+      "prior_q4": "0.0",
+      "latest_q4": "0.0",
+      "change": "0.0"
+    },
+    "operand_status": {
+      "prior_annual": "ok",
+      "prior_q3": "ok",
+      "prior_ytd": "ok",
+      "latest_annual": "ok",
+      "latest_ytd": "ok"
+    },
+    "delta_exact": true,
+    "levels_exact": true,
+    "direction_exact": true,
+    "all_grounded": true,
+    "exact_cancel": false,
+    "numeric_mask": false,
+    "delta_self_consistent": true,
+    "delta_within_tolerance": true,
+    "tolerance_only_masks_wrong_level": false,
+    "delta_with_unsupported_evidence": false,
+    "delta_with_citation_problem_only": false
+  },
+  {
+    "id": "verx-astra",
+    "case": "verx",
+    "family": "astra",
+    "response": {
+      "evidence": [
+        {
+          "role": "prior_annual",
+          "page": 2,
+          "row": 6,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "654000000",
+          "high_usd": "660000000"
+        },
+        {
+          "role": "prior_ytd",
+          "page": 8,
+          "row": 11,
+          "indices": [
+            3
+          ],
+          "low_usd": "317885000",
+          "high_usd": "317885000"
+        },
+        {
+          "role": "prior_q3",
+          "page": 2,
+          "row": 3,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "164000000",
+          "high_usd": "167000000"
+        },
+        {
+          "role": "latest_annual",
+          "page": 2,
+          "row": 6,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "663300000",
+          "high_usd": "666300000"
+        },
+        {
+          "role": "latest_ytd",
+          "page": 8,
+          "row": 11,
+          "indices": [
+            3
+          ],
+          "low_usd": "488320000",
+          "high_usd": "488320000"
+        }
+      ],
+      "prior_q4": "173615000",
+      "latest_q4": "176480000",
+      "change": "2865000",
+      "direction": "raised"
+    },
+    "expected": {
+      "prior_q4": "173615000",
+      "latest_q4": "176480000.0",
+      "change": "2865000.0",
+      "direction": "raised"
+    },
+    "values_usd": {
+      "prior_q4": "173615000",
+      "latest_q4": "176480000",
+      "change": "2865000"
+    },
+    "signed_errors_usd": {
+      "prior_q4": "0",
+      "latest_q4": "0.0",
+      "change": "0.0"
+    },
+    "operand_status": {
+      "prior_annual": "ok",
+      "prior_q3": "ok",
+      "prior_ytd": "ok",
+      "latest_annual": "ok",
+      "latest_ytd": "ok"
+    },
+    "delta_exact": true,
+    "levels_exact": true,
+    "direction_exact": true,
+    "all_grounded": true,
+    "exact_cancel": false,
+    "numeric_mask": false,
+    "delta_self_consistent": true,
+    "delta_within_tolerance": true,
+    "tolerance_only_masks_wrong_level": false,
+    "delta_with_unsupported_evidence": false,
+    "delta_with_citation_problem_only": false
+  },
+  {
+    "id": "verx-claude",
+    "case": "verx",
+    "family": "claude",
+    "response": {
+      "evidence": [
+        {
+          "role": "prior_annual",
+          "page": 2,
+          "row": 6,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "654000000",
+          "high_usd": "660000000"
+        },
+        {
+          "role": "prior_ytd",
+          "page": 8,
+          "row": 11,
+          "indices": [
+            3
+          ],
+          "low_usd": "317885000",
+          "high_usd": "317885000"
+        },
+        {
+          "role": "prior_q3",
+          "page": 2,
+          "row": 3,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "164000000",
+          "high_usd": "167000000"
+        },
+        {
+          "role": "latest_annual",
+          "page": 2,
+          "row": 6,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "663300000",
+          "high_usd": "666300000"
+        },
+        {
+          "role": "latest_ytd",
+          "page": 8,
+          "row": 11,
+          "indices": [
+            3
+          ],
+          "low_usd": "488320000",
+          "high_usd": "488320000"
+        }
+      ],
+      "prior_q4": "173615000",
+      "latest_q4": "176480000",
+      "change": "2865000",
+      "direction": "raised"
+    },
+    "expected": {
+      "prior_q4": "173615000",
+      "latest_q4": "176480000.0",
+      "change": "2865000.0",
+      "direction": "raised"
+    },
+    "values_usd": {
+      "prior_q4": "173615000",
+      "latest_q4": "176480000",
+      "change": "2865000"
+    },
+    "signed_errors_usd": {
+      "prior_q4": "0",
+      "latest_q4": "0.0",
+      "change": "0.0"
+    },
+    "operand_status": {
+      "prior_annual": "ok",
+      "prior_q3": "ok",
+      "prior_ytd": "ok",
+      "latest_annual": "ok",
+      "latest_ytd": "ok"
+    },
+    "delta_exact": true,
+    "levels_exact": true,
+    "direction_exact": true,
+    "all_grounded": true,
+    "exact_cancel": false,
+    "numeric_mask": false,
+    "delta_self_consistent": true,
+    "delta_within_tolerance": true,
+    "tolerance_only_masks_wrong_level": false,
+    "delta_with_unsupported_evidence": false,
+    "delta_with_citation_problem_only": false
+  },
+  {
+    "id": "wk-astra",
+    "case": "wk",
+    "family": "astra",
+    "response": {
+      "evidence": [
+        {
+          "role": "prior_annual",
+          "page": 1,
+          "row": 31,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "727000000",
+          "high_usd": "729000000"
+        },
+        {
+          "role": "prior_ytd",
+          "page": 2,
+          "row": 14,
+          "indices": [
+            3
+          ],
+          "low_usd": "353170000",
+          "high_usd": "353170000"
+        },
+        {
+          "role": "prior_q3",
+          "page": 1,
+          "row": 24,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "182000000",
+          "high_usd": "183000000"
+        },
+        {
+          "role": "latest_annual",
+          "page": 1,
+          "row": 29,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "733000000",
+          "high_usd": "735000000"
+        },
+        {
+          "role": "latest_ytd",
+          "page": 2,
+          "row": 8,
+          "indices": [
+            3
+          ],
+          "low_usd": "538791000",
+          "high_usd": "538791000"
+        }
+      ],
+      "prior_q4": "192330000",
+      "latest_q4": "195209000",
+      "change": "2879000",
+      "direction": "raised"
+    },
+    "expected": {
+      "prior_q4": "192330000",
+      "latest_q4": "195209000",
+      "change": "2879000",
+      "direction": "raised"
+    },
+    "values_usd": {
+      "prior_q4": "192330000",
+      "latest_q4": "195209000",
+      "change": "2879000"
+    },
+    "signed_errors_usd": {
+      "prior_q4": "0",
+      "latest_q4": "0",
+      "change": "0"
+    },
+    "operand_status": {
+      "prior_annual": "ok",
+      "prior_q3": "ok",
+      "prior_ytd": "ok",
+      "latest_annual": "ok",
+      "latest_ytd": "ok"
+    },
+    "delta_exact": true,
+    "levels_exact": true,
+    "direction_exact": true,
+    "all_grounded": true,
+    "exact_cancel": false,
+    "numeric_mask": false,
+    "delta_self_consistent": true,
+    "delta_within_tolerance": true,
+    "tolerance_only_masks_wrong_level": false,
+    "delta_with_unsupported_evidence": false,
+    "delta_with_citation_problem_only": false
+  },
+  {
+    "id": "wk-claude",
+    "case": "wk",
+    "family": "claude",
+    "response": {
+      "evidence": [
+        {
+          "role": "prior_annual",
+          "page": 1,
+          "row": 31,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "727000000",
+          "high_usd": "729000000"
+        },
+        {
+          "role": "prior_ytd",
+          "page": 2,
+          "row": 14,
+          "indices": [
+            3
+          ],
+          "low_usd": "353170000",
+          "high_usd": "353170000"
+        },
+        {
+          "role": "prior_q3",
+          "page": 1,
+          "row": 24,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "182000000",
+          "high_usd": "183000000"
+        },
+        {
+          "role": "latest_annual",
+          "page": 1,
+          "row": 29,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "733000000",
+          "high_usd": "735000000"
+        },
+        {
+          "role": "latest_ytd",
+          "page": 2,
+          "row": 8,
+          "indices": [
+            3
+          ],
+          "low_usd": "538791000",
+          "high_usd": "538791000"
+        }
+      ],
+      "prior_q4": "192330000",
+      "latest_q4": "195209000",
+      "change": "2879000",
+      "direction": "raised"
+    },
+    "expected": {
+      "prior_q4": "192330000",
+      "latest_q4": "195209000",
+      "change": "2879000",
+      "direction": "raised"
+    },
+    "values_usd": {
+      "prior_q4": "192330000",
+      "latest_q4": "195209000",
+      "change": "2879000"
+    },
+    "signed_errors_usd": {
+      "prior_q4": "0",
+      "latest_q4": "0",
+      "change": "0"
+    },
+    "operand_status": {
+      "prior_annual": "ok",
+      "prior_q3": "ok",
+      "prior_ytd": "ok",
+      "latest_annual": "ok",
+      "latest_ytd": "ok"
+    },
+    "delta_exact": true,
+    "levels_exact": true,
+    "direction_exact": true,
+    "all_grounded": true,
+    "exact_cancel": false,
+    "numeric_mask": false,
+    "delta_self_consistent": true,
+    "delta_within_tolerance": true,
+    "tolerance_only_masks_wrong_level": false,
+    "delta_with_unsupported_evidence": false,
+    "delta_with_citation_problem_only": false
+  },
+  {
+    "id": "yext-astra",
+    "case": "yext",
+    "family": "astra",
+    "response": {
+      "evidence": [
+        {
+          "role": "prior_annual",
+          "page": 7,
+          "row": 22,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "420000000",
+          "high_usd": "421000000"
+        },
+        {
+          "role": "prior_ytd",
+          "page": 13,
+          "row": 7,
+          "indices": [
+            3
+          ],
+          "low_usd": "193877000",
+          "high_usd": "193877000"
+        },
+        {
+          "role": "prior_q3",
+          "page": 7,
+          "row": 16,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "113000000",
+          "high_usd": "113500000"
+        },
+        {
+          "role": "latest_annual",
+          "page": 7,
+          "row": 22,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "420300000",
+          "high_usd": "420800000"
+        },
+        {
+          "role": "latest_ytd",
+          "page": 13,
+          "row": 7,
+          "indices": [
+            3
+          ],
+          "low_usd": "307866000",
+          "high_usd": "307866000"
+        }
+      ],
+      "prior_q4": "113373000",
+      "latest_q4": "112684000",
+      "change": "-689000",
+      "direction": "lowered"
+    },
+    "expected": {
+      "prior_q4": "113373000.0",
+      "latest_q4": "112684000.0",
+      "change": "-689000.0",
+      "direction": "lowered"
+    },
+    "values_usd": {
+      "prior_q4": "113373000",
+      "latest_q4": "112684000",
+      "change": "-689000"
+    },
+    "signed_errors_usd": {
+      "prior_q4": "0.0",
+      "latest_q4": "0.0",
+      "change": "0.0"
+    },
+    "operand_status": {
+      "prior_annual": "ok",
+      "prior_q3": "ok",
+      "prior_ytd": "ok",
+      "latest_annual": "ok",
+      "latest_ytd": "ok"
+    },
+    "delta_exact": true,
+    "levels_exact": true,
+    "direction_exact": true,
+    "all_grounded": true,
+    "exact_cancel": false,
+    "numeric_mask": false,
+    "delta_self_consistent": true,
+    "delta_within_tolerance": true,
+    "tolerance_only_masks_wrong_level": false,
+    "delta_with_unsupported_evidence": false,
+    "delta_with_citation_problem_only": false
+  },
+  {
+    "id": "yext-claude",
+    "case": "yext",
+    "family": "claude",
+    "response": {
+      "evidence": [
+        {
+          "role": "prior_annual",
+          "page": 7,
+          "row": 22,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "420000000",
+          "high_usd": "421000000"
+        },
+        {
+          "role": "prior_ytd",
+          "page": 13,
+          "row": 7,
+          "indices": [
+            3
+          ],
+          "low_usd": "193877000",
+          "high_usd": "193877000"
+        },
+        {
+          "role": "prior_q3",
+          "page": 7,
+          "row": 16,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "113000000",
+          "high_usd": "113500000"
+        },
+        {
+          "role": "latest_annual",
+          "page": 7,
+          "row": 22,
+          "indices": [
+            1,
+            2
+          ],
+          "low_usd": "420300000",
+          "high_usd": "420800000"
+        },
+        {
+          "role": "latest_ytd",
+          "page": 13,
+          "row": 7,
+          "indices": [
+            3
+          ],
+          "low_usd": "307866000",
+          "high_usd": "307866000"
+        }
+      ],
+      "prior_q4": "\"113373000\"",
+      "latest_q4": "\"112684000\"",
+      "change": "\"-689000\"",
+      "direction": "lowered"
+    },
+    "expected": {
+      "prior_q4": "113373000.0",
+      "latest_q4": "112684000.0",
+      "change": "-689000.0",
+      "direction": "lowered"
+    },
+    "values_usd": {
+      "prior_q4": "113373000",
+      "latest_q4": "112684000",
+      "change": "-689000"
+    },
+    "signed_errors_usd": {
+      "prior_q4": "0.0",
+      "latest_q4": "0.0",
+      "change": "0.0"
+    },
+    "operand_status": {
+      "prior_annual": "ok",
+      "prior_q3": "ok",
+      "prior_ytd": "ok",
+      "latest_annual": "ok",
+      "latest_ytd": "ok"
+    },
+    "delta_exact": true,
+    "levels_exact": true,
+    "direction_exact": true,
+    "all_grounded": true,
+    "exact_cancel": false,
+    "numeric_mask": false,
+    "delta_self_consistent": true,
+    "delta_within_tolerance": true,
+    "tolerance_only_masks_wrong_level": false,
+    "delta_with_unsupported_evidence": false,
+    "delta_with_citation_problem_only": false
+  }
+]

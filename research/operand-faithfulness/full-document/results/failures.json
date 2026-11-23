@@ -1,0 +1,301 @@
+[
+  {
+    "id": "rpd-oracle-claude",
+    "diagnostics": {
+      "prior_annual": "verified_by_both",
+      "prior_ytd": "verified_by_both",
+      "prior_q3": "verified_by_both",
+      "latest_annual": "verified_by_both",
+      "latest_ytd": "verified_by_both"
+    },
+    "fields": {
+      "direct": {
+        "prior_q4": {
+          "actual": "\"211908000\"",
+          "expected": "211908000",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        },
+        "latest_q4": {
+          "actual": "\"212254000\"",
+          "expected": "212254000",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        },
+        "change": {
+          "actual": "\"346000\"",
+          "expected": "346000",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        }
+      },
+      "fieldwise": {},
+      "all_or_nothing": {}
+    }
+  },
+  {
+    "id": "yelp-full-claude",
+    "diagnostics": {
+      "prior_annual": "verified_by_both",
+      "prior_ytd": "location_or_scope",
+      "prior_q3": "verified_by_both",
+      "latest_annual": "verified_by_both",
+      "latest_ytd": "location_or_scope"
+    },
+    "fields": {
+      "direct": {
+        "prior_q4": {
+          "actual": "\"368232000\"",
+          "expected": "368232000.000",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": true,
+          "incorrect_operand_value": false
+        },
+        "latest_q4": {
+          "actual": "\"349388000\"",
+          "expected": "349388000.000",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": true,
+          "incorrect_operand_value": false
+        },
+        "change": {
+          "actual": "\"-18844000\"",
+          "expected": "-18844000.000",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": true,
+          "incorrect_operand_value": false
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded_correct": false,
+          "unsupported_operand": true,
+          "incorrect_operand_value": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "368232000.000",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "349388000.000",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "-18844000.000",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "368232000.000",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "349388000.000",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "-18844000.000",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        }
+      }
+    }
+  },
+  {
+    "id": "zd-full-astra",
+    "diagnostics": {
+      "prior_annual": "verified_by_both",
+      "prior_ytd": "verified_by_both",
+      "prior_q3": "missing",
+      "latest_annual": "verified_by_both",
+      "latest_ytd": "verified_by_both"
+    },
+    "fields": {
+      "direct": {},
+      "fieldwise": {},
+      "all_or_nothing": {
+        "latest_q4": {
+          "actual": null,
+          "expected": "452135000.0",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        }
+      }
+    }
+  },
+  {
+    "id": "zd-full-claude",
+    "diagnostics": {
+      "prior_annual": "verified_by_both",
+      "prior_ytd": "verified_by_both",
+      "prior_q3": "missing",
+      "latest_annual": "verified_by_both",
+      "latest_ytd": "verified_by_both"
+    },
+    "fields": {
+      "direct": {},
+      "fieldwise": {},
+      "all_or_nothing": {
+        "latest_q4": {
+          "actual": null,
+          "expected": "452135000.0",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        }
+      }
+    }
+  },
+  {
+    "id": "zd-oracle-astra",
+    "diagnostics": {
+      "prior_annual": "verified_by_both",
+      "prior_ytd": "verified_by_both",
+      "prior_q3": "missing",
+      "latest_annual": "verified_by_both",
+      "latest_ytd": "verified_by_both"
+    },
+    "fields": {
+      "direct": {},
+      "fieldwise": {},
+      "all_or_nothing": {
+        "latest_q4": {
+          "actual": null,
+          "expected": "452135000.0",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        }
+      }
+    }
+  },
+  {
+    "id": "zd-oracle-claude",
+    "diagnostics": {
+      "prior_annual": "verified_by_both",
+      "prior_ytd": "verified_by_both",
+      "prior_q3": "missing",
+      "latest_annual": "verified_by_both",
+      "latest_ytd": "verified_by_both"
+    },
+    "fields": {
+      "direct": {
+        "latest_q4": {
+          "actual": "\"452135000.0\"",
+          "expected": "452135000.0",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        }
+      },
+      "fieldwise": {},
+      "all_or_nothing": {
+        "latest_q4": {
+          "actual": null,
+          "expected": "452135000.0",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        }
+      }
+    }
+  },
+  {
+    "id": "rblx-full-claude",
+    "diagnostics": {
+      "prior_annual": "verified_by_both",
+      "prior_ytd": "verified_by_both",
+      "prior_q3": "verified_by_both",
+      "latest_annual": "verified_by_both",
+      "latest_ytd": "verified_by_both"
+    },
+    "fields": {
+      "direct": {
+        "prior_q4": {
+          "actual": "\"947657000\"",
+          "expected": "947657000",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        },
+        "latest_q4": {
+          "actual": "\"947500000\"",
+          "expected": "947500000",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        },
+        "change": {
+          "actual": "\"-157000\"",
+          "expected": "-157000",
+          "numeric_exact": false,
+          "grounded_correct": false,
+          "unsupported_operand": false,
+          "incorrect_operand_value": false
+        }
+      },
+      "fieldwise": {},
+      "all_or_nothing": {}
+    }
+  }
+]

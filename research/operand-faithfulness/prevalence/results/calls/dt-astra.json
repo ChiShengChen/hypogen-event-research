@@ -1,0 +1,90 @@
+{
+  "case": "dt",
+  "family": "astra",
+  "status": "completed",
+  "started_at": "2026-11-23T19:05:59.495649+00:00",
+  "request_sha256": "6253e1650271af94d743daa468dea99c1a6a023ecbe406d3b075befce3bfaddb",
+  "call": "astra",
+  "queued_at": "2026-11-23T19:05:59.403344+00:00",
+  "queued_epoch": 1795460759.4034045,
+  "queue_seconds": 0.074,
+  "preparation_seconds": 0.019,
+  "prompt_bytes": 93059,
+  "returncode": 0,
+  "cli_elapsed_seconds": 12.076,
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 2,
+        "row": 37,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "1665000000",
+        "high_usd": "1675000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 3,
+        "row": 39,
+        "indices": [
+          3
+        ],
+        "low_usd": "817349000",
+        "high_usd": "817349000"
+      },
+      {
+        "role": "prior_q3",
+        "page": 2,
+        "row": 22,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "425000000",
+        "high_usd": "428000000"
+      },
+      {
+        "role": "latest_annual",
+        "page": 2,
+        "row": 39,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "1686000000",
+        "high_usd": "1691000000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 3,
+        "row": 37,
+        "indices": [
+          3
+        ],
+        "low_usd": "1253518000",
+        "high_usd": "1253518000"
+      }
+    ],
+    "prior_q4": "426151000",
+    "latest_q4": "434982000",
+    "change": "8831000",
+    "direction": "raised"
+  },
+  "elapsed_seconds": 12.111,
+  "usage": {
+    "input_tokens": 48615,
+    "cached_input_tokens": 0,
+    "output_tokens": 290,
+    "reasoning_output_tokens": 42
+  },
+  "event_seconds": {
+    "thread.started": 1.349,
+    "turn.started": 1.918,
+    "item.completed": 11.682,
+    "turn.completed": 11.693
+  },
+  "finished_at": "2026-11-23T19:06:11.613496+00:00"
+}

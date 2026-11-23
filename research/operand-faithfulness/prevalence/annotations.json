@@ -1,0 +1,778 @@
+[
+  {
+    "id": "dt",
+    "issuer": "Dynatrace",
+    "fiscal_year": 2025,
+    "report_year": 2024,
+    "missing": {},
+    "sources": {
+      "prior": {
+        "date": "2024-11-07",
+        "path": "sources/dt-prior.html",
+        "url": "https://ir.dynatrace.com/news-events/press-releases/detail/353/dynatrace-reports-second-quarter-fiscal-year-2025-financial-results",
+        "selector": "article.full-news-article"
+      },
+      "latest": {
+        "date": "2025-01-30",
+        "path": "sources/dt-latest.html",
+        "url": "https://ir.dynatrace.com/news-events/press-releases/detail/365/dynatrace-reports-third-quarter-fiscal-year-2025-financial-results",
+        "selector": "article.full-news-article"
+      }
+    },
+    "operands": {
+      "prior_annual": [
+        [
+          "2:37",
+          [
+            1,
+            2
+          ],
+          1000000,
+          [
+            "2:16",
+            "2:17",
+            "2:33"
+          ]
+        ]
+      ],
+      "prior_q3": [
+        [
+          "2:22",
+          [
+            1,
+            2
+          ],
+          1000000,
+          [
+            "2:17",
+            "2:21"
+          ]
+        ]
+      ],
+      "prior_ytd": [
+        [
+          "3:39",
+          [
+            3
+          ],
+          1000,
+          [
+            "3:33",
+            "3:34",
+            "3:35"
+          ]
+        ]
+      ],
+      "latest_annual": [
+        [
+          "2:39",
+          [
+            1,
+            2
+          ],
+          1000000,
+          [
+            "2:18",
+            "2:19",
+            "2:35"
+          ]
+        ]
+      ],
+      "latest_ytd": [
+        [
+          "3:37",
+          [
+            3
+          ],
+          1000,
+          [
+            "3:30",
+            "3:31",
+            "3:32",
+            "3:33"
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "gddy",
+    "issuer": "GoDaddy",
+    "fiscal_year": 2024,
+    "report_year": 2024,
+    "missing": {},
+    "sources": {
+      "prior": {
+        "date": "2024-08-01",
+        "path": "sources/gddy-prior.html",
+        "url": "https://aboutus.godaddy.net/newsroom/news-releases/press-release-details/2024/GoDaddy-Reports-Second-Quarter-2024-Financial-Results/default.aspx",
+        "selector": ".xn-content"
+      },
+      "latest": {
+        "date": "2024-10-30",
+        "path": "sources/gddy-latest.html",
+        "url": "https://investors.godaddy.net/newsroom/news-releases/press-release-details/2024/GoDaddy-Reports-Third-Quarter-2024-Financial-Results/default.aspx",
+        "selector": ".xn-content"
+      }
+    },
+    "operands": {
+      "prior_annual": [
+        [
+          "2:9",
+          [
+            1,
+            2
+          ],
+          1000000000,
+          [
+            "2:6",
+            "2:9"
+          ]
+        ]
+      ],
+      "prior_q3": [
+        [
+          "2:7",
+          [
+            1,
+            2
+          ],
+          1000000000,
+          [
+            "2:6",
+            "2:7"
+          ]
+        ]
+      ],
+      "prior_ytd": [
+        [
+          "2:39",
+          [
+            3
+          ],
+          1000000,
+          [
+            "2:33",
+            "2:34",
+            "2:35"
+          ]
+        ],
+        [
+          "1:21",
+          [
+            3
+          ],
+          1000000,
+          [
+            "1:18",
+            "1:19",
+            "1:20"
+          ]
+        ]
+      ],
+      "latest_annual": [
+        [
+          "2:3",
+          [
+            1,
+            2
+          ],
+          1000000000,
+          [
+            "2:2",
+            "2:3"
+          ]
+        ]
+      ],
+      "latest_ytd": [
+        [
+          "2:37",
+          [
+            3
+          ],
+          1000000,
+          [
+            "2:31",
+            "2:32",
+            "2:33"
+          ]
+        ],
+        [
+          "1:19",
+          [
+            3
+          ],
+          1000000,
+          [
+            "1:16",
+            "1:17",
+            "1:18"
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "infa",
+    "issuer": "Informatica",
+    "fiscal_year": 2024,
+    "report_year": 2024,
+    "missing": {},
+    "sources": {
+      "prior": {
+        "date": "2024-07-30",
+        "path": "sources/infa-prior.html",
+        "url": "https://www.informatica.com/about-us/news/news-releases/2024/07/2024730-informatica-reports-second-quarter-2024-financial-results.html",
+        "selector": "main#infa-main",
+        "omit": ".infacom-section-title-rte:has(.WordSection1)"
+      },
+      "latest": {
+        "date": "2024-10-30",
+        "path": "sources/infa-latest.html",
+        "url": "https://www.informatica.com/about-us/news/news-releases/2024/10/20241030-informatica-reports-third-quarter-2024-financial-results.html",
+        "selector": "main#infa-main",
+        "omit": ".infacom-section-title-rte:has(.WordSection1)"
+      }
+    },
+    "operands": {
+      "prior_annual": [
+        [
+          "2:8",
+          [
+            3,
+            4
+          ],
+          1000000000,
+          [
+            "2:6",
+            "2:7",
+            "2:8"
+          ]
+        ]
+      ],
+      "prior_q3": [
+        [
+          "2:2",
+          [
+            1,
+            2
+          ],
+          1000000,
+          [
+            "1:43",
+            "1:45",
+            "2:1",
+            "2:2"
+          ]
+        ]
+      ],
+      "prior_ytd": [
+        [
+          "3:32",
+          [
+            3
+          ],
+          1000,
+          [
+            "3:22",
+            "3:23",
+            "3:25",
+            "3:26"
+          ]
+        ]
+      ],
+      "latest_annual": [
+        [
+          "2:10",
+          [
+            1,
+            2
+          ],
+          1000000000,
+          [
+            "2:8",
+            "2:9",
+            "2:10"
+          ]
+        ]
+      ],
+      "latest_ytd": [
+        [
+          "3:34",
+          [
+            3
+          ],
+          1000,
+          [
+            "3:24",
+            "3:25",
+            "3:27",
+            "3:28"
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "qlys",
+    "issuer": "Qualys",
+    "fiscal_year": 2024,
+    "report_year": 2024,
+    "missing": {},
+    "sources": {
+      "prior": {
+        "date": "2024-08-06",
+        "path": "sources/qlys-prior.pdf",
+        "url": "https://cdn2.qualys.com/docs/mktg/qualys-q2-2024-earnings-release.pdf"
+      },
+      "latest": {
+        "date": "2024-11-05",
+        "path": "sources/qlys-latest.pdf",
+        "url": "https://cdn2.qualys.com/docs/mktg/qualys-q3-2024-earnings-release.pdf"
+      }
+    },
+    "operands": {
+      "prior_annual": [
+        [
+          "2:38",
+          [
+            1,
+            2
+          ],
+          1000000,
+          [
+            "2:37",
+            "2:38"
+          ]
+        ]
+      ],
+      "prior_q3": [
+        [
+          "2:32",
+          [
+            1,
+            2
+          ],
+          1000000,
+          [
+            "2:31",
+            "2:32"
+          ]
+        ]
+      ],
+      "prior_ytd": [
+        [
+          "6:8",
+          [
+            3
+          ],
+          1000,
+          [
+            "6:2",
+            "6:4",
+            "6:5",
+            "6:6",
+            "6:7"
+          ]
+        ]
+      ],
+      "latest_annual": [
+        [
+          "1:4",
+          [
+            2,
+            3
+          ],
+          1000000,
+          [
+            "1:1",
+            "1:4",
+            "2:34",
+            "2:35"
+          ]
+        ]
+      ],
+      "latest_ytd": [
+        [
+          "6:8",
+          [
+            3
+          ],
+          1000,
+          [
+            "6:2",
+            "6:4",
+            "6:5",
+            "6:6",
+            "6:7"
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "verx",
+    "issuer": "Vertex, Inc.",
+    "fiscal_year": 2024,
+    "report_year": 2024,
+    "missing": {},
+    "sources": {
+      "prior": {
+        "date": "2024-08-07",
+        "path": "sources/verx-prior.pdf",
+        "url": "https://cdn.sanity.io/files/lxv47hos/production/cdd4835edeb9b778113db10bb05450b99dbbf821.pdf"
+      },
+      "latest": {
+        "date": "2024-11-06",
+        "path": "sources/verx-latest.pdf",
+        "url": "https://cdn.sanity.io/files/lxv47hos/production/c40ff313f878ebe1dc1627760e3dd5db35b62010.pdf"
+      }
+    },
+    "operands": {
+      "prior_annual": [
+        [
+          "2:6",
+          [
+            1,
+            2
+          ],
+          1000000,
+          [
+            "2:1",
+            "2:5",
+            "2:6"
+          ]
+        ]
+      ],
+      "prior_q3": [
+        [
+          "2:3",
+          [
+            1,
+            2
+          ],
+          1000000,
+          [
+            "2:1",
+            "2:2",
+            "2:3"
+          ]
+        ]
+      ],
+      "prior_ytd": [
+        [
+          "8:11",
+          [
+            3
+          ],
+          1000,
+          [
+            "8:2",
+            "8:4",
+            "8:5",
+            "8:6"
+          ]
+        ],
+        [
+          "11:24",
+          [
+            3
+          ],
+          1000,
+          [
+            "11:2",
+            "11:4",
+            "11:5",
+            "11:6"
+          ]
+        ],
+        [
+          "13:26",
+          [
+            3
+          ],
+          1000,
+          [
+            "13:2",
+            "13:4",
+            "13:5",
+            "13:6"
+          ]
+        ],
+        [
+          "13:37",
+          [
+            3
+          ],
+          1000,
+          [
+            "13:28",
+            "13:29",
+            "13:30"
+          ]
+        ]
+      ],
+      "latest_annual": [
+        [
+          "2:6",
+          [
+            1,
+            2
+          ],
+          1000000,
+          [
+            "2:1",
+            "2:5",
+            "2:6"
+          ]
+        ]
+      ],
+      "latest_ytd": [
+        [
+          "8:11",
+          [
+            3
+          ],
+          1000,
+          [
+            "8:2",
+            "8:4",
+            "8:5",
+            "8:6"
+          ]
+        ],
+        [
+          "11:24",
+          [
+            3
+          ],
+          1000,
+          [
+            "11:2",
+            "11:4",
+            "11:5",
+            "11:6"
+          ]
+        ],
+        [
+          "13:26",
+          [
+            3
+          ],
+          1000,
+          [
+            "13:2",
+            "13:4",
+            "13:5",
+            "13:6"
+          ]
+        ],
+        [
+          "13:37",
+          [
+            3
+          ],
+          1000,
+          [
+            "13:28",
+            "13:29",
+            "13:30"
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "wk",
+    "issuer": "Workiva",
+    "fiscal_year": 2024,
+    "report_year": 2024,
+    "missing": {},
+    "sources": {
+      "prior": {
+        "date": "2024-08-01",
+        "path": "sources/wk-prior.html",
+        "url": "https://newsroom.workiva.com/press-releases/workiva-inc-announces-second-quarter-2024-financial-results",
+        "selector": "article.newsroom-press-release"
+      },
+      "latest": {
+        "date": "2024-11-06",
+        "path": "sources/wk-latest.html",
+        "url": "https://newsroom.workiva.com/press-releases/workiva-inc-announces-third-quarter-2024-financial-results",
+        "selector": "article.newsroom-press-release"
+      }
+    },
+    "operands": {
+      "prior_annual": [
+        [
+          "1:31",
+          [
+            1,
+            2
+          ],
+          1000000,
+          [
+            "1:21",
+            "1:30",
+            "1:31"
+          ]
+        ]
+      ],
+      "prior_q3": [
+        [
+          "1:24",
+          [
+            1,
+            2
+          ],
+          1000000,
+          [
+            "1:21",
+            "1:23",
+            "1:24"
+          ]
+        ]
+      ],
+      "prior_ytd": [
+        [
+          "2:14",
+          [
+            3
+          ],
+          1000,
+          [
+            "2:6",
+            "2:7",
+            "2:8",
+            "2:9"
+          ]
+        ]
+      ],
+      "latest_annual": [
+        [
+          "1:29",
+          [
+            1,
+            2
+          ],
+          1000000,
+          [
+            "1:19",
+            "1:28",
+            "1:29"
+          ]
+        ]
+      ],
+      "latest_ytd": [
+        [
+          "2:8",
+          [
+            3
+          ],
+          1000,
+          [
+            "2:1",
+            "2:2",
+            "2:3"
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "yext",
+    "issuer": "Yext",
+    "fiscal_year": 2025,
+    "report_year": 2024,
+    "missing": {},
+    "sources": {
+      "prior": {
+        "date": "2024-09-04",
+        "path": "sources/yext-prior.pdf",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_8fe6575d806ff5975321bba435f453c4/yext/db/3479/32251/file/Q2FY25+Shareholder+Letter.pdf"
+      },
+      "latest": {
+        "date": "2024-12-09",
+        "path": "sources/yext-latest.pdf",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_8fe6575d806ff5975321bba435f453c4/yext/db/3479/32256/file/Q3FY25+Shareholder+Letter.pdf"
+      }
+    },
+    "operands": {
+      "prior_annual": [
+        [
+          "7:22",
+          [
+            1,
+            2
+          ],
+          1000000,
+          [
+            "7:11",
+            "7:21",
+            "7:22"
+          ]
+        ]
+      ],
+      "prior_q3": [
+        [
+          "7:16",
+          [
+            1,
+            2
+          ],
+          1000000,
+          [
+            "7:11",
+            "7:15",
+            "7:16"
+          ]
+        ]
+      ],
+      "prior_ytd": [
+        [
+          "13:7",
+          [
+            3
+          ],
+          1000,
+          [
+            "13:2",
+            "13:3",
+            "13:5",
+            "13:6"
+          ]
+        ]
+      ],
+      "latest_annual": [
+        [
+          "7:22",
+          [
+            1,
+            2
+          ],
+          1000000,
+          [
+            "7:12",
+            "7:21",
+            "7:22"
+          ]
+        ]
+      ],
+      "latest_ytd": [
+        [
+          "13:7",
+          [
+            3
+          ],
+          1000,
+          [
+            "13:2",
+            "13:3",
+            "13:5",
+            "13:6"
+          ]
+        ]
+      ]
+    }
+  }
+]

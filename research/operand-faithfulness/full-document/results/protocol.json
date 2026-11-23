@@ -1,0 +1,293 @@
+{
+  "sealed_at": "2026-11-23T18:26:54.518322+00:00",
+  "design": "full-document-v2",
+  "models": {
+    "astra": "gpt-6.2-astra",
+    "claude": "claude-sonnet-4-6"
+  },
+  "effort": "medium",
+  "per_call_timeout_seconds": 150,
+  "search_and_tools": "off",
+  "max_calls": 32,
+  "pilot_release_gate": "all 12 original replies schema-valid; all offline benchmark checks pass",
+  "minimum_effects": {
+    "conditional_masking_rate_pp": 10,
+    "matched_risk_coverage_gain_pp": 10,
+    "max_observed_publication_risk_pp": 5
+  },
+  "sample_plan": "3 pilot and 4 sealed unseen issuers; basic feasibility only. One original call per model per condition. Approximately 59 independent accepted issuers with zero errors are needed to put the exact one-sided 95% issuer-level upper bound below 5%. Estimation of a 10-pp paired difference requires discordance-informed power.",
+  "primary": [
+    "numeric delta correct with any wrong or unsupported operand",
+    "supported coverage at equal observed risk"
+  ],
+  "stopping": "Do not retry started calls; provider capacity/auth errors stop dispatch for that family. Holdout opens only after pilot gate, uses at most one launched batch with unchanged hashes.",
+  "case_sha256": "0c2d4c9d3837b026dd68ae36fa0a9a8c01410f41aa55572940043839081f0638",
+  "requests_sha256": "73a2582cf60d4baa3443902b069d06d9366cc506649d0a34a8021d21e3bb5fb5",
+  "calls": [
+    {
+      "id": "rpd-full-astra",
+      "key": "rpd",
+      "stage": "pilot",
+      "mode": "full",
+      "family": "astra",
+      "sha256": "affaf54c45afdd2d3c1f7b043deb70bb35c7c91097f2c6bc0344eadc183ba673"
+    },
+    {
+      "id": "rpd-full-claude",
+      "key": "rpd",
+      "stage": "pilot",
+      "mode": "full",
+      "family": "claude",
+      "sha256": "affaf54c45afdd2d3c1f7b043deb70bb35c7c91097f2c6bc0344eadc183ba673"
+    },
+    {
+      "id": "rpd-oracle-astra",
+      "key": "rpd",
+      "stage": "pilot",
+      "mode": "oracle",
+      "family": "astra",
+      "sha256": "05f9f4ba9fa9f07dd5340f2d517c0820cfd81f8bf70797431302cbe73b0abb99"
+    },
+    {
+      "id": "rpd-oracle-claude",
+      "key": "rpd",
+      "stage": "pilot",
+      "mode": "oracle",
+      "family": "claude",
+      "sha256": "05f9f4ba9fa9f07dd5340f2d517c0820cfd81f8bf70797431302cbe73b0abb99"
+    },
+    {
+      "id": "yelp-full-astra",
+      "key": "yelp",
+      "stage": "pilot",
+      "mode": "full",
+      "family": "astra",
+      "sha256": "a0cc5521d2b3e105ed1769f8dca94b2db946249ac66ae8911858f52471cde211"
+    },
+    {
+      "id": "yelp-full-claude",
+      "key": "yelp",
+      "stage": "pilot",
+      "mode": "full",
+      "family": "claude",
+      "sha256": "a0cc5521d2b3e105ed1769f8dca94b2db946249ac66ae8911858f52471cde211"
+    },
+    {
+      "id": "yelp-oracle-astra",
+      "key": "yelp",
+      "stage": "pilot",
+      "mode": "oracle",
+      "family": "astra",
+      "sha256": "bb56758e3eab9c0347ddd3a8a091c0376585f7ec4745a928c7c492f042bc2fe6"
+    },
+    {
+      "id": "yelp-oracle-claude",
+      "key": "yelp",
+      "stage": "pilot",
+      "mode": "oracle",
+      "family": "claude",
+      "sha256": "bb56758e3eab9c0347ddd3a8a091c0376585f7ec4745a928c7c492f042bc2fe6"
+    },
+    {
+      "id": "aap-full-astra",
+      "key": "aap",
+      "stage": "pilot",
+      "mode": "full",
+      "family": "astra",
+      "sha256": "5d0ae2ff1a034881cd688b41d3e665d41b6ed98c3f465a036caa51e682ff378d"
+    },
+    {
+      "id": "aap-full-claude",
+      "key": "aap",
+      "stage": "pilot",
+      "mode": "full",
+      "family": "claude",
+      "sha256": "5d0ae2ff1a034881cd688b41d3e665d41b6ed98c3f465a036caa51e682ff378d"
+    },
+    {
+      "id": "aap-oracle-astra",
+      "key": "aap",
+      "stage": "pilot",
+      "mode": "oracle",
+      "family": "astra",
+      "sha256": "44052d291cb7366d894dc5881389475b6282e1673edbc9cd1cf1827a271924b1"
+    },
+    {
+      "id": "aap-oracle-claude",
+      "key": "aap",
+      "stage": "pilot",
+      "mode": "oracle",
+      "family": "claude",
+      "sha256": "44052d291cb7366d894dc5881389475b6282e1673edbc9cd1cf1827a271924b1"
+    },
+    {
+      "id": "common-full-astra",
+      "key": "common",
+      "stage": "pilot",
+      "mode": "full",
+      "family": "astra",
+      "sha256": "23d604494e10ac883982f7ef064a78936fb8d1e67c1a8ee1be7df54f23cfbc72"
+    },
+    {
+      "id": "common-full-claude",
+      "key": "common",
+      "stage": "pilot",
+      "mode": "full",
+      "family": "claude",
+      "sha256": "23d604494e10ac883982f7ef064a78936fb8d1e67c1a8ee1be7df54f23cfbc72"
+    },
+    {
+      "id": "latest_shift-full-astra",
+      "key": "latest_shift",
+      "stage": "pilot",
+      "mode": "full",
+      "family": "astra",
+      "sha256": "0af1d586139031fdc9ea8dace228eb0a1956d13adda3d72aab759259157e0ebf"
+    },
+    {
+      "id": "latest_shift-full-claude",
+      "key": "latest_shift",
+      "stage": "pilot",
+      "mode": "full",
+      "family": "claude",
+      "sha256": "0af1d586139031fdc9ea8dace228eb0a1956d13adda3d72aab759259157e0ebf"
+    },
+    {
+      "id": "zd-full-astra",
+      "key": "zd",
+      "stage": "holdout",
+      "mode": "full",
+      "family": "astra",
+      "sha256": "fb667d9a9000f25f8169cec51f6942ebc5d3c08a28cac80ed45ff54934aa81d4"
+    },
+    {
+      "id": "zd-full-claude",
+      "key": "zd",
+      "stage": "holdout",
+      "mode": "full",
+      "family": "claude",
+      "sha256": "fb667d9a9000f25f8169cec51f6942ebc5d3c08a28cac80ed45ff54934aa81d4"
+    },
+    {
+      "id": "zd-oracle-astra",
+      "key": "zd",
+      "stage": "holdout",
+      "mode": "oracle",
+      "family": "astra",
+      "sha256": "94ef3a563e7bc61dfe301343a87671f496dfc1cf8668a4588ef98fc239d1a4a9"
+    },
+    {
+      "id": "zd-oracle-claude",
+      "key": "zd",
+      "stage": "holdout",
+      "mode": "oracle",
+      "family": "claude",
+      "sha256": "94ef3a563e7bc61dfe301343a87671f496dfc1cf8668a4588ef98fc239d1a4a9"
+    },
+    {
+      "id": "chwy-full-astra",
+      "key": "chwy",
+      "stage": "holdout",
+      "mode": "full",
+      "family": "astra",
+      "sha256": "90c1cafdcc341b3653d89c722d861c167208bb6fa8f248404294a93109b19715"
+    },
+    {
+      "id": "chwy-full-claude",
+      "key": "chwy",
+      "stage": "holdout",
+      "mode": "full",
+      "family": "claude",
+      "sha256": "90c1cafdcc341b3653d89c722d861c167208bb6fa8f248404294a93109b19715"
+    },
+    {
+      "id": "chwy-oracle-astra",
+      "key": "chwy",
+      "stage": "holdout",
+      "mode": "oracle",
+      "family": "astra",
+      "sha256": "f18f706a59ee4a51f839aecba1cf94374482dea29271b3f05226e06a8a9c54d5"
+    },
+    {
+      "id": "chwy-oracle-claude",
+      "key": "chwy",
+      "stage": "holdout",
+      "mode": "oracle",
+      "family": "claude",
+      "sha256": "f18f706a59ee4a51f839aecba1cf94374482dea29271b3f05226e06a8a9c54d5"
+    },
+    {
+      "id": "wsm-full-astra",
+      "key": "wsm",
+      "stage": "holdout",
+      "mode": "full",
+      "family": "astra",
+      "sha256": "97c50b560d23219d0924aaca975728a635b1a48b355dba287570697a3de16a9c"
+    },
+    {
+      "id": "wsm-full-claude",
+      "key": "wsm",
+      "stage": "holdout",
+      "mode": "full",
+      "family": "claude",
+      "sha256": "97c50b560d23219d0924aaca975728a635b1a48b355dba287570697a3de16a9c"
+    },
+    {
+      "id": "wsm-oracle-astra",
+      "key": "wsm",
+      "stage": "holdout",
+      "mode": "oracle",
+      "family": "astra",
+      "sha256": "e1079098d329b5c31f28ecbf7f516a72c1b74b6a23b3ed7fc4850fc7370e858e"
+    },
+    {
+      "id": "wsm-oracle-claude",
+      "key": "wsm",
+      "stage": "holdout",
+      "mode": "oracle",
+      "family": "claude",
+      "sha256": "e1079098d329b5c31f28ecbf7f516a72c1b74b6a23b3ed7fc4850fc7370e858e"
+    },
+    {
+      "id": "rblx-full-astra",
+      "key": "rblx",
+      "stage": "holdout",
+      "mode": "full",
+      "family": "astra",
+      "sha256": "390b593e0c6ff1cdcffff86b8bee0544b3fba91d7196605fd3bf1dcb815d527e"
+    },
+    {
+      "id": "rblx-full-claude",
+      "key": "rblx",
+      "stage": "holdout",
+      "mode": "full",
+      "family": "claude",
+      "sha256": "390b593e0c6ff1cdcffff86b8bee0544b3fba91d7196605fd3bf1dcb815d527e"
+    },
+    {
+      "id": "rblx-oracle-astra",
+      "key": "rblx",
+      "stage": "holdout",
+      "mode": "oracle",
+      "family": "astra",
+      "sha256": "71f8f27ed2e67091e3e62809b152da2fa52eb70f63718da27443a22ff006d9cb"
+    },
+    {
+      "id": "rblx-oracle-claude",
+      "key": "rblx",
+      "stage": "holdout",
+      "mode": "oracle",
+      "family": "claude",
+      "sha256": "71f8f27ed2e67091e3e62809b152da2fa52eb70f63718da27443a22ff006d9cb"
+    }
+  ],
+  "source_sha256": {
+    "study.py": "1eb191f1b1c4ddd877119fbfd5ab8d42b333ffc32cf41a398aae51f91f5cd3d3",
+    "layout.py": "981e9c6fdabbff0bee1e0d5bfc37b15a40514e267484e681f61cdcd8c52bc4ee",
+    "annotations.json": "00518d219f343ee879151ffb2b39f1f8d889c40ca2cfab6b41f00539fcd76683",
+    "novelty.md": "483d97756ea7eb9c4abb67dcd3f00b064427a994caf53e100352401947d3cf96",
+    "annotation.md": "7bc6213ef9d2ee6dec1a87e61d4362b7359fc2d16029d4608d336a6ad55934ea",
+    "protocol.md": "bd3024ef1e8dc08eadb6b7dfda4ec34c989614399bc5d6782685122ed9daa2f8",
+    "test_study.py": "130663a7f421e5507c78816b1b9deadf80d40ebef9f9f595f56c120bcb6174af"
+  }
+}

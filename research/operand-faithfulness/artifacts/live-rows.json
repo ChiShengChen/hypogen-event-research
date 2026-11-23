@@ -1,0 +1,1066 @@
+[
+  {
+    "case": "gitlab-base",
+    "response": {
+      "operands": [
+        {
+          "role": "prior_annual",
+          "card_id": "C4c7a655e",
+          "low": "742000000",
+          "high": "744000000"
+        },
+        {
+          "role": "prior_ytd",
+          "card_id": "C3ac5a87b",
+          "low": "351771000",
+          "high": "351771000"
+        },
+        {
+          "role": "prior_q3",
+          "card_id": "C5c0315f5",
+          "low": "187000000",
+          "high": "188000000"
+        },
+        {
+          "role": "latest_annual",
+          "card_id": "C45bad455",
+          "low": "753000000",
+          "high": "754000000"
+        },
+        {
+          "role": "latest_ytd",
+          "card_id": "C8c149be3",
+          "low": "547818000",
+          "high": "547818000"
+        }
+      ],
+      "prior_q4": "203729000",
+      "latest_q4": "205682000",
+      "change": "1953000",
+      "direction": "raised"
+    },
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "203729000",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "205682000",
+          "expected": "205682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "205682000",
+          "expected": "205682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "205682000",
+          "expected": "205682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-missing_latest",
+    "response": {
+      "operands": [
+        {
+          "role": "prior_annual",
+          "card_id": "C7e986f6e",
+          "low": "785000000",
+          "high": "787000000"
+        },
+        {
+          "role": "prior_ytd",
+          "card_id": "Cb67bb30d",
+          "low": "393166000",
+          "high": "393166000"
+        },
+        {
+          "role": "prior_q3",
+          "card_id": "C1712d8ab",
+          "low": "196000000",
+          "high": "197000000"
+        },
+        {
+          "role": "latest_annual",
+          "card_id": "C2377e957",
+          "low": "793900000",
+          "high": "794900000"
+        }
+      ],
+      "prior_q4": "196334000",
+      "latest_q4": null,
+      "change": null,
+      "direction": null
+    },
+    "verification_reasons": {
+      "latest_ytd": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-common_shift",
+    "response": {
+      "operands": [
+        {
+          "role": "prior_annual",
+          "card_id": "C4c7a655e",
+          "low": "742000000",
+          "high": "744000000"
+        },
+        {
+          "role": "prior_ytd",
+          "card_id": "C3ac5a87b",
+          "low": "362771000",
+          "high": "362771000"
+        },
+        {
+          "role": "prior_q3",
+          "card_id": "C5c0315f5",
+          "low": "187000000",
+          "high": "188000000"
+        },
+        {
+          "role": "latest_annual",
+          "card_id": "C45bad455",
+          "low": "753000000",
+          "high": "754000000"
+        },
+        {
+          "role": "latest_ytd",
+          "card_id": "C8c149be3",
+          "low": "558818000",
+          "high": "558818000"
+        }
+      ],
+      "prior_q4": "192729000",
+      "latest_q4": "194682000",
+      "change": "1953000",
+      "direction": "raised"
+    },
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "192729000",
+          "expected": "192729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194682000",
+          "expected": "194682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "192729000.0",
+          "expected": "192729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194682000",
+          "expected": "194682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "192729000.0",
+          "expected": "192729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194682000",
+          "expected": "194682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-latest_shift",
+    "response": {
+      "operands": [
+        {
+          "role": "prior_annual",
+          "card_id": "C7e986f6e",
+          "low": "785000000",
+          "high": "787000000"
+        },
+        {
+          "role": "prior_ytd",
+          "card_id": "Cb67bb30d",
+          "low": "393166000",
+          "high": "393166000"
+        },
+        {
+          "role": "prior_q3",
+          "card_id": "C1712d8ab",
+          "low": "196000000",
+          "high": "197000000"
+        },
+        {
+          "role": "latest_annual",
+          "card_id": "C2377e957",
+          "low": "793900000",
+          "high": "794900000"
+        },
+        {
+          "role": "latest_ytd",
+          "card_id": "Cbf20330a",
+          "low": "599855000",
+          "high": "599855000"
+        }
+      ],
+      "prior_q4": "196334000",
+      "latest_q4": "194545000",
+      "change": "-1789000",
+      "direction": "lowered"
+    },
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194545000",
+          "expected": "194545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-1789000",
+          "expected": "-1789000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194545000.0",
+          "expected": "194545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-1789000.0",
+          "expected": "-1789000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194545000.0",
+          "expected": "194545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-1789000.0",
+          "expected": "-1789000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-latest_shift",
+    "response": {
+      "operands": [
+        {
+          "role": "prior_annual",
+          "card_id": "C4c7a655e",
+          "low": "742000000",
+          "high": "744000000"
+        },
+        {
+          "role": "prior_ytd",
+          "card_id": "C3ac5a87b",
+          "low": "351771000",
+          "high": "351771000"
+        },
+        {
+          "role": "prior_q3",
+          "card_id": "C5c0315f5",
+          "low": "187000000",
+          "high": "188000000"
+        },
+        {
+          "role": "latest_annual",
+          "card_id": "C45bad455",
+          "low": "753000000",
+          "high": "754000000"
+        },
+        {
+          "role": "latest_ytd",
+          "card_id": "C8c149be3",
+          "low": "553818000",
+          "high": "553818000"
+        }
+      ],
+      "prior_q4": "203729000",
+      "latest_q4": "199682000",
+      "change": "-4047000",
+      "direction": "lowered"
+    },
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "203729000",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "199682000",
+          "expected": "199682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-4047000",
+          "expected": "-4047000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "199682000",
+          "expected": "199682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-4047000.0",
+          "expected": "-4047000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "199682000",
+          "expected": "199682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-4047000.0",
+          "expected": "-4047000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-common_shift",
+    "response": {
+      "operands": [
+        {
+          "role": "prior_annual",
+          "card_id": "C7e986f6e",
+          "low": "785000000",
+          "high": "787000000"
+        },
+        {
+          "role": "prior_ytd",
+          "card_id": "Cb67bb30d",
+          "low": "404166000",
+          "high": "404166000"
+        },
+        {
+          "role": "prior_q3",
+          "card_id": "C1712d8ab",
+          "low": "196000000",
+          "high": "197000000"
+        },
+        {
+          "role": "latest_annual",
+          "card_id": "C2377e957",
+          "low": "793900000",
+          "high": "794900000"
+        },
+        {
+          "role": "latest_ytd",
+          "card_id": "Cbf20330a",
+          "low": "604855000",
+          "high": "604855000"
+        }
+      ],
+      "prior_q4": "185334000",
+      "latest_q4": "189545000",
+      "change": "4211000",
+      "direction": "raised"
+    },
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "185334000",
+          "expected": "185334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "189545000",
+          "expected": "189545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "185334000",
+          "expected": "185334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "189545000.0",
+          "expected": "189545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "185334000",
+          "expected": "185334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "189545000.0",
+          "expected": "189545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-missing_latest",
+    "response": {
+      "operands": [
+        {
+          "role": "prior_annual",
+          "card_id": "C4c7a655e",
+          "low": "742000000",
+          "high": "744000000"
+        },
+        {
+          "role": "prior_ytd",
+          "card_id": "C3ac5a87b",
+          "low": "351771000",
+          "high": "351771000"
+        },
+        {
+          "role": "prior_q3",
+          "card_id": "C5c0315f5",
+          "low": "187000000",
+          "high": "188000000"
+        },
+        {
+          "role": "latest_annual",
+          "card_id": "C45bad455",
+          "low": "753000000",
+          "high": "754000000"
+        }
+      ],
+      "prior_q4": "203729000",
+      "latest_q4": null,
+      "change": null,
+      "direction": null
+    },
+    "verification_reasons": {
+      "latest_ytd": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "203729000",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-base",
+    "response": {
+      "operands": [
+        {
+          "role": "prior_annual",
+          "card_id": "C7e986f6e",
+          "low": "785000000",
+          "high": "787000000"
+        },
+        {
+          "role": "prior_ytd",
+          "card_id": "Cb67bb30d",
+          "low": "393166000",
+          "high": "393166000"
+        },
+        {
+          "role": "prior_q3",
+          "card_id": "C1712d8ab",
+          "low": "196000000",
+          "high": "197000000"
+        },
+        {
+          "role": "latest_annual",
+          "card_id": "C2377e957",
+          "low": "793900000",
+          "high": "794900000"
+        },
+        {
+          "role": "latest_ytd",
+          "card_id": "Cbf20330a",
+          "low": "593855000",
+          "high": "593855000"
+        }
+      ],
+      "prior_q4": "196334000",
+      "latest_q4": "200545000",
+      "change": "4211000",
+      "direction": "raised"
+    },
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "200545000",
+          "expected": "200545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "200545000.0",
+          "expected": "200545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "200545000.0",
+          "expected": "200545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  }
+]

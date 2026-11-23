@@ -1,0 +1,156 @@
+[
+  {
+    "issuer": "Rapid7",
+    "path": "sources/rpd-prior.pdf",
+    "url": "https://s29.q4cdn.com/157304370/files/doc_financials/2024/q2/Earnings-Release-Q2-2024-FINAL.pdf",
+    "sha256": "691f2daa3e3a83231d23617b448d3419835112b0c326ba26aece2ade80f4bb83",
+    "source_date": "2024-08-06",
+    "pdf_mtime_utc": "2026-11-23T18:14:11.180000+00:00",
+    "pdf_bytes": 318915,
+    "page_count": 13,
+    "nonblank_lines": 500
+  },
+  {
+    "issuer": "Rapid7",
+    "path": "sources/rpd-latest.pdf",
+    "url": "https://s29.q4cdn.com/157304370/files/doc_financials/2024/q3/Earnings-Release-Q3-2024-FINAL.pdf",
+    "sha256": "4f74b4f3a2a82495ba116ac995685f7011e31a32eff914e9dfa336638a9a9601",
+    "source_date": "2024-11-06",
+    "pdf_mtime_utc": "2026-11-23T18:14:12+00:00",
+    "pdf_bytes": 471717,
+    "page_count": 14,
+    "nonblank_lines": 514
+  },
+  {
+    "issuer": "Yelp",
+    "path": "sources/yelp-prior.pdf",
+    "url": "https://s24.q4cdn.com/521204325/files/doc_financials/2024/q2/Yelp-Q2-2024-Letter-to-Shareholders.pdf",
+    "sha256": "b10b68d2cd2f62efaee2f6494ae5f161858a968b17373246b651beb2a722ff79",
+    "source_date": "2024-08-08",
+    "pdf_mtime_utc": "2026-11-23T18:15:19.920000+00:00",
+    "pdf_bytes": 1414125,
+    "page_count": 23,
+    "nonblank_lines": 824
+  },
+  {
+    "issuer": "Yelp",
+    "path": "sources/yelp-latest.pdf",
+    "url": "https://s24.q4cdn.com/521204325/files/doc_financials/2024/q3/Yelp-Q3-2024-Letter-to-Shareholders.pdf",
+    "sha256": "c47d19d58acd4b8c70ac6de3d542f533dfec4ab202e8d3e4772937c826b183e7",
+    "source_date": "2024-11-07",
+    "pdf_mtime_utc": "2026-11-23T18:15:28.120000+00:00",
+    "pdf_bytes": 1252968,
+    "page_count": 23,
+    "nonblank_lines": 858
+  },
+  {
+    "issuer": "Advance Auto Parts",
+    "path": "sources/aap-prior.pdf",
+    "url": "https://s1.q4cdn.com/172833328/files/doc_financials/2024/q2/AAP-Q2-2024-Earnings-Release_FINAL.pdf",
+    "sha256": "531615f04f18bdd0dbb47a4c8f65fe62fe353d4a1786636d89f743fbd02510a8",
+    "source_date": "2024-08-22",
+    "pdf_mtime_utc": "2026-11-23T18:14:08.450000+00:00",
+    "pdf_bytes": 310303,
+    "page_count": 10,
+    "nonblank_lines": 302
+  },
+  {
+    "issuer": "Advance Auto Parts",
+    "path": "sources/aap-latest.pdf",
+    "url": "https://s1.q4cdn.com/172833328/files/doc_financials/2024/q3/Q3-2024-Press-Release.pdf",
+    "sha256": "6194ea3c829c01921956f03da0606522d0a3e462be9480fafc0761fea2194a51",
+    "source_date": "2024-11-14",
+    "pdf_mtime_utc": "2026-11-23T18:14:07.320000+00:00",
+    "pdf_bytes": 407220,
+    "page_count": 15,
+    "nonblank_lines": 482
+  },
+  {
+    "issuer": "Ziff Davis",
+    "path": "sources/zd-prior.pdf",
+    "url": "https://s205.q4cdn.com/689425761/files/doc_financials/2024/q2/Ziff-Davis-Reports-Second-Quarter-2024-Results.pdf",
+    "sha256": "9951301c1f712629ec650fc5f47e721396a2c2bd64b4711f588506d18b479d65",
+    "source_date": "2024-08-07",
+    "pdf_mtime_utc": "2026-11-23T18:15:10.160000+00:00",
+    "pdf_bytes": 245892,
+    "page_count": 16,
+    "nonblank_lines": 570
+  },
+  {
+    "issuer": "Ziff Davis",
+    "path": "sources/zd-latest.pdf",
+    "url": "https://s205.q4cdn.com/689425761/files/doc_financials/2024/q3/Ziff-Davis-Reports-Third-Quarter-2024-Results.pdf",
+    "sha256": "af7d8bed3feed9a58688f0815e3fcfb6e5ac3ab3ddc2d9769566cca863ac770b",
+    "source_date": "2024-11-07",
+    "pdf_mtime_utc": "2026-11-23T18:15:11.180000+00:00",
+    "pdf_bytes": 170872,
+    "page_count": 16,
+    "nonblank_lines": 559
+  },
+  {
+    "issuer": "Chewy",
+    "path": "sources/chwy-prior.pdf",
+    "url": "https://investor.chewy.com/files/doc_financials/2024/q2/CHWY-Q2-2024-Exhibit-99-1_vFINAL.pdf",
+    "sha256": "f32e490981b69631d0d2e3e0a3210bfb1d98bff81ad63bb4f35c03c9fcb4647c",
+    "source_date": "2024-08-28",
+    "pdf_mtime_utc": "2026-11-23T18:14:06.530000+00:00",
+    "pdf_bytes": 323446,
+    "page_count": 9,
+    "nonblank_lines": 393
+  },
+  {
+    "issuer": "Chewy",
+    "path": "sources/chwy-latest.pdf",
+    "url": "https://s23.q4cdn.com/610444331/files/doc_financials/2024/q3/CHWY-Q3-2024-Exhibit-99-1-vF.pdf",
+    "sha256": "54a312ace400a96e5f473faac9a15b69bda4e3f9a5e7d0ff6859232b0873a3dc",
+    "source_date": "2024-12-04",
+    "pdf_mtime_utc": "2026-11-23T18:14:06.080000+00:00",
+    "pdf_bytes": 188369,
+    "page_count": 9,
+    "nonblank_lines": 405
+  },
+  {
+    "issuer": "Williams-Sonoma",
+    "path": "sources/wsm-prior.pdf",
+    "url": "https://s24.q4cdn.com/161876561/files/doc_news/2024/08/Exhibit-99-1-FY-2024-Q2-Earnings-Release-Final.pdf",
+    "sha256": "df3b680a8680473a14e53a1d4a10f20f54f7ab167c78872bd0410e39321be986",
+    "source_date": "2024-08-22",
+    "pdf_mtime_utc": "2026-11-23T18:15:13.460000+00:00",
+    "pdf_bytes": 303315,
+    "page_count": 10,
+    "nonblank_lines": 304
+  },
+  {
+    "issuer": "Williams-Sonoma",
+    "path": "sources/wsm-latest.pdf",
+    "url": "https://s24.q4cdn.com/161876561/files/doc_financials/2024/q3/WSM-Exhibit-99-1-FY-2024-Q3-Earnings-Release.pdf",
+    "sha256": "fa9dd2a410ba9ea1c512e20cfa8859f22fcb0718d5906364bb64b9bea55e5cf4",
+    "source_date": "2024-11-20",
+    "pdf_mtime_utc": "2026-11-23T18:15:10.090000+00:00",
+    "pdf_bytes": 306390,
+    "page_count": 9,
+    "nonblank_lines": 314
+  },
+  {
+    "issuer": "Roblox",
+    "path": "sources/rblx-prior.pdf",
+    "url": "https://s27.q4cdn.com/984876518/files/doc_financials/2024/q2/RBLX-2024-08-01-Exhibit-99-1-IR.pdf",
+    "sha256": "08bb96264e13dadbe65af194b28a28265bb6278c254132cd554e211c1f1638fc",
+    "source_date": "2024-08-01",
+    "pdf_mtime_utc": "2026-11-23T18:17:18.170000+00:00",
+    "pdf_bytes": 493629,
+    "page_count": 12,
+    "nonblank_lines": 418
+  },
+  {
+    "issuer": "Roblox",
+    "path": "sources/rblx-latest.pdf",
+    "url": "https://s27.q4cdn.com/984876518/files/doc_financials/2024/q3/Q3-2024-Press-Release.pdf",
+    "sha256": "1b18683abec4a9664ca84a05fc37a20ea43e193d1a84d74148ec340244e20d9b",
+    "source_date": "2024-10-31",
+    "pdf_mtime_utc": "2026-11-23T18:17:20.860000+00:00",
+    "pdf_bytes": 294907,
+    "page_count": 12,
+    "nonblank_lines": 401
+  }
+]

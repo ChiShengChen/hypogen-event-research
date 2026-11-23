@@ -1,0 +1,59 @@
+{
+  "case": "aap",
+  "family": "astra",
+  "mode": "full",
+  "status": "completed",
+  "started_at": "2026-11-23T18:32:02.639338+00:00",
+  "request_sha256": "5d0ae2ff1a034881cd688b41d3e665d41b6ed98c3f465a036caa51e682ff378d",
+  "call": "astra",
+  "queued_at": "2026-11-23T18:32:02.620814+00:00",
+  "queued_epoch": 1795458722.6208282,
+  "queue_seconds": 0.011,
+  "preparation_seconds": 0.008,
+  "prompt_bytes": 96887,
+  "returncode": 0,
+  "cli_elapsed_seconds": 8.423,
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 2,
+        "row": 14,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "11150000000",
+        "high_usd": "11250000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 5,
+        "row": 6,
+        "indices": [
+          3
+        ],
+        "low_usd": "6089307000",
+        "high_usd": "6089307000"
+      }
+    ],
+    "prior_q4": null,
+    "latest_q4": null,
+    "change": null,
+    "direction": null
+  },
+  "elapsed_seconds": 8.426,
+  "usage": {
+    "input_tokens": 34999,
+    "cached_input_tokens": 0,
+    "output_tokens": 167,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.547,
+    "turn.started": 1.247,
+    "item.completed": 8.021,
+    "turn.completed": 8.031
+  },
+  "finished_at": "2026-11-23T18:32:11.068240+00:00"
+}

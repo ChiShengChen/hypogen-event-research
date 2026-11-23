@@ -1,0 +1,91 @@
+{
+  "case": "rpd",
+  "family": "claude",
+  "mode": "full",
+  "status": "completed",
+  "started_at": "2026-11-23T18:27:17.784233+00:00",
+  "request_sha256": "affaf54c45afdd2d3c1f7b043deb70bb35c7c91097f2c6bc0344eadc183ba673",
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 3,
+        "row": 13,
+        "indices": [
+          3,
+          4
+        ],
+        "low_usd": "833000000",
+        "high_usd": "837000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 8,
+        "row": 9,
+        "indices": [
+          3
+        ],
+        "low_usd": "413092000",
+        "high_usd": "413092000"
+      },
+      {
+        "role": "prior_q3",
+        "page": 3,
+        "row": 13,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "209000000",
+        "high_usd": "211000000"
+      },
+      {
+        "role": "latest_annual",
+        "page": 3,
+        "row": 16,
+        "indices": [
+          3,
+          4
+        ],
+        "low_usd": "839000000",
+        "high_usd": "841000000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 8,
+        "row": 9,
+        "indices": [
+          3
+        ],
+        "low_usd": "627746000",
+        "high_usd": "627746000"
+      }
+    ],
+    "prior_q4": "211908000",
+    "latest_q4": "212254000",
+    "change": "346000",
+    "direction": "raised"
+  },
+  "usage": {
+    "input_tokens": 36691,
+    "output_tokens": 6502,
+    "cached_input_tokens": 0
+  },
+  "elapsed_seconds": 78.14773796696682,
+  "model_usage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 3,
+      "outputTokens": 6502,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 36688,
+      "webSearchRequests": 0,
+      "costUSD": 0.317667,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 6023,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  }
+}

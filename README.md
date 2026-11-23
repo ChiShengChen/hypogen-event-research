@@ -600,6 +600,10 @@ python -m benchmarks.earnings_execution --phase holdout
 
 先導三組各 **3/4**，新版零誤調。保留集新版 **8/8**、現版 `98e9139` **6/8**、純 Astra **4/8**，24 次呼叫全數完成。新版正負例各 **4/4**、零誤調，達到本輪封存的改善與領先門檻。Salesforce 先導仍因同名百分比表誤拒有效營收。 [評測、失分與完整產物](docs/guidance-table/README.md)
 
+#### 跨公告差額的取值忠實度
+
+歷史 Harness 回傳有 **6 次精確誤差抵消**。新批七家發行人的完整公告審計中，Astra 和 Claude 各 **7/7** 同時通過差額與完整取值評分，兩個模型的精確抵消均為 **0/7**。 [研究報告與可重跑資料](research/operand-faithfulness/README.md) · [同公告對照待辦](research/operand-faithfulness/TODO.md)
+
 ## 專案結構
 
 | 路徑 | 內容 |

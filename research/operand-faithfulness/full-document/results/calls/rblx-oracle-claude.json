@@ -1,0 +1,91 @@
+{
+  "case": "rblx",
+  "family": "claude",
+  "mode": "oracle",
+  "status": "completed",
+  "started_at": "2026-11-23T18:46:53.302408+00:00",
+  "request_sha256": "71f8f27ed2e67091e3e62809b152da2fa52eb70f63718da27443a22ff006d9cb",
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 10,
+        "row": 8,
+        "indices": [
+          3,
+          4
+        ],
+        "low_usd": "3490000000",
+        "high_usd": "3540000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 5,
+        "row": 8,
+        "indices": [
+          3
+        ],
+        "low_usd": "1694843000",
+        "high_usd": "1694843000"
+      },
+      {
+        "role": "prior_q3",
+        "page": 10,
+        "row": 8,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "860000000",
+        "high_usd": "885000000"
+      },
+      {
+        "role": "latest_annual",
+        "page": 10,
+        "row": 8,
+        "indices": [
+          3,
+          4
+        ],
+        "low_usd": "3548796000",
+        "high_usd": "3573796000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 5,
+        "row": 8,
+        "indices": [
+          3
+        ],
+        "low_usd": "2613796000",
+        "high_usd": "2613796000"
+      }
+    ],
+    "prior_q4": "947657000",
+    "latest_q4": "947500000",
+    "change": "-157000",
+    "direction": "lowered"
+  },
+  "usage": {
+    "input_tokens": 31406,
+    "output_tokens": 3751,
+    "cached_input_tokens": 6876
+  },
+  "elapsed_seconds": 45.466400550096296,
+  "model_usage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 3,
+      "outputTokens": 3751,
+      "cacheReadInputTokens": 6876,
+      "cacheCreationInputTokens": 24527,
+      "webSearchRequests": 0,
+      "costUSD": 0.20549880000000004,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 3262,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  }
+}

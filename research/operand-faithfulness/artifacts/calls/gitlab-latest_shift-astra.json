@@ -1,0 +1,66 @@
+{
+  "case": "gitlab-latest_shift",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T18:05:41.743285+00:00",
+  "queued_epoch": 1795457141.7433643,
+  "started_at": "2026-11-23T18:06:22.255410+00:00",
+  "request_sha256": "ca77a8b887afb434d48ef4bed944e29d7080fac51289850e1f675ddd8fcc9502",
+  "queue_seconds": 40.496,
+  "preparation_seconds": 0.016,
+  "prompt_bytes": 3557,
+  "returncode": 0,
+  "cli_elapsed_seconds": 10.952,
+  "response": {
+    "operands": [
+      {
+        "role": "prior_annual",
+        "card_id": "C4c7a655e",
+        "low": "742000000",
+        "high": "744000000"
+      },
+      {
+        "role": "prior_ytd",
+        "card_id": "C3ac5a87b",
+        "low": "351771000",
+        "high": "351771000"
+      },
+      {
+        "role": "prior_q3",
+        "card_id": "C5c0315f5",
+        "low": "187000000",
+        "high": "188000000"
+      },
+      {
+        "role": "latest_annual",
+        "card_id": "C45bad455",
+        "low": "753000000",
+        "high": "754000000"
+      },
+      {
+        "role": "latest_ytd",
+        "card_id": "C8c149be3",
+        "low": "553818000",
+        "high": "553818000"
+      }
+    ],
+    "prior_q4": "203729000",
+    "latest_q4": "199682000",
+    "change": "-4047000",
+    "direction": "lowered"
+  },
+  "elapsed_seconds": 10.97,
+  "usage": {
+    "input_tokens": 16182,
+    "cached_input_tokens": 0,
+    "output_tokens": 246,
+    "reasoning_output_tokens": 37
+  },
+  "event_seconds": {
+    "thread.started": 0.8,
+    "turn.started": 2.204,
+    "item.completed": 10.509,
+    "turn.completed": 10.52
+  },
+  "finished_at": "2026-11-23T18:06:33.233495+00:00"
+}

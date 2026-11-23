@@ -1,0 +1,37 @@
+{
+  "archive_score_sha256": "c9bea2b78f30545bfd4fc98c00a3cf36804d56ccaacb27f472bd18d8bf262cd1",
+  "common_shift_usd": "11000000",
+  "design": "operand-faithfulness-pilot-v1",
+  "inputs_sha256": "cc58c88e504f70d1fc5933e4dceb13aa7f008ded5404599940f81a1a54c540c8",
+  "latest_shift_usd": "6000000",
+  "maximum_started_calls": 8,
+  "model": "gpt-6.2-astra",
+  "offline_faults": [
+    "clean",
+    "common_operand_error",
+    "unit_error",
+    "wrong_year_citation",
+    "missing_prior_operand",
+    "arithmetic_error"
+  ],
+  "order": [
+    "gitlab-base",
+    "sprinklr-missing_latest",
+    "gitlab-common_shift",
+    "sprinklr-latest_shift",
+    "gitlab-latest_shift",
+    "sprinklr-common_shift",
+    "gitlab-missing_latest",
+    "sprinklr-base"
+  ],
+  "primary": "masked error in archive; grounded correct coverage and observed publication risk in matched trials",
+  "reasoning_effort": "medium",
+  "requests_sha256": "cff45f1b6664f3b4128d521898991e40210379fde826e16ec04601f7893ee6e5",
+  "scope": "Development pilot, two previously used issuers and counterfactual research cards; no raw-PDF or unseen-issuer claim.",
+  "search": "disabled",
+  "source_sha256": "2977d33764bfa194f9259c2fbc71802fd92431341b8a663a2e2c91c3c98f4660",
+  "stop": "Stop on 429/capacity or batch interruption. Each started job stays counted; only queued work may resume.",
+  "timeout_seconds": 90,
+  "workers": 1,
+  "sealed_at": "2026-11-23T18:04:54.743862+00:00"
+}

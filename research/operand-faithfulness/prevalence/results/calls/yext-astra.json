@@ -1,0 +1,90 @@
+{
+  "case": "yext",
+  "family": "astra",
+  "status": "completed",
+  "started_at": "2026-11-23T19:07:08.480632+00:00",
+  "request_sha256": "fe2905c274ff67d689f38a7280ac61d6783a55fe3f29efb9de8a2c67b0cbfbf4",
+  "call": "astra",
+  "queued_at": "2026-11-23T19:07:08.411346+00:00",
+  "queued_epoch": 1795460828.4114718,
+  "queue_seconds": 0.045,
+  "preparation_seconds": 0.026,
+  "prompt_bytes": 187857,
+  "returncode": 0,
+  "cli_elapsed_seconds": 10.854,
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 7,
+        "row": 22,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "420000000",
+        "high_usd": "421000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 13,
+        "row": 7,
+        "indices": [
+          3
+        ],
+        "low_usd": "193877000",
+        "high_usd": "193877000"
+      },
+      {
+        "role": "prior_q3",
+        "page": 7,
+        "row": 16,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "113000000",
+        "high_usd": "113500000"
+      },
+      {
+        "role": "latest_annual",
+        "page": 7,
+        "row": 22,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "420300000",
+        "high_usd": "420800000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 13,
+        "row": 7,
+        "indices": [
+          3
+        ],
+        "low_usd": "307866000",
+        "high_usd": "307866000"
+      }
+    ],
+    "prior_q4": "113373000",
+    "latest_q4": "112684000",
+    "change": "-689000",
+    "direction": "lowered"
+  },
+  "elapsed_seconds": 10.874,
+  "usage": {
+    "input_tokens": 59708,
+    "cached_input_tokens": 0,
+    "output_tokens": 273,
+    "reasoning_output_tokens": 30
+  },
+  "event_seconds": {
+    "thread.started": 0.657,
+    "turn.started": 1.617,
+    "item.completed": 10.469,
+    "turn.completed": 10.481
+  },
+  "finished_at": "2026-11-23T19:07:19.361035+00:00"
+}

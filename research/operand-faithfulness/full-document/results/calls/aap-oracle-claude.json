@@ -1,0 +1,69 @@
+{
+  "case": "aap",
+  "family": "claude",
+  "mode": "oracle",
+  "status": "completed",
+  "started_at": "2026-11-23T18:34:24.704659+00:00",
+  "request_sha256": "44052d291cb7366d894dc5881389475b6282e1673edbc9cd1cf1827a271924b1",
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 2,
+        "row": 14,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "11150000000",
+        "high_usd": "11250000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 5,
+        "row": 6,
+        "indices": [
+          3
+        ],
+        "low_usd": "6089307000",
+        "high_usd": "6089307000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 7,
+        "row": 6,
+        "indices": [
+          3
+        ],
+        "low_usd": "7098302000",
+        "high_usd": "7098302000"
+      }
+    ],
+    "prior_q4": null,
+    "latest_q4": null,
+    "change": null,
+    "direction": null
+  },
+  "usage": {
+    "input_tokens": 30157,
+    "output_tokens": 6180,
+    "cached_input_tokens": 6876
+  },
+  "elapsed_seconds": 92.7789663419826,
+  "model_usage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 3,
+      "outputTokens": 6180,
+      "cacheReadInputTokens": 6876,
+      "cacheCreationInputTokens": 23278,
+      "webSearchRequests": 0,
+      "costUSD": 0.2344398,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 5435,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  }
+}

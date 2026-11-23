@@ -1,0 +1,205 @@
+gitlab-base completed 
+sprinklr-missing_latest completed 
+gitlab-common_shift completed 
+sprinklr-latest_shift completed 
+gitlab-latest_shift completed 
+sprinklr-common_shift completed 
+gitlab-missing_latest completed 
+sprinklr-base completed 
+{
+  "archive": {
+    "astra": {
+      "issuers": 3,
+      "responses": 9,
+      "change_correct": 9,
+      "both_components_correct": 9,
+      "masked_errors": 0
+    },
+    "harness": {
+      "issuers": 3,
+      "responses": 9,
+      "change_correct": 8,
+      "both_components_correct": 0,
+      "masked_errors": 8
+    }
+  },
+  "offline_injections": {
+    "direct": {
+      "total_fields": 192,
+      "answerable_fields": 156,
+      "emitted": 136,
+      "supported_correct": 64,
+      "unsupported_or_wrong": 72,
+      "numeric_errors_among_emitted": 38,
+      "effective_coverage": 0.41025641025641024,
+      "observed_risk": 0.5294117647058824
+    },
+    "all_or_nothing": {
+      "total_fields": 192,
+      "answerable_fields": 156,
+      "emitted": 48,
+      "supported_correct": 48,
+      "unsupported_or_wrong": 0,
+      "numeric_errors_among_emitted": 0,
+      "effective_coverage": 0.3076923076923077,
+      "observed_risk": 0.0
+    },
+    "fieldwise": {
+      "total_fields": 192,
+      "answerable_fields": 156,
+      "emitted": 72,
+      "supported_correct": 72,
+      "unsupported_or_wrong": 0,
+      "numeric_errors_among_emitted": 0,
+      "effective_coverage": 0.46153846153846156,
+      "observed_risk": 0.0
+    }
+  },
+  "live": {
+    "planned": 8,
+    "started": 8,
+    "completed": 8,
+    "by_arm": {
+      "direct": {
+        "total_fields": 32,
+        "answerable_fields": 26,
+        "emitted": 26,
+        "supported_correct": 26,
+        "unsupported_or_wrong": 0,
+        "numeric_errors_among_emitted": 0,
+        "effective_coverage": 1.0,
+        "observed_risk": 0.0
+      },
+      "all_or_nothing": {
+        "total_fields": 32,
+        "answerable_fields": 26,
+        "emitted": 24,
+        "supported_correct": 24,
+        "unsupported_or_wrong": 0,
+        "numeric_errors_among_emitted": 0,
+        "effective_coverage": 0.9230769230769231,
+        "observed_risk": 0.0
+      },
+      "fieldwise": {
+        "total_fields": 32,
+        "answerable_fields": 26,
+        "emitted": 26,
+        "supported_correct": 26,
+        "unsupported_or_wrong": 0,
+        "numeric_errors_among_emitted": 0,
+        "effective_coverage": 1.0,
+        "observed_risk": 0.0
+      }
+    },
+    "paired_perturbations": [
+      {
+        "issuer": "gitlab",
+        "variant": "common_shift",
+        "arm": "direct",
+        "followed": true
+      },
+      {
+        "issuer": "gitlab",
+        "variant": "common_shift",
+        "arm": "all_or_nothing",
+        "followed": true
+      },
+      {
+        "issuer": "gitlab",
+        "variant": "common_shift",
+        "arm": "fieldwise",
+        "followed": true
+      },
+      {
+        "issuer": "gitlab",
+        "variant": "latest_shift",
+        "arm": "direct",
+        "followed": true
+      },
+      {
+        "issuer": "gitlab",
+        "variant": "latest_shift",
+        "arm": "all_or_nothing",
+        "followed": true
+      },
+      {
+        "issuer": "gitlab",
+        "variant": "latest_shift",
+        "arm": "fieldwise",
+        "followed": true
+      },
+      {
+        "issuer": "gitlab",
+        "variant": "missing_latest",
+        "arm": "direct",
+        "followed": true
+      },
+      {
+        "issuer": "gitlab",
+        "variant": "missing_latest",
+        "arm": "all_or_nothing",
+        "followed": false
+      },
+      {
+        "issuer": "gitlab",
+        "variant": "missing_latest",
+        "arm": "fieldwise",
+        "followed": true
+      },
+      {
+        "issuer": "sprinklr",
+        "variant": "common_shift",
+        "arm": "direct",
+        "followed": true
+      },
+      {
+        "issuer": "sprinklr",
+        "variant": "common_shift",
+        "arm": "all_or_nothing",
+        "followed": true
+      },
+      {
+        "issuer": "sprinklr",
+        "variant": "common_shift",
+        "arm": "fieldwise",
+        "followed": true
+      },
+      {
+        "issuer": "sprinklr",
+        "variant": "latest_shift",
+        "arm": "direct",
+        "followed": true
+      },
+      {
+        "issuer": "sprinklr",
+        "variant": "latest_shift",
+        "arm": "all_or_nothing",
+        "followed": true
+      },
+      {
+        "issuer": "sprinklr",
+        "variant": "latest_shift",
+        "arm": "fieldwise",
+        "followed": true
+      },
+      {
+        "issuer": "sprinklr",
+        "variant": "missing_latest",
+        "arm": "direct",
+        "followed": true
+      },
+      {
+        "issuer": "sprinklr",
+        "variant": "missing_latest",
+        "arm": "all_or_nothing",
+        "followed": false
+      },
+      {
+        "issuer": "sprinklr",
+        "variant": "missing_latest",
+        "arm": "fieldwise",
+        "followed": true
+      }
+    ]
+  }
+}

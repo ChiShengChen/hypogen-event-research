@@ -1,0 +1,91 @@
+{
+  "case": "rblx",
+  "family": "astra",
+  "mode": "oracle",
+  "status": "completed",
+  "started_at": "2026-11-23T18:46:42.351638+00:00",
+  "request_sha256": "71f8f27ed2e67091e3e62809b152da2fa52eb70f63718da27443a22ff006d9cb",
+  "call": "astra",
+  "queued_at": "2026-11-23T18:46:42.273502+00:00",
+  "queued_epoch": 1795459602.2735763,
+  "queue_seconds": 0.028,
+  "preparation_seconds": 0.052,
+  "prompt_bytes": 97513,
+  "returncode": 0,
+  "cli_elapsed_seconds": 10.866,
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 10,
+        "row": 8,
+        "indices": [
+          3,
+          4
+        ],
+        "low_usd": "3490000000",
+        "high_usd": "3540000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 5,
+        "row": 8,
+        "indices": [
+          3
+        ],
+        "low_usd": "1694843000",
+        "high_usd": "1694843000"
+      },
+      {
+        "role": "prior_q3",
+        "page": 10,
+        "row": 8,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "860000000",
+        "high_usd": "885000000"
+      },
+      {
+        "role": "latest_annual",
+        "page": 10,
+        "row": 8,
+        "indices": [
+          3,
+          4
+        ],
+        "low_usd": "3548796000",
+        "high_usd": "3573796000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 5,
+        "row": 8,
+        "indices": [
+          3
+        ],
+        "low_usd": "2613796000",
+        "high_usd": "2613796000"
+      }
+    ],
+    "prior_q4": "947657000",
+    "latest_q4": "947500000",
+    "change": "-157000",
+    "direction": "lowered"
+  },
+  "elapsed_seconds": 10.901,
+  "usage": {
+    "input_tokens": 36416,
+    "cached_input_tokens": 0,
+    "output_tokens": 291,
+    "reasoning_output_tokens": 40
+  },
+  "event_seconds": {
+    "thread.started": 1.53,
+    "turn.started": 1.858,
+    "item.completed": 10.43,
+    "turn.completed": 10.445
+  },
+  "finished_at": "2026-11-23T18:46:53.277806+00:00"
+}

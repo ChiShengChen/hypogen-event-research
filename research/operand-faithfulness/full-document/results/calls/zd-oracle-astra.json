@@ -1,0 +1,80 @@
+{
+  "case": "zd",
+  "family": "astra",
+  "mode": "oracle",
+  "status": "completed",
+  "started_at": "2026-11-23T18:39:51.090552+00:00",
+  "request_sha256": "94ef3a563e7bc61dfe301343a87671f496dfc1cf8668a4588ef98fc239d1a4a9",
+  "call": "astra",
+  "queued_at": "2026-11-23T18:39:51.070084+00:00",
+  "queued_epoch": 1795459191.070097,
+  "queue_seconds": 0.011,
+  "preparation_seconds": 0.01,
+  "prompt_bytes": 146428,
+  "returncode": 0,
+  "cli_elapsed_seconds": 9.024,
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 2,
+        "row": 5,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "1411000000",
+        "high_usd": "1471000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 4,
+        "row": 6,
+        "indices": [
+          3
+        ],
+        "low_usd": "635285000",
+        "high_usd": "635285000"
+      },
+      {
+        "role": "latest_annual",
+        "page": 2,
+        "row": 13,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "1411000000",
+        "high_usd": "1471000000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 5,
+        "row": 7,
+        "indices": [
+          3
+        ],
+        "low_usd": "988865000",
+        "high_usd": "988865000"
+      }
+    ],
+    "prior_q4": null,
+    "latest_q4": "452135000",
+    "change": null,
+    "direction": null
+  },
+  "elapsed_seconds": 9.026,
+  "usage": {
+    "input_tokens": 45707,
+    "cached_input_tokens": 14336,
+    "output_tokens": 203,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.2,
+    "turn.started": 1.122,
+    "item.completed": 8.507,
+    "turn.completed": 8.513
+  },
+  "finished_at": "2026-11-23T18:40:00.119671+00:00"
+}

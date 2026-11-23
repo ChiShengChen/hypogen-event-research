@@ -1,0 +1,1058 @@
+[
+  {
+    "id": "rpd-full-astra",
+    "key": "rpd",
+    "stage": "pilot",
+    "mode": "full",
+    "family": "astra",
+    "case": "rpd",
+    "status": "completed",
+    "started_at": "2026-11-23T18:27:06.251991+00:00",
+    "request_sha256": "affaf54c45afdd2d3c1f7b043deb70bb35c7c91097f2c6bc0344eadc183ba673",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:27:06.079258+00:00",
+    "queued_epoch": 1795458426.0793602,
+    "queue_seconds": 0.079,
+    "preparation_seconds": 0.095,
+    "prompt_bytes": 127372,
+    "returncode": 0,
+    "cli_elapsed_seconds": 11.259,
+    "elapsed_seconds": 11.29,
+    "usage": {
+      "input_tokens": 41732,
+      "cached_input_tokens": 0,
+      "output_tokens": 272,
+      "reasoning_output_tokens": 31
+    },
+    "event_seconds": {
+      "thread.started": 1.21,
+      "turn.started": 1.862,
+      "item.completed": 10.909,
+      "turn.completed": 10.922
+    },
+    "finished_at": "2026-11-23T18:27:17.548902+00:00"
+  },
+  {
+    "id": "rpd-full-claude",
+    "key": "rpd",
+    "stage": "pilot",
+    "mode": "full",
+    "family": "claude",
+    "case": "rpd",
+    "status": "completed",
+    "started_at": "2026-11-23T18:27:17.784233+00:00",
+    "request_sha256": "affaf54c45afdd2d3c1f7b043deb70bb35c7c91097f2c6bc0344eadc183ba673",
+    "usage": {
+      "input_tokens": 36691,
+      "output_tokens": 6502,
+      "cached_input_tokens": 0
+    },
+    "elapsed_seconds": 78.14773796696682,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 6502,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 36688,
+        "webSearchRequests": 0,
+        "costUSD": 0.317667,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 6023,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  {
+    "id": "rpd-oracle-astra",
+    "key": "rpd",
+    "stage": "pilot",
+    "mode": "oracle",
+    "family": "astra",
+    "case": "rpd",
+    "status": "completed",
+    "started_at": "2026-11-23T18:28:36.216651+00:00",
+    "request_sha256": "05f9f4ba9fa9f07dd5340f2d517c0820cfd81f8bf70797431302cbe73b0abb99",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:28:36.106733+00:00",
+    "queued_epoch": 1795458516.1068435,
+    "queue_seconds": 0.073,
+    "preparation_seconds": 0.038,
+    "prompt_bytes": 127631,
+    "returncode": 0,
+    "cli_elapsed_seconds": 11.99,
+    "elapsed_seconds": 12.014,
+    "usage": {
+      "input_tokens": 41847,
+      "cached_input_tokens": 0,
+      "output_tokens": 272,
+      "reasoning_output_tokens": 31
+    },
+    "event_seconds": {
+      "thread.started": 2.485,
+      "turn.started": 2.615,
+      "item.completed": 11.465,
+      "turn.completed": 11.476
+    },
+    "finished_at": "2026-11-23T18:28:48.238591+00:00"
+  },
+  {
+    "id": "rpd-oracle-claude",
+    "key": "rpd",
+    "stage": "pilot",
+    "mode": "oracle",
+    "family": "claude",
+    "case": "rpd",
+    "status": "completed",
+    "started_at": "2026-11-23T18:28:48.294983+00:00",
+    "request_sha256": "05f9f4ba9fa9f07dd5340f2d517c0820cfd81f8bf70797431302cbe73b0abb99",
+    "usage": {
+      "input_tokens": 36811,
+      "output_tokens": 4624,
+      "cached_input_tokens": 6876
+    },
+    "elapsed_seconds": 60.44911727600265,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 4624,
+        "cacheReadInputTokens": 6876,
+        "cacheCreationInputTokens": 29932,
+        "webSearchRequests": 0,
+        "costUSD": 0.2510238,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 4138,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  {
+    "id": "yelp-full-astra",
+    "key": "yelp",
+    "stage": "pilot",
+    "mode": "full",
+    "family": "astra",
+    "case": "yelp",
+    "status": "completed",
+    "started_at": "2026-11-23T18:29:49.050430+00:00",
+    "request_sha256": "a0cc5521d2b3e105ed1769f8dca94b2db946249ac66ae8911858f52471cde211",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:29:48.960832+00:00",
+    "queued_epoch": 1795458588.9609282,
+    "queue_seconds": 0.055,
+    "preparation_seconds": 0.036,
+    "prompt_bytes": 186446,
+    "returncode": 0,
+    "cli_elapsed_seconds": 11.649,
+    "elapsed_seconds": 11.667,
+    "usage": {
+      "input_tokens": 49771,
+      "cached_input_tokens": 0,
+      "output_tokens": 298,
+      "reasoning_output_tokens": 48
+    },
+    "event_seconds": {
+      "thread.started": 1.141,
+      "turn.started": 1.573,
+      "item.completed": 11.307,
+      "turn.completed": 11.316
+    },
+    "finished_at": "2026-11-23T18:30:00.732950+00:00"
+  },
+  {
+    "id": "yelp-full-claude",
+    "key": "yelp",
+    "stage": "pilot",
+    "mode": "full",
+    "family": "claude",
+    "case": "yelp",
+    "status": "completed",
+    "started_at": "2026-11-23T18:30:00.752630+00:00",
+    "request_sha256": "a0cc5521d2b3e105ed1769f8dca94b2db946249ac66ae8911858f52471cde211",
+    "usage": {
+      "input_tokens": 48760,
+      "output_tokens": 5459,
+      "cached_input_tokens": 6876
+    },
+    "elapsed_seconds": 71.40374033898115,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 5459,
+        "cacheReadInputTokens": 6876,
+        "cacheCreationInputTokens": 41881,
+        "webSearchRequests": 0,
+        "costUSD": 0.3352428,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 4966,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  {
+    "id": "yelp-oracle-astra",
+    "key": "yelp",
+    "stage": "pilot",
+    "mode": "oracle",
+    "family": "astra",
+    "case": "yelp",
+    "status": "completed",
+    "started_at": "2026-11-23T18:31:12.229612+00:00",
+    "request_sha256": "bb56758e3eab9c0347ddd3a8a091c0376585f7ec4745a928c7c492f042bc2fe6",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:31:12.210171+00:00",
+    "queued_epoch": 1795458672.2101877,
+    "queue_seconds": 0.01,
+    "preparation_seconds": 0.01,
+    "prompt_bytes": 186710,
+    "returncode": 0,
+    "cli_elapsed_seconds": 12.333,
+    "elapsed_seconds": 12.336,
+    "usage": {
+      "input_tokens": 49878,
+      "cached_input_tokens": 0,
+      "output_tokens": 298,
+      "reasoning_output_tokens": 45
+    },
+    "event_seconds": {
+      "thread.started": 0.189,
+      "turn.started": 1.805,
+      "item.completed": 11.89,
+      "turn.completed": 11.898
+    },
+    "finished_at": "2026-11-23T18:31:24.569045+00:00"
+  },
+  {
+    "id": "yelp-oracle-claude",
+    "key": "yelp",
+    "stage": "pilot",
+    "mode": "oracle",
+    "family": "claude",
+    "case": "yelp",
+    "status": "completed",
+    "started_at": "2026-11-23T18:31:24.589600+00:00",
+    "request_sha256": "bb56758e3eab9c0347ddd3a8a091c0376585f7ec4745a928c7c492f042bc2fe6",
+    "usage": {
+      "input_tokens": 48876,
+      "output_tokens": 3388,
+      "cached_input_tokens": 6876
+    },
+    "elapsed_seconds": 37.823305550031364,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 3388,
+        "cacheReadInputTokens": 6876,
+        "cacheCreationInputTokens": 41997,
+        "webSearchRequests": 0,
+        "costUSD": 0.3048738,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 2900,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  {
+    "id": "aap-full-astra",
+    "key": "aap",
+    "stage": "pilot",
+    "mode": "full",
+    "family": "astra",
+    "case": "aap",
+    "status": "completed",
+    "started_at": "2026-11-23T18:32:02.639338+00:00",
+    "request_sha256": "5d0ae2ff1a034881cd688b41d3e665d41b6ed98c3f465a036caa51e682ff378d",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:32:02.620814+00:00",
+    "queued_epoch": 1795458722.6208282,
+    "queue_seconds": 0.011,
+    "preparation_seconds": 0.008,
+    "prompt_bytes": 96887,
+    "returncode": 0,
+    "cli_elapsed_seconds": 8.423,
+    "elapsed_seconds": 8.426,
+    "usage": {
+      "input_tokens": 34999,
+      "cached_input_tokens": 0,
+      "output_tokens": 167,
+      "reasoning_output_tokens": 0
+    },
+    "event_seconds": {
+      "thread.started": 0.547,
+      "turn.started": 1.247,
+      "item.completed": 8.021,
+      "turn.completed": 8.031
+    },
+    "finished_at": "2026-11-23T18:32:11.068240+00:00"
+  },
+  {
+    "id": "aap-full-claude",
+    "key": "aap",
+    "stage": "pilot",
+    "mode": "full",
+    "family": "claude",
+    "case": "aap",
+    "status": "completed",
+    "started_at": "2026-11-23T18:32:11.112551+00:00",
+    "request_sha256": "5d0ae2ff1a034881cd688b41d3e665d41b6ed98c3f465a036caa51e682ff378d",
+    "usage": {
+      "input_tokens": 30084,
+      "output_tokens": 9243,
+      "cached_input_tokens": 6876
+    },
+    "elapsed_seconds": 125.68870289204642,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 9243,
+        "cacheReadInputTokens": 6876,
+        "cacheCreationInputTokens": 23205,
+        "webSearchRequests": 0,
+        "costUSD": 0.2799468,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 8738,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  {
+    "id": "aap-oracle-astra",
+    "key": "aap",
+    "stage": "pilot",
+    "mode": "oracle",
+    "family": "astra",
+    "case": "aap",
+    "status": "completed",
+    "started_at": "2026-11-23T18:34:16.862661+00:00",
+    "request_sha256": "44052d291cb7366d894dc5881389475b6282e1673edbc9cd1cf1827a271924b1",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:34:16.842116+00:00",
+    "queued_epoch": 1795458856.8421342,
+    "queue_seconds": 0.012,
+    "preparation_seconds": 0.01,
+    "prompt_bytes": 97063,
+    "returncode": 0,
+    "cli_elapsed_seconds": 7.819,
+    "elapsed_seconds": 7.822,
+    "usage": {
+      "input_tokens": 35066,
+      "cached_input_tokens": 0,
+      "output_tokens": 167,
+      "reasoning_output_tokens": 0
+    },
+    "event_seconds": {
+      "thread.started": 0.551,
+      "turn.started": 1.101,
+      "item.completed": 7.426,
+      "turn.completed": 7.434
+    },
+    "finished_at": "2026-11-23T18:34:24.687717+00:00"
+  },
+  {
+    "id": "aap-oracle-claude",
+    "key": "aap",
+    "stage": "pilot",
+    "mode": "oracle",
+    "family": "claude",
+    "case": "aap",
+    "status": "completed",
+    "started_at": "2026-11-23T18:34:24.704659+00:00",
+    "request_sha256": "44052d291cb7366d894dc5881389475b6282e1673edbc9cd1cf1827a271924b1",
+    "usage": {
+      "input_tokens": 30157,
+      "output_tokens": 6180,
+      "cached_input_tokens": 6876
+    },
+    "elapsed_seconds": 92.7789663419826,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 6180,
+        "cacheReadInputTokens": 6876,
+        "cacheCreationInputTokens": 23278,
+        "webSearchRequests": 0,
+        "costUSD": 0.2344398,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 5435,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  {
+    "id": "common-full-astra",
+    "key": "common",
+    "stage": "pilot",
+    "mode": "full",
+    "family": "astra",
+    "case": "common",
+    "status": "completed",
+    "started_at": "2026-11-23T18:35:57.576400+00:00",
+    "request_sha256": "23d604494e10ac883982f7ef064a78936fb8d1e67c1a8ee1be7df54f23cfbc72",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:35:57.551510+00:00",
+    "queued_epoch": 1795458957.5515423,
+    "queue_seconds": 0.013,
+    "preparation_seconds": 0.014,
+    "prompt_bytes": 127372,
+    "returncode": 0,
+    "cli_elapsed_seconds": 10.832,
+    "elapsed_seconds": 10.836,
+    "usage": {
+      "input_tokens": 41732,
+      "cached_input_tokens": 0,
+      "output_tokens": 271,
+      "reasoning_output_tokens": 30
+    },
+    "event_seconds": {
+      "thread.started": 0.593,
+      "turn.started": 1.27,
+      "item.completed": 10.448,
+      "turn.completed": 10.457
+    },
+    "finished_at": "2026-11-23T18:36:08.416287+00:00"
+  },
+  {
+    "id": "common-full-claude",
+    "key": "common",
+    "stage": "pilot",
+    "mode": "full",
+    "family": "claude",
+    "case": "common",
+    "status": "completed",
+    "started_at": "2026-11-23T18:36:08.423788+00:00",
+    "request_sha256": "23d604494e10ac883982f7ef064a78936fb8d1e67c1a8ee1be7df54f23cfbc72",
+    "usage": {
+      "input_tokens": 36694,
+      "output_tokens": 5050,
+      "cached_input_tokens": 6876
+    },
+    "elapsed_seconds": 59.33355506393127,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 5050,
+        "cacheReadInputTokens": 6876,
+        "cacheCreationInputTokens": 29815,
+        "webSearchRequests": 0,
+        "costUSD": 0.2567118,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 4570,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  {
+    "id": "latest_shift-full-astra",
+    "key": "latest_shift",
+    "stage": "pilot",
+    "mode": "full",
+    "family": "astra",
+    "case": "latest_shift",
+    "status": "completed",
+    "started_at": "2026-11-23T18:37:07.826794+00:00",
+    "request_sha256": "0af1d586139031fdc9ea8dace228eb0a1956d13adda3d72aab759259157e0ebf",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:37:07.803805+00:00",
+    "queued_epoch": 1795459027.8038137,
+    "queue_seconds": 0.012,
+    "preparation_seconds": 0.013,
+    "prompt_bytes": 127372,
+    "returncode": 0,
+    "cli_elapsed_seconds": 10.23,
+    "elapsed_seconds": 10.234,
+    "usage": {
+      "input_tokens": 41732,
+      "cached_input_tokens": 0,
+      "output_tokens": 277,
+      "reasoning_output_tokens": 33
+    },
+    "event_seconds": {
+      "thread.started": 0.201,
+      "turn.started": 1.219,
+      "item.completed": 9.873,
+      "turn.completed": 9.881
+    },
+    "finished_at": "2026-11-23T18:37:18.064570+00:00"
+  },
+  {
+    "id": "latest_shift-full-claude",
+    "key": "latest_shift",
+    "stage": "pilot",
+    "mode": "full",
+    "family": "claude",
+    "case": "latest_shift",
+    "status": "completed",
+    "started_at": "2026-11-23T18:37:18.088291+00:00",
+    "request_sha256": "0af1d586139031fdc9ea8dace228eb0a1956d13adda3d72aab759259157e0ebf",
+    "usage": {
+      "input_tokens": 36691,
+      "output_tokens": 6160,
+      "cached_input_tokens": 6876
+    },
+    "elapsed_seconds": 76.59433784999419,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 6160,
+        "cacheReadInputTokens": 6876,
+        "cacheCreationInputTokens": 29812,
+        "webSearchRequests": 0,
+        "costUSD": 0.2733438,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 5399,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  {
+    "id": "zd-full-astra",
+    "key": "zd",
+    "stage": "holdout",
+    "mode": "full",
+    "family": "astra",
+    "case": "zd",
+    "status": "completed",
+    "started_at": "2026-11-23T18:38:42.927620+00:00",
+    "request_sha256": "fb667d9a9000f25f8169cec51f6942ebc5d3c08a28cac80ed45ff54934aa81d4",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:38:42.887752+00:00",
+    "queued_epoch": 1795459122.887761,
+    "queue_seconds": 0.01,
+    "preparation_seconds": 0.031,
+    "prompt_bytes": 146199,
+    "returncode": 0,
+    "cli_elapsed_seconds": 9.429,
+    "elapsed_seconds": 9.434,
+    "usage": {
+      "input_tokens": 45615,
+      "cached_input_tokens": 0,
+      "output_tokens": 203,
+      "reasoning_output_tokens": 0
+    },
+    "event_seconds": {
+      "thread.started": 0.528,
+      "turn.started": 1.131,
+      "item.completed": 9.043,
+      "turn.completed": 9.051
+    },
+    "finished_at": "2026-11-23T18:38:52.364664+00:00"
+  },
+  {
+    "id": "zd-full-claude",
+    "key": "zd",
+    "stage": "holdout",
+    "mode": "full",
+    "family": "claude",
+    "case": "zd",
+    "status": "completed",
+    "started_at": "2026-11-23T18:38:52.372671+00:00",
+    "request_sha256": "fb667d9a9000f25f8169cec51f6942ebc5d3c08a28cac80ed45ff54934aa81d4",
+    "usage": {
+      "input_tokens": 41276,
+      "output_tokens": 4209,
+      "cached_input_tokens": 6876
+    },
+    "elapsed_seconds": 58.682278722990304,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 4209,
+        "cacheReadInputTokens": 6876,
+        "cacheCreationInputTokens": 34397,
+        "webSearchRequests": 0,
+        "costUSD": 0.27158879999999996,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 3799,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  {
+    "id": "zd-oracle-astra",
+    "key": "zd",
+    "stage": "holdout",
+    "mode": "oracle",
+    "family": "astra",
+    "case": "zd",
+    "status": "completed",
+    "started_at": "2026-11-23T18:39:51.090552+00:00",
+    "request_sha256": "94ef3a563e7bc61dfe301343a87671f496dfc1cf8668a4588ef98fc239d1a4a9",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:39:51.070084+00:00",
+    "queued_epoch": 1795459191.070097,
+    "queue_seconds": 0.011,
+    "preparation_seconds": 0.01,
+    "prompt_bytes": 146428,
+    "returncode": 0,
+    "cli_elapsed_seconds": 9.024,
+    "elapsed_seconds": 9.026,
+    "usage": {
+      "input_tokens": 45707,
+      "cached_input_tokens": 14336,
+      "output_tokens": 203,
+      "reasoning_output_tokens": 0
+    },
+    "event_seconds": {
+      "thread.started": 0.2,
+      "turn.started": 1.122,
+      "item.completed": 8.507,
+      "turn.completed": 8.513
+    },
+    "finished_at": "2026-11-23T18:40:00.119671+00:00"
+  },
+  {
+    "id": "zd-oracle-claude",
+    "key": "zd",
+    "stage": "holdout",
+    "mode": "oracle",
+    "family": "claude",
+    "case": "zd",
+    "status": "completed",
+    "started_at": "2026-11-23T18:40:00.166254+00:00",
+    "request_sha256": "94ef3a563e7bc61dfe301343a87671f496dfc1cf8668a4588ef98fc239d1a4a9",
+    "usage": {
+      "input_tokens": 41378,
+      "output_tokens": 4439,
+      "cached_input_tokens": 6876
+    },
+    "elapsed_seconds": 56.574732159031555,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 4439,
+        "cacheReadInputTokens": 6876,
+        "cacheCreationInputTokens": 34499,
+        "webSearchRequests": 0,
+        "costUSD": 0.27565080000000003,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 4009,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  {
+    "id": "chwy-full-astra",
+    "key": "chwy",
+    "stage": "holdout",
+    "mode": "full",
+    "family": "astra",
+    "case": "chwy",
+    "status": "completed",
+    "started_at": "2026-11-23T18:40:56.787529+00:00",
+    "request_sha256": "90c1cafdcc341b3653d89c722d861c167208bb6fa8f248404294a93109b19715",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:40:56.769513+00:00",
+    "queued_epoch": 1795459256.7695215,
+    "queue_seconds": 0.01,
+    "preparation_seconds": 0.008,
+    "prompt_bytes": 93143,
+    "returncode": 0,
+    "cli_elapsed_seconds": 8.22,
+    "elapsed_seconds": 8.225,
+    "usage": {
+      "input_tokens": 35787,
+      "cached_input_tokens": 14336,
+      "output_tokens": 164,
+      "reasoning_output_tokens": 0
+    },
+    "event_seconds": {
+      "thread.started": 0.643,
+      "turn.started": 1.243,
+      "item.completed": 7.89,
+      "turn.completed": 7.897
+    },
+    "finished_at": "2026-11-23T18:41:05.016222+00:00"
+  },
+  {
+    "id": "chwy-full-claude",
+    "key": "chwy",
+    "stage": "holdout",
+    "mode": "full",
+    "family": "claude",
+    "case": "chwy",
+    "status": "completed",
+    "started_at": "2026-11-23T18:41:05.030861+00:00",
+    "request_sha256": "90c1cafdcc341b3653d89c722d861c167208bb6fa8f248404294a93109b19715",
+    "usage": {
+      "input_tokens": 30313,
+      "output_tokens": 3068,
+      "cached_input_tokens": 6876
+    },
+    "elapsed_seconds": 41.53880364797078,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 3068,
+        "cacheReadInputTokens": 6876,
+        "cacheCreationInputTokens": 23434,
+        "webSearchRequests": 0,
+        "costUSD": 0.18869580000000002,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 2519,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  {
+    "id": "chwy-oracle-astra",
+    "key": "chwy",
+    "stage": "holdout",
+    "mode": "oracle",
+    "family": "astra",
+    "case": "chwy",
+    "status": "completed",
+    "started_at": "2026-11-23T18:41:46.719656+00:00",
+    "request_sha256": "f18f706a59ee4a51f839aecba1cf94374482dea29271b3f05226e06a8a9c54d5",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:41:46.700799+00:00",
+    "queued_epoch": 1795459306.7008119,
+    "queue_seconds": 0.011,
+    "preparation_seconds": 0.009,
+    "prompt_bytes": 93315,
+    "returncode": 0,
+    "cli_elapsed_seconds": 8.425,
+    "elapsed_seconds": 8.428,
+    "usage": {
+      "input_tokens": 35851,
+      "cached_input_tokens": 0,
+      "output_tokens": 164,
+      "reasoning_output_tokens": 0
+    },
+    "event_seconds": {
+      "thread.started": 0.197,
+      "turn.started": 1.381,
+      "item.completed": 8.019,
+      "turn.completed": 8.025
+    },
+    "finished_at": "2026-11-23T18:41:55.150505+00:00"
+  },
+  {
+    "id": "chwy-oracle-claude",
+    "key": "chwy",
+    "stage": "holdout",
+    "mode": "oracle",
+    "family": "claude",
+    "case": "chwy",
+    "status": "completed",
+    "started_at": "2026-11-23T18:41:55.167465+00:00",
+    "request_sha256": "f18f706a59ee4a51f839aecba1cf94374482dea29271b3f05226e06a8a9c54d5",
+    "usage": {
+      "input_tokens": 30380,
+      "output_tokens": 1872,
+      "cached_input_tokens": 6876
+    },
+    "elapsed_seconds": 27.354650844004937,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 1872,
+        "cacheReadInputTokens": 6876,
+        "cacheCreationInputTokens": 23501,
+        "webSearchRequests": 0,
+        "costUSD": 0.17115780000000003,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 1637,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  {
+    "id": "wsm-full-astra",
+    "key": "wsm",
+    "stage": "holdout",
+    "mode": "full",
+    "family": "astra",
+    "case": "wsm",
+    "status": "completed",
+    "started_at": "2026-11-23T18:42:22.792994+00:00",
+    "request_sha256": "97c50b560d23219d0924aaca975728a635b1a48b355dba287570697a3de16a9c",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:42:22.593221+00:00",
+    "queued_epoch": 1795459342.5932539,
+    "queue_seconds": 0.091,
+    "preparation_seconds": 0.11,
+    "prompt_bytes": 76235,
+    "returncode": 0,
+    "cli_elapsed_seconds": 8.724,
+    "elapsed_seconds": 8.729,
+    "usage": {
+      "input_tokens": 31887,
+      "cached_input_tokens": 0,
+      "output_tokens": 164,
+      "reasoning_output_tokens": 0
+    },
+    "event_seconds": {
+      "thread.started": 0.55,
+      "turn.started": 1.159,
+      "item.completed": 8.289,
+      "turn.completed": 8.297
+    },
+    "finished_at": "2026-11-23T18:42:31.526210+00:00"
+  },
+  {
+    "id": "wsm-full-claude",
+    "key": "wsm",
+    "stage": "holdout",
+    "mode": "full",
+    "family": "claude",
+    "case": "wsm",
+    "status": "completed",
+    "started_at": "2026-11-23T18:42:31.542756+00:00",
+    "request_sha256": "97c50b560d23219d0924aaca975728a635b1a48b355dba287570697a3de16a9c",
+    "usage": {
+      "input_tokens": 26323,
+      "output_tokens": 7127,
+      "cached_input_tokens": 6876
+    },
+    "elapsed_seconds": 107.5806693600025,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 7127,
+        "cacheReadInputTokens": 6876,
+        "cacheCreationInputTokens": 19444,
+        "webSearchRequests": 0,
+        "costUSD": 0.22564079999999997,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 6593,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  {
+    "id": "wsm-oracle-astra",
+    "key": "wsm",
+    "stage": "holdout",
+    "mode": "oracle",
+    "family": "astra",
+    "case": "wsm",
+    "status": "completed",
+    "started_at": "2026-11-23T18:44:19.371204+00:00",
+    "request_sha256": "e1079098d329b5c31f28ecbf7f516a72c1b74b6a23b3ed7fc4850fc7370e858e",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:44:19.307693+00:00",
+    "queued_epoch": 1795459459.3077862,
+    "queue_seconds": 0.046,
+    "preparation_seconds": 0.019,
+    "prompt_bytes": 76407,
+    "returncode": 0,
+    "cli_elapsed_seconds": 9.042,
+    "elapsed_seconds": 9.059,
+    "usage": {
+      "input_tokens": 31951,
+      "cached_input_tokens": 0,
+      "output_tokens": 164,
+      "reasoning_output_tokens": 0
+    },
+    "event_seconds": {
+      "thread.started": 1.138,
+      "turn.started": 1.655,
+      "item.completed": 8.657,
+      "turn.completed": 8.666
+    },
+    "finished_at": "2026-11-23T18:44:28.436382+00:00"
+  },
+  {
+    "id": "wsm-oracle-claude",
+    "key": "wsm",
+    "stage": "holdout",
+    "mode": "oracle",
+    "family": "claude",
+    "case": "wsm",
+    "status": "completed",
+    "started_at": "2026-11-23T18:44:28.451486+00:00",
+    "request_sha256": "e1079098d329b5c31f28ecbf7f516a72c1b74b6a23b3ed7fc4850fc7370e858e",
+    "usage": {
+      "input_tokens": 26392,
+      "output_tokens": 4055,
+      "cached_input_tokens": 6876
+    },
+    "elapsed_seconds": 63.46554585895501,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 4055,
+        "cacheReadInputTokens": 6876,
+        "cacheCreationInputTokens": 19513,
+        "webSearchRequests": 0,
+        "costUSD": 0.1799748,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 3471,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  {
+    "id": "rblx-full-astra",
+    "key": "rblx",
+    "stage": "holdout",
+    "mode": "full",
+    "family": "astra",
+    "case": "rblx",
+    "status": "completed",
+    "started_at": "2026-11-23T18:45:32.046418+00:00",
+    "request_sha256": "390b593e0c6ff1cdcffff86b8bee0544b3fba91d7196605fd3bf1dcb815d527e",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:45:31.978696+00:00",
+    "queued_epoch": 1795459531.978792,
+    "queue_seconds": 0.045,
+    "preparation_seconds": 0.023,
+    "prompt_bytes": 97254,
+    "returncode": 0,
+    "cli_elapsed_seconds": 11.962,
+    "elapsed_seconds": 11.979,
+    "usage": {
+      "input_tokens": 36305,
+      "cached_input_tokens": 14336,
+      "output_tokens": 280,
+      "reasoning_output_tokens": 29
+    },
+    "event_seconds": {
+      "thread.started": 1.013,
+      "turn.started": 1.597,
+      "item.completed": 11.506,
+      "turn.completed": 11.517
+    },
+    "finished_at": "2026-11-23T18:45:44.031675+00:00"
+  },
+  {
+    "id": "rblx-full-claude",
+    "key": "rblx",
+    "stage": "holdout",
+    "mode": "full",
+    "family": "claude",
+    "case": "rblx",
+    "status": "completed",
+    "started_at": "2026-11-23T18:45:44.046350+00:00",
+    "request_sha256": "390b593e0c6ff1cdcffff86b8bee0544b3fba91d7196605fd3bf1dcb815d527e",
+    "usage": {
+      "input_tokens": 31289,
+      "output_tokens": 4759,
+      "cached_input_tokens": 6876
+    },
+    "elapsed_seconds": 58.09923497098498,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 4759,
+        "cacheReadInputTokens": 6876,
+        "cacheCreationInputTokens": 24410,
+        "webSearchRequests": 0,
+        "costUSD": 0.21991680000000002,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 4265,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  {
+    "id": "rblx-oracle-astra",
+    "key": "rblx",
+    "stage": "holdout",
+    "mode": "oracle",
+    "family": "astra",
+    "case": "rblx",
+    "status": "completed",
+    "started_at": "2026-11-23T18:46:42.351638+00:00",
+    "request_sha256": "71f8f27ed2e67091e3e62809b152da2fa52eb70f63718da27443a22ff006d9cb",
+    "call": "astra",
+    "queued_at": "2026-11-23T18:46:42.273502+00:00",
+    "queued_epoch": 1795459602.2735763,
+    "queue_seconds": 0.028,
+    "preparation_seconds": 0.052,
+    "prompt_bytes": 97513,
+    "returncode": 0,
+    "cli_elapsed_seconds": 10.866,
+    "elapsed_seconds": 10.901,
+    "usage": {
+      "input_tokens": 36416,
+      "cached_input_tokens": 0,
+      "output_tokens": 291,
+      "reasoning_output_tokens": 40
+    },
+    "event_seconds": {
+      "thread.started": 1.53,
+      "turn.started": 1.858,
+      "item.completed": 10.43,
+      "turn.completed": 10.445
+    },
+    "finished_at": "2026-11-23T18:46:53.277806+00:00"
+  },
+  {
+    "id": "rblx-oracle-claude",
+    "key": "rblx",
+    "stage": "holdout",
+    "mode": "oracle",
+    "family": "claude",
+    "case": "rblx",
+    "status": "completed",
+    "started_at": "2026-11-23T18:46:53.302408+00:00",
+    "request_sha256": "71f8f27ed2e67091e3e62809b152da2fa52eb70f63718da27443a22ff006d9cb",
+    "usage": {
+      "input_tokens": 31406,
+      "output_tokens": 3751,
+      "cached_input_tokens": 6876
+    },
+    "elapsed_seconds": 45.466400550096296,
+    "model_usage": {
+      "claude-sonnet-4-6": {
+        "inputTokens": 3,
+        "outputTokens": 3751,
+        "cacheReadInputTokens": 6876,
+        "cacheCreationInputTokens": 24527,
+        "webSearchRequests": 0,
+        "costUSD": 0.20549880000000004,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 3262,
+        "canonicalModel": "claude-sonnet-4-6",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  }
+]

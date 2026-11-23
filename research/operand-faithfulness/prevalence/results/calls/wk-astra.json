@@ -1,0 +1,90 @@
+{
+  "case": "wk",
+  "family": "astra",
+  "status": "completed",
+  "started_at": "2026-11-23T19:06:57.079451+00:00",
+  "request_sha256": "e8973c56ff638e88baa8096f03b6251cdd24d26254e9bebab9bb9d6963ca4901",
+  "call": "astra",
+  "queued_at": "2026-11-23T19:06:56.999189+00:00",
+  "queued_epoch": 1795460816.9992466,
+  "queue_seconds": 0.024,
+  "preparation_seconds": 0.057,
+  "prompt_bytes": 78289,
+  "returncode": 0,
+  "cli_elapsed_seconds": 11.248,
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 1,
+        "row": 31,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "727000000",
+        "high_usd": "729000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 2,
+        "row": 14,
+        "indices": [
+          3
+        ],
+        "low_usd": "353170000",
+        "high_usd": "353170000"
+      },
+      {
+        "role": "prior_q3",
+        "page": 1,
+        "row": 24,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "182000000",
+        "high_usd": "183000000"
+      },
+      {
+        "role": "latest_annual",
+        "page": 1,
+        "row": 29,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "733000000",
+        "high_usd": "735000000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 2,
+        "row": 8,
+        "indices": [
+          3
+        ],
+        "low_usd": "538791000",
+        "high_usd": "538791000"
+      }
+    ],
+    "prior_q4": "192330000",
+    "latest_q4": "195209000",
+    "change": "2879000",
+    "direction": "raised"
+  },
+  "elapsed_seconds": 11.264,
+  "usage": {
+    "input_tokens": 44080,
+    "cached_input_tokens": 0,
+    "output_tokens": 277,
+    "reasoning_output_tokens": 35
+  },
+  "event_seconds": {
+    "thread.started": 0.65,
+    "turn.started": 1.473,
+    "item.completed": 10.845,
+    "turn.completed": 10.854
+  },
+  "finished_at": "2026-11-23T19:07:08.369306+00:00"
+}

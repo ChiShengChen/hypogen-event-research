@@ -1,0 +1,90 @@
+{
+  "case": "gddy",
+  "family": "astra",
+  "status": "completed",
+  "started_at": "2026-11-23T19:06:11.960105+00:00",
+  "request_sha256": "6bc3c3bfce24c606d944de121cc5942a8c8a3c5135b517c9da9aaa32373780f3",
+  "call": "astra",
+  "queued_at": "2026-11-23T19:06:11.677018+00:00",
+  "queued_epoch": 1795460771.6771104,
+  "queue_seconds": 0.087,
+  "preparation_seconds": 0.197,
+  "prompt_bytes": 77727,
+  "returncode": 0,
+  "cli_elapsed_seconds": 11.181,
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 2,
+        "row": 9,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "4525000000",
+        "high_usd": "4565000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 1,
+        "row": 21,
+        "indices": [
+          3
+        ],
+        "low_usd": "2233000000",
+        "high_usd": "2233000000"
+      },
+      {
+        "role": "prior_q3",
+        "page": 2,
+        "row": 7,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "1130000000",
+        "high_usd": "1150000000"
+      },
+      {
+        "role": "latest_annual",
+        "page": 2,
+        "row": 3,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "4545000000",
+        "high_usd": "4565000000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 1,
+        "row": 19,
+        "indices": [
+          3
+        ],
+        "low_usd": "3380600000",
+        "high_usd": "3380600000"
+      }
+    ],
+    "prior_q4": "1172000000",
+    "latest_q4": "1174400000",
+    "change": "2400000",
+    "direction": "raised"
+  },
+  "elapsed_seconds": 11.2,
+  "usage": {
+    "input_tokens": 41106,
+    "cached_input_tokens": 14336,
+    "output_tokens": 285,
+    "reasoning_output_tokens": 31
+  },
+  "event_seconds": {
+    "thread.started": 0.855,
+    "turn.started": 1.719,
+    "item.completed": 10.727,
+    "turn.completed": 10.74
+  },
+  "finished_at": "2026-11-23T19:06:23.195196+00:00"
+}

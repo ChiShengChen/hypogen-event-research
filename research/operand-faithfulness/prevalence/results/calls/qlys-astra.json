@@ -1,0 +1,90 @@
+{
+  "case": "qlys",
+  "family": "astra",
+  "status": "completed",
+  "started_at": "2026-11-23T19:06:34.205938+00:00",
+  "request_sha256": "9452a6a461237b978069c684f4d99ca6a07d98d32c731079ae93aaaade2b45f8",
+  "call": "astra",
+  "queued_at": "2026-11-23T19:06:34.144847+00:00",
+  "queued_epoch": 1795460794.1448994,
+  "queue_seconds": 0.044,
+  "preparation_seconds": 0.019,
+  "prompt_bytes": 94885,
+  "returncode": 0,
+  "cli_elapsed_seconds": 10.452,
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 2,
+        "row": 38,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "597500000",
+        "high_usd": "601500000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 6,
+        "row": 8,
+        "indices": [
+          3
+        ],
+        "low_usd": "294513000",
+        "high_usd": "294513000"
+      },
+      {
+        "role": "prior_q3",
+        "page": 2,
+        "row": 32,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "149800000",
+        "high_usd": "151800000"
+      },
+      {
+        "role": "latest_annual",
+        "page": 1,
+        "row": 4,
+        "indices": [
+          2,
+          3
+        ],
+        "low_usd": "602900000",
+        "high_usd": "605900000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 6,
+        "row": 8,
+        "indices": [
+          3
+        ],
+        "low_usd": "448380000",
+        "high_usd": "448380000"
+      }
+    ],
+    "prior_q4": "154187000",
+    "latest_q4": "156020000",
+    "change": "1833000",
+    "direction": "raised"
+  },
+  "elapsed_seconds": 10.467,
+  "usage": {
+    "input_tokens": 40507,
+    "cached_input_tokens": 0,
+    "output_tokens": 281,
+    "reasoning_output_tokens": 39
+  },
+  "event_seconds": {
+    "thread.started": 0.629,
+    "turn.started": 1.44,
+    "item.completed": 10.037,
+    "turn.completed": 10.047
+  },
+  "finished_at": "2026-11-23T19:06:44.679531+00:00"
+}

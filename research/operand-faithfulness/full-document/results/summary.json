@@ -1,0 +1,828 @@
+{
+  "planned": 32,
+  "started": 32,
+  "completed": 32,
+  "real": {
+    "pilot": {
+      "astra": {
+        "full": {
+          "direct": {
+            "published": 8,
+            "answerable": 8,
+            "supported_correct": 8,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 1.0,
+            "abstained_answerable": 0,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 2,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.7763932022500211
+          },
+          "all_or_nothing": {
+            "published": 8,
+            "answerable": 8,
+            "supported_correct": 8,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 1.0,
+            "abstained_answerable": 0,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 2,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.7763932022500211
+          },
+          "fieldwise": {
+            "published": 8,
+            "answerable": 8,
+            "supported_correct": 8,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 1.0,
+            "abstained_answerable": 0,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 2,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.7763932022500211
+          },
+          "paired_policy": {
+            "equal_observed_risk": true,
+            "coverage_gain_at_equal_risk": 0.0,
+            "additional_supported_fields": 0,
+            "additional_false_publications": 0,
+            "issuers_with_additional_supported_fields": 0
+          }
+        },
+        "oracle": {
+          "direct": {
+            "published": 8,
+            "answerable": 8,
+            "supported_correct": 8,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 1.0,
+            "abstained_answerable": 0,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 2,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.7763932022500211
+          },
+          "all_or_nothing": {
+            "published": 8,
+            "answerable": 8,
+            "supported_correct": 8,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 1.0,
+            "abstained_answerable": 0,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 2,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.7763932022500211
+          },
+          "fieldwise": {
+            "published": 8,
+            "answerable": 8,
+            "supported_correct": 8,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 1.0,
+            "abstained_answerable": 0,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 2,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.7763932022500211
+          },
+          "paired_policy": {
+            "equal_observed_risk": true,
+            "coverage_gain_at_equal_risk": 0.0,
+            "additional_supported_fields": 0,
+            "additional_false_publications": 0,
+            "issuers_with_additional_supported_fields": 0
+          }
+        }
+      },
+      "claude": {
+        "full": {
+          "direct": {
+            "published": 8,
+            "answerable": 8,
+            "supported_correct": 4,
+            "false_published": 4,
+            "numeric_false": 3,
+            "coverage": 0.5,
+            "abstained_answerable": 0,
+            "observed_risk": 0.5,
+            "concealed_errors": 0,
+            "delta_correct": 1,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 1,
+            "issuer_risk_wilson95": [
+              0.09452865480086614,
+              0.9054713451991339
+            ],
+            "issuer_risk_exact_upper95_if_zero": null
+          },
+          "all_or_nothing": {
+            "published": 4,
+            "answerable": 8,
+            "supported_correct": 4,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 0.5,
+            "abstained_answerable": 4,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 1,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuers_published": 1,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.95
+          },
+          "fieldwise": {
+            "published": 4,
+            "answerable": 8,
+            "supported_correct": 4,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 0.5,
+            "abstained_answerable": 4,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 1,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuers_published": 1,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.95
+          },
+          "paired_policy": {
+            "equal_observed_risk": true,
+            "coverage_gain_at_equal_risk": 0.0,
+            "additional_supported_fields": 0,
+            "additional_false_publications": 0,
+            "issuers_with_additional_supported_fields": 0
+          }
+        },
+        "oracle": {
+          "direct": {
+            "published": 8,
+            "answerable": 8,
+            "supported_correct": 5,
+            "false_published": 3,
+            "numeric_false": 3,
+            "coverage": 0.625,
+            "abstained_answerable": 0,
+            "observed_risk": 0.375,
+            "concealed_errors": 0,
+            "delta_correct": 1,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 1,
+            "issuer_risk_wilson95": [
+              0.09452865480086614,
+              0.9054713451991339
+            ],
+            "issuer_risk_exact_upper95_if_zero": null
+          },
+          "all_or_nothing": {
+            "published": 8,
+            "answerable": 8,
+            "supported_correct": 8,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 1.0,
+            "abstained_answerable": 0,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 2,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.7763932022500211
+          },
+          "fieldwise": {
+            "published": 8,
+            "answerable": 8,
+            "supported_correct": 8,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 1.0,
+            "abstained_answerable": 0,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 2,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.7763932022500211
+          },
+          "paired_policy": {
+            "equal_observed_risk": true,
+            "coverage_gain_at_equal_risk": 0.0,
+            "additional_supported_fields": 0,
+            "additional_false_publications": 0,
+            "issuers_with_additional_supported_fields": 0
+          }
+        }
+      }
+    },
+    "holdout": {
+      "astra": {
+        "full": {
+          "direct": {
+            "published": 5,
+            "answerable": 5,
+            "supported_correct": 5,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 1.0,
+            "abstained_answerable": 0,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 1,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.7763932022500211
+          },
+          "all_or_nothing": {
+            "published": 4,
+            "answerable": 5,
+            "supported_correct": 4,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 0.8,
+            "abstained_answerable": 1,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 1,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuers_published": 1,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.95
+          },
+          "fieldwise": {
+            "published": 5,
+            "answerable": 5,
+            "supported_correct": 5,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 1.0,
+            "abstained_answerable": 0,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 1,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.7763932022500211
+          },
+          "paired_policy": {
+            "equal_observed_risk": true,
+            "coverage_gain_at_equal_risk": 0.19999999999999996,
+            "additional_supported_fields": 1,
+            "additional_false_publications": 0,
+            "issuers_with_additional_supported_fields": 1
+          }
+        },
+        "oracle": {
+          "direct": {
+            "published": 5,
+            "answerable": 5,
+            "supported_correct": 5,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 1.0,
+            "abstained_answerable": 0,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 1,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.7763932022500211
+          },
+          "all_or_nothing": {
+            "published": 4,
+            "answerable": 5,
+            "supported_correct": 4,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 0.8,
+            "abstained_answerable": 1,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 1,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuers_published": 1,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.95
+          },
+          "fieldwise": {
+            "published": 5,
+            "answerable": 5,
+            "supported_correct": 5,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 1.0,
+            "abstained_answerable": 0,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 1,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.7763932022500211
+          },
+          "paired_policy": {
+            "equal_observed_risk": true,
+            "coverage_gain_at_equal_risk": 0.19999999999999996,
+            "additional_supported_fields": 1,
+            "additional_false_publications": 0,
+            "issuers_with_additional_supported_fields": 1
+          }
+        }
+      },
+      "claude": {
+        "full": {
+          "direct": {
+            "published": 5,
+            "answerable": 5,
+            "supported_correct": 2,
+            "false_published": 3,
+            "numeric_false": 3,
+            "coverage": 0.4,
+            "abstained_answerable": 0,
+            "observed_risk": 0.6,
+            "concealed_errors": 0,
+            "delta_correct": 0,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": null,
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 1,
+            "issuer_risk_wilson95": [
+              0.09452865480086614,
+              0.9054713451991339
+            ],
+            "issuer_risk_exact_upper95_if_zero": null
+          },
+          "all_or_nothing": {
+            "published": 4,
+            "answerable": 5,
+            "supported_correct": 4,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 0.8,
+            "abstained_answerable": 1,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 1,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuers_published": 1,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.95
+          },
+          "fieldwise": {
+            "published": 5,
+            "answerable": 5,
+            "supported_correct": 5,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 1.0,
+            "abstained_answerable": 0,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 1,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.7763932022500211
+          },
+          "paired_policy": {
+            "equal_observed_risk": true,
+            "coverage_gain_at_equal_risk": 0.19999999999999996,
+            "additional_supported_fields": 1,
+            "additional_false_publications": 0,
+            "issuers_with_additional_supported_fields": 1
+          }
+        },
+        "oracle": {
+          "direct": {
+            "published": 5,
+            "answerable": 5,
+            "supported_correct": 4,
+            "false_published": 1,
+            "numeric_false": 1,
+            "coverage": 0.8,
+            "abstained_answerable": 0,
+            "observed_risk": 0.19999999999999996,
+            "concealed_errors": 0,
+            "delta_correct": 1,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 1,
+            "issuer_risk_wilson95": [
+              0.09452865480086614,
+              0.9054713451991339
+            ],
+            "issuer_risk_exact_upper95_if_zero": null
+          },
+          "all_or_nothing": {
+            "published": 4,
+            "answerable": 5,
+            "supported_correct": 4,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 0.8,
+            "abstained_answerable": 1,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 1,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuers_published": 1,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.95
+          },
+          "fieldwise": {
+            "published": 5,
+            "answerable": 5,
+            "supported_correct": 5,
+            "false_published": 0,
+            "numeric_false": 0,
+            "coverage": 1.0,
+            "abstained_answerable": 0,
+            "observed_risk": 0.0,
+            "concealed_errors": 0,
+            "delta_correct": 1,
+            "concealed_operand_values": 0,
+            "concealed_wilson95_issuer": [
+              0.0,
+              0.7934567085261071
+            ],
+            "issuers_published": 2,
+            "issuers_with_any_bad_publication": 0,
+            "issuer_risk_wilson95": [
+              0.0,
+              0.6576280471103807
+            ],
+            "issuer_risk_exact_upper95_if_zero": 0.7763932022500211
+          },
+          "paired_policy": {
+            "equal_observed_risk": true,
+            "coverage_gain_at_equal_risk": 0.19999999999999996,
+            "additional_supported_fields": 1,
+            "additional_false_publications": 0,
+            "issuers_with_additional_supported_fields": 1
+          }
+        }
+      }
+    }
+  },
+  "controlled": {
+    "astra": {
+      "direct": {
+        "published": 8,
+        "answerable": 8,
+        "supported_correct": 8,
+        "false_published": 0,
+        "numeric_false": 0,
+        "coverage": 1.0,
+        "abstained_answerable": 0,
+        "observed_risk": 0.0,
+        "concealed_errors": 0,
+        "delta_correct": 2,
+        "concealed_operand_values": 0,
+        "concealed_wilson95_issuer": [
+          0.0,
+          0.6576280471103807
+        ],
+        "issuers_published": 1,
+        "issuers_with_any_bad_publication": 0,
+        "issuer_risk_wilson95": [
+          0.0,
+          0.7934567085261071
+        ],
+        "issuer_risk_exact_upper95_if_zero": 0.95
+      },
+      "all_or_nothing": {
+        "published": 8,
+        "answerable": 8,
+        "supported_correct": 8,
+        "false_published": 0,
+        "numeric_false": 0,
+        "coverage": 1.0,
+        "abstained_answerable": 0,
+        "observed_risk": 0.0,
+        "concealed_errors": 0,
+        "delta_correct": 2,
+        "concealed_operand_values": 0,
+        "concealed_wilson95_issuer": [
+          0.0,
+          0.6576280471103807
+        ],
+        "issuers_published": 1,
+        "issuers_with_any_bad_publication": 0,
+        "issuer_risk_wilson95": [
+          0.0,
+          0.7934567085261071
+        ],
+        "issuer_risk_exact_upper95_if_zero": 0.95
+      },
+      "fieldwise": {
+        "published": 8,
+        "answerable": 8,
+        "supported_correct": 8,
+        "false_published": 0,
+        "numeric_false": 0,
+        "coverage": 1.0,
+        "abstained_answerable": 0,
+        "observed_risk": 0.0,
+        "concealed_errors": 0,
+        "delta_correct": 2,
+        "concealed_operand_values": 0,
+        "concealed_wilson95_issuer": [
+          0.0,
+          0.6576280471103807
+        ],
+        "issuers_published": 1,
+        "issuers_with_any_bad_publication": 0,
+        "issuer_risk_wilson95": [
+          0.0,
+          0.7934567085261071
+        ],
+        "issuer_risk_exact_upper95_if_zero": 0.95
+      },
+      "paired_policy": {
+        "equal_observed_risk": true,
+        "coverage_gain_at_equal_risk": 0.0,
+        "additional_supported_fields": 0,
+        "additional_false_publications": 0,
+        "issuers_with_additional_supported_fields": 0
+      }
+    },
+    "claude": {
+      "direct": {
+        "published": 8,
+        "answerable": 8,
+        "supported_correct": 8,
+        "false_published": 0,
+        "numeric_false": 0,
+        "coverage": 1.0,
+        "abstained_answerable": 0,
+        "observed_risk": 0.0,
+        "concealed_errors": 0,
+        "delta_correct": 2,
+        "concealed_operand_values": 0,
+        "concealed_wilson95_issuer": [
+          0.0,
+          0.6576280471103807
+        ],
+        "issuers_published": 1,
+        "issuers_with_any_bad_publication": 0,
+        "issuer_risk_wilson95": [
+          0.0,
+          0.7934567085261071
+        ],
+        "issuer_risk_exact_upper95_if_zero": 0.95
+      },
+      "all_or_nothing": {
+        "published": 8,
+        "answerable": 8,
+        "supported_correct": 8,
+        "false_published": 0,
+        "numeric_false": 0,
+        "coverage": 1.0,
+        "abstained_answerable": 0,
+        "observed_risk": 0.0,
+        "concealed_errors": 0,
+        "delta_correct": 2,
+        "concealed_operand_values": 0,
+        "concealed_wilson95_issuer": [
+          0.0,
+          0.6576280471103807
+        ],
+        "issuers_published": 1,
+        "issuers_with_any_bad_publication": 0,
+        "issuer_risk_wilson95": [
+          0.0,
+          0.7934567085261071
+        ],
+        "issuer_risk_exact_upper95_if_zero": 0.95
+      },
+      "fieldwise": {
+        "published": 8,
+        "answerable": 8,
+        "supported_correct": 8,
+        "false_published": 0,
+        "numeric_false": 0,
+        "coverage": 1.0,
+        "abstained_answerable": 0,
+        "observed_risk": 0.0,
+        "concealed_errors": 0,
+        "delta_correct": 2,
+        "concealed_operand_values": 0,
+        "concealed_wilson95_issuer": [
+          0.0,
+          0.6576280471103807
+        ],
+        "issuers_published": 1,
+        "issuers_with_any_bad_publication": 0,
+        "issuer_risk_wilson95": [
+          0.0,
+          0.7934567085261071
+        ],
+        "issuer_risk_exact_upper95_if_zero": 0.95
+      },
+      "paired_policy": {
+        "equal_observed_risk": true,
+        "coverage_gain_at_equal_risk": 0.0,
+        "additional_supported_fields": 0,
+        "additional_false_publications": 0,
+        "issuers_with_additional_supported_fields": 0
+      }
+    }
+  }
+}

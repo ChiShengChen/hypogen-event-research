@@ -1,0 +1,66 @@
+{
+  "case": "sprinklr-common_shift",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T18:05:41.800773+00:00",
+  "queued_epoch": 1795457141.8008475,
+  "started_at": "2026-11-23T18:06:33.259163+00:00",
+  "request_sha256": "9fa50a900ed974f6afa8f1ed172ec13515af9f7d7a4bf6a4aef10be0dd790b48",
+  "queue_seconds": 51.451,
+  "preparation_seconds": 0.008,
+  "prompt_bytes": 3553,
+  "returncode": 0,
+  "cli_elapsed_seconds": 9.428,
+  "response": {
+    "operands": [
+      {
+        "role": "prior_annual",
+        "card_id": "C7e986f6e",
+        "low": "785000000",
+        "high": "787000000"
+      },
+      {
+        "role": "prior_ytd",
+        "card_id": "Cb67bb30d",
+        "low": "404166000",
+        "high": "404166000"
+      },
+      {
+        "role": "prior_q3",
+        "card_id": "C1712d8ab",
+        "low": "196000000",
+        "high": "197000000"
+      },
+      {
+        "role": "latest_annual",
+        "card_id": "C2377e957",
+        "low": "793900000",
+        "high": "794900000"
+      },
+      {
+        "role": "latest_ytd",
+        "card_id": "Cbf20330a",
+        "low": "604855000",
+        "high": "604855000"
+      }
+    ],
+    "prior_q4": "185334000",
+    "latest_q4": "189545000",
+    "change": "4211000",
+    "direction": "raised"
+  },
+  "elapsed_seconds": 9.436,
+  "usage": {
+    "input_tokens": 16170,
+    "cached_input_tokens": 0,
+    "output_tokens": 240,
+    "reasoning_output_tokens": 36
+  },
+  "event_seconds": {
+    "thread.started": 0.285,
+    "turn.started": 1.329,
+    "item.completed": 9.017,
+    "turn.completed": 9.028
+  },
+  "finished_at": "2026-11-23T18:06:42.698307+00:00"
+}

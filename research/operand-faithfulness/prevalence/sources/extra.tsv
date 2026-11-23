@@ -1,0 +1,6 @@
+key	issuer	fiscal_year	prior	latest
+qlys	Qualys	2024	https://cdn2.qualys.com/docs/mktg/qualys-q2-2024-earnings-release.pdf	https://cdn2.qualys.com/docs/mktg/qualys-q3-2024-earnings-release.pdf
+cybr	CyberArk	2024	https://www.cyberark.com/press/cyberark-announces-strong-second-quarter-2024-results/	https://www.cyberark.com/press/cyberark-announces-strong-third-quarter-2024-results/
+dt	Dynatrace	2025	https://ir.dynatrace.com/news-events/press-releases/detail/353/dynatrace-reports-second-quarter-fiscal-year-2025-financial-results	https://ir.dynatrace.com/news-events/press-releases/detail/365/dynatrace-reports-third-quarter-fiscal-year-2025-financial-results
+yext	Yext	2025	https://investors.yext.com/news-events/press-releases/detail/356/yext-announces-second-quarter-fiscal-2025-results	https://investors.yext.com/news-events/press-releases/detail/360/yext-announces-third-quarter-fiscal-2025-results
+ddog	Datadog	2024	https://datadog.gcs-web.com/news-releases/news-release-details/datadog-announces-second-quarter-2024-financial-results	https://datadog.gcs-web.com/news-releases/news-release-details/datadog-announces-third-quarter-2024-financial-results

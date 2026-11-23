@@ -1,0 +1,91 @@
+{
+  "case": "yelp",
+  "family": "claude",
+  "mode": "full",
+  "status": "completed",
+  "started_at": "2026-11-23T18:30:00.752630+00:00",
+  "request_sha256": "a0cc5521d2b3e105ed1769f8dca94b2db946249ac66ae8911858f52471cde211",
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_annual",
+        "page": 15,
+        "row": 31,
+        "indices": [
+          3,
+          4
+        ],
+        "low_usd": "1410000000",
+        "high_usd": "1425000000"
+      },
+      {
+        "role": "prior_ytd",
+        "page": 12,
+        "row": 27,
+        "indices": [
+          3
+        ],
+        "low_usd": "689768000",
+        "high_usd": "689768000"
+      },
+      {
+        "role": "prior_q3",
+        "page": 15,
+        "row": 31,
+        "indices": [
+          1,
+          2
+        ],
+        "low_usd": "357000000",
+        "high_usd": "362000000"
+      },
+      {
+        "role": "latest_annual",
+        "page": 14,
+        "row": 30,
+        "indices": [
+          3,
+          4
+        ],
+        "low_usd": "1397000000",
+        "high_usd": "1402000000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 11,
+        "row": 27,
+        "indices": [
+          3
+        ],
+        "low_usd": "1050112000",
+        "high_usd": "1050112000"
+      }
+    ],
+    "prior_q4": "\"368232000\"",
+    "latest_q4": "\"349388000\"",
+    "change": "\"-18844000\"",
+    "direction": "lowered"
+  },
+  "usage": {
+    "input_tokens": 48760,
+    "output_tokens": 5459,
+    "cached_input_tokens": 6876
+  },
+  "elapsed_seconds": 71.40374033898115,
+  "model_usage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 3,
+      "outputTokens": 5459,
+      "cacheReadInputTokens": 6876,
+      "cacheCreationInputTokens": 41881,
+      "webSearchRequests": 0,
+      "costUSD": 0.3352428,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 4966,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  }
+}

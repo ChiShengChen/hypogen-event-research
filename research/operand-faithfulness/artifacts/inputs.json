@@ -1,0 +1,1766 @@
+{
+  "gitlab-base": {
+    "issuer": "gitlab",
+    "variant": "base",
+    "context": {
+      "issuer": "GitLab",
+      "fiscal_year": 2025,
+      "as_of": "2024-12-05T23:59:59-05:00",
+      "cards": [
+        {
+          "id": "C3ac5a87b",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "351771",
+          "high": "351771"
+        },
+        {
+          "id": "C3a172d64",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "323629.32",
+          "high": "323629.32"
+        },
+        {
+          "id": "C4c7a655e",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "742.0",
+          "high": "744.0"
+        },
+        {
+          "id": "Cc4ae4ecf",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "682.640",
+          "high": "684.480"
+        },
+        {
+          "id": "C5c0315f5",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "187.0",
+          "high": "188.0"
+        },
+        {
+          "id": "C45bad455",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-12-05T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "753",
+          "high": "754"
+        },
+        {
+          "id": "C8c149be3",
+          "vintage": "latest",
+          "metric": "actual",
+          "period": "nine_months",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-12-05T23:59:59-05:00",
+          "unit": "USD thousands",
+          "low": "547818",
+          "high": "547818"
+        },
+        {
+          "id": "Cc293a5d2",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-05T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "692.76",
+          "high": "693.68"
+        },
+        {
+          "id": "C964a7d0f",
+          "vintage": "latest",
+          "metric": "actual",
+          "period": "nine_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-05T23:59:59-05:00",
+          "unit": "USD thousands",
+          "low": "503992.56",
+          "high": "503992.56"
+        },
+        {
+          "id": "Cd3bc4a1d",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "172.040",
+          "high": "172.960"
+        }
+      ]
+    },
+    "origins": {
+      "prior_annual": {
+        "document_sha256": "81039bd1c818f759e78fb62e6066a4f0bd141594e782ac2e1c95bb551e48033b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Second-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-09-03T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "gitlab-prior",
+            "block": "gitlab-prior:p0003",
+            "quote": "$742.0 - $744.0",
+            "tabular": true,
+            "unit_block": "gitlab-prior:p0002",
+            "unit_quote": "in millions, except share and per share data"
+          }
+        ]
+      },
+      "prior_ytd": {
+        "document_sha256": "81039bd1c818f759e78fb62e6066a4f0bd141594e782ac2e1c95bb551e48033b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Second-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-09-03T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "gitlab-prior",
+            "block": "gitlab-prior:p0007",
+            "quote": "351,771",
+            "tabular": true,
+            "unit_block": "gitlab-prior:p0007",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended July 31, Six Months Ended July 31, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $"
+          }
+        ]
+      },
+      "prior_q3": {
+        "document_sha256": "81039bd1c818f759e78fb62e6066a4f0bd141594e782ac2e1c95bb551e48033b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Second-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-09-03T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "gitlab-prior",
+            "block": "gitlab-prior:p0003",
+            "quote": "$187.0 - $188.0",
+            "tabular": true,
+            "unit_block": "gitlab-prior:p0002",
+            "unit_quote": "in millions, except share and per share data"
+          }
+        ]
+      },
+      "latest_annual": {
+        "document_sha256": "668af17ad264185e7a62fa399245271c5b7f990150ed569ea30ac294d057ad3b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Third-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-12-05T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "gitlab-latest",
+            "block": "gitlab-latest:p0003",
+            "quote": "$753 - $754",
+            "tabular": true,
+            "unit_block": "gitlab-latest:p0002",
+            "unit_quote": "in millions, except share and per share data"
+          }
+        ]
+      },
+      "latest_ytd": {
+        "document_sha256": "668af17ad264185e7a62fa399245271c5b7f990150ed569ea30ac294d057ad3b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Third-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-12-05T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "gitlab-latest",
+            "block": "gitlab-latest:p0007",
+            "quote": "547,818",
+            "tabular": true,
+            "unit_block": "gitlab-latest:p0007",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended Nine Months Ended October 31, October 31, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $"
+          }
+        ]
+      }
+    },
+    "valid_ids": {
+      "prior_annual": "C4c7a655e",
+      "prior_ytd": "C3ac5a87b",
+      "prior_q3": "C5c0315f5",
+      "latest_annual": "C45bad455",
+      "latest_ytd": "C8c149be3"
+    },
+    "changed_records": [],
+    "gold": {
+      "prior_q4": "203729000.0",
+      "latest_q4": "205682000",
+      "change": "1953000.0",
+      "direction": "raised"
+    }
+  },
+  "gitlab-common_shift": {
+    "issuer": "gitlab",
+    "variant": "common_shift",
+    "context": {
+      "issuer": "GitLab",
+      "fiscal_year": 2025,
+      "as_of": "2024-12-05T23:59:59-05:00",
+      "cards": [
+        {
+          "id": "C3ac5a87b",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "362771",
+          "high": "362771"
+        },
+        {
+          "id": "C3a172d64",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "323629.32",
+          "high": "323629.32"
+        },
+        {
+          "id": "C4c7a655e",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "742.0",
+          "high": "744.0"
+        },
+        {
+          "id": "Cc4ae4ecf",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "682.640",
+          "high": "684.480"
+        },
+        {
+          "id": "C5c0315f5",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "187.0",
+          "high": "188.0"
+        },
+        {
+          "id": "C45bad455",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-12-05T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "753",
+          "high": "754"
+        },
+        {
+          "id": "C8c149be3",
+          "vintage": "latest",
+          "metric": "actual",
+          "period": "nine_months",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-12-05T23:59:59-05:00",
+          "unit": "USD thousands",
+          "low": "558818",
+          "high": "558818"
+        },
+        {
+          "id": "Cc293a5d2",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-05T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "692.76",
+          "high": "693.68"
+        },
+        {
+          "id": "C964a7d0f",
+          "vintage": "latest",
+          "metric": "actual",
+          "period": "nine_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-05T23:59:59-05:00",
+          "unit": "USD thousands",
+          "low": "503992.56",
+          "high": "503992.56"
+        },
+        {
+          "id": "Cd3bc4a1d",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "172.040",
+          "high": "172.960"
+        }
+      ]
+    },
+    "origins": {
+      "prior_annual": {
+        "document_sha256": "81039bd1c818f759e78fb62e6066a4f0bd141594e782ac2e1c95bb551e48033b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Second-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-09-03T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "gitlab-prior",
+            "block": "gitlab-prior:p0003",
+            "quote": "$742.0 - $744.0",
+            "tabular": true,
+            "unit_block": "gitlab-prior:p0002",
+            "unit_quote": "in millions, except share and per share data"
+          }
+        ]
+      },
+      "prior_ytd": {
+        "document_sha256": "81039bd1c818f759e78fb62e6066a4f0bd141594e782ac2e1c95bb551e48033b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Second-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-09-03T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "gitlab-prior",
+            "block": "gitlab-prior:p0007",
+            "quote": "351,771",
+            "tabular": true,
+            "unit_block": "gitlab-prior:p0007",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended July 31, Six Months Ended July 31, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $"
+          }
+        ]
+      },
+      "prior_q3": {
+        "document_sha256": "81039bd1c818f759e78fb62e6066a4f0bd141594e782ac2e1c95bb551e48033b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Second-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-09-03T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "gitlab-prior",
+            "block": "gitlab-prior:p0003",
+            "quote": "$187.0 - $188.0",
+            "tabular": true,
+            "unit_block": "gitlab-prior:p0002",
+            "unit_quote": "in millions, except share and per share data"
+          }
+        ]
+      },
+      "latest_annual": {
+        "document_sha256": "668af17ad264185e7a62fa399245271c5b7f990150ed569ea30ac294d057ad3b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Third-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-12-05T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "gitlab-latest",
+            "block": "gitlab-latest:p0003",
+            "quote": "$753 - $754",
+            "tabular": true,
+            "unit_block": "gitlab-latest:p0002",
+            "unit_quote": "in millions, except share and per share data"
+          }
+        ]
+      },
+      "latest_ytd": {
+        "document_sha256": "668af17ad264185e7a62fa399245271c5b7f990150ed569ea30ac294d057ad3b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Third-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-12-05T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "gitlab-latest",
+            "block": "gitlab-latest:p0007",
+            "quote": "547,818",
+            "tabular": true,
+            "unit_block": "gitlab-latest:p0007",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended Nine Months Ended October 31, October 31, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $"
+          }
+        ]
+      }
+    },
+    "valid_ids": {
+      "prior_annual": "C4c7a655e",
+      "prior_ytd": "C3ac5a87b",
+      "prior_q3": "C5c0315f5",
+      "latest_annual": "C45bad455",
+      "latest_ytd": "C8c149be3"
+    },
+    "changed_records": [
+      "latest_ytd",
+      "prior_ytd"
+    ],
+    "gold": {
+      "prior_q4": "192729000.0",
+      "latest_q4": "194682000",
+      "change": "1953000.0",
+      "direction": "raised"
+    }
+  },
+  "gitlab-latest_shift": {
+    "issuer": "gitlab",
+    "variant": "latest_shift",
+    "context": {
+      "issuer": "GitLab",
+      "fiscal_year": 2025,
+      "as_of": "2024-12-05T23:59:59-05:00",
+      "cards": [
+        {
+          "id": "C3ac5a87b",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "351771",
+          "high": "351771"
+        },
+        {
+          "id": "C3a172d64",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "323629.32",
+          "high": "323629.32"
+        },
+        {
+          "id": "C4c7a655e",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "742.0",
+          "high": "744.0"
+        },
+        {
+          "id": "Cc4ae4ecf",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "682.640",
+          "high": "684.480"
+        },
+        {
+          "id": "C5c0315f5",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "187.0",
+          "high": "188.0"
+        },
+        {
+          "id": "C45bad455",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-12-05T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "753",
+          "high": "754"
+        },
+        {
+          "id": "C8c149be3",
+          "vintage": "latest",
+          "metric": "actual",
+          "period": "nine_months",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-12-05T23:59:59-05:00",
+          "unit": "USD thousands",
+          "low": "553818",
+          "high": "553818"
+        },
+        {
+          "id": "Cc293a5d2",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-05T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "692.76",
+          "high": "693.68"
+        },
+        {
+          "id": "C964a7d0f",
+          "vintage": "latest",
+          "metric": "actual",
+          "period": "nine_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-05T23:59:59-05:00",
+          "unit": "USD thousands",
+          "low": "503992.56",
+          "high": "503992.56"
+        },
+        {
+          "id": "Cd3bc4a1d",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "172.040",
+          "high": "172.960"
+        }
+      ]
+    },
+    "origins": {
+      "prior_annual": {
+        "document_sha256": "81039bd1c818f759e78fb62e6066a4f0bd141594e782ac2e1c95bb551e48033b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Second-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-09-03T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "gitlab-prior",
+            "block": "gitlab-prior:p0003",
+            "quote": "$742.0 - $744.0",
+            "tabular": true,
+            "unit_block": "gitlab-prior:p0002",
+            "unit_quote": "in millions, except share and per share data"
+          }
+        ]
+      },
+      "prior_ytd": {
+        "document_sha256": "81039bd1c818f759e78fb62e6066a4f0bd141594e782ac2e1c95bb551e48033b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Second-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-09-03T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "gitlab-prior",
+            "block": "gitlab-prior:p0007",
+            "quote": "351,771",
+            "tabular": true,
+            "unit_block": "gitlab-prior:p0007",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended July 31, Six Months Ended July 31, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $"
+          }
+        ]
+      },
+      "prior_q3": {
+        "document_sha256": "81039bd1c818f759e78fb62e6066a4f0bd141594e782ac2e1c95bb551e48033b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Second-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-09-03T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "gitlab-prior",
+            "block": "gitlab-prior:p0003",
+            "quote": "$187.0 - $188.0",
+            "tabular": true,
+            "unit_block": "gitlab-prior:p0002",
+            "unit_quote": "in millions, except share and per share data"
+          }
+        ]
+      },
+      "latest_annual": {
+        "document_sha256": "668af17ad264185e7a62fa399245271c5b7f990150ed569ea30ac294d057ad3b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Third-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-12-05T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "gitlab-latest",
+            "block": "gitlab-latest:p0003",
+            "quote": "$753 - $754",
+            "tabular": true,
+            "unit_block": "gitlab-latest:p0002",
+            "unit_quote": "in millions, except share and per share data"
+          }
+        ]
+      },
+      "latest_ytd": {
+        "document_sha256": "668af17ad264185e7a62fa399245271c5b7f990150ed569ea30ac294d057ad3b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Third-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-12-05T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "gitlab-latest",
+            "block": "gitlab-latest:p0007",
+            "quote": "547,818",
+            "tabular": true,
+            "unit_block": "gitlab-latest:p0007",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended Nine Months Ended October 31, October 31, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $"
+          }
+        ]
+      }
+    },
+    "valid_ids": {
+      "prior_annual": "C4c7a655e",
+      "prior_ytd": "C3ac5a87b",
+      "prior_q3": "C5c0315f5",
+      "latest_annual": "C45bad455",
+      "latest_ytd": "C8c149be3"
+    },
+    "changed_records": [
+      "latest_ytd"
+    ],
+    "gold": {
+      "prior_q4": "203729000.0",
+      "latest_q4": "199682000",
+      "change": "-4047000.0",
+      "direction": "lowered"
+    }
+  },
+  "gitlab-missing_latest": {
+    "issuer": "gitlab",
+    "variant": "missing_latest",
+    "context": {
+      "issuer": "GitLab",
+      "fiscal_year": 2025,
+      "as_of": "2024-12-05T23:59:59-05:00",
+      "cards": [
+        {
+          "id": "C3ac5a87b",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "351771",
+          "high": "351771"
+        },
+        {
+          "id": "C3a172d64",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "323629.32",
+          "high": "323629.32"
+        },
+        {
+          "id": "C4c7a655e",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "742.0",
+          "high": "744.0"
+        },
+        {
+          "id": "Cc4ae4ecf",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "682.640",
+          "high": "684.480"
+        },
+        {
+          "id": "C5c0315f5",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "187.0",
+          "high": "188.0"
+        },
+        {
+          "id": "C45bad455",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-12-05T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "753",
+          "high": "754"
+        },
+        {
+          "id": "Cc293a5d2",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-05T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "692.76",
+          "high": "693.68"
+        },
+        {
+          "id": "C964a7d0f",
+          "vintage": "latest",
+          "metric": "actual",
+          "period": "nine_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-05T23:59:59-05:00",
+          "unit": "USD thousands",
+          "low": "503992.56",
+          "high": "503992.56"
+        },
+        {
+          "id": "Cd3bc4a1d",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-03T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "172.040",
+          "high": "172.960"
+        }
+      ]
+    },
+    "origins": {
+      "prior_annual": {
+        "document_sha256": "81039bd1c818f759e78fb62e6066a4f0bd141594e782ac2e1c95bb551e48033b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Second-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-09-03T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "gitlab-prior",
+            "block": "gitlab-prior:p0003",
+            "quote": "$742.0 - $744.0",
+            "tabular": true,
+            "unit_block": "gitlab-prior:p0002",
+            "unit_quote": "in millions, except share and per share data"
+          }
+        ]
+      },
+      "prior_ytd": {
+        "document_sha256": "81039bd1c818f759e78fb62e6066a4f0bd141594e782ac2e1c95bb551e48033b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Second-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-09-03T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "gitlab-prior",
+            "block": "gitlab-prior:p0007",
+            "quote": "351,771",
+            "tabular": true,
+            "unit_block": "gitlab-prior:p0007",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended July 31, Six Months Ended July 31, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $"
+          }
+        ]
+      },
+      "prior_q3": {
+        "document_sha256": "81039bd1c818f759e78fb62e6066a4f0bd141594e782ac2e1c95bb551e48033b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Second-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-09-03T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "gitlab-prior",
+            "block": "gitlab-prior:p0003",
+            "quote": "$187.0 - $188.0",
+            "tabular": true,
+            "unit_block": "gitlab-prior:p0002",
+            "unit_quote": "in millions, except share and per share data"
+          }
+        ]
+      },
+      "latest_annual": {
+        "document_sha256": "668af17ad264185e7a62fa399245271c5b7f990150ed569ea30ac294d057ad3b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Third-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-12-05T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "gitlab-latest",
+            "block": "gitlab-latest:p0003",
+            "quote": "$753 - $754",
+            "tabular": true,
+            "unit_block": "gitlab-latest:p0002",
+            "unit_quote": "in millions, except share and per share data"
+          }
+        ]
+      },
+      "latest_ytd": {
+        "document_sha256": "668af17ad264185e7a62fa399245271c5b7f990150ed569ea30ac294d057ad3b",
+        "url": "https://s204.q4cdn.com/984476563/files/doc_news/GitLab-Reports-Third-Quarter-Fiscal-Year-2025-Financial-Results-2024.pdf",
+        "published_at": "2024-12-05T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "gitlab-latest",
+            "block": "gitlab-latest:p0007",
+            "quote": "547,818",
+            "tabular": true,
+            "unit_block": "gitlab-latest:p0007",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended Nine Months Ended October 31, October 31, 2024 2023 2024 2023 Revenue: Subscription—self-managed and SaaS $"
+          }
+        ]
+      }
+    },
+    "valid_ids": {
+      "prior_annual": "C4c7a655e",
+      "prior_ytd": "C3ac5a87b",
+      "prior_q3": "C5c0315f5",
+      "latest_annual": "C45bad455"
+    },
+    "changed_records": [
+      "latest_ytd:removed"
+    ],
+    "gold": {
+      "prior_q4": "203729000.0",
+      "latest_q4": null,
+      "change": null,
+      "direction": null
+    }
+  },
+  "sprinklr-base": {
+    "issuer": "sprinklr",
+    "variant": "base",
+    "context": {
+      "issuer": "Sprinklr",
+      "fiscal_year": 2025,
+      "as_of": "2024-12-04T23:59:59-05:00",
+      "cards": [
+        {
+          "id": "Cb67bb30d",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "393166",
+          "high": "393166"
+        },
+        {
+          "id": "Cb96ca49d",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "361712.72",
+          "high": "361712.72"
+        },
+        {
+          "id": "C2377e957",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-12-04T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "793.9",
+          "high": "794.9"
+        },
+        {
+          "id": "C7e986f6e",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "785",
+          "high": "787"
+        },
+        {
+          "id": "Cbf20330a",
+          "vintage": "latest",
+          "metric": "actual",
+          "period": "nine_months",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-12-04T23:59:59-05:00",
+          "unit": "USD thousands",
+          "low": "593855",
+          "high": "593855"
+        },
+        {
+          "id": "C90cb4213",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "722.20",
+          "high": "724.04"
+        },
+        {
+          "id": "C619b5dcb",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-04T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "730.388",
+          "high": "731.308"
+        },
+        {
+          "id": "C5755f73b",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "180.32",
+          "high": "181.24"
+        },
+        {
+          "id": "C1712d8ab",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "196",
+          "high": "197"
+        },
+        {
+          "id": "Ce23dcc88",
+          "vintage": "latest",
+          "metric": "actual",
+          "period": "nine_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-04T23:59:59-05:00",
+          "unit": "USD thousands",
+          "low": "546346.60",
+          "high": "546346.60"
+        }
+      ]
+    },
+    "origins": {
+      "prior_annual": {
+        "document_sha256": "248a33082118595f2f6115bed290d86d73fca197a3fc64cd7655b396d0dc0aa1",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-09-04_Sprinklr_Announces_Second_Quarter_Fiscal_2025_209.pdf",
+        "published_at": "2024-09-04T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "sprinklr-prior",
+            "block": "sprinklr-prior:p0002",
+            "quote": "between $785 million and $787 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ]
+      },
+      "prior_ytd": {
+        "document_sha256": "248a33082118595f2f6115bed290d86d73fca197a3fc64cd7655b396d0dc0aa1",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-09-04_Sprinklr_Announces_Second_Quarter_Fiscal_2025_209.pdf",
+        "published_at": "2024-09-04T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "sprinklr-prior",
+            "block": "sprinklr-prior:p0006",
+            "quote": "393,166",
+            "tabular": true,
+            "unit_block": "sprinklr-prior:p0006",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended July 31, Six Months Ended July 31, 2024 2023 2024 2023 Revenue: Subscription $"
+          }
+        ]
+      },
+      "prior_q3": {
+        "document_sha256": "248a33082118595f2f6115bed290d86d73fca197a3fc64cd7655b396d0dc0aa1",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-09-04_Sprinklr_Announces_Second_Quarter_Fiscal_2025_209.pdf",
+        "published_at": "2024-09-04T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "sprinklr-prior",
+            "block": "sprinklr-prior:p0002",
+            "quote": "between $196 million and $197 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ]
+      },
+      "latest_annual": {
+        "document_sha256": "d26f1d9804c60f300e47c38ee40476922183048cc35a437a92c493ac958306b2",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-12-04_Sprinklr_Announces_Third_Quarter_Fiscal_2025_215.pdf",
+        "published_at": "2024-12-04T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "sprinklr-latest",
+            "block": "sprinklr-latest:p0002",
+            "quote": "between $793.9 million and $794.9 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ]
+      },
+      "latest_ytd": {
+        "document_sha256": "d26f1d9804c60f300e47c38ee40476922183048cc35a437a92c493ac958306b2",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-12-04_Sprinklr_Announces_Third_Quarter_Fiscal_2025_215.pdf",
+        "published_at": "2024-12-04T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "sprinklr-latest",
+            "block": "sprinklr-latest:p0006",
+            "quote": "593,855",
+            "tabular": true,
+            "unit_block": "sprinklr-latest:p0006",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended October Nine Months Ended October 31, 31, 2024 2023 2024 2023 Revenue: Subscription $"
+          }
+        ]
+      }
+    },
+    "valid_ids": {
+      "prior_annual": "C7e986f6e",
+      "prior_ytd": "Cb67bb30d",
+      "prior_q3": "C1712d8ab",
+      "latest_annual": "C2377e957",
+      "latest_ytd": "Cbf20330a"
+    },
+    "changed_records": [],
+    "gold": {
+      "prior_q4": "196334000",
+      "latest_q4": "200545000.0",
+      "change": "4211000.0",
+      "direction": "raised"
+    }
+  },
+  "sprinklr-common_shift": {
+    "issuer": "sprinklr",
+    "variant": "common_shift",
+    "context": {
+      "issuer": "Sprinklr",
+      "fiscal_year": 2025,
+      "as_of": "2024-12-04T23:59:59-05:00",
+      "cards": [
+        {
+          "id": "Cb67bb30d",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "404166",
+          "high": "404166"
+        },
+        {
+          "id": "Cb96ca49d",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "361712.72",
+          "high": "361712.72"
+        },
+        {
+          "id": "C2377e957",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-12-04T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "793.9",
+          "high": "794.9"
+        },
+        {
+          "id": "C7e986f6e",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "785",
+          "high": "787"
+        },
+        {
+          "id": "Cbf20330a",
+          "vintage": "latest",
+          "metric": "actual",
+          "period": "nine_months",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-12-04T23:59:59-05:00",
+          "unit": "USD thousands",
+          "low": "604855",
+          "high": "604855"
+        },
+        {
+          "id": "C90cb4213",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "722.20",
+          "high": "724.04"
+        },
+        {
+          "id": "C619b5dcb",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-04T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "730.388",
+          "high": "731.308"
+        },
+        {
+          "id": "C5755f73b",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "180.32",
+          "high": "181.24"
+        },
+        {
+          "id": "C1712d8ab",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "196",
+          "high": "197"
+        },
+        {
+          "id": "Ce23dcc88",
+          "vintage": "latest",
+          "metric": "actual",
+          "period": "nine_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-04T23:59:59-05:00",
+          "unit": "USD thousands",
+          "low": "546346.60",
+          "high": "546346.60"
+        }
+      ]
+    },
+    "origins": {
+      "prior_annual": {
+        "document_sha256": "248a33082118595f2f6115bed290d86d73fca197a3fc64cd7655b396d0dc0aa1",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-09-04_Sprinklr_Announces_Second_Quarter_Fiscal_2025_209.pdf",
+        "published_at": "2024-09-04T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "sprinklr-prior",
+            "block": "sprinklr-prior:p0002",
+            "quote": "between $785 million and $787 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ]
+      },
+      "prior_ytd": {
+        "document_sha256": "248a33082118595f2f6115bed290d86d73fca197a3fc64cd7655b396d0dc0aa1",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-09-04_Sprinklr_Announces_Second_Quarter_Fiscal_2025_209.pdf",
+        "published_at": "2024-09-04T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "sprinklr-prior",
+            "block": "sprinklr-prior:p0006",
+            "quote": "393,166",
+            "tabular": true,
+            "unit_block": "sprinklr-prior:p0006",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended July 31, Six Months Ended July 31, 2024 2023 2024 2023 Revenue: Subscription $"
+          }
+        ]
+      },
+      "prior_q3": {
+        "document_sha256": "248a33082118595f2f6115bed290d86d73fca197a3fc64cd7655b396d0dc0aa1",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-09-04_Sprinklr_Announces_Second_Quarter_Fiscal_2025_209.pdf",
+        "published_at": "2024-09-04T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "sprinklr-prior",
+            "block": "sprinklr-prior:p0002",
+            "quote": "between $196 million and $197 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ]
+      },
+      "latest_annual": {
+        "document_sha256": "d26f1d9804c60f300e47c38ee40476922183048cc35a437a92c493ac958306b2",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-12-04_Sprinklr_Announces_Third_Quarter_Fiscal_2025_215.pdf",
+        "published_at": "2024-12-04T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "sprinklr-latest",
+            "block": "sprinklr-latest:p0002",
+            "quote": "between $793.9 million and $794.9 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ]
+      },
+      "latest_ytd": {
+        "document_sha256": "d26f1d9804c60f300e47c38ee40476922183048cc35a437a92c493ac958306b2",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-12-04_Sprinklr_Announces_Third_Quarter_Fiscal_2025_215.pdf",
+        "published_at": "2024-12-04T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "sprinklr-latest",
+            "block": "sprinklr-latest:p0006",
+            "quote": "593,855",
+            "tabular": true,
+            "unit_block": "sprinklr-latest:p0006",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended October Nine Months Ended October 31, 31, 2024 2023 2024 2023 Revenue: Subscription $"
+          }
+        ]
+      }
+    },
+    "valid_ids": {
+      "prior_annual": "C7e986f6e",
+      "prior_ytd": "Cb67bb30d",
+      "prior_q3": "C1712d8ab",
+      "latest_annual": "C2377e957",
+      "latest_ytd": "Cbf20330a"
+    },
+    "changed_records": [
+      "latest_ytd",
+      "prior_ytd"
+    ],
+    "gold": {
+      "prior_q4": "185334000",
+      "latest_q4": "189545000.0",
+      "change": "4211000.0",
+      "direction": "raised"
+    }
+  },
+  "sprinklr-latest_shift": {
+    "issuer": "sprinklr",
+    "variant": "latest_shift",
+    "context": {
+      "issuer": "Sprinklr",
+      "fiscal_year": 2025,
+      "as_of": "2024-12-04T23:59:59-05:00",
+      "cards": [
+        {
+          "id": "Cb67bb30d",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "393166",
+          "high": "393166"
+        },
+        {
+          "id": "Cb96ca49d",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "361712.72",
+          "high": "361712.72"
+        },
+        {
+          "id": "C2377e957",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-12-04T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "793.9",
+          "high": "794.9"
+        },
+        {
+          "id": "C7e986f6e",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "785",
+          "high": "787"
+        },
+        {
+          "id": "Cbf20330a",
+          "vintage": "latest",
+          "metric": "actual",
+          "period": "nine_months",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-12-04T23:59:59-05:00",
+          "unit": "USD thousands",
+          "low": "599855",
+          "high": "599855"
+        },
+        {
+          "id": "C90cb4213",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "722.20",
+          "high": "724.04"
+        },
+        {
+          "id": "C619b5dcb",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-04T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "730.388",
+          "high": "731.308"
+        },
+        {
+          "id": "C5755f73b",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "180.32",
+          "high": "181.24"
+        },
+        {
+          "id": "C1712d8ab",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "196",
+          "high": "197"
+        },
+        {
+          "id": "Ce23dcc88",
+          "vintage": "latest",
+          "metric": "actual",
+          "period": "nine_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-04T23:59:59-05:00",
+          "unit": "USD thousands",
+          "low": "546346.60",
+          "high": "546346.60"
+        }
+      ]
+    },
+    "origins": {
+      "prior_annual": {
+        "document_sha256": "248a33082118595f2f6115bed290d86d73fca197a3fc64cd7655b396d0dc0aa1",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-09-04_Sprinklr_Announces_Second_Quarter_Fiscal_2025_209.pdf",
+        "published_at": "2024-09-04T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "sprinklr-prior",
+            "block": "sprinklr-prior:p0002",
+            "quote": "between $785 million and $787 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ]
+      },
+      "prior_ytd": {
+        "document_sha256": "248a33082118595f2f6115bed290d86d73fca197a3fc64cd7655b396d0dc0aa1",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-09-04_Sprinklr_Announces_Second_Quarter_Fiscal_2025_209.pdf",
+        "published_at": "2024-09-04T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "sprinklr-prior",
+            "block": "sprinklr-prior:p0006",
+            "quote": "393,166",
+            "tabular": true,
+            "unit_block": "sprinklr-prior:p0006",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended July 31, Six Months Ended July 31, 2024 2023 2024 2023 Revenue: Subscription $"
+          }
+        ]
+      },
+      "prior_q3": {
+        "document_sha256": "248a33082118595f2f6115bed290d86d73fca197a3fc64cd7655b396d0dc0aa1",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-09-04_Sprinklr_Announces_Second_Quarter_Fiscal_2025_209.pdf",
+        "published_at": "2024-09-04T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "sprinklr-prior",
+            "block": "sprinklr-prior:p0002",
+            "quote": "between $196 million and $197 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ]
+      },
+      "latest_annual": {
+        "document_sha256": "d26f1d9804c60f300e47c38ee40476922183048cc35a437a92c493ac958306b2",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-12-04_Sprinklr_Announces_Third_Quarter_Fiscal_2025_215.pdf",
+        "published_at": "2024-12-04T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "sprinklr-latest",
+            "block": "sprinklr-latest:p0002",
+            "quote": "between $793.9 million and $794.9 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ]
+      },
+      "latest_ytd": {
+        "document_sha256": "d26f1d9804c60f300e47c38ee40476922183048cc35a437a92c493ac958306b2",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-12-04_Sprinklr_Announces_Third_Quarter_Fiscal_2025_215.pdf",
+        "published_at": "2024-12-04T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "sprinklr-latest",
+            "block": "sprinklr-latest:p0006",
+            "quote": "593,855",
+            "tabular": true,
+            "unit_block": "sprinklr-latest:p0006",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended October Nine Months Ended October 31, 31, 2024 2023 2024 2023 Revenue: Subscription $"
+          }
+        ]
+      }
+    },
+    "valid_ids": {
+      "prior_annual": "C7e986f6e",
+      "prior_ytd": "Cb67bb30d",
+      "prior_q3": "C1712d8ab",
+      "latest_annual": "C2377e957",
+      "latest_ytd": "Cbf20330a"
+    },
+    "changed_records": [
+      "latest_ytd"
+    ],
+    "gold": {
+      "prior_q4": "196334000",
+      "latest_q4": "194545000.0",
+      "change": "-1789000.0",
+      "direction": "lowered"
+    }
+  },
+  "sprinklr-missing_latest": {
+    "issuer": "sprinklr",
+    "variant": "missing_latest",
+    "context": {
+      "issuer": "Sprinklr",
+      "fiscal_year": 2025,
+      "as_of": "2024-12-04T23:59:59-05:00",
+      "cards": [
+        {
+          "id": "Cb67bb30d",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "393166",
+          "high": "393166"
+        },
+        {
+          "id": "Cb96ca49d",
+          "vintage": "prior",
+          "metric": "actual",
+          "period": "six_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD thousands",
+          "low": "361712.72",
+          "high": "361712.72"
+        },
+        {
+          "id": "C2377e957",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-12-04T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "793.9",
+          "high": "794.9"
+        },
+        {
+          "id": "C7e986f6e",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "785",
+          "high": "787"
+        },
+        {
+          "id": "C90cb4213",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "722.20",
+          "high": "724.04"
+        },
+        {
+          "id": "C619b5dcb",
+          "vintage": "latest",
+          "metric": "outlook",
+          "period": "full_year",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-04T23:59:59-05:00",
+          "unit": "USD millions",
+          "low": "730.388",
+          "high": "731.308"
+        },
+        {
+          "id": "C5755f73b",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "180.32",
+          "high": "181.24"
+        },
+        {
+          "id": "C1712d8ab",
+          "vintage": "prior",
+          "metric": "outlook",
+          "period": "third_quarter",
+          "fiscal_year": 2025,
+          "scope": "consolidated",
+          "available_at": "2024-09-04T23:59:59-04:00",
+          "unit": "USD millions",
+          "low": "196",
+          "high": "197"
+        },
+        {
+          "id": "Ce23dcc88",
+          "vintage": "latest",
+          "metric": "actual",
+          "period": "nine_months",
+          "fiscal_year": 2024,
+          "scope": "consolidated",
+          "available_at": "2024-12-04T23:59:59-05:00",
+          "unit": "USD thousands",
+          "low": "546346.60",
+          "high": "546346.60"
+        }
+      ]
+    },
+    "origins": {
+      "prior_annual": {
+        "document_sha256": "248a33082118595f2f6115bed290d86d73fca197a3fc64cd7655b396d0dc0aa1",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-09-04_Sprinklr_Announces_Second_Quarter_Fiscal_2025_209.pdf",
+        "published_at": "2024-09-04T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "sprinklr-prior",
+            "block": "sprinklr-prior:p0002",
+            "quote": "between $785 million and $787 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ]
+      },
+      "prior_ytd": {
+        "document_sha256": "248a33082118595f2f6115bed290d86d73fca197a3fc64cd7655b396d0dc0aa1",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-09-04_Sprinklr_Announces_Second_Quarter_Fiscal_2025_209.pdf",
+        "published_at": "2024-09-04T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "sprinklr-prior",
+            "block": "sprinklr-prior:p0006",
+            "quote": "393,166",
+            "tabular": true,
+            "unit_block": "sprinklr-prior:p0006",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended July 31, Six Months Ended July 31, 2024 2023 2024 2023 Revenue: Subscription $"
+          }
+        ]
+      },
+      "prior_q3": {
+        "document_sha256": "248a33082118595f2f6115bed290d86d73fca197a3fc64cd7655b396d0dc0aa1",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-09-04_Sprinklr_Announces_Second_Quarter_Fiscal_2025_209.pdf",
+        "published_at": "2024-09-04T23:59:59-04:00",
+        "locators": [
+          {
+            "document": "sprinklr-prior",
+            "block": "sprinklr-prior:p0002",
+            "quote": "between $196 million and $197 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ]
+      },
+      "latest_annual": {
+        "document_sha256": "d26f1d9804c60f300e47c38ee40476922183048cc35a437a92c493ac958306b2",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-12-04_Sprinklr_Announces_Third_Quarter_Fiscal_2025_215.pdf",
+        "published_at": "2024-12-04T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "sprinklr-latest",
+            "block": "sprinklr-latest:p0002",
+            "quote": "between $793.9 million and $794.9 million",
+            "tabular": false,
+            "unit_block": null,
+            "unit_quote": null
+          }
+        ]
+      },
+      "latest_ytd": {
+        "document_sha256": "d26f1d9804c60f300e47c38ee40476922183048cc35a437a92c493ac958306b2",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_c875c027bf1d37c8aab3b48a487ccda1/sprinklr/news/2024-12-04_Sprinklr_Announces_Third_Quarter_Fiscal_2025_215.pdf",
+        "published_at": "2024-12-04T23:59:59-05:00",
+        "locators": [
+          {
+            "document": "sprinklr-latest",
+            "block": "sprinklr-latest:p0006",
+            "quote": "593,855",
+            "tabular": true,
+            "unit_block": "sprinklr-latest:p0006",
+            "unit_quote": "(in thousands, except per share data) (unaudited) Three Months Ended October Nine Months Ended October 31, 31, 2024 2023 2024 2023 Revenue: Subscription $"
+          }
+        ]
+      }
+    },
+    "valid_ids": {
+      "prior_annual": "C7e986f6e",
+      "prior_ytd": "Cb67bb30d",
+      "prior_q3": "C1712d8ab",
+      "latest_annual": "C2377e957"
+    },
+    "changed_records": [
+      "latest_ytd:removed"
+    ],
+    "gold": {
+      "prior_q4": "196334000",
+      "latest_q4": null,
+      "change": null,
+      "direction": null
+    }
+  }
+}

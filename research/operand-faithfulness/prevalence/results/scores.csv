@@ -1,0 +1,15 @@
+id,case,family,delta_exact,levels_exact,all_grounded,numeric_mask,exact_cancel,delta_with_unsupported_evidence,delta_with_citation_problem_only,tolerance_only_masks_wrong_level
+dt-astra,dt,astra,True,True,True,False,False,False,False,False
+dt-claude,dt,claude,True,True,True,False,False,False,False,False
+gddy-astra,gddy,astra,True,True,True,False,False,False,False,False
+gddy-claude,gddy,claude,True,True,True,False,False,False,False,False
+infa-astra,infa,astra,True,True,True,False,False,False,False,False
+infa-claude,infa,claude,True,True,True,False,False,False,False,False
+qlys-astra,qlys,astra,True,True,True,False,False,False,False,False
+qlys-claude,qlys,claude,True,True,True,False,False,False,False,False
+verx-astra,verx,astra,True,True,True,False,False,False,False,False
+verx-claude,verx,claude,True,True,True,False,False,False,False,False
+wk-astra,wk,astra,True,True,True,False,False,False,False,False
+wk-claude,wk,claude,True,True,True,False,False,False,False,False
+yext-astra,yext,astra,True,True,True,False,False,False,False,False
+yext-claude,yext,claude,True,True,True,False,False,False,False,False

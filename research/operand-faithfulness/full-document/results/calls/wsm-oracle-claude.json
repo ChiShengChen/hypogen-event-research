@@ -1,0 +1,58 @@
+{
+  "case": "wsm",
+  "family": "claude",
+  "mode": "oracle",
+  "status": "completed",
+  "started_at": "2026-11-23T18:44:28.451486+00:00",
+  "request_sha256": "e1079098d329b5c31f28ecbf7f516a72c1b74b6a23b3ed7fc4850fc7370e858e",
+  "response": {
+    "evidence": [
+      {
+        "role": "prior_ytd",
+        "page": 6,
+        "row": 6,
+        "indices": [
+          3
+        ],
+        "low_usd": "3448655000",
+        "high_usd": "3448655000"
+      },
+      {
+        "role": "latest_ytd",
+        "page": 5,
+        "row": 6,
+        "indices": [
+          3
+        ],
+        "low_usd": "5249323000",
+        "high_usd": "5249323000"
+      }
+    ],
+    "prior_q4": null,
+    "latest_q4": null,
+    "change": null,
+    "direction": null
+  },
+  "usage": {
+    "input_tokens": 26392,
+    "output_tokens": 4055,
+    "cached_input_tokens": 6876
+  },
+  "elapsed_seconds": 63.46554585895501,
+  "model_usage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 3,
+      "outputTokens": 4055,
+      "cacheReadInputTokens": 6876,
+      "cacheCreationInputTokens": 19513,
+      "webSearchRequests": 0,
+      "costUSD": 0.1799748,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 3471,
+      "canonicalModel": "claude-sonnet-4-6",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  }
+}

@@ -1,0 +1,4742 @@
+[
+  {
+    "case": "gitlab-base",
+    "fault": "clean",
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "205682000",
+          "expected": "205682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "205682000",
+          "expected": "205682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "205682000",
+          "expected": "205682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-base",
+    "fault": "common_operand_error",
+    "verification_reasons": {
+      "prior_ytd": "amount_or_unit",
+      "latest_ytd": "amount_or_unit"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "198729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "200682000",
+          "expected": "205682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "205682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "205682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-base",
+    "fault": "unit_error",
+    "verification_reasons": {
+      "latest_ytd": "amount_or_unit"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "-547064500000",
+          "expected": "205682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": "-547268229000.0",
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "205682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "205682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-base",
+    "fault": "wrong_year_citation",
+    "verification_reasons": {
+      "prior_ytd": "scope_period_or_vintage"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "205682000",
+          "expected": "205682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "205682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "205682000",
+          "expected": "205682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-base",
+    "fault": "missing_prior_operand",
+    "verification_reasons": {
+      "prior_q3": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "205682000",
+          "expected": "205682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "205682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "205682000",
+          "expected": "205682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-base",
+    "fault": "arithmetic_error",
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "205682000",
+          "expected": "205682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "2953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "205682000",
+          "expected": "205682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "205682000",
+          "expected": "205682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-common_shift",
+    "fault": "clean",
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "192729000.0",
+          "expected": "192729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194682000",
+          "expected": "194682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "192729000.0",
+          "expected": "192729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194682000",
+          "expected": "194682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "192729000.0",
+          "expected": "192729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194682000",
+          "expected": "194682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-common_shift",
+    "fault": "common_operand_error",
+    "verification_reasons": {
+      "prior_ytd": "amount_or_unit",
+      "latest_ytd": "amount_or_unit"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "187729000.0",
+          "expected": "192729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "189682000",
+          "expected": "194682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "192729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "194682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "192729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "194682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-common_shift",
+    "fault": "unit_error",
+    "verification_reasons": {
+      "latest_ytd": "amount_or_unit"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "192729000.0",
+          "expected": "192729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "-558064500000",
+          "expected": "194682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": "-558257229000.0",
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "192729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "194682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "192729000.0",
+          "expected": "192729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "194682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-common_shift",
+    "fault": "wrong_year_citation",
+    "verification_reasons": {
+      "prior_ytd": "scope_period_or_vintage"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "192729000.0",
+          "expected": "192729000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "194682000",
+          "expected": "194682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "192729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "194682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "192729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "194682000",
+          "expected": "194682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-common_shift",
+    "fault": "missing_prior_operand",
+    "verification_reasons": {
+      "prior_q3": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "192729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "194682000",
+          "expected": "194682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "192729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "194682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "192729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "194682000",
+          "expected": "194682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-common_shift",
+    "fault": "arithmetic_error",
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "192729000.0",
+          "expected": "192729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194682000",
+          "expected": "194682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "2953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "192729000.0",
+          "expected": "192729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194682000",
+          "expected": "194682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "192729000.0",
+          "expected": "192729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194682000",
+          "expected": "194682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "1953000.0",
+          "expected": "1953000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-latest_shift",
+    "fault": "clean",
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "199682000",
+          "expected": "199682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-4047000.0",
+          "expected": "-4047000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "199682000",
+          "expected": "199682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-4047000.0",
+          "expected": "-4047000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "199682000",
+          "expected": "199682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-4047000.0",
+          "expected": "-4047000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-latest_shift",
+    "fault": "common_operand_error",
+    "verification_reasons": {
+      "prior_ytd": "amount_or_unit",
+      "latest_ytd": "amount_or_unit"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "198729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "194682000",
+          "expected": "199682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": "-4047000.0",
+          "expected": "-4047000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "199682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "-4047000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "199682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "-4047000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-latest_shift",
+    "fault": "unit_error",
+    "verification_reasons": {
+      "latest_ytd": "amount_or_unit"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "-553064500000",
+          "expected": "199682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": "-553268229000.0",
+          "expected": "-4047000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "199682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "-4047000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "199682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "-4047000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-latest_shift",
+    "fault": "wrong_year_citation",
+    "verification_reasons": {
+      "prior_ytd": "scope_period_or_vintage"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "199682000",
+          "expected": "199682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-4047000.0",
+          "expected": "-4047000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "199682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "-4047000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "199682000",
+          "expected": "199682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "-4047000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-latest_shift",
+    "fault": "missing_prior_operand",
+    "verification_reasons": {
+      "prior_q3": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "199682000",
+          "expected": "199682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "-4047000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "199682000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "-4047000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "199682000",
+          "expected": "199682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "-4047000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-latest_shift",
+    "fault": "arithmetic_error",
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "199682000",
+          "expected": "199682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-3047000.0",
+          "expected": "-4047000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "199682000",
+          "expected": "199682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-4047000.0",
+          "expected": "-4047000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "199682000",
+          "expected": "199682000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-4047000.0",
+          "expected": "-4047000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-missing_latest",
+    "fault": "clean",
+    "verification_reasons": {
+      "latest_ytd": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-missing_latest",
+    "fault": "common_operand_error",
+    "verification_reasons": {
+      "prior_ytd": "amount_or_unit",
+      "latest_ytd": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "198729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-missing_latest",
+    "fault": "unit_error",
+    "verification_reasons": {
+      "latest_ytd": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-missing_latest",
+    "fault": "wrong_year_citation",
+    "verification_reasons": {
+      "prior_ytd": "scope_period_or_vintage",
+      "latest_ytd": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-missing_latest",
+    "fault": "missing_prior_operand",
+    "verification_reasons": {
+      "prior_q3": "missing",
+      "latest_ytd": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "gitlab-missing_latest",
+    "fault": "arithmetic_error",
+    "verification_reasons": {
+      "latest_ytd": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "204729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "203729000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "203729000.0",
+          "expected": "203729000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-base",
+    "fault": "clean",
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "200545000.0",
+          "expected": "200545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "200545000.0",
+          "expected": "200545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "200545000.0",
+          "expected": "200545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-base",
+    "fault": "common_operand_error",
+    "verification_reasons": {
+      "prior_ytd": "amount_or_unit",
+      "latest_ytd": "amount_or_unit"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "191334000",
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "195545000.0",
+          "expected": "200545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "200545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "200545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-base",
+    "fault": "unit_error",
+    "verification_reasons": {
+      "latest_ytd": "amount_or_unit"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "-593060600000.0",
+          "expected": "200545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": "-593256934000.0",
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "200545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "200545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-base",
+    "fault": "wrong_year_citation",
+    "verification_reasons": {
+      "prior_ytd": "scope_period_or_vintage"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "200545000.0",
+          "expected": "200545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "200545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "200545000.0",
+          "expected": "200545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-base",
+    "fault": "missing_prior_operand",
+    "verification_reasons": {
+      "prior_q3": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "200545000.0",
+          "expected": "200545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "200545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "200545000.0",
+          "expected": "200545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-base",
+    "fault": "arithmetic_error",
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "200545000.0",
+          "expected": "200545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "5211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "200545000.0",
+          "expected": "200545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "200545000.0",
+          "expected": "200545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-common_shift",
+    "fault": "clean",
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "185334000",
+          "expected": "185334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "189545000.0",
+          "expected": "189545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "185334000",
+          "expected": "185334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "189545000.0",
+          "expected": "189545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "185334000",
+          "expected": "185334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "189545000.0",
+          "expected": "189545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-common_shift",
+    "fault": "common_operand_error",
+    "verification_reasons": {
+      "prior_ytd": "amount_or_unit",
+      "latest_ytd": "amount_or_unit"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "180334000",
+          "expected": "185334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "184545000.0",
+          "expected": "189545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "185334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "189545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "185334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "189545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-common_shift",
+    "fault": "unit_error",
+    "verification_reasons": {
+      "latest_ytd": "amount_or_unit"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "185334000",
+          "expected": "185334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "-604060600000.0",
+          "expected": "189545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": "-604245934000.0",
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "185334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "189545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "185334000",
+          "expected": "185334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "189545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-common_shift",
+    "fault": "wrong_year_citation",
+    "verification_reasons": {
+      "prior_ytd": "scope_period_or_vintage"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "185334000",
+          "expected": "185334000",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "189545000.0",
+          "expected": "189545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "185334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "189545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "185334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "189545000.0",
+          "expected": "189545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-common_shift",
+    "fault": "missing_prior_operand",
+    "verification_reasons": {
+      "prior_q3": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "185334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "189545000.0",
+          "expected": "189545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "185334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "189545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "185334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "189545000.0",
+          "expected": "189545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "raised",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-common_shift",
+    "fault": "arithmetic_error",
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "185334000",
+          "expected": "185334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "189545000.0",
+          "expected": "189545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "5211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "185334000",
+          "expected": "185334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "189545000.0",
+          "expected": "189545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "185334000",
+          "expected": "185334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "189545000.0",
+          "expected": "189545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "4211000.0",
+          "expected": "4211000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "raised",
+          "expected": "raised",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-latest_shift",
+    "fault": "clean",
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194545000.0",
+          "expected": "194545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-1789000.0",
+          "expected": "-1789000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194545000.0",
+          "expected": "194545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-1789000.0",
+          "expected": "-1789000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194545000.0",
+          "expected": "194545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-1789000.0",
+          "expected": "-1789000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-latest_shift",
+    "fault": "common_operand_error",
+    "verification_reasons": {
+      "prior_ytd": "amount_or_unit",
+      "latest_ytd": "amount_or_unit"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "191334000",
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "189545000.0",
+          "expected": "194545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": "-1789000.0",
+          "expected": "-1789000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "194545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "-1789000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "194545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "-1789000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-latest_shift",
+    "fault": "unit_error",
+    "verification_reasons": {
+      "latest_ytd": "amount_or_unit"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "-599060600000.0",
+          "expected": "194545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": "-599256934000.0",
+          "expected": "-1789000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "194545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "-1789000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "194545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "-1789000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-latest_shift",
+    "fault": "wrong_year_citation",
+    "verification_reasons": {
+      "prior_ytd": "scope_period_or_vintage"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "194545000.0",
+          "expected": "194545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-1789000.0",
+          "expected": "-1789000.0",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "194545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "-1789000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "194545000.0",
+          "expected": "194545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "-1789000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-latest_shift",
+    "fault": "missing_prior_operand",
+    "verification_reasons": {
+      "prior_q3": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "194545000.0",
+          "expected": "194545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "-1789000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": "194545000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": "-1789000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": "194545000.0",
+          "expected": "194545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": null,
+          "expected": "-1789000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": "lowered",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-latest_shift",
+    "fault": "arithmetic_error",
+    "verification_reasons": {},
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194545000.0",
+          "expected": "194545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-789000.0",
+          "expected": "-1789000.0",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194545000.0",
+          "expected": "194545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-1789000.0",
+          "expected": "-1789000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": "194545000.0",
+          "expected": "194545000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "change": {
+          "actual": "-1789000.0",
+          "expected": "-1789000.0",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "direction": {
+          "actual": "lowered",
+          "expected": "lowered",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-missing_latest",
+    "fault": "clean",
+    "verification_reasons": {
+      "latest_ytd": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-missing_latest",
+    "fault": "common_operand_error",
+    "verification_reasons": {
+      "prior_ytd": "amount_or_unit",
+      "latest_ytd": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "191334000",
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-missing_latest",
+    "fault": "unit_error",
+    "verification_reasons": {
+      "latest_ytd": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-missing_latest",
+    "fault": "wrong_year_citation",
+    "verification_reasons": {
+      "prior_ytd": "scope_period_or_vintage",
+      "latest_ytd": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-missing_latest",
+    "fault": "missing_prior_operand",
+    "verification_reasons": {
+      "prior_q3": "missing",
+      "latest_ytd": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  },
+  {
+    "case": "sprinklr-missing_latest",
+    "fault": "arithmetic_error",
+    "verification_reasons": {
+      "latest_ytd": "missing"
+    },
+    "grades": {
+      "direct": {
+        "prior_q4": {
+          "actual": "197334000",
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "all_or_nothing": {
+        "prior_q4": {
+          "actual": null,
+          "expected": "196334000",
+          "numeric_exact": false,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      },
+      "fieldwise": {
+        "prior_q4": {
+          "actual": "196334000",
+          "expected": "196334000",
+          "numeric_exact": true,
+          "grounded": true,
+          "supported_correct": true
+        },
+        "latest_q4": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "change": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        },
+        "direction": {
+          "actual": null,
+          "expected": null,
+          "numeric_exact": true,
+          "grounded": false,
+          "supported_correct": false
+        }
+      }
+    }
+  }
+]

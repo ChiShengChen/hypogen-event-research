@@ -1,0 +1,24 @@
+{
+  "sealed_at": "2026-11-23T19:05:33.431806+00:00",
+  "model_ids": {
+    "astra": "gpt-6.2-astra",
+    "claude": "claude-sonnet-4-6"
+  },
+  "per_call_seconds": 150,
+  "max_calls": 14,
+  "evidence": "same full documents, original task prompt with mechanical token indices",
+  "primary_tolerance_usd": 0,
+  "sensitivity_tolerance_usd": 100000,
+  "hashes": {
+    "research/operand-faithfulness/prevalence/audit.py": "8dd3829da35a2ec35b7cfe6c9de6c0fc0af38319632310ff2e374e92fc380395",
+    "research/operand-faithfulness/prevalence/annotations.json": "9b9d1a5f83789d356a4e5dba9e224f0cfa068a3b4ab5f165365b528c3e5a26e6",
+    "research/operand-faithfulness/prevalence/html-layout.py": "9aa59a03c0d11747f8ca69cee1ec1022e013b177ec5dea00987bc1e2eca935c9",
+    "research/operand-faithfulness/prevalence/protocol.md": "760c8ef6dd71b1e1872dbddc17fc7bf124a6beb7b58fa20ff51481c371d4d06e",
+    "research/operand-faithfulness/prevalence/test_audit.py": "5f78ac819a50ddf661401a242292bd7398bfa01469df61c7d738f69c66ca9bd4",
+    "research/operand-faithfulness/full-document/study.py": "1eb191f1b1c4ddd877119fbfd5ab8d42b333ffc32cf41a398aae51f91f5cd3d3",
+    "research/operand-faithfulness/full-document/layout.py": "981e9c6fdabbff0bee1e0d5bfc37b15a40514e267484e681f61cdcd8c52bc4ee",
+    "benchmarks/v9_equal.py": "f58527b1a9fae466f6f4790dbb5e9747fe3ae939d5688eda70a6f454aa9913aa"
+  },
+  "case_sha256": "93434efe80d496cf1b5e456ffa220888baa52f25a08e1556cb125477b0cea180",
+  "calls_sha256": "ea8dd7aca06d4fb94f3af0ea75843ce54647586f04a6e42518d36c5579e93a33"
+}
