@@ -4,7 +4,6 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
-import re
 import signal
 import subprocess
 from tempfile import TemporaryDirectory
@@ -14,6 +13,7 @@ from time import monotonic, time
 from pydantic import ValidationError
 
 from benchmarks import earnings_execution as journal, hypothesis_pilot as hypothesis
+from benchmarks import v9_equal_admission as admission
 from benchmarks.hypothesis_cases import freeze, future_disclosures
 from benchmarks.v9_equal_cases import profiles
 from research_app import adapters, research, schema
@@ -32,9 +32,8 @@ REVIEW_RULES = {
     "gate": {"complete_pairs": 8, "reviewed_pairs": 8, "v9_ready_min": 6, "v9_ready_lead": 2,
              "v9_major_error_max": "astra_count"},
 }
-RATE_LIMIT = re.compile(r'\b429\b|usage limit|rate limit', re.IGNORECASE)
-RATE_LIMIT_STDERR = re.compile(rb'\b429 (?:Too Many Requests)|(?:last status:|HTTP)\s*429\b|usage limit',
-                              re.IGNORECASE)
+FROZEN_PROTOCOL = Path("docs/v9-equal/protocol.json")
+AVAILABILITY_ERRORS = {"rate_limit", "model_capacity"}
 
 
 class Captured(Exception):
@@ -73,23 +72,27 @@ def frozen_cases():
             raise ValueError(f"{key} 和已公布的 V9 快照不一致")
         if not set(selection["anchors"]) <= {row["id"] for row in point_in_time["evidence"]}:
             raise ValueError(f"{key} 原文定位超出當時可見範圍")
-        try:
-            hypothesis.generate_harness(event, Capture())
-        except Captured as capture:
-            response_schema, instruction, context = capture.request
-        else:
-            raise ValueError("V9 沒有生成請求")
-        if any(context[field] != value for field, value in point_in_time.items()):
-            raise ValueError(f"{key} 兩組的證據與研究邊界不一致")
         cases[key] = {k: v for k, v in selection.items() if k != "event"} | {
             "input": point_in_time, "event": event.model_dump(mode="json"),
             "judge_only": future_disclosures(event),
         }
         requests[key] = {
-            "v9": make_request(response_schema, instruction, context),
+            "v9": build_v9_request(event, point_in_time),
             "astra": make_request(hypothesis.HypothesisPair, hypothesis.DIRECT_GENERATOR, point_in_time),
         }
     return cases, requests
+
+
+def build_v9_request(event, point_in_time):
+    try:
+        hypothesis.generate_harness(event, Capture())
+    except Captured as capture:
+        response_schema, instruction, context = capture.request
+    else:
+        raise ValueError("V9 沒有生成請求")
+    if any(context[field] != value for field, value in point_in_time.items()):
+        raise ValueError("兩組的證據與研究邊界不一致")
+    return make_request(response_schema, instruction, context)
 
 
 def make_request(response_schema, instruction, context):
@@ -115,14 +118,18 @@ def read_sealed(root):
     if not protocol or any(digest(value) != protocol[f"{key}_sha256"]
                            for key, value in zip(("cases", "requests"), values)):
         raise ValueError("批次的封存輸入或請求被改動")
+    if "probe_sha256" in protocol and digest(hypothesis.read(root / "probe.json")) != protocol["probe_sha256"]:
+        raise ValueError("批次的封存探針被改動")
     return values
 
 
 def seal(root):
     cases, requests = frozen_cases()
+    probe = admission.specification(cases, requests, build_v9_request, TIMEOUT)
     sources = [Path(__file__), Path(__file__).with_name("v9_equal_cases.py"),
                Path(__file__).with_name("hypothesis_cases.py"), Path(hypothesis.__file__),
-               Path(adapters.__file__), Path(research.__file__), Path(schema.__file__), Path(journal.__file__)]
+               Path(adapters.__file__), Path(research.__file__), Path(schema.__file__), Path(journal.__file__),
+               Path(admission.__file__)]
     known = {
         "generation_model": hypothesis.MODEL, "judge_model": hypothesis.JUDGE, "effort": hypothesis.EFFORT,
         "generation_calls_per_arm": 1, "judge_calls_per_pair": 2, "search": "disabled",
@@ -130,15 +137,22 @@ def seal(root):
         "hard_provider_token_cap": None, "provider_internal_retries": "由服務控制，CLI 執行上限照算。",
         "pilot": "四案八個有效生成回覆，兩組均通過各自的結構驗證。",
         "holdout": "先導 4/4 配對後啟動，八案各一次。",
-        "stop": "任何批次收到 HTTP 429 或明確用量上限即停止派發。其餘技術失敗照錄。中斷只接續未啟動的工作。先導缺配對則停止於先導。保留集未配齊則停止於生成。",
+        "stop": "服務探針通過才開正式批次。正式批次收到 HTTP 429、用量上限或模型容量錯誤即停止派發。其餘技術失敗照錄。中斷只接續未啟動的工作。先導缺配對則停止於先導。保留集未配齊則停止於生成。",
         "review": REVIEW_RULES, "judge_rubric": hypothesis.JUDGE_RULES,
         "cases_sha256": digest(cases), "requests_sha256": digest(requests),
+        "probe_sha256": digest(probe), "probe_policy": probe["policy"],
         "code_sha256": {path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in sources},
         "phase_budget_seconds": {
             "pilot": journal.budget(8, 1, TIMEOUT), "holdout": journal.budget(16, 1, TIMEOUT),
             "judge": journal.budget(24, 1, JUDGE_TIMEOUT),
         },
     }
+    frozen = hypothesis.read(FROZEN_PROTOCOL)
+    settings = ("cases_sha256", "requests_sha256", "generation_model", "judge_model", "effort",
+                "generation_calls_per_arm", "judge_calls_per_pair", "search", "generation_timeout_seconds",
+                "judge_timeout_seconds", "workers", "review", "judge_rubric")
+    if any(known[key] != frozen[key] for key in settings):
+        raise ValueError("正式案例、提示或評分設定與原版封存不符")
     manifest = root / "protocol.json"
     if manifest.exists():
         old = hypothesis.read(manifest)
@@ -149,6 +163,7 @@ def seal(root):
         raise ValueError("批次已有呼叫且缺少預註冊")
     journal.atomic(root / "cases.json", cases)
     journal.atomic(root / "requests.json", requests)
+    journal.atomic(root / "probe.json", probe)
     journal.atomic(manifest, known | {"sealed_at": journal.now()})
     return cases, requests
 
@@ -182,9 +197,9 @@ def normalize(arm, case, response):
     return {"ratings": {rating.label: rating.model_dump() for rating in ratings}}
 
 
-def read_limit(stderr, trailing):
+def read_availability(stderr, trailing):
     block = trailing + stderr.read()
-    return bool(RATE_LIMIT_STDERR.search(block)), block[-512:]
+    return admission.availability_reason(block.decode("utf-8", errors="replace")), block[-512:]
 
 
 def attempt(root, job, case, request, stop, deadline, timeout):
@@ -212,7 +227,7 @@ def attempt(root, job, case, request, stop, deadline, timeout):
     began = monotonic()
     model = hypothesis.MODEL if arm in ARMS else hypothesis.JUDGE
     stderr_path = job / "stderr.log"
-    limit_seen = False
+    stderr_reason = None
     try:
         with TemporaryDirectory(prefix="v9-equal-") as cwd, stderr_path.open("wb") as stderr:
             prompt = Path(cwd) / "stdin.txt"
@@ -229,9 +244,10 @@ def attempt(root, job, case, request, stop, deadline, timeout):
                 while process.poll() is None:
                     new_events = received[inspected:]
                     inspected += len(new_events)
-                    limit_seen, trailing = read_limit(diagnostics, trailing)
-                    if limit_seen or any(rate_event(row["event"]) for row in new_events):
-                        result = {"status": "error", "reason": "rate_limit", "error": "CLI 回報限流或用量上限"}
+                    stderr_reason, trailing = read_availability(diagnostics, trailing)
+                    if stderr_reason or any(availability_event(row["event"]) for row in new_events):
+                        journal.terminate(process)
+                        break
                     elif stop.is_set() or monotonic() >= deadline:
                         result = {"status": "interrupted", "reason": "batch_interruption"}
                     elif monotonic() - cli_started >= timeout:
@@ -241,14 +257,16 @@ def attempt(root, job, case, request, stop, deadline, timeout):
                         break
                     stop.wait(0.1)
                 reader.join()
-                limit_seen = limit_seen or read_limit(diagnostics, trailing)[0]
+                stderr_reason = stderr_reason or read_availability(diagnostics, trailing)[0]
                 result["returncode"] = process.returncode
                 if result["status"] == "completed" and process.returncode:
                     result.update(status="error", reason="cli_exit")
         result["cli_elapsed_seconds"] = round(monotonic() - cli_started, 3)
-        if limit_seen or any(rate_event(row["event"]) for row in received):
-            result.update(status="error", reason="rate_limit", error="CLI 回報限流或用量上限")
-            result["rate_limit_source"] = "stderr" if limit_seen else "events"
+        event_reason = next(filter(None, (availability_event(row["event"]) for row in received)), None)
+        if reason := stderr_reason or event_reason:
+            error = "CLI 回報模型容量不足" if reason == "model_capacity" else "CLI 回報限流或用量上限"
+            result.update(status="error", reason=reason, error=error,
+                          availability_source="stderr" if stderr_reason else "events")
         elif result["status"] == "completed":
             prohibited = {row["event"].get("item", {}).get("type") for row in received
                           if row["event"].get("type") in {"item.started", "item.completed"}} & journal.PROHIBITED
@@ -265,8 +283,9 @@ def attempt(root, job, case, request, stop, deadline, timeout):
                           usage=usage if observed else None, event_seconds=event_seconds)
 
 
-def rate_event(event):
-    return event.get("type") in {"error", "turn.failed"} and bool(RATE_LIMIT.search(json.dumps(event)))
+def availability_event(event):
+    if event.get("type") in {"error", "turn.failed"}:
+        return admission.availability_reason(json.dumps(event))
 
 
 def scoreable_pair(pair):
@@ -298,22 +317,25 @@ def stage_jobs(cases, phase):
             yield key, ARMS if int(key[-2:]) % 2 else ARMS[::-1]
 
 
+def queue_job(root, key, arm):
+    job = root / "jobs" / f"{key}-{arm}"
+    job.mkdir(parents=True, exist_ok=True)
+    (root / "calls").mkdir(exist_ok=True)
+    if not (job / "state.json").exists():
+        journal.atomic(job / "state.json", {"case": key, "call": arm, "status": "queued",
+                                              "queued_at": journal.now(), "queued_epoch": time()})
+    return job
+
+
 def run(root, cases, requests, phase, stop):
     jobs = []
     for key, arms in stage_jobs(cases, phase):
         for arm in arms:
-            job = root / "jobs" / f"{key}-{arm}"
-            job.mkdir(parents=True, exist_ok=True)
-            (root / "calls").mkdir(exist_ok=True)
-            if not (job / "state.json").exists():
-                journal.atomic(job / "state.json", {
-                    "case": key, "call": arm, "status": "queued",
-                    "queued_at": journal.now(), "queued_epoch": time(),
-                })
+            job = queue_job(root, key, arm)
             state = journal.restore(root, job)
             jobs.append((job, state))
-    if any(state.get("reason") == "rate_limit" for _, state in jobs):
-        print("批次有封存的限流停止紀錄", flush=True)
+    if any(state.get("reason") in AVAILABILITY_ERRORS for _, state in jobs):
+        print("批次有封存的服務容量停止紀錄", flush=True)
         return
     timeout = JUDGE_TIMEOUT if phase == "judge" else TIMEOUT
     pending = [(job, state) for job, state in jobs if state["status"] == "queued"]
@@ -333,8 +355,8 @@ def run(root, cases, requests, phase, stop):
         request = requests[key][arm] if phase != "judge" else judge_request(root, key, cases[key], JUDGES.index(arm) + 1)
         result = attempt(root, job, cases[key], request, stop, deadline, timeout)
         print(key, arm, result["status"], result.get("reason", ""), flush=True)
-        if result.get("reason") == "rate_limit":
-            reason = "rate_limit"
+        if result.get("reason") in AVAILABILITY_ERRORS:
+            reason = result["reason"]
             break
         if result["status"] == "queued":
             reason = "batch_deadline"
@@ -345,7 +367,7 @@ def run(root, cases, requests, phase, stop):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out", type=Path, default=OUT)
-    parser.add_argument("--phase", required=True, choices=("seal", "pilot", "holdout", "judge", "report"))
+    parser.add_argument("--phase", required=True, choices=("seal", "probe", "pilot", "holdout", "judge", "report"))
     parser.add_argument("--report-dir", type=Path)
     parser.add_argument("--ratings", type=Path, help="CSV returned by analysts, kept in the private run folder")
     args = parser.parse_args()
@@ -364,6 +386,13 @@ def main():
         if args.phase == "seal":
             print(f"Sealed {len(cases)} cases in {args.out}", flush=True)
             return
+        plan = hypothesis.read(args.out / "probe.json")
+        if args.phase == "probe":
+            if not admission.probe(args.out, plan, stop, attempt, queue_job, digest):
+                parser.exit(2, "服務探針未通過，正式批次不啟動。\n")
+            return
+        if not admission.admitted(args.out, plan, digest):
+            parser.exit(2, "服務探針未通過，正式批次不啟動。\n")
         if args.phase in {"holdout", "judge"} and not all(
             paired(args.out, key) for key, case in cases.items() if case["split"] == "pilot"
         ):

@@ -1,0 +1,66 @@
+{
+  "generation_model": "gpt-6.2-astra",
+  "judge_model": "gpt-6.2-sol",
+  "effort": "medium",
+  "generation_calls_per_arm": 1,
+  "judge_calls_per_pair": 2,
+  "search": "disabled",
+  "generation_timeout_seconds": 180,
+  "judge_timeout_seconds": 120,
+  "workers": 1,
+  "hard_provider_token_cap": null,
+  "provider_internal_retries": "由服務控制，CLI 執行上限照算。",
+  "pilot": "四案八個有效生成回覆，兩組均通過各自的結構驗證。",
+  "holdout": "先導 4/4 配對後啟動，八案各一次。",
+  "stop": "服務探針通過才開正式批次。正式批次收到 HTTP 429、用量上限或模型容量錯誤即停止派發。其餘技術失敗照錄。中斷只接續未啟動的工作。先導缺配對則停止於先導。保留集未配齊則停止於生成。",
+  "review": {
+    "criteria": [
+      "citations",
+      "mechanism",
+      "testable_prediction",
+      "invalidation"
+    ],
+    "major_error": "錯誤或無來源的關鍵事實、口徑或時點錯誤，足以改變研究結論或驗證路徑。",
+    "ready": "兩條假說可查核，四項條件皆通過且無重大錯誤，僅需一般文字編輯。",
+    "per_case": "主要評分每案一位分析師，同一人評兩組。每組列重大錯誤數，記錄完成必要修稿所需秒數。",
+    "gate": {
+      "complete_pairs": 8,
+      "reviewed_pairs": 8,
+      "v9_ready_min": 6,
+      "v9_ready_lead": 2,
+      "v9_major_error_max": "astra_count"
+    }
+  },
+  "judge_rubric": "Blindly evaluate each anonymous pair independently. Use the same strict rubric regardless of company or analytic angle, and do not reward length or presentation. Rate each dimension 0 (absent, wrong or mostly inadequate), 1 (materially partial), 2 (both candidates meet the dimension). Evidence: the cited passage genuinely supports the asserted central fact, and facts and deductions are separate. Mechanism: an explicit company-level causal chain connects the event to a meaningful operating effect; missing scale is honestly acknowledged. Prediction: an observation with a defined metric and unit where relevant, direction or threshold, accessible channel and deadline within the horizon. Invalidation: an observable contrary result for the same population, metric and period; inaccessible data and silence do not falsify. Distinctness: candidate mechanisms and diagnostic observations are meaningfully different, e.g. the second changes which evidence to collect. Do not reward having guessed a later outcome. Later disclosures are included solely to detect lookahead. Report a disqualifier only if a core factual assertion is directly contradicted by the supplied evidence, or the hypothesis presents a supplied post-cutoff disclosure as a fact already known at the cutoff. Neither an unsupported prediction nor a prediction that later came true constitutes lookahead. For each disqualifier identify candidate 1 or 2, kind, and the exact supporting excerpt ID. Use no disqualifier if the necessary counterevidence is unavailable. Provide a concise Traditional Chinese reason about the strongest limitation for each pair. Include each anonymous label exactly once.",
+  "cases_sha256": "15e68ac60e9758b98a79c916df52d26734593c119ec4e88a575635837df96eba",
+  "requests_sha256": "132ac39dd2b7a10e8fa28e597e3a4fb54c90bbda018d4982e076f9a1a53b4151",
+  "probe_sha256": "351aa17ca43b1ee4c857bda34014194f77ad936b030deaf032e306b83cb80a84",
+  "probe_policy": {
+    "attempt_ids": [
+      "P-01",
+      "P-02"
+    ],
+    "call_timeout_seconds": 180,
+    "max_wait_seconds": 360,
+    "default_wait_seconds": 30,
+    "pass": "同一 Astra medium 的單一無工具回合，V9 回覆通過結構及程式驗證。",
+    "stop": "最多兩次。僅限 429、模型容量或單次逾時可再探測；公告等待超限即停止。已啟動但中斷的探針計入額度；中斷後可完成尚未開始的已排定等待。"
+  },
+  "code_sha256": {
+    "v9_equal.py": "a29cbe97876d425c300807e6ddd60bf317c3cb94f3a27c40739e7e33d3120d42",
+    "v9_equal_cases.py": "4591e1d0e569b82a5676841cb89deafdf6fd0ba27d0856275188592efa3e71bb",
+    "hypothesis_cases.py": "a89a606f89a11ed73f18d7e762365131264318f7fb9f2d83d971759d0636ef01",
+    "hypothesis_pilot.py": "f6c5cce6f731b0c5023746074cbda75ff244339d0864fa8f50f7e1e4449cecfe",
+    "adapters.py": "081abaa8eceb78bbb9e2386074c580f18059f0e42482e9efb3147804de300083",
+    "research.py": "ac0dd28ee7baae979d250a6656a954ed50a76f5675df77d896bb88eb7b2b111a",
+    "schema.py": "5c7d25df12e4b4b2d75c794ef3a90063c54af2eb9f758b7c041c8b36f1702301",
+    "earnings_execution.py": "40e800f97ee205b6f7e9f65fa388e438a7285f0b4929e5eeb2b5520d63ce3327",
+    "v9_equal_admission.py": "7122cd8450e8d1792d6c193237a246a8a207cfb17dcd6ba86935057c06d90a7f"
+  },
+  "phase_budget_seconds": {
+    "pilot": 1580,
+    "holdout": 3100,
+    "judge": 3180
+  },
+  "sealed_at": "2026-11-23T09:05:44.873023+00:00"
+}
