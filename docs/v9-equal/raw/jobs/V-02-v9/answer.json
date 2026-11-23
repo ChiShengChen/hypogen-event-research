@@ -1,0 +1,61 @@
+{
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "FY2024 Q4 Entertainment DTC 廣告收入年增 14%，營業利益達 2.53 億美元。11 月 14 日公布的指引反映管理層對獲利改善的預期。多方假設是廣告成長延續，且新增收入高於相關增量成本。相較廣告收入持平的情境，即使 Disney+ Core 首季訂戶如預期季減，廣告仍可推升全年串流營業利益。印度 DTC 壓低比較基期，全年利益增額中可歸因於廣告的金額待查。",
+      "target": "Disney",
+      "horizon": "2025-12-31",
+      "catalyst": "在 Disney 公布 FY2025 Q1 財報時，先看 Entertainment DTC 廣告收入是否延續年增，再用全年財報核對營業利益。",
+      "prediction": "Disney FY2025 全年財報顯示，Entertainment DTC 營業利益較 FY2024 增加，於 2025-12-31 前核對。管理層指引約增 8.75 億美元，可作增幅參照。",
+      "invalidation": "截至 2025-12-31，Disney 已公布的 FY2025 全年 Entertainment DTC 營業利益相較 FY2024 持平或下降。",
+      "claim_ids": ["fact:dis-fy24:streaming", "fact:dis-fy24:fy25"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "FY2024 Q4 Experiences 營業利益年減 6%。11 月 14 日公布的指引將 FY2025 成長重心放在下半財年。空方假設是第四季的獲利疲弱延續至下半年，使全年少了指引仰賴的利益增量。相較下半年如期回升的情境，Experiences 對 Disney 的全年獲利貢獻將低於管理層預期。公司未量化下半年須貢獻多少增額。",
+      "target": "Disney",
+      "horizon": "2025-12-31",
+      "catalyst": "Disney 公布 FY2025 Q3 財報時，可首次從下半財年的部門實績檢查回升進度，全年財報則可檢驗回升幅度是否足夠。",
+      "prediction": "Disney FY2025 全年財報顯示，Experiences 營業利益相較 FY2024 的增幅低於指引下限 6%，於 2025-12-31 前核對。",
+      "invalidation": "截至 2025-12-31，Disney 已公布的 FY2025 全年 Experiences 營業利益較 FY2024 成長至少 6%。",
+      "claim_ids": ["fact:dis-fy24:experiences"]
+    }
+  ],
+  "assessment": {
+    "thesis": "Disney 的 FY2025 獲利增量可來自 Entertainment DTC 廣告成長，主要下行風險是 Experiences 下半年回升幅度不足。",
+    "key_gap": "扣除印度 DTC 比較基期影響後，廣告成長能貢獻多少新增營業利益？部門財報可驗證總增額，精確歸因仍需公司公開利益變動明細，或取得非公開的廣告收入與相關成本拆解。",
+    "next_check": "先在 Disney FY2025 Q1 財報發布時，並看 Entertainment DTC 廣告收入年增率、同口徑營業利益及 Disney+ Core 付費訂戶季變動。FY2024 全年財報於 2024-11-14 公布，依此前例，FY2025 全年部門實績可合理預期於 2025 年底前核對。",
+    "evidence_limits": [
+      {
+        "evidence_id": "dis-fy24:streaming",
+        "limit": "FY2024 Q4 廣告收入年增 14% 與 Entertainment DTC 營業利益 2.53 億美元均為實績，但無法拆出廣告的利益貢獻。合併 DTC 營業利益 3.21 億美元涵蓋範圍較廣。"
+      },
+      {
+        "evidence_id": "dis-fy24:fy25",
+        "limit": "FY2025 Entertainment DTC 營業利益約增 8.75 億美元及首季 Core 訂戶季減均為管理層預期。印度 DTC 對比較基期約有 2 億美元負面影響，其餘利益變動的來源未拆分。"
+      },
+      {
+        "evidence_id": "dis-fy24:experiences",
+        "limit": "FY2024 Q4 Experiences 營業利益 17 億美元、年減 6% 為實績。FY2025 成長 6% 至 8% 且偏下半年為指引，各季增額及回升動因未量化。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "Entertainment DTC 廣告收入年增率與同部門營業利益年變動",
+        "source_to_watch": "Disney 投資人關係網站季度財報的 Entertainment DTC 業務說明及部門損益",
+        "window": "自 FY2025 Q1 財報起，逐季與上年同期比較",
+        "impact_on_thesis": "廣告收入與部門利益同步年增，提高廣告成長帶動獲利的可信度。若廣告成長而利益下降，成本或其他業務可能抵銷增量。部門利益是代理指標，無法單獨量出廣告貢獻。",
+        "evidence_ids": ["dis-fy24:streaming", "dis-fy24:fy25"]
+      },
+      {
+        "metric": "Experiences 營業利益年增額",
+        "source_to_watch": "Disney 投資人關係網站季度及全年財報的 Experiences 部門損益",
+        "window": "FY2025 Q3 財報先查單季年變動，全年財報公布後合計 Q3、Q4 並與上年同期比較",
+        "impact_on_thesis": "若 Q3 仍年減，達成全年指引更依賴 Q4。若下半年利益年增額回升且高於上半年，則降低回升延誤的疑慮，全年增幅仍須對照 6% 下限。",
+        "evidence_ids": ["dis-fy24:experiences"]
+      }
+    ],
+    "supply_chain": [],
+    "trade_opportunities": []
+  }
+}

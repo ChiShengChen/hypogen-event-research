@@ -1,0 +1,8 @@
+{
+  "phase": "pilot",
+  "started_at": "2026-11-23T08:48:34.782430+00:00",
+  "queued": 8,
+  "budget_seconds": 1580,
+  "finished_at": "2026-11-23T08:55:07.897909+00:00",
+  "status": "interrupted"
+}

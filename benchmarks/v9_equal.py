@@ -33,6 +33,8 @@ REVIEW_RULES = {
              "v9_major_error_max": "astra_count"},
 }
 RATE_LIMIT = re.compile(r'\b429\b|usage limit|rate limit', re.IGNORECASE)
+RATE_LIMIT_STDERR = re.compile(rb'\b429 (?:Too Many Requests)|(?:last status:|HTTP)\s*429\b|usage limit',
+                              re.IGNORECASE)
 
 
 class Captured(Exception):
@@ -107,6 +109,15 @@ def digest(data):
     return hashlib.sha256(json.dumps(data, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
 
 
+def read_sealed(root):
+    protocol = hypothesis.read(root / "protocol.json")
+    values = [hypothesis.read(root / name) for name in ("cases.json", "requests.json")]
+    if not protocol or any(digest(value) != protocol[f"{key}_sha256"]
+                           for key, value in zip(("cases", "requests"), values)):
+        raise ValueError("批次的封存輸入或請求被改動")
+    return values
+
+
 def seal(root):
     cases, requests = frozen_cases()
     sources = [Path(__file__), Path(__file__).with_name("v9_equal_cases.py"),
@@ -133,11 +144,7 @@ def seal(root):
         old = hypothesis.read(manifest)
         if old != known | {"sealed_at": old["sealed_at"]}:
             raise ValueError("封存規則、資料或程式已改變，需使用新批次")
-        if digest(hypothesis.read(root / "cases.json")) != known["cases_sha256"] or digest(
-            hypothesis.read(root / "requests.json")
-        ) != known["requests_sha256"]:
-            raise ValueError("批次的封存輸入或請求被改動")
-        return cases, requests
+        return read_sealed(root)
     if (root / "calls").exists():
         raise ValueError("批次已有呼叫且缺少預註冊")
     journal.atomic(root / "cases.json", cases)
@@ -175,6 +182,11 @@ def normalize(arm, case, response):
     return {"ratings": {rating.label: rating.model_dump() for rating in ratings}}
 
 
+def read_limit(stderr, trailing):
+    block = trailing + stderr.read()
+    return bool(RATE_LIMIT_STDERR.search(block)), block[-512:]
+
+
 def attempt(root, job, case, request, stop, deadline, timeout):
     state = journal.restore(root, job)
     if state["status"] != "queued" or stop.is_set():
@@ -199,22 +211,26 @@ def attempt(root, job, case, request, stop, deadline, timeout):
     received = []
     began = monotonic()
     model = hypothesis.MODEL if arm in ARMS else hypothesis.JUDGE
+    stderr_path = job / "stderr.log"
+    limit_seen = False
     try:
-        with TemporaryDirectory(prefix="v9-equal-") as cwd, (job / "stderr.log").open("wb") as stderr:
+        with TemporaryDirectory(prefix="v9-equal-") as cwd, stderr_path.open("wb") as stderr:
             prompt = Path(cwd) / "stdin.txt"
             prompt.write_text(request["prompt"], encoding="utf-8")
             with prompt.open("rb") as stdin, subprocess.Popen(
                 launch_command(model, answer, json_schema), cwd=cwd, stdin=stdin, stdout=subprocess.PIPE,
                 stderr=stderr, text=True, encoding="utf-8", errors="replace", start_new_session=True,
-            ) as process:
+            ) as process, stderr_path.open("rb") as diagnostics:
                 cli_started = monotonic()
                 reader = Thread(target=journal.track, args=(process.stdout, job / "events.jsonl", began, received))
                 reader.start()
                 inspected = 0
+                trailing = b""
                 while process.poll() is None:
                     new_events = received[inspected:]
                     inspected += len(new_events)
-                    if any(rate_event(row["event"]) for row in new_events):
+                    limit_seen, trailing = read_limit(diagnostics, trailing)
+                    if limit_seen or any(rate_event(row["event"]) for row in new_events):
                         result = {"status": "error", "reason": "rate_limit", "error": "CLI 回報限流或用量上限"}
                     elif stop.is_set() or monotonic() >= deadline:
                         result = {"status": "interrupted", "reason": "batch_interruption"}
@@ -225,12 +241,14 @@ def attempt(root, job, case, request, stop, deadline, timeout):
                         break
                     stop.wait(0.1)
                 reader.join()
+                limit_seen = limit_seen or read_limit(diagnostics, trailing)[0]
                 result["returncode"] = process.returncode
                 if result["status"] == "completed" and process.returncode:
                     result.update(status="error", reason="cli_exit")
         result["cli_elapsed_seconds"] = round(monotonic() - cli_started, 3)
-        if any(rate_event(row["event"]) for row in received):
+        if limit_seen or any(rate_event(row["event"]) for row in received):
             result.update(status="error", reason="rate_limit", error="CLI 回報限流或用量上限")
+            result["rate_limit_source"] = "stderr" if limit_seen else "events"
         elif result["status"] == "completed":
             prohibited = {row["event"].get("item", {}).get("type") for row in received
                           if row["event"].get("type") in {"item.started", "item.completed"}} & journal.PROHIBITED
@@ -335,6 +353,13 @@ def main():
     for sig in (signal.SIGINT, signal.SIGTERM):
         signal.signal(sig, lambda *_: stop.set())
     with journal.exclusive(args.out):
+        if args.phase == "report":
+            from benchmarks.v9_equal_review import publish
+            cases, _ = read_sealed(args.out)
+            if hypothesis.read(args.out / "protocol.json")["review"] != REVIEW_RULES:
+                raise ValueError("封存的評分規則與報告程式不符")
+            publish(args.out, cases, args.report_dir or args.out / "publication", args.ratings)
+            return
         cases, requests = seal(args.out)
         if args.phase == "seal":
             print(f"Sealed {len(cases)} cases in {args.out}", flush=True)
@@ -345,10 +370,6 @@ def main():
             parser.exit(2, "先導缺少完整配對，保留集與新模型評分不啟動。\n")
         if args.phase == "judge" and not all(paired(args.out, key) for key in cases):
             parser.exit(2, "保留集缺少完整配對。\n")
-        if args.phase == "report":
-            from benchmarks.v9_equal_review import publish
-            publish(args.out, cases, args.report_dir or args.out / "publication", args.ratings)
-            return
         run(args.out, cases, requests, args.phase, stop)
         ids = [key for key, case in cases.items() if case["split"] == args.phase]
         if ids and not all(paired(args.out, key) for key in ids):

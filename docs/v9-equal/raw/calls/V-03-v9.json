@@ -1,0 +1,22 @@
+{
+  "case": "V-03",
+  "call": "v9",
+  "status": "interrupted",
+  "queued_at": "2026-11-23T08:48:34.750397+00:00",
+  "queued_epoch": 1795423714.750421,
+  "started_at": "2026-11-23T08:54:09.674317+00:00",
+  "request_sha256": "9cae2b4f178bc76c31b12165ebbc843e953ef6061e976e21d4f01bc9d646dfb3",
+  "queue_seconds": 334.918,
+  "preparation_seconds": 0.006,
+  "prompt_bytes": 8599,
+  "reason": "batch_interruption",
+  "returncode": -15,
+  "cli_elapsed_seconds": 58.198,
+  "elapsed_seconds": 58.199,
+  "usage": null,
+  "event_seconds": {
+    "thread.started": 0.195,
+    "turn.started": 1.301
+  },
+  "finished_at": "2026-11-23T08:55:07.875580+00:00"
+}

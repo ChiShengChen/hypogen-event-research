@@ -1,0 +1,81 @@
+{
+  "pilot": {
+    "planned": 4,
+    "complete_pairs": 1,
+    "human_pairs": 0,
+    "available_for_review": 1,
+    "arms": {
+      "astra": {
+        "completed": 2,
+        "started": 3,
+        "timeouts": 1,
+        "failed": 0,
+        "tokens_observed": 2,
+        "usage": {
+          "input_tokens": 30549,
+          "cached_input_tokens": 0,
+          "output_tokens": 1432,
+          "reasoning_output_tokens": 0
+        },
+        "median_completed_seconds": 29.84,
+        "ready": 0,
+        "major_errors": 0,
+        "median_edit_seconds": null
+      },
+      "v9": {
+        "completed": 2,
+        "started": 3,
+        "timeouts": 0,
+        "failed": 1,
+        "tokens_observed": 2,
+        "usage": {
+          "input_tokens": 35576,
+          "cached_input_tokens": 0,
+          "output_tokens": 3279,
+          "reasoning_output_tokens": 29
+        },
+        "median_completed_seconds": 47.22,
+        "ready": 0,
+        "major_errors": 0,
+        "median_edit_seconds": null
+      }
+    }
+  },
+  "holdout": {
+    "planned": 8,
+    "complete_pairs": 0,
+    "human_pairs": 0,
+    "available_for_review": 0,
+    "arms": {
+      "astra": {
+        "completed": 0,
+        "started": 0,
+        "timeouts": 0,
+        "failed": 0,
+        "tokens_observed": 0,
+        "usage": null,
+        "median_completed_seconds": null,
+        "ready": 0,
+        "major_errors": 0,
+        "median_edit_seconds": null
+      },
+      "v9": {
+        "completed": 0,
+        "started": 0,
+        "timeouts": 0,
+        "failed": 0,
+        "tokens_observed": 0,
+        "usage": null,
+        "median_completed_seconds": null,
+        "ready": 0,
+        "major_errors": 0,
+        "median_edit_seconds": null
+      }
+    }
+  },
+  "passed": null,
+  "model_pairs": 0,
+  "prospective_resolved": 0,
+  "calibration_pairs": 4,
+  "calibration_human_pairs": 0
+}

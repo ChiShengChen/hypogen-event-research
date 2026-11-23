@@ -1,0 +1,8 @@
+2026-11-23T08:48:34.994098Z  WARN codex_app_server::skills_watcher: failed to initialize skills file watcher: No file descriptors available (os error 24)
+2026-11-23T08:48:34.994362Z  WARN codex_app_server::fs_watch: filesystem watch manager falling back to noop core watcher: No file descriptors available (os error 24)
+2026-11-23T08:48:35.617712Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-23T08:48:35.618077Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-23T08:48:35.618366Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-23T08:48:35.640180Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-23T08:48:35.640496Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-23T08:48:39.089970Z  WARN codex_core::responses_retry: stream disconnected - retrying sampling request (1/5 in 351.999835585s)... turn_id=01a20797-c388-7020-ba50-70815fb3a064 retries=1 max_retries=5 sampling_error=Selected model is at capacity. Please try a different model.

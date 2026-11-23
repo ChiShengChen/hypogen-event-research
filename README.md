@@ -250,6 +250,27 @@ python -m benchmarks.hypothesis_pilot --head-to-head --holdout
 
 四案研究問題、封存引文、兩組原始回覆、兩次模型評分與本次重跑結果整理在 [V9 四案對照與覆核](/docs/v9-four-case-review/README.md)。另備 [分析師匿名 PDF](/docs/v9-four-case-review/analyst-review.pdf) 與 [評分表](/docs/v9-four-case-review/review-form.csv)。人工覆核者可先用匿名包評分，提交後再用公開問答核對。
 
+#### V9 等呼叫與等時限的研究首稿評測
+
+兩組保留原生成提示，共用 Astra medium、點時證據及 180 秒 CLI 上限，各一次啟動，停用搜尋。程式記錄 CLI 回報的實際詞元。先導完成 **1/4** 配對（Disney）。UPS 的純 Astra 逾時，Novo Nordisk 的 Harness 收到 HTTP 429 後依封存規則停止，Ford 保留為未啟動。八家新發行人的保留集已封存，先導門檻未通過，保留集尚未執行。
+
+| 先導組別 | 啟動／完成 | 完成回覆中位耗時 | 可得輸入／輸出詞元 |
+|---|---:|---:|---:|
+| V9 Harness | 3／2 | 47.22 秒 | 35,576／3,279（2 回合） |
+| 純 Astra | 3／2 | 29.84 秒 | 30,549／1,432（2 回合） |
+
+正式人工盲評 **0 案**，目前可送評 1 個先導配對。人工可用率、重大錯誤數與本輪優劣待正式評分。新模型評分 **0 案**，前瞻實績 **0 案**。另附四個已封存的匿名校準案。評測程式已加入 CLI `stderr` 的限流停止偵測，正式批次與修正後的測試各保留紀錄。[完整報告](docs/v9-equal/report.pdf) · [逐案 QA](docs/v9-equal/QA.md) · [匿名覆核包](docs/v9-equal/analyst-review.pdf) · [空白評分表](docs/v9-equal/review-form.csv)
+
+```bash
+python -m benchmarks.v9_equal --out output/v9-equal-new --phase seal
+python -m benchmarks.v9_equal --out output/v9-equal-new --phase pilot
+python -m benchmarks.v9_equal --out output/v9-equal-new --phase holdout
+python -m benchmarks.v9_equal --out output/v9-equal-new --phase judge
+python -m benchmarks.v9_equal --out output/v9-equal-new --phase report
+```
+
+先導配對齊全時才開啟保留集，兩階段均齊全後才啟動雙順序模型評分。用同一輸出目錄可從中斷後尚未啟動的呼叫接續。遇到限流的批次停止派發。收到人工評分後，`report` 可加 `--ratings` 匯入。匿名對照鍵留在本機輸出資料夾。 [程式、預註冊與執行帳本](docs/v9-equal/README.md)
+
 ### 盈利預測、估值與研究員覆核
 
 工作台的「ASML 盈利預測」案例提供兩季盈利、可獨立修改的情境、市場預期比較及年度本益比分析。案例重演 2024 Q3 公告當天。原始公告是實際資料，認列台數、單台收入、估值倍數與年度模型 EPS 是明列的回放假設。缺少歷史市場共識或當時股價時，報告會保留缺口。

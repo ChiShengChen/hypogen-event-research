@@ -1,0 +1,11 @@
+﻿case,code,analyst_id,citations,mechanism,testable_prediction,invalidation,major_errors,ready,edit_seconds,notes
+V-02,R2158,,,,,,,,,
+V-02,R7853,,,,,,,,,
+C-V-01,R2766,,,,,,,,,
+C-V-01,R8309,,,,,,,,,
+C-V-02,R2876,,,,,,,,,
+C-V-02,R4096,,,,,,,,,
+C-V-03,R9233,,,,,,,,,
+C-V-03,R6637,,,,,,,,,
+C-V-04,R7531,,,,,,,,,
+C-V-04,R5212,,,,,,,,,

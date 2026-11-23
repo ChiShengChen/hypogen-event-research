@@ -1,0 +1,9 @@
+{
+  "phase": "pilot",
+  "reason": "rate_limit",
+  "observed_at": "2026-11-23T08:55:07.834702+00:00",
+  "job": "V-03-v9",
+  "source": "raw/jobs/V-03-v9/stderr.log",
+  "message": "last status: 429 Too Many Requests",
+  "action": "SIGTERM to stop dispatch and preserve the active attempt"
+}

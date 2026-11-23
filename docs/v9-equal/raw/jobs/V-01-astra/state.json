@@ -1,0 +1,22 @@
+{
+  "case": "V-01",
+  "call": "astra",
+  "status": "timeout",
+  "queued_at": "2026-11-23T08:48:34.187499+00:00",
+  "queued_epoch": 1795423714.1875148,
+  "started_at": "2026-11-23T08:48:34.858717+00:00",
+  "request_sha256": "95d45b8440d703439c674c6952e0963270c3dc963e0ddbb21c87bf14fa1e8108",
+  "queue_seconds": 0.605,
+  "preparation_seconds": 0.066,
+  "prompt_bytes": 2151,
+  "reason": "per_call_deadline",
+  "returncode": -15,
+  "cli_elapsed_seconds": 180.091,
+  "elapsed_seconds": 180.092,
+  "usage": null,
+  "event_seconds": {
+    "thread.started": 0.799,
+    "turn.started": 1.374
+  },
+  "finished_at": "2026-11-23T08:51:34.951877+00:00"
+}
