@@ -12,9 +12,10 @@ from mcp.types import ToolAnnotations
 from pydantic import AwareDatetime, Field, ValidationError
 
 from . import mcp_benchmarks as benchmarks, mcp_guidance as guidance
-from .api import FullRevenueRevisionCheck, RevenueRevisionCheck, create_app, default_store
+from .api import ArchivedMemoGuidance, FullRevenueRevisionCheck, RevenueRevisionCheck, create_app, default_store
 from .hypothesis_inputs import NewsInput, OpinionInput
 from .mcp_state import ConversationState
+from .memo_export import printable, workbook
 from .schema import (
     ConsensusImport, EarningsBranch, Event, ForecastRegistration, ForecastResolution, Question, ResearchReview, Schema,
 )
@@ -23,6 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 READ_ONLY = ToolAnnotations(readOnlyHint=True)
 ReportID = Annotated[str, Field(pattern=r"^[a-f0-9]{32}$")]
 ForecastID = Annotated[str, Field(pattern=r"^[a-f0-9]{24}$")]
+MemoID = Annotated[str, Field(pattern=r"^[a-f0-9]{64}$")]
 Revision = Annotated[int, Field(ge=1, strict=True)]
 GuidanceArchive = Literal["guidance-table", "guidance-ytd"]
 ArchivePreset = Literal["v9_equal_recovery", "guidance_tables", "guidance_ytd"]
@@ -67,9 +69,9 @@ def create_server(store=None, adapter=None, *, inbox=None, jobs=None):
         "Do not invent evidence or dates. Inspect capabilities before switching modes or requesting a fresh benchmark."
     ))
 
-    async def request(method, path, *, body=None, params=None):
+    async def request(method, path, *, body=None, params=None, headers=None):
         async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://hypogen.local") as client:
-            response = await client.request(method, path, json=body, params=params)
+            response = await client.request(method, path, json=body, params=params, headers=headers)
         result = response.json()
         if response.is_error:
             detail = result.get("detail", "研究後端未完成請求。")
@@ -79,9 +81,9 @@ def create_server(store=None, adapter=None, *, inbox=None, jobs=None):
             raise ToolError(f"HTTP {response.status_code} {detail}")
         return result
 
-    async def post(tool, request_id, path, body):
+    async def post(tool, request_id, path, body, *, headers=None):
         async def action():
-            return await request("POST", path, body=body)
+            return await request("POST", path, body=body, headers=headers)
 
         return await state.once(tool, request_id, {"path": path, "body": body}, action)
 
@@ -200,6 +202,42 @@ def create_server(store=None, adapter=None, *, inbox=None, jobs=None):
     async def earnings_get(report_id: ReportID, revision: Revision) -> dict[str, Any]:
         """Read the saved forecasts, financial branches, resolutions and reviews for this report revision."""
         return await request("GET", revision_path(report_id, revision) + "/earnings")
+
+    @mcp.tool()
+    async def revision_memo_create(report_id: ReportID, revision: Revision, request_id: str,
+                                   period_end: date | None = None, baseline_revision: Revision | None = None,
+                                   quotes: RevenueRevisionCheck | None = None, filing: FilingInput | None = None,
+                                   cross_page: ArchivedMemoGuidance | None = None) -> dict[str, Any]:
+        """Freeze an analyst earnings revision memo with optional validated guidance from a quote or attached HTML."""
+        payload = {"period_end": period_end.isoformat() if period_end else None, "baseline_revision": baseline_revision,
+                   "quotes": serial(quotes) if quotes else None, "filing": None,
+                   "cross_page": serial(cross_page) if cross_page else None}
+        if filing:
+            data = serial(filing)
+            attachment_id = data.pop("attachment_id")
+            payload["filing"] = data | {"html": state.attachment_text(attachment_id)}
+        path = revision_path(report_id, revision) + "/revision-memos"
+        token = os.getenv("RESEARCH_MEMO_AUTHOR_TOKEN")
+        return await post("revision_memo_create", request_id, path, payload,
+                          headers={"Authorization": "Bearer " + token} if token else None)
+
+    @mcp.tool(annotations=READ_ONLY)
+    async def revision_memo_get(report_id: ReportID, revision: Revision, memo_id: MemoID) -> dict[str, Any]:
+        """Read a frozen memo, its verified review status, and real versus replay forecast outcomes."""
+        path = revision_path(report_id, revision) + f"/revision-memos/{memo_id}"
+        return await request("GET", path)
+
+    @mcp.tool()
+    async def revision_memo_export(report_id: ReportID, revision: Revision, memo_id: MemoID) -> dict[str, Any]:
+        """Save the frozen memo's one-page HTML and editable Excel workbook to the local export folder."""
+        memo = (await revision_memo_get(report_id, revision, memo_id))["memo"]
+        directory = ROOT / "output/revision-memos" / memo_id
+        directory.mkdir(parents=True, exist_ok=True)
+        html = directory / "revision-memo.html"
+        xlsx = directory / "revision-memo.xlsx"
+        html.write_text(printable(memo), encoding="utf-8")
+        xlsx.write_bytes(workbook(memo))
+        return {"memo_id": memo_id, "html": str(html), "xlsx": str(xlsx)}
 
     @mcp.tool()
     async def earnings_branch(report_id: ReportID, scenario: EarningsBranch, request_id: str) -> dict[str, Any]:

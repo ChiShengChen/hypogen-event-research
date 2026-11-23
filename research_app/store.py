@@ -461,7 +461,8 @@ class Store:
         with self.connection() as db:
             rows = db.execute(
                 "SELECT kind, action_key, recorded_at, payload FROM earnings_log "
-                "WHERE report_id=? AND revision=? ORDER BY recorded_at, rowid",
+                "WHERE report_id=? AND revision=? AND kind IN ('forecast', 'resolution', 'review') "
+                "ORDER BY recorded_at, rowid",
                 (report_id, revision),
             ).fetchall()
         logs = {"forecast": {}, "resolution": {}, "review": {}}

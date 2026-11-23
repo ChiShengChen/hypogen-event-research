@@ -385,6 +385,12 @@ python -m benchmarks.v9_equal_recovery --out output/v9-equal-recovery-new --phas
 
 [事件 JSON](research_app/examples/asml-earnings.json) 可直接送到 `POST /events`。其中 `earnings_plan` 鎖定事件時點、各類基準、當次披露及季度假設。款項用原幣，毛利率用小數比例，季度 EPS 以稀釋股數重算。事件前基準及其證據必須在事件前可取得。預期差只比較同指標、期別、分部、會計口徑與幣別，取各類最近一版。
 
+#### 財報預估修正稿
+
+在 Codex 對話用 `$hypogen-earnings`，例如「使用 ASML 盈利報告的第二版，對照第一版，匯出 2024 Q4 的預估修正稿」。`revision_memo_create` 凍結一個財季的舊估、現估、點時共識與證據。附上新指引引文或完整 HTML 時，核對合格才試算到最近邊界。試算沿用現估的費用、毛利率、稅項及股數，分部配置須另填假設。跨頁封存案例可附上倒推中點和原始欄位，保存公司原始指引與倒推結果的口徑差異。`revision_memo_export` 產生單頁 HTML 與含公式的 XLSX，收入、稅項和 EPS 可重算。
+
+修正稿會列一條主要財務傳導及替代解釋。排序優先考慮有現季基準模型歸因的連動，保留可核對的公開來源和失效條件。缺少合併口徑或可比指引時，報告列出缺口。Excel 檔可供分析師試算，簽核鎖定的是系統儲存的修正稿指紋。 [API、簽核與盲評流程](docs/revision-memo.md)
+
 可提供研究員填寫的空方、基準、多方假設，也可令 `generate_drivers` 為 `true` 並傳空的 `drivers`，讓 Astra 在已凍結的資料內草擬。程式把已符合收入認列條件的台數和單台收入分開計算。年度 P/E 先用同財年季度的稅後盈利差除以年度稀釋股數，再分解盈利與倍數影響。
 
 | 操作 | API |
