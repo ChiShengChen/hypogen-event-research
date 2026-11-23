@@ -10,6 +10,7 @@ from pydantic import ValidationError
 from .business_linkage import (
     BusinessLinkageGeneration, LinkedAnswer, LinkedHypotheses, RankedBusinessLinkageGeneration, linkage_fields,
 )
+from .hypothesis_tree import TREE_PROMPT, TreeDraft
 from .scenario_research import ScenarioHypotheses, ScenarioResearchGeneration, scenario_fields
 from .schema import Answer, DetailedAnswer, DriverDraft, Hypotheses
 
@@ -232,6 +233,9 @@ class ModelAdapter:
             "Return all three cases for each quarter."
         ) + linkage_rules, context)
 
+    def branch_hypotheses(self, context):
+        return self._generate(TreeDraft, TREE_PROMPT, context)
+
     def answer(self, context, question):
         assessment = context.get("assessment", {})
         payload = {
@@ -339,7 +343,7 @@ class Live(ModelAdapter):
                         {"role": "user", "content": json.dumps(data, ensure_ascii=False)},
                     ],
                 },
-                timeout=180 if schema in (LinkedHypotheses, LinkedAnswer, ScenarioHypotheses) else 30,
+                timeout=180 if schema in (LinkedHypotheses, LinkedAnswer, ScenarioHypotheses, TreeDraft) else 30,
             )
             response.raise_for_status()
             return schema.model_validate_json(response.json()["choices"][0]["message"]["content"])
@@ -385,7 +389,7 @@ class Codex(ModelAdapter):
             + json.dumps(data, ensure_ascii=False)
         )
         timeout = self.call_timeout or (120 if search else 90)
-        if self.call_timeout is None and schema in (LinkedHypotheses, LinkedAnswer, ScenarioHypotheses):
+        if self.call_timeout is None and schema in (LinkedHypotheses, LinkedAnswer, ScenarioHypotheses, TreeDraft):
             timeout = 180
         try:
             with TemporaryDirectory(prefix="research-codex-") as directory:
