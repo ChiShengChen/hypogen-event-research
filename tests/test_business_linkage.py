@@ -5,7 +5,7 @@ from fastapi.testclient import TestClient
 
 from benchmarks.hypothesis_cases import load_cases
 from benchmarks.v9_equal import frozen_cases
-from research_app.adapters import Fixture, LinkedCodex, configured_adapter
+from research_app.adapters import Fixture, LinkedCodex, RankedCodex, configured_adapter
 from research_app.api import create_app
 from research_app.business_linkage import LinkedAnswer, LinkedHypotheses
 from research_app.discovery import collect
@@ -31,11 +31,12 @@ def ford_linkage():
     }
 
 
-class ScriptedLinkedCodex(LinkedCodex):
+class ScriptedRankedCodex(RankedCodex):
     def _generate(self, response_schema, instruction, context):
         assert "second-order business hypotheses" in instruction
+        assert "primary financially consequential transmission first" in instruction
         draft = Fixture().hypotheses(context).model_dump()
-        linkage = ford_linkage()
+        linkage = ford_linkage() | {"ranking_reason": "發布資料明列廂型車排程，先查實際轉入的工程預算。"}
         return response_schema(**draft, business_linkages=[
             linkage,
             linkage | {"affected_evidence_ids": ["missing:reference"]},
@@ -49,15 +50,18 @@ def test_linkages_publish_by_default_and_filter_unsupported_paths(tmp_path, monk
     _, event = load_cases(holdout=True)["V-04"]
     store = Store(tmp_path / "reports.sqlite3")
     previous = store.create(event, Fixture())
-    with TestClient(create_app(store, ScriptedLinkedCodex())) as client:
+    with TestClient(create_app(store, ScriptedRankedCodex())) as client:
         response = client.post("/events", json=event.model_dump(mode="json"))
         assert response.status_code == 200
         report_id = response.json()["report_id"]
         assert report_id != previous["report_id"]
         report = client.get(f"/reports/{report_id}/revisions/1").json()
-        assert report["business_linkages"] == [ford_linkage()]
+        assert report["business_linkages"] == [
+            ford_linkage() | {"ranking_reason": "發布資料明列廂型車排程，先查實際轉入的工程預算。"}
+        ]
         assert "2 條候選未通過" in report["business_linkage_gap"]
         assert "連動業務假說" in report["markdown"]
+        assert "排序理由" in report["markdown"]
         assert "商用廂型車" in report["markdown"]
         assert "ford-ev-strategy:plans" in report["markdown"]
         prior = client.get(f"/reports/{previous['report_id']}/revisions/1").json()
@@ -103,14 +107,15 @@ def test_frozen_v9_requests_do_not_change():
     assert requests == prior
 
 
-class FollowupCodex(ScriptedLinkedCodex):
+class FollowupCodex(LinkedCodex):
     def __init__(self):
         super().__init__()
         self.answer_payloads = []
 
     def _generate(self, response_schema, instruction, context):
         if response_schema is not LinkedAnswer:
-            return super()._generate(response_schema, instruction, context)
+            draft = Fixture().hypotheses(context).model_dump()
+            return response_schema(**draft, business_linkages=[ford_linkage()], business_linkage_gap=None)
         self.answer_payloads.append(context)
         refs = context.get("new_evidence_ids", [])
         linkage = ford_linkage()
