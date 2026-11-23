@@ -1,0 +1,45 @@
+paper,year,title,identifier,access,topic
+P01,2026,Look-Ahead-Bench: a Standardized Benchmark of Look-ahead Bias in Point-in-Time LLMs for Finance,arXiv:2601.13770,full text,B look-ahead/temporal leakage
+P10,2026,How Well Do LLMs Perform in Peer Review? Evidence from Finance and Accounting,arXiv:2610.18435,full text,C LLM-as-judge reliability
+P17,2025,Pitfalls in Evaluating Language Model Forecasters,arXiv:2506.00723,full text,D prospective vs retrospective eval
+P26,2026,"What survives honest evaluation? Leakage-safe, search-aware assessment of LLM-driven trading strategy discovery",arXiv:2608.27734,full text,E hypothesis/idea generation eval
+P34,2026,Signal or Noise in Multi-Agent LLM-based Stock Recommendations?,arXiv:2604.17327,full text,A harness/financial research agent eval
+P45,2024,Financial Statement Analysis with Large Language Models,arXiv:2407.17866,abstract only,A harness/financial research agent eval
+P77,2025,Finance Agent Benchmark: Benchmarking LLMs on Real-world Financial Research Tasks,arXiv:2508.00828,full text,A harness/financial research agent eval
+P84,2026,"Can You Trust Your Finance Agent? Drift, Diagnosis and Auditable Intervention on One Shipped Financial Research Agent",arXiv:2611.17939,full text,A harness/financial research agent eval
+P94,2025,"Proﬁt Mirage: Revisiting Information Leak-age in LLM-based Financial Agents, 2025b",arXiv:2510.07920,full text,B look-ahead/temporal leakage
+P116,2024,ForecastBench: A Dynamic Benchmark of AI Forecasting Capabilities,arXiv:2409.19839,full text,D prospective vs retrospective eval
+P125,2026,FinDeepForecast: A Live Multi-Agent System for Benchmarking Deep Research Agents in Financial Forecasting,arXiv:2601.05039,full text,D prospective vs retrospective eval
+P132,2025,Bench to the Future: A Pastcasting Benchmark for Forecasting Agents,arXiv:2506.21558,full text,D prospective vs retrospective eval
+P137,2026,Simulated Ignorance Fails: A Systematic Study of LLM Behaviors on Forecasting Problems Before Model Knowledge Cutoff,arXiv:2601.13717,full text,B look-ahead/temporal leakage
+P304,2026,"Hard to Fool: A Bounded LLM Research Loop for Quantitative Finance, and What Two Dozen Campaigns Found",arXiv:2611.06607,full text,E hypothesis/idea generation eval
+P309,2024,Self-Preference Bias in LLM-as-a-Judge,doi:10.48550/arxiv.2410.21819,full text,C LLM-as-judge reliability
+P313,2025,Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge,doi:10.18653/v1/2025.ijcnlp-long.18,full text,C LLM-as-judge reliability
+P320,2026,Preference Leakage: A Contamination Problem in LLM-as-a-judge,doi:10.48550/arxiv.2502.01534,full text,C LLM-as-judge reliability
+P334,2025,Can LLMs Generate Novel Research Ideas? A Large-Scale Human Study with 100+ NLP Researchers,arXiv:2409.04109,full text,E hypothesis/idea generation eval
+P335,2026,The Ideation-Execution Gap: Execution Outcomes of LLM-Generated versus Human Research Ideas,arXiv:2506.20803,full text,E hypothesis/idea generation eval
+P341,2026,HindSight: Evaluating LLM-Generated Research Ideas via Future Impact,doi:10.48550/arxiv.2603.15164,full text,E hypothesis/idea generation eval
+P343,2026,"Old Ideas, Novel Problems: The Instability of LLM-Based Novelty Evaluation",doi:10.48550/arxiv.2610.02022,full text,C LLM-as-judge reliability
+P378,2026,EPSBench: Benchmarking LLM Agents for Earnings Forecasting,arXiv:2610.38293,full text,A harness/financial research agent eval
+P386,2025,The Memorization Problem: Can We Trust LLMs' Economic Forecasts?,arXiv:2504.14765,full text,B look-ahead/temporal leakage
+P392,2025,Can Prompts Rewind Time for LLMs? Evaluating the Effectiveness of Prompted Knowledge Cutoffs,doi:10.18653/v1/2025.emnlp-main.1049,full text,B look-ahead/temporal leakage
+P563,2024,Lookahead Bias in Pretrained Language Models,doi:10.2139/ssrn.4754678,abstract only,B look-ahead/temporal leakage
+P575,2026,The Only Edge Was Memorized in Training: LLM Trading Agents Around Earnings and Bad News,arXiv:2611.22177,full text,B look-ahead/temporal leakage
+P585,2026,"Temporal Leakage in LLM Backtesting: Measurement, Validation, and Adjusted Scores",arXiv:2608.02985,full text,B look-ahead/temporal leakage
+P627,2026,"Short Windows, Unmodelled Costs, Unknown Cutoffs: A Pre-Registered Evidence Audit of 91 LLM Trading Papers",arXiv:2611.18934,full text,B look-ahead/temporal leakage
+P665,2026,Reliable Evaluation of AI Agents for Investment Research: A Framework for Performance and Validity Assessment,arXiv:2611.22338,full text,A harness/financial research agent eval
+P667,2026,BuySideFlow: A Point-in-Time Benchmark for LLM Agents in Investment Research,arXiv:2611.12966,full text,B look-ahead/temporal leakage
+P671,2026,kw-bench: Breaking Frontier Harnesses on Real-World Tasks,arXiv:2610.36405,full text,A harness/financial research agent eval
+P682,2026,FrontierFinance: A Challenging Benchmark for Measuring Frontier Intelligence of Finance Agents,arXiv:2608.11683,full text,A harness/financial research agent eval
+P692,2026,Frontier Financial Judgement: Can agents tell what might move a stock?,arXiv:2607.20645,full text,A harness/financial research agent eval
+P872,2026,Temporal Leakage in Search-Engine Date-Filtered Web Retrieval: A Case Study from Retrospective Forecasting,arXiv:2602.00758,full text,B look-ahead/temporal leakage
+P1183,2026,Better Deck or Different Judge? Evaluating Agentic Harness Gains in Corporate and Investment Banking,arXiv:2609.39958,full text,A harness gains vs judge (banking)
+P1188,2026,"The Harness Is the Model: Agent Scaffolding Changes a Fixed LLM's Compliance with Banking Conduct Rules, Unevenly Across Models",arXiv:2611.06116,full text,A harness changes fixed LLM behaviour
+P1197,2026,Do LLM Judges Agree with Humans? Evaluating Financial Commentaries from Material Facts,doi:10.5753/stil.2026.26484,full text,C LLM judge vs human on financial commentary
+P1224,2026,Point-in-Time Audit Before Alpha: Public-Archive Availability and a Negative Matched-Budget Study on BTC Perpetual Futures,doi:10.48550/arxiv.2608.25348,full text,B PiT audit + matched-budget negative study
+P1270,2026,FinSkillBench: Evaluating AI Agents and Domain Skills for Investment Management,arXiv:2608.18099,full text,A agent+domain skills for investment mgmt
+P1312,2026,Stop Comparing LLM Agents Without Disclosing the Harness,doi:10.20944/preprints202605.0711.v1,full text,A harness disclosure in agent comparisons
+P1323,2026,Finding the Right Fit: Model-Harness Interactions across Agent Tasks,doi:10.48550/arxiv.2610.00917,full text,A model-harness interactions
+P1334,2025,The Alternative Annotator Test for LLM-as-a-Judge: How to Statistically Justify Replacing Human Annotators with LLMs,doi:10.18653/v1/2025.acl-long.782,full text,C statistical test for replacing humans with LLM judge
+P1343,2026,Preliminary Study on LLM-as-a-Judge Evaluation of Causal Mechanism Explanations in Financial News and its Bias Analysis,doi:10.18653/2026.finnlp-1.39,full text,C LLM judge on causal mechanism explanations (fin news)
+P1352,2025,Limits to scalable evaluation at the frontier: LLM as Judge won't beat twice the data,doi:10.48550/arxiv.2410.13341,full text,C limits of LLM-as-judge at frontier
