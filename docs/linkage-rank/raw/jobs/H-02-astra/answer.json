@@ -1,0 +1,143 @@
+{
+  "business_linkages": [
+    {
+      "linked_stance": "bull",
+      "scope": "counterparty",
+      "origin_business": "HP OmniBook X AI PC 與 HP EliteBook Ultra G1q AI PC",
+      "origin_evidence_ids": ["hp-release:hp"],
+      "affected_company": "Qualcomm",
+      "affected_business": "用於筆電的 Snapdragon X Elite 處理器",
+      "affected_evidence_ids": ["hp-release:original", "hp-release:rival"],
+      "mechanism": "兩款 HP 筆電均採用 X Elite。若終端銷售帶動 HP 追加生產，且先前備料不足以支應，新增處理器採購可帶動 Qualcomm 營收。",
+      "baseline": "截至 2024-05-20，公告確認兩款機型採用 X Elite。HP 的初期備料量、實際預購量與晶片採購金額均未知。",
+      "condition": "HP 因這兩款機型的終端需求而追加生產，並為此新增 X Elite 採購。",
+      "financial_effect": "相對於僅供應首批備貨的情境，Qualcomm 對 HP 的 X Elite 銷售收入可望增加。現有資料無法估計金額或對整體獲利的影響。",
+      "alternative_explanation": "即使 Qualcomm 的 X 系列銷售成長，也可能來自 Lenovo 等其他製造商，或來自首批備貨。",
+      "metric": "可歸屬於這兩款 HP 機型的 X Elite 追加採購量或金額",
+      "observation_period": "2024-05-21 至 2025-06-30",
+      "public_source": "追蹤 HP 與 Qualcomm 的財報、法說會及產品業務公告，查找明確指向這兩款機型的補單說明。",
+      "deadline": "2025-06-30",
+      "prediction": "若上述條件成立，至研究期限可望看到至少一次可歸屬於 HP 這兩款機型的 X Elite 補單跡象。",
+      "invalidation": "若公司確認初期備料足以支應整段期間的生產，則追加採購假說失效。若僅有 X 系列總銷售數據，則歸因仍待驗證。"
+    }
+  ],
+  "business_linkage_gap": "平台公告可連結 HP 機型與 Qualcomm 處理器，但缺少分機型銷量、處理器採購量及單價，無法估算雙方營收影響。資料也未揭露 HP 其他業務與這兩款電腦的連帶收入。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "若兩款新品吸引原本不會購買 HP 筆電的客戶，新增銷量可提高 HP 筆電營收。若主要由既有客戶轉購，營收增益則取決於新舊機型的實際成交價差。",
+      "target": "HP Inc. 筆電營收",
+      "horizon": "2025-06-30",
+      "catalyst": "HP 公布分機型銷售及新增客戶資料，或說明新品對筆電銷量與平均售價的貢獻。",
+      "prediction": "至研究期限，若新品帶來增量需求，HP 的公開說明應可將部分筆電銷量或營收增幅歸因於這兩款機型。",
+      "invalidation": "若 HP 確認新品銷售僅取代既有機型，且實際成交價未提高，則此營收增益假說失效。",
+      "claim_ids": ["hp-release:hp", "hp-release:channel"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "Lenovo 同場提供 Yoga Slim 7x 與 ThinkPad T14s Gen 6。若通路折價使 HP 兩款新品的實際成交價下降，且成本降幅不足以抵銷價差，HP 的單機毛利將受壓。",
+      "target": "HP Inc. 兩款 Copilot+ 筆電的單機毛利",
+      "horizon": "2025-06-30",
+      "catalyst": "同市場、相近規格的 HP 與 Lenovo 機型出現持續性價差，且 HP 說明促銷對獲利的影響。",
+      "prediction": "若價格競爭成立，HP 新品在首批促銷結束後仍需折價，並可在公司揭露中找到折價侵蝕單機毛利的證據。",
+      "invalidation": "若 HP 維持成交價，或成本下降足以抵銷折價且單機毛利持穩，則此毛利下行情境失效。",
+      "claim_ids": ["hp-release:hp", "hp-release:rival"]
+    },
+    {
+      "stance": "wait",
+      "mechanism": "公告確認 HP 取得首批產品席位，但預購通路沒有揭露各品牌的實際訂單，且消費者可選擇其他品牌。現階段缺乏調整 HP 獲利預估的依據。",
+      "target": "HP Inc. 筆電業務獲利預估",
+      "horizon": "2025-06-30",
+      "catalyst": "HP 首次提供可將終端銷售、成交價或毛利變化歸因於兩款新品的公開資料。",
+      "prediction": "若後續仍僅披露上架通路或整體平台出貨，至研究期限仍無法可靠判定事件對 HP 獲利的方向。",
+      "invalidation": "若可核對的銷售及獲利資料足以辨識新品對 HP 的淨貢獻，即可結束觀望並重估。",
+      "claim_ids": ["hp-release:hp", "hp-release:channel", "hp-release:rival"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024-05-20，對 HP Inc. 維持觀望。Microsoft 公告確認 OmniBook X AI PC 與 EliteBook Ultra G1q AI PC 均採用 Snapdragon X Elite。這讓 HP 有機會取得首批 Copilot+ PC 需求，但同場已有 Lenovo 等品牌競爭，公告亦未揭露 HP 的實際預購量。現有資料不足以支持調升或調降獲利預估。",
+    "key_gap": "最影響判斷的是兩款新品為 HP 帶來多少新增銷售，以及每台能保留多少毛利。即使取得新品銷量，仍需估算其中有多少來自既有 HP 機型的轉購。",
+    "next_check": "優先查看 HP 發表後首次談及兩款新品的業績公告或法說會，記錄數字所指的是預購、出貨還是終端銷售，再核對公司是否說明新增客戶、成交價或毛利貢獻。",
+    "evidence_limits": [
+      {
+        "evidence_id": "hp-release:channel",
+        "limit": "列出預購管道，未提供各品牌或機型的訂單、取消量與終端銷量。"
+      },
+      {
+        "evidence_id": "hp-release:hp",
+        "limit": "可核對 HP 機型及處理器配置，無法由此推算銷量、價格或毛利。"
+      },
+      {
+        "evidence_id": "hp-release:original",
+        "limit": "英文片段與中文摘要來自同一篇 Microsoft 公告，可核對產品名稱，但兩段僅算一個來源。"
+      },
+      {
+        "evidence_id": "hp-release:rival",
+        "limit": "可確認 Lenovo 等品牌參與首批發表。資料未提供相對售價、市占或競品分流量，也未將每款 Lenovo 機型逐一對應至 X Elite 或 X Plus。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "兩款 HP 新品的終端銷量，以及 HP 揭露的新增客戶或既有機型轉購情形",
+        "source_to_watch": "HP 業績公告、法說會及具名通路商的分機型銷售揭露",
+        "window": "自發表後首次銷售更新至 2025-06-30",
+        "impact_on_thesis": "能將新品銷售連結至 HP 整體新增需求，才支持營收上行情境。只有首批出貨量時，仍須等待終端銷售資料。",
+        "evidence_ids": ["hp-release:channel", "hp-release:hp"]
+      },
+      {
+        "metric": "相同市場、相近規格下，HP 與 Lenovo 機型的公開售價、促銷持續時間及 HP 揭露的毛利影響",
+        "source_to_watch": "兩家公司官網、共同零售通路的報價紀錄及 HP 法說會",
+        "window": "自首次可比報價至 2025-06-30",
+        "impact_on_thesis": "持續折價可提示價格壓力。若 HP 同時確認促銷壓低毛利，才支持獲利下行情境。",
+        "evidence_ids": ["hp-release:hp", "hp-release:rival"]
+      },
+      {
+        "metric": "可歸屬於 HP 兩款機型的 X Elite 補單量或補單說明",
+        "source_to_watch": "HP 與 Qualcomm 財報、法說會及業務公告",
+        "window": "2024-05-21 至 2025-06-30",
+        "impact_on_thesis": "因終端銷售而追加採購，可支持需求延續及上游營收受益的假說。若僅披露全平台數字，HP 的貢獻仍未知。",
+        "evidence_ids": ["hp-release:original", "hp-release:rival"]
+      }
+    ],
+    "supply_chain": [
+      {
+        "company": "Qualcomm",
+        "role": "upstream",
+        "status": "disclosed_relationship",
+        "product_scope": "Snapdragon X Elite 筆電處理器",
+        "relationship": "平台公告明列兩款 HP 機型使用 X Elite，直接採購方與合約條款未知。",
+        "transmission": "若 HP 因新品售出而追加生產並採購處理器，Qualcomm 可取得後續晶片收入。",
+        "materiality": "缺少數量、晶片單價及 Qualcomm 相關業務收入基準，無法量化。",
+        "public_check": "核對雙方是否披露可歸因於 HP 的 X Elite 補單。",
+        "gap": "首批備貨與後續補單的規模未知。",
+        "evidence_ids": ["hp-release:hp", "hp-release:rival"]
+      },
+      {
+        "company": "Lenovo",
+        "role": "alternative",
+        "status": "comparable_only",
+        "product_scope": "Yoga Slim 7x 與 ThinkPad T14s Gen 6",
+        "relationship": "同場發表 Copilot+ 筆電，可作為 HP 新品的競爭比較對象。",
+        "transmission": "同市場的選購與促銷競爭可能影響 HP 新品銷量及成交價。",
+        "materiality": "缺少重疊市場的價格與銷售資料，無法估算分流程度。",
+        "public_check": "追蹤同地區、相近規格及相同日期的通路價格與銷售揭露。",
+        "gap": "消費者替代率及品牌間實際銷量差距未知。",
+        "evidence_ids": ["hp-release:hp", "hp-release:rival"]
+      }
+    ],
+    "trade_opportunities": [
+      {
+        "company": "HP Inc.",
+        "direction": "watch",
+        "earnings_path": "淨新增銷量或較高成交價可提高營收。獲利能否同步增加，取決於產品成本及促銷折讓。",
+        "catalyst": "截至 2025-06-30 的 HP 業績更新首次量化這兩款新品的銷售或利潤貢獻。",
+        "trigger": "若 HP 可將淨新增銷量與正毛利貢獻歸因於新品，轉向評估多方情境。若公司確認競爭折價侵蝕毛利，則評估空方情境。",
+        "invalidation": "若後續資料僅涵蓋平台總出貨或 HP 合計營收，則無法據此建立事件驅動部位。",
+        "evidence_gap": "缺少分機型銷量、轉購比例、實際成交價與毛利。所附資料亦未提供上市代號佐證。",
+        "ticker": null,
+        "listing_evidence_id": null,
+        "evidence_ids": ["hp-release:hp", "hp-release:channel", "hp-release:rival"]
+      }
+    ]
+  }
+}

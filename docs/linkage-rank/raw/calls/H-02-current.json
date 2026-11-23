@@ -1,0 +1,36 @@
+{
+  "case": "H-02",
+  "call": "current",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:26:08.128718+00:00",
+  "queued_epoch": 1795433168.1287313,
+  "started_at": "2026-11-23T11:26:08.144471+00:00",
+  "request_sha256": "6a44a0fdedf43e87a79cfea18f34a6a1305e7a11a2076be062079f0e42eb4a15",
+  "queue_seconds": 0.01,
+  "preparation_seconds": 0.006,
+  "prompt_bytes": 12130,
+  "returncode": 0,
+  "cli_elapsed_seconds": 78.226,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "平台公告確認兩款 HP 電腦採用 Snapdragon X Elite。零售頁可覆核整機是否開賣，但要檢驗開賣是否帶動 Qualcomm 新增晶片營收，仍需 HP 追加採購及 Qualcomm 交付的證據。現有資料也未指出 HP 為新品調整了哪一條既有產品線的預算、產能或通路配置。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "平台公告確認兩款 HP 電腦採用 Snapdragon X Elite。零售頁可覆核整機是否開賣，但要檢驗開賣是否帶動 Qualcomm 新增晶片營收，仍需 HP 追加採購及 Qualcomm 交付的證據。現有資料也未指出 HP 為新品調整了哪一條既有產品線的預算、產能或通路配置。"
+  },
+  "elapsed_seconds": 78.228,
+  "usage": {
+    "input_tokens": 18731,
+    "cached_input_tokens": 0,
+    "output_tokens": 2780,
+    "reasoning_output_tokens": 57
+  },
+  "event_seconds": {
+    "thread.started": 0.788,
+    "turn.started": 1.307,
+    "item.completed": 77.698,
+    "turn.completed": 77.71
+  },
+  "finished_at": "2026-11-23T11:27:26.374470+00:00"
+}

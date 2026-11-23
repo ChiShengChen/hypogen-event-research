@@ -1,0 +1,92 @@
+{
+  "business_linkages": [
+    {
+      "linked_stance": "bear",
+      "scope": "counterparty",
+      "origin_business": "電動車及移動服務",
+      "origin_evidence_ids": ["sony-release:deal"],
+      "affected_company": "Honda Motor Co., Ltd.",
+      "affected_business": "Sony Honda Mobility Inc.",
+      "affected_evidence_ids": ["sony-release:deal", "sony-release:allocation", "sony-release:original"],
+      "mechanism": "合資案若獲核准並按原案出資，Honda 對合資公司的投資資本將增加。Honda 實際出資也是雙方開始承擔本案資本需求的直接證據。",
+      "baseline": "簽約時合資公司仍待成立。若無此案，Honda 無須為本案投入成立資本。",
+      "condition": "雙方完成設立，Honda 按擬定資本額與持股比例實際出資。",
+      "financial_effect": "100 億日圓擬定資本乘以 50% 持股，對應 Honda 擬出資 50 億日圓。現金流出取決於繳付方式與時點，投資損益另取決於合資營運。",
+      "alternative_explanation": "Honda 整體投資支出也會隨其他車輛專案變動。須以點名合資公司的實繳金額辨識本案。",
+      "metric": "Honda 對 Sony Honda Mobility Inc. 的成立出資實繳額（日圓）",
+      "observation_period": "2022-06-16 簽約後至 2025-12-31，追蹤設立及成立出資公告。",
+      "public_source": "Honda 官方新聞室的合資設立或出資完成公告，以及 Honda 已公布的合資投資附註。",
+      "deadline": "2025-12-31",
+      "prediction": "若按原案執行，期限內可核實 Honda 成立出資實繳額達 50 億日圓。",
+      "invalidation": "同期公開文件確認 Honda 最終成立出資實繳額低於 50 億日圓，或確認撤案且實繳為零。僅重述持股比例則仍待核實。",
+      "ranking_reason": "雙方已簽約，原案可推算各方出資規模，具名實繳披露也最能排除 Honda 其他投資的影響。"
+    },
+    {
+      "linked_stance": "bull",
+      "scope": "counterparty",
+      "origin_business": "電動車",
+      "origin_evidence_ids": ["sony-release:deal"],
+      "affected_company": "Honda Motor Co., Ltd.",
+      "affected_business": "售後服務",
+      "affected_evidence_ids": ["sony-release:operations", "sony-release:deal"],
+      "mechanism": "若合資公司推出電動車並指定 Honda 承接售後服務，Honda 可取得原本不存在的合資車款服務客源，也能為 Sony 的商業化路徑補上交車後支援。",
+      "baseline": "簽約時僅提出運用 Honda 售後服務能力。無此案時，Honda 沒有該合資車款的服務客源。",
+      "condition": "合資公司須實際選定 Honda，並開放車主使用其服務。服務收入另須有可收費案件或合約給付。",
+      "financial_effect": "承接服務可增加 Honda 售後收入機會。缺交車量、服務單價、保固給付條款及據點成本，無法估算利潤。",
+      "alternative_explanation": "Honda 既有車款也可帶動服務據點擴張。辨識依據是服務公告同時列出合資車款、Honda 承辦角色與啟用範圍。",
+      "metric": "合資車款已啟用售後服務的範圍中，是否至少有一個市場由 Honda 承辦",
+      "observation_period": "2025 年預定開售窗口至 2025-12-31，查閱已公布的車主服務安排。",
+      "public_source": "Honda 官方新聞室及合資公司公開的上市與車主服務說明。",
+      "deadline": "2025-12-31",
+      "prediction": "至少一個市場公開啟用由 Honda 承辦的合資車款售後服務。",
+      "invalidation": "截至期限，公開服務安排確認所有已啟用市場均由其他業者承辦，或官方確認所有市場的售後服務均延至 2026 年以後啟用。",
+      "ranking_reason": "公告明列 Honda 的售後能力，車主服務安排可驗證實際分工，但收入仍取決於交車與收費條件，故列第二。"
+    }
+  ],
+  "business_linkage_gap": "Sony 的影像、感測、網路及娛樂技術尚缺具名採用項目、資源移轉、授權價格或分部歸屬。現有資料無法判定哪個既有事業取得增量收入或承擔排擠成本。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "簽約使 Sony 有機會透過合資公司結合自身技術與 Honda 的車輛開發、製造能力。若完成整合並開售，相較無此案，Sony 將取得一條透過合資公司銷售電動車的管道。集團獲利幅度仍缺交車量、單車經濟效益及會計認列依據。",
+      "target": "Sony Group",
+      "horizon": "2025-12-31",
+      "catalyst": "雙方在 2022-06-16 簽約公告中預計 2025 年開始銷售。於該年度追蹤 Sony、Honda 或合資公司的正式開售公告。",
+      "prediction": "截至 2025-12-31，至少一個市場正式開放合資電動車銷售，較簽約時仍待設立與開售的狀態前進。概念車展示或預約登記不足以驗證開售，開售也須與訂單、交車及收入認列分別核對。",
+      "invalidation": "Sony、Honda 或合資公司於同一窗口確認所有市場的首次正式銷售延至 2025-12-31 之後，或確認取消上市。",
+      "claim_ids": ["fact:sony-release:deal", "fact:sony-release:operations", "fact:sony-release:allocation"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "即使電動車如期開售，Sony 仍可能先承擔成立出資。相較無此案，按原案繳資將使約 50 億日圓資本投入合資事業，至回收前占用資金。出資本身不構成當期費用，現金影響取決於出資形式。",
+      "target": "Sony Group",
+      "horizon": "2025-12-31",
+      "catalyst": "2022-06-16 簽約後的核准、設立及繳資是資本占用的觸發點。自原預計 2022 年設立窗口起，查雙方具名出資公告與 Sony 已公布的投資附註。",
+      "prediction": "截至 2025-12-31，若依原案完成繳資，Sony 對本案的成立出資實繳額將達 50 億日圓，基準為擬定資本 100 億日圓的 50%。",
+      "invalidation": "同期間具名披露確認 Sony 最終成立出資實繳額低於 50 億日圓，或確認撤案且實繳為零。若僅披露設立或股比，實繳額仍待查。",
+      "claim_ids": ["fact:sony-release:deal", "fact:sony-release:allocation", "fact:sony-release:original"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2022-06-16，Sony 已簽署合資協議，若能運用 Honda 的車輛開發與製造能力如期開售，將取得新的電動車銷售管道，同時須承擔合資出資。",
+    "key_gap": "合資公司能否把新管道轉為足以回收 Sony 投入資本的收益？現有資料缺實繳金額、交車規模、合資損益及 Sony 的認列方式。",
+    "next_check": "先查原預計 2022 年設立窗口後 Sony 或 Honda 的設立完成公告，核對核准、股比及實繳資本，再於 2025 年預定開售窗口查正式銷售條款。公開公告可驗證營運進度，若財報未單列本案，精算回收仍需非公開的合資損益與出資明細。",
+    "evidence_limits": [
+      {"evidence_id": "sony-release:deal", "limit": "證實雙方已簽署合資協議並界定電動車與移動服務範圍。設立、訂單與收入仍待後續證據。"},
+      {"evidence_id": "sony-release:allocation", "limit": "提供擬定資本、股比及 2022 年設立、2025 年開售與供應服務的前瞻時程。核准、繳資與商轉均待實現。"},
+      {"evidence_id": "sony-release:operations", "limit": "支持雙方擬投入的技術與營運能力。未載採購承諾、排他分工、部署量或服務價格。"},
+      {"evidence_id": "sony-release:original", "limit": "同一公告的原文列出雙方各 50%，可核對名稱與股比，無法據以確認實繳或損益歸屬。"}
+    ],
+    "public_checks": [
+      {"metric": "核准、設立及具名實繳資本", "source_to_watch": "Sony 或 Honda 官方設立完成公告及已發布的合資投資附註", "window": "自原預計 2022 年設立窗口起，至 2025-12-31 覆核", "impact_on_thesis": "設立完成提高商轉可信度。具名實繳金額可另行驗證資本占用，單憑設立無法量化。", "evidence_ids": ["sony-release:allocation", "sony-release:original"]},
+      {"metric": "首個正式開售市場及生效日", "source_to_watch": "Sony、Honda 或合資公司公開的上市公告與銷售條款", "window": "2025 年預定開售年度內，至 2025-12-31", "impact_on_thesis": "正式開售支持新增銷售管道，全面延期則削弱多方假設。此訊號無法量化交車、採用或認列收入。", "evidence_ids": ["sony-release:deal", "sony-release:allocation"]},
+      {"metric": "公開啟用的合資車款售後服務及承辦方", "source_to_watch": "Honda 或合資公司的車主服務說明", "window": "2025 年預定上市窗口內至年末", "impact_on_thesis": "若點名 Honda 並已開放服務，可確認營運分工落地。售後收入仍取決於實際案件與給付條件。", "evidence_ids": ["sony-release:operations", "sony-release:allocation"]}
+    ],
+    "supply_chain": [
+      {"company": "Honda Motor Co., Ltd.", "role": "upstream", "status": "candidate", "product_scope": "相對 Sony 的合資專案，Honda 可提供車體製造與車輛開發能力，並可能承接售後服務。", "relationship": "已簽約的合資夥伴，公告明列擬結合的能力，具體供應與服務合約待查。", "transmission": "合資公司若核定車型並指定 Honda 製造或承辦服務，才會增加相應工作量。", "materiality": "擬出資規模可按原案推算為 50 億日圓，製造與售後收益仍缺數量、費率及成本。", "public_check": "查 Honda 的設立公告、車型生產分工及車主服務公告是否具名並已生效。", "gap": "實際製造委託、產能配置及給付條件。", "evidence_ids": ["sony-release:deal", "sony-release:operations", "sony-release:allocation"]},
+      {"company": "Sony Honda Mobility Inc.", "role": "downstream", "status": "candidate", "product_scope": "擬議合資公司是 Sony 技術用於電動車及移動服務的潛在下游管道。", "relationship": "協議指名擬成立的合資公司，尚缺該公司向 Sony 採購或取得授權的條款。", "transmission": "設立後須選定 Sony 的具體技術並部署於上市產品，才形成可辨識的採用。", "materiality": "開售可驗證管道啟用，Sony 的供應或授權收益缺用量、定價與認列依據。", "public_check": "查合資公司設立公告及上市規格是否點名採用 Sony 的具體技術。", "gap": "採用決定、商業條款與實際部署量。", "evidence_ids": ["sony-release:deal", "sony-release:operations"]}
+    ],
+    "trade_opportunities": [
+      {"company": "Honda Motor Co., Ltd.", "direction": "watch", "earnings_path": "若取得製造或售後委託，Honda 可能增加業務收入，但出資與部署支出可能先占用現金。", "catalyst": "自預計設立窗口至 2025 年預定開售窗口，覆核 Honda 及合資公司的分工公告。", "trigger": "公告具名確認 Honda 承辦已上市合資車款的製造或已啟用的售後服務，再評估收益與資本需求。", "invalidation": "截至 2025-12-31，公開分工確認合資車款製造與售後均由其他業者承辦，或專案已取消。", "evidence_gap": "缺委託量、價格、增量成本及估值依據，營運里程碑不足以建立股價方向。", "ticker": null, "listing_evidence_id": null, "evidence_ids": ["sony-release:deal", "sony-release:operations", "sony-release:allocation"]}
+    ]
+  }
+}

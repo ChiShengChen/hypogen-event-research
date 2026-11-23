@@ -1,0 +1,36 @@
+{
+  "case": "H-08",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:50:33.198569+00:00",
+  "queued_epoch": 1795434633.1985757,
+  "started_at": "2026-11-23T11:50:33.239323+00:00",
+  "request_sha256": "5c0837f6ce2813603e25338eadc72aeb813184cd754dbaf1b794324be8cca90c",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.032,
+  "prompt_bytes": 2489,
+  "returncode": 0,
+  "cli_elapsed_seconds": 45.28,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告列出 SRS 的併表貢獻與 Home Depot 的可比銷售，但缺少收購前後同一批客戶在兩個通路的交易資料。即使 SRS 銷售增加、門市可比銷售下降，也無法據此判定 SRS 分流門市訂單，或為門市帶來交叉銷售。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告列出 SRS 的併表貢獻與 Home Depot 的可比銷售，但缺少收購前後同一批客戶在兩個通路的交易資料。即使 SRS 銷售增加、門市可比銷售下降，也無法據此判定 SRS 分流門市訂單，或為門市帶來交叉銷售。"
+  },
+  "elapsed_seconds": 45.281,
+  "usage": {
+    "input_tokens": 16944,
+    "cached_input_tokens": 15360,
+    "output_tokens": 1742,
+    "reasoning_output_tokens": 21
+  },
+  "event_seconds": {
+    "thread.started": 0.775,
+    "turn.started": 1.476,
+    "item.completed": 44.674,
+    "turn.completed": 44.699
+  },
+  "finished_at": "2026-11-23T11:51:18.521608+00:00"
+}

@@ -1,0 +1,69 @@
+{
+  "business_linkages": [
+    {
+      "linked_stance": "bull",
+      "scope": "counterparty",
+      "origin_business": "Apple 將全球銷售的 iPhone 與 Apple Watch 所需蓋板玻璃集中至 Harrodsburg 生產。",
+      "origin_evidence_ids": ["corning-release:commitment"],
+      "affected_company": "Corning",
+      "affected_business": "Harrodsburg 工廠的蓋板玻璃製造，尤其是規劃新增的智慧型手機玻璃產線。",
+      "affected_evidence_ids": ["corning-release:original", "corning-release:plant"],
+      "mechanism": "若 Apple 導入的訂單足以讓新線穩定量產，Corning 可將產線固定成本分攤至更多合格出貨件數。",
+      "baseline": "截至 2025 年 8 月 6 日，Apple 已公布整廠專供安排。資料未提供擴產前的產量、利用率或單位製造成本。",
+      "condition": "新線達到客戶要求的良率，且實際訂單足以吸收新增產能。",
+      "financial_effect": "相較於新線投產初期，穩定量產可降低每件合格產品負擔的固定成本。對合併獲利的貢獻仍取決於售價、增量成本與其他廠區的產量變化。",
+      "alternative_explanation": "Harrodsburg 出貨增加也可能來自既有訂單移轉。若其他廠區因此閒置，單廠效率改善可能伴隨其他廠區固定成本負擔上升。",
+      "metric": "新線量產狀態、合格出貨量，以及管理層對利用率或單位成本變化的說明。",
+      "observation_period": "2025 年 8 月 7 日至 2026 年 12 月 31 日公開的進度，相較於投產初期。",
+      "public_source": "Corning 財報、法說會資料及 Apple 或 Corning 的 Harrodsburg 工廠進度公告。",
+      "deadline": "2026-12-31",
+      "prediction": "若上述條件成立，預期截至期限可見新線持續出貨，並有利用率提高或單位成本下降的公開佐證。此期限採用研究觀察期。",
+      "invalidation": "若公司確認新線延後至觀察期後投產，或已穩定出貨但低良率使單位成本持續高於投產初期，則期間內的成本改善假設失效。缺少成本揭露時，該效果仍待驗證。"
+    }
+  ],
+  "business_linkage_gap": "可辨識 Apple 的採購安排與 Corning 的製造業務，仍缺原有供貨地點、移轉量及新增量。創新中心的研發項目、商業化時程與外部供應商亦待揭露。",
+  "hypotheses": [
+    {
+      "stance": "wait",
+      "mechanism": "Apple 的承諾確立了產品與生產地點，但由承諾金額推算 Corning 收益，仍需知道款項用途、採購條件及認列期間。",
+      "target": "Corning 合併營收與營業利益",
+      "horizon": "截至 2026 年 12 月 31 日",
+      "catalyst": "Corning 首次說明量產進度，並揭露本案帶來的新增訂單、成本變化或獲利貢獻。",
+      "prediction": "預期新線投產或出貨進度將先於本案可歸屬的合併獲利數字得到公開確認。在能區分移轉訂單與新增訂單前，維持原有獲利估計。",
+      "invalidation": "若公司先提供足以估算 2026 年增量營業利益的金額、期間與成本口徑，應立即依揭露重估。"
+      ,"claim_ids": ["corning-release:commitment", "corning-release:plant", "corning-release:other"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "若 Corning 先擴編製造與工程人力，客戶拉貨或良率提升卻落後，初期較少的合格出貨件數將負擔較高的人事與製造成本。",
+      "target": "Corning 在 Harrodsburg 生產蓋板玻璃的毛利",
+      "horizon": "投產準備期至 2026 年 12 月 31 日",
+      "catalyst": "公司確認已增加人力，同時下修量產進度或揭露額外投產成本。",
+      "prediction": "若擴編先於出貨且成本由 Corning 負擔，預期公司將提及投產費用或低利用率拖累當期毛利。",
+      "invalidation": "若出貨與擴編同步，且公司確認新增成本已由訂單毛利或客戶補償吸收，則此項下行假設失效。",
+      "claim_ids": ["corning-release:plant", "corning-release:original", "corning-release:other"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2025 年 8 月 6 日，Apple 的 25 億美元承諾確立了 Corning 在 Harrodsburg 生產全球 iPhone 與 Apple Watch 蓋板玻璃的安排。整廠專供提高該廠訂單來源的可見度，也讓利用率更依賴 Apple 拉貨。對 Corning 維持觀望，因為現有資料不足以將承諾額換算為截至 2026 年底的增量獲利。",
+    "key_gap": "最影響估值的是本案有多少出貨屬於 Corning 整體的淨新增量，以及新增毛利能否覆蓋投產成本。公告欠缺原有供貨基準、單價、付款用途與出貨時程。",
+    "next_check": "先查 Corning 下一次財報與法說會是否區分既有訂單移轉與新增訂單，再核對新線何時開始商業出貨。若只確認投產，僅更新工廠進度判斷。",
+    "evidence_limits": [
+      {"evidence_id": "corning-release:commitment", "limit": "25 億美元是 Apple 公布的承諾總額。其支付對象、用途拆分及 Corning 可認列收入的期間均未交代。產品範圍限於指定裝置的蓋板玻璃。"},
+      {"evidence_id": "corning-release:original", "limit": "「entire facility」支持整座工廠專供 Apple 的判讀。這句話未提供生效日、最低採購量或保證利用率。"},
+      {"evidence_id": "corning-release:plant", "limit": "50% 是 Corning 對肯塔基州製造及工程人力增幅的預期。缺少人數基期與達標日期，不能據此等比例推算產能或出貨。"},
+      {"evidence_id": "corning-release:other", "limit": "同廠設立創新中心屬研發安排，距離可計價產品仍缺商業化證據。四段資料皆出自同一份 Apple 公告，缺少獨立交叉驗證。"}
+    ],
+    "public_checks": [
+      {"metric": "25 億美元承諾中可歸屬於採購、設備或研發的金額，以及相關履約期間。", "source_to_watch": "Apple 與 Corning 後續公告及 Corning 財報附註。", "window": "自公告後下一次定期揭露起至 2026 年底。", "impact_on_thesis": "若取得採購金額與期間，可縮小收入估計範圍。設備或研發資金則須依條款另行評估。", "evidence_ids": ["corning-release:commitment", "corning-release:other"]},
+      {"metric": "新線首次商業出貨日期、出貨規模，以及公司是否區分新訂單與廠區間移轉。", "source_to_watch": "Corning 法說會、工廠公告與 Apple 製造進度更新。", "window": "2025 年 8 月 7 日至 2026 年底，逐季覆核。", "impact_on_thesis": "淨新增出貨支持上修合併營收。若主要是訂單移轉，則須從成本差異評估獲利影響。", "evidence_ids": ["corning-release:commitment", "corning-release:plant"]},
+      {"metric": "肯塔基州製造及工程人力的實際增幅、擴編與量產的先後，以及投產費用。", "source_to_watch": "Corning 工廠更新、財報與法說會。", "window": "擴編開始後至 2026 年底，以公司揭露的同口徑基期核對。", "impact_on_thesis": "若人力成本先增且出貨延後，下行風險升高。若同期出貨與良率改善，則支持固定成本分攤效果。", "evidence_ids": ["corning-release:plant", "corning-release:original"]}
+    ],
+    "supply_chain": [
+      {"company": "Apple", "role": "downstream", "status": "disclosed_relationship", "product_scope": "全球銷售的 iPhone 與 Apple Watch 所用蓋板玻璃。", "relationship": "Apple 已公布製造合作與資金承諾，Corning 將把 Harrodsburg 整廠用於服務 Apple。", "transmission": "Apple 的產品需求與拉貨節奏將影響該廠出貨及利用率。該廠的量產進度也會影響 Apple 將相關供應集中至肯塔基州的時程。", "materiality": "依公告規劃，合作涵蓋指定產品的全部蓋板玻璃，對該廠接單具有直接影響。Apple 整體成本與 Corning 合併營收的影響幅度尚無法量化。", "public_check": "追蹤雙方是否確認兩類產品的供應移轉完成，以及實際開始出貨的日期。", "gap": "缺少 Apple 採購單價、最低採購量與移轉前後成本。", "evidence_ids": ["corning-release:commitment", "corning-release:original"]}
+    ],
+    "trade_opportunities": [
+      {"company": "Corning", "direction": "watch", "earnings_path": "若商業出貨包含淨新增訂單，且增加的毛利足以吸收擴編與投產費用，合併營業利益才有上修依據。", "catalyst": "Corning 公布新線量產與獲利影響的首次可核對說明。", "trigger": "公司確認開始商業出貨，並揭露可歸屬於新增訂單或成本節省的正向營業利益貢獻。", "invalidation": "若出貨僅是既有訂單移轉且未帶來成本節省，或新增成本抵銷新增毛利，則撤回上修獲利的依據。", "evidence_gap": "付款與採購條款、出貨基準、成本分攤及估值資料均欠缺。所給資料也未列交易代號。", "ticker": null, "listing_evidence_id": null, "evidence_ids": ["corning-release:commitment", "corning-release:plant", "corning-release:other"]}
+    ]
+  }
+}

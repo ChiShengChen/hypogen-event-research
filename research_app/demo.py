@@ -4,7 +4,7 @@ from datetime import datetime
 from difflib import unified_diff
 from pathlib import Path
 
-from .adapters import AdapterError, LinkedCodex, LinkedFixture, LinkedLive
+from .adapters import AdapterError, LinkedFixture, RankedCodex, RankedLive
 from .schema import Event, Question
 from .store import Store
 
@@ -20,7 +20,7 @@ def main():
     fixtures = Path(__file__).parent / "fixtures"
     event = Event.model_validate_json((fixtures / "shutdown.json").read_text(encoding="utf-8"))
     db = Store(args.output / "research.sqlite3")
-    engine = LinkedCodex() if args.codex else LinkedLive() if args.live else LinkedFixture()
+    engine = RankedCodex() if args.codex else RankedLive() if args.live else LinkedFixture()
     evidence_check = None
     extra_reports = {}
     try:

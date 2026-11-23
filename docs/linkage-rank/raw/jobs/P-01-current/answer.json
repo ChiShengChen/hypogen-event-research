@@ -1,0 +1,109 @@
+{
+  "business_linkages": [
+    {
+      "linked_stance": "bear",
+      "scope": "internal",
+      "origin_business": "Splunk 的資料能力",
+      "origin_evidence_ids": ["cisco-release:deal", "cisco-release:operations"],
+      "affected_company": "Cisco",
+      "affected_business": "Observability",
+      "affected_evidence_ids": ["cisco-release:operations"],
+      "mechanism": "交割後，若 Cisco 決定把 Splunk 資料接入 Observability 的應用可視性功能，工程團隊就需完成接入和驗證。若驗證延誤，相關支出可能先於新增收款，增加整合拖累現金流的可能。",
+      "baseline": "未收購情境下，原有 Observability 產品可沿既有路線開發。交割公告只列出平台目標，未提供整合功能的上市基準日。",
+      "condition": "Cisco 實際啟動該項整合，且資料接入或驗證成為延後正式推出的原因。",
+      "financial_effect": "開發投入先行、可銷售時間延後，可能壓低 Observability 的增量現金流。專案支出、收費方式及付費採用規模均未知。",
+      "alternative_explanation": "分階段推出也可能是原定產品策略。可比對 Cisco 公布的上市範圍及時程修訂理由，辨別是否因整合受阻。",
+      "metric": "具名整合功能是否依 Cisco 首次公開的時程正式推出，作為執行進度代理指標。",
+      "observation_period": "交割日至 2025-12-31，限原訂於此期間正式推出的功能。",
+      "public_source": "Cisco Newsroom 的 Observability 產品公告及正式上市更新。",
+      "deadline": "2025-12-31",
+      "prediction": "Cisco 公開確認同一功能因資料接入或驗證問題遲於原訂時程推出。",
+      "invalidation": "Cisco 公開確認同一功能在原訂時程內正式推出。若缺少公開時程或進度說明，延誤原因仍待查。"
+    }
+  ],
+  "business_linkage_gap": "公告未交代 Cisco Security 與 Observability 的人力、預算或銷售資源分配，無從判定一方是否排擠另一方。功能上市也無法驗證付費採用或回收期。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "交割使 Splunk 業務納入 Cisco。若其 FY2025 收入的非 GAAP 毛利率高於 Cisco 未收購時的水準，收入組合改變即可拉高合併毛利率，無須先假設組合產品取得訂單。缺少可比毛利率與收入權重，無法估算增厚幅度。",
+      "target": "Cisco",
+      "horizon": "2025-12-31",
+      "catalyst": "2024-03-18 完成交割。Cisco 同日預期收購將增厚 FY2025 非 GAAP 毛利率，可於 FY2025 全年業績發布後核對。",
+      "prediction": "截至 2025-12-31，若 Cisco 全年業績資料或法說明確量化或定性說明收購影響，預期 FY2025 合併非 GAAP 毛利率高於同年度未收購基準。",
+      "invalidation": "Cisco 在相同覆核期限內明示，收購對 FY2025 非 GAAP 毛利率的影響為零或負值。僅見合併毛利率年增或年減，均無法判定收購貢獻。",
+      "claim_ids": ["fact:cisco-release:deal", "fact:cisco-release:forecasts", "fact:cisco-release:original"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "相較未收購情境，整合 Splunk 資料與 Cisco 平台可能增加持續性的工程與支援現金支出。若這些支出計入公司指引口徑，且超過併入業務帶來的增量現金，FY2025 現金流貢獻可能落空，即使毛利率受惠。支出金額及排除項目明細待查。",
+      "target": "Cisco",
+      "horizon": "2025-12-31",
+      "catalyst": "交割後的平台整合進入執行期。FY2025 全年業績及法說是覆核公司交割日現金流指引的窗口。",
+      "prediction": "截至 2025-12-31，若 Cisco 披露 FY2025 收購現金流貢獻，預期依原指引扣除指定項目後，相對同年度未收購基準的貢獻為零或負值。整合支出是否為原因，另需管理層說明。",
+      "invalidation": "Cisco 在相同覆核期限內確認，依原指引口徑計算的 FY2025 收購現金流貢獻為正。合併現金流變化或未更新指引，皆不足以判定。",
+      "claim_ids": ["fact:cisco-release:deal", "fact:cisco-release:operations", "fact:cisco-release:forecasts"]
+    }
+  ],
+  "assessment": {
+    "thesis": "Cisco 已完成收購 Splunk，FY2025 可能因併入收入組合而提高非 GAAP 毛利率，但平台整合支出仍可能削弱同年度的現金流貢獻。",
+    "key_gap": "最影響判斷的是 Splunk 在 FY2025 究竟帶來多少增量現金，以及哪些整合支出被排除於公司指引之外。",
+    "next_check": "於 Cisco 發布 FY2025 全年業績後至 2025-12-31，核對財報及法說是否交代收購對現金流與非 GAAP 毛利率的實際貢獻。若只公布合併數字，精確歸因需公司補充揭露或非公開的未收購基準與調節明細。",
+    "evidence_limits": [
+      {
+        "evidence_id": "cisco-release:deal",
+        "limit": "確認交割、每股現金 157 美元及約 280 億美元股權價值。交易對價無法衡量年度營運貢獻。"
+      },
+      {
+        "evidence_id": "cisco-release:forecasts",
+        "limit": "支持 FY2025 現金流與非 GAAP 毛利率、FY2026 非 GAAP EPS 的前瞻指引。未提供實績、增厚幅度或組合產品收入。"
+      },
+      {
+        "evidence_id": "cisco-release:operations",
+        "limit": "支持 Cisco Security 與 Observability 的平台整合目標。未確認產品交付、客戶採用、訂單或收入認列。"
+      },
+      {
+        "evidence_id": "cisco-release:original",
+        "limit": "原文確認毛利率指引限於 Cisco FY2025 的非 GAAP 口徑，未提供未收購基準或基點數。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "收購對 FY2025 非 GAAP 毛利率的貢獻方向",
+        "source_to_watch": "Cisco 季度與全年業績新聞稿及法說",
+        "window": "交割後的 FY2025 業績更新至全年業績發布後，最晚 2025-12-31 覆核。",
+        "impact_on_thesis": "管理層確認全年實際增厚可支持多方結果。只有合併毛利率時，收入組合的作用仍待拆解。",
+        "evidence_ids": ["cisco-release:forecasts", "cisco-release:original"]
+      },
+      {
+        "metric": "FY2025 收購現金流貢獻方向及公司列明的排除項目",
+        "source_to_watch": "Cisco 業績新聞稿、法說及全年財務披露",
+        "window": "FY2025 各期業績至全年結算後，最晚 2025-12-31 覆核。",
+        "impact_on_thesis": "同口徑實際貢獻為正會削弱空方判斷。若貢獻為零或負值，且公司指出持續性整合支出為原因，則同時支持結果與機制。",
+        "evidence_ids": ["cisco-release:forecasts", "cisco-release:operations"]
+      },
+      {
+        "metric": "Cisco 是否具名公布採用 Splunk 資料的 Observability 功能及正式上市狀態",
+        "source_to_watch": "Cisco Newsroom 產品發布與上市公告",
+        "window": "交割後至 2025-12-31。",
+        "impact_on_thesis": "正式上市可確認整合已達交付里程碑。這是執行進度代理指標，訂單、客戶採用、收入認列及現金回收仍須各自驗證。",
+        "evidence_ids": ["cisco-release:operations"]
+      }
+    ],
+    "supply_chain": [
+      {
+        "company": "Splunk",
+        "role": "upstream",
+        "status": "candidate",
+        "product_scope": "供 Cisco Security 與 Observability 整合使用的資料能力。",
+        "relationship": "已確認為 Cisco 收購標的。上游角色指其在集團內可能提供的技術投入，公告僅揭露平台方向。",
+        "transmission": "交割使 Cisco 可將 Splunk 資料接入安全與應用可視性功能，實際交付取決於產品整合進度。",
+        "materiality": "約 280 億美元是交易股權價值。個別平台功能的收入、成本及毛利貢獻無法量化。",
+        "public_check": "交割後追蹤 Cisco Newsroom 是否具名公布整合功能及正式上市狀態。",
+        "gap": "缺少實際接入範圍、付費採用及獨立財務貢獻。"
+      		
+   																		,"evidence_ids": ["cisco-release:deal", "cisco-release:operations", "cisco-release:forecasts"]
+      }
+    ],
+    "trade_opportunities": []
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "case": "H-06",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:43:47.476051+00:00",
+  "queued_epoch": 1795434227.4760602,
+  "started_at": "2026-11-23T11:43:47.520142+00:00",
+  "request_sha256": "aea6b62c44ad2801596f6d2244855721a139477a5198b231d3fcc1c1dc78212b",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.035,
+  "prompt_bytes": 6152,
+  "returncode": 0,
+  "cli_elapsed_seconds": 11.617,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [],
+      "note": "保留跨區歸因，但未指明需補足的跨區流向或配置決策證據。裝瓶商與通路商的交易條件缺口只關乎交易對手獲利估算。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "將跨區歸因留待公司確認資源移轉的項目與方向，並要求接收業務的部署時點及營運指標。"
+    },
+    "C": {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出兩區間的預算、產能或通路調度證據缺失，並將跨區歸因留待具體決策及受影響業務的可追蹤指標。"
+    }
+  },
+  "elapsed_seconds": 11.618,
+  "usage": {
+    "input_tokens": 16399,
+    "cached_input_tokens": 0,
+    "output_tokens": 298,
+    "reasoning_output_tokens": 30
+  },
+  "event_seconds": {
+    "thread.started": 0.678,
+    "turn.started": 1.444,
+    "item.completed": 11.104,
+    "turn.completed": 11.151
+  },
+  "finished_at": "2026-11-23T11:43:59.139376+00:00"
+}

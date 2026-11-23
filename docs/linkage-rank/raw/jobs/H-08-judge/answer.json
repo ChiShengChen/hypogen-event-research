@@ -1,0 +1,25 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "未提交連結。指出須比對原有客戶在 SRS 與 Home Depot 原通路的交易，並保留訂單移轉歸因。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "未提交連結。要求收購前後同一批客戶的分通路資料，並保留客戶移轉與交叉銷售歸因。"
+    },
+    {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "未提交連結。指出缺少收購前後同一批客戶的跨通路交易資料，並明確保留門市訂單分流歸因。"
+    }
+  ]
+}

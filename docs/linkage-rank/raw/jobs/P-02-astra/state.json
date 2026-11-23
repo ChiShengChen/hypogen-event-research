@@ -1,0 +1,36 @@
+{
+  "case": "P-02",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:12:43.468022+00:00",
+  "queued_epoch": 1795432363.4680314,
+  "started_at": "2026-11-23T11:12:43.501407+00:00",
+  "request_sha256": "56edd7a4e57d92d68c806ef54c2aff7501506a4df514db2d1cb5ac95c03a62ac",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.025,
+  "prompt_bytes": 2516,
+  "returncode": 0,
+  "cli_elapsed_seconds": 52.002,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公司揭露了 Skin Care、Hair Care 與 Personal Care 各自的成長方向，但缺少品類權重與銷售貢獻，無法量化三者對 Beauty 的影響。資料也未揭露 Beauty 與 Grooming 之間的客戶移轉、通路連動或成本分攤，兩個部門的成長差異不足以建立跨業務因果關係。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公司揭露了 Skin Care、Hair Care 與 Personal Care 各自的成長方向，但缺少品類權重與銷售貢獻，無法量化三者對 Beauty 的影響。資料也未揭露 Beauty 與 Grooming 之間的客戶移轉、通路連動或成本分攤，兩個部門的成長差異不足以建立跨業務因果關係。"
+  },
+  "elapsed_seconds": 52.003,
+  "usage": {
+    "input_tokens": 16997,
+    "cached_input_tokens": 0,
+    "output_tokens": 2284,
+    "reasoning_output_tokens": 42
+  },
+  "event_seconds": {
+    "thread.started": 0.784,
+    "turn.started": 1.335,
+    "item.completed": 51.436,
+    "turn.completed": 51.474
+  },
+  "finished_at": "2026-11-23T11:13:35.505877+00:00"
+}

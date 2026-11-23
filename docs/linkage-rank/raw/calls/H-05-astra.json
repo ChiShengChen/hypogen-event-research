@@ -1,0 +1,90 @@
+{
+  "case": "H-05",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:37:55.911499+00:00",
+  "queued_epoch": 1795433875.9115095,
+  "started_at": "2026-11-23T11:37:56.061887+00:00",
+  "request_sha256": "6fbbc31c4cf4c468f55f533a03bda471a492e4835bce626519c9c5c98d590b04",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.142,
+  "prompt_bytes": 2722,
+  "returncode": 0,
+  "cli_elapsed_seconds": 72.421,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "Oak Street Health 的多保險方初級照護中心",
+        "origin_evidence_ids": [
+          "cvs-release:original",
+          "cvs-release:service"
+        ],
+        "affected_company": "CVS Health",
+        "affected_business": "價值導向初級照護業務",
+        "affected_evidence_ids": [
+          "cvs-release:service",
+          "cvs-release:strategy"
+        ],
+        "mechanism": "若既有中心能以現有人力與設施照護更多歸戶病患，且新增照護收入高於新增成本，每家中心的營業貢獻就可能提高，進而改善 CVS 初級照護業務的獲利。",
+        "baseline": "交割時已確認 Oak Street 將繼續服務多家保險方。公告未揭露既有中心的歸戶病患數、計費條件或營業貢獻。",
+        "condition": "既有中心有餘裕承接病患，保險方合約能將新增服務轉為收入，且相關照護與人力成本增幅低於收入增幅。",
+        "financial_effect": "既有中心的營業貢獻增加。對 CVS 合併盈餘的影響仍取決於整合費用及融資成本。",
+        "alternative_explanation": "初級照護業務總收入也可能因新增中心或併表月數增加而成長，即使既有中心的經濟效益持平。",
+        "metric": "追蹤同一批交割時已營運中心的平均歸戶病患數及每家中心營業貢獻。兩者均採相同期間長度與計算口徑。",
+        "observation_period": "以交割後首個具可比數據的季度為基期，追蹤至 2024 年 12 月 31 日前已公開的最近可比季度。",
+        "public_source": "CVS Health 季報、法說會資料或 Oak Street 營運更新，以有揭露既有中心數據者為準。",
+        "deadline": "2024-12-31",
+        "prediction": "若營運條件成立，最近可比季度的每中心歸戶病患數與營業貢獻均高於基期。",
+        "invalidation": "若歸戶病患數增加，但同批中心的營業貢獻持平或下降，則新增病患改善獲利的預測失效。若僅揭露業務總收入，則此假說仍待驗證。"
+      }
+    ],
+    "business_linkage_gap": "資料未指明個別保險方、合約支付方式或轉介承諾，因此無法將 Oak Street 的業務增減歸因於特定保險方，也無法估算該保險方可保留多少照護成本節省。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "Oak Street Health 的多保險方初級照護中心",
+        "origin_evidence_ids": [
+          "cvs-release:original",
+          "cvs-release:service"
+        ],
+        "affected_company": "CVS Health",
+        "affected_business": "價值導向初級照護業務",
+        "affected_evidence_ids": [
+          "cvs-release:service",
+          "cvs-release:strategy"
+        ],
+        "mechanism": "若既有中心能以現有人力與設施照護更多歸戶病患，且新增照護收入高於新增成本，每家中心的營業貢獻就可能提高，進而改善 CVS 初級照護業務的獲利。",
+        "baseline": "交割時已確認 Oak Street 將繼續服務多家保險方。公告未揭露既有中心的歸戶病患數、計費條件或營業貢獻。",
+        "condition": "既有中心有餘裕承接病患，保險方合約能將新增服務轉為收入，且相關照護與人力成本增幅低於收入增幅。",
+        "financial_effect": "既有中心的營業貢獻增加。對 CVS 合併盈餘的影響仍取決於整合費用及融資成本。",
+        "alternative_explanation": "初級照護業務總收入也可能因新增中心或併表月數增加而成長，即使既有中心的經濟效益持平。",
+        "metric": "追蹤同一批交割時已營運中心的平均歸戶病患數及每家中心營業貢獻。兩者均採相同期間長度與計算口徑。",
+        "observation_period": "以交割後首個具可比數據的季度為基期，追蹤至 2024 年 12 月 31 日前已公開的最近可比季度。",
+        "public_source": "CVS Health 季報、法說會資料或 Oak Street 營運更新，以有揭露既有中心數據者為準。",
+        "deadline": "2024-12-31",
+        "prediction": "若營運條件成立，最近可比季度的每中心歸戶病患數與營業貢獻均高於基期。",
+        "invalidation": "若歸戶病患數增加，但同批中心的營業貢獻持平或下降，則新增病患改善獲利的預測失效。若僅揭露業務總收入，則此假說仍待驗證。"
+      }
+    ],
+    "business_linkage_gap": "資料未指明個別保險方、合約支付方式或轉介承諾，因此無法將 Oak Street 的業務增減歸因於特定保險方，也無法估算該保險方可保留多少照護成本節省。"
+  },
+  "elapsed_seconds": 72.422,
+  "usage": {
+    "input_tokens": 16946,
+    "cached_input_tokens": 15360,
+    "output_tokens": 2639,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.159,
+    "turn.started": 1.32,
+    "item.completed": 71.979,
+    "turn.completed": 72.015
+  },
+  "finished_at": "2026-11-23T11:39:08.486273+00:00"
+}

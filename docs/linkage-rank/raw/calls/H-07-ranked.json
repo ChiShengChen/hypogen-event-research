@@ -1,0 +1,144 @@
+{
+  "case": "H-07",
+  "call": "ranked",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:46:54.067660+00:00",
+  "queued_epoch": 1795434414.067672,
+  "started_at": "2026-11-23T11:46:54.272524+00:00",
+  "request_sha256": "18256cc1507b8b58068fa98b7683bd955bc62304824a7acd4512ede2f7d1e3f6",
+  "queue_seconds": 0.147,
+  "preparation_seconds": 0.058,
+  "prompt_bytes": 13316,
+  "returncode": 0,
+  "cli_elapsed_seconds": 99.377,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bear",
+        "scope": "counterparty",
+        "origin_business": "電動車及移動服務",
+        "origin_evidence_ids": [
+          "sony-release:deal"
+        ],
+        "affected_company": "Honda Motor Co., Ltd.",
+        "affected_business": "Sony Honda Mobility Inc.",
+        "affected_evidence_ids": [
+          "sony-release:deal",
+          "sony-release:allocation",
+          "sony-release:original"
+        ],
+        "mechanism": "合資案若獲核准並按原案出資，Honda 對合資公司的投資資本將增加。Honda 實際出資也是雙方開始承擔本案資本需求的直接證據。",
+        "baseline": "簽約時合資公司仍待成立。若無此案，Honda 無須為本案投入成立資本。",
+        "condition": "雙方完成設立，Honda 按擬定資本額與持股比例實際出資。",
+        "financial_effect": "100 億日圓擬定資本乘以 50% 持股，對應 Honda 擬出資 50 億日圓。現金流出取決於繳付方式與時點，投資損益另取決於合資營運。",
+        "alternative_explanation": "Honda 整體投資支出也會隨其他車輛專案變動。須以點名合資公司的實繳金額辨識本案。",
+        "metric": "Honda 對 Sony Honda Mobility Inc. 的成立出資實繳額（日圓）",
+        "observation_period": "2022-06-16 簽約後至 2025-12-31，追蹤設立及成立出資公告。",
+        "public_source": "Honda 官方新聞室的合資設立或出資完成公告，以及 Honda 已公布的合資投資附註。",
+        "deadline": "2025-12-31",
+        "prediction": "若按原案執行，期限內可核實 Honda 成立出資實繳額達 50 億日圓。",
+        "invalidation": "同期公開文件確認 Honda 最終成立出資實繳額低於 50 億日圓，或確認撤案且實繳為零。僅重述持股比例則仍待核實。",
+        "ranking_reason": "雙方已簽約，原案可推算各方出資規模，具名實繳披露也最能排除 Honda 其他投資的影響。"
+      },
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "電動車",
+        "origin_evidence_ids": [
+          "sony-release:deal"
+        ],
+        "affected_company": "Honda Motor Co., Ltd.",
+        "affected_business": "售後服務",
+        "affected_evidence_ids": [
+          "sony-release:operations",
+          "sony-release:deal"
+        ],
+        "mechanism": "若合資公司推出電動車並指定 Honda 承接售後服務，Honda 可取得原本不存在的合資車款服務客源，也能為 Sony 的商業化路徑補上交車後支援。",
+        "baseline": "簽約時僅提出運用 Honda 售後服務能力。無此案時，Honda 沒有該合資車款的服務客源。",
+        "condition": "合資公司須實際選定 Honda，並開放車主使用其服務。服務收入另須有可收費案件或合約給付。",
+        "financial_effect": "承接服務可增加 Honda 售後收入機會。缺交車量、服務單價、保固給付條款及據點成本，無法估算利潤。",
+        "alternative_explanation": "Honda 既有車款也可帶動服務據點擴張。辨識依據是服務公告同時列出合資車款、Honda 承辦角色與啟用範圍。",
+        "metric": "合資車款已啟用售後服務的範圍中，是否至少有一個市場由 Honda 承辦",
+        "observation_period": "2025 年預定開售窗口至 2025-12-31，查閱已公布的車主服務安排。",
+        "public_source": "Honda 官方新聞室及合資公司公開的上市與車主服務說明。",
+        "deadline": "2025-12-31",
+        "prediction": "至少一個市場公開啟用由 Honda 承辦的合資車款售後服務。",
+        "invalidation": "截至期限，公開服務安排確認所有已啟用市場均由其他業者承辦，或官方確認所有市場的售後服務均延至 2026 年以後啟用。",
+        "ranking_reason": "公告明列 Honda 的售後能力，車主服務安排可驗證實際分工，但收入仍取決於交車與收費條件，故列第二。"
+      }
+    ],
+    "business_linkage_gap": "Sony 的影像、感測、網路及娛樂技術尚缺具名採用項目、資源移轉、授權價格或分部歸屬。現有資料無法判定哪個既有事業取得增量收入或承擔排擠成本。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bear",
+        "scope": "counterparty",
+        "origin_business": "電動車及移動服務",
+        "origin_evidence_ids": [
+          "sony-release:deal"
+        ],
+        "affected_company": "Honda Motor Co., Ltd.",
+        "affected_business": "Sony Honda Mobility Inc.",
+        "affected_evidence_ids": [
+          "sony-release:deal",
+          "sony-release:allocation",
+          "sony-release:original"
+        ],
+        "mechanism": "合資案若獲核准並按原案出資，Honda 對合資公司的投資資本將增加。Honda 實際出資也是雙方開始承擔本案資本需求的直接證據。",
+        "baseline": "簽約時合資公司仍待成立。若無此案，Honda 無須為本案投入成立資本。",
+        "condition": "雙方完成設立，Honda 按擬定資本額與持股比例實際出資。",
+        "financial_effect": "100 億日圓擬定資本乘以 50% 持股，對應 Honda 擬出資 50 億日圓。現金流出取決於繳付方式與時點，投資損益另取決於合資營運。",
+        "alternative_explanation": "Honda 整體投資支出也會隨其他車輛專案變動。須以點名合資公司的實繳金額辨識本案。",
+        "metric": "Honda 對 Sony Honda Mobility Inc. 的成立出資實繳額（日圓）",
+        "observation_period": "2022-06-16 簽約後至 2025-12-31，追蹤設立及成立出資公告。",
+        "public_source": "Honda 官方新聞室的合資設立或出資完成公告，以及 Honda 已公布的合資投資附註。",
+        "deadline": "2025-12-31",
+        "prediction": "若按原案執行，期限內可核實 Honda 成立出資實繳額達 50 億日圓。",
+        "invalidation": "同期公開文件確認 Honda 最終成立出資實繳額低於 50 億日圓，或確認撤案且實繳為零。僅重述持股比例則仍待核實。",
+        "ranking_reason": "雙方已簽約，原案可推算各方出資規模，具名實繳披露也最能排除 Honda 其他投資的影響。"
+      },
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "電動車",
+        "origin_evidence_ids": [
+          "sony-release:deal"
+        ],
+        "affected_company": "Honda Motor Co., Ltd.",
+        "affected_business": "售後服務",
+        "affected_evidence_ids": [
+          "sony-release:operations",
+          "sony-release:deal"
+        ],
+        "mechanism": "若合資公司推出電動車並指定 Honda 承接售後服務，Honda 可取得原本不存在的合資車款服務客源，也能為 Sony 的商業化路徑補上交車後支援。",
+        "baseline": "簽約時僅提出運用 Honda 售後服務能力。無此案時，Honda 沒有該合資車款的服務客源。",
+        "condition": "合資公司須實際選定 Honda，並開放車主使用其服務。服務收入另須有可收費案件或合約給付。",
+        "financial_effect": "承接服務可增加 Honda 售後收入機會。缺交車量、服務單價、保固給付條款及據點成本，無法估算利潤。",
+        "alternative_explanation": "Honda 既有車款也可帶動服務據點擴張。辨識依據是服務公告同時列出合資車款、Honda 承辦角色與啟用範圍。",
+        "metric": "合資車款已啟用售後服務的範圍中，是否至少有一個市場由 Honda 承辦",
+        "observation_period": "2025 年預定開售窗口至 2025-12-31，查閱已公布的車主服務安排。",
+        "public_source": "Honda 官方新聞室及合資公司公開的上市與車主服務說明。",
+        "deadline": "2025-12-31",
+        "prediction": "至少一個市場公開啟用由 Honda 承辦的合資車款售後服務。",
+        "invalidation": "截至期限，公開服務安排確認所有已啟用市場均由其他業者承辦，或官方確認所有市場的售後服務均延至 2026 年以後啟用。",
+        "ranking_reason": "公告明列 Honda 的售後能力，車主服務安排可驗證實際分工，但收入仍取決於交車與收費條件，故列第二。"
+      }
+    ],
+    "business_linkage_gap": "Sony 的影像、感測、網路及娛樂技術尚缺具名採用項目、資源移轉、授權價格或分部歸屬。現有資料無法判定哪個既有事業取得增量收入或承擔排擠成本。"
+  },
+  "elapsed_seconds": 99.378,
+  "usage": {
+    "input_tokens": 18957,
+    "cached_input_tokens": 15360,
+    "output_tokens": 3667,
+    "reasoning_output_tokens": 149
+  },
+  "event_seconds": {
+    "thread.started": 0.674,
+    "turn.started": 1.651,
+    "item.completed": 98.851,
+    "turn.completed": 98.982
+  },
+  "finished_at": "2026-11-23T11:48:33.652868+00:00"
+}

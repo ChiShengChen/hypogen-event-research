@@ -1,0 +1,67 @@
+{
+  "business_linkages": [],
+  "business_linkage_gap": "Latin America 與 North America 各自揭露價格與組合及箱量。要建立跨區傳導，仍需公司指出哪項人力、預算或通路資源從一區轉往另一區，並揭露接收業務的部署時點與營運指標。資料亦未具名交易對手或列出採購承諾。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "若第三季拉美較有利的定價或銷售組合延續，即使箱量仍持平，價格與組合也可推升區域有機營收。相較於該項貢獻歸零的基準，拉美對集團營收成長的貢獻較高。區域營收權重與增量毛利率待查。",
+      "target": "Coca-Cola",
+      "horizon": "2025-12-31",
+      "catalyst": "2024-10-23 第三季財報揭露拉美有機營收年增 24%、價格與組合貢獻 21%、箱量持平。下一次可用第四季財報檢驗這項貢獻能否延續。",
+      "prediction": "以 2025-12-31 為覆核期限，查 Coca-Cola 第四季財報的 Latin America 營運回顧。預期 2024 年第四季價格與組合對年增率的貢獻仍大於零，且區域有機營收仍年增。",
+      "invalidation": "若同份回顧顯示 Latin America 於 2024 年第四季的價格與組合貢獻為零或負值，或有機營收年增率為零或負值，即推翻上述預測。",
+      "claim_ids": ["fact:coca-cola-release:latam"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "北美第三季箱量已持平。若價格與組合的正貢獻部分來自提價，且消費者延後購買，箱量可能由持平轉為年減。相較於購買頻率維持的基準，銷量減少會壓低北美營收，並可能削弱固定成本吸收。實際提價幅度、需求彈性與單箱利潤均未知。",
+      "target": "Coca-Cola",
+      "horizon": "2025-12-31",
+      "catalyst": "2024-10-23 第三季財報揭露北美價格與組合貢獻 11%、有機營收年增 12%，箱量持平。第四季箱量可作為提價後需求反應的代理指標。",
+      "prediction": "以 2025-12-31 為覆核期限，查 Coca-Cola 第四季財報的 North America 營運回顧。預期 2024 年第四季箱量年增率低於零，弱於第三季持平的基準。箱量下降僅支持需求轉弱，無法單獨歸因於提價。",
+      "invalidation": "若 Coca-Cola 揭露 North America 於 2024 年第四季箱量較上年同期持平或增加，即推翻箱量轉跌的預測。",
+      "claim_ids": ["fact:coca-cola-release:na"]
+    }
+  ],
+  "assessment": {
+    "thesis": "Coca-Cola 第三季拉美與北美箱量均持平，有機營收成長主要來自價格與組合，後續應分別檢驗拉美能否延續這項貢獻，以及北美是否出現銷量代價。",
+    "key_gap": "北美 11% 的價格與組合貢獻中，實際提價占多少，又有多少箱量變動可歸因於提價？精確歸因需公司進一步拆分，或取得非公開的同品項價格與銷量資料。",
+    "next_check": "2024 年第四季財報公布後，查 Coca-Cola 的 Operating Review，對照截至 2024-09-27 的第三季基準，核對拉美價格與組合貢獻、有機營收年增率及北美箱量年增率。這些區域指標可公開覆核。",
+    "evidence_limits": [
+      {
+        "evidence_id": "coca-cola-release:latam",
+        "limit": "支持拉美第三季有機營收年增 24%、價格與組合貢獻 21%、箱量持平。合計數無法拆分提價與組合，也不足以估算增量利潤。"
+      },
+      {
+        "evidence_id": "coca-cola-release:na",
+        "limit": "支持北美第三季有機營收年增 12%、價格與組合貢獻 11%、箱量持平。單季區域數據無法辨識消費者對提價的反應。"
+      },
+      {
+        "evidence_id": "coca-cola-release:original",
+        "limit": "確認營運回顧涵蓋截至 2024-09-27 的三個月。該標題僅界定歷史觀察期。"
+      },
+      {
+        "evidence_id": "coca-cola-release:outlook",
+        "limit": "確認公司另列全年展望，且匯率等因素影響報表營收。摘要未提供指引數值或修訂幅度，無從判定調整方向或推算已實現獲利。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "Latin America 價格與組合貢獻、有機營收年增率及箱量年增率",
+        "source_to_watch": "Coca-Cola 投資人關係網站第四季財報的區域營運回顧",
+        "window": "第四季財報發布後，比較 2024 年第三、四季各自的年增數據。",
+        "impact_on_thesis": "價格與組合及有機營收增幅皆為正，支持拉美成長路徑。若箱量亦持平，則與第三季型態一致。區域權重及毛利仍決定集團獲利影響。",
+        "evidence_ids": ["coca-cola-release:latam", "coca-cola-release:original"]
+      },
+      {
+        "metric": "North America 箱量年增率，搭配同季價格與組合貢獻判讀",
+        "source_to_watch": "Coca-Cola 投資人關係網站第四季財報的區域營運回顧",
+        "window": "第四季財報發布後，比較 2024 年第四季箱量年增率與第三季持平基準。",
+        "impact_on_thesis": "箱量轉跌且價格與組合仍為正，提高對銷量承壓的信心。箱量持平或成長則推翻轉跌預測。區域箱量只能代理需求，無法辨識提價、購買頻率或通路組合各自的影響。",
+        "evidence_ids": ["coca-cola-release:na", "coca-cola-release:original"]
+      }
+    ],
+    "supply_chain": [],
+    "trade_opportunities": []
+  }
+}

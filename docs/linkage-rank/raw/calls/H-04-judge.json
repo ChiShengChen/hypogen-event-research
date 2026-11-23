@@ -1,0 +1,51 @@
+{
+  "case": "H-04",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:37:35.227869+00:00",
+  "queued_epoch": 1795433855.2278786,
+  "started_at": "2026-11-23T11:37:35.240911+00:00",
+  "request_sha256": "231fb684ccb411ba674cee49cd66c37013552cbbeb585bd994f74f080119e102",
+  "queue_seconds": 0.01,
+  "preparation_seconds": 0.003,
+  "prompt_bytes": 5888,
+  "returncode": 0,
+  "cli_elapsed_seconds": 20.639,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "將保留持股與實際配置分開，明示須揭露變現所得的實際去向，才可歸因至具名業務。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "未將變現資金歸給任何業務，並具體要求具名業務的配置決議與實際支出作為佐證。"
+    },
+    "C": {
+      "label": "C",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出公告未指定資金去向，也未聲稱已收現或已配置，但未說明須以實際持股處置及所得用途的披露核實。"
+    }
+  },
+  "elapsed_seconds": 20.64,
+  "usage": {
+    "input_tokens": 16345,
+    "cached_input_tokens": 0,
+    "output_tokens": 738,
+    "reasoning_output_tokens": 493
+  },
+  "event_seconds": {
+    "thread.started": 0.164,
+    "turn.started": 1.344,
+    "item.completed": 20.203,
+    "turn.completed": 20.214
+  },
+  "finished_at": "2026-11-23T11:37:55.882253+00:00"
+}

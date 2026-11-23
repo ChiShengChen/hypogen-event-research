@@ -1,0 +1,92 @@
+{
+  "case": "R-01",
+  "call": "ranked",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:51:29.033288+00:00",
+  "queued_epoch": 1795434689.033299,
+  "started_at": "2026-11-23T11:51:29.046414+00:00",
+  "request_sha256": "76affa18f578961ad8ad71e09d0f3298e561ab0d436e8993c70ddd2916a3fdbf",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.005,
+  "prompt_bytes": 13938,
+  "returncode": 0,
+  "cli_elapsed_seconds": 72.123,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "Microsoft Azure",
+        "origin_evidence_ids": [
+          "ms-lseg:migration",
+          "ms-lseg:contract"
+        ],
+        "affected_company": "LSEG",
+        "affected_business": "資料平台",
+        "affected_evidence_ids": [
+          "ms-lseg:migration",
+          "ms-lseg:contract"
+        ],
+        "mechanism": "LSEG 已承諾十年最低雲端相關支出。若資料平台遷移時仍須維持舊環境，Microsoft 取得正式工作負載的同時，LSEG 可能開始負擔新舊平台並行成本。",
+        "baseline": "若未遷移，LSEG 延續原平台營運，沒有本案新增的 Azure 並行環境。",
+        "condition": "同一批正式工作負載在 Azure 上線後，舊環境仍為遷移或驗證而運作並發生成本。",
+        "financial_effect": "並行期可能推高 LSEG 資料平台營運成本。28 億美元是十年總支出下限，估算增量成本仍缺平台分攤額、並行期間及舊環境可節省的費用。",
+        "alternative_explanation": "LSEG 科技支出也可能因其他基礎設施投資增加。須由 LSEG 指明同一批工作負載的新舊環境運作期間，才能辨別本案影響。",
+        "metric": "LSEG 資料平台已遷移工作負載的新舊正式環境是否有並行期。",
+        "observation_period": "2022-12-12 至 2024-12-31 之間已公開的切換進度。",
+        "public_source": "LSEG 期間內已發布的業績簡報、年報或與 Microsoft 的遷移進度公告。",
+        "deadline": "2024-12-31",
+        "prediction": "若資料平台已有正式工作負載切換，LSEG 披露其中至少一批曾在新舊環境並行。",
+        "invalidation": "LSEG 明確披露期間內所有已切換批次均在 Azure 正式啟用時或之前停用對應舊環境。尚未切換或未說明停用時間，則仍待驗證。",
+        "ranking_reason": "列首位因最低支出與遷移對象均已具名，LSEG 的切換紀錄可同時檢驗 Azure 採用及客戶端成本風險。"
+      }
+    ],
+    "business_linkage_gap": "Workspace 與 Teams／Microsoft 365 的整合已有計畫，尚缺授權條款、付費席次或通路分成，無法另立可驗證的收入傳導。約 4% 持股仍屬擬議交易，缺成交對價及與業務配置連動的證據。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "Microsoft Azure",
+        "origin_evidence_ids": [
+          "ms-lseg:migration",
+          "ms-lseg:contract"
+        ],
+        "affected_company": "LSEG",
+        "affected_business": "資料平台",
+        "affected_evidence_ids": [
+          "ms-lseg:migration",
+          "ms-lseg:contract"
+        ],
+        "mechanism": "LSEG 已承諾十年最低雲端相關支出。若資料平台遷移時仍須維持舊環境，Microsoft 取得正式工作負載的同時，LSEG 可能開始負擔新舊平台並行成本。",
+        "baseline": "若未遷移，LSEG 延續原平台營運，沒有本案新增的 Azure 並行環境。",
+        "condition": "同一批正式工作負載在 Azure 上線後，舊環境仍為遷移或驗證而運作並發生成本。",
+        "financial_effect": "並行期可能推高 LSEG 資料平台營運成本。28 億美元是十年總支出下限，估算增量成本仍缺平台分攤額、並行期間及舊環境可節省的費用。",
+        "alternative_explanation": "LSEG 科技支出也可能因其他基礎設施投資增加。須由 LSEG 指明同一批工作負載的新舊環境運作期間，才能辨別本案影響。",
+        "metric": "LSEG 資料平台已遷移工作負載的新舊正式環境是否有並行期。",
+        "observation_period": "2022-12-12 至 2024-12-31 之間已公開的切換進度。",
+        "public_source": "LSEG 期間內已發布的業績簡報、年報或與 Microsoft 的遷移進度公告。",
+        "deadline": "2024-12-31",
+        "prediction": "若資料平台已有正式工作負載切換，LSEG 披露其中至少一批曾在新舊環境並行。",
+        "invalidation": "LSEG 明確披露期間內所有已切換批次均在 Azure 正式啟用時或之前停用對應舊環境。尚未切換或未說明停用時間，則仍待驗證。",
+        "ranking_reason": "列首位因最低支出與遷移對象均已具名，LSEG 的切換紀錄可同時檢驗 Azure 採用及客戶端成本風險。"
+      }
+    ],
+    "business_linkage_gap": "Workspace 與 Teams／Microsoft 365 的整合已有計畫，尚缺授權條款、付費席次或通路分成，無法另立可驗證的收入傳導。約 4% 持股仍屬擬議交易，缺成交對價及與業務配置連動的證據。"
+  },
+  "elapsed_seconds": 72.124,
+  "usage": {
+    "input_tokens": 19079,
+    "cached_input_tokens": 0,
+    "output_tokens": 2805,
+    "reasoning_output_tokens": 30
+  },
+  "event_seconds": {
+    "thread.started": 0.165,
+    "turn.started": 1.35,
+    "item.completed": 71.602,
+    "turn.completed": 71.654
+  },
+  "finished_at": "2026-11-23T11:52:41.172892+00:00"
+}

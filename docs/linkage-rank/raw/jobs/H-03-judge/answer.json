@@ -1,0 +1,68 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "聯航逾千架的部署計畫指向 SpaceX 的 Starlink 航空連線服務。聯航新聞室可用 2025 年載客航班是否實際開通區分測試與營運。開通可驗證供應，收入仍取決於計費及履約條款。"
+        }
+      ],
+      "note": "缺口具體指出影音、廣告及購物變現所需的證據，也交代員工工具與客艙升級尚缺資源變動資料。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持免費連線及影音、購物用途。聯航每旅客購物分潤須有增量交易及分潤權，同期比較客艙配置與航程相近的航班可檢驗使用量並處理客艙升級因素。此路徑衡量聯航附加收入。"
+        },
+        {
+          "index": 2,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "聯航主線及區域機隊開通載客服務後，SpaceX 實際供應連線的飛機數可增加。雙方公開更新可驗證 2025 年商用啟用，固定收費條款可推翻按啟用架數推估收入的假設。"
+        }
+      ],
+      "note": "第二條符合指定傳導。缺口交代分包商、內容及購物合作方和相關變現條款的披露限制。"
+    },
+    {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持購物用途。聯航須開放結帳並享有銷售收入或分潤，才可能增加附加收入。聯航 2025 年旅客服務說明可查結帳是否依賴 Starlink，以區分獨立的客艙升級。此路徑指向購物收入。"
+        }
+      ],
+      "note": "缺口指出交易歸屬、分潤及改裝資源調度仍待查證。唯一提交的路徑未涵蓋 SpaceX 航空連線需求或聯航機隊連線成本與付費服務遷移。"
+    }
+  ]
+}

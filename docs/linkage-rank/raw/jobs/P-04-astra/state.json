@@ -1,0 +1,36 @@
+{
+  "case": "P-04",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:20:34.061319+00:00",
+  "queued_epoch": 1795432834.0613308,
+  "started_at": "2026-11-23T11:20:34.118816+00:00",
+  "request_sha256": "7a680eff1cf92d6bfc1cf3c65b657c60c7d0f59da98eb89d008edd468196d41a",
+  "queue_seconds": 0.01,
+  "preparation_seconds": 0.048,
+  "prompt_bytes": 2747,
+  "returncode": 0,
+  "cli_elapsed_seconds": 46.685,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "Costco 在八個市場設有電商網站，但公告只提供全公司與電商的可比銷售增速，缺少電商銷售占比、會員跨通路消費及純倉庫通路數據。現階段無法判定電商成長帶來多少新增消費、多少來自通路移轉，也無法將成長歸因於特定交易對手。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "Costco 在八個市場設有電商網站，但公告只提供全公司與電商的可比銷售增速，缺少電商銷售占比、會員跨通路消費及純倉庫通路數據。現階段無法判定電商成長帶來多少新增消費、多少來自通路移轉，也無法將成長歸因於特定交易對手。"
+  },
+  "elapsed_seconds": 46.686,
+  "usage": {
+    "input_tokens": 16975,
+    "cached_input_tokens": 0,
+    "output_tokens": 2028,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.713,
+    "turn.started": 1.485,
+    "item.completed": 46.169,
+    "turn.completed": 46.198
+  },
+  "finished_at": "2026-11-23T11:21:20.854374+00:00"
+}

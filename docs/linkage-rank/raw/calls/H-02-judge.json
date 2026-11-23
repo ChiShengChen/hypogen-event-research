@@ -1,0 +1,73 @@
+{
+  "case": "H-02",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:30:33.272881+00:00",
+  "queued_epoch": 1795433433.2728896,
+  "started_at": "2026-11-23T11:30:33.321288+00:00",
+  "request_sha256": "6d38d238a2e4494f8657ceceb8d7f3e730f599b4946468c37e20d3f0183e916d",
+  "queue_seconds": 0.03,
+  "preparation_seconds": 0.018,
+  "prompt_bytes": 9505,
+  "returncode": 0,
+  "cli_elapsed_seconds": 19.73,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [],
+      "note": "未提交連結。缺口說明指出仍需 HP 追加採購及 Qualcomm 交付證據，但未指明判斷 Lenovo 與 HP 之間移轉所需的配額、訂單或客戶資料，也未明示保留該項歸因。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 HP OmniBook 搭載 Qualcomm X Elite。整機交貨可驗證 HP 的商用部署，Qualcomm 晶片收入增量另取決於追加採購、交付與認列，金額未知。期限內的 HP 或 Microsoft 公告若確認取消或延後交貨，可否定 HP 部署里程碑，即使其他品牌仍有進展。此路徑未處理 Lenovo 與 HP 之間的移轉歸因。"
+        }
+      ],
+      "note": "缺口聚焦 Microsoft 通路收入與 HP 內部資源配置，未指出辨識 Lenovo 與 HP 之間晶片配額、通路訂單或企業客戶移轉所需的證據，也未明示保留該項歸因。"
+    },
+    "C": {
+      "label": "C",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持兩款 HP 筆電搭載 Qualcomm X Elite。終端需求若促成增產且首批備料不足，補單可提高 Qualcomm 對 HP 的晶片銷售收入，金額未知。同期 HP 或 Qualcomm 若公開確認首批備料足以支應全期生產，可否定因備料不足而補單的機制。此路徑未處理 Lenovo 與 HP 之間的移轉歸因。"
+        }
+      ],
+      "note": "缺口說明指出估算 HP 與 Qualcomm 營收所欠的資料，但未指出檢驗 Lenovo 與 HP 之間配額、訂單或客戶移轉所需的證據，也未明示保留該項歸因。"
+    }
+  },
+  "elapsed_seconds": 19.731,
+  "usage": {
+    "input_tokens": 17398,
+    "cached_input_tokens": 0,
+    "output_tokens": 710,
+    "reasoning_output_tokens": 57
+  },
+  "event_seconds": {
+    "thread.started": 0.711,
+    "turn.started": 1.356,
+    "item.completed": 19.274,
+    "turn.completed": 19.326
+  },
+  "finished_at": "2026-11-23T11:30:53.076008+00:00"
+}

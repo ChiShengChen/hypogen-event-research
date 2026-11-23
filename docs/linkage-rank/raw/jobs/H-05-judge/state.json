@@ -1,0 +1,62 @@
+{
+  "case": "H-05",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:40:52.962916+00:00",
+  "queued_epoch": 1795434052.9629264,
+  "started_at": "2026-11-23T11:40:52.993673+00:00",
+  "request_sha256": "c6e8a075c8105e6adf7eb592b46e3d6d231d525e24508d2b8ecaafb73b9f40d7",
+  "queue_seconds": 0.01,
+  "preparation_seconds": 0.021,
+  "prompt_bytes": 8381,
+  "returncode": 0,
+  "cli_elapsed_seconds": 21.636,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 Oak Street 持續多保險方營運及 CVS 擴大初級照護平台。此路徑檢驗既有中心在有餘裕、可計費且增量收入高於成本時，歸戶增加能否提升單中心營業貢獻。CVS 季報或法說若顯示同批中心歸戶增加而貢獻持平或下降，即可推翻預測。同批比較可排除新增據點與併表月數差異。路徑未交代收購如何增加 CVS 的承作容量與風險承擔曝險。"
+        }
+      ],
+      "note": "缺口指出個別保險方、支付條款與轉介承諾未揭露，並明確保留對特定保險方的歸因。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "未提交連結。缺口指出跨業務歸因仍需具名安排、交割前基準及實際轉介、承保或支付成本資料。"
+    },
+    "C": {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "未提交連結。缺口以已披露的 50 億美元定期貸款討論集團利息負擔，並指出把融資歸因到其他業務的投資變動，或把交易歸因到特定保險方的新增歸戶，仍需具名資料。"
+    }
+  },
+  "elapsed_seconds": 21.637,
+  "usage": {
+    "input_tokens": 17056,
+    "cached_input_tokens": 0,
+    "output_tokens": 788,
+    "reasoning_output_tokens": 293
+  },
+  "event_seconds": {
+    "thread.started": 0.183,
+    "turn.started": 1.356,
+    "item.completed": 20.926,
+    "turn.completed": 20.986
+  },
+  "finished_at": "2026-11-23T11:41:14.632498+00:00"
+}

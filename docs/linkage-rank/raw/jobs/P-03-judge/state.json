@@ -1,0 +1,84 @@
+{
+  "case": "P-03",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:18:35.951026+00:00",
+  "queued_epoch": 1795432715.951041,
+  "started_at": "2026-11-23T11:18:35.981673+00:00",
+  "request_sha256": "0f1d73cd5b05eec023db5139b86a32908415d3a84bf2ca5a4cc4eb5d00f65a0a",
+  "queue_seconds": 0.01,
+  "preparation_seconds": 0.021,
+  "prompt_bytes": 11555,
+  "returncode": 0,
+  "cli_elapsed_seconds": 20.735,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "無線業務交易交割後，T-Mobile 依約新增租用 UScellular 保留的至少 2,100 座鐵塔。實際起租才增加 UScellular 塔租收入，金額仍待確認。雙方交易公告可區分本案起租與其他租戶增租，並可用期末全數未起租的明確披露推翻期內預測。"
+        }
+      ],
+      "note": "缺口指出估算 T-Mobile 淨支出仍需可避免的建設支出及新增租金。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 T-Mobile 交割後新增長租 UScellular 保留的至少 2,100 座鐵塔。逐站起租才增加 UScellular 塔租收入。交割公告和鐵塔財報可核對具名新增租用，最終條款低於門檻或期末確認全數未起租，可分別推翻座數或期內租金假設。"
+        }
+      ],
+      "note": "缺口列出起租時程、租金、成本及買方綜效拆分等待確認項目。"
+    },
+    "C": {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持交割後 T-Mobile 新增租用 UScellular 保留的至少 2,100 座鐵塔。開始計租才增加賣方塔租收入，買方承擔相應租金。若交割後雙方任一方明確披露期末全數未計租，即可推翻期內傳導，並排除以鐵塔總收入變動歸因。"
+        }
+      ],
+      "note": "缺口保留第二條路徑待證，主要路徑也列明估算租金所需的起租座數、單站租金及計租期間。"
+    }
+  },
+  "elapsed_seconds": 20.736,
+  "usage": {
+    "input_tokens": 18001,
+    "cached_input_tokens": 0,
+    "output_tokens": 765,
+    "reasoning_output_tokens": 72
+  },
+  "event_seconds": {
+    "thread.started": 0.675,
+    "turn.started": 1.362,
+    "item.completed": 20.241,
+    "turn.completed": 20.289
+  },
+  "finished_at": "2026-11-23T11:18:56.719040+00:00"
+}

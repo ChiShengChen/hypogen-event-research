@@ -1,0 +1,51 @@
+{
+  "case": "H-08",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:51:18.530135+00:00",
+  "queued_epoch": 1795434678.530144,
+  "started_at": "2026-11-23T11:51:18.594849+00:00",
+  "request_sha256": "d8f407f0aad469d519b392dd893488faf9ca0686e309fcbeb5b18a62dea5f472",
+  "queue_seconds": 0.036,
+  "preparation_seconds": 0.028,
+  "prompt_bytes": 6130,
+  "returncode": 0,
+  "cli_elapsed_seconds": 10.417,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "未提交連結。指出須比對原有客戶在 SRS 與 Home Depot 原通路的交易，並保留訂單移轉歸因。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "未提交連結。要求收購前後同一批客戶的分通路資料，並保留客戶移轉與交叉銷售歸因。"
+    },
+    "C": {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "未提交連結。指出缺少收購前後同一批客戶的跨通路交易資料，並明確保留門市訂單分流歸因。"
+    }
+  },
+  "elapsed_seconds": 10.418,
+  "usage": {
+    "input_tokens": 16467,
+    "cached_input_tokens": 0,
+    "output_tokens": 246,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.162,
+    "turn.started": 1.38,
+    "item.completed": 9.912,
+    "turn.completed": 9.949
+  },
+  "finished_at": "2026-11-23T11:51:29.014432+00:00"
+}

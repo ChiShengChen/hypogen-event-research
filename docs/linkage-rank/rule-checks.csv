@@ -1,0 +1,63 @@
+﻿case,arm,stage,index,evidence,time,ranking_reason
+P-01,astra,raw,1,True,True,
+P-01,astra,published,1,True,True,
+P-01,current,raw,1,True,True,
+P-01,current,published,1,True,True,
+P-01,ranked,raw,1,True,True,公告同時指名資料來源及受影響業務，產品文件可檢驗整合是否落地，但財務規模仍取決於付費採用。
+P-01,ranked,published,1,True,True,公告同時指名資料來源及受影響業務，產品文件可檢驗整合是否落地，但財務規模仍取決於付費採用。
+P-03,astra,raw,1,True,True,
+P-03,astra,published,1,True,True,
+P-03,current,raw,1,True,True,
+P-03,current,published,1,True,True,
+P-03,ranked,raw,1,True,True,這項具名長租承諾有明確的最低站數，起租可同時驗證賣方的收入來源與買方的成本負擔。
+P-03,ranked,published,1,True,True,這項具名長租承諾有明確的最低站數，起租可同時驗證賣方的收入來源與買方的成本負擔。
+H-01,astra,raw,1,True,True,
+H-01,astra,published,1,True,True,
+H-01,current,raw,1,True,True,
+H-01,current,published,1,True,True,
+H-01,ranked,raw,1,True,True,此路徑有具名客戶、金額承諾與專廠安排，商售產品採用可直接驗證新產能是否進入 Apple 供應體系。
+H-01,ranked,raw,2,True,True,同廠研發安排有公告可查，但人力共用、原訂時程及資金投入均待證實，故列第二。
+H-01,ranked,published,1,True,True,此路徑有具名客戶、金額承諾與專廠安排，商售產品採用可直接驗證新產能是否進入 Apple 供應體系。
+H-01,ranked,published,2,True,True,同廠研發安排有公告可查，但人力共用、原訂時程及資金投入均待證實，故列第二。
+H-02,astra,raw,1,True,True,
+H-02,astra,published,1,True,True,
+H-02,ranked,raw,1,True,True,此連結優先，因具名機型與晶片配置可逐一核對，且量產交貨直接關係到晶片部署，追加採購金額則仍待證實。
+H-02,ranked,published,1,True,True,此連結優先，因具名機型與晶片配置可逐一核對，且量產交貨直接關係到晶片部署，追加採購金額則仍待證實。
+H-03,astra,raw,1,True,True,
+H-03,astra,raw,2,True,True,
+H-03,astra,published,1,True,True,
+H-03,astra,published,2,True,True,
+H-03,current,raw,1,True,True,
+H-03,current,published,1,True,True,
+H-03,ranked,raw,1,True,True,具名合約直接建立供應關係，且載客首航可驗證實際供應，優先於尚待另行決定的客艙應用。
+H-03,ranked,published,1,True,True,具名合約直接建立供應關係，且載客首航可驗證實際供應，優先於尚待另行決定的客艙應用。
+H-05,astra,raw,1,True,True,
+H-05,astra,published,1,True,True,
+H-07,astra,raw,1,True,True,
+H-07,astra,published,1,True,True,
+H-07,current,raw,1,True,True,
+H-07,current,published,1,True,True,
+H-07,ranked,raw,1,True,True,雙方已簽約，原案可推算各方出資規模，具名實繳披露也最能排除 Honda 其他投資的影響。
+H-07,ranked,raw,2,True,True,公告明列 Honda 的售後能力，車主服務安排可驗證實際分工，但收入仍取決於交車與收費條件，故列第二。
+H-07,ranked,published,1,True,True,雙方已簽約，原案可推算各方出資規模，具名實繳披露也最能排除 Honda 其他投資的影響。
+H-07,ranked,published,2,True,True,公告明列 Honda 的售後能力，車主服務安排可驗證實際分工，但收入仍取決於交車與收費條件，故列第二。
+R-01,astra,raw,1,True,True,
+R-01,astra,published,1,True,True,
+R-01,current,raw,1,True,True,
+R-01,current,published,1,True,True,
+R-01,ranked,raw,1,True,True,列首位因最低支出與遷移對象均已具名，LSEG 的切換紀錄可同時檢驗 Azure 採用及客戶端成本風險。
+R-01,ranked,published,1,True,True,列首位因最低支出與遷移對象均已具名，LSEG 的切換紀錄可同時檢驗 Azure 採用及客戶端成本風險。
+R-02,astra,raw,1,True,True,
+R-02,astra,raw,2,True,True,
+R-02,astra,published,1,True,True,
+R-02,astra,published,2,True,True,
+R-02,current,raw,1,True,True,
+R-02,current,published,1,True,True,
+R-02,ranked,raw,1,True,True,此項居首，因獨家供應安排直接指定會員群、價格條件與接入日，公開服務狀態可檢驗雙方是否履約。
+R-02,ranked,published,1,True,True,此項居首，因獨家供應安排直接指定會員群、價格條件與接入日，公開服務狀態可檢驗雙方是否履約。
+R-04,astra,raw,1,True,True,
+R-04,astra,published,1,True,True,
+R-04,current,raw,1,True,True,
+R-04,current,published,1,True,True,
+R-04,ranked,raw,1,True,True,列第一，因兩端同屬直營通路且可逐季觀察銷售，門市能否承接需求會影響對直營復甦來源的判斷。
+R-04,ranked,published,1,True,True,列第一，因兩端同屬直營通路且可逐季觀察銷售，門市能否承接需求會影響對直營復甦來源的判斷。

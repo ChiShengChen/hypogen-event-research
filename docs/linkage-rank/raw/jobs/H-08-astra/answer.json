@@ -1,0 +1,81 @@
+{
+  "business_linkages": [],
+  "business_linkage_gap": "公告列出 SRS 的併表貢獻與 Home Depot 的可比銷售，但缺少收購前後同一批客戶在兩個通路的交易資料。即使 SRS 銷售增加、門市可比銷售下降，也無法據此判定 SRS 分流門市訂單，或為門市帶來交叉銷售。",
+  "hypotheses": [
+    {
+      "stance": "wait",
+      "mechanism": "SRS 併表與第 53 週可推升全年合併銷售，即使可比銷售仍低於上年。第三季兩項指標已呈現相反方向，因此判斷既有業務是否回升，應追蹤後續季度的可比銷售。",
+      "target": "Home Depot 合併銷售與可比銷售",
+      "horizon": "先以 2024 財年全年實績檢驗，再追蹤至 2025-10-31 前已公告的季度。",
+      "catalyst": "2024 財年全年業績，以及其後的季度可比銷售公告。",
+      "prediction": "預期 2024 財年合併銷售年增、可比銷售年減。公司指引分別為約增 4% 與約減 2.5%。",
+      "invalidation": "若全年合併銷售持平或下降，或全年可比銷售持平或上升，即推翻兩者走勢背離的預測。若全年預測成立，但其後可比銷售連續兩季年增，則應重新評估對既有業務復甦的觀望立場。",
+      "claim_ids": [
+        "home-release:quarter",
+        "home-release:guidance",
+        "home-release:baseline"
+      ]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024-11-12，Home Depot 第三季合併銷售年增 6.6%，整體與美國可比銷售卻分別年減 1.3% 與 1.2%。全年指引也呈現相同方向。研究上宜維持觀望，判斷既有業務是否復甦，首要依據是可比銷售能否持續轉正。",
+    "key_gap": "公司估計 SRS 將為當年合併銷售增加約 64 億美元。現有資料缺少第 53 週的獨立貢獻金額、SRS 對獲利的貢獻，以及可追蹤跨通路消費的客戶資料，因而無法量化各因素對盈餘的影響。",
+    "next_check": "先在 2024 財年全年公告逐項核對合併銷售增幅、可比銷售增幅與 SRS 當年併表金額，並查明公司是否另行量化第 53 週的銷售貢獻。",
+    "evidence_limits": [
+      {
+        "evidence_id": "home-release:quarter",
+        "limit": "提供第三季三項銷售增減率。合併與可比銷售的計算範圍不同，兩者相差的 7.9 個百分點不能直接歸為 SRS 貢獻。"
+      },
+      {
+        "evidence_id": "home-release:guidance",
+        "limit": "約 64 億美元是 SRS 當年增量銷售的預估值，無法據此推算單季貢獻、收購綜效或增量利潤。"
+      },
+      {
+        "evidence_id": "home-release:baseline",
+        "limit": "公告缺少同一客群的收購前後交易紀錄，無法識別訂單是否在 SRS 與門市之間移轉。"
+      },
+      {
+        "evidence_id": "home-release:original",
+        "limit": "英文摘句可核對第三季整體可比銷售年減 1.3%，與季度摘要出自同一份公告。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "2024 財年合併銷售與可比銷售的實際年增率",
+        "source_to_watch": "Home Depot 投資人關係網站的全年財報公告",
+        "window": "2024 財年全年業績公布時",
+        "impact_on_thesis": "將兩項實績分別對照約增 4% 與約減 2.5% 的指引，檢驗第三季的走勢背離是否延續至全年。",
+        "evidence_ids": ["home-release:quarter", "home-release:guidance"]
+      },
+      {
+        "metric": "SRS 當年併表銷售額及第 53 週銷售貢獻",
+        "source_to_watch": "Home Depot 全年財報公告及年報的銷售變動說明",
+        "window": "2024 財年全年公告及年報發布時",
+        "impact_on_thesis": "以揭露金額核對 SRS 約 64 億美元的預估。若公司亦量化額外一週的銷售，可進一步拆解合併成長來源。",
+        "evidence_ids": ["home-release:guidance", "home-release:baseline"]
+      },
+      {
+        "metric": "後續各季整體與美國可比銷售年增率",
+        "source_to_watch": "Home Depot 季度財報公告",
+        "window": "截至 2025-10-31 已公布的後續季度",
+        "impact_on_thesis": "整體可比銷售若連續兩季年增，將支持既有業務復甦。美國數據可用來核對其走勢是否與整體一致。",
+        "evidence_ids": ["home-release:original", "home-release:quarter"]
+      }
+    ],
+    "supply_chain": [],
+    "trade_opportunities": [
+      {
+        "company": "Home Depot",
+        "direction": "watch",
+        "earnings_path": "SRS 併表可增加營收，對盈餘的影響仍取決於增量利潤。既有業務能否進一步帶動獲利，需同時檢驗可比銷售與營業利益率。",
+        "catalyst": "全年實績及後續季度銷售與獲利揭露。",
+        "trigger": "若整體可比銷售連續兩季年增，且同期營業利益率均未年減，啟動偏多假設覆核。",
+        "invalidation": "若可比銷售轉正時營業利益率仍年減，則銷售改善帶動獲利的論點仍缺乏支持。",
+        "evidence_gap": "所給資料缺少營業利益率、SRS 增量利潤與估值基準，無法由營收增幅推算合理股價。",
+        "ticker": null,
+        "listing_evidence_id": null,
+        "evidence_ids": ["home-release:quarter", "home-release:guidance"]
+      }
+    ]
+  }
+}

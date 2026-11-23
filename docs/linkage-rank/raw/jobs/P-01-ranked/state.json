@@ -1,0 +1,90 @@
+{
+  "case": "P-01",
+  "call": "ranked",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:11:06.373449+00:00",
+  "queued_epoch": 1795432266.37346,
+  "started_at": "2026-11-23T11:11:06.387083+00:00",
+  "request_sha256": "fa0bb27cbe824f0b9d84c0a43c2ee88f0b9714ea0fc696682a3d4f3c78f1defd",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.005,
+  "prompt_bytes": 13551,
+  "returncode": 0,
+  "cli_elapsed_seconds": 73.649,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "Splunk 的資料能力",
+        "origin_evidence_ids": [
+          "cisco-release:operations",
+          "cisco-release:deal"
+        ],
+        "affected_company": "Cisco",
+        "affected_business": "Observability",
+        "affected_evidence_ids": [
+          "cisco-release:operations"
+        ],
+        "mechanism": "交割後，若 Cisco 將 Splunk 資料接入 Observability 的正式產品，客戶可用該資料分析應用表現。若客戶因此付費擴充，毛利上行便多了一項來自既有業務的來源。",
+        "baseline": "交割公告提出共同平台策略，當時可核實的是整合目標，付費功能及採用規模仍待確認。",
+        "condition": "Cisco 須推出正式可用的整合功能，客戶也須因該功能增加支出，增量收入才可能轉為毛利。",
+        "financial_effect": "付費擴充可增加 Observability 營收；增量毛利取決於付費用量、實收價格及資料處理成本，三者均未披露。",
+        "alternative_explanation": "既有產品更新也可能改善應用可視性。產品說明須具名指出 Splunk 資料在功能中的用途，才能辨別收購的技術貢獻；辨別收入貢獻另需付費擴充資料。",
+        "metric": "Cisco 公開文件所列、使用 Splunk 資料的 Observability 功能供應狀態，作為技術整合的代理指標。",
+        "observation_period": "2024-03-18 交割公告至 2025-12-31",
+        "public_source": "Cisco Newsroom 產品公告及 Observability 公開版本說明",
+        "deadline": "2025-12-31",
+        "prediction": "截至覆核日，Cisco 公開確認至少一項使用 Splunk 資料的 Observability 功能已正式可用。",
+        "invalidation": "截至同一覆核日，Cisco 公開確認相關 Observability 整合功能全數仍處於預覽、延後或取消狀態。未更新狀態則保留判斷。",
+        "ranking_reason": "公告同時指名資料來源及受影響業務，產品文件可檢驗整合是否落地，但財務規模仍取決於付費採用。"
+      }
+    ],
+    "business_linkage_gap": "約 280 億美元是收購股權對價，無從據此推算 Cisco Security 或 Observability 的預算。公告也未給出業務間的人力調撥、通路承諾或具名客戶採購決定。Cisco Security 與 Observability 共用同一平台策略，另列一條相同路徑無法增加辨識力。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "Splunk 的資料能力",
+        "origin_evidence_ids": [
+          "cisco-release:operations",
+          "cisco-release:deal"
+        ],
+        "affected_company": "Cisco",
+        "affected_business": "Observability",
+        "affected_evidence_ids": [
+          "cisco-release:operations"
+        ],
+        "mechanism": "交割後，若 Cisco 將 Splunk 資料接入 Observability 的正式產品，客戶可用該資料分析應用表現。若客戶因此付費擴充，毛利上行便多了一項來自既有業務的來源。",
+        "baseline": "交割公告提出共同平台策略，當時可核實的是整合目標，付費功能及採用規模仍待確認。",
+        "condition": "Cisco 須推出正式可用的整合功能，客戶也須因該功能增加支出，增量收入才可能轉為毛利。",
+        "financial_effect": "付費擴充可增加 Observability 營收；增量毛利取決於付費用量、實收價格及資料處理成本，三者均未披露。",
+        "alternative_explanation": "既有產品更新也可能改善應用可視性。產品說明須具名指出 Splunk 資料在功能中的用途，才能辨別收購的技術貢獻；辨別收入貢獻另需付費擴充資料。",
+        "metric": "Cisco 公開文件所列、使用 Splunk 資料的 Observability 功能供應狀態，作為技術整合的代理指標。",
+        "observation_period": "2024-03-18 交割公告至 2025-12-31",
+        "public_source": "Cisco Newsroom 產品公告及 Observability 公開版本說明",
+        "deadline": "2025-12-31",
+        "prediction": "截至覆核日，Cisco 公開確認至少一項使用 Splunk 資料的 Observability 功能已正式可用。",
+        "invalidation": "截至同一覆核日，Cisco 公開確認相關 Observability 整合功能全數仍處於預覽、延後或取消狀態。未更新狀態則保留判斷。",
+        "ranking_reason": "公告同時指名資料來源及受影響業務，產品文件可檢驗整合是否落地，但財務規模仍取決於付費採用。"
+      }
+    ],
+    "business_linkage_gap": "約 280 億美元是收購股權對價，無從據此推算 Cisco Security 或 Observability 的預算。公告也未給出業務間的人力調撥、通路承諾或具名客戶採購決定。Cisco Security 與 Observability 共用同一平台策略，另列一條相同路徑無法增加辨識力。"
+  },
+  "elapsed_seconds": 73.65,
+  "usage": {
+    "input_tokens": 19026,
+    "cached_input_tokens": 0,
+    "output_tokens": 2568,
+    "reasoning_output_tokens": 120
+  },
+  "event_seconds": {
+    "thread.started": 0.776,
+    "turn.started": 1.317,
+    "item.completed": 73.075,
+    "turn.completed": 73.123
+  },
+  "finished_at": "2026-11-23T11:12:20.039117+00:00"
+}

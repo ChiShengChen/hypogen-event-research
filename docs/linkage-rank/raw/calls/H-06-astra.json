@@ -1,0 +1,36 @@
+{
+  "case": "H-06",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:41:14.651464+00:00",
+  "queued_epoch": 1795434074.651472,
+  "started_at": "2026-11-23T11:41:14.664815+00:00",
+  "request_sha256": "07809b95b864e063bd4229e2876471ecc8aa9ed6be8f0340ccea6ba8a0638b3e",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.004,
+  "prompt_bytes": 2738,
+  "returncode": 0,
+  "cli_elapsed_seconds": 58.789,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "拉美與北美都呈現箱量持平、價格與組合支撐營收成長的現象，但兩地數據未顯示一地業務如何影響另一地。資料也未具名揭露裝瓶商或通路商的交易條件，無法估算對特定交易對手獲利的影響。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "拉美與北美都呈現箱量持平、價格與組合支撐營收成長的現象，但兩地數據未顯示一地業務如何影響另一地。資料也未具名揭露裝瓶商或通路商的交易條件，無法估算對特定交易對手獲利的影響。"
+  },
+  "elapsed_seconds": 58.79,
+  "usage": {
+    "input_tokens": 16978,
+    "cached_input_tokens": 15360,
+    "output_tokens": 2459,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.716,
+    "turn.started": 1.429,
+    "item.completed": 58.225,
+    "turn.completed": 58.251
+  },
+  "finished_at": "2026-11-23T11:42:13.456469+00:00"
+}

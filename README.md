@@ -127,6 +127,35 @@ python -m benchmarks.linkage_depth --out output/linkage-depth-new --phase holdou
 python -m benchmarks.linkage_depth --out output/linkage-depth-new --phase report
 ```
 
+#### 主要財務傳導排序 benchmark
+
+四案先導三稿齊全 4/4。匿名模型評分為 新版 Harness V11 4/4、現版 Harness V10 2/4、純 Astra 3/4。八案保留集三稿齊全 8/8，完成判讀 8/8。保留集基本門檻未通過，排序改善未達標，相對純 Astra 的領先門檻未達標。
+
+| 保留集 | 全對 | 正例 | 負例 | 正例第 1／前 3 | 重大錯誤 |
+|---|---:|---:|---:|---:|---:|
+| 新版 Harness V11 | 4/8 | 1/4 | 3/4 | 1/4 · 1/4 | 0 |
+| 現版 Harness V10 | 4/8 | 1/4 | 3/4 | 1/4 · 1/4 | 0 |
+| 純 Astra | 3/8 | 2/4 | 1/4 | 1/4 · 2/4 | 0 |
+
+新版相對現版的正例差額 **+0 案**，負例差額 **+0 案**。相對純 Astra 的全對差額 **+1 案**。
+
+三組同用 Astra medium、點時證據、單次呼叫及 180 秒上限，搜尋停用。發布候選程式核對 31/31 條。回歸完成匿名模型判讀 4/4，與正式評分分開計算。分析師盲評實收 **0 案**，可送評 **12 案**。前瞻實績 **0 案**。
+
+| 正式呼叫 | 啟動／完成 | 輸入／輸出詞元 | 累計秒數 |
+|---|---:|---:|---:|
+| 新版 Harness V11 | 12／12 | 228,106／29,779 | 811.22 |
+| 現版 Harness V10 | 12／12 | 225,504／26,673 | 734.79 |
+| 純 Astra | 12／12 | 203,532／29,481 | 736.81 |
+| 匿名 Sol | 12／12 | 207,876／9,173 | 255.67 |
+
+[完整評測](docs/linkage-rank/README.md) · [評測 PDF](docs/linkage-rank/report.pdf) · [逐案 QA](docs/linkage-rank/QA.md) · [執行帳本](docs/linkage-rank/execution.csv) · [匿名分析師包](docs/linkage-rank/analyst-review.pdf) · [空白評分表](docs/linkage-rank/review-form.csv)
+
+```bash
+python -m benchmarks.linkage_rank --out output/linkage-rank-replay --phase seal
+python -m benchmarks.linkage_rank --out output/linkage-rank-replay --phase run
+python -m benchmarks.linkage_rank --out output/linkage-rank-replay --phase report
+```
+
 可為伺服器設定搜尋預設值。啟用後，使用者只需送事件與研究截止時點。
 
 ```bash

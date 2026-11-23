@@ -1,0 +1,90 @@
+{
+  "case": "P-03",
+  "call": "ranked",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:17:22.307870+00:00",
+  "queued_epoch": 1795432642.3078792,
+  "started_at": "2026-11-23T11:17:22.456645+00:00",
+  "request_sha256": "d4e58e8e23678c8f5fea5a8dae764dd03c278140d1a38a5bf5f6ca143e5c6320",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.14,
+  "prompt_bytes": 13543,
+  "returncode": 0,
+  "cli_elapsed_seconds": 73.43,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bear",
+        "scope": "counterparty",
+        "origin_business": "UScellular Wireless Operations",
+        "origin_evidence_ids": [
+          "t-mobile-release:deal"
+        ],
+        "affected_company": "UScellular",
+        "affected_business": "鐵塔業務",
+        "affected_evidence_ids": [
+          "t-mobile-release:towers",
+          "t-mobile-release:original"
+        ],
+        "mechanism": "UScellular 出售無線營運後保留鐵塔。若 T-Mobile 依約起租，UScellular 便可從新增站點取得長期租金，同一筆租金也是 T-Mobile 的網路成本。",
+        "baseline": "若無交易，UScellular 沒有本協議帶來的新增租賃承諾。至少 2,100 座是約定新增租用的鐵塔數。",
+        "condition": "交易完成，且至少部分新增站點在觀察期內開始計租。",
+        "financial_effect": "已起租站點可增加 UScellular 鐵塔租金收入。估算金額仍需各期起租座數、單站租金及計租期間，估算獲利另需維運成本。",
+        "alternative_explanation": "其他租戶擴租或既有租約調價也可推升鐵塔收入。可用雙方具名確認本協議新增站點開始計租的公告辨別。",
+        "metric": "本協議至少部分新增站點是否已開始計租。",
+        "observation_period": "自交割日至 2025-12-31，以期內已公開的交易更新或定期報告覆核。",
+        "public_source": "UScellular 投資人公告及定期報告，並與 T-Mobile 交割公告或交易進度更新核對。",
+        "deadline": "2025-12-31",
+        "prediction": "若期內交割，至少部分新增站點於期限前開始計租，可從具名披露確認租金來源。",
+        "invalidation": "若已交割，雙方任一方明確披露截至期限，本協議新增站點仍全數未開始計租，即推翻期內租金傳導。僅披露鐵塔總收入則無法判定。",
+        "ranking_reason": "這項具名長租承諾有明確的最低站數，起租可同時驗證賣方的收入來源與買方的成本負擔。"
+      }
+    ],
+    "business_linkage_gap": "公司未說明頻譜、資本預算或人力將轉入哪項其他業務，也未按安排拆分節省額，因此無法建立可覆核的第二條傳導路徑。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bear",
+        "scope": "counterparty",
+        "origin_business": "UScellular Wireless Operations",
+        "origin_evidence_ids": [
+          "t-mobile-release:deal"
+        ],
+        "affected_company": "UScellular",
+        "affected_business": "鐵塔業務",
+        "affected_evidence_ids": [
+          "t-mobile-release:towers",
+          "t-mobile-release:original"
+        ],
+        "mechanism": "UScellular 出售無線營運後保留鐵塔。若 T-Mobile 依約起租，UScellular 便可從新增站點取得長期租金，同一筆租金也是 T-Mobile 的網路成本。",
+        "baseline": "若無交易，UScellular 沒有本協議帶來的新增租賃承諾。至少 2,100 座是約定新增租用的鐵塔數。",
+        "condition": "交易完成，且至少部分新增站點在觀察期內開始計租。",
+        "financial_effect": "已起租站點可增加 UScellular 鐵塔租金收入。估算金額仍需各期起租座數、單站租金及計租期間，估算獲利另需維運成本。",
+        "alternative_explanation": "其他租戶擴租或既有租約調價也可推升鐵塔收入。可用雙方具名確認本協議新增站點開始計租的公告辨別。",
+        "metric": "本協議至少部分新增站點是否已開始計租。",
+        "observation_period": "自交割日至 2025-12-31，以期內已公開的交易更新或定期報告覆核。",
+        "public_source": "UScellular 投資人公告及定期報告，並與 T-Mobile 交割公告或交易進度更新核對。",
+        "deadline": "2025-12-31",
+        "prediction": "若期內交割，至少部分新增站點於期限前開始計租，可從具名披露確認租金來源。",
+        "invalidation": "若已交割，雙方任一方明確披露截至期限，本協議新增站點仍全數未開始計租，即推翻期內租金傳導。僅披露鐵塔總收入則無法判定。",
+        "ranking_reason": "這項具名長租承諾有明確的最低站數，起租可同時驗證賣方的收入來源與買方的成本負擔。"
+      }
+    ],
+    "business_linkage_gap": "公司未說明頻譜、資本預算或人力將轉入哪項其他業務，也未按安排拆分節省額，因此無法建立可覆核的第二條傳導路徑。"
+  },
+  "elapsed_seconds": 73.432,
+  "usage": {
+    "input_tokens": 18994,
+    "cached_input_tokens": 0,
+    "output_tokens": 2909,
+    "reasoning_output_tokens": 50
+  },
+  "event_seconds": {
+    "thread.started": 0.661,
+    "turn.started": 1.291,
+    "item.completed": 72.967,
+    "turn.completed": 73.018
+  },
+  "finished_at": "2026-11-23T11:18:35.890159+00:00"
+}

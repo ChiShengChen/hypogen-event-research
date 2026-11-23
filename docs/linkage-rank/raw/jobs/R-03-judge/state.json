@@ -1,0 +1,51 @@
+{
+  "case": "R-03",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:55:50.152673+00:00",
+  "queued_epoch": 1795434950.1526856,
+  "started_at": "2026-11-23T11:55:50.167092+00:00",
+  "request_sha256": "37f27d454bbac20644231a8982c8228d1b63fbcf3f01f1694faf31e23017d8fe",
+  "queue_seconds": 0.01,
+  "preparation_seconds": 0.004,
+  "prompt_bytes": 6763,
+  "returncode": 0,
+  "cli_elapsed_seconds": 12.328,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出歷史回購及留存業務的成本資訊缺口，但未指出分拆實收款及用途的證據缺口，也未明確保留對回購資金來源的歸因。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出母公司可得現金、重配金額及承接業務均未披露，並明確指出已完成的 10 億美元回購無法證明分拆資金流向。"
+    },
+    "C": {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "確認 10 億美元回購已完成，並以分拆文件載明母公司可得款項及後續公開披露資金配置，作為歸因於分拆的前提。"
+    }
+  },
+  "elapsed_seconds": 12.329,
+  "usage": {
+    "input_tokens": 16601,
+    "cached_input_tokens": 0,
+    "output_tokens": 310,
+    "reasoning_output_tokens": 36
+  },
+  "event_seconds": {
+    "thread.started": 0.186,
+    "turn.started": 1.261,
+    "item.completed": 11.782,
+    "turn.completed": 11.833
+  },
+  "finished_at": "2026-11-23T11:56:02.498333+00:00"
+}

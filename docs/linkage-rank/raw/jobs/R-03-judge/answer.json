@@ -1,0 +1,25 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出歷史回購及留存業務的成本資訊缺口，但未指出分拆實收款及用途的證據缺口，也未明確保留對回購資金來源的歸因。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出母公司可得現金、重配金額及承接業務均未披露，並明確指出已完成的 10 億美元回購無法證明分拆資金流向。"
+    },
+    {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "確認 10 億美元回購已完成，並以分拆文件載明母公司可得款項及後續公開披露資金配置，作為歸因於分拆的前提。"
+    }
+  ]
+}

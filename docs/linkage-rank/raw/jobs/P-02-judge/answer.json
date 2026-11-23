@@ -1,0 +1,25 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出缺少 Beauty 與 Grooming 之間的顧客流向及通路連動資料，明確保留跨部門因果歸因。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "明確保留 Skin Care 走弱後資源是否轉往 Grooming 的歸因，並指出須查核配置紀錄、實施期間與受影響品類的銷售變化。"
+    },
+    {
+      "label": "C",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出 Beauty 內部品類之間缺少資源移轉證據，但未處理 Beauty 下滑與 Grooming 成長之間的歸因。"
+    }
+  ]
+}

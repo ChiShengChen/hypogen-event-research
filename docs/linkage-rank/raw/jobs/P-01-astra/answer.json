@@ -1,0 +1,108 @@
+{
+  "business_linkages": [
+    {
+      "linked_stance": "bull",
+      "scope": "internal",
+      "origin_business": "Splunk 的資料分析能力",
+      "origin_evidence_ids": ["cisco-release:operations"],
+      "affected_company": "Cisco",
+      "affected_business": "Cisco Security 的威脅辨識產品",
+      "affected_evidence_ids": ["cisco-release:operations", "cisco-release:forecasts"],
+      "mechanism": "若 Splunk 的資料能改善威脅辨識，既有 Cisco Security 客戶可能在續約時加購整合功能。",
+      "baseline": "截至 2024 年 3 月 18 日，Cisco 已公布平台整合方向，但未披露組合產品的客戶轉換率、成交價格或營收。",
+      "condition": "Cisco 須推出可收費的整合功能，且客戶加購金額須高於原合約折讓或被取代的授權收入。",
+      "financial_effect": "符合條件的加購可提高 Cisco Security 每次續約的合約金額，並隨履約增加營收。現有資料不足以估算規模。",
+      "alternative_explanation": "Cisco 的合併營收也可能因納入 Splunk 原有合約而增加，即使既有 Cisco Security 客戶的支出沒有變化。",
+      "metric": "既有 Cisco Security 客戶加購整合功能所帶來的淨新增合約金額，扣除折讓及被取代的授權金額。",
+      "observation_period": "自交易完成至 2025 年 12 月 31 日，以期間內公開揭露的續約批次為準。",
+      "public_source": "Cisco 季度業績公告、法說會或投資人簡報中對既有客戶加購的量化說明。",
+      "deadline": "2025-12-31",
+      "prediction": "若整合產生交叉銷售，採用整合功能的既有客戶在可比期間、相同合約年期下，續約淨新增合約金額應為正。",
+      "invalidation": "若可比續約資料顯示，折讓及被取代的授權金額已抵銷全部加購金額，則該批次不支持此假設。若只披露合併營收，假設仍待驗證。"
+    }
+  ],
+  "business_linkage_gap": "公告也把 Cisco Observability 列入平台策略，但僅說明改善應用可視性的目標。要獨立評估該業務，仍需客戶採用、付費轉換或可歸屬的營收資料。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "Splunk 併入後，若其帶入的毛利相對營收足夠高，交易即可提高 Cisco 的非 GAAP 毛利率。這項效果可在交叉銷售產生前出現。",
+      "target": "Cisco FY2025 非 GAAP 毛利率",
+      "horizon": "FY2025 全年，覆核截至 2025 年 12 月 31 日的公開資料。",
+      "catalyst": "Cisco 公布 FY2025 全年業績並說明 Splunk 對毛利率的影響。",
+      "prediction": "以相同非 GAAP 調整口徑比較，含 Splunk 的 FY2025 毛利率高於排除交易影響的同期估計值。",
+      "invalidation": "若 Cisco 揭露交易對 FY2025 非 GAAP 毛利率的貢獻為零或負值，則假設失效。單看合併毛利率年增或年減，均無法判定交易貢獻。",
+      "claim_ids": ["cisco-release:forecasts", "cisco-release:original"]
+    },
+    {
+      "stance": "wait",
+      "mechanism": "管理層預期交易在 FY2025 對現金流有正貢獻，但計算時扣除若干收購相關及其他項目。排除項目的實際現金支出會影響股東在當期看到的現金效果。",
+      "target": "Cisco FY2025 可歸屬於收購的現金流貢獻",
+      "horizon": "FY2025 全年，覆核期限為 2025 年 12 月 31 日。",
+      "catalyst": "Cisco 揭露交易的現金流貢獻、排除項目及相應的現金支出。",
+      "prediction": "依管理層預測口徑，FY2025 的交易現金流貢獻應為正。計入排除項目後的金額與正負方向仍待核對。",
+      "invalidation": "若同口徑交易貢獻為零或負值，即推翻正貢獻預測。若只公布集團現金流，則維持觀望。",
+      "claim_ids": ["cisco-release:forecasts"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024 年 3 月 18 日，Cisco 已以每股現金 157 美元完成收購 Splunk，總股權價值約 280 億美元。研究立場為觀望。最先可檢驗的是交易對 FY2025 非 GAAP 毛利率及指定口徑現金流的貢獻。即使兩項預測兌現，平台整合能帶來多少新增收入、是否足以支持收購對價，仍需另行估算。",
+    "key_gap": "Cisco 未量化交易對毛利率及現金流的預期貢獻，也未提供可區分 Splunk 原有收入與整合後新增銷售的客戶資料。現階段無法估算收購報酬率。",
+    "next_check": "優先查核 Cisco 的 FY2025 全年業績說明，尋找交易對非 GAAP 毛利率的基點貢獻，以及現金流排除項目的金額。兩者都須與收購公告採用相同口徑。",
+    "evidence_limits": [
+      {
+        "evidence_id": "cisco-release:deal",
+        "limit": "每股對價與總股權價值可確認交易條件。估算投資報酬仍需交易帶來的增量現金流及其時間分布。"
+      },
+      {
+        "evidence_id": "cisco-release:forecasts",
+        "limit": "資料記載管理層預測，未提供實績或增益幅度。FY2026 非 GAAP EPS 全年預測在 2025 年 12 月 31 日的研究期限內只能追蹤進度。"
+      },
+      {
+        "evidence_id": "cisco-release:operations",
+        "limit": "改善威脅辨識及應用可視性屬產品目標，付費需求及營收貢獻仍待量化。"
+      },
+      {
+        "evidence_id": "cisco-release:original",
+        "limit": "英文摘句確認毛利率預測限定於 FY2025 與非 GAAP 口徑，且與預測摘要來自同一公告。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "收購對 FY2025 非 GAAP 毛利率的基點貢獻",
+        "source_to_watch": "Cisco FY2025 全年業績公告及法說會",
+        "window": "FY2025 全年業績公布後至 2025 年 12 月 31 日",
+        "impact_on_thesis": "正值支持管理層的毛利率預測。若只提供集團毛利率，則仍缺少交易歸因。",
+        "evidence_ids": ["cisco-release:original", "cisco-release:forecasts"]
+      },
+      {
+        "metric": "FY2025 調整後交易現金流貢獻，以及計入排除項目現金支出後的貢獻",
+        "source_to_watch": "Cisco FY2025 年度申報文件、業績調節表及法說會",
+        "window": "FY2025 全年業績公布後至 2025 年 12 月 31 日",
+        "impact_on_thesis": "調整後貢獻可驗證管理層預測，兩種口徑的差額則顯示排除項目對當期現金的影響。",
+        "evidence_ids": ["cisco-release:forecasts"]
+      },
+      {
+        "metric": "既有 Cisco Security 客戶加購整合功能的淨新增合約金額",
+        "source_to_watch": "Cisco 季度法說會及投資人簡報中的客戶續約資料",
+        "window": "交易完成後至 2025 年 12 月 31 日",
+        "impact_on_thesis": "可比續約批次若有正的淨新增金額，可支持整合帶來額外需求。若只公布產品上線或客戶案例，商業貢獻仍待量化。",
+        "evidence_ids": ["cisco-release:operations", "cisco-release:forecasts"]
+      }
+    ],
+    "supply_chain": [],
+    "trade_opportunities": [
+      {
+        "company": "Cisco",
+        "direction": "watch",
+        "earnings_path": "管理層預期交易先提高 FY2025 非 GAAP 毛利率，再於 FY2026 提高非 GAAP EPS。由毛利推算每股盈餘，仍需營業費用及其他損益項目的交易影響。",
+        "catalyst": "FY2025 全年實績及其後於研究期限內公布的 FY2026 初期業績說明。",
+        "trigger": "若 Cisco 量化 FY2025 毛利率與調整後現金流的正貢獻，並提供足以估算 FY2026 每股盈餘增益的資料，即可重估獲利假設。",
+        "invalidation": "若同口徑資料顯示 FY2025 毛利率或現金流貢獻未達正值，或管理層撤回 FY2026 非 GAAP EPS 增益預測，則須下修對交易獲利效果的預期。",
+        "evidence_gap": "缺少增益幅度、估值基準及市場價格，無法據此判定預期報酬。所附資料亦未提供上市代號。",
+        "ticker": null,
+        "listing_evidence_id": null,
+        "evidence_ids": ["cisco-release:deal", "cisco-release:forecasts", "cisco-release:original"]
+      }
+    ]
+  }
+}

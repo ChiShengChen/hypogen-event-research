@@ -1,0 +1,36 @@
+{
+  "case": "H-05",
+  "call": "ranked",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:39:54.155385+00:00",
+  "queued_epoch": 1795433994.155397,
+  "started_at": "2026-11-23T11:39:54.332262+00:00",
+  "request_sha256": "cea63e4b741f9a7320e5344e28fd51b0a926b75585a33f33646edbed827142da",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.169,
+  "prompt_bytes": 13595,
+  "returncode": 0,
+  "cli_elapsed_seconds": 58.596,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "50 億美元定期貸款是已知金額最大的資金承諾，可檢驗集團利息負擔，但公告未指出哪項其他業務因此調整投資。多保險方安排則保留既有就醫管道，公告未具名其他承保業務、轉介協議或新增病患分配。要建立第二層傳導，仍需具名業務的資本支出調整，或具名保險方的網絡與歸戶變化。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "50 億美元定期貸款是已知金額最大的資金承諾，可檢驗集團利息負擔，但公告未指出哪項其他業務因此調整投資。多保險方安排則保留既有就醫管道，公告未具名其他承保業務、轉介協議或新增病患分配。要建立第二層傳導，仍需具名業務的資本支出調整，或具名保險方的網絡與歸戶變化。"
+  },
+  "elapsed_seconds": 58.597,
+  "usage": {
+    "input_tokens": 19005,
+    "cached_input_tokens": 0,
+    "output_tokens": 1952,
+    "reasoning_output_tokens": 182
+  },
+  "event_seconds": {
+    "thread.started": 0.734,
+    "turn.started": 1.239,
+    "item.completed": 58.016,
+    "turn.completed": 58.067
+  },
+  "finished_at": "2026-11-23T11:40:52.930675+00:00"
+}

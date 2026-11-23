@@ -1,0 +1,97 @@
+{
+  "business_linkages": [],
+  "business_linkage_gap": "拉美與北美都呈現箱量持平、價格與組合支撐營收成長的現象，但兩地數據未顯示一地業務如何影響另一地。資料也未具名揭露裝瓶商或通路商的交易條件，無法估算對特定交易對手獲利的影響。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "若拉美與北美能維持有利的售價或銷售組合，且箱量守穩，兩區即使沒有銷量成長，仍有條件維持有機營收成長。",
+      "target": "Coca-Cola 拉美與北美的有機營收",
+      "horizon": "先以 2024 年第四季驗證，再逐季追蹤至 2025 年 12 月 31 日。",
+      "catalyst": "下一份分區營運回顧揭露箱量、價格與組合貢獻及有機營收年增率。",
+      "prediction": "下一季兩區箱量均持平或成長，價格與組合貢獻及有機營收年增率均為正。",
+      "invalidation": "若任一區箱量年減，該區守住銷量的前提即告失效。若箱量守穩但有機營收未成長，則該區的營收預測失準。",
+      "claim_ids": ["coca-cola-release:latam", "coca-cola-release:na"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "拉美第三季箱量持平。若後續價格與組合貢獻回落，而箱量仍未成長，拉美有機營收增速可能放緩，拉美相對北美的成長領先幅度也可能縮小。",
+      "target": "Coca-Cola 拉美有機營收增速及其相對北美的差距",
+      "horizon": "以 2024 年第四季對照第三季。",
+      "catalyst": "第四季拉美與北美同口徑分區數據公布。",
+      "prediction": "若拉美價格與組合貢獻低於第三季的 21%，且箱量持平或年減，預期其有機營收年增率低於 24%，對北美的增速差也低於第三季的 12 個百分點。",
+      "invalidation": "在上述條件成立時，若拉美有機營收年增率仍達 24%，則放緩預測失準。若兩區增速差仍達 12 個百分點，則差距收窄的預測失準。",
+      "claim_ids": ["coca-cola-release:latam", "coca-cola-release:na"]
+    },
+    {
+      "stance": "wait",
+      "mechanism": "分區有機營收成長要轉化為集團報表營收與獲利，仍取決於各區營收權重、匯率及利潤率。現有展望摘要不足以量化這些影響。",
+      "target": "Coca-Cola 集團報表營收與獲利",
+      "horizon": "截至 2025 年 12 月 31 日，以屆時已公開的報告覆核。",
+      "catalyst": "核得本次與前次全年指引的具體數值，並取得集團營收調節及利潤率資料。",
+      "prediction": "若匯率折算產生負貢獻，且其他調節項未抵銷，集團報表營收年增率將低於集團有機營收年增率。",
+      "invalidation": "若營收調節顯示匯率影響為零、為正或已被其他項目抵銷，匯率拖累的情境即不適用。若指引及利潤率資料足以量化獲利影響，則可重新評估觀望立場。",
+      "claim_ids": ["coca-cola-release:outlook", "coca-cola-release:latam", "coca-cola-release:na"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024 年 10 月 23 日，Coca-Cola 第三季拉美有機營收年增 24%，北美年增 12%，兩區箱量皆持平。拉美領先北美的 12 個百分點中，價格與組合貢獻的差距占 10 個百分點（21% 對 11%）。因此，判斷拉美能否維持領先，最值得追蹤的是價格與組合貢獻回落時，箱量能否接續成長。集團獲利方向暫採觀望。",
+    "key_gap": "價格與組合合併揭露，無法拆出純提價幅度或估計需求對價格的敏感度。全年展望摘要亦缺少本次與前次指引數值，無法判定修訂方向及幅度。",
+    "next_check": "優先核對本次及前次全年指引的指標、期間與上下限，再以第四季分區營運回顧檢驗拉美的成長領先幅度是否隨價格與組合貢獻回落而縮小。",
+    "evidence_limits": [
+      {
+        "evidence_id": "coca-cola-release:original",
+        "limit": "標題確認營運回顧涵蓋截至 2024 年 9 月 27 日的三個月，未提供可獨立核對的營運數字。"
+      },
+      {
+        "evidence_id": "coca-cola-release:latam",
+        "limit": "摘要未解釋拉美有機營收增幅 24% 與價格及組合貢獻 21% 之間的 3 個百分點差額。箱量持平，不能將差額歸為箱量成長。"
+      },
+      {
+        "evidence_id": "coca-cola-release:na",
+        "limit": "摘要未解釋北美有機營收增幅 12% 與價格及組合貢獻 11% 之間的 1 個百分點差額，也未提供產品別銷量或分區利潤率。"
+      },
+      {
+        "evidence_id": "coca-cola-release:outlook",
+        "limit": "摘要僅確認集團列有全年展望，未載指引區間、前期比較值或匯率影響金額。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "本次與前次集團全年指引的上下限及變動幅度",
+        "source_to_watch": "Coca-Cola 投資人關係網站的第三季財報及前次全年展望",
+        "window": "先覆核截至 2024 年 10 月 23 日已公布的兩版展望。",
+        "impact_on_thesis": "比較相同年度及口徑的指標，確認哪些指引上修、下修或持平，據以調整集團判斷。",
+        "evidence_ids": ["coca-cola-release:outlook"]
+      },
+      {
+        "metric": "拉美與北美的箱量年增率、價格與組合貢獻，以及兩區有機營收年增率之差",
+        "source_to_watch": "Coca-Cola 季度財報的分區營運回顧",
+        "window": "自 2024 年第四季起，追蹤至 2025 年 12 月 31 日前已公布的季度。",
+        "impact_on_thesis": "若拉美價格與組合貢獻下降、箱量仍持平且增速差縮小，支持放緩假說。若箱量轉增且增速差維持，應重新評估銷量的貢獻。",
+        "evidence_ids": ["coca-cola-release:latam", "coca-cola-release:na"]
+      },
+      {
+        "metric": "集團有機與報表營收增速差、匯率折算貢獻及營業利潤率年變動",
+        "source_to_watch": "Coca-Cola 季度與全年財報的營收調節表及損益表",
+        "window": "自 2024 年全年財報起，至 2025 年 12 月 31 日前已公布的財報。",
+        "impact_on_thesis": "先核對匯率對報表營收的影響，再檢視利潤率能否守穩，以判斷營收成長是否延伸至營業利益。",
+        "evidence_ids": ["coca-cola-release:outlook"]
+      }
+    ],
+    "supply_chain": [],
+    "trade_opportunities": [
+      {
+        "company": "Coca-Cola",
+        "direction": "watch",
+        "earnings_path": "兩區若能維持正向價格與組合貢獻並守住箱量，可支撐有機營收。對集團獲利的影響仍須核對匯率折算及營業利潤率。",
+        "catalyst": "集團全年指引數值獲得核實，以及下一季分區營運回顧與集團損益公布。",
+        "trigger": "若兩區箱量均持平或成長、價格與組合貢獻均為正，且集團報表營收成長、營業利潤率持平或上升，可進一步評估偏多情境。",
+        "invalidation": "若箱量轉弱且價格與組合貢獻同步下降，或集團營業利益年減，應重估營收成長帶動獲利的假設。",
+        "evidence_gap": "缺少集團獲利指引數值、分區營收權重、利潤率及市場估值，無法估算每股盈餘或判斷股價已反映多少成長。",
+        "ticker": null,
+        "listing_evidence_id": null,
+        "evidence_ids": ["coca-cola-release:latam", "coca-cola-release:na", "coca-cola-release:outlook"]
+      }
+    ]
+  }
+}

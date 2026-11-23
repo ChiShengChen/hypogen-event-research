@@ -1,0 +1,86 @@
+{
+  "case": "H-01",
+  "call": "current",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:21:36.906667+00:00",
+  "queued_epoch": 1795432896.9066763,
+  "started_at": "2026-11-23T11:21:36.958914+00:00",
+  "request_sha256": "f94cbffa4fad7f316c74bbd8831ed2241e39eb714bf0e06657ed8ca6d09f2853",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.043,
+  "prompt_bytes": 12633,
+  "returncode": 0,
+  "cli_elapsed_seconds": 73.339,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "智慧手機玻璃生產線",
+        "origin_evidence_ids": [
+          "corning-release:plant"
+        ],
+        "affected_company": "Corning",
+        "affected_business": "Apple-Corning Innovation Center",
+        "affected_evidence_ids": [
+          "corning-release:other"
+        ],
+        "mechanism": "新線與研發中心規劃設於同廠。若雙方將新線的製程問題交由中心驗證，中心便有具體的先進材料研發專案，可強化合作從製造延伸至共同開發的判斷。",
+        "baseline": "截至 2025-08-06，雙方已宣布設立中心，尚未披露中心承接新線驗證工作。維持原有合作也可能持續一般材料研發。",
+        "condition": "雙方須實際指派與新線相關的驗證專案，且 Corning 須投入新增研發人力或設備。",
+        "financial_effect": "若 Corning 自付新增研發支出，中心啟動初期將增加現金流出。專案預算、Apple 分攤比例及後續商業化收益均未知。",
+        "alternative_explanation": "中心也可能執行既有材料研究。須由雙方公開說明專案使用新線試製，或處理該線的具體製程問題，才能區分。",
+        "metric": "中心是否已啟動明確連結新線的材料驗證專案。",
+        "observation_period": "2025-08-06 公告後至 2026-12-31",
+        "public_source": "Apple Newsroom 或 Corning 對 Harrodsburg 新線及中心的專案進度公告。",
+        "deadline": "2026-12-31",
+        "prediction": "期內至少一方公開確認中心已開始為新線進行材料驗證，可確認研發連結已運作，金額仍待查。",
+        "invalidation": "期末公開進度明確指出，中心針對該新線的首項材料驗證仍待啟動，或已取消。"
+      }
+    ],
+    "business_linkage_gap": "同廠設址無法判定製造與研發是否共用工程人力，也無法判定新線是否排擠其他專案。尚缺人力調配、專案時程及資金分攤資料。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "智慧手機玻璃生產線",
+        "origin_evidence_ids": [
+          "corning-release:plant"
+        ],
+        "affected_company": "Corning",
+        "affected_business": "Apple-Corning Innovation Center",
+        "affected_evidence_ids": [
+          "corning-release:other"
+        ],
+        "mechanism": "新線與研發中心規劃設於同廠。若雙方將新線的製程問題交由中心驗證，中心便有具體的先進材料研發專案，可強化合作從製造延伸至共同開發的判斷。",
+        "baseline": "截至 2025-08-06，雙方已宣布設立中心，尚未披露中心承接新線驗證工作。維持原有合作也可能持續一般材料研發。",
+        "condition": "雙方須實際指派與新線相關的驗證專案，且 Corning 須投入新增研發人力或設備。",
+        "financial_effect": "若 Corning 自付新增研發支出，中心啟動初期將增加現金流出。專案預算、Apple 分攤比例及後續商業化收益均未知。",
+        "alternative_explanation": "中心也可能執行既有材料研究。須由雙方公開說明專案使用新線試製，或處理該線的具體製程問題，才能區分。",
+        "metric": "中心是否已啟動明確連結新線的材料驗證專案。",
+        "observation_period": "2025-08-06 公告後至 2026-12-31",
+        "public_source": "Apple Newsroom 或 Corning 對 Harrodsburg 新線及中心的專案進度公告。",
+        "deadline": "2026-12-31",
+        "prediction": "期內至少一方公開確認中心已開始為新線進行材料驗證，可確認研發連結已運作，金額仍待查。",
+        "invalidation": "期末公開進度明確指出，中心針對該新線的首項材料驗證仍待啟動，或已取消。"
+      }
+    ],
+    "business_linkage_gap": "同廠設址無法判定製造與研發是否共用工程人力，也無法判定新線是否排擠其他專案。尚缺人力調配、專案時程及資金分攤資料。"
+  },
+  "elapsed_seconds": 73.341,
+  "usage": {
+    "input_tokens": 18849,
+    "cached_input_tokens": 15360,
+    "output_tokens": 2541,
+    "reasoning_output_tokens": 34
+  },
+  "event_seconds": {
+    "thread.started": 0.703,
+    "turn.started": 1.521,
+    "item.completed": 72.886,
+    "turn.completed": 72.917
+  },
+  "finished_at": "2026-11-23T11:22:50.301644+00:00"
+}

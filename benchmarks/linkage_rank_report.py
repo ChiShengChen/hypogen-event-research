@@ -1,5 +1,6 @@
 """Export ranking results, the execution ledger and independently blinded analyst drafts."""
 
+import hashlib
 import os
 from pathlib import Path
 import secrets
@@ -34,8 +35,14 @@ def read_receipts(root, cases):
     return records
 
 
+def review_key_path(root):
+    state = Path(os.getenv("XDG_STATE_HOME") or Path.home() / ".local/state")
+    batch = hashlib.sha256(os.fsencode(root.resolve())).hexdigest()[:16]
+    return state / "hypogen" / "linkage-rank" / batch / "review-key.restricted.json"
+
+
 def blind(out, root, cases, receipts):
-    key_path = root / "review-key.restricted.json"
+    key_path = review_key_path(root)
     mapping = rank.equal.hypothesis.read(key_path)
     lines = [
         "# 主要財務傳導 · 匿名分析師覆核", "",
@@ -67,6 +74,8 @@ def blind(out, root, cases, receipts):
                 lines.extend(["未提交連動或證據缺口。", ""])
             rows.append({"case": key, "draft": alias})
     if mapping:
+        key_path.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
+        key_path.parent.chmod(0o700)
         rank.equal.journal.atomic(key_path, mapping)
         key_path.chmod(0o600)
     if not rows:
@@ -212,8 +221,32 @@ def report(out, totals, cases, grades, calls, protocol):
             f"新版相對現版的正例差額 {h['positive_delta_vs_current']:+d} 案，"
             f"負例差額 {h['negative_delta_vs_current']:+d} 案。相對純 Astra 全對數差額 {h['exact_delta_vs_astra']:+d} 案。", "",
         ])
+        changes = {True: [], False: []}
+        for key, case in cases.items():
+            if case["split"] != "holdout":
+                continue
+            new, old = (grades[key][arm]["exact"] for arm in ("ranked", "current"))
+            if new != old:
+                changes[new].append(case["issuer"])
+        for value, label in ((True, "新版新增全對"), (False, "現版全對而新版失分")):
+            if changes[value]:
+                lines.extend([f"- {label}　{'、'.join(changes[value])}"])
+        if any(changes.values()):
+            lines.append("")
     elif not p["pass"]:
         lines.extend(["依封存條件停止保留集派發。未執行案例保留在 QA 與帳本。", ""])
+    missed = [(key, grades[key]["ranked"]) for key, case in cases.items()
+              if case["split"] == "holdout" and grades[key] and not grades[key]["ranked"]["exact"]]
+    if missed:
+        lines.extend(["## 新版保留集未全對案例", ""])
+        for key, score in missed:
+            verdict = score["verdict"]
+            candidates = verdict["candidates"]
+            candidate = next((row for row in candidates if row["target_path"]), candidates[0] if candidates else None)
+            note = candidate["note"] if candidate and cases[key]["gold"]["positive"] else verdict["note"]
+            dims = "、".join(DIMENSIONS[field] for field in score["failure_dimensions"])
+            lines.append(f"- {key} {cases[key]['issuer']} · {dims}。{note}")
+        lines.append("")
     lines.extend(["## 執行帳本", "",
                   "| 呼叫 | 啟動／完成 | 逾時／容量類失敗 | 有回報用量 | 輸入／輸出詞元 | 累計秒數 |",
                   "|---|---:|---:|---:|---:|---:|"])

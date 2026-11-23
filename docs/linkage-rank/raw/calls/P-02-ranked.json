@@ -1,0 +1,36 @@
+{
+  "case": "P-02",
+  "call": "ranked",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:13:35.556735+00:00",
+  "queued_epoch": 1795432415.5567455,
+  "started_at": "2026-11-23T11:13:35.570682+00:00",
+  "request_sha256": "c89767083004553817ce0222a220e0ebb454ecc876dd24d4096a52e59d90eb25",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.006,
+  "prompt_bytes": 13206,
+  "returncode": 0,
+  "cli_elapsed_seconds": 42.17,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "同份季報揭露了各品類表現，但未指出 Skin Care 走弱後，公司曾將行銷預算或貨架空間轉給 Hair Care、Personal Care 或 Grooming。要檢驗跨品類影響，需有具名資源移轉或通路配置紀錄、實施期間，以及受影響品類的銷售變化。資料也未揭露具名交易對手或支出承諾。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "同份季報揭露了各品類表現，但未指出 Skin Care 走弱後，公司曾將行銷預算或貨架空間轉給 Hair Care、Personal Care 或 Grooming。要檢驗跨品類影響，需有具名資源移轉或通路配置紀錄、實施期間，以及受影響品類的銷售變化。資料也未揭露具名交易對手或支出承諾。"
+  },
+  "elapsed_seconds": 42.171,
+  "usage": {
+    "input_tokens": 19012,
+    "cached_input_tokens": 0,
+    "output_tokens": 1736,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.72,
+    "turn.started": 1.379,
+    "item.completed": 41.618,
+    "turn.completed": 41.637
+  },
+  "finished_at": "2026-11-23T11:14:17.743205+00:00"
+}

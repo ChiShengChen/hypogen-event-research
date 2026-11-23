@@ -1,0 +1,84 @@
+{
+  "case": "R-04",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:57:08.968178+00:00",
+  "queued_epoch": 1795435028.968186,
+  "started_at": "2026-11-23T11:57:08.980786+00:00",
+  "request_sha256": "5b14c5b0db2e69f2a712fbb77ecc387da20847114d6b2772ad878f44f4d13df3",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.003,
+  "prompt_bytes": 11325,
+  "returncode": 0,
+  "cli_elapsed_seconds": 36.061,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "直營、批發及集團毛利率讀數有據。若直營毛利率較高，直營占比下降會壓低集團毛利率，幅度仍待確認。NIKE 同季若披露通路組合貢獻為零或為正，可推翻該季判斷。此路徑追蹤毛利組合，未檢驗需求是否由直營移往批發。"
+        }
+      ],
+      "note": "缺口保留了毛利歸因，並指出批發營收無法衡量終端銷售，但未具體保留直營與批發跌幅差異是否來自顧客轉購或商品改配。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "數位及自營門市跌幅有據。數位顧客須實際到店成交，才可能保住部分直營營收。NIKE 同季若把門市改善歸因於自身客流回升，可與轉購解釋區分。承接端是自營門市，仍屬直營。"
+        }
+      ],
+      "note": "缺口指出欠缺跨通路轉購紀錄及批發增配證據，並明確保留批發營收能否歸因於訂單移轉。"
+    },
+    "C": {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "數位及批發跌幅有據。NIKE 須將商品由數位通路改配批發，並由通路商增購、NIKE 交貨認列，才會帶來批發增量。NIKE 同季若確認改配及實際承接，可與例行補貨區分。批發增速門檻單獨只能檢驗表現，集團淨效應仍無法估算。"
+        }
+      ],
+      "note": "缺口點明配額、增購量及通路毛利率未揭露。草稿把改配與承接列為待驗條件，批發回升本身不足以證明改配或顧客轉購。"
+    }
+  },
+  "elapsed_seconds": 36.062,
+  "usage": {
+    "input_tokens": 18097,
+    "cached_input_tokens": 0,
+    "output_tokens": 1521,
+    "reasoning_output_tokens": 772
+  },
+  "event_seconds": {
+    "thread.started": 0.779,
+    "turn.started": 1.261,
+    "item.completed": 35.473,
+    "turn.completed": 35.555
+  },
+  "finished_at": "2026-11-23T11:57:45.044263+00:00"
+}

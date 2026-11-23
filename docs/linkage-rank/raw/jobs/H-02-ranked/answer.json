@@ -1,0 +1,73 @@
+{
+  "business_linkages": [
+    {
+      "linked_stance": "bull",
+      "scope": "counterparty",
+      "origin_business": "HP OmniBook X AI PC",
+      "origin_evidence_ids": ["hp-release:hp"],
+      "affected_company": "Qualcomm",
+      "affected_business": "Qualcomm Snapdragon X Series",
+      "affected_evidence_ids": ["hp-release:hp", "hp-release:rival"],
+      "mechanism": "HP 已公布此機採用 Snapdragon X Elite。若 HP 實際投產並交貨，Qualcomm 的晶片便隨整機進入市場。若 HP 因新增需求而追加採購，才可能進一步增加 Qualcomm 晶片收入。",
+      "baseline": "以 5 月 20 日已公布搭載、尚無實際交貨證據為觀察起點。若 HP 維持原採購計畫，即使首批電腦交貨，也可能只消化已購晶片。",
+      "condition": "HP 須實際交付搭載該晶片的量產機。收入增量另須 HP 將新增採購分配給 Qualcomm，且 Qualcomm 完成交付及收入認列。",
+      "financial_effect": "新增晶片銷售可提高 Qualcomm 收入，規模取決於增購顆數、單價及認列期間，三者均未披露。",
+      "alternative_explanation": "Lenovo 等品牌也採用同系列晶片。Qualcomm 的平台進展可能由其他品牌帶動，須以明列 HP 型號與晶片的交貨公告辨別 HP 是否參與。",
+      "metric": "HP OmniBook X AI PC 搭載 Snapdragon X Elite 的實際交貨狀態，僅作晶片商用部署代理。",
+      "observation_period": "2024-05-20 發表後至 2025-06-30",
+      "public_source": "HP 產品上市或交貨公告，並以 Microsoft 平台產品更新核對型號及晶片。",
+      "deadline": "2025-06-30",
+      "prediction": "覆核日前，HP 或平台公告確認搭載 Snapdragon X Elite 的 HP OmniBook X AI PC 已開始交貨。",
+      "invalidation": "同期 HP 或平台公告明確確認該配置已在交貨前取消，或首次交貨已延至 2025-06-30 之後。僅缺少更新則仍待查。",
+      "ranking_reason": "此連結優先，因具名機型與晶片配置可逐一核對，且量產交貨直接關係到晶片部署，追加採購金額則仍待證實。"
+    }
+  ],
+  "business_linkage_gap": "公告只列平台預購入口。要把上架連到 Microsoft 的通路收入，仍缺 HP 指定機型的銷售安排、成交量及分潤條款。也缺 HP 將產能或預算從既有產品移至新機的證據，無法評估其他產品的損益。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "若未推出兩款新機，HP 無法以這兩款產品承接此次平台需求。若兩款均由預購轉為可交貨，HP 便多了可實際銷售的產品。營收增量取決於成交、交付及認列，並須扣除對既有 HP 機型的替代。",
+      "target": "HP Inc.",
+      "horizon": "2025-06-30",
+      "catalyst": "2024-05-20 Microsoft 公布 HP 兩款 Copilot+ PCs 及平台預購通路。後續催化點是兩款新機各自開始供貨。",
+      "prediction": "自發表至 2025-06-30，HP 上市公告或具名官方商店頁可確認兩款機型均曾開始交貨或提供現貨。基準是發表日僅確認兩款列名；現貨狀態僅代理供貨能力。",
+      "invalidation": "同一期間，HP 明確確認至少一款已取消上市，或首次供貨延至 2025-06-30 之後，即推翻兩款均已供貨的預測。單日缺貨或頁面消失不足以判定。",
+      "claim_ids": ["fact:hp-release:hp", "fact:hp-release:original", "fact:hp-release:channel"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "同場推出的 Lenovo 機型讓買家可在首批同平台產品間比價。相較於 HP 上市時沒有這批競品的情境，若 HP 須先行折價以爭取買家，即使順利供貨，每台收入及毛利仍可能承壓。實際影響取決於成交量、折讓負擔及成本。",
+      "target": "HP Inc.",
+      "horizon": "2025-06-30",
+      "catalyst": "5 月 20 日兩家同場發表後，以 HP OmniBook X AI PC 與 Lenovo Yoga Slim 7x 在同一市場、同一零售通路首次同時有現貨且公開售價為比價起點。",
+      "prediction": "若起點距 2025-06-30 至少八週，記錄起點及第八週的公開單機售價，各固定同一配置。預期 HP 第八週售價低於起點，且相對起點的跌幅大於 Lenovo。此為競爭折價代理，無法歸因至特定競品或確認 HP 實收價。",
+      "invalidation": "同一通路、配置及八週比較中，若 HP 售價持平或上升，或其跌幅小於或等於 Lenovo，即推翻相對折價預測。缺少配對報價或觀察期不足則無法判定。",
+      "claim_ids": ["fact:hp-release:hp", "fact:hp-release:rival", "fact:hp-release:channel"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024-05-20，Microsoft 已公布 HP 兩款 Snapdragon X Elite 電腦；兩款能否實際供貨決定銷售機會，同期競品帶來的折價則可能削弱每台收益。",
+    "key_gap": "最重要的是有多少成交屬 HP 新增需求，以及 HP 實收單價能否支撐毛利。公告未提供銷量或財測，預購入口、交貨、終端採用與收入認列是不同階段；增量與折價均為研究情境。",
+    "next_check": "從 5 月 20 日發表後首份 HP 上市公告或官方商店現貨頁起，逐款記錄首次供貨證據，最遲於 2025-06-30 覆核。判定財務規模仍需 HP 披露淨銷量、實收價格及替代情形，否則須依賴非公開銷售紀錄。",
+    "evidence_limits": [
+      {"evidence_id": "hp-release:hp", "limit": "Microsoft 公告具名兩款 HP 機型與晶片，僅能確立發表及配置。"},
+      {"evidence_id": "hp-release:original", "limit": "英文摘句可核對型號與 Snapdragon X Elite，與中文摘要同源，未增加交貨證據。"},
+      {"evidence_id": "hp-release:channel", "limit": "公告列出 Microsoft.com 等平台預購入口，未逐款對應通路，也未披露 HP 預購量。"},
+      {"evidence_id": "hp-release:rival", "limit": "公告列出 Lenovo 首批機型與 Qualcomm 平台，可辨識同場競品；缺少相對售價、客戶轉單及市占資料。"}
+    ],
+    "public_checks": [
+      {"metric": "兩款 HP 機型中，有幾款獲官方確認已開始交貨或曾有現貨。", "source_to_watch": "HP 上市公告、HP 官方商店具名產品頁，以及 Microsoft 的平台上市更新。", "window": "發表後逐款追蹤至 2025-06-30。", "impact_on_thesis": "兩款均開始供貨可提高對產品落地的信心。明確取消或延後會削弱判斷；可供貨仍無法量出成交、採用或已認列收入。", "evidence_ids": ["hp-release:hp", "hp-release:channel"]},
+      {"metric": "同一零售通路中，OmniBook X 與 Yoga Slim 7x 各自固定配置的八週公開售價變動率。", "source_to_watch": "兩款均有現貨的具名零售商公開商品頁，留存同市場、同幣別且不含綁售的報價。", "window": "首次同時有現貨起至第八週，須於 2025-06-30 前完成。", "impact_on_thesis": "HP 單獨出現較深折價會提高價格承壓的疑慮。兩者同步降價較符合共同促銷；公開售價無法辨識由零售商或 HP 負擔折讓。", "evidence_ids": ["hp-release:channel", "hp-release:hp", "hp-release:rival"]}
+    ],
+    "supply_chain": [
+      {"company": "Qualcomm", "role": "upstream", "status": "disclosed_relationship", "product_scope": "兩款 HP 新機採用的 Snapdragon X Elite 處理器。", "relationship": "Microsoft 具名列出 HP 機型與晶片，並將首批晶片列為 Qualcomm Snapdragon X Series。", "transmission": "HP 量產使晶片得以部署；若 HP 決定增加採購且完成交付，才有新增晶片收入的可能。", "materiality": "未披露 HP 採購顆數、單價、既有庫存或對 Qualcomm 收入的占比。", "public_check": "追蹤 HP 是否確認指定晶片配置已交貨，再查 Qualcomm 是否披露可歸屬的 PC 晶片銷售規模。", "gap": "指定配置不能確定直接採購主體、下單時間或新增採購量。", "evidence_ids": ["hp-release:hp", "hp-release:rival"]},
+      {"company": "Microsoft", "role": "downstream", "status": "candidate", "product_scope": "Microsoft.com 的 Copilot+ PCs 預購入口。", "relationship": "Microsoft 發表列出平台通路與 HP 機型，兩者尚無逐款銷售對應。", "transmission": "若該入口提供 HP 指定機型，可能增加顧客接觸與購買機會。", "materiality": "缺通路成交量及分潤，無法量化對任一方收入的影響。", "public_check": "核對 Microsoft.com 是否出現可購買的 HP 指定型號，以及由誰銷售。", "gap": "仍待確認實際銷售安排與成交。", "evidence_ids": ["hp-release:channel", "hp-release:hp"]},
+      {"company": "Lenovo", "role": "alternative", "status": "comparable_only", "product_scope": "同場發表的 Yoga Slim 7x 與 ThinkPad T14s Gen 6。", "relationship": "同為首批平台品牌，可觀察上市節奏與售價；未證實特定買家視為可替代機型。", "transmission": "若兩家同期在相同通路供貨，買家可比價，可能影響折扣決策。", "materiality": "缺成交價、交叉比價及品牌間轉單數據，無法估算影響。", "public_check": "在相同市場與通路記錄兩家有貨日期及固定配置報價。", "gap": "型號並列無法證實客戶重疊或訂單轉移。", "evidence_ids": ["hp-release:rival", "hp-release:hp"]}
+    ],
+    "trade_opportunities": [
+      {"company": "Qualcomm", "direction": "watch", "earnings_path": "具名採用提供 PC 晶片銷售機會，新增收入仍取決於實際採購及交付。", "catalyst": "HP 新機首次交貨後至 2025-06-30 的平台更新或 Qualcomm 業績說明。", "trigger": "先確認搭載該晶片的 HP 機型已交貨，再看 Qualcomm 是否披露足以影響公司收入的 PC 晶片銷售規模。", "invalidation": "若 HP 確認兩款指定配置皆在交貨前取消，則本次 HP 部署路徑失效。", "evidence_gap": "缺 HP 增購量、晶片售價、盈利貢獻與市場估值，僅列觀察。", "ticker": null, "listing_evidence_id": null, "evidence_ids": ["hp-release:hp", "hp-release:rival"]},
+      {"company": "Lenovo", "direction": "watch", "earnings_path": "同期上架可能改變促銷強度。Lenovo 能否保住每台收益，取決於實收價格及折讓負擔。", "catalyst": "Yoga Slim 7x 與 HP OmniBook X 首次在同一零售通路有現貨後八週，最遲於 2025-06-30 覆核。", "trigger": "若 Lenovo 固定配置售價持平、HP 同期折價，則追蹤 Lenovo 是否另有產品組合或獲利披露可佐證。", "invalidation": "同一通路與八週期間若 Lenovo 也折價，或 HP 售價持平或上升，則此相對價格條件不成立。", "evidence_gap": "通路價差無法確認轉單、成交量或品牌實收價格，亦缺公司盈利敏感度與估值。", "ticker": null, "listing_evidence_id": null, "evidence_ids": ["hp-release:rival", "hp-release:hp", "hp-release:channel"]},
+      {"company": "Microsoft", "direction": "watch", "earnings_path": "若 Microsoft.com 實際銷售 HP 新機，成交可能帶來通路收入；僅提供導購連結時，收益取決於另行約定。", "catalyst": "平台預購開放後至 2025-06-30 的具名商品頁更新。", "trigger": "商品頁確認 HP 指定型號可在 Microsoft.com 結帳，並列明 Microsoft 為銷售方。", "invalidation": "若所觀察的 HP 商品頁明確標示由其他零售商銷售並於站外結帳，則該頁所涉直售路徑不成立。", "evidence_gap": "缺逐款銷售安排、成交額、費率及估值依據。", "ticker": null, "listing_evidence_id": null, "evidence_ids": ["hp-release:channel", "hp-release:hp"]}
+    ]
+  }
+}

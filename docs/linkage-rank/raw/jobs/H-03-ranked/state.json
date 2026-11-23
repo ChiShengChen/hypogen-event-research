@@ -1,0 +1,92 @@
+{
+  "case": "H-03",
+  "call": "ranked",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:30:53.080637+00:00",
+  "queued_epoch": 1795433453.0806444,
+  "started_at": "2026-11-23T11:30:53.106644+00:00",
+  "request_sha256": "8f823eab4e590b71e2a6dc7fb8fd48bf07176f01001fd4e0297ad1b543eca5b0",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.018,
+  "prompt_bytes": 13827,
+  "returncode": 0,
+  "cli_elapsed_seconds": 85.638,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "主線及區域機隊",
+        "origin_evidence_ids": [
+          "united-release:contract",
+          "united-release:original"
+        ],
+        "affected_company": "SpaceX",
+        "affected_business": "Starlink Wi-Fi",
+        "affected_evidence_ids": [
+          "united-release:contract",
+          "united-release:cost"
+        ],
+        "mechanism": "United Airlines 已簽約部署，讓 SpaceX 的 Starlink Wi-Fi 取得通往聯航旅客的服務通路。若首架飛機從測試轉為載客營運，便可確認供應商已開始向該通路提供服務。",
+        "baseline": "截至 2024-09-13，公告確認簽約及逾 1,000 架的計畫範圍，首批飛行仍屬預期。無此協議的基準情境沒有這份合約帶來的服務收入。",
+        "condition": "聯航須完成裝機、開通載客服務，且達成合約約定的計費或驗收條件。",
+        "financial_effect": "若服務開通觸發計費，SpaceX 可增加服務收入。金額取決於付費架數、單價及服務期間，收入認列時點取決於履約條款。",
+        "alternative_explanation": "展示機或測試飛行也能證明設備可用。聯航公告若指明一般旅客已可在營運航班使用，才能區別測試與實際供應。是否開始計費仍須合約或財務揭露。",
+        "metric": "聯航公開確認已提供 Starlink Wi-Fi 的載客航班，作為 SpaceX 實際提供服務的代理指標。",
+        "observation_period": "2025 年測試啟動至年底",
+        "public_source": "United Airlines 新聞室的 Starlink 測試及首航更新",
+        "deadline": "2025-12-31",
+        "prediction": "截至年底，聯航公開確認 2025 年至少一班載客航班已向旅客開通 Starlink Wi-Fi。",
+        "invalidation": "聯航截至年底明確確認 2025 年全年開通該服務的載客航班為零。",
+        "ranking_reason": "具名合約直接建立供應關係，且載客首航可驗證實際供應，優先於尚待另行決定的客艙應用。"
+      }
+    ],
+    "business_linkage_gap": "影音串流、直播及購物有具名用途，但缺內容授權、廣告或購物分潤安排及使用量。員工資訊工具與既定客艙升級也缺專案時程、預算或機務工時因本協議而改變的證據。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "主線及區域機隊",
+        "origin_evidence_ids": [
+          "united-release:contract",
+          "united-release:original"
+        ],
+        "affected_company": "SpaceX",
+        "affected_business": "Starlink Wi-Fi",
+        "affected_evidence_ids": [
+          "united-release:contract",
+          "united-release:cost"
+        ],
+        "mechanism": "United Airlines 已簽約部署，讓 SpaceX 的 Starlink Wi-Fi 取得通往聯航旅客的服務通路。若首架飛機從測試轉為載客營運，便可確認供應商已開始向該通路提供服務。",
+        "baseline": "截至 2024-09-13，公告確認簽約及逾 1,000 架的計畫範圍，首批飛行仍屬預期。無此協議的基準情境沒有這份合約帶來的服務收入。",
+        "condition": "聯航須完成裝機、開通載客服務，且達成合約約定的計費或驗收條件。",
+        "financial_effect": "若服務開通觸發計費，SpaceX 可增加服務收入。金額取決於付費架數、單價及服務期間，收入認列時點取決於履約條款。",
+        "alternative_explanation": "展示機或測試飛行也能證明設備可用。聯航公告若指明一般旅客已可在營運航班使用，才能區別測試與實際供應。是否開始計費仍須合約或財務揭露。",
+        "metric": "聯航公開確認已提供 Starlink Wi-Fi 的載客航班，作為 SpaceX 實際提供服務的代理指標。",
+        "observation_period": "2025 年測試啟動至年底",
+        "public_source": "United Airlines 新聞室的 Starlink 測試及首航更新",
+        "deadline": "2025-12-31",
+        "prediction": "截至年底，聯航公開確認 2025 年至少一班載客航班已向旅客開通 Starlink Wi-Fi。",
+        "invalidation": "聯航截至年底明確確認 2025 年全年開通該服務的載客航班為零。",
+        "ranking_reason": "具名合約直接建立供應關係，且載客首航可驗證實際供應，優先於尚待另行決定的客艙應用。"
+      }
+    ],
+    "business_linkage_gap": "影音串流、直播及購物有具名用途，但缺內容授權、廣告或購物分潤安排及使用量。員工資訊工具與既定客艙升級也缺專案時程、預算或機務工時因本協議而改變的證據。"
+  },
+  "elapsed_seconds": 85.639,
+  "usage": {
+    "input_tokens": 19128,
+    "cached_input_tokens": 0,
+    "output_tokens": 2833,
+    "reasoning_output_tokens": 106
+  },
+  "event_seconds": {
+    "thread.started": 0.181,
+    "turn.started": 1.494,
+    "item.completed": 85.15,
+    "turn.completed": 85.191
+  },
+  "finished_at": "2026-11-23T11:32:18.748008+00:00"
+}

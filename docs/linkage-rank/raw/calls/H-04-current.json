@@ -1,0 +1,36 @@
+{
+  "case": "H-04",
+  "call": "current",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:36:01.869728+00:00",
+  "queued_epoch": 1795433761.8697407,
+  "started_at": "2026-11-23T11:36:01.911818+00:00",
+  "request_sha256": "140412d405ea8942e717fd8ca9e4636ba25b3d32c4f373e22f19d674ec283314",
+  "queue_seconds": 0.008,
+  "preparation_seconds": 0.034,
+  "prompt_bytes": 12057,
+  "returncode": 0,
+  "cli_elapsed_seconds": 49.581,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告未指明 3M 哪項業務會取得變現資金，也未揭露 Solventum 與 3M 分拆後的產品供銷關係。要檢驗第二層影響，需有具名業務的資金配置決議與實際支出，或雙方披露的產品合約與交易額。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告未指明 3M 哪項業務會取得變現資金，也未揭露 Solventum 與 3M 分拆後的產品供銷關係。要檢驗第二層影響，需有具名業務的資金配置決議與實際支出，或雙方披露的產品合約與交易額。"
+  },
+  "elapsed_seconds": 49.582,
+  "usage": {
+    "input_tokens": 18736,
+    "cached_input_tokens": 0,
+    "output_tokens": 1686,
+    "reasoning_output_tokens": 14
+  },
+  "event_seconds": {
+    "thread.started": 0.162,
+    "turn.started": 1.262,
+    "item.completed": 49.031,
+    "turn.completed": 49.075
+  },
+  "finished_at": "2026-11-23T11:36:51.496021+00:00"
+}

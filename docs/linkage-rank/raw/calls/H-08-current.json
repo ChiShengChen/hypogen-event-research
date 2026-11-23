@@ -1,0 +1,36 @@
+{
+  "case": "H-08",
+  "call": "current",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:49:06.084071+00:00",
+  "queued_epoch": 1795434546.084081,
+  "started_at": "2026-11-23T11:49:06.096876+00:00",
+  "request_sha256": "aaccb17aa34524f0a41785f450a43f4a270b445af3f981ff2f4ed412cae6ed93",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.004,
+  "prompt_bytes": 12121,
+  "returncode": 0,
+  "cli_elapsed_seconds": 44.977,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "SRS Distribution 併表與 Home Depot 可比銷售下滑同時出現，兩者的落差無法識別客戶是否轉移採購。要檢驗通路排擠，需公司揭露原有客戶轉向 SRS 的銷售額及原通路銷售變化，或取得非公開的跨通路配對交易紀錄。現有資料也未具名可追蹤的外部供應商或客戶。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "SRS Distribution 併表與 Home Depot 可比銷售下滑同時出現，兩者的落差無法識別客戶是否轉移採購。要檢驗通路排擠，需公司揭露原有客戶轉向 SRS 的銷售額及原通路銷售變化，或取得非公開的跨通路配對交易紀錄。現有資料也未具名可追蹤的外部供應商或客戶。"
+  },
+  "elapsed_seconds": 44.978,
+  "usage": {
+    "input_tokens": 18793,
+    "cached_input_tokens": 0,
+    "output_tokens": 1789,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.166,
+    "turn.started": 1.314,
+    "item.completed": 44.441,
+    "turn.completed": 44.478
+  },
+  "finished_at": "2026-11-23T11:49:51.076336+00:00"
+}

@@ -1,0 +1,36 @@
+{
+  "case": "P-04",
+  "call": "ranked",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:19:46.248691+00:00",
+  "queued_epoch": 1795432786.2487097,
+  "started_at": "2026-11-23T11:19:46.263044+00:00",
+  "request_sha256": "a1a4eeb4064d07925f4d13b7aff35618a8eb718f8710b3366f11625515f5356d",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.005,
+  "prompt_bytes": 13468,
+  "returncode": 0,
+  "cli_elapsed_seconds": 47.79,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "Costco 披露電商與倉庫並行營運，但未揭露線上訂單由哪些倉庫履約、是否排擠店內銷售，或兩個通路之間有何資本與人力調度。電商與全公司增速差無法檢驗這些傳導，需有通路銷售移轉或履約配置的公開資料。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "Costco 披露電商與倉庫並行營運，但未揭露線上訂單由哪些倉庫履約、是否排擠店內銷售，或兩個通路之間有何資本與人力調度。電商與全公司增速差無法檢驗這些傳導，需有通路銷售移轉或履約配置的公開資料。"
+  },
+  "elapsed_seconds": 47.791,
+  "usage": {
+    "input_tokens": 19008,
+    "cached_input_tokens": 0,
+    "output_tokens": 1820,
+    "reasoning_output_tokens": 18
+  },
+  "event_seconds": {
+    "thread.started": 0.177,
+    "turn.started": 1.898,
+    "item.completed": 47.221,
+    "turn.completed": 47.27
+  },
+  "finished_at": "2026-11-23T11:20:34.056462+00:00"
+}

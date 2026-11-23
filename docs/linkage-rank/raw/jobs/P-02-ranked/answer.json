@@ -1,0 +1,67 @@
+{
+  "business_linkages": [],
+  "business_linkage_gap": "同份季報揭露了各品類表現，但未指出 Skin Care 走弱後，公司曾將行銷預算或貨架空間轉給 Hair Care、Personal Care 或 Grooming。要檢驗跨品類影響，需有具名資源移轉或通路配置紀錄、實施期間，以及受影響品類的銷售變化。資料也未揭露具名交易對手或支出承諾。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "首季 Grooming 有機銷量年增 5%、有機銷售年增 3%。若新增銷量延續，且價格與組合未抵銷其貢獻，相較於銷量持平，Grooming 將持續拉動公司有機銷售。新增銷量的單位貢獻與部門權重未知，獲利增量待估。",
+      "target": "Procter & Gamble",
+      "horizon": "2025-10-31",
+      "catalyst": "2024-10-18 首季公告揭露量增動能。於公司下一份 FY2025 第二季業績公告覆核該季 Grooming 銷售拆解表，研究截止日為 2025-10-31。",
+      "prediction": "FY2025 第二季 Grooming 有機銷量與有機銷售均較上年同期成長，顯示量增仍伴隨部門銷售成長。",
+      "invalidation": "若公司披露 FY2025 第二季 Grooming 有機銷量或有機銷售任一項較上年同期持平或下降，則該季量增帶動銷售成長的預測不成立。",
+      "claim_ids": ["fact:procter-release:grooming"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "首季 Hair Care 與 Personal Care 成長，但 Skin Care 衰退，Beauty 有機銷售仍年減 2%。若 Skin Care 跌勢延續且足以抵銷其他品類成長，相較於 Skin Care 銷售持平，Beauty 對公司有機銷售的拖累將延續。缺少品類銷售權重與毛利率，無法量化 EPS 影響。",
+      "target": "Procter & Gamble",
+      "horizon": "2025-10-31",
+      "catalyst": "2024-10-18 首季公告揭露 Beauty 品類走勢分歧。於公司下一份 FY2025 第二季業績公告比對品類評論與部門有機銷售，研究截止日為 2025-10-31。",
+      "prediction": "FY2025 第二季 Skin Care 銷售較上年同期下降，Hair Care 與 Personal Care 仍成長，而 Beauty 有機銷售仍年減。",
+      "invalidation": "若公司披露 FY2025 第二季 Skin Care 銷售或 Beauty 有機銷售較上年同期持平或成長，或 Hair Care、Personal Care 任一品類持平或衰退，則預測的品類組合未重現。若只披露部門年減，品類歸因仍待查。",
+      "claim_ids": ["fact:procter-release:beauty", "fact:procter-release:original"]
+    }
+  ],
+  "assessment": {
+    "thesis": "FY2025 首季 Grooming 量增支撐有機銷售，Beauty 則在 Skin Care 衰退下收縮，兩者對全年獲利的淨影響仍待量化。",
+    "key_gap": "Grooming 新增銷量帶來的利潤能否抵銷 Skin Care 下滑的損失？精確比較需要品類銷售額及增量利潤率，現有公告未提供，若公司未另行揭露便需內部品類損益資料。",
+    "next_check": "先在 FY2025 第二季業績公告發布後核對 Grooming 有機銷量與有機銷售年增率，再對照 Beauty 有機銷售及 Skin Care 評論。全年業績公布後，於 2025-10-31 前比較實際稀釋後 EPS 年增率與 10% 至 12% 指引。",
+    "evidence_limits": [
+      {
+        "evidence_id": "procter-release:grooming",
+        "limit": "支持首季有機銷量年增 5%、有機銷售年增 3%，並指出有價格與組合拆解。未提供新增銷量的單位利潤。"
+      },
+      {
+        "evidence_id": "procter-release:beauty",
+        "limit": "支持 Beauty 有機銷售年減 2% 及三個品類的增減方向。缺少各品類金額與權重，無法拆算 Skin Care 對跌幅的貢獻。"
+      },
+      {
+        "evidence_id": "procter-release:original",
+        "limit": "英文摘要核對了 Beauty 有機銷售年減 2% 的口徑，與品類評論出自同一公告，未增加獨立佐證。"
+      },
+      {
+        "evidence_id": "procter-release:outlook",
+        "limit": "公司維持 FY2025 稀釋後 EPS 年增 10% 至 12% 的前瞻指引。實際獲利及個別部門貢獻仍待揭露。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "Grooming 單季有機銷量、有機銷售年增率與價格、組合變動",
+        "source_to_watch": "Procter & Gamble 季度業績公告的 Grooming 銷售拆解表",
+        "window": "FY2025 第二季結束後，於該季公告發布時核對，最遲於 2025-10-31 覆核。",
+        "impact_on_thesis": "量與銷售同增支持多方機制。若量增而銷售持平或下降，應以價格與組合拆解查明抵銷來源。這些指標無法衡量增量利潤。",
+        "evidence_ids": ["procter-release:grooming"]
+      },
+      {
+        "metric": "Beauty 單季有機銷售年增率及 Skin Care、Hair Care、Personal Care 同期銷售方向",
+        "source_to_watch": "Procter & Gamble 季度業績公告的 Beauty 部門表與品類評論",
+        "window": "FY2025 第二季結束後，於該季公告發布時核對，最遲於 2025-10-31 覆核。",
+        "impact_on_thesis": "若首季的三個品類走勢重現且 Beauty 仍年減，將提高對 Skin Care 拖累部門的信心。若 Beauty 回穩，則拖累未延續至部門層級。單看部門數字只能作為代理指標，無法歸因至 Skin Care。",
+        "evidence_ids": ["procter-release:beauty", "procter-release:original"]
+      }
+    ],
+    "supply_chain": [],
+    "trade_opportunities": []
+  }
+}

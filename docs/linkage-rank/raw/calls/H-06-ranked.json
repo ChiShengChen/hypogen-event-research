@@ -1,0 +1,36 @@
+{
+  "case": "H-06",
+  "call": "ranked",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:42:13.502526+00:00",
+  "queued_epoch": 1795434133.5025365,
+  "started_at": "2026-11-23T11:42:13.544850+00:00",
+  "request_sha256": "2723392ab47b6e986d876e07ba4bf6a535a946848b9dc6aaca3d51e6dc2024bf",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.033,
+  "prompt_bytes": 13429,
+  "returncode": 0,
+  "cli_elapsed_seconds": 43.671,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "Latin America 與 North America 各自揭露價格與組合及箱量。要建立跨區傳導，仍需公司指出哪項人力、預算或通路資源從一區轉往另一區，並揭露接收業務的部署時點與營運指標。資料亦未具名交易對手或列出採購承諾。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "Latin America 與 North America 各自揭露價格與組合及箱量。要建立跨區傳導，仍需公司指出哪項人力、預算或通路資源從一區轉往另一區，並揭露接收業務的部署時點與營運指標。資料亦未具名交易對手或列出採購承諾。"
+  },
+  "elapsed_seconds": 43.673,
+  "usage": {
+    "input_tokens": 19003,
+    "cached_input_tokens": 0,
+    "output_tokens": 1747,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.16,
+    "turn.started": 1.53,
+    "item.completed": 43.108,
+    "turn.completed": 43.133
+  },
+  "finished_at": "2026-11-23T11:42:57.219246+00:00"
+}

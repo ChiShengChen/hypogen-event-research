@@ -1,0 +1,58 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 LSEG 遷移至 Azure 與十年最低支出承諾。此連結衡量 LSEG 資料平台的並行成本，主路徑要求衡量遷移帶來的 Azure 需求。並行成本以同批工作負載新舊環境同時運作並產生成本為條件。若 LSEG 期內確認所有已切換批次的舊環境均於 Azure 上線時或之前停用，即可排除這項並行成本機制。"
+        }
+      ],
+      "note": "缺口指出整合授權、付費席次、分成及持股與業務配置連動的證據仍待補足。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "LSEG 資料平台或關鍵基礎設施遷入 Azure 正式營運後，若計費用量高於原有水準，可隨服務交付增加 Microsoft 雲端營收。雙方期內公告可用具名負載驗證上線。若披露上線後計費用量持平，即可區分遷移落地與新增用量。"
+        }
+      ],
+      "note": "履約承諾與營收增量的區分恰當。整合缺口具體指出付費方式、採用基準及收入歸屬待揭露。"
+    },
+    {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 Teams 與 LSEG Workspace 的整合計畫。此連結追蹤 Teams 對外提供 Workspace 功能及其對 LSEG 營收的可能影響，主路徑要求追蹤 Azure 需求。LSEG 產品公告若確認期末仍全數限於試用，即可推翻期內正式交付。正式上線只能驗證通路，增收仍須有因整合而新增的付費或續約。"
+        }
+      ],
+      "note": "缺口具體指出缺少共用人力、預算、資源調度及新增付費證據，並保留對資源排擠的判斷。"
+    }
+  ]
+}

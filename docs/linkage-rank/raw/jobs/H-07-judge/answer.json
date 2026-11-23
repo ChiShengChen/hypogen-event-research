@@ -1,0 +1,68 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持擬運用 Honda 製造能力。合資公司指定 Honda 承製並實際量產，才會增加 Honda 的生產活動。製造利益與前期現金流均按條件表述。期限內的官方投產結果可區分合資車與 Honda 自有車增產，僅能驗證量產進度。"
+        }
+      ],
+      "note": "符合標準所列的 Honda 製造路徑。缺口點明 Sony 技術採用與收費條款仍待確認。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持合資開發電動車及擬整合 Sony 影像與感測技術。有償供貨或授權列為增加 Sony 相關業務收入的必要條件，利益幅度仍取決於量價及成本。期限內 Sony 確認無償投入可排除有償供應假設。"
+        }
+      ],
+      "note": "主張檢驗 Sony 分部的供貨或授權收入，未建立 Sony 的合資出資現金需求及合資收益曝險。缺口保留對價歸屬及合資損益待驗。"
+    },
+    {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持由擬定資本與持股比例推算 Honda 擬出資 50 億日圓，現金流取決於繳付方式及時點。期限內具名的實繳披露可區分本案與 Honda 其他投資。鏈結落在 Honda 的出資，未建立 Sony 的現金需求及合資收益曝險。"
+        },
+        {
+          "index": 2,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持擬運用 Honda 售後能力。指定承辦、服務啟用及給付可帶來 Honda 售後收入，規模仍待驗。期限內官方公布各啟用市場均由其他業者承辦可推翻假設。此路徑落在售後服務，未涉及指定的開發或製造資源。"
+        }
+      ],
+      "note": "兩條鏈結分別驗證 Honda 出資及售後服務。缺口清楚說明 Sony 技術採用、資源移轉及分部收益仍待確認。"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "case": "P-02",
+  "call": "current",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:14:17.762512+00:00",
+  "queued_epoch": 1795432457.7625246,
+  "started_at": "2026-11-23T11:14:17.776328+00:00",
+  "request_sha256": "8987f407de108ec043fd8725780ba83752d94c799b5e02cacd7e78875cec9b18",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.005,
+  "prompt_bytes": 12046,
+  "returncode": 0,
+  "cli_elapsed_seconds": 41.37,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "Hair Care、Personal Care 與 Skin Care 的成長方向分歧，但公司未揭露三者之間的通路陳列、促銷預算或產能移轉。要檢驗跨品類影響，需有公司指明資源從哪個品類移往哪個品類，並能追蹤受影響品類同期的銷量或銷售變化。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "Hair Care、Personal Care 與 Skin Care 的成長方向分歧，但公司未揭露三者之間的通路陳列、促銷預算或產能移轉。要檢驗跨品類影響，需有公司指明資源從哪個品類移往哪個品類，並能追蹤受影響品類同期的銷量或銷售變化。"
+  },
+  "elapsed_seconds": 41.371,
+  "usage": {
+    "input_tokens": 18796,
+    "cached_input_tokens": 0,
+    "output_tokens": 1754,
+    "reasoning_output_tokens": 38
+  },
+  "event_seconds": {
+    "thread.started": 0.779,
+    "turn.started": 1.385,
+    "item.completed": 40.786,
+    "turn.completed": 40.835
+  },
+  "finished_at": "2026-11-23T11:14:59.149421+00:00"
+}

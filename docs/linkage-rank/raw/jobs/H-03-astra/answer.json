@@ -1,0 +1,119 @@
+{
+  "business_linkages": [
+    {
+      "linked_stance": "bull",
+      "scope": "internal",
+      "origin_business": "United 免費機上 Wi-Fi",
+      "origin_evidence_ids": ["united-release:contract"],
+      "affected_company": "United Airlines",
+      "affected_business": "機上娛樂與購物服務",
+      "affected_evidence_ids": ["united-release:entertainment"],
+      "mechanism": "旅客若能在座椅螢幕或個人裝置上免費連線，使用影音或購物服務的機會便可能增加。其中，購物使用量能否轉為 United 收入，取決於交易安排。",
+      "baseline": "截至 2024-09-13，公告已列出串流、直播與購物用途，未提供各項服務原有的使用率或收入。",
+      "condition": "United 在 2025 年推出旅客可用的 Starlink 航班，並在機上開放相關服務。",
+      "financial_effect": "若購物交易增加且 United 可取得分潤，每旅客附加收入可能提高。分潤條款、交易額及新增連線成本均待確認。",
+      "alternative_explanation": "同期已規劃的客艙升級也可能提高娛樂使用率。比較時應選取客艙配置及航程相近的航班。",
+      "metric": "每百名旅客中使用串流或購物服務的人數，以及每名旅客為 United 帶來的購物分潤。",
+      "observation_period": "首批載客航班啟用後至 2025 年底，與可比航班同期比較。",
+      "public_source": "United 的服務上線公告、營運更新，以及財報或法說會中對機上服務使用量與收入的說明。",
+      "deadline": "2025-12-31",
+      "prediction": "已開放相關功能的航班，其串流或購物使用率高於可比航班。若有交易分潤，預期每旅客購物分潤亦提高。",
+      "invalidation": "若可比資料顯示兩項服務的使用率均未提高，使用量假說即失去支持。若 United 未取得分潤，購物收入假說即不成立。缺少揭露時，兩者均保留為待驗證。"
+    },
+    {
+      "linked_stance": "bull",
+      "scope": "counterparty",
+      "origin_business": "United 主線及區域機隊的機上連線部署",
+      "origin_evidence_ids": ["united-release:contract"],
+      "affected_company": "SpaceX",
+      "affected_business": "Starlink 航空連線服務",
+      "affected_evidence_ids": ["united-release:contract"],
+      "mechanism": "United 將飛機投入載客服務後，Starlink 可增加實際提供航空連線的飛機數。收入何時增加取決於合約的付費條件。",
+      "baseline": "公告披露的逾 1,000 架為協議規劃範圍，首批飛行預計在 2025 年。公告未列已啟用架數。",
+      "condition": "首批飛機完成測試並啟用旅客服務，且達到合約約定的付款條件。",
+      "financial_effect": "若服務費隨啟用架數或服務期累計，部署進度將帶動 SpaceX 的航空連線收入。單價、計費方式及毛利均未知。",
+      "alternative_explanation": "若採固定總價或分階段付款，當期收入可能與啟用架數變動不同步。",
+      "metric": "United 已啟用 Starlink 載客服務的飛機數，以及雙方若有披露的服務費和計費起點。",
+      "observation_period": "2025 年首批測試至 2025 年底。",
+      "public_source": "United 或 SpaceX 對 United 機隊商用啟用及合約條款的公開更新。",
+      "deadline": "2025-12-31",
+      "prediction": "依公告時程，至 2025 年底至少一架 United 飛機在載客航班提供 Starlink。若按啟用數收費，後續增加啟用架數將提高服務收入。",
+      "invalidation": "若雙方確認商用啟用延至 2026 年或以後，2025 年部署預測即落空。若合約採與架數無關的固定收費，按架數推估收入的假設即不適用。"
+    }
+  ],
+  "business_linkage_gap": "可核實的外部交易對手為 SpaceX。公告未點名設備分包商、內容商或購物合作方，也未披露 United 的媒體銷售或交易分潤安排。",
+  "hypotheses": [
+    {
+      "stance": "wait",
+      "mechanism": "United 承諾向旅客免費提供服務。即使按期上線，獲利效果仍取決於新增收入或營運節省能否覆蓋設備、安裝及服務成本。",
+      "target": "United Airlines 的增量營業利益",
+      "horizon": "2025-12-31",
+      "catalyst": "首批載客航班啟用，以及首份涵蓋商用期的成本或收入說明。",
+      "prediction": "依截至 2024-09-13 的計畫，2025 年可先檢驗首批航班是否上線。若屆時只公布啟用架數，仍無從判定對營業利益的淨影響。",
+      "invalidation": "若 United 公布可歸因於此服務的增量營業利益，或披露足以比較同期間收益與成本的資料，即可據以調整觀望判斷。",
+      "claim_ids": ["united-release:contract", "united-release:cost", "united-release:entertainment"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024-09-13，United 已與 SpaceX 簽約，計畫在主線及區域機隊逾 1,000 架飛機提供免費 Starlink Wi-Fi。2025 年底前最有辨識力的里程碑是首批旅客能否實際使用。公告沒有給出全機隊完工日期，也不足以支持調高 United 獲利預估。",
+    "key_gap": "每架飛機的安裝成本、持續服務費、費用認列時點，以及可歸因於連線的收入或節省均未知，因此無法估算損益兩平所需的每旅客收益。",
+    "next_check": "先核對首個向一般旅客開放服務的航班日期、機型與已啟用架數，區分測試和載客服務，再用相同服務期間的收益與成本檢驗損益。",
+    "evidence_limits": [
+      {"evidence_id": "united-release:contract", "limit": "可確認簽約對象、服務範圍及預定時程。2025 年測試與首批飛行均為當時規劃。"},
+      {"evidence_id": "united-release:original", "limit": "英文摘句支持協議涵蓋逾 1,000 架，與合約摘要出自同一公告。架數無法換算為訂單金額或 2025 年啟用數。"},
+      {"evidence_id": "united-release:cost", "limit": "價格與收益承諾均未披露。旅客免費使用仍可能由 United 負擔成本。"},
+      {"evidence_id": "united-release:entertainment", "limit": "所列用途可用來設計追蹤指標，實際上線功能、使用率與收益仍待披露。"}
+    ],
+    "public_checks": [
+      {
+        "metric": "測試日期、首個商用航班日期、主線與區域機隊各自已啟用的架數。",
+        "source_to_watch": "United 與 SpaceX 的機隊及服務上線公告。",
+        "window": "2025-01-01 至 2025-12-31。",
+        "impact_on_thesis": "首個商用航班可驗證首批部署時程。分機隊架數可用來界定當期成本與效益的適用範圍。",
+        "evidence_ids": ["united-release:contract", "united-release:original"]
+      },
+      {
+        "metric": "按同期啟用架數及服務月份核對一次性設備與安裝支出、持續服務費，以及已認列費用。",
+        "source_to_watch": "United 在研究期限內公布的財報、法說會及管理層說明。",
+        "window": "簽約後至 2025-12-31，以屆時已公開資料為限。",
+        "impact_on_thesis": "成本資料可界定需要多少增量收益才能損益兩平。若僅有整體客艙升級支出，則無法單獨估算 Wi-Fi 成本。",
+        "evidence_ids": ["united-release:cost", "united-release:entertainment"]
+      },
+      {
+        "metric": "已啟用與可比航班的每旅客串流或購物使用率、United 實收購物分潤。",
+        "source_to_watch": "United 的機上服務營運更新、財報及法說會。",
+        "window": "首批商用航班啟用後至 2025-12-31。",
+        "impact_on_thesis": "使用率可檢驗旅客是否採用服務。實收分潤可檢驗使用量能否轉為收入，並與同期連線成本比較。",
+        "evidence_ids": ["united-release:entertainment", "united-release:cost"]
+      }
+    ],
+    "supply_chain": [
+      {
+        "company": "SpaceX",
+        "role": "upstream",
+        "status": "disclosed_relationship",
+        "product_scope": "United 主線及區域機隊的 Starlink 機上 Wi-Fi。",
+        "relationship": "United 已與 SpaceX 簽約部署 Starlink。",
+        "transmission": "United 分批部署將擴大 Starlink 服務機隊，實際收款與收入認列依合約條款而定。",
+        "materiality": "規劃涵蓋逾 1,000 架。現有資料無法估算合約價值或其占 SpaceX 收入的比重。",
+        "public_check": "追蹤已啟用的 United 飛機數及雙方後續披露的計費方式。",
+        "gap": "服務、設備與安裝價格，以及各項成本由誰負擔，均待確認。",
+        "evidence_ids": ["united-release:contract", "united-release:cost"]
+      }
+    ],
+    "trade_opportunities": [
+      {
+        "company": "United Airlines",
+        "direction": "watch",
+        "earnings_path": "若機上服務帶來的增量收入及營運節省超過同期新增費用，營業利益才有上修依據。",
+        "catalyst": "首批商用航班啟用，以及 United 對成本與使用效益的首次量化說明。",
+        "trigger": "在可比航班上觀察到可歸因於連線的收益或節省，且足以覆蓋同期相關費用時，轉為評估偏多情境。",
+        "invalidation": "若已披露的增量收益及節省持續低於相關費用，則放棄由此事件上修獲利的假設。",
+        "evidence_gap": "截至截止時點，缺少單機經濟數據、實際商用進度及證券上市識別資料。",
+        "ticker": null,
+        "listing_evidence_id": null,
+        "evidence_ids": ["united-release:contract", "united-release:cost", "united-release:entertainment"]
+      }
+    ]
+  }
+}

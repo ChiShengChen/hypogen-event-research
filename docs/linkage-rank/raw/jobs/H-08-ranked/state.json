@@ -1,0 +1,36 @@
+{
+  "case": "H-08",
+  "call": "ranked",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:49:51.107269+00:00",
+  "queued_epoch": 1795434591.107279,
+  "started_at": "2026-11-23T11:49:51.120648+00:00",
+  "request_sha256": "e2a6f2b1cbf147f9e336b28a1bae508626fd43229c31b08fd5e9474b55655750",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.004,
+  "prompt_bytes": 13281,
+  "returncode": 0,
+  "cli_elapsed_seconds": 42.071,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "SRS Distribution 併表會改變集團營收口徑，但公告未揭露原有門市客戶是否轉向 SRS、是否透過 SRS 增購，或兩者是否各自服務不同需求。要檢驗通路移轉或交叉銷售，需有收購前後同一批客戶的分通路銷售及毛利，或公司公開量化兩者的影響。總銷售與可比銷售的差距無法區分這些情境。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "SRS Distribution 併表會改變集團營收口徑，但公告未揭露原有門市客戶是否轉向 SRS、是否透過 SRS 增購，或兩者是否各自服務不同需求。要檢驗通路移轉或交叉銷售，需有收購前後同一批客戶的分通路銷售及毛利，或公司公開量化兩者的影響。總銷售與可比銷售的差距無法區分這些情境。"
+  },
+  "elapsed_seconds": 42.072,
+  "usage": {
+    "input_tokens": 19005,
+    "cached_input_tokens": 0,
+    "output_tokens": 1795,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.167,
+    "turn.started": 1.346,
+    "item.completed": 41.5,
+    "turn.completed": 41.501
+  },
+  "finished_at": "2026-11-23T11:50:33.194108+00:00"
+}

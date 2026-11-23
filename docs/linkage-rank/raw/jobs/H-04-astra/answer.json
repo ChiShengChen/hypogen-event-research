@@ -1,0 +1,84 @@
+{
+  "business_linkages": [],
+  "business_linkage_gap": "公告確認分拆後的持股關係，但未揭露 Solventum 與 3M 其餘事業之間的供貨、採購或服務條款，也未指定持股變現所得將投入哪項業務。現有資料僅足以追蹤 3M 的財務影響。",
+  "hypotheses": [
+    {
+      "stance": "wait",
+      "mechanism": "3M 股東已按每持有四股 3M 取得一股 Solventum 的比例獲配股份。3M 本身另持有 Solventum 流通普通股的 19.9%。若 3M 以現金出售部分持股，可取得處分款。若再以所得償還有息負債，後續利息費用才可能下降。",
+      "target": "3M 的資金來源與利息費用",
+      "horizon": "截至 2025-06-30",
+      "catalyst": "3M 首次揭露持股處分已成交、取得的對價及所得用途。",
+      "prediction": "若研究期內出現現金出售，3M 的揭露應可核對處分股數與所得金額。若同時確認償債，可依償還金額、利率與日期估算節息幅度。",
+      "invalidation": "若交易採非現金對價，現金流入的推估即失效。若所得另有用途，則應撤除該筆處分帶來的節息估算。研究期內未見處分仍符合五年內變現的公告時程。",
+      "claim_ids": [
+        "3m-release:spin",
+        "3m-release:holding",
+        "3m-release:original",
+        "3m-release:capital"
+      ]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024-04-01，3M 已完成醫療保健業務分拆。對 3M 的研究重點是其保留的 19.9% Solventum 股權。公告明示將於分拆後五年內變現，但 2025-06-30 早於該期限，因此基準估算暫不計入特定處分款或節息收益。",
+    "key_gap": "截至資料截止時點，3M 尚未揭露研究期內的處分日期、規模、對價形式或資金用途，無從量化現金流及盈餘影響。",
+    "next_check": "先核對 3M 下一份定期財報的投資附註與現金流量表。若持股有變動，再用交易公告核對處分股數、對價及資金用途。",
+    "evidence_limits": [
+      {
+        "evidence_id": "3m-release:spin",
+        "limit": "每四股配一股描述股東取得股份的比例，無法用來計算 3M 的處分所得。"
+      },
+      {
+        "evidence_id": "3m-release:holding",
+        "limit": "19.9% 是分拆完成時的持股比例。後續比例變動仍需核對股數與交易原因。"
+      },
+      {
+        "evidence_id": "3m-release:original",
+        "limit": "英文措辭「will be monetized within five years following the spin-off」確認五年期限。此段與持股摘要出自同一公告，未提供個別交易日期。"
+      },
+      {
+        "evidence_id": "3m-release:capital",
+        "limit": "兩家公司可各自配置資本。公告未就變現金額或用途提供指引，償債僅為待驗證情境。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "3M 持有的 Solventum 股數、持股比例及已成交的處分股數",
+        "source_to_watch": "3M 定期財報的投資附註與持股處分公告",
+        "window": "2024-04-02 至 2025-06-30 期間公開的文件",
+        "impact_on_thesis": "以已成交股數確認研究期內是否啟動變現，並更新剩餘持股。單憑比例下降仍須釐清原因。",
+        "evidence_ids": [
+          "3m-release:holding",
+          "3m-release:original"
+        ]
+      },
+      {
+        "metric": "處分對價中現金與非現金部分，以及可歸屬該交易的償債金額、日期與利率",
+        "source_to_watch": "3M 交易公告、現金流量表及債務附註",
+        "window": "交易揭露日起至 2025-06-30 已公開的後續報告",
+        "impact_on_thesis": "現金對價可用於更新資金估算。取得償債用途及債務條件後，才可估算研究期內的節息金額。",
+        "evidence_ids": [
+          "3m-release:capital",
+          "3m-release:holding"
+        ]
+      }
+    ],
+    "supply_chain": [],
+    "trade_opportunities": [
+      {
+        "company": "3M",
+        "direction": "watch",
+        "earnings_path": "持股變現可能改變 3M 的資金結構。若交易使有息負債下降，較低的利息費用可改善後續稅前盈餘。",
+        "catalyst": "3M 公布已完成的持股交易及其用途。",
+        "trigger": "交易文件可核對債務減少金額、生效日期與利率時，重估截至 2025-06-30 的利息費用。",
+        "invalidation": "若截至研究期末仍無可核實的債務減少，則該期的節息交易論點缺乏依據。",
+        "evidence_gap": "資料缺少交易條款、債務成本及市場估值，尚無依據判斷股價是否已反映潛在收益。",
+        "ticker": null,
+        "listing_evidence_id": null,
+        "evidence_ids": [
+          "3m-release:holding",
+          "3m-release:capital"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "business_linkages": [],
+  "business_linkage_gap": "公司揭露了 Skin Care、Hair Care 與 Personal Care 各自的成長方向，但缺少品類權重與銷售貢獻，無法量化三者對 Beauty 的影響。資料也未揭露 Beauty 與 Grooming 之間的客戶移轉、通路連動或成本分攤，兩個部門的成長差異不足以建立跨業務因果關係。",
+  "hypotheses": [
+    {
+      "stance": "bear",
+      "mechanism": "Beauty 第一季有機銷售年減 2%。Hair Care 與 Personal Care 均成長，Skin Care 是公司點名衰退的品類。如果 Skin Care 的拖累持續，其他兩個品類的成長可能仍不足以讓部門恢復成長。",
+      "target": "Procter & Gamble 的 Beauty 部門",
+      "horizon": "FY2025 第二季",
+      "catalyst": "第二季財報揭露 Beauty 有機銷售年增率與 Skin Care 表現。",
+      "prediction": "第二季 Beauty 有機銷售仍較上年同期下滑，且公司仍指出 Skin Care 銷售衰退。",
+      "invalidation": "若第二季 Beauty 有機銷售持平或成長，則部門預測失效。若 Skin Care 已恢復成長而 Beauty 仍下滑，則須重新判定拖累來源。",
+      "claim_ids": ["procter-release:beauty"]
+    },
+    {
+      "stance": "bull",
+      "mechanism": "Grooming 第一季有機銷量年增 5%，帶動有機銷售年增 3%。若銷量延續成長，且價格與組合的合計影響未抵銷銷量貢獻，部門有機銷售可望續增。",
+      "target": "Procter & Gamble 的 Grooming 部門",
+      "horizon": "FY2025 第二季",
+      "catalyst": "第二季財報更新 Grooming 的有機銷量、價格、組合及有機銷售。",
+      "prediction": "第二季 Grooming 有機銷量與有機銷售均較上年同期成長。",
+      "invalidation": "有機銷量持平或下滑，即推翻銷量續增的假設。若銷量增加而有機銷售持平或下滑，則銷量對銷售的支撐弱於預期。",
+      "claim_ids": ["procter-release:grooming"]
+    },
+    {
+      "stance": "wait",
+      "mechanism": "公司維持 FY2025 稀釋後每股盈餘年增 10% 至 12% 的指引。現有資料只有部分業務的銷售表現，缺少從部門銷售、利潤到集團每股盈餘的調節，因此暫以公司指引為待驗證的基準情境。",
+      "target": "Procter & Gamble 集團 FY2025 稀釋後每股盈餘",
+      "horizon": "FY2025 全年，最遲於 2025-10-31 覆核",
+      "catalyst": "後續季度的全年指引更新，以及 FY2025 全年實績。",
+      "prediction": "基準情境為 FY2025 全年稀釋後每股盈餘較 FY2024 成長 10% 至 12%。",
+      "invalidation": "若公司調整指引，應即更新基準情境。全年稀釋後每股盈餘實際年增率落在原區間之外，即推翻原預測。",
+      "claim_ids": ["procter-release:outlook"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024-10-18，P&G 第一季最值得追蹤的是兩個部門的成長來源。Beauty 有機銷售年減 2%，其中 Skin Care 衰退，另外兩個已揭露品類成長。Grooming 有機銷量年增 5%，有機銷售年增 3%，銷量增幅高於銷售增幅。集團維持全年稀釋後每股盈餘年增 10% 至 12% 的指引，現有證據支持對兩個部門提出方向性假設，集團獲利判斷仍以觀察為宜。",
+    "key_gap": "缺少 Beauty 各品類的銷售權重、Grooming 價格與組合的個別貢獻，以及兩個部門的利潤變化。僅憑有機銷售年增率，無法估算 Grooming 成長能抵銷多少 Beauty 獲利壓力。",
+    "next_check": "優先核對 FY2025 第二季財報。先看 Beauty 的年減幅是否較 2% 收斂及 Skin Care 是否改善，再比對 Grooming 的銷量與銷售增幅，並核對公司對全年稀釋後每股盈餘指引的說明。",
+    "evidence_limits": [
+      {
+        "evidence_id": "procter-release:beauty",
+        "limit": "提供部門年增率與品類方向，未提供各品類增減幅或權重，無法將部門的 2% 跌幅全數歸因於 Skin Care。"
+      },
+      {
+        "evidence_id": "procter-release:original",
+        "limit": "英文句子可核對 Beauty 有機銷售年減 2% 的口徑，與中文摘要出自同一份公告，屬同源證據。"
+      },
+      {
+        "evidence_id": "procter-release:grooming",
+        "limit": "有機銷量與有機銷售增幅相差約 2 個百分點。摘要未提供價格與組合的個別數值，無法據此判定降價幅度或毛利率變化。"
+      },
+      {
+        "evidence_id": "procter-release:outlook",
+        "limit": "10% 至 12% 是管理層維持的全年稀釋後每股盈餘成長指引。摘要未提供部門獲利貢獻或全年達標進度。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "Beauty 有機銷售年增率及 Skin Care 銷售方向",
+        "source_to_watch": "P&G 季度業績公告的 Beauty 部門說明",
+        "window": "FY2025 第二季公告",
+        "impact_on_thesis": "若跌幅較第一季的 2% 收斂，代表部門壓力減輕。若 Skin Care 仍衰退而部門已恢復成長，則其他品類的成長足以抵銷拖累。",
+        "evidence_ids": ["procter-release:beauty", "procter-release:original"]
+      },
+      {
+        "metric": "Grooming 有機銷量、價格、組合與有機銷售的年變化",
+        "source_to_watch": "P&G 季度業績公告的部門銷售分解表",
+        "window": "FY2025 第二季公告",
+        "impact_on_thesis": "若銷量與銷售均續增，支持銷量帶動成長的假設。若兩者增幅差距擴大，須核對價格及組合各自的貢獻。",
+        "evidence_ids": ["procter-release:grooming"]
+      },
+      {
+        "metric": "FY2025 稀釋後每股盈餘指引區間及全年實際年增率",
+        "source_to_watch": "P&G 季度展望與全年業績公告",
+        "window": "自 FY2025 第二季公告起至 2025-10-31",
+        "impact_on_thesis": "以公司後續指引檢查管理層預期是否改變，再以全年實績檢驗原先 10% 至 12% 的基準情境。",
+        "evidence_ids": ["procter-release:outlook"]
+      }
+    ],
+    "supply_chain": [],
+    "trade_opportunities": [
+      {
+        "company": "Procter & Gamble",
+        "direction": "watch",
+        "earnings_path": "Grooming 銷量增加與 Skin Care 銷售下滑對集團獲利的淨影響，取決於各自的銷售規模與利潤率。",
+        "catalyst": "FY2025 第二季部門業績及全年每股盈餘指引更新。",
+        "trigger": "若 Beauty 恢復成長、Grooming 有機銷量續增，且公司上修全年稀釋後每股盈餘指引，可重估獲利上行空間。",
+        "invalidation": "若 Beauty 跌幅擴大、Grooming 銷量轉弱且公司下修指引，則撤回獲利改善情境。",
+        "evidence_gap": "資料缺少部門利潤、市場獲利預期及估值，無法判斷改善情境是否已反映於股價。",
+        "ticker": null,
+        "listing_evidence_id": null,
+        "evidence_ids": ["procter-release:beauty", "procter-release:grooming", "procter-release:outlook"]
+      }
+    ]
+  }
+}

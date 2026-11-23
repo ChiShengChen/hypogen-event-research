@@ -1,0 +1,44 @@
+{
+  "business_linkages": [],
+  "business_linkage_gap": "同期已完成的 10 億美元回購有財報可核，但分拆公告未量化 FedEx 可收取的現金，也未指定用途。要連結分拆與後續回購或其他業務投資，須見分拆文件列出母公司可得款項，以及董事會或財報揭露相應配置。現有資料亦未指明其他業務承接人員、資產或客戶的安排。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "若董事會推進分拆並將 FedEx Freight 的投資決策權交由專責管理層，相較維持母公司原有審批方式，貨運業務可自行依營運需求排序投資。權責移轉是可檢驗的營運結果，節省的審批時間與投資報酬仍缺基準。",
+      "target": "FedEx",
+      "horizon": "2025-12-31",
+      "catalyst": "2024-12-19 董事會公布分拆意向後，觀察 FedEx 在籌備期發布的治理安排。18 個月是完成目標，期內移轉權責是研究假設。",
+      "prediction": "截至 2025-12-31，FedEx 的分拆進度公告或公開申報將顯示，FedEx Freight 管理層已取得至少一項原由母公司核定的投資決策權。僅公布未來職稱或規劃，仍待驗證。",
+      "invalidation": "若 FedEx 公告或申報明示，截至 2025-12-31，FedEx Freight 的投資核准權仍全數維持公告前安排，即否證期內移轉假設。未披露權限歸屬則無法判定。",
+      "claim_ids": ["fact:fdx-sep:decision", "unverified_impact"]
+    },
+    {
+      "stance": "bear",
+      "mechanism": "若 FedEx 為籌備獨立上市而新增法律、會計等費用，相較不啟動分拆，當期認列的增量費用會壓低合併營業利益。公告未提供費用預算、認列時點或抵銷金額。",
+      "target": "FedEx",
+      "horizon": "2025-12-31",
+      "catalyst": "2024-12-19 公告後若啟動分拆準備，於其後至 2025-12-31 已發布的 FedEx 季報、年報及財報附註核對費用認列。",
+      "prediction": "就公告後至 2025-12-31 前已公布財報涵蓋的期間，FedEx 將揭露至少一期認列正額、明確歸屬 FedEx Freight 分拆的營業費用。總部費用增加不足以單獨歸因。",
+      "invalidation": "若 FedEx 明示同一組已公布報告期間內，歸屬該分拆的合併營業費用累計為零，即否證期內費用假設。未單列金額則維持未決。",
+      "claim_ids": ["fact:fdx-sep:decision", "unverified_impact"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024-12-19，FedEx 董事會已公布 FedEx Freight 分拆意向，研究期內可檢驗貨運投資權責是否開始移轉，以及上市籌備是否先產生費用。",
+    "key_gap": "最影響獲利判斷的是投資自主能帶來多少增量回報、能否抵銷籌備成本。即使公開文件確認授權，量化效益仍需分拆前後可比的投資與回報資料，若未公開，便需內部紀錄。",
+    "next_check": "從公告後首份可得的 FedEx 財報及分拆進度公告起，逐期核對已生效的貨運投資授權與明列的分拆費用，覆核至 2025-12-31。18 個月完成目標跨出研究期。",
+    "evidence_limits": [
+      {"evidence_id": "fdx-sep:decision", "limit": "支持董事會分拆意向、18 個月目標及核准條件。完成日期、實際授權與籌備成本仍待揭露。"},
+      {"evidence_id": "fdx-sep:capital", "limit": "支持透過資本市場推動分拆及預期免稅的架構。母公司實收款與用途均未量化。"},
+      {"evidence_id": "fdx-sep:original", "limit": "原文確認免稅資格屬預期，最終稅務結果仍待確認。"},
+      {"evidence_id": "fdx-q2:repurchases", "limit": "支持當季已完成 10 億美元回購。與分拆的資金連結及未來回購額均缺依據。"},
+      {"evidence_id": "fdx-q2:original", "limit": "原文核對回購金額與完成期間，與同份財報摘要屬同一筆回購。"}
+    ],
+    "public_checks": [
+      {"metric": "FedEx Freight 投資核准權的生效範圍與日期", "source_to_watch": "FedEx 新聞室分拆進度公告及公開分拆申報文件", "window": "自董事會公告次日起至 2025-12-31，於每次公開更新時覆核。", "impact_on_thesis": "已生效的授權提高對貨運自主決策的信心。明示全數沿用舊制則降低信心。授權範圍無法衡量投資回報。", "evidence_ids": ["fdx-sep:decision"]},
+      {"metric": "已認列且明確歸屬分拆的合併營業費用", "source_to_watch": "FedEx 季度財報新聞稿、季報或年報費用附註", "window": "檢視公告後至 2025-12-31 已公布的各報告期間。", "impact_on_thesis": "正額認列確認成本傳導，揭露金額後可與同期營業利益比較。若僅報整體重整費用，分拆負擔仍未決。", "evidence_ids": ["fdx-sep:decision", "fdx-q2:original"]}
+    ],
+    "supply_chain": [],
+    "trade_opportunities": []
+  }
+}

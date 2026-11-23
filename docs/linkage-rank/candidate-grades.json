@@ -1,0 +1,1497 @@
+{
+  "P-01": {
+    "astra": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "A",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": true,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持 Splunk 資料用於 Cisco Security 威脅辨識的策略方向。路徑以可收費功能和續約淨加購為條件，合理指向 Security 營收上升，金額仍未知。同期間 Cisco 公開的可比續約資料若顯示折讓與替代授權完全抵銷加購，即可否證該批次的淨增收，並區分單純併表。"
+          }
+        ],
+        "note": "缺口指出 Observability 仍需採用、付費轉換或可歸屬營收資料。"
+      },
+      "qualifying": [
+        1
+      ],
+      "exact": true,
+      "major": false,
+      "principal_rank": 1,
+      "qualified_rank": 1,
+      "failure_dimensions": [],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "current": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "B",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持雙方的整合方向。此路徑檢驗 Splunk 資料接入或驗證是否延後 Cisco Observability 上市，使支出早於收款並可能壓低增量現金流，規模未知。Cisco 同期間的原訂時程、上市結果與修訂理由可區分整合延誤和原定分階段推出。所衡量的是現金流時點，未涵蓋標準指定的產品用量、訂閱收入或毛利。"
+          }
+        ],
+        "note": "缺口明確保留資源排擠的歸因，也指出上市里程碑無法驗證付費採用或回收期。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "selection"
+      ],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "ranked": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true,
+          "ranking_reason": true
+        }
+      ],
+      "verdict": {
+        "label": "C",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": true,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持 Splunk 資料接入 Cisco Observability 的策略方向。正式部署與客戶付費擴充是增收條件，增量毛利仍取決於用量、價格與成本。Cisco 在同一覆核期內公開確認具名功能正式可用，或確認相關功能全數仍在預覽、延後或取消，可檢驗技術整合並區分一般產品更新。財務貢獻仍需付費資料。"
+          }
+        ],
+        "note": "缺口將交易對價與業務預算分開，並指出資源、通路承諾和客戶採購仍缺乏證據。"
+      },
+      "qualifying": [
+        1
+      ],
+      "exact": true,
+      "major": false,
+      "principal_rank": 1,
+      "qualified_rank": 1,
+      "failure_dimensions": [],
+      "submitted": 1,
+      "raw_submitted": 1
+    }
+  },
+  "P-02": {
+    "astra": {
+      "rules": [],
+      "verdict": {
+        "label": "A",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [],
+        "note": "指出缺少 Beauty 與 Grooming 之間的顧客流向及通路連動資料，明確保留跨部門因果歸因。"
+      },
+      "qualifying": [],
+      "exact": true,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [],
+      "submitted": 0,
+      "raw_submitted": 0
+    },
+    "ranked": {
+      "rules": [],
+      "verdict": {
+        "label": "B",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [],
+        "note": "明確保留 Skin Care 走弱後資源是否轉往 Grooming 的歸因，並指出須查核配置紀錄、實施期間與受影響品類的銷售變化。"
+      },
+      "qualifying": [],
+      "exact": true,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [],
+      "submitted": 0,
+      "raw_submitted": 0
+    },
+    "current": {
+      "rules": [],
+      "verdict": {
+        "label": "C",
+        "gap_ok": false,
+        "major_error": false,
+        "candidates": [],
+        "note": "指出 Beauty 內部品類之間缺少資源移轉證據，但未處理 Beauty 下滑與 Grooming 成長之間的歸因。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "mechanism"
+      ],
+      "submitted": 0,
+      "raw_submitted": 0
+    }
+  },
+  "P-03": {
+    "current": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "A",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": true,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "無線業務交易交割後，T-Mobile 依約新增租用 UScellular 保留的至少 2,100 座鐵塔。實際起租才增加 UScellular 塔租收入，金額仍待確認。雙方交易公告可區分本案起租與其他租戶增租，並可用期末全數未起租的明確披露推翻期內預測。"
+          }
+        ],
+        "note": "缺口指出估算 T-Mobile 淨支出仍需可避免的建設支出及新增租金。"
+      },
+      "qualifying": [
+        1
+      ],
+      "exact": true,
+      "major": false,
+      "principal_rank": 1,
+      "qualified_rank": 1,
+      "failure_dimensions": [],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "astra": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "B",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": true,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持 T-Mobile 交割後新增長租 UScellular 保留的至少 2,100 座鐵塔。逐站起租才增加 UScellular 塔租收入。交割公告和鐵塔財報可核對具名新增租用，最終條款低於門檻或期末確認全數未起租，可分別推翻座數或期內租金假設。"
+          }
+        ],
+        "note": "缺口列出起租時程、租金、成本及買方綜效拆分等待確認項目。"
+      },
+      "qualifying": [
+        1
+      ],
+      "exact": true,
+      "major": false,
+      "principal_rank": 1,
+      "qualified_rank": 1,
+      "failure_dimensions": [],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "ranked": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true,
+          "ranking_reason": true
+        }
+      ],
+      "verdict": {
+        "label": "C",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": true,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持交割後 T-Mobile 新增租用 UScellular 保留的至少 2,100 座鐵塔。開始計租才增加賣方塔租收入，買方承擔相應租金。若交割後雙方任一方明確披露期末全數未計租，即可推翻期內傳導，並排除以鐵塔總收入變動歸因。"
+          }
+        ],
+        "note": "缺口保留第二條路徑待證，主要路徑也列明估算租金所需的起租座數、單站租金及計租期間。"
+      },
+      "qualifying": [
+        1
+      ],
+      "exact": true,
+      "major": false,
+      "principal_rank": 1,
+      "qualified_rank": 1,
+      "failure_dimensions": [],
+      "submitted": 1,
+      "raw_submitted": 1
+    }
+  },
+  "P-04": {
+    "current": {
+      "rules": [],
+      "verdict": {
+        "label": "A",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [],
+        "note": "明確保留倉庫銷售移往線上的歸因，並指出缺少同口徑倉庫銷售與通路移轉資料。所附摘要未明示全公司可比銷售涵蓋電商。"
+      },
+      "qualifying": [],
+      "exact": true,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [],
+      "submitted": 0,
+      "raw_submitted": 0
+    },
+    "ranked": {
+      "rules": [],
+      "verdict": {
+        "label": "B",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [],
+        "note": "指出缺少通路銷售移轉資料，並明確保留電商排擠店內銷售的歸因。倉庫履約與資源調度也僅列為待查事項。"
+      },
+      "qualifying": [],
+      "exact": true,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [],
+      "submitted": 0,
+      "raw_submitted": 0
+    },
+    "astra": {
+      "rules": [],
+      "verdict": {
+        "label": "C",
+        "gap_ok": true,
+        "major_error": true,
+        "candidates": [],
+        "note": "指出缺少會員跨通路消費與純倉庫銷售資料，並保留通路移轉歸因。但聲稱公告只列全公司與電商增速，與公告另列美國、加拿大及其他國際市場可比銷售增速的事實相牴觸。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": true,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "mechanism"
+      ],
+      "submitted": 0,
+      "raw_submitted": 0
+    }
+  },
+  "H-01": {
+    "current": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "A",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持新線與研發中心同廠規劃。新線驗證須有實際指派與資源投入，Corning 自付時才會增加現金流出。Apple 或 Corning 的期內進度可確認中心是否啟動新線專案，區分一般材料研究。此路徑未追蹤 Apple 承諾對 Corning 玻璃量產與出貨的影響。"
+          }
+        ],
+        "note": "缺口指出人力調度、專案時程與資金分攤待查，並保留對資源共用及排擠的判斷。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "selection"
+      ],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "astra": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "B",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": true,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持 Apple 蓋板玻璃供應集中至 Corning 專供工廠及新線規劃。訂單吸收產能且良率達標時，合格出貨增加可降低新線每件固定成本。期內財報、法說或工廠公告可用投產與持續出貨區分僅推進研發，也可用低良率及單位成本偏高推翻成本改善。"
+          }
+        ],
+        "note": "單廠成本改善仍可能伴隨既有訂單轉產。原供貨地、移轉量與新增量待查，合併獲利效果仍待驗證。"
+      },
+      "qualifying": [
+        1
+      ],
+      "exact": true,
+      "major": false,
+      "principal_rank": 1,
+      "qualified_rank": 1,
+      "failure_dimensions": [],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "ranked": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true,
+          "ranking_reason": true
+        },
+        {
+          "index": 2,
+          "evidence": true,
+          "time": true,
+          "ranking_reason": true
+        }
+      ],
+      "verdict": {
+        "label": "C",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持 Apple 承諾與 Corning 整廠專供。合格交付及採購配置可增加 Apple 對該來源的採購支出。Apple Newsroom 若於期內確認商售 iPhone 採用新線玻璃，可區分舊線增產。財務傳導落在 Apple 的採購支出，未連至 Corning 的利用率、營收或成本。"
+          },
+          {
+            "index": 2,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": false,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持同廠規劃，抽調工程人員及研發延誤均列為條件性假設。期內公開進度若交代延誤源於人員調度，可區分場地或設備問題，按期啟動則可推翻延誤預測。設備閒置時間屬營運指標，尚未連至財務指標或其變動方向。"
+          }
+        ],
+        "note": "缺口保留對承諾金額用途及整廠專供是否影響其他客戶或業務的判斷。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "selection"
+      ],
+      "submitted": 2,
+      "raw_submitted": 2
+    }
+  },
+  "H-02": {
+    "current": {
+      "rules": [],
+      "verdict": {
+        "label": "A",
+        "gap_ok": false,
+        "major_error": false,
+        "candidates": [],
+        "note": "未提交連結。缺口說明指出仍需 HP 追加採購及 Qualcomm 交付證據，但未指明判斷 Lenovo 與 HP 之間移轉所需的配額、訂單或客戶資料，也未明示保留該項歸因。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "mechanism"
+      ],
+      "submitted": 0,
+      "raw_submitted": 0
+    },
+    "ranked": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true,
+          "ranking_reason": true
+        }
+      ],
+      "verdict": {
+        "label": "B",
+        "gap_ok": false,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持 HP OmniBook 搭載 Qualcomm X Elite。整機交貨可驗證 HP 的商用部署，Qualcomm 晶片收入增量另取決於追加採購、交付與認列，金額未知。期限內的 HP 或 Microsoft 公告若確認取消或延後交貨，可否定 HP 部署里程碑，即使其他品牌仍有進展。此路徑未處理 Lenovo 與 HP 之間的移轉歸因。"
+          }
+        ],
+        "note": "缺口聚焦 Microsoft 通路收入與 HP 內部資源配置，未指出辨識 Lenovo 與 HP 之間晶片配額、通路訂單或企業客戶移轉所需的證據，也未明示保留該項歸因。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "mechanism"
+      ],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "astra": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "C",
+        "gap_ok": false,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持兩款 HP 筆電搭載 Qualcomm X Elite。終端需求若促成增產且首批備料不足，補單可提高 Qualcomm 對 HP 的晶片銷售收入，金額未知。同期 HP 或 Qualcomm 若公開確認首批備料足以支應全期生產，可否定因備料不足而補單的機制。此路徑未處理 Lenovo 與 HP 之間的移轉歸因。"
+          }
+        ],
+        "note": "缺口說明指出估算 HP 與 Qualcomm 營收所欠的資料，但未指出檢驗 Lenovo 與 HP 之間配額、訂單或客戶移轉所需的證據，也未明示保留該項歸因。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "mechanism"
+      ],
+      "submitted": 1,
+      "raw_submitted": 1
+    }
+  },
+  "H-03": {
+    "ranked": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true,
+          "ranking_reason": true
+        }
+      ],
+      "verdict": {
+        "label": "A",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": true,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "聯航逾千架的部署計畫指向 SpaceX 的 Starlink 航空連線服務。聯航新聞室可用 2025 年載客航班是否實際開通區分測試與營運。開通可驗證供應，收入仍取決於計費及履約條款。"
+          }
+        ],
+        "note": "缺口具體指出影音、廣告及購物變現所需的證據，也交代員工工具與客艙升級尚缺資源變動資料。"
+      },
+      "qualifying": [
+        1
+      ],
+      "exact": true,
+      "major": false,
+      "principal_rank": 1,
+      "qualified_rank": 1,
+      "failure_dimensions": [],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "astra": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        },
+        {
+          "index": 2,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "B",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持免費連線及影音、購物用途。聯航每旅客購物分潤須有增量交易及分潤權，同期比較客艙配置與航程相近的航班可檢驗使用量並處理客艙升級因素。此路徑衡量聯航附加收入。"
+          },
+          {
+            "index": 2,
+            "target_path": true,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "聯航主線及區域機隊開通載客服務後，SpaceX 實際供應連線的飛機數可增加。雙方公開更新可驗證 2025 年商用啟用，固定收費條款可推翻按啟用架數推估收入的假設。"
+          }
+        ],
+        "note": "第二條符合指定傳導。缺口交代分包商、內容及購物合作方和相關變現條款的披露限制。"
+      },
+      "qualifying": [
+        2
+      ],
+      "exact": true,
+      "major": false,
+      "principal_rank": 2,
+      "qualified_rank": 2,
+      "failure_dimensions": [],
+      "submitted": 2,
+      "raw_submitted": 2
+    },
+    "current": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "C",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持購物用途。聯航須開放結帳並享有銷售收入或分潤，才可能增加附加收入。聯航 2025 年旅客服務說明可查結帳是否依賴 Starlink，以區分獨立的客艙升級。此路徑指向購物收入。"
+          }
+        ],
+        "note": "缺口指出交易歸屬、分潤及改裝資源調度仍待查證。唯一提交的路徑未涵蓋 SpaceX 航空連線需求或聯航機隊連線成本與付費服務遷移。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "selection"
+      ],
+      "submitted": 1,
+      "raw_submitted": 1
+    }
+  },
+  "H-04": {
+    "ranked": {
+      "rules": [],
+      "verdict": {
+        "label": "A",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [],
+        "note": "將保留持股與實際配置分開，明示須揭露變現所得的實際去向，才可歸因至具名業務。"
+      },
+      "qualifying": [],
+      "exact": true,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [],
+      "submitted": 0,
+      "raw_submitted": 0
+    },
+    "current": {
+      "rules": [],
+      "verdict": {
+        "label": "B",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [],
+        "note": "未將變現資金歸給任何業務，並具體要求具名業務的配置決議與實際支出作為佐證。"
+      },
+      "qualifying": [],
+      "exact": true,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [],
+      "submitted": 0,
+      "raw_submitted": 0
+    },
+    "astra": {
+      "rules": [],
+      "verdict": {
+        "label": "C",
+        "gap_ok": false,
+        "major_error": false,
+        "candidates": [],
+        "note": "指出公告未指定資金去向，也未聲稱已收現或已配置，但未說明須以實際持股處置及所得用途的披露核實。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "mechanism"
+      ],
+      "submitted": 0,
+      "raw_submitted": 0
+    }
+  },
+  "H-05": {
+    "astra": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "A",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持 Oak Street 持續多保險方營運及 CVS 擴大初級照護平台。此路徑檢驗既有中心在有餘裕、可計費且增量收入高於成本時，歸戶增加能否提升單中心營業貢獻。CVS 季報或法說若顯示同批中心歸戶增加而貢獻持平或下降，即可推翻預測。同批比較可排除新增據點與併表月數差異。路徑未交代收購如何增加 CVS 的承作容量與風險承擔曝險。"
+          }
+        ],
+        "note": "缺口指出個別保險方、支付條款與轉介承諾未揭露，並明確保留對特定保險方的歸因。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "selection"
+      ],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "current": {
+      "rules": [],
+      "verdict": {
+        "label": "B",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [],
+        "note": "未提交連結。缺口指出跨業務歸因仍需具名安排、交割前基準及實際轉介、承保或支付成本資料。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "selection"
+      ],
+      "submitted": 0,
+      "raw_submitted": 0
+    },
+    "ranked": {
+      "rules": [],
+      "verdict": {
+        "label": "C",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [],
+        "note": "未提交連結。缺口以已披露的 50 億美元定期貸款討論集團利息負擔，並指出把融資歸因到其他業務的投資變動，或把交易歸因到特定保險方的新增歸戶，仍需具名資料。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "selection"
+      ],
+      "submitted": 0,
+      "raw_submitted": 0
+    }
+  },
+  "H-06": {
+    "astra": {
+      "rules": [],
+      "verdict": {
+        "label": "A",
+        "gap_ok": false,
+        "major_error": false,
+        "candidates": [],
+        "note": "保留跨區歸因，但未指明需補足的跨區流向或配置決策證據。裝瓶商與通路商的交易條件缺口只關乎交易對手獲利估算。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "mechanism"
+      ],
+      "submitted": 0,
+      "raw_submitted": 0
+    },
+    "ranked": {
+      "rules": [],
+      "verdict": {
+        "label": "B",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [],
+        "note": "將跨區歸因留待公司確認資源移轉的項目與方向，並要求接收業務的部署時點及營運指標。"
+      },
+      "qualifying": [],
+      "exact": true,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [],
+      "submitted": 0,
+      "raw_submitted": 0
+    },
+    "current": {
+      "rules": [],
+      "verdict": {
+        "label": "C",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [],
+        "note": "指出兩區間的預算、產能或通路調度證據缺失，並將跨區歸因留待具體決策及受影響業務的可追蹤指標。"
+      },
+      "qualifying": [],
+      "exact": true,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [],
+      "submitted": 0,
+      "raw_submitted": 0
+    }
+  },
+  "H-07": {
+    "current": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "A",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": true,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持擬運用 Honda 製造能力。合資公司指定 Honda 承製並實際量產，才會增加 Honda 的生產活動。製造利益與前期現金流均按條件表述。期限內的官方投產結果可區分合資車與 Honda 自有車增產，僅能驗證量產進度。"
+          }
+        ],
+        "note": "符合標準所列的 Honda 製造路徑。缺口點明 Sony 技術採用與收費條款仍待確認。"
+      },
+      "qualifying": [
+        1
+      ],
+      "exact": true,
+      "major": false,
+      "principal_rank": 1,
+      "qualified_rank": 1,
+      "failure_dimensions": [],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "astra": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "B",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持合資開發電動車及擬整合 Sony 影像與感測技術。有償供貨或授權列為增加 Sony 相關業務收入的必要條件，利益幅度仍取決於量價及成本。期限內 Sony 確認無償投入可排除有償供應假設。"
+          }
+        ],
+        "note": "主張檢驗 Sony 分部的供貨或授權收入，未建立 Sony 的合資出資現金需求及合資收益曝險。缺口保留對價歸屬及合資損益待驗。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "selection"
+      ],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "ranked": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true,
+          "ranking_reason": true
+        },
+        {
+          "index": 2,
+          "evidence": true,
+          "time": true,
+          "ranking_reason": true
+        }
+      ],
+      "verdict": {
+        "label": "C",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持由擬定資本與持股比例推算 Honda 擬出資 50 億日圓，現金流取決於繳付方式及時點。期限內具名的實繳披露可區分本案與 Honda 其他投資。鏈結落在 Honda 的出資，未建立 Sony 的現金需求及合資收益曝險。"
+          },
+          {
+            "index": 2,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持擬運用 Honda 售後能力。指定承辦、服務啟用及給付可帶來 Honda 售後收入，規模仍待驗。期限內官方公布各啟用市場均由其他業者承辦可推翻假設。此路徑落在售後服務，未涉及指定的開發或製造資源。"
+          }
+        ],
+        "note": "兩條鏈結分別驗證 Honda 出資及售後服務。缺口清楚說明 Sony 技術採用、資源移轉及分部收益仍待確認。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "selection"
+      ],
+      "submitted": 2,
+      "raw_submitted": 2
+    }
+  },
+  "H-08": {
+    "current": {
+      "rules": [],
+      "verdict": {
+        "label": "A",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [],
+        "note": "未提交連結。指出須比對原有客戶在 SRS 與 Home Depot 原通路的交易，並保留訂單移轉歸因。"
+      },
+      "qualifying": [],
+      "exact": true,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [],
+      "submitted": 0,
+      "raw_submitted": 0
+    },
+    "ranked": {
+      "rules": [],
+      "verdict": {
+        "label": "B",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [],
+        "note": "未提交連結。要求收購前後同一批客戶的分通路資料，並保留客戶移轉與交叉銷售歸因。"
+      },
+      "qualifying": [],
+      "exact": true,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [],
+      "submitted": 0,
+      "raw_submitted": 0
+    },
+    "astra": {
+      "rules": [],
+      "verdict": {
+        "label": "C",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [],
+        "note": "未提交連結。指出缺少收購前後同一批客戶的跨通路交易資料，並明確保留門市訂單分流歸因。"
+      },
+      "qualifying": [],
+      "exact": true,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [],
+      "submitted": 0,
+      "raw_submitted": 0
+    }
+  },
+  "R-01": {
+    "ranked": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true,
+          "ranking_reason": true
+        }
+      ],
+      "verdict": {
+        "label": "A",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持 LSEG 遷移至 Azure 與十年最低支出承諾。此連結衡量 LSEG 資料平台的並行成本，主路徑要求衡量遷移帶來的 Azure 需求。並行成本以同批工作負載新舊環境同時運作並產生成本為條件。若 LSEG 期內確認所有已切換批次的舊環境均於 Azure 上線時或之前停用，即可排除這項並行成本機制。"
+          }
+        ],
+        "note": "缺口指出整合授權、付費席次、分成及持股與業務配置連動的證據仍待補足。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "selection"
+      ],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "astra": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "B",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": true,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "LSEG 資料平台或關鍵基礎設施遷入 Azure 正式營運後，若計費用量高於原有水準，可隨服務交付增加 Microsoft 雲端營收。雙方期內公告可用具名負載驗證上線。若披露上線後計費用量持平，即可區分遷移落地與新增用量。"
+          }
+        ],
+        "note": "履約承諾與營收增量的區分恰當。整合缺口具體指出付費方式、採用基準及收入歸屬待揭露。"
+      },
+      "qualifying": [
+        1
+      ],
+      "exact": true,
+      "major": false,
+      "principal_rank": 1,
+      "qualified_rank": 1,
+      "failure_dimensions": [],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "current": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "C",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持 Teams 與 LSEG Workspace 的整合計畫。此連結追蹤 Teams 對外提供 Workspace 功能及其對 LSEG 營收的可能影響，主路徑要求追蹤 Azure 需求。LSEG 產品公告若確認期末仍全數限於試用，即可推翻期內正式交付。正式上線只能驗證通路，增收仍須有因整合而新增的付費或續約。"
+          }
+        ],
+        "note": "缺口具體指出缺少共用人力、預算、資源調度及新增付費證據，並保留對資源排擠的判斷。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "selection"
+      ],
+      "submitted": 1,
+      "raw_submitted": 1
+    }
+  },
+  "R-02": {
+    "ranked": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true,
+          "ranking_reason": true
+        }
+      ],
+      "verdict": {
+        "label": "A",
+        "gap_ok": false,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持 Studio 會員預定同價取得 Peloton 課程。若接入延後且 Peloton 按上線或用量收費，其收入可能遞延。具日期的官方會員說明可驗證是否如期接入，並區分方案權益與自行訂閱。財務終點在 Peloton，未觸及 lululemon 的內容成本、留存或服飾增量銷售。"
+          }
+        ],
+        "note": "缺口誤稱主案已追蹤服飾上架，所列獲利缺口也落在 Peloton 零售端。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "selection"
+      ],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "current": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "B",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持 Peloton 獨家供應與 Studio 預定同價接入。延誤及抵免均為條件，抵免會降低適用會員當期應付會費。官方同帳期條款可區分延誤抵免與一般促銷。帳單抵免未觸及指定的留存、內容成本或服飾增量銷售。"
+          }
+        ],
+        "note": "缺口指出內容成本及預算去向未披露，並保留對資源轉投服飾及實際抵免總額的判斷。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "selection"
+      ],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "astra": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        },
+        {
+          "index": 2,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "C",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": true,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持 Peloton 通路推出 lululemon 聯名服飾。新增需求可帶動追加訂單與銷售，毛利增益須扣除既有通路移轉的影響。期內官方公告確認取消上市或 lululemon 揭露移轉已抵銷毛利，均可推翻增益假說。補貨僅能驗證通路進展。"
+          },
+          {
+            "index": 2,
+            "target_path": true,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "公告支持 Peloton 課程預定同價導入 Studio。若留住原本會退訂的會員，lululemon 可增加付費月份，獲利仍取決於成本。期內財報或法說若揭露可比年資會員的續訂率與付費月份均未改善，可反駁留存假說，並排除年資組合差異這項解釋。"
+          }
+        ],
+        "note": "缺口指出服飾訂單與通路毛利、可比會員留存及內容費用均待查，未判定哪一端的獲利貢獻較大。"
+      },
+      "qualifying": [
+        1,
+        2
+      ],
+      "exact": true,
+      "major": false,
+      "principal_rank": 1,
+      "qualified_rank": 1,
+      "failure_dimensions": [],
+      "submitted": 2,
+      "raw_submitted": 2
+    }
+  },
+  "R-03": {
+    "astra": {
+      "rules": [],
+      "verdict": {
+        "label": "A",
+        "gap_ok": false,
+        "major_error": false,
+        "candidates": [],
+        "note": "指出歷史回購及留存業務的成本資訊缺口，但未指出分拆實收款及用途的證據缺口，也未明確保留對回購資金來源的歸因。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "mechanism"
+      ],
+      "submitted": 0,
+      "raw_submitted": 0
+    },
+    "current": {
+      "rules": [],
+      "verdict": {
+        "label": "B",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [],
+        "note": "指出母公司可得現金、重配金額及承接業務均未披露，並明確指出已完成的 10 億美元回購無法證明分拆資金流向。"
+      },
+      "qualifying": [],
+      "exact": true,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [],
+      "submitted": 0,
+      "raw_submitted": 0
+    },
+    "ranked": {
+      "rules": [],
+      "verdict": {
+        "label": "C",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [],
+        "note": "確認 10 億美元回購已完成，並以分拆文件載明母公司可得款項及後續公開披露資金配置，作為歸因於分拆的前提。"
+      },
+      "qualifying": [],
+      "exact": true,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [],
+      "submitted": 0,
+      "raw_submitted": 0
+    }
+  },
+  "R-04": {
+    "astra": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "A",
+        "gap_ok": false,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "直營、批發及集團毛利率讀數有據。若直營毛利率較高，直營占比下降會壓低集團毛利率，幅度仍待確認。NIKE 同季若披露通路組合貢獻為零或為正，可推翻該季判斷。此路徑追蹤毛利組合，未檢驗需求是否由直營移往批發。"
+          }
+        ],
+        "note": "缺口保留了毛利歸因，並指出批發營收無法衡量終端銷售，但未具體保留直營與批發跌幅差異是否來自顧客轉購或商品改配。"
+      },
+      "qualifying": [],
+      "exact": false,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [
+        "mechanism"
+      ],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "ranked": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true,
+          "ranking_reason": true
+        }
+      ],
+      "verdict": {
+        "label": "B",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": false,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "數位及自營門市跌幅有據。數位顧客須實際到店成交，才可能保住部分直營營收。NIKE 同季若把門市改善歸因於自身客流回升，可與轉購解釋區分。承接端是自營門市，仍屬直營。"
+          }
+        ],
+        "note": "缺口指出欠缺跨通路轉購紀錄及批發增配證據，並明確保留批發營收能否歸因於訂單移轉。"
+      },
+      "qualifying": [],
+      "exact": true,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [],
+      "submitted": 1,
+      "raw_submitted": 1
+    },
+    "current": {
+      "rules": [
+        {
+          "index": 1,
+          "evidence": true,
+          "time": true
+        }
+      ],
+      "verdict": {
+        "label": "C",
+        "gap_ok": true,
+        "major_error": false,
+        "candidates": [
+          {
+            "index": 1,
+            "target_path": true,
+            "evidence": true,
+            "mechanism": true,
+            "financial_effect": true,
+            "falsifier": true,
+            "major_error": false,
+            "note": "數位及批發跌幅有據。NIKE 須將商品由數位通路改配批發，並由通路商增購、NIKE 交貨認列，才會帶來批發增量。NIKE 同季若確認改配及實際承接，可與例行補貨區分。批發增速門檻單獨只能檢驗表現，集團淨效應仍無法估算。"
+          }
+        ],
+        "note": "缺口點明配額、增購量及通路毛利率未揭露。草稿把改配與承接列為待驗條件，批發回升本身不足以證明改配或顧客轉購。"
+      },
+      "qualifying": [
+        1
+      ],
+      "exact": true,
+      "major": false,
+      "principal_rank": null,
+      "qualified_rank": null,
+      "failure_dimensions": [],
+      "submitted": 1,
+      "raw_submitted": 1
+    }
+  }
+}

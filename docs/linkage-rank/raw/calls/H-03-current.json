@@ -1,0 +1,88 @@
+{
+  "case": "H-03",
+  "call": "current",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:33:34.646566+00:00",
+  "queued_epoch": 1795433614.646576,
+  "started_at": "2026-11-23T11:33:34.660719+00:00",
+  "request_sha256": "9a58fe2b81d195782bdc7acdd9633e9afd110ee692bbb31609428c87e0ba962f",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.005,
+  "prompt_bytes": 12667,
+  "returncode": 0,
+  "cli_elapsed_seconds": 76.64,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "Starlink Wi-Fi",
+        "origin_evidence_ids": [
+          "united-release:contract"
+        ],
+        "affected_company": "United Airlines",
+        "affected_business": "購物",
+        "affected_evidence_ids": [
+          "united-release:entertainment",
+          "united-release:cost"
+        ],
+        "mechanism": "公告列出購物用途。若聯航另行決定在已啟用連線的航班開放購物結帳，免費連線就可能成為聯航取得交易收入的通路。",
+        "baseline": "簽約時僅列出購物用途。若只開通網路，旅客即使自行上網消費，聯航也未必取得收入。",
+        "condition": "聯航須推出可完成交易的購物服務，且對成交享有銷售收入或分潤權。",
+        "financial_effect": "成交可增加附加收入。可用航班數、成交率、聯航實收金額及營運成本均待查。",
+        "alternative_explanation": "購物功能也可能隨既定客艙升級推出。應查聯航服務說明是否明列結帳須使用 Starlink 連線，以及哪些航班適用。",
+        "metric": "聯航是否公開確認已在 Starlink 客運航班開放其購物服務的機上結帳。此里程碑僅檢驗通路是否啟用。",
+        "observation_period": "2025 年首批客運服務啟用後至年底",
+        "public_source": "United Airlines 新聞室的機上購物服務公告或對旅客服務說明",
+        "deadline": "2025-12-31",
+        "prediction": "若聯航採用此銷售通路，年底前可在至少一班已啟用 Starlink 的客運航班完成聯航購物結帳。",
+        "invalidation": "聯航明確確認截至年底，所有已啟用 Starlink 的客運航班均未開放聯航購物結帳。若未披露，則保留判斷。"
+      }
+    ],
+    "business_linkage_gap": "購物上線後仍須查交易歸屬與分潤。公告也提及員工資訊工具及既定客艙升級，但缺少工具上線前後的作業指標，以及原定改裝排程與實際資源調度資料。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "internal",
+        "origin_business": "Starlink Wi-Fi",
+        "origin_evidence_ids": [
+          "united-release:contract"
+        ],
+        "affected_company": "United Airlines",
+        "affected_business": "購物",
+        "affected_evidence_ids": [
+          "united-release:entertainment",
+          "united-release:cost"
+        ],
+        "mechanism": "公告列出購物用途。若聯航另行決定在已啟用連線的航班開放購物結帳，免費連線就可能成為聯航取得交易收入的通路。",
+        "baseline": "簽約時僅列出購物用途。若只開通網路，旅客即使自行上網消費，聯航也未必取得收入。",
+        "condition": "聯航須推出可完成交易的購物服務，且對成交享有銷售收入或分潤權。",
+        "financial_effect": "成交可增加附加收入。可用航班數、成交率、聯航實收金額及營運成本均待查。",
+        "alternative_explanation": "購物功能也可能隨既定客艙升級推出。應查聯航服務說明是否明列結帳須使用 Starlink 連線，以及哪些航班適用。",
+        "metric": "聯航是否公開確認已在 Starlink 客運航班開放其購物服務的機上結帳。此里程碑僅檢驗通路是否啟用。",
+        "observation_period": "2025 年首批客運服務啟用後至年底",
+        "public_source": "United Airlines 新聞室的機上購物服務公告或對旅客服務說明",
+        "deadline": "2025-12-31",
+        "prediction": "若聯航採用此銷售通路，年底前可在至少一班已啟用 Starlink 的客運航班完成聯航購物結帳。",
+        "invalidation": "聯航明確確認截至年底，所有已啟用 Starlink 的客運航班均未開放聯航購物結帳。若未披露，則保留判斷。"
+      }
+    ],
+    "business_linkage_gap": "購物上線後仍須查交易歸屬與分潤。公告也提及員工資訊工具及既定客艙升級，但缺少工具上線前後的作業指標，以及原定改裝排程與實際資源調度資料。"
+  },
+  "elapsed_seconds": 76.642,
+  "usage": {
+    "input_tokens": 18910,
+    "cached_input_tokens": 0,
+    "output_tokens": 2491,
+    "reasoning_output_tokens": 138
+  },
+  "event_seconds": {
+    "thread.started": 0.77,
+    "turn.started": 1.345,
+    "item.completed": 76.169,
+    "turn.completed": 76.232
+  },
+  "finished_at": "2026-11-23T11:34:51.304675+00:00"
+}

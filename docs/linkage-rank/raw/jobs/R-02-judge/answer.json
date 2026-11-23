@@ -1,0 +1,68 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 Studio 會員預定同價取得 Peloton 課程。若接入延後且 Peloton 按上線或用量收費，其收入可能遞延。具日期的官方會員說明可驗證是否如期接入，並區分方案權益與自行訂閱。財務終點在 Peloton，未觸及 lululemon 的內容成本、留存或服飾增量銷售。"
+        }
+      ],
+      "note": "缺口誤稱主案已追蹤服飾上架，所列獲利缺口也落在 Peloton 零售端。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 Peloton 獨家供應與 Studio 預定同價接入。延誤及抵免均為條件，抵免會降低適用會員當期應付會費。官方同帳期條款可區分延誤抵免與一般促銷。帳單抵免未觸及指定的留存、內容成本或服飾增量銷售。"
+        }
+      ],
+      "note": "缺口指出內容成本及預算去向未披露，並保留對資源轉投服飾及實際抵免總額的判斷。"
+    },
+    {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 Peloton 通路推出 lululemon 聯名服飾。新增需求可帶動追加訂單與銷售，毛利增益須扣除既有通路移轉的影響。期內官方公告確認取消上市或 lululemon 揭露移轉已抵銷毛利，均可推翻增益假說。補貨僅能驗證通路進展。"
+        },
+        {
+          "index": 2,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 Peloton 課程預定同價導入 Studio。若留住原本會退訂的會員，lululemon 可增加付費月份，獲利仍取決於成本。期內財報或法說若揭露可比年資會員的續訂率與付費月份均未改善，可反駁留存假說，並排除年資組合差異這項解釋。"
+        }
+      ],
+      "note": "缺口指出服飾訂單與通路毛利、可比會員留存及內容費用均待查，未判定哪一端的獲利貢獻較大。"
+    }
+  ]
+}

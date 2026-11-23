@@ -1,0 +1,88 @@
+{
+  "case": "H-02",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:29:21.566099+00:00",
+  "queued_epoch": 1795433361.566112,
+  "started_at": "2026-11-23T11:29:21.657975+00:00",
+  "request_sha256": "8f4d55eb5e4864ebde0b68583472b5944e059026884b390f49afc71ceacc5202",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.083,
+  "prompt_bytes": 2500,
+  "returncode": 0,
+  "cli_elapsed_seconds": 71.521,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "HP OmniBook X AI PC 與 HP EliteBook Ultra G1q AI PC",
+        "origin_evidence_ids": [
+          "hp-release:hp"
+        ],
+        "affected_company": "Qualcomm",
+        "affected_business": "用於筆電的 Snapdragon X Elite 處理器",
+        "affected_evidence_ids": [
+          "hp-release:original",
+          "hp-release:rival"
+        ],
+        "mechanism": "兩款 HP 筆電均採用 X Elite。若終端銷售帶動 HP 追加生產，且先前備料不足以支應，新增處理器採購可帶動 Qualcomm 營收。",
+        "baseline": "截至 2024-05-20，公告確認兩款機型採用 X Elite。HP 的初期備料量、實際預購量與晶片採購金額均未知。",
+        "condition": "HP 因這兩款機型的終端需求而追加生產，並為此新增 X Elite 採購。",
+        "financial_effect": "相對於僅供應首批備貨的情境，Qualcomm 對 HP 的 X Elite 銷售收入可望增加。現有資料無法估計金額或對整體獲利的影響。",
+        "alternative_explanation": "即使 Qualcomm 的 X 系列銷售成長，也可能來自 Lenovo 等其他製造商，或來自首批備貨。",
+        "metric": "可歸屬於這兩款 HP 機型的 X Elite 追加採購量或金額",
+        "observation_period": "2024-05-21 至 2025-06-30",
+        "public_source": "追蹤 HP 與 Qualcomm 的財報、法說會及產品業務公告，查找明確指向這兩款機型的補單說明。",
+        "deadline": "2025-06-30",
+        "prediction": "若上述條件成立，至研究期限可望看到至少一次可歸屬於 HP 這兩款機型的 X Elite 補單跡象。",
+        "invalidation": "若公司確認初期備料足以支應整段期間的生產，則追加採購假說失效。若僅有 X 系列總銷售數據，則歸因仍待驗證。"
+      }
+    ],
+    "business_linkage_gap": "平台公告可連結 HP 機型與 Qualcomm 處理器，但缺少分機型銷量、處理器採購量及單價，無法估算雙方營收影響。資料也未揭露 HP 其他業務與這兩款電腦的連帶收入。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "HP OmniBook X AI PC 與 HP EliteBook Ultra G1q AI PC",
+        "origin_evidence_ids": [
+          "hp-release:hp"
+        ],
+        "affected_company": "Qualcomm",
+        "affected_business": "用於筆電的 Snapdragon X Elite 處理器",
+        "affected_evidence_ids": [
+          "hp-release:original",
+          "hp-release:rival"
+        ],
+        "mechanism": "兩款 HP 筆電均採用 X Elite。若終端銷售帶動 HP 追加生產，且先前備料不足以支應，新增處理器採購可帶動 Qualcomm 營收。",
+        "baseline": "截至 2024-05-20，公告確認兩款機型採用 X Elite。HP 的初期備料量、實際預購量與晶片採購金額均未知。",
+        "condition": "HP 因這兩款機型的終端需求而追加生產，並為此新增 X Elite 採購。",
+        "financial_effect": "相對於僅供應首批備貨的情境，Qualcomm 對 HP 的 X Elite 銷售收入可望增加。現有資料無法估計金額或對整體獲利的影響。",
+        "alternative_explanation": "即使 Qualcomm 的 X 系列銷售成長，也可能來自 Lenovo 等其他製造商，或來自首批備貨。",
+        "metric": "可歸屬於這兩款 HP 機型的 X Elite 追加採購量或金額",
+        "observation_period": "2024-05-21 至 2025-06-30",
+        "public_source": "追蹤 HP 與 Qualcomm 的財報、法說會及產品業務公告，查找明確指向這兩款機型的補單說明。",
+        "deadline": "2025-06-30",
+        "prediction": "若上述條件成立，至研究期限可望看到至少一次可歸屬於 HP 這兩款機型的 X Elite 補單跡象。",
+        "invalidation": "若公司確認初期備料足以支應整段期間的生產，則追加採購假說失效。若僅有 X 系列總銷售數據，則歸因仍待驗證。"
+      }
+    ],
+    "business_linkage_gap": "平台公告可連結 HP 機型與 Qualcomm 處理器，但缺少分機型銷量、處理器採購量及單價，無法估算雙方營收影響。資料也未揭露 HP 其他業務與這兩款電腦的連帶收入。"
+  },
+  "elapsed_seconds": 71.522,
+  "usage": {
+    "input_tokens": 16912,
+    "cached_input_tokens": 15360,
+    "output_tokens": 3096,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.703,
+    "turn.started": 1.368,
+    "item.completed": 71.08,
+    "turn.completed": 71.105
+  },
+  "finished_at": "2026-11-23T11:30:33.267834+00:00"
+}

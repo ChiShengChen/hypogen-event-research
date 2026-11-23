@@ -1,0 +1,220 @@
+{
+  "pilot": {
+    "planned": 4,
+    "positive_planned": 2,
+    "paired": 4,
+    "graded": 4,
+    "metrics": {
+      "astra": {
+        "exact": 3,
+        "positive": 2,
+        "negative": 1,
+        "major": 1,
+        "rank1": 2,
+        "top3": 2
+      },
+      "current": {
+        "exact": 2,
+        "positive": 1,
+        "negative": 1,
+        "major": 0,
+        "rank1": 1,
+        "top3": 1
+      },
+      "ranked": {
+        "exact": 4,
+        "positive": 2,
+        "negative": 2,
+        "major": 0,
+        "rank1": 2,
+        "top3": 2
+      }
+    },
+    "pass": true
+  },
+  "holdout": {
+    "planned": 8,
+    "positive_planned": 4,
+    "paired": 8,
+    "graded": 8,
+    "metrics": {
+      "astra": {
+        "exact": 3,
+        "positive": 2,
+        "negative": 1,
+        "major": 0,
+        "rank1": 1,
+        "top3": 2
+      },
+      "current": {
+        "exact": 4,
+        "positive": 1,
+        "negative": 3,
+        "major": 0,
+        "rank1": 1,
+        "top3": 1
+      },
+      "ranked": {
+        "exact": 4,
+        "positive": 1,
+        "negative": 3,
+        "major": 0,
+        "rank1": 1,
+        "top3": 1
+      }
+    },
+    "pass": false,
+    "positive_delta_vs_current": 0,
+    "negative_delta_vs_current": 0,
+    "exact_delta_vs_astra": 1,
+    "ranking_improved": false,
+    "leads_astra": false
+  },
+  "regression": {
+    "planned": 4,
+    "positive_planned": 2,
+    "paired": 4,
+    "graded": 4,
+    "metrics": {
+      "astra": {
+        "exact": 2,
+        "positive": 2,
+        "negative": 0,
+        "major": 0,
+        "rank1": 2,
+        "top3": 2
+      },
+      "current": {
+        "exact": 2,
+        "positive": 0,
+        "negative": 2,
+        "major": 0,
+        "rank1": 0,
+        "top3": 0
+      },
+      "ranked": {
+        "exact": 2,
+        "positive": 0,
+        "negative": 2,
+        "major": 0,
+        "rank1": 0,
+        "top3": 0
+      }
+    }
+  },
+  "human_completed": 0,
+  "human_pending": 12,
+  "prospective_completed": 0,
+  "rules_checked": 31,
+  "rules_passed": 31,
+  "rank_candidates": 11,
+  "rank_reasons": 11,
+  "usage": {
+    "formal": {
+      "ranked": {
+        "started": 12,
+        "returned": 12,
+        "timeout": 0,
+        "availability": 0,
+        "elapsed_seconds": 811.215,
+        "metered": 12,
+        "usage": {
+          "input_tokens": 228106,
+          "cached_input_tokens": 15360,
+          "output_tokens": 29779,
+          "reasoning_output_tokens": 909
+        }
+      },
+      "current": {
+        "started": 12,
+        "returned": 12,
+        "timeout": 0,
+        "availability": 0,
+        "elapsed_seconds": 734.793,
+        "metered": 12,
+        "usage": {
+          "input_tokens": 225504,
+          "cached_input_tokens": 76800,
+          "output_tokens": 26673,
+          "reasoning_output_tokens": 543
+        }
+      },
+      "astra": {
+        "started": 12,
+        "returned": 12,
+        "timeout": 0,
+        "availability": 0,
+        "elapsed_seconds": 736.806,
+        "metered": 12,
+        "usage": {
+          "input_tokens": 203532,
+          "cached_input_tokens": 76800,
+          "output_tokens": 29481,
+          "reasoning_output_tokens": 97
+        }
+      },
+      "judge": {
+        "started": 12,
+        "returned": 12,
+        "timeout": 0,
+        "availability": 0,
+        "elapsed_seconds": 255.666,
+        "metered": 12,
+        "usage": {
+          "input_tokens": 207876,
+          "cached_input_tokens": 0,
+          "output_tokens": 9173,
+          "reasoning_output_tokens": 2743
+        }
+      }
+    },
+    "regression": {
+      "ranked": {
+        "started": 4,
+        "returned": 4,
+        "timeout": 0,
+        "availability": 0,
+        "elapsed_seconds": 272.994,
+        "metered": 4,
+        "usage": {
+          "input_tokens": 76265,
+          "cached_input_tokens": 15360,
+          "output_tokens": 9675,
+          "reasoning_output_tokens": 240
+        }
+      },
+      "current": {
+        "started": 0,
+        "returned": 0,
+        "timeout": 0,
+        "availability": 0,
+        "elapsed_seconds": 0,
+        "metered": 0,
+        "usage": null
+      },
+      "astra": {
+        "started": 0,
+        "returned": 0,
+        "timeout": 0,
+        "availability": 0,
+        "elapsed_seconds": 0,
+        "metered": 0,
+        "usage": null
+      },
+      "judge": {
+        "started": 4,
+        "returned": 4,
+        "timeout": 0,
+        "availability": 0,
+        "elapsed_seconds": 102.694,
+        "metered": 4,
+        "usage": {
+          "input_tokens": 71287,
+          "cached_input_tokens": 13952,
+          "output_tokens": 3971,
+          "reasoning_output_tokens": 1330
+        }
+      }
+    }
+  }
+}

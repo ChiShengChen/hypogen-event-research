@@ -1,0 +1,36 @@
+{
+  "case": "H-04",
+  "call": "ranked",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:35:18.245814+00:00",
+  "queued_epoch": 1795433718.245825,
+  "started_at": "2026-11-23T11:35:18.258863+00:00",
+  "request_sha256": "906befd1f13d40cba8de257aee792bb9e3210b5b045a9460c38361c714086542",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.004,
+  "prompt_bytes": 13217,
+  "returncode": 0,
+  "cli_elapsed_seconds": 43.569,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告確認醫療保健業務已分拆，並揭露 3M 的保留持股。要把影響追到另一項具名業務，仍需 3M 揭露變現所得的實際配置、具名業務承接的人員或成本，或雙方供應與服務合約的品項及對價。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告確認醫療保健業務已分拆，並揭露 3M 的保留持股。要把影響追到另一項具名業務，仍需 3M 揭露變現所得的實際配置、具名業務承接的人員或成本，或雙方供應與服務合約的品項及對價。"
+  },
+  "elapsed_seconds": 43.57,
+  "usage": {
+    "input_tokens": 18956,
+    "cached_input_tokens": 0,
+    "output_tokens": 1772,
+    "reasoning_output_tokens": 39
+  },
+  "event_seconds": {
+    "thread.started": 0.739,
+    "turn.started": 1.369,
+    "item.completed": 42.936,
+    "turn.completed": 42.97
+  },
+  "finished_at": "2026-11-23T11:36:01.830275+00:00"
+}

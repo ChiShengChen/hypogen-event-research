@@ -1,0 +1,90 @@
+{
+  "case": "H-02",
+  "call": "ranked",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:27:26.394432+00:00",
+  "queued_epoch": 1795433246.3944404,
+  "started_at": "2026-11-23T11:27:26.569416+00:00",
+  "request_sha256": "261c305a2aeb9db9e75fc4312563bc18d61b424b5fc9a6bc2fbc26d66b61415b",
+  "queue_seconds": 0.134,
+  "preparation_seconds": 0.041,
+  "prompt_bytes": 13290,
+  "returncode": 0,
+  "cli_elapsed_seconds": 114.7,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "HP OmniBook X AI PC",
+        "origin_evidence_ids": [
+          "hp-release:hp"
+        ],
+        "affected_company": "Qualcomm",
+        "affected_business": "Qualcomm Snapdragon X Series",
+        "affected_evidence_ids": [
+          "hp-release:hp",
+          "hp-release:rival"
+        ],
+        "mechanism": "HP 已公布此機採用 Snapdragon X Elite。若 HP 實際投產並交貨，Qualcomm 的晶片便隨整機進入市場。若 HP 因新增需求而追加採購，才可能進一步增加 Qualcomm 晶片收入。",
+        "baseline": "以 5 月 20 日已公布搭載、尚無實際交貨證據為觀察起點。若 HP 維持原採購計畫，即使首批電腦交貨，也可能只消化已購晶片。",
+        "condition": "HP 須實際交付搭載該晶片的量產機。收入增量另須 HP 將新增採購分配給 Qualcomm，且 Qualcomm 完成交付及收入認列。",
+        "financial_effect": "新增晶片銷售可提高 Qualcomm 收入，規模取決於增購顆數、單價及認列期間，三者均未披露。",
+        "alternative_explanation": "Lenovo 等品牌也採用同系列晶片。Qualcomm 的平台進展可能由其他品牌帶動，須以明列 HP 型號與晶片的交貨公告辨別 HP 是否參與。",
+        "metric": "HP OmniBook X AI PC 搭載 Snapdragon X Elite 的實際交貨狀態，僅作晶片商用部署代理。",
+        "observation_period": "2024-05-20 發表後至 2025-06-30",
+        "public_source": "HP 產品上市或交貨公告，並以 Microsoft 平台產品更新核對型號及晶片。",
+        "deadline": "2025-06-30",
+        "prediction": "覆核日前，HP 或平台公告確認搭載 Snapdragon X Elite 的 HP OmniBook X AI PC 已開始交貨。",
+        "invalidation": "同期 HP 或平台公告明確確認該配置已在交貨前取消，或首次交貨已延至 2025-06-30 之後。僅缺少更新則仍待查。",
+        "ranking_reason": "此連結優先，因具名機型與晶片配置可逐一核對，且量產交貨直接關係到晶片部署，追加採購金額則仍待證實。"
+      }
+    ],
+    "business_linkage_gap": "公告只列平台預購入口。要把上架連到 Microsoft 的通路收入，仍缺 HP 指定機型的銷售安排、成交量及分潤條款。也缺 HP 將產能或預算從既有產品移至新機的證據，無法評估其他產品的損益。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "HP OmniBook X AI PC",
+        "origin_evidence_ids": [
+          "hp-release:hp"
+        ],
+        "affected_company": "Qualcomm",
+        "affected_business": "Qualcomm Snapdragon X Series",
+        "affected_evidence_ids": [
+          "hp-release:hp",
+          "hp-release:rival"
+        ],
+        "mechanism": "HP 已公布此機採用 Snapdragon X Elite。若 HP 實際投產並交貨，Qualcomm 的晶片便隨整機進入市場。若 HP 因新增需求而追加採購，才可能進一步增加 Qualcomm 晶片收入。",
+        "baseline": "以 5 月 20 日已公布搭載、尚無實際交貨證據為觀察起點。若 HP 維持原採購計畫，即使首批電腦交貨，也可能只消化已購晶片。",
+        "condition": "HP 須實際交付搭載該晶片的量產機。收入增量另須 HP 將新增採購分配給 Qualcomm，且 Qualcomm 完成交付及收入認列。",
+        "financial_effect": "新增晶片銷售可提高 Qualcomm 收入，規模取決於增購顆數、單價及認列期間，三者均未披露。",
+        "alternative_explanation": "Lenovo 等品牌也採用同系列晶片。Qualcomm 的平台進展可能由其他品牌帶動，須以明列 HP 型號與晶片的交貨公告辨別 HP 是否參與。",
+        "metric": "HP OmniBook X AI PC 搭載 Snapdragon X Elite 的實際交貨狀態，僅作晶片商用部署代理。",
+        "observation_period": "2024-05-20 發表後至 2025-06-30",
+        "public_source": "HP 產品上市或交貨公告，並以 Microsoft 平台產品更新核對型號及晶片。",
+        "deadline": "2025-06-30",
+        "prediction": "覆核日前，HP 或平台公告確認搭載 Snapdragon X Elite 的 HP OmniBook X AI PC 已開始交貨。",
+        "invalidation": "同期 HP 或平台公告明確確認該配置已在交貨前取消，或首次交貨已延至 2025-06-30 之後。僅缺少更新則仍待查。",
+        "ranking_reason": "此連結優先，因具名機型與晶片配置可逐一核對，且量產交貨直接關係到晶片部署，追加採購金額則仍待證實。"
+      }
+    ],
+    "business_linkage_gap": "公告只列平台預購入口。要把上架連到 Microsoft 的通路收入，仍缺 HP 指定機型的銷售安排、成交量及分潤條款。也缺 HP 將產能或預算從既有產品移至新機的證據，無法評估其他產品的損益。"
+  },
+  "elapsed_seconds": 114.702,
+  "usage": {
+    "input_tokens": 18947,
+    "cached_input_tokens": 0,
+    "output_tokens": 3645,
+    "reasoning_output_tokens": 69
+  },
+  "event_seconds": {
+    "thread.started": 0.163,
+    "turn.started": 1.411,
+    "item.completed": 114.297,
+    "turn.completed": 114.336
+  },
+  "finished_at": "2026-11-23T11:29:21.294289+00:00"
+}

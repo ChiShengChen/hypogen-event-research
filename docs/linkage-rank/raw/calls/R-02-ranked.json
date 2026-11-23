@@ -1,0 +1,90 @@
+{
+  "case": "R-02",
+  "call": "ranked",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:53:05.613305+00:00",
+  "queued_epoch": 1795434785.6133158,
+  "started_at": "2026-11-23T11:53:05.651118+00:00",
+  "request_sha256": "2644f6d7ab431a1fc3a9c40841497dfbe5e89bf7ef8545cb6674f16a0cb15022",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.029,
+  "prompt_bytes": 13297,
+  "returncode": 0,
+  "cli_elapsed_seconds": 90.162,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bear",
+        "scope": "counterparty",
+        "origin_business": "lululemon Studio All-Access",
+        "origin_evidence_ids": [
+          "lulu-pton:subscription"
+        ],
+        "affected_company": "Peloton",
+        "affected_business": "Peloton 課程",
+        "affected_evidence_ids": [
+          "lulu-pton:subscription",
+          "lulu-pton:terms"
+        ],
+        "mechanism": "五年獨家安排讓 Peloton 課程可透過 lululemon 接觸既有付費會員。若接入延後，lululemon 的會員方案會出現執行落差，Peloton 也會延後取得這個分發通路。",
+        "baseline": "無合作時，既有方案沒有公告所述的 Peloton 課程權益。合作排定的接入日為 2023 年 11 月 1 日。",
+        "condition": "雙方須完成方案接入，既有會員才可按原價取得課程。Peloton 的收入是否隨接入增加，另取決於合約計價方式。",
+        "financial_effect": "若 Peloton 按服務上線或使用量收費，延期會推遲相關收入。五年是合作期限，授權費、付費會員數及最低付款額均未披露。",
+        "alternative_explanation": "部分會員可能自行訂閱 Peloton。查核雙方會員說明是否明載既有方案已包含課程，可區分合作接入與會員自行購買。",
+        "metric": "截至排定日期，既有 All-Access 會員能否按原價透過該方案取得 Peloton 課程。",
+        "observation_period": "2023 年 11 月 1 日的服務狀態，並追查其後公布的實際接入日。",
+        "public_source": "lululemon 與 Peloton 的會員服務說明、上線或延期公告。",
+        "deadline": "2024-12-31",
+        "prediction": "若主案的接入延遲成立，雙方服務說明或後續公告可確認實際接入日晚於 2023 年 11 月 1 日。",
+        "invalidation": "任一方具日期的會員說明確認，既有 All-Access 會員於 2023 年 11 月 1 日已可按原價取得課程。",
+        "ranking_reason": "此項居首，因獨家供應安排直接指定會員群、價格條件與接入日，公開服務狀態可檢驗雙方是否履約。"
+      }
+    ],
+    "business_linkage_gap": "服飾合作直接涉及 Peloton 的零售通路，但商品上架已是主案觀察項。若要另判斷 Peloton 的零售獲利或既有服飾遭排擠，仍缺進貨或分潤條款、銷量及品類組合。公告亦未指明 lululemon 將人力或預算移往哪個業務。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bear",
+        "scope": "counterparty",
+        "origin_business": "lululemon Studio All-Access",
+        "origin_evidence_ids": [
+          "lulu-pton:subscription"
+        ],
+        "affected_company": "Peloton",
+        "affected_business": "Peloton 課程",
+        "affected_evidence_ids": [
+          "lulu-pton:subscription",
+          "lulu-pton:terms"
+        ],
+        "mechanism": "五年獨家安排讓 Peloton 課程可透過 lululemon 接觸既有付費會員。若接入延後，lululemon 的會員方案會出現執行落差，Peloton 也會延後取得這個分發通路。",
+        "baseline": "無合作時，既有方案沒有公告所述的 Peloton 課程權益。合作排定的接入日為 2023 年 11 月 1 日。",
+        "condition": "雙方須完成方案接入，既有會員才可按原價取得課程。Peloton 的收入是否隨接入增加，另取決於合約計價方式。",
+        "financial_effect": "若 Peloton 按服務上線或使用量收費，延期會推遲相關收入。五年是合作期限，授權費、付費會員數及最低付款額均未披露。",
+        "alternative_explanation": "部分會員可能自行訂閱 Peloton。查核雙方會員說明是否明載既有方案已包含課程，可區分合作接入與會員自行購買。",
+        "metric": "截至排定日期，既有 All-Access 會員能否按原價透過該方案取得 Peloton 課程。",
+        "observation_period": "2023 年 11 月 1 日的服務狀態，並追查其後公布的實際接入日。",
+        "public_source": "lululemon 與 Peloton 的會員服務說明、上線或延期公告。",
+        "deadline": "2024-12-31",
+        "prediction": "若主案的接入延遲成立，雙方服務說明或後續公告可確認實際接入日晚於 2023 年 11 月 1 日。",
+        "invalidation": "任一方具日期的會員說明確認，既有 All-Access 會員於 2023 年 11 月 1 日已可按原價取得課程。",
+        "ranking_reason": "此項居首，因獨家供應安排直接指定會員群、價格條件與接入日，公開服務狀態可檢驗雙方是否履約。"
+      }
+    ],
+    "business_linkage_gap": "服飾合作直接涉及 Peloton 的零售通路，但商品上架已是主案觀察項。若要另判斷 Peloton 的零售獲利或既有服飾遭排擠，仍缺進貨或分潤條款、銷量及品類組合。公告亦未指明 lululemon 將人力或預算移往哪個業務。"
+  },
+  "elapsed_seconds": 90.163,
+  "usage": {
+    "input_tokens": 18988,
+    "cached_input_tokens": 15360,
+    "output_tokens": 2919,
+    "reasoning_output_tokens": 29
+  },
+  "event_seconds": {
+    "thread.started": 0.689,
+    "turn.started": 1.277,
+    "item.completed": 89.514,
+    "turn.completed": 89.555
+  },
+  "finished_at": "2026-11-23T11:54:35.815818+00:00"
+}

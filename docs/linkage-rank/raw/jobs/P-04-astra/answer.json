@@ -1,0 +1,87 @@
+{
+  "business_linkages": [],
+  "business_linkage_gap": "Costco 在八個市場設有電商網站，但公告只提供全公司與電商的可比銷售增速，缺少電商銷售占比、會員跨通路消費及純倉庫通路數據。現階段無法判定電商成長帶來多少新增消費、多少來自通路移轉，也無法將成長歸因於特定交易對手。",
+  "hypotheses": [
+    {
+      "stance": "bull",
+      "mechanism": "若既有營運據點與電商的整體銷售動能延續，即使油價與匯率壓低公告增速，排除兩項影響後的可比銷售仍應維持成長。",
+      "target": "Costco 全公司調整後可比銷售",
+      "horizon": "2025 財年第二季至第三季",
+      "catalyst": "Costco 公布後續兩季同口徑的可比銷售數據。",
+      "prediction": "後續兩季全公司調整後可比銷售年增率均達 5%。此門檻用於檢驗第一季 7.1% 的增速能否大致延續。",
+      "invalidation": "任一季低於 5%，即未達本假設設定的延續門檻。",
+      "claim_ids": ["costco-release:adjusted", "costco-release:comps"]
+    },
+    {
+      "stance": "wait",
+      "mechanism": "電商增速持續領先，可能提高其在可比銷售中的占比。對營業利益的影響則取決於電商銷售規模、商品毛利及履約成本。",
+      "target": "Costco 電商的相對增速與獲利貢獻",
+      "horizon": "截至 2025-12-31，優先檢驗 2025 財年第二季與第三季",
+      "catalyst": "後續季報揭露電商與全公司調整後可比銷售，或補充通路營收及成本資料。",
+      "prediction": "後續兩季電商調整後可比銷售年增率均高於全公司同口徑增速。",
+      "invalidation": "若任一季電商增速持平或落後，連續領先的預測即失效。若公司量化電商新增銷售及相關營業利益，則可重估獲利貢獻。",
+      "claim_ids": ["costco-release:adjusted", "costco-release:footprint"]
+    }
+  ],
+  "assessment": {
+    "thesis": "截至 2024-12-12，Costco 2025 財年第一季的銷售成長遍及三個揭露區域。美國、加拿大及其他國際市場的可比銷售分別年增 5.2%、5.8% 及 4.7%。全公司可比銷售年增 5.2%，排除油價與匯率影響後為 7.1%，兩者相差 1.9 個百分點。電商調整後增速為 13.2%，領先全公司 6.1 個百分點。這支持對銷售動能持正面看法，但每股盈餘的上修幅度仍無從估算。",
+    "key_gap": "公司未在所附資料中拆分交易筆數與客單價，也未提供電商銷售占比、通路毛利或履約成本。6.1 個百分點是增速差，無法直接換算成電商對全公司成長的貢獻。",
+    "next_check": "先以 2025 財年第二季財報核對全公司調整後可比銷售是否仍年增至少 5%，再用同一季、同一調整口徑計算電商領先幅度，與第一季的 6.1 個百分點比較。",
+    "evidence_limits": [
+      {
+        "evidence_id": "costco-release:adjusted",
+        "limit": "提供排除油價與匯率後的增速，未分別量化兩項因素的影響。調整後數字仍可能反映商品價格與組合變動。"
+      },
+      {
+        "evidence_id": "costco-release:comps",
+        "limit": "提供各區域、全公司及電商的未調整增速。電商 13.0% 與全公司 5.2% 的比較未提供銷售權重或純倉庫通路增速。"
+      },
+      {
+        "evidence_id": "costco-release:footprint",
+        "limit": "897 個倉庫及八個電商市場描述營運規模。缺少上年同期據點數及分市場電商銷售，無法估算展店或各市場的成長貢獻。"
+      },
+      {
+        "evidence_id": "costco-release:original",
+        "limit": "英文摘句與營運規模摘要來自同一份公告，只能核對 897 個倉庫這一數字。"
+      }
+    ],
+    "public_checks": [
+      {
+        "metric": "全公司調整後可比銷售年增率，以及與未調整增速的差距",
+        "source_to_watch": "Costco 投資人關係網站季度業績公告的可比銷售表",
+        "window": "2025 財年第二季及第三季",
+        "impact_on_thesis": "兩季調整後增速均達 5% 即符合銷售延續假設。同步比較未調整數字，可判讀油價與匯率合計影響的方向是否改變。",
+        "evidence_ids": ["costco-release:adjusted", "costco-release:comps"]
+      },
+      {
+        "metric": "電商調整後可比銷售年增率減去全公司同口徑年增率，以百分點計",
+        "source_to_watch": "Costco 季度業績公告的調整後可比銷售表",
+        "window": "2025 財年第二季及第三季",
+        "impact_on_thesis": "差距持續大於零支持電商相對成長假設。與第一季的 6.1 個百分點相比，可進一步判斷領先幅度擴大或縮小。",
+        "evidence_ids": ["costco-release:adjusted"]
+      },
+      {
+        "metric": "電商銷售占比及其增量營業利益，或可供估算的商品毛利與履約費用",
+        "source_to_watch": "Costco 季報、年報與公開業績說明資料，視公司揭露程度而定",
+        "window": "自下一次季報至 2025-12-31",
+        "impact_on_thesis": "若揭露足以量化新增電商銷售及相關成本，即可檢驗通路成長是否提高全公司營業利益。僅有增速時，獲利判斷維持待驗證。",
+        "evidence_ids": ["costco-release:adjusted", "costco-release:footprint"]
+      }
+    ],
+    "supply_chain": [],
+    "trade_opportunities": [
+      {
+        "company": "Costco",
+        "direction": "watch",
+        "earnings_path": "可比銷售延續成長可支撐營收。若新增銷售的毛利足以覆蓋履約及其他增量營業費用，才有依據推估營業利益增幅。",
+        "catalyst": "後續季度可比銷售及營業利益揭露。",
+        "trigger": "若連續兩季全公司調整後可比銷售年增至少 5%，且同期營業利益率較上年改善，重新評估獲利預期與估值。",
+        "invalidation": "若可比銷售低於觀察門檻，或銷售成長伴隨營業利益率下滑，銷售動能轉化為獲利改善的依據即減弱。",
+        "evidence_gap": "截至研究時點，所附資料缺少營業利益率、每股盈餘、市場預期與估值，無法判斷股價已反映多少成長。",
+        "ticker": null,
+        "listing_evidence_id": null,
+        "evidence_ids": ["costco-release:adjusted", "costco-release:comps"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "將保留持股與實際配置分開，明示須揭露變現所得的實際去向，才可歸因至具名業務。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "未將變現資金歸給任何業務，並具體要求具名業務的配置決議與實際支出作為佐證。"
+    },
+    {
+      "label": "C",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出公告未指定資金去向，也未聲稱已收現或已配置，但未說明須以實際持股處置及所得用途的披露核實。"
+    }
+  ]
+}

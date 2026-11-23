@@ -1,0 +1,58 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 Splunk 資料用於 Cisco Security 威脅辨識的策略方向。路徑以可收費功能和續約淨加購為條件，合理指向 Security 營收上升，金額仍未知。同期間 Cisco 公開的可比續約資料若顯示折讓與替代授權完全抵銷加購，即可否證該批次的淨增收，並區分單純併表。"
+        }
+      ],
+      "note": "缺口指出 Observability 仍需採用、付費轉換或可歸屬營收資料。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持雙方的整合方向。此路徑檢驗 Splunk 資料接入或驗證是否延後 Cisco Observability 上市，使支出早於收款並可能壓低增量現金流，規模未知。Cisco 同期間的原訂時程、上市結果與修訂理由可區分整合延誤和原定分階段推出。所衡量的是現金流時點，未涵蓋標準指定的產品用量、訂閱收入或毛利。"
+        }
+      ],
+      "note": "缺口明確保留資源排擠的歸因，也指出上市里程碑無法驗證付費採用或回收期。"
+    },
+    {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 Splunk 資料接入 Cisco Observability 的策略方向。正式部署與客戶付費擴充是增收條件，增量毛利仍取決於用量、價格與成本。Cisco 在同一覆核期內公開確認具名功能正式可用，或確認相關功能全數仍在預覽、延後或取消，可檢驗技術整合並區分一般產品更新。財務貢獻仍需付費資料。"
+        }
+      ],
+      "note": "缺口將交易對價與業務預算分開，並指出資源、通路承諾和客戶採購仍缺乏證據。"
+    }
+  ]
+}

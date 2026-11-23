@@ -1,0 +1,25 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "明確保留倉庫銷售移往線上的歸因，並指出缺少同口徑倉庫銷售與通路移轉資料。所附摘要未明示全公司可比銷售涵蓋電商。"
+    },
+    {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出缺少通路銷售移轉資料，並明確保留電商排擠店內銷售的歸因。倉庫履約與資源調度也僅列為待查事項。"
+    },
+    {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": true,
+      "candidates": [],
+      "note": "指出缺少會員跨通路消費與純倉庫銷售資料，並保留通路移轉歸因。但聲稱公告只列全公司與電商增速，與公告另列美國、加拿大及其他國際市場可比銷售增速的事實相牴觸。"
+    }
+  ]
+}

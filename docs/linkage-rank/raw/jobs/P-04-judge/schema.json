@@ -1,0 +1,117 @@
+{
+  "$defs": {
+    "CandidateGrade": {
+      "additionalProperties": false,
+      "properties": {
+        "index": {
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Index",
+          "type": "integer"
+        },
+        "target_path": {
+          "title": "Target Path",
+          "type": "boolean"
+        },
+        "evidence": {
+          "title": "Evidence",
+          "type": "boolean"
+        },
+        "mechanism": {
+          "title": "Mechanism",
+          "type": "boolean"
+        },
+        "financial_effect": {
+          "title": "Financial Effect",
+          "type": "boolean"
+        },
+        "falsifier": {
+          "title": "Falsifier",
+          "type": "boolean"
+        },
+        "major_error": {
+          "title": "Major Error",
+          "type": "boolean"
+        },
+        "note": {
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "index",
+        "target_path",
+        "evidence",
+        "mechanism",
+        "financial_effect",
+        "falsifier",
+        "major_error",
+        "note"
+      ],
+      "title": "CandidateGrade",
+      "type": "object"
+    },
+    "RankedVerdict": {
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "enum": [
+            "A",
+            "B",
+            "C"
+          ],
+          "title": "Label",
+          "type": "string"
+        },
+        "gap_ok": {
+          "title": "Gap Ok",
+          "type": "boolean"
+        },
+        "major_error": {
+          "title": "Major Error",
+          "type": "boolean"
+        },
+        "candidates": {
+          "items": {
+            "$ref": "#/$defs/CandidateGrade"
+          },
+          "maxItems": 3,
+          "title": "Candidates",
+          "type": "array"
+        },
+        "note": {
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "gap_ok",
+        "major_error",
+        "candidates",
+        "note"
+      ],
+      "title": "RankedVerdict",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "verdicts": {
+      "items": {
+        "$ref": "#/$defs/RankedVerdict"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Verdicts",
+      "type": "array"
+    }
+  },
+  "required": [
+    "verdicts"
+  ],
+  "title": "Comparison",
+  "type": "object"
+}

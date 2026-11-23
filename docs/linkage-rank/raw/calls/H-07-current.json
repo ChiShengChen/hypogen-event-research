@@ -1,0 +1,88 @@
+{
+  "case": "H-07",
+  "call": "current",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:43:59.151379+00:00",
+  "queued_epoch": 1795434239.1513903,
+  "started_at": "2026-11-23T11:43:59.164950+00:00",
+  "request_sha256": "f1f3f7fc25cec622814d13f14bdadaa0dd1da977111134e7fd28d90ceeb7b1ce",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.005,
+  "prompt_bytes": 12156,
+  "returncode": 0,
+  "cli_elapsed_seconds": 90.259,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "電動車及移動服務",
+        "origin_evidence_ids": [
+          "sony-release:deal"
+        ],
+        "affected_company": "Honda Motor Co., Ltd.",
+        "affected_business": "車體製造",
+        "affected_evidence_ids": [
+          "sony-release:operations",
+          "sony-release:deal"
+        ],
+        "mechanism": "協議列出 Honda 的製造能力。若合資公司將量產工作交給 Honda，且 Honda 實際投產，Sony 的電動車計畫便跨過製造關卡，Honda 也取得新增生產活動。",
+        "baseline": "截至簽約日，僅披露擬結合雙方能力。無此合資案時，Honda 原有車型仍可照常生產。",
+        "condition": "合資公司須實際指定 Honda 承製，Honda 並須啟動該合資車款的量產。",
+        "financial_effect": "若利用既有閒置產能且製造對價足以覆蓋增量成本，Honda 的製造利益可增加。若須先投入專用設備，則前期現金流承壓。產量、對價及資本支出均未披露。",
+        "alternative_explanation": "Honda 自有車款也可能帶動工廠增產。須由官方投產公告同時指明合資車款及承製方，才能辨認本案貢獻。",
+        "metric": "Honda 是否已為合資車款啟動量產。此里程碑僅代理製造進度，無法衡量獲利或交車量。",
+        "observation_period": "2022-06-16 簽約後至 2025 年底",
+        "public_source": "Honda Motor Co., Ltd. 新聞室或合資公司成立後的官方投產公告",
+        "deadline": "2025-12-31",
+        "prediction": "截至覆核日，官方已確認 Honda 開始量產該合資車款。",
+        "invalidation": "官方明確確認截至同日 Honda 仍未開始量產該合資車款。若僅缺少公告，結果待查。"
+      }
+    ],
+    "business_linkage_gap": "Sony 提及影像、感測、網路及娛樂技術，但未指定採用的產品、供貨單位或收費方式。須有具名產品的採用及商業條款，才能檢驗對 Sony 其他業務的收益。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "電動車及移動服務",
+        "origin_evidence_ids": [
+          "sony-release:deal"
+        ],
+        "affected_company": "Honda Motor Co., Ltd.",
+        "affected_business": "車體製造",
+        "affected_evidence_ids": [
+          "sony-release:operations",
+          "sony-release:deal"
+        ],
+        "mechanism": "協議列出 Honda 的製造能力。若合資公司將量產工作交給 Honda，且 Honda 實際投產，Sony 的電動車計畫便跨過製造關卡，Honda 也取得新增生產活動。",
+        "baseline": "截至簽約日，僅披露擬結合雙方能力。無此合資案時，Honda 原有車型仍可照常生產。",
+        "condition": "合資公司須實際指定 Honda 承製，Honda 並須啟動該合資車款的量產。",
+        "financial_effect": "若利用既有閒置產能且製造對價足以覆蓋增量成本，Honda 的製造利益可增加。若須先投入專用設備，則前期現金流承壓。產量、對價及資本支出均未披露。",
+        "alternative_explanation": "Honda 自有車款也可能帶動工廠增產。須由官方投產公告同時指明合資車款及承製方，才能辨認本案貢獻。",
+        "metric": "Honda 是否已為合資車款啟動量產。此里程碑僅代理製造進度，無法衡量獲利或交車量。",
+        "observation_period": "2022-06-16 簽約後至 2025 年底",
+        "public_source": "Honda Motor Co., Ltd. 新聞室或合資公司成立後的官方投產公告",
+        "deadline": "2025-12-31",
+        "prediction": "截至覆核日，官方已確認 Honda 開始量產該合資車款。",
+        "invalidation": "官方明確確認截至同日 Honda 仍未開始量產該合資車款。若僅缺少公告，結果待查。"
+      }
+    ],
+    "business_linkage_gap": "Sony 提及影像、感測、網路及娛樂技術，但未指定採用的產品、供貨單位或收費方式。須有具名產品的採用及商業條款，才能檢驗對 Sony 其他業務的收益。"
+  },
+  "elapsed_seconds": 90.261,
+  "usage": {
+    "input_tokens": 18741,
+    "cached_input_tokens": 0,
+    "output_tokens": 3121,
+    "reasoning_output_tokens": 80
+  },
+  "event_seconds": {
+    "thread.started": 0.817,
+    "turn.started": 1.265,
+    "item.completed": 89.784,
+    "turn.completed": 89.839
+  },
+  "finished_at": "2026-11-23T11:45:29.427665+00:00"
+}

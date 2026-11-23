@@ -1,0 +1,36 @@
+{
+  "case": "H-04",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:36:51.500570+00:00",
+  "queued_epoch": 1795433811.5005789,
+  "started_at": "2026-11-23T11:36:51.513349+00:00",
+  "request_sha256": "b66862623553cf7c5924e97b4bf27d76273191a0feb92029970f3534865d8284",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.004,
+  "prompt_bytes": 2511,
+  "returncode": 0,
+  "cli_elapsed_seconds": 43.681,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告確認分拆後的持股關係，但未揭露 Solventum 與 3M 其餘事業之間的供貨、採購或服務條款，也未指定持股變現所得將投入哪項業務。現有資料僅足以追蹤 3M 的財務影響。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告確認分拆後的持股關係，但未揭露 Solventum 與 3M 其餘事業之間的供貨、採購或服務條款，也未指定持股變現所得將投入哪項業務。現有資料僅足以追蹤 3M 的財務影響。"
+  },
+  "elapsed_seconds": 43.682,
+  "usage": {
+    "input_tokens": 16928,
+    "cached_input_tokens": 15360,
+    "output_tokens": 1523,
+    "reasoning_output_tokens": 34
+  },
+  "event_seconds": {
+    "thread.started": 0.671,
+    "turn.started": 1.267,
+    "item.completed": 43.205,
+    "turn.completed": 43.25
+  },
+  "finished_at": "2026-11-23T11:37:35.196480+00:00"
+}

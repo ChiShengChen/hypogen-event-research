@@ -1,0 +1,94 @@
+{
+  "case": "H-01",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:25:27.375746+00:00",
+  "queued_epoch": 1795433127.3757555,
+  "started_at": "2026-11-23T11:25:27.546320+00:00",
+  "request_sha256": "ccba6fbb7851ffd6219199ab6eb8bb28d4bcf885102ab5a64dd525f8ad64e080",
+  "queue_seconds": 0.133,
+  "preparation_seconds": 0.038,
+  "prompt_bytes": 13234,
+  "returncode": 0,
+  "cli_elapsed_seconds": 40.363,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持新線與研發中心同廠規劃。新線驗證須有實際指派與資源投入，Corning 自付時才會增加現金流出。Apple 或 Corning 的期內進度可確認中心是否啟動新線專案，區分一般材料研究。此路徑未追蹤 Apple 承諾對 Corning 玻璃量產與出貨的影響。"
+        }
+      ],
+      "note": "缺口指出人力調度、專案時程與資金分攤待查，並保留對資源共用及排擠的判斷。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": true,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 Apple 蓋板玻璃供應集中至 Corning 專供工廠及新線規劃。訂單吸收產能且良率達標時，合格出貨增加可降低新線每件固定成本。期內財報、法說或工廠公告可用投產與持續出貨區分僅推進研發，也可用低良率及單位成本偏高推翻成本改善。"
+        }
+      ],
+      "note": "單廠成本改善仍可能伴隨既有訂單轉產。原供貨地、移轉量與新增量待查，合併獲利效果仍待驗證。"
+    },
+    "C": {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 Apple 承諾與 Corning 整廠專供。合格交付及採購配置可增加 Apple 對該來源的採購支出。Apple Newsroom 若於期內確認商售 iPhone 採用新線玻璃，可區分舊線增產。財務傳導落在 Apple 的採購支出，未連至 Corning 的利用率、營收或成本。"
+        },
+        {
+          "index": 2,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": false,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持同廠規劃，抽調工程人員及研發延誤均列為條件性假設。期內公開進度若交代延誤源於人員調度，可區分場地或設備問題，按期啟動則可推翻延誤預測。設備閒置時間屬營運指標，尚未連至財務指標或其變動方向。"
+        }
+      ],
+      "note": "缺口保留對承諾金額用途及整廠專供是否影響其他客戶或業務的判斷。"
+    }
+  },
+  "elapsed_seconds": 40.364,
+  "usage": {
+    "input_tokens": 18506,
+    "cached_input_tokens": 0,
+    "output_tokens": 1597,
+    "reasoning_output_tokens": 716
+  },
+  "event_seconds": {
+    "thread.started": 0.648,
+    "turn.started": 1.966,
+    "item.completed": 39.741,
+    "turn.completed": 39.825
+  },
+  "finished_at": "2026-11-23T11:26:07.985458+00:00"
+}

@@ -1,0 +1,142 @@
+{
+  "case": "H-01",
+  "call": "ranked",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:24:00.500326+00:00",
+  "queued_epoch": 1795433040.5003393,
+  "started_at": "2026-11-23T11:24:00.540608+00:00",
+  "request_sha256": "64c9687a1e1684b5d08565ded1eda061a838d4258dbed5bcd810758e7344e165",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.032,
+  "prompt_bytes": 13793,
+  "returncode": 0,
+  "cli_elapsed_seconds": 86.539,
+  "raw_findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "cover glass",
+        "origin_evidence_ids": [
+          "corning-release:commitment",
+          "corning-release:plant"
+        ],
+        "affected_company": "Apple",
+        "affected_business": "iPhone",
+        "affected_evidence_ids": [
+          "corning-release:commitment",
+          "corning-release:original"
+        ],
+        "mechanism": "25 億美元承諾與整廠專供安排，讓 Apple 有條件將全球 iPhone 的蓋板玻璃採購集中至 Harrodsburg。若 Apple 實際分配採購量並採用該廠交付的玻璃，便可驗證 Corning 新產能已有下游客戶使用。",
+        "baseline": "若未擴大合作，沿用原採購配置。公告未揭露原有 Harrodsburg 供應占比。",
+        "condition": "Corning 交付合格玻璃，Apple 將實際採購量分配至該廠，並用於商業銷售的 iPhone。",
+        "financial_effect": "相較維持原配置，Apple 用於 Harrodsburg 來源玻璃的採購支出可增加，其他來源的支出可能同步減少。缺少 iPhone 分攤金額、數量、單價與付款條款，無法推算總採購成本或現金流變化。",
+        "alternative_explanation": "原有產線也可能隨 iPhone 銷量增加而提高出貨。Apple 若指明已銷售產品採用新線玻璃，才能辨識此次擴線的貢獻。",
+        "metric": "Apple 商售 iPhone 是否已採用 Harrodsburg 新線生產的蓋板玻璃",
+        "observation_period": "2025-08-06 公告後至 2026-12-31",
+        "public_source": "Apple Newsroom 的美國製造進度或 iPhone 產品更新",
+        "deadline": "2026-12-31",
+        "prediction": "截至覆核日，Apple 已有商售 iPhone 採用該新線玻璃，以 Apple 點名新線及實際採用的更新驗證。",
+        "invalidation": "Apple 明確確認截至同一覆核日，其商售 iPhone 仍全數使用其他產線的玻璃。",
+        "ranking_reason": "此路徑有具名客戶、金額承諾與專廠安排，商售產品採用可直接驗證新產能是否進入 Apple 供應體系。"
+      },
+      {
+        "linked_stance": "bear",
+        "scope": "internal",
+        "origin_business": "智慧手機玻璃生產線",
+        "origin_evidence_ids": [
+          "corning-release:plant"
+        ],
+        "affected_company": "Corning",
+        "affected_business": "Apple-Corning Innovation Center",
+        "affected_evidence_ids": [
+          "corning-release:other"
+        ],
+        "mechanism": "新線與研發中心設於同廠。若量產爬坡占用原訂投入中心的工程人員，中心啟動先進材料研發的時間可能延後。",
+        "baseline": "若新線無須抽調研發人力，中心可依雙方原訂時程啟動。公告未列啟動日期。",
+        "condition": "兩項計畫實際共用關鍵工程人員，且 Corning 優先將這些人員配置到新線，未能及時補足研發人力。",
+        "financial_effect": "若中心已投入設備卻延後使用，研發資產閒置時間將拉長。影響規模取決於已投入金額、延後期間及雙方分攤比例。",
+        "alternative_explanation": "中心也可能因場地或設備未就緒而延後，須由雙方公開說明人員調度及其對原訂時程的影響。",
+        "metric": "中心實際或更新後的研發啟動時程，相對雙方原訂時程是否因新線抽調人員而延後",
+        "observation_period": "2025-08-06 公告後至 2026-12-31 的建置及啟動進度",
+        "public_source": "Apple Newsroom 或 Corning 對 Harrodsburg 研發中心的公開進度更新",
+        "deadline": "2026-12-31",
+        "prediction": "若發生人力排擠，兩家公司至覆核日可確認中心較原訂時程延後，並將延後歸因於新線用人。",
+        "invalidation": "雙方在同一期間確認中心依原訂時程或提前啟動研發。",
+        "ranking_reason": "同廠研發安排有公告可查，但人力共用、原訂時程及資金投入均待證實，故列第二。"
+      }
+    ],
+    "business_linkage_gap": "25 億美元在產品採購、產線與研發中心間的分配仍待揭露。整廠專供也可能影響其他業務，但資料未指明原有非 Apple 產品、客戶或轉廠決定。"
+  },
+  "findings": {
+    "business_linkages": [
+      {
+        "linked_stance": "bull",
+        "scope": "counterparty",
+        "origin_business": "cover glass",
+        "origin_evidence_ids": [
+          "corning-release:commitment",
+          "corning-release:plant"
+        ],
+        "affected_company": "Apple",
+        "affected_business": "iPhone",
+        "affected_evidence_ids": [
+          "corning-release:commitment",
+          "corning-release:original"
+        ],
+        "mechanism": "25 億美元承諾與整廠專供安排，讓 Apple 有條件將全球 iPhone 的蓋板玻璃採購集中至 Harrodsburg。若 Apple 實際分配採購量並採用該廠交付的玻璃，便可驗證 Corning 新產能已有下游客戶使用。",
+        "baseline": "若未擴大合作，沿用原採購配置。公告未揭露原有 Harrodsburg 供應占比。",
+        "condition": "Corning 交付合格玻璃，Apple 將實際採購量分配至該廠，並用於商業銷售的 iPhone。",
+        "financial_effect": "相較維持原配置，Apple 用於 Harrodsburg 來源玻璃的採購支出可增加，其他來源的支出可能同步減少。缺少 iPhone 分攤金額、數量、單價與付款條款，無法推算總採購成本或現金流變化。",
+        "alternative_explanation": "原有產線也可能隨 iPhone 銷量增加而提高出貨。Apple 若指明已銷售產品採用新線玻璃，才能辨識此次擴線的貢獻。",
+        "metric": "Apple 商售 iPhone 是否已採用 Harrodsburg 新線生產的蓋板玻璃",
+        "observation_period": "2025-08-06 公告後至 2026-12-31",
+        "public_source": "Apple Newsroom 的美國製造進度或 iPhone 產品更新",
+        "deadline": "2026-12-31",
+        "prediction": "截至覆核日，Apple 已有商售 iPhone 採用該新線玻璃，以 Apple 點名新線及實際採用的更新驗證。",
+        "invalidation": "Apple 明確確認截至同一覆核日，其商售 iPhone 仍全數使用其他產線的玻璃。",
+        "ranking_reason": "此路徑有具名客戶、金額承諾與專廠安排，商售產品採用可直接驗證新產能是否進入 Apple 供應體系。"
+      },
+      {
+        "linked_stance": "bear",
+        "scope": "internal",
+        "origin_business": "智慧手機玻璃生產線",
+        "origin_evidence_ids": [
+          "corning-release:plant"
+        ],
+        "affected_company": "Corning",
+        "affected_business": "Apple-Corning Innovation Center",
+        "affected_evidence_ids": [
+          "corning-release:other"
+        ],
+        "mechanism": "新線與研發中心設於同廠。若量產爬坡占用原訂投入中心的工程人員，中心啟動先進材料研發的時間可能延後。",
+        "baseline": "若新線無須抽調研發人力，中心可依雙方原訂時程啟動。公告未列啟動日期。",
+        "condition": "兩項計畫實際共用關鍵工程人員，且 Corning 優先將這些人員配置到新線，未能及時補足研發人力。",
+        "financial_effect": "若中心已投入設備卻延後使用，研發資產閒置時間將拉長。影響規模取決於已投入金額、延後期間及雙方分攤比例。",
+        "alternative_explanation": "中心也可能因場地或設備未就緒而延後，須由雙方公開說明人員調度及其對原訂時程的影響。",
+        "metric": "中心實際或更新後的研發啟動時程，相對雙方原訂時程是否因新線抽調人員而延後",
+        "observation_period": "2025-08-06 公告後至 2026-12-31 的建置及啟動進度",
+        "public_source": "Apple Newsroom 或 Corning 對 Harrodsburg 研發中心的公開進度更新",
+        "deadline": "2026-12-31",
+        "prediction": "若發生人力排擠，兩家公司至覆核日可確認中心較原訂時程延後，並將延後歸因於新線用人。",
+        "invalidation": "雙方在同一期間確認中心依原訂時程或提前啟動研發。",
+        "ranking_reason": "同廠研發安排有公告可查，但人力共用、原訂時程及資金投入均待證實，故列第二。"
+      }
+    ],
+    "business_linkage_gap": "25 億美元在產品採購、產線與研發中心間的分配仍待揭露。整廠專供也可能影響其他業務，但資料未指明原有非 Apple 產品、客戶或轉廠決定。"
+  },
+  "elapsed_seconds": 86.54,
+  "usage": {
+    "input_tokens": 19065,
+    "cached_input_tokens": 0,
+    "output_tokens": 3335,
+    "reasoning_output_tokens": 176
+  },
+  "event_seconds": {
+    "thread.started": 0.75,
+    "turn.started": 1.335,
+    "item.completed": 86.043,
+    "turn.completed": 86.102
+  },
+  "finished_at": "2026-11-23T11:25:27.082589+00:00"
+}

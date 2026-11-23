@@ -1,0 +1,51 @@
+{
+  "case": "P-04",
+  "call": "judge",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:21:20.872779+00:00",
+  "queued_epoch": 1795432880.8727903,
+  "started_at": "2026-11-23T11:21:21.064488+00:00",
+  "request_sha256": "4361fb9111cd9afaec28760e0a4b8be95343c167502d0963de1c21ded965f442",
+  "queue_seconds": 0.135,
+  "preparation_seconds": 0.056,
+  "prompt_bytes": 6250,
+  "returncode": 0,
+  "cli_elapsed_seconds": 15.128,
+  "verdicts": {
+    "A": {
+      "label": "A",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "明確保留倉庫銷售移往線上的歸因，並指出缺少同口徑倉庫銷售與通路移轉資料。所附摘要未明示全公司可比銷售涵蓋電商。"
+    },
+    "B": {
+      "label": "B",
+      "gap_ok": true,
+      "major_error": false,
+      "candidates": [],
+      "note": "指出缺少通路銷售移轉資料，並明確保留電商排擠店內銷售的歸因。倉庫履約與資源調度也僅列為待查事項。"
+    },
+    "C": {
+      "label": "C",
+      "gap_ok": true,
+      "major_error": true,
+      "candidates": [],
+      "note": "指出缺少會員跨通路消費與純倉庫銷售資料，並保留通路移轉歸因。但聲稱公告只列全公司與電商增速，與公告另列美國、加拿大及其他國際市場可比銷售增速的事實相牴觸。"
+    }
+  },
+  "elapsed_seconds": 15.129,
+  "usage": {
+    "input_tokens": 16443,
+    "cached_input_tokens": 0,
+    "output_tokens": 481,
+    "reasoning_output_tokens": 166
+  },
+  "event_seconds": {
+    "thread.started": 0.668,
+    "turn.started": 1.353,
+    "item.completed": 14.569,
+    "turn.completed": 14.608
+  },
+  "finished_at": "2026-11-23T11:21:36.218611+00:00"
+}

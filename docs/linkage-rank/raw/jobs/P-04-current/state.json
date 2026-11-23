@@ -1,0 +1,36 @@
+{
+  "case": "P-04",
+  "call": "current",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:18:56.736234+00:00",
+  "queued_epoch": 1795432736.736244,
+  "started_at": "2026-11-23T11:18:56.749138+00:00",
+  "request_sha256": "b17c030a8890e3a7a3e4088a060c5aa68765a680f8fd6dad97df61cfc52bd1a0",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.004,
+  "prompt_bytes": 12308,
+  "returncode": 0,
+  "cli_elapsed_seconds": 49.476,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "Costco 同時經營電商與倉庫，但全公司可比銷售已包含電商，兩者的增速差無法識別倉庫銷售是否移往線上。要檢驗通路排擠，至少需要可比口徑的倉庫銷售及通路移轉資料。現有資料也未具名可追蹤的交易對手。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "Costco 同時經營電商與倉庫，但全公司可比銷售已包含電商，兩者的增速差無法識別倉庫銷售是否移往線上。要檢驗通路排擠，至少需要可比口徑的倉庫銷售及通路移轉資料。現有資料也未具名可追蹤的交易對手。"
+  },
+  "elapsed_seconds": 49.477,
+  "usage": {
+    "input_tokens": 18788,
+    "cached_input_tokens": 15360,
+    "output_tokens": 1815,
+    "reasoning_output_tokens": 60
+  },
+  "event_seconds": {
+    "thread.started": 0.161,
+    "turn.started": 1.315,
+    "item.completed": 49.011,
+    "turn.completed": 49.043
+  },
+  "finished_at": "2026-11-23T11:19:46.228113+00:00"
+}

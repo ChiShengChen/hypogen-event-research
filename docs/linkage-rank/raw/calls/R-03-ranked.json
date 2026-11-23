@@ -1,0 +1,36 @@
+{
+  "case": "R-03",
+  "call": "ranked",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:55:05.817115+00:00",
+  "queued_epoch": 1795434905.8171287,
+  "started_at": "2026-11-23T11:55:05.830035+00:00",
+  "request_sha256": "8d7ac7688641d032a90ea9cfcc5868d94dff050d26a3e431cc93743e4ad9f12c",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.004,
+  "prompt_bytes": 14083,
+  "returncode": 0,
+  "cli_elapsed_seconds": 44.281,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "同期已完成的 10 億美元回購有財報可核，但分拆公告未量化 FedEx 可收取的現金，也未指定用途。要連結分拆與後續回購或其他業務投資，須見分拆文件列出母公司可得款項，以及董事會或財報揭露相應配置。現有資料亦未指明其他業務承接人員、資產或客戶的安排。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "同期已完成的 10 億美元回購有財報可核，但分拆公告未量化 FedEx 可收取的現金，也未指定用途。要連結分拆與後續回購或其他業務投資，須見分拆文件列出母公司可得款項，以及董事會或財報揭露相應配置。現有資料亦未指明其他業務承接人員、資產或客戶的安排。"
+  },
+  "elapsed_seconds": 44.282,
+  "usage": {
+    "input_tokens": 19230,
+    "cached_input_tokens": 0,
+    "output_tokens": 1582,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.713,
+    "turn.started": 1.605,
+    "item.completed": 43.822,
+    "turn.completed": 43.857
+  },
+  "finished_at": "2026-11-23T11:55:50.113446+00:00"
+}

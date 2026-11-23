@@ -1,0 +1,36 @@
+{
+  "case": "H-05",
+  "call": "current",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:39:08.660593+00:00",
+  "queued_epoch": 1795433948.6606052,
+  "started_at": "2026-11-23T11:39:08.804229+00:00",
+  "request_sha256": "7ba5417a388bb3a51a56bb0ccb8b37480bbc25b4af8b6dec2aa23ae184d0b181",
+  "queue_seconds": 0.113,
+  "preparation_seconds": 0.031,
+  "prompt_bytes": 12435,
+  "returncode": 0,
+  "cli_elapsed_seconds": 45.288,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告未點名與 Oak Street Health 有轉介或支付安排的其他 CVS Health 業務或外部保險方。要檢驗跨業務效益，仍需具名業務、交割前比較基準，以及該業務實際轉介、承保或支付成本變化的公開揭露。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "公告未點名與 Oak Street Health 有轉介或支付安排的其他 CVS Health 業務或外部保險方。要檢驗跨業務效益，仍需具名業務、交割前比較基準，以及該業務實際轉介、承保或支付成本變化的公開揭露。"
+  },
+  "elapsed_seconds": 45.293,
+  "usage": {
+    "input_tokens": 18787,
+    "cached_input_tokens": 15360,
+    "output_tokens": 1669,
+    "reasoning_output_tokens": 34
+  },
+  "event_seconds": {
+    "thread.started": 0.706,
+    "turn.started": 1.246,
+    "item.completed": 44.786,
+    "turn.completed": 44.836
+  },
+  "finished_at": "2026-11-23T11:39:54.099318+00:00"
+}

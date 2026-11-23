@@ -1,0 +1,36 @@
+{
+  "case": "H-06",
+  "call": "current",
+  "status": "completed",
+  "queued_at": "2026-11-23T11:42:57.245785+00:00",
+  "queued_epoch": 1795434177.2457976,
+  "started_at": "2026-11-23T11:42:57.258706+00:00",
+  "request_sha256": "8b18b3ca961bb6a10d008d3e572404a2912e589f776e5bfeba22a47cdc480277",
+  "queue_seconds": 0.009,
+  "preparation_seconds": 0.004,
+  "prompt_bytes": 12269,
+  "returncode": 0,
+  "cli_elapsed_seconds": 50.174,
+  "raw_findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "財報分列 Latin America 與 North America 的營運數據，但未揭露兩區之間的預算、產能或通路調度，也未具名供應商或客戶。建立第二層假設仍需公司揭露具體調度決策及受影響業務的可追蹤指標。"
+  },
+  "findings": {
+    "business_linkages": [],
+    "business_linkage_gap": "財報分列 Latin America 與 North America 的營運數據，但未揭露兩區之間的預算、產能或通路調度，也未具名供應商或客戶。建立第二層假設仍需公司揭露具體調度決策及受影響業務的可追蹤指標。"
+  },
+  "elapsed_seconds": 50.175,
+  "usage": {
+    "input_tokens": 18791,
+    "cached_input_tokens": 15360,
+    "output_tokens": 1772,
+    "reasoning_output_tokens": 30
+  },
+  "event_seconds": {
+    "thread.started": 0.782,
+    "turn.started": 1.334,
+    "item.completed": 49.666,
+    "turn.completed": 49.711
+  },
+  "finished_at": "2026-11-23T11:43:47.435637+00:00"
+}

@@ -1,0 +1,47 @@
+{
+  "verdicts": [
+    {
+      "label": "A",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [],
+      "note": "未提交連結。缺口說明指出仍需 HP 追加採購及 Qualcomm 交付證據，但未指明判斷 Lenovo 與 HP 之間移轉所需的配額、訂單或客戶資料，也未明示保留該項歸因。"
+    },
+    {
+      "label": "B",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持 HP OmniBook 搭載 Qualcomm X Elite。整機交貨可驗證 HP 的商用部署，Qualcomm 晶片收入增量另取決於追加採購、交付與認列，金額未知。期限內的 HP 或 Microsoft 公告若確認取消或延後交貨，可否定 HP 部署里程碑，即使其他品牌仍有進展。此路徑未處理 Lenovo 與 HP 之間的移轉歸因。"
+        }
+      ],
+      "note": "缺口聚焦 Microsoft 通路收入與 HP 內部資源配置，未指出辨識 Lenovo 與 HP 之間晶片配額、通路訂單或企業客戶移轉所需的證據，也未明示保留該項歸因。"
+    },
+    {
+      "label": "C",
+      "gap_ok": false,
+      "major_error": false,
+      "candidates": [
+        {
+          "index": 1,
+          "target_path": false,
+          "evidence": true,
+          "mechanism": true,
+          "financial_effect": true,
+          "falsifier": true,
+          "major_error": false,
+          "note": "公告支持兩款 HP 筆電搭載 Qualcomm X Elite。終端需求若促成增產且首批備料不足，補單可提高 Qualcomm 對 HP 的晶片銷售收入，金額未知。同期 HP 或 Qualcomm 若公開確認首批備料足以支應全期生產，可否定因備料不足而補單的機制。此路徑未處理 Lenovo 與 HP 之間的移轉歸因。"
+        }
+      ],
+      "note": "缺口說明指出估算 HP 與 Qualcomm 營收所欠的資料，但未指出檢驗 Lenovo 與 HP 之間配額、訂單或客戶移轉所需的證據，也未明示保留該項歸因。"
+    }
+  ]
+}
