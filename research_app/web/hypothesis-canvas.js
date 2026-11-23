@@ -188,11 +188,9 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
 
   function initialView() {
     const width = viewport.clientWidth;
-    if (width && width <= 520 && locations.has(selected)) {
-      centerSelected(0.9);
-    } else {
-      fit();
-    }
+    if (!width) return;
+    fit();
+    if (width <= 520 || (view && view.scale < 0.65)) centerSelected(0.9);
   }
 
   function reveal(id) {
