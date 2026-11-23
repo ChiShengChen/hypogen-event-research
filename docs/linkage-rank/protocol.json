@@ -1,0 +1,58 @@
+{
+  "hypothesis": "新版先比較公告明示的合約、資源及具名運作安排，再排序。保留集正例應比現版多答對至少一案，負例不退步。",
+  "source_sha256": {
+    "linkage_rank.py": "2d25ac9c2448ab60a342f86e33cfd01bf7d00c6b23ce00d9e18d30cf20c15ea5",
+    "linkage_rank_cases.py": "324e8ccc00e2ab5344e654f37426e742013970d7e1aa30eda0598f482904eaa3",
+    "linkage_depth.py": "6cc1539b908b4deab99c894e8bfd7ffb6e45b5148683c6f08d87f7af9ed2e44a",
+    "v9_equal.py": "f58527b1a9fae466f6f4790dbb5e9747fe3ae939d5688eda70a6f454aa9913aa",
+    "earnings_execution.py": "40e800f97ee205b6f7e9f65fa388e438a7285f0b4929e5eeb2b5520d63ce3327",
+    "research.py": "9d553c42d7452377fe0ebba9db467693a18cad2a25230c35e4bce3180967dbed",
+    "adapters.py": "b5aaed9ab591d7f3d77e0fa159e87a4134dde02ce88b780426c9c1ce67622c2c",
+    "schema.py": "5c7d25df12e4b4b2d75c794ef3a90063c54af2eb9f758b7c041c8b36f1702301",
+    "v9_equal_admission.py": "7122cd8450e8d1792d6c193237a246a8a207cfb17dcd6ba86935057c06d90a7f",
+    "business_linkage.py": "4ea8ee89da3ad975559b1c0673f36cbf571d582cdf39e7dc366e74c4ebb08465"
+  },
+  "cases_sha256": "610d8ffe69918254148522d730eb0aba2b6e10921d9374e2de2f616b03ccc9d5",
+  "requests_sha256": "af939ad88446eb83ab416431d6ea3a782a6cb1d79bc51afa275f26fedf3106dc",
+  "generation_model": "gpt-6.2-astra",
+  "grading_model": "gpt-6.2-sol",
+  "effort": "medium",
+  "search": "disabled",
+  "workers": 1,
+  "max_paths": 3,
+  "generation_timeout_seconds": 180,
+  "grading_timeout_seconds": 120,
+  "generation_attempts_per_arm": 1,
+  "grading_attempts_per_case": 1,
+  "hard_token_cap": null,
+  "grading_prompt": "Independently audit each anonymous report against the supplied point-in-time evidence and frozen case standard. Check all submitted linkages in listed order. Report one CandidateGrade per displayed linkage, with 1-based index. For evidence check both endpoints and whether the factual premise is actually supported, not just cited. For mechanism check a precise directional operating step and a necessary observable condition. For financial_effect check the direction and metric at the correct business, calibrated to the available amounts. For falsifier check a named public source and same-period observable result that discriminates the mechanism from at least one plausible alternate explanation. A milestone may verify the mechanism without certifying financial materiality if the limitations are clear. A missing disclosure is not a falsifier. target_path means the link genuinely addresses the specified standard or an equally supported equivalent. major_error is reserved for an affirmative unsupported claim of resource transfer, cross-company order or customer diversion, an assertion that concurrent guidance proves causation, or material false facts, money or attribution. Mark every such error even if another linkage passes. A hypothesis explicitly conditional on unconfirmed evidence is not an affirmative claim. Evaluate the entire submission for major_error, including the gap. On a negative case set gap_ok only if the gap or a path names missing evidence specific to the trap and explicitly withholds its attribution. A separate evidenced transmission is compatible with that judgment. On a positive case gap_ok is informational only. Score evidence and logic, not style, size, labels or known later results. Return concise Traditional Chinese notes and one verdict per anonymous label. Assess target_path separately from the four quality checks. At least identify the parties, relevant businesses, and direction of the specified principal transmission to mark target_path. A plausible link to a different financial lever is insufficient. Retain ordinal indices even when the selected path has a quality defect. The three anonymous drafts are independent. Do not look up later outcomes.",
+  "rubric": {
+    "rule_check": "逐條核對點時引文 ID 及期限，新版另有非空排序理由。保留原稿及實際發布候選。",
+    "positive": "至少一條對應主要財務路徑，同一條通過兩端證據、必要機制、財務方向、可區分的公開反證，且全稿零重大錯誤。",
+    "negative": "指出預註冊陷阱缺少的證據並保留歸因，稿中各條引文和期限均有效，全稿零重大錯誤。",
+    "ranking": "正例首個 target_path 在發布稿的位置。排名第一與前三分開計，分母涵蓋所有預註冊正例；另列完整通過路徑的位置。",
+    "gate_pilot": {
+      "complete_triplets_and_grades": 4,
+      "ranked_exact_min": 3,
+      "ranked_major_max": 0
+    },
+    "gate_holdout": {
+      "complete_triplets_and_grades": 8,
+      "ranked_positive_min": 3,
+      "ranked_negative_min": 3,
+      "ranked_major_max": 0
+    },
+    "ranking_improvement": {
+      "additional_positives_vs_current": 1,
+      "negative_delta_min": 0
+    },
+    "leadership": {
+      "additional_exact_vs_astra": 2
+    },
+    "human": "匿名、逐案打亂三份稿件，隱藏排序理由與來源標籤以降低辨識，保留稿件內連動排序。獨立分析師實際收回另計。"
+  },
+  "stop": "先導配對與評分過門檻才開保留集；已啟動的正式呼叫皆計入且不重試。429 或容量不足後，對未啟動工作依服務端提示等待；單次最多 900 秒，無提示等待 30 秒，超限停止主批。收到中斷保存紀錄，僅接續未啟動的工作；不完整三稿不評分。回歸最後執行並另計。",
+  "max_provider_wait_seconds": 900,
+  "regression": "Microsoft、lululemon、FedEx、NIKE 排除正式計分。重用之前封存且請求逐位元一致的 V10 與純 Astra，每案只生成一份新版稿，三份一同盲評。Microsoft 主要路徑是最低雲端承諾與 Azure 遷移。lululemon 接受 Peloton 的具名服飾通路或 Studio 內容安排，均需可區分的公開查核。",
+  "sealed_at": "2026-11-23T11:08:46.260469+00:00"
+}

@@ -42,6 +42,18 @@ class LinkedAnswer(DetailedAnswer, LinkageFindings):
     pass
 
 
+class RankedBusinessHypothesis(LinkedBusinessHypothesis):
+    ranking_reason: Nonempty
+
+
+class RankedHypotheses(LinkedHypotheses):
+    business_linkages: list[RankedBusinessHypothesis] = Field(max_length=3)
+
+
+class RankedAnswer(LinkedAnswer):
+    business_linkages: list[RankedBusinessHypothesis] = Field(max_length=3)
+
+
 def linkage_refs(path):
     return set(path["origin_evidence_ids"]) | set(path["affected_evidence_ids"])
 
@@ -92,6 +104,27 @@ class BusinessLinkageGeneration:
         "exists, return an empty list and tell the analyst what specific evidence is missing. "
         "Supply business_linkage_gap for important unresolved links even when another path survives."
     )
+
+
+class RankedBusinessLinkageGeneration(BusinessLinkageGeneration):
+    prompt_version = 11
+    hypothesis_schema = RankedHypotheses
+    answer_schema = RankedAnswer
+    ranking_instruction = (
+        " Before selecting linkages, identify explicit contract or spending commitments, named operational "
+        "arrangements, documented resource transfers, and changes in distribution or customer access. "
+        "Trace each from the event into the affected business and compare these candidates before drafting. "
+        "Put the primary financially consequential transmission first. Rank by support at both endpoints, "
+        "plausible scale at the affected business, likelihood of the needed conditions, and ability of a "
+        "public observation to distinguish a competing explanation. A specific disclosed commitment or "
+        "operating arrangement with a direct financial consequence normally ranks ahead of a generic "
+        "synergy, proxy, or indirect secondary effect. Distinguish the committed amount or capacity from "
+        "realized revenue, profit or cash. When scale is unknown, name the missing volume, price, duration, "
+        "or deployment and allocation input that would size it. Keep up to three distinct links in descending "
+        "order. For each give one concise Traditional Chinese sentence in ranking_reason explaining its "
+        "selection and relative priority. Apply the same evidence and abstention criteria to every candidate."
+    )
+    hypothesis_extension = BusinessLinkageGeneration.hypothesis_extension + ranking_instruction
 
 
 def validate_linkages(generated, report, evidence, key, *, note_missing=True):

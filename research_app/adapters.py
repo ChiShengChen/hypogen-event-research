@@ -7,7 +7,9 @@ from tempfile import TemporaryDirectory
 import httpx
 from pydantic import ValidationError
 
-from .business_linkage import BusinessLinkageGeneration, LinkedAnswer, LinkedHypotheses, linkage_fields
+from .business_linkage import (
+    BusinessLinkageGeneration, LinkedAnswer, LinkedHypotheses, RankedBusinessLinkageGeneration, linkage_fields,
+)
 from .schema import Answer, DetailedAnswer, DriverDraft, Hypotheses
 
 EARNINGS_DRIVER_VERSION = 4
@@ -261,7 +263,7 @@ class ModelAdapter:
         )
         response_schema = DetailedAnswer
         if getattr(self, "supports_business_linkages", False):
-            response_schema = LinkedAnswer
+            response_schema = getattr(self, "answer_schema", LinkedAnswer)
             payload["stored_research"].update(linkage_fields(context))
             if context.get("linkage_refresh_evidence_ids"):
                 payload["new_evidence_ids"] = context["linkage_refresh_evidence_ids"]
@@ -277,6 +279,7 @@ class ModelAdapter:
                 "deadline. If new_evidence_ids are provided, linkages for publication must cite at least one. "
                 "Return an empty list if there is no supported update and null for an irrelevant linkage gap."
             )
+            instruction += getattr(self, "ranking_instruction", "")
         result = self._generate(response_schema, instruction, payload)
         missing = [part.requirement for part in result.coverage if part.status == "missing"]
         if not missing:
@@ -444,6 +447,14 @@ class LinkedCodex(BusinessLinkageGeneration, Codex):
     pass
 
 
+class RankedLive(RankedBusinessLinkageGeneration, Live):
+    pass
+
+
+class RankedCodex(RankedBusinessLinkageGeneration, Codex):
+    pass
+
+
 class LinkedFixture(Fixture):
     identity = {**Fixture.identity, "prompt_version": BusinessLinkageGeneration.prompt_version}
 
@@ -457,7 +468,7 @@ def configured_adapter():
     if mode == "fixture":
         return LinkedFixture()
     if mode == "live":
-        return LinkedLive()
+        return RankedLive()
     if mode == "codex":
-        return LinkedCodex()
+        return RankedCodex()
     raise ValueError("RESEARCH_MODE must be fixture, live, or codex")

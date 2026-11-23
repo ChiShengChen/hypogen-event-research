@@ -506,6 +506,7 @@ def render(report):
             lines.extend([
                 f"### {path['origin_business']} → {path['affected_company']} · {path['affected_business']}", "",
                 f"- 關聯假說　{stance}",
+                *([f"- 排序理由　{path['ranking_reason']}"] if path.get("ranking_reason") else []),
                 f"- 起點證據　{origin_refs}", f"- 受影響業務證據　{affected_refs}",
                 f"- 傳導與必要條件　{path['mechanism']} {path['condition']}",
                 f"- 基準與財務影響　{path['baseline']} {path['financial_effect']}",

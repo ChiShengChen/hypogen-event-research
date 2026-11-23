@@ -1,0 +1,1716 @@
+{
+  "P-01": {
+    "issuer": "Cisco",
+    "split": "pilot",
+    "event": {
+      "event_text": "Cisco 公布完成一項收購。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-03-18T23:59:59Z",
+      "research_target": "Cisco",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "cisco-release",
+          "source": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2024/m03/cisco-completes-acquisition-of-splunk.html",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-03-18T23:59:59Z",
+          "obtained_at": "2024-03-18T23:59:59Z",
+          "paragraphs": {
+            "deal": "Cisco 完成收購 Splunk，每股現金 157 美元，總股權價值約 280 億美元。",
+            "operations": "公告把 Splunk 的資料能力與 Cisco Security 及 Observability 放在同一平台策略中，目標是改善威脅辨識及應用可視性。",
+            "forecasts": "公司預期收購在 FY2025 對現金流有正貢獻（扣除若干收購相關及其他項目）並提高非 GAAP 毛利率，FY2026 提高非 GAAP EPS。未披露組合產品的客戶轉換、價格或營收。",
+            "original": "non-GAAP gross margin accretive in Cisco’s fiscal year 2025"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "cisco-release": {
+        "location": "公告開頭及財務展望段落",
+        "quote": "non-GAAP gross margin accretive in Cisco’s fiscal year 2025"
+      }
+    },
+    "gold": {
+      "positive": true,
+      "category": "收購與訂閱通路",
+      "standard": "主要路徑是 Splunk 資料能力經具名技術整合或銷售搭售，影響 Cisco 的 Security／Observability 產品用量、訂閱收入或毛利。產品採用、具名整合部署或聯合銷售指標需能區別單純將 Splunk 業績併表；交易價格或整體財務預期不能當成單一產品貢獻。"
+    },
+    "input": {
+      "event_text": "Cisco 公布完成一項收購。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-03-18T23:59:59+00:00",
+      "target": "Cisco",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "cisco-release:deal",
+          "document_id": "cisco-release",
+          "paragraph": "deal",
+          "source": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2024/m03/cisco-completes-acquisition-of-splunk.html",
+          "quote": "Cisco 完成收購 Splunk，每股現金 157 美元，總股權價值約 280 億美元。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-03-18T23:59:59+00:00",
+          "obtained_at": "2024-03-18T23:59:59+00:00"
+        },
+        {
+          "id": "cisco-release:forecasts",
+          "document_id": "cisco-release",
+          "paragraph": "forecasts",
+          "source": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2024/m03/cisco-completes-acquisition-of-splunk.html",
+          "quote": "公司預期收購在 FY2025 對現金流有正貢獻（扣除若干收購相關及其他項目）並提高非 GAAP 毛利率，FY2026 提高非 GAAP EPS。未披露組合產品的客戶轉換、價格或營收。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-03-18T23:59:59+00:00",
+          "obtained_at": "2024-03-18T23:59:59+00:00"
+        },
+        {
+          "id": "cisco-release:operations",
+          "document_id": "cisco-release",
+          "paragraph": "operations",
+          "source": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2024/m03/cisco-completes-acquisition-of-splunk.html",
+          "quote": "公告把 Splunk 的資料能力與 Cisco Security 及 Observability 放在同一平台策略中，目標是改善威脅辨識及應用可視性。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-03-18T23:59:59+00:00",
+          "obtained_at": "2024-03-18T23:59:59+00:00"
+        },
+        {
+          "id": "cisco-release:original",
+          "document_id": "cisco-release",
+          "paragraph": "original",
+          "source": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2024/m03/cisco-completes-acquisition-of-splunk.html",
+          "quote": "non-GAAP gross margin accretive in Cisco’s fiscal year 2025",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-03-18T23:59:59+00:00",
+          "obtained_at": "2024-03-18T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "P-02": {
+    "issuer": "Procter & Gamble",
+    "split": "pilot",
+    "event": {
+      "event_text": "Procter & Gamble 公布 2025 財年第一季結果。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-10-18T23:59:59Z",
+      "research_target": "Procter & Gamble",
+      "research_horizon": "2025-10-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "procter-release",
+          "source": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000080424/59da93f7-916a-4c2f-b94c-60180850c7ac.html",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-10-18T23:59:59Z",
+          "obtained_at": "2024-10-18T23:59:59Z",
+          "paragraphs": {
+            "beauty": "Beauty 有機銷售年減 2%。公司指出 Hair Care 及 Personal Care 成長，Skin Care 衰退。",
+            "grooming": "Grooming 有機銷售年增 3%，有機銷量年增 5%；銷售表另列外匯、價格和組合。",
+            "outlook": "維持 FY2025 稀釋後 EPS 年增 10% 至 12% 指引。",
+            "original": "Beauty segment organic sales decreased two percent versus year ago."
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "procter-release": {
+        "location": "Exhibit 99.1，Net Sales Drivers，Beauty 及 Grooming 列",
+        "quote": "Beauty segment organic sales decreased two percent versus year ago."
+      }
+    },
+    "gold": {
+      "positive": false,
+      "category": "並列分部變化",
+      "standard": "Beauty 下滑與 Grooming 成長不能推出預算、人力、貨架或顧客移轉。需指出缺少共同配置決策、通路或顧客流向資料；接受有條件查核與清楚保留歸因。"
+    },
+    "input": {
+      "event_text": "Procter & Gamble 公布 2025 財年第一季結果。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-10-18T23:59:59+00:00",
+      "target": "Procter & Gamble",
+      "horizon": "2025-10-31",
+      "evidence": [
+        {
+          "id": "procter-release:beauty",
+          "document_id": "procter-release",
+          "paragraph": "beauty",
+          "source": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000080424/59da93f7-916a-4c2f-b94c-60180850c7ac.html",
+          "quote": "Beauty 有機銷售年減 2%。公司指出 Hair Care 及 Personal Care 成長，Skin Care 衰退。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-10-18T23:59:59+00:00",
+          "obtained_at": "2024-10-18T23:59:59+00:00"
+        },
+        {
+          "id": "procter-release:grooming",
+          "document_id": "procter-release",
+          "paragraph": "grooming",
+          "source": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000080424/59da93f7-916a-4c2f-b94c-60180850c7ac.html",
+          "quote": "Grooming 有機銷售年增 3%，有機銷量年增 5%；銷售表另列外匯、價格和組合。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-10-18T23:59:59+00:00",
+          "obtained_at": "2024-10-18T23:59:59+00:00"
+        },
+        {
+          "id": "procter-release:original",
+          "document_id": "procter-release",
+          "paragraph": "original",
+          "source": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000080424/59da93f7-916a-4c2f-b94c-60180850c7ac.html",
+          "quote": "Beauty segment organic sales decreased two percent versus year ago.",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-10-18T23:59:59+00:00",
+          "obtained_at": "2024-10-18T23:59:59+00:00"
+        },
+        {
+          "id": "procter-release:outlook",
+          "document_id": "procter-release",
+          "paragraph": "outlook",
+          "source": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000080424/59da93f7-916a-4c2f-b94c-60180850c7ac.html",
+          "quote": "維持 FY2025 稀釋後 EPS 年增 10% 至 12% 指引。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-10-18T23:59:59+00:00",
+          "obtained_at": "2024-10-18T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "P-03": {
+    "issuer": "T-Mobile",
+    "split": "pilot",
+    "event": {
+      "event_text": "T-Mobile 公布一項無線業務收購協議。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-05-28T23:59:59Z",
+      "research_target": "T-Mobile",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "t-mobile-release",
+          "source": "https://www.t-mobile.com/news/business/uscellular-acquisition-operations-assets",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-05-28T23:59:59Z",
+          "obtained_at": "2024-05-28T23:59:59Z",
+          "paragraphs": {
+            "deal": "T-Mobile 同意以約 44 億美元（含至多 20 億美元承接債務）收購 UScellular Wireless Operations，包括客戶與特定頻譜。交易須滿足交割條件。",
+            "towers": "UScellular 保留鐵塔業務及其他頻譜；交割後 T-Mobile 長期租用其額外至少 2,100 座鐵塔空間。",
+            "other": "T-Mobile 預期整合後每年約 10 億美元的合計營運支出及資本支出節省，整合成本估 22 至 26 億美元；公司未將成本節省分配至各項安排。",
+            "original": "lease space on at least 2,100 additional towers being retained"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "t-mobile-release": {
+        "location": "交易範圍、租賃及成本協同段落",
+        "quote": "lease space on at least 2,100 additional towers being retained"
+      }
+    },
+    "gold": {
+      "positive": true,
+      "category": "具名租賃承諾",
+      "standard": "主要路徑是交易交割觸發至少 2,100 座增量站點租約，增加 UScellular 的鐵塔出租現金流或 T-Mobile 的塔租承諾，不能等同淨網路成本必然上升。以交割時的租約、增量站點及租賃或鐵塔報告區分純收購客戶或原租約續租，列出租率／上線節奏等缺項。"
+    },
+    "input": {
+      "event_text": "T-Mobile 公布一項無線業務收購協議。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-05-28T23:59:59+00:00",
+      "target": "T-Mobile",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "t-mobile-release:deal",
+          "document_id": "t-mobile-release",
+          "paragraph": "deal",
+          "source": "https://www.t-mobile.com/news/business/uscellular-acquisition-operations-assets",
+          "quote": "T-Mobile 同意以約 44 億美元（含至多 20 億美元承接債務）收購 UScellular Wireless Operations，包括客戶與特定頻譜。交易須滿足交割條件。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-05-28T23:59:59+00:00",
+          "obtained_at": "2024-05-28T23:59:59+00:00"
+        },
+        {
+          "id": "t-mobile-release:original",
+          "document_id": "t-mobile-release",
+          "paragraph": "original",
+          "source": "https://www.t-mobile.com/news/business/uscellular-acquisition-operations-assets",
+          "quote": "lease space on at least 2,100 additional towers being retained",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-05-28T23:59:59+00:00",
+          "obtained_at": "2024-05-28T23:59:59+00:00"
+        },
+        {
+          "id": "t-mobile-release:other",
+          "document_id": "t-mobile-release",
+          "paragraph": "other",
+          "source": "https://www.t-mobile.com/news/business/uscellular-acquisition-operations-assets",
+          "quote": "T-Mobile 預期整合後每年約 10 億美元的合計營運支出及資本支出節省，整合成本估 22 至 26 億美元；公司未將成本節省分配至各項安排。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-05-28T23:59:59+00:00",
+          "obtained_at": "2024-05-28T23:59:59+00:00"
+        },
+        {
+          "id": "t-mobile-release:towers",
+          "document_id": "t-mobile-release",
+          "paragraph": "towers",
+          "source": "https://www.t-mobile.com/news/business/uscellular-acquisition-operations-assets",
+          "quote": "UScellular 保留鐵塔業務及其他頻譜；交割後 T-Mobile 長期租用其額外至少 2,100 座鐵塔空間。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-05-28T23:59:59+00:00",
+          "obtained_at": "2024-05-28T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "P-04": {
+    "issuer": "Costco",
+    "split": "pilot",
+    "event": {
+      "event_text": "Costco 公布 2025 財年第一季業績。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-12-12T23:59:59Z",
+      "research_target": "Costco",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "costco-release",
+          "source": "https://investor.costco.com/news/news-details/2024/Costco-Wholesale-Corporation-Reports-First-Quarter-Fiscal-Year-2025-Operating-Results/default.aspx",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-12-12T23:59:59Z",
+          "obtained_at": "2024-12-12T23:59:59Z",
+          "paragraphs": {
+            "comps": "可比銷售年增率為美國 5.2%、加拿大 5.8%、Other International 4.7%、全公司 5.2%；另列 E-commerce 13.0%。",
+            "adjusted": "排除油價與匯率影響後，公司調整後可比銷售成長 7.1%，電子商務成長 13.2%。",
+            "footprint": "Costco 營運 897 個倉庫，在美國、加拿大等八個市場設有電子商務網站。",
+            "original": "Costco currently operates 897 warehouses"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "costco-release": {
+        "location": "Comparable sales 表和倉庫數段落",
+        "quote": "Costco currently operates 897 warehouses"
+      }
+    },
+    "gold": {
+      "positive": false,
+      "category": "通路與地區指標並列",
+      "standard": "未揭露會員或訂單在線上與倉庫間移轉。不可由全公司電商可比增速高於地區指標推出實體被侵蝕或獲導流；需要同店、同會員或訂單分流及重疊口徑。"
+    },
+    "input": {
+      "event_text": "Costco 公布 2025 財年第一季業績。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-12-12T23:59:59+00:00",
+      "target": "Costco",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "costco-release:adjusted",
+          "document_id": "costco-release",
+          "paragraph": "adjusted",
+          "source": "https://investor.costco.com/news/news-details/2024/Costco-Wholesale-Corporation-Reports-First-Quarter-Fiscal-Year-2025-Operating-Results/default.aspx",
+          "quote": "排除油價與匯率影響後，公司調整後可比銷售成長 7.1%，電子商務成長 13.2%。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-12T23:59:59+00:00",
+          "obtained_at": "2024-12-12T23:59:59+00:00"
+        },
+        {
+          "id": "costco-release:comps",
+          "document_id": "costco-release",
+          "paragraph": "comps",
+          "source": "https://investor.costco.com/news/news-details/2024/Costco-Wholesale-Corporation-Reports-First-Quarter-Fiscal-Year-2025-Operating-Results/default.aspx",
+          "quote": "可比銷售年增率為美國 5.2%、加拿大 5.8%、Other International 4.7%、全公司 5.2%；另列 E-commerce 13.0%。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-12T23:59:59+00:00",
+          "obtained_at": "2024-12-12T23:59:59+00:00"
+        },
+        {
+          "id": "costco-release:footprint",
+          "document_id": "costco-release",
+          "paragraph": "footprint",
+          "source": "https://investor.costco.com/news/news-details/2024/Costco-Wholesale-Corporation-Reports-First-Quarter-Fiscal-Year-2025-Operating-Results/default.aspx",
+          "quote": "Costco 營運 897 個倉庫，在美國、加拿大等八個市場設有電子商務網站。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-12T23:59:59+00:00",
+          "obtained_at": "2024-12-12T23:59:59+00:00"
+        },
+        {
+          "id": "costco-release:original",
+          "document_id": "costco-release",
+          "paragraph": "original",
+          "source": "https://investor.costco.com/news/news-details/2024/Costco-Wholesale-Corporation-Reports-First-Quarter-Fiscal-Year-2025-Operating-Results/default.aspx",
+          "quote": "Costco currently operates 897 warehouses",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-12T23:59:59+00:00",
+          "obtained_at": "2024-12-12T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-01": {
+    "issuer": "IBM",
+    "split": "holdout",
+    "event": {
+      "event_text": "IBM 公布完成一項收購。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2025-02-27T23:59:59Z",
+      "research_target": "IBM",
+      "research_horizon": "2026-06-30",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "ibm-release",
+          "source": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp%2C-creates-comprehensive%2C-end-to-end-hybrid-cloud-platform",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2025-02-27T23:59:59Z",
+          "obtained_at": "2025-02-27T23:59:59Z",
+          "paragraphs": {
+            "deal": "IBM 完成收購 HashiCorp，每股現金 35 美元，企業價值約 64 億美元。",
+            "products": "IBM 以 HashiCorp Terraform 與 Red Hat Ansible Automation Platform 為例，前者佈建混合雲基礎設施，後者負責配置部署及管理。",
+            "other": "公司也提及 watsonx、資料安全、IT automation、Consulting 等潛在協同；公告未給各線附加率、合約價或部署數。",
+            "original": "Terraform and the Red Hat Ansible Automation Platform provide a powerful combination"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "ibm-release": {
+        "location": "公告開頭及產品互補清單",
+        "quote": "Terraform and the Red Hat Ansible Automation Platform provide a powerful combination"
+      }
+    },
+    "gold": {
+      "positive": true,
+      "category": "軟體互補與通路",
+      "standard": "主要路徑為 Terraform 佈建工作負載接到 Red Hat Ansible 的配置或持續管理，透過具名整合部署、交叉採購或付費附加影響 Red Hat 訂閱。以聯合部署或採購證據區分獨立擴大自動化及 HashiCorp 單純併表，規模須待付費轉換與價格。"
+    },
+    "input": {
+      "event_text": "IBM 公布完成一項收購。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2025-02-27T23:59:59+00:00",
+      "target": "IBM",
+      "horizon": "2026-06-30",
+      "evidence": [
+        {
+          "id": "ibm-release:deal",
+          "document_id": "ibm-release",
+          "paragraph": "deal",
+          "source": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp%2C-creates-comprehensive%2C-end-to-end-hybrid-cloud-platform",
+          "quote": "IBM 完成收購 HashiCorp，每股現金 35 美元，企業價值約 64 億美元。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2025-02-27T23:59:59+00:00",
+          "obtained_at": "2025-02-27T23:59:59+00:00"
+        },
+        {
+          "id": "ibm-release:original",
+          "document_id": "ibm-release",
+          "paragraph": "original",
+          "source": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp%2C-creates-comprehensive%2C-end-to-end-hybrid-cloud-platform",
+          "quote": "Terraform and the Red Hat Ansible Automation Platform provide a powerful combination",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2025-02-27T23:59:59+00:00",
+          "obtained_at": "2025-02-27T23:59:59+00:00"
+        },
+        {
+          "id": "ibm-release:other",
+          "document_id": "ibm-release",
+          "paragraph": "other",
+          "source": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp%2C-creates-comprehensive%2C-end-to-end-hybrid-cloud-platform",
+          "quote": "公司也提及 watsonx、資料安全、IT automation、Consulting 等潛在協同；公告未給各線附加率、合約價或部署數。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2025-02-27T23:59:59+00:00",
+          "obtained_at": "2025-02-27T23:59:59+00:00"
+        },
+        {
+          "id": "ibm-release:products",
+          "document_id": "ibm-release",
+          "paragraph": "products",
+          "source": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp%2C-creates-comprehensive%2C-end-to-end-hybrid-cloud-platform",
+          "quote": "IBM 以 HashiCorp Terraform 與 Red Hat Ansible Automation Platform 為例，前者佈建混合雲基礎設施，後者負責配置部署及管理。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2025-02-27T23:59:59+00:00",
+          "obtained_at": "2025-02-27T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-02": {
+    "issuer": "HP Inc.",
+    "split": "holdout",
+    "event": {
+      "event_text": "HP Inc. 在平台發布活動展示新款電腦。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-05-20T23:59:59Z",
+      "research_target": "HP Inc.",
+      "research_horizon": "2025-06-30",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "hp-release",
+          "source": "https://blogs.microsoft.com/blog/2024/05/20/introducing-copilot-pcs/",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-05-20T23:59:59Z",
+          "obtained_at": "2024-05-20T23:59:59Z",
+          "paragraphs": {
+            "hp": "平台公告列出 HP 的兩個 Copilot+ PCs 機型 HP OmniBook X AI PC 和 HP EliteBook Ultra G1q AI PC，使用 Snapdragon X Elite。",
+            "rival": "同場列出 Lenovo 的 Yoga Slim 7x、ThinkPad T14s Gen 6 與其他 OEM；首批機型採用 Qualcomm Snapdragon X Series 的 X Elite 或 X Plus。",
+            "channel": "發表列有 Microsoft.com 與主要製造商及零售商的預購通路，沒有 OEM 層級的實際預購量。",
+            "original": "HP’s OmniBook X AI PC and HP EliteBook Ultra G1q AI PC with Snapdragon X Elite"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "hp-release": {
+        "location": "OEM 合作夥伴列表及 AI innovation across the Windows ecosystem",
+        "quote": "HP’s OmniBook X AI PC and HP EliteBook Ultra G1q AI PC with Snapdragon X Elite"
+      }
+    },
+    "gold": {
+      "positive": false,
+      "category": "共同平台與供應商",
+      "standard": "指出共用 Qualcomm 或 Windows 及並列上市沒有證明 Lenovo 與 HP 間的晶片配額、通路訂單或企業客戶移轉。需要供應配額或庫存分配、企業得標/失標或同通路 sell-through 資料，保留歸因；有明示的共同平台上市可以另述。"
+    },
+    "input": {
+      "event_text": "HP Inc. 在平台發布活動展示新款電腦。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-05-20T23:59:59+00:00",
+      "target": "HP Inc.",
+      "horizon": "2025-06-30",
+      "evidence": [
+        {
+          "id": "hp-release:channel",
+          "document_id": "hp-release",
+          "paragraph": "channel",
+          "source": "https://blogs.microsoft.com/blog/2024/05/20/introducing-copilot-pcs/",
+          "quote": "發表列有 Microsoft.com 與主要製造商及零售商的預購通路，沒有 OEM 層級的實際預購量。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-05-20T23:59:59+00:00",
+          "obtained_at": "2024-05-20T23:59:59+00:00"
+        },
+        {
+          "id": "hp-release:hp",
+          "document_id": "hp-release",
+          "paragraph": "hp",
+          "source": "https://blogs.microsoft.com/blog/2024/05/20/introducing-copilot-pcs/",
+          "quote": "平台公告列出 HP 的兩個 Copilot+ PCs 機型 HP OmniBook X AI PC 和 HP EliteBook Ultra G1q AI PC，使用 Snapdragon X Elite。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-05-20T23:59:59+00:00",
+          "obtained_at": "2024-05-20T23:59:59+00:00"
+        },
+        {
+          "id": "hp-release:original",
+          "document_id": "hp-release",
+          "paragraph": "original",
+          "source": "https://blogs.microsoft.com/blog/2024/05/20/introducing-copilot-pcs/",
+          "quote": "HP’s OmniBook X AI PC and HP EliteBook Ultra G1q AI PC with Snapdragon X Elite",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-05-20T23:59:59+00:00",
+          "obtained_at": "2024-05-20T23:59:59+00:00"
+        },
+        {
+          "id": "hp-release:rival",
+          "document_id": "hp-release",
+          "paragraph": "rival",
+          "source": "https://blogs.microsoft.com/blog/2024/05/20/introducing-copilot-pcs/",
+          "quote": "同場列出 Lenovo 的 Yoga Slim 7x、ThinkPad T14s Gen 6 與其他 OEM；首批機型採用 Qualcomm Snapdragon X Series 的 X Elite 或 X Plus。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-05-20T23:59:59+00:00",
+          "obtained_at": "2024-05-20T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-03": {
+    "issuer": "United Airlines",
+    "split": "holdout",
+    "event": {
+      "event_text": "United Airlines 公布一項機上服務協議。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-09-13T23:59:59Z",
+      "research_target": "United Airlines",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "united-release",
+          "source": "https://united.mediaroom.com/2024-09-13-The-Inflight-Wi-Fi-Revolution-Now-Arriving-United-Signs-Starlink-Deal-to-Provide-Industry-Leading-Connectivity-in-the-Sky-For-Free",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-09-13T23:59:59Z",
+          "obtained_at": "2024-09-13T23:59:59Z",
+          "paragraphs": {
+            "contract": "United Airlines 與 SpaceX 簽約在主線及區域機隊部署 Starlink Wi-Fi，免費提供旅客，計畫涵蓋逾 1,000 架飛機。預計 2025 年測試及首批飛行。",
+            "entertainment": "公告點名機上座椅螢幕與個人裝置的影音串流、直播、購物與遊戲等用途；另提及員工資訊工具及已規劃的客艙升級。",
+            "cost": "公告未列服務、設備或安裝價格，未承諾機上媒體或票價溢價金額。",
+            "original": "Industry's largest agreement includes more than 1,000 aircraft"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "united-release": {
+        "location": "開頭合約範圍、導入與機上娛樂段落",
+        "quote": "Industry's largest agreement includes more than 1,000 aircraft"
+      }
+    },
+    "gold": {
+      "positive": true,
+      "category": "機隊合約與服務通路",
+      "standard": "主要路徑是逾千架的具名部署，於認證與上線後帶來 SpaceX Starlink 航空設備或連線服務需求，也可用 United 免費 Wi-Fi 分批部署帶來該機隊連線成本與可觀測的付費 Wi-Fi 遷移作等價。以特定機型認證、實際啟用、或計費政策區分既有機上娛樂更新或其他航司的衛星成長，不能把計畫飛機數直接認作收入。"
+    },
+    "input": {
+      "event_text": "United Airlines 公布一項機上服務協議。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-09-13T23:59:59+00:00",
+      "target": "United Airlines",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "united-release:contract",
+          "document_id": "united-release",
+          "paragraph": "contract",
+          "source": "https://united.mediaroom.com/2024-09-13-The-Inflight-Wi-Fi-Revolution-Now-Arriving-United-Signs-Starlink-Deal-to-Provide-Industry-Leading-Connectivity-in-the-Sky-For-Free",
+          "quote": "United Airlines 與 SpaceX 簽約在主線及區域機隊部署 Starlink Wi-Fi，免費提供旅客，計畫涵蓋逾 1,000 架飛機。預計 2025 年測試及首批飛行。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-09-13T23:59:59+00:00",
+          "obtained_at": "2024-09-13T23:59:59+00:00"
+        },
+        {
+          "id": "united-release:cost",
+          "document_id": "united-release",
+          "paragraph": "cost",
+          "source": "https://united.mediaroom.com/2024-09-13-The-Inflight-Wi-Fi-Revolution-Now-Arriving-United-Signs-Starlink-Deal-to-Provide-Industry-Leading-Connectivity-in-the-Sky-For-Free",
+          "quote": "公告未列服務、設備或安裝價格，未承諾機上媒體或票價溢價金額。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-09-13T23:59:59+00:00",
+          "obtained_at": "2024-09-13T23:59:59+00:00"
+        },
+        {
+          "id": "united-release:entertainment",
+          "document_id": "united-release",
+          "paragraph": "entertainment",
+          "source": "https://united.mediaroom.com/2024-09-13-The-Inflight-Wi-Fi-Revolution-Now-Arriving-United-Signs-Starlink-Deal-to-Provide-Industry-Leading-Connectivity-in-the-Sky-For-Free",
+          "quote": "公告點名機上座椅螢幕與個人裝置的影音串流、直播、購物與遊戲等用途；另提及員工資訊工具及已規劃的客艙升級。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-09-13T23:59:59+00:00",
+          "obtained_at": "2024-09-13T23:59:59+00:00"
+        },
+        {
+          "id": "united-release:original",
+          "document_id": "united-release",
+          "paragraph": "original",
+          "source": "https://united.mediaroom.com/2024-09-13-The-Inflight-Wi-Fi-Revolution-Now-Arriving-United-Signs-Starlink-Deal-to-Provide-Industry-Leading-Connectivity-in-the-Sky-For-Free",
+          "quote": "Industry's largest agreement includes more than 1,000 aircraft",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-09-13T23:59:59+00:00",
+          "obtained_at": "2024-09-13T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-04": {
+    "issuer": "3M",
+    "split": "holdout",
+    "event": {
+      "event_text": "3M 公布完成一項分拆。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-04-01T23:59:59Z",
+      "research_target": "3M",
+      "research_horizon": "2025-06-30",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "3m-release",
+          "source": "https://investors.3m.com/news-events/press-releases/detail/1835/3m-completes-spin-off-of-solventum",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-04-01T23:59:59Z",
+          "obtained_at": "2024-04-01T23:59:59Z",
+          "paragraphs": {
+            "spin": "3M 完成將醫療保健業務分拆為 Solventum；3M 股東每持四股 3M 取得一股 Solventum。",
+            "holding": "3M 持有 Solventum 流通普通股 19.9%，公告表示將於分拆後五年內變現。",
+            "capital": "公告說兩家公司可各自採用不同成長與資本配置策略，未就這筆持股未來變現指明金額、日期或用途。",
+            "original": "will be monetized within five years following the spin-off"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "3m-release": {
+        "location": "公告前三段與持股處置說明",
+        "quote": "will be monetized within five years following the spin-off"
+      }
+    },
+    "gold": {
+      "positive": false,
+      "category": "資本用途未披露",
+      "standard": "區分持股、預計變現與實際配置。不可把 retained stake 當成已收現金，或聲稱其資金已指定投資其他部門、回購或還債。指出需持股處置與資金用途/董事會配置披露才能確證。"
+    },
+    "input": {
+      "event_text": "3M 公布完成一項分拆。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-04-01T23:59:59+00:00",
+      "target": "3M",
+      "horizon": "2025-06-30",
+      "evidence": [
+        {
+          "id": "3m-release:capital",
+          "document_id": "3m-release",
+          "paragraph": "capital",
+          "source": "https://investors.3m.com/news-events/press-releases/detail/1835/3m-completes-spin-off-of-solventum",
+          "quote": "公告說兩家公司可各自採用不同成長與資本配置策略，未就這筆持股未來變現指明金額、日期或用途。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-04-01T23:59:59+00:00",
+          "obtained_at": "2024-04-01T23:59:59+00:00"
+        },
+        {
+          "id": "3m-release:holding",
+          "document_id": "3m-release",
+          "paragraph": "holding",
+          "source": "https://investors.3m.com/news-events/press-releases/detail/1835/3m-completes-spin-off-of-solventum",
+          "quote": "3M 持有 Solventum 流通普通股 19.9%，公告表示將於分拆後五年內變現。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-04-01T23:59:59+00:00",
+          "obtained_at": "2024-04-01T23:59:59+00:00"
+        },
+        {
+          "id": "3m-release:original",
+          "document_id": "3m-release",
+          "paragraph": "original",
+          "source": "https://investors.3m.com/news-events/press-releases/detail/1835/3m-completes-spin-off-of-solventum",
+          "quote": "will be monetized within five years following the spin-off",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-04-01T23:59:59+00:00",
+          "obtained_at": "2024-04-01T23:59:59+00:00"
+        },
+        {
+          "id": "3m-release:spin",
+          "document_id": "3m-release",
+          "paragraph": "spin",
+          "source": "https://investors.3m.com/news-events/press-releases/detail/1835/3m-completes-spin-off-of-solventum",
+          "quote": "3M 完成將醫療保健業務分拆為 Solventum；3M 股東每持四股 3M 取得一股 Solventum。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-04-01T23:59:59+00:00",
+          "obtained_at": "2024-04-01T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-05": {
+    "issuer": "CVS Health",
+    "split": "holdout",
+    "event": {
+      "event_text": "CVS Health 公布完成一項醫療服務收購。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2023-05-02T23:59:59Z",
+      "research_target": "CVS Health",
+      "research_horizon": "2024-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "cvs-release",
+          "source": "https://www.cvshealth.com/news/company-news/cvs-health-completes-acquisition-of-oak-street-health.html",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2023-05-02T23:59:59Z",
+          "obtained_at": "2023-05-02T23:59:59Z",
+          "paragraphs": {
+            "deal": "CVS Health 完成收購 Oak Street Health，交易企業價值約 106 億美元。Oak Street Health 有約 600 名初級照護提供人員，在 21 州有 170 多個醫療中心。",
+            "service": "Oak Street Health 為多保險方的價值導向初級照護服務商，照顧 Medicare 病患。CVS 把其納入 care delivery 策略並繼續面對多個付款方。",
+            "strategy": "CVS Health 同時經營健康保險與醫療照護服務，公告以結合照護觸及病患為策略，未公布附加中心的計費、納入率或專門導流保證。",
+            "original": "multi-payor, value-based primary care company"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "cvs-release": {
+        "location": "公告開頭與 Oak Street Health 服務說明",
+        "quote": "multi-payor, value-based primary care company"
+      }
+    },
+    "gold": {
+      "positive": true,
+      "category": "照護容量與風險承擔",
+      "standard": "主要路徑為納入 Oak Street Health 已有的多付款方、價值導向初級照護據點，增加 CVS Health care delivery 的承作量與風險承擔收入/醫療支出曝險。或採 Aetna Medicare Advantage 的條件性病患歸戶與醫療成本路徑，須明說合作及歸戶未披露。以新據點、具名歸戶或按反映培育期的病患數／成本資料區分純收購併表、額外 Signify 活動或保費定價。"
+    },
+    "input": {
+      "event_text": "CVS Health 公布完成一項醫療服務收購。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2023-05-02T23:59:59+00:00",
+      "target": "CVS Health",
+      "horizon": "2024-12-31",
+      "evidence": [
+        {
+          "id": "cvs-release:deal",
+          "document_id": "cvs-release",
+          "paragraph": "deal",
+          "source": "https://www.cvshealth.com/news/company-news/cvs-health-completes-acquisition-of-oak-street-health.html",
+          "quote": "CVS Health 完成收購 Oak Street Health，交易企業價值約 106 億美元。Oak Street Health 有約 600 名初級照護提供人員，在 21 州有 170 多個醫療中心。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-05-02T23:59:59+00:00",
+          "obtained_at": "2023-05-02T23:59:59+00:00"
+        },
+        {
+          "id": "cvs-release:original",
+          "document_id": "cvs-release",
+          "paragraph": "original",
+          "source": "https://www.cvshealth.com/news/company-news/cvs-health-completes-acquisition-of-oak-street-health.html",
+          "quote": "multi-payor, value-based primary care company",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-05-02T23:59:59+00:00",
+          "obtained_at": "2023-05-02T23:59:59+00:00"
+        },
+        {
+          "id": "cvs-release:service",
+          "document_id": "cvs-release",
+          "paragraph": "service",
+          "source": "https://www.cvshealth.com/news/company-news/cvs-health-completes-acquisition-of-oak-street-health.html",
+          "quote": "Oak Street Health 為多保險方的價值導向初級照護服務商，照顧 Medicare 病患。CVS 把其納入 care delivery 策略並繼續面對多個付款方。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-05-02T23:59:59+00:00",
+          "obtained_at": "2023-05-02T23:59:59+00:00"
+        },
+        {
+          "id": "cvs-release:strategy",
+          "document_id": "cvs-release",
+          "paragraph": "strategy",
+          "source": "https://www.cvshealth.com/news/company-news/cvs-health-completes-acquisition-of-oak-street-health.html",
+          "quote": "CVS Health 同時經營健康保險與醫療照護服務，公告以結合照護觸及病患為策略，未公布附加中心的計費、納入率或專門導流保證。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-05-02T23:59:59+00:00",
+          "obtained_at": "2023-05-02T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-06": {
+    "issuer": "Coca-Cola",
+    "split": "holdout",
+    "event": {
+      "event_text": "Coca-Cola 公布第三季財報與更新指引。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-10-23T23:59:59Z",
+      "research_target": "Coca-Cola",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "coca-cola-release",
+          "source": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1121/coca-cola-reports-third-quarter-2024-results-and-provides-updated-guidance",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-10-23T23:59:59Z",
+          "obtained_at": "2024-10-23T23:59:59Z",
+          "paragraphs": {
+            "latam": "Latin America 有機營收年增 24%，價格與組合貢獻 21%，箱量持平。",
+            "na": "North America 有機營收年增 12%，價格與組合貢獻 11%，箱量持平。",
+            "outlook": "有機營收及報表營收受不同的價格、匯率及組合影響；另列集團全年展望。",
+            "original": "Operating Review – Three Months Ended September 27, 2024"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "coca-cola-release": {
+        "location": "Operating Review，Revenues and Volume，地區列",
+        "quote": "Operating Review – Three Months Ended September 27, 2024"
+      }
+    },
+    "gold": {
+      "positive": false,
+      "category": "並列地區財務指標",
+      "standard": "北美與拉美的價格組合、箱量及有機收入差異不能證明跨區的配置、供應或品牌/顧客轉移。需要具名數量流向、配額、品牌/通路批次或資源決策。"
+    },
+    "input": {
+      "event_text": "Coca-Cola 公布第三季財報與更新指引。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-10-23T23:59:59+00:00",
+      "target": "Coca-Cola",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "coca-cola-release:latam",
+          "document_id": "coca-cola-release",
+          "paragraph": "latam",
+          "source": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1121/coca-cola-reports-third-quarter-2024-results-and-provides-updated-guidance",
+          "quote": "Latin America 有機營收年增 24%，價格與組合貢獻 21%，箱量持平。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-10-23T23:59:59+00:00",
+          "obtained_at": "2024-10-23T23:59:59+00:00"
+        },
+        {
+          "id": "coca-cola-release:na",
+          "document_id": "coca-cola-release",
+          "paragraph": "na",
+          "source": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1121/coca-cola-reports-third-quarter-2024-results-and-provides-updated-guidance",
+          "quote": "North America 有機營收年增 12%，價格與組合貢獻 11%，箱量持平。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-10-23T23:59:59+00:00",
+          "obtained_at": "2024-10-23T23:59:59+00:00"
+        },
+        {
+          "id": "coca-cola-release:original",
+          "document_id": "coca-cola-release",
+          "paragraph": "original",
+          "source": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1121/coca-cola-reports-third-quarter-2024-results-and-provides-updated-guidance",
+          "quote": "Operating Review – Three Months Ended September 27, 2024",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-10-23T23:59:59+00:00",
+          "obtained_at": "2024-10-23T23:59:59+00:00"
+        },
+        {
+          "id": "coca-cola-release:outlook",
+          "document_id": "coca-cola-release",
+          "paragraph": "outlook",
+          "source": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1121/coca-cola-reports-third-quarter-2024-results-and-provides-updated-guidance",
+          "quote": "有機營收及報表營收受不同的價格、匯率及組合影響；另列集團全年展望。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-10-23T23:59:59+00:00",
+          "obtained_at": "2024-10-23T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-07": {
+    "issuer": "Sony Group",
+    "split": "holdout",
+    "event": {
+      "event_text": "Sony Group 公布簽署一項新事業協議。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2022-06-16T23:59:59Z",
+      "research_target": "Sony Group",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "sony-release",
+          "source": "https://global.honda/en/newsroom/news/2022/c220616eng.html",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2022-06-16T23:59:59Z",
+          "obtained_at": "2022-06-16T23:59:59Z",
+          "paragraphs": {
+            "deal": "Sony Group 與 Honda Motor Co., Ltd. 簽署合資協議，擬成立 Sony Honda Mobility Inc.，開發並銷售電動車及移動服務。",
+            "allocation": "擬定合資資本為 100 億日圓，Sony Group 與 Honda Motor Co., Ltd. 各持 50%。預計 2022 年成立、2025 年開始銷售及供應服務，仍需核准。",
+            "operations": "擬結合 Sony 的影像、感測、網路及娛樂技術與 Honda 車體製造、車輛開發及售後服務能力。",
+            "original": "Sony Group Corporation 50%, Honda Motor Co., Ltd. 50%"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "sony-release": {
+        "location": "產品與分工段落、New Company Overview",
+        "quote": "Sony Group Corporation 50%, Honda Motor Co., Ltd. 50%"
+      }
+    },
+    "gold": {
+      "positive": true,
+      "category": "合資資本與具名營運安排",
+      "standard": "主要路徑為 50/50 資本承諾與 Sony 技術整合到 Sony Honda Mobility 電動車，帶來 Sony 初期投資現金需求及取決於核准/車型上市的合資收益曝險；Honda 具名開發與製造的資源/產能也可成立。公開核對合資成立、資本及車型產品里程碑，區分一般 Sony 感測器對車廠收入或不合資的技術合作；不得把規劃資本當作本期已付款或整車收入。"
+    },
+    "input": {
+      "event_text": "Sony Group 公布簽署一項新事業協議。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2022-06-16T23:59:59+00:00",
+      "target": "Sony Group",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "sony-release:allocation",
+          "document_id": "sony-release",
+          "paragraph": "allocation",
+          "source": "https://global.honda/en/newsroom/news/2022/c220616eng.html",
+          "quote": "擬定合資資本為 100 億日圓，Sony Group 與 Honda Motor Co., Ltd. 各持 50%。預計 2022 年成立、2025 年開始銷售及供應服務，仍需核准。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2022-06-16T23:59:59+00:00",
+          "obtained_at": "2022-06-16T23:59:59+00:00"
+        },
+        {
+          "id": "sony-release:deal",
+          "document_id": "sony-release",
+          "paragraph": "deal",
+          "source": "https://global.honda/en/newsroom/news/2022/c220616eng.html",
+          "quote": "Sony Group 與 Honda Motor Co., Ltd. 簽署合資協議，擬成立 Sony Honda Mobility Inc.，開發並銷售電動車及移動服務。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2022-06-16T23:59:59+00:00",
+          "obtained_at": "2022-06-16T23:59:59+00:00"
+        },
+        {
+          "id": "sony-release:operations",
+          "document_id": "sony-release",
+          "paragraph": "operations",
+          "source": "https://global.honda/en/newsroom/news/2022/c220616eng.html",
+          "quote": "擬結合 Sony 的影像、感測、網路及娛樂技術與 Honda 車體製造、車輛開發及售後服務能力。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2022-06-16T23:59:59+00:00",
+          "obtained_at": "2022-06-16T23:59:59+00:00"
+        },
+        {
+          "id": "sony-release:original",
+          "document_id": "sony-release",
+          "paragraph": "original",
+          "source": "https://global.honda/en/newsroom/news/2022/c220616eng.html",
+          "quote": "Sony Group Corporation 50%, Honda Motor Co., Ltd. 50%",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2022-06-16T23:59:59+00:00",
+          "obtained_at": "2022-06-16T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "H-08": {
+    "issuer": "Home Depot",
+    "split": "holdout",
+    "event": {
+      "event_text": "Home Depot 公布第三季財報與更新指引。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-11-12T23:59:59Z",
+      "research_target": "Home Depot",
+      "research_horizon": "2025-10-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "home-release",
+          "source": "https://ir.homedepot.com/news-releases/2024/11-12-2024-110156861",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-11-12T23:59:59Z",
+          "obtained_at": "2024-11-12T23:59:59Z",
+          "paragraphs": {
+            "quarter": "Home Depot 第三季銷售年增 6.6%，可比銷售年減 1.3%，美國可比銷售年減 1.2%。",
+            "guidance": "全年銷售預計增約 4%（含第 53 週及 SRS Distribution），含 SRS 約 64 億美元的當年增量銷售；可比銷售預計降約 2.5%。",
+            "baseline": "公告並列收購併表和可比銷售口徑，並未給收購前後的同一客戶名冊、商店交易或銷售渠道遷移。",
+            "original": "Comparable sales for the third quarter of fiscal 2024 decreased 1.3%"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "home-release": {
+        "location": "財報開頭及 fiscal 2024 guidance 條列",
+        "quote": "Comparable sales for the third quarter of fiscal 2024 decreased 1.3%"
+      }
+    },
+    "gold": {
+      "positive": false,
+      "category": "收購併表與通路重疊",
+      "standard": "可承認明示的 SRS 併表貢獻，但不能把舊有門市同店走弱解讀為既有 Pro 或 DIY 客戶把訂單轉給 SRS。需同客戶採購、訂單、供應區域或有無 SRS 的比較，明確保留該通路歸因。"
+    },
+    "input": {
+      "event_text": "Home Depot 公布第三季財報與更新指引。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2024-11-12T23:59:59+00:00",
+      "target": "Home Depot",
+      "horizon": "2025-10-31",
+      "evidence": [
+        {
+          "id": "home-release:baseline",
+          "document_id": "home-release",
+          "paragraph": "baseline",
+          "source": "https://ir.homedepot.com/news-releases/2024/11-12-2024-110156861",
+          "quote": "公告並列收購併表和可比銷售口徑，並未給收購前後的同一客戶名冊、商店交易或銷售渠道遷移。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-12T23:59:59+00:00",
+          "obtained_at": "2024-11-12T23:59:59+00:00"
+        },
+        {
+          "id": "home-release:guidance",
+          "document_id": "home-release",
+          "paragraph": "guidance",
+          "source": "https://ir.homedepot.com/news-releases/2024/11-12-2024-110156861",
+          "quote": "全年銷售預計增約 4%（含第 53 週及 SRS Distribution），含 SRS 約 64 億美元的當年增量銷售；可比銷售預計降約 2.5%。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-12T23:59:59+00:00",
+          "obtained_at": "2024-11-12T23:59:59+00:00"
+        },
+        {
+          "id": "home-release:original",
+          "document_id": "home-release",
+          "paragraph": "original",
+          "source": "https://ir.homedepot.com/news-releases/2024/11-12-2024-110156861",
+          "quote": "Comparable sales for the third quarter of fiscal 2024 decreased 1.3%",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-12T23:59:59+00:00",
+          "obtained_at": "2024-11-12T23:59:59+00:00"
+        },
+        {
+          "id": "home-release:quarter",
+          "document_id": "home-release",
+          "paragraph": "quarter",
+          "source": "https://ir.homedepot.com/news-releases/2024/11-12-2024-110156861",
+          "quote": "Home Depot 第三季銷售年增 6.6%，可比銷售年減 1.3%，美國可比銷售年減 1.2%。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-12T23:59:59+00:00",
+          "obtained_at": "2024-11-12T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "R-01": {
+    "issuer": "Microsoft",
+    "split": "regression",
+    "event": {
+      "event_text": "Microsoft 公布多年期策略合作。請提出可供研究員覆核的首稿。",
+      "as_of": "2022-12-12T23:59:59Z",
+      "research_target": "Microsoft",
+      "research_horizon": "2024-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "ms-lseg",
+          "source": "https://news.microsoft.com/source/2022/12/12/lseg-and-microsoft-launch-10-year-strategic-partnership-for-next-generation-data-and-analytics-and-cloud-infrastructure-solutions-microsoft-to-make-equity-investment-in-lseg-through-acquisition-of-sh/",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2022-12-12T23:59:59Z",
+          "obtained_at": "2022-12-12T23:59:59Z",
+          "paragraphs": {
+            "contract": "London Stock Exchange Group（LSEG）與 Microsoft 簽十年合作。LSEG 對 Microsoft 的最低雲端相關支出承諾為十年合計 28 億美元。",
+            "migration": "LSEG 的資料平台與其他關鍵科技基礎設施會遷移至 Microsoft Azure。Workspace 與 Teams／Microsoft 365 另有整合計畫。",
+            "equity": "Microsoft 還擬取得 LSEG 約 4% 股份；持股交易與雲端服務使用是不同項目。",
+            "original": "Contractual commitment by LSEG for minimum cloud-related spend with Microsoft"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "ms-lseg": {
+        "location": "公告條列合約支出及雲端遷移",
+        "quote": "Contractual commitment by LSEG for minimum cloud-related spend with Microsoft"
+      }
+    },
+    "gold": {
+      "positive": true,
+      "category": "具名對手方",
+      "standard": "LSEG 遷移計畫和最低雲端支出契約連至 Azure／雲端服務需求。追蹤遷移、工作負載上線或合約履約，區分入股與一般 Azure 增長。28 億為十年最低支出，不能按年平均當成已認列收入。"
+    },
+    "previous_case": "H-01",
+    "input": {
+      "event_text": "Microsoft 公布多年期策略合作。請提出可供研究員覆核的首稿。",
+      "as_of": "2022-12-12T23:59:59+00:00",
+      "target": "Microsoft",
+      "horizon": "2024-12-31",
+      "evidence": [
+        {
+          "id": "ms-lseg:contract",
+          "document_id": "ms-lseg",
+          "paragraph": "contract",
+          "source": "https://news.microsoft.com/source/2022/12/12/lseg-and-microsoft-launch-10-year-strategic-partnership-for-next-generation-data-and-analytics-and-cloud-infrastructure-solutions-microsoft-to-make-equity-investment-in-lseg-through-acquisition-of-sh/",
+          "quote": "London Stock Exchange Group（LSEG）與 Microsoft 簽十年合作。LSEG 對 Microsoft 的最低雲端相關支出承諾為十年合計 28 億美元。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2022-12-12T23:59:59+00:00",
+          "obtained_at": "2022-12-12T23:59:59+00:00"
+        },
+        {
+          "id": "ms-lseg:equity",
+          "document_id": "ms-lseg",
+          "paragraph": "equity",
+          "source": "https://news.microsoft.com/source/2022/12/12/lseg-and-microsoft-launch-10-year-strategic-partnership-for-next-generation-data-and-analytics-and-cloud-infrastructure-solutions-microsoft-to-make-equity-investment-in-lseg-through-acquisition-of-sh/",
+          "quote": "Microsoft 還擬取得 LSEG 約 4% 股份；持股交易與雲端服務使用是不同項目。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2022-12-12T23:59:59+00:00",
+          "obtained_at": "2022-12-12T23:59:59+00:00"
+        },
+        {
+          "id": "ms-lseg:migration",
+          "document_id": "ms-lseg",
+          "paragraph": "migration",
+          "source": "https://news.microsoft.com/source/2022/12/12/lseg-and-microsoft-launch-10-year-strategic-partnership-for-next-generation-data-and-analytics-and-cloud-infrastructure-solutions-microsoft-to-make-equity-investment-in-lseg-through-acquisition-of-sh/",
+          "quote": "LSEG 的資料平台與其他關鍵科技基礎設施會遷移至 Microsoft Azure。Workspace 與 Teams／Microsoft 365 另有整合計畫。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2022-12-12T23:59:59+00:00",
+          "obtained_at": "2022-12-12T23:59:59+00:00"
+        },
+        {
+          "id": "ms-lseg:original",
+          "document_id": "ms-lseg",
+          "paragraph": "original",
+          "source": "https://news.microsoft.com/source/2022/12/12/lseg-and-microsoft-launch-10-year-strategic-partnership-for-next-generation-data-and-analytics-and-cloud-infrastructure-solutions-microsoft-to-make-equity-investment-in-lseg-through-acquisition-of-sh/",
+          "quote": "Contractual commitment by LSEG for minimum cloud-related spend with Microsoft",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2022-12-12T23:59:59+00:00",
+          "obtained_at": "2022-12-12T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "R-02": {
+    "issuer": "lululemon",
+    "split": "regression",
+    "event": {
+      "event_text": "lululemon 公布新的多年合作。請提出可供研究員覆核的首稿。",
+      "as_of": "2023-09-27T23:59:59Z",
+      "research_target": "lululemon",
+      "research_horizon": "2024-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "lulu-pton",
+          "source": "https://corporate.lululemon.com/newsroom/press-releases/2023/09-27-2023-211026323",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2023-09-27T23:59:59Z",
+          "obtained_at": "2023-09-27T23:59:59Z",
+          "paragraphs": {
+            "terms": "lululemon 與 Peloton 公布五年合作。Peloton 成為 lululemon 的獨家數位健身內容供應商，lululemon 成為 Peloton 主要運動服飾合作夥伴。",
+            "subscription": "從 2023 年 11 月 1 日起，lululemon Studio All-Access 會員會按當時同價取得 Peloton 課程。",
+            "sales": "聯合公告描述以 Peloton 通路推出共同品牌服飾與相關計畫。此屬通路與供應安排。",
+            "original": "Peloton will become the exclusive digital fitness content provider for lululemon"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "lulu-pton": {
+        "location": "聯合公告的合作交換與會員段落",
+        "quote": "Peloton will become the exclusive digital fitness content provider for lululemon"
+      }
+    },
+    "gold": {
+      "positive": true,
+      "category": "跨通路與具名對手方",
+      "standard": "可選 Peloton 內容導入 Studio 與內容成本或會員留存，或 Peloton 的具名服飾通路連到 lululemon 增量銷售。查同價上線／可購服飾／新通路銷售，區分其他會員變動、季節折扣或原有服飾通路移轉；缺分潤或成本時只主張條件影響。"
+    },
+    "previous_case": "H-07",
+    "input": {
+      "event_text": "lululemon 公布新的多年合作。請提出可供研究員覆核的首稿。",
+      "as_of": "2023-09-27T23:59:59+00:00",
+      "target": "lululemon",
+      "horizon": "2024-12-31",
+      "evidence": [
+        {
+          "id": "lulu-pton:original",
+          "document_id": "lulu-pton",
+          "paragraph": "original",
+          "source": "https://corporate.lululemon.com/newsroom/press-releases/2023/09-27-2023-211026323",
+          "quote": "Peloton will become the exclusive digital fitness content provider for lululemon",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-09-27T23:59:59+00:00",
+          "obtained_at": "2023-09-27T23:59:59+00:00"
+        },
+        {
+          "id": "lulu-pton:sales",
+          "document_id": "lulu-pton",
+          "paragraph": "sales",
+          "source": "https://corporate.lululemon.com/newsroom/press-releases/2023/09-27-2023-211026323",
+          "quote": "聯合公告描述以 Peloton 通路推出共同品牌服飾與相關計畫。此屬通路與供應安排。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-09-27T23:59:59+00:00",
+          "obtained_at": "2023-09-27T23:59:59+00:00"
+        },
+        {
+          "id": "lulu-pton:subscription",
+          "document_id": "lulu-pton",
+          "paragraph": "subscription",
+          "source": "https://corporate.lululemon.com/newsroom/press-releases/2023/09-27-2023-211026323",
+          "quote": "從 2023 年 11 月 1 日起，lululemon Studio All-Access 會員會按當時同價取得 Peloton 課程。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-09-27T23:59:59+00:00",
+          "obtained_at": "2023-09-27T23:59:59+00:00"
+        },
+        {
+          "id": "lulu-pton:terms",
+          "document_id": "lulu-pton",
+          "paragraph": "terms",
+          "source": "https://corporate.lululemon.com/newsroom/press-releases/2023/09-27-2023-211026323",
+          "quote": "lululemon 與 Peloton 公布五年合作。Peloton 成為 lululemon 的獨家數位健身內容供應商，lululemon 成為 Peloton 主要運動服飾合作夥伴。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-09-27T23:59:59+00:00",
+          "obtained_at": "2023-09-27T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "R-03": {
+    "issuer": "FedEx",
+    "split": "regression",
+    "event": {
+      "event_text": "FedEx 董事會公告事業組合決定。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-12-19T23:59:59Z",
+      "research_target": "FedEx",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "fdx-sep",
+          "source": "https://newsroom.fedex.com/newsroom/global-english/fedex-announces-intent-to-separate-fedex-freight-creating-two-industry-leading-public-companies",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-12-19T23:59:59Z",
+          "obtained_at": "2024-12-19T23:59:59Z",
+          "paragraphs": {
+            "decision": "FedEx 董事會擬分拆 FedEx Freight，使其成為獨立上市公司。當時目標為 18 個月內完成，須待後續條件及核准。",
+            "capital": "公告描述以資本市場方式推動分離，預期符合美國聯邦所得稅免稅分離資格，未量化母公司實收款或指定其用途。",
+            "original": "expected to qualify as a tax-free separation"
+          }
+        },
+        {
+          "id": "fdx-q2",
+          "source": "https://newsroom.fedex.com/newsroom/global-english/fedex-reports-second-quarter-diluted-eps-of-3-03-and-adjusted-diluted-eps-of-4-05",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-12-19T23:59:59Z",
+          "obtained_at": "2024-12-19T23:59:59Z",
+          "paragraphs": {
+            "repurchases": "同期財報說本季已完成 10 億美元回購。該數字是本季已發生事項。",
+            "original": "$1 Billion Share Repurchases Completed During Quarter"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "fdx-sep": {
+        "location": "Transaction Process 段落",
+        "quote": "expected to qualify as a tax-free separation"
+      },
+      "fdx-q2": {
+        "location": "同期財報標題重點",
+        "quote": "$1 Billion Share Repurchases Completed During Quarter"
+      }
+    },
+    "gold": {
+      "positive": false,
+      "category": "資源去向未披露",
+      "standard": "分拆計畫並不確立實收現金或回購、航空／其他業務資金去向。需要分拆資本結構、現金或分配條款、董事會用途與流量日期。已完成回購不得歸因於未完成交易。"
+    },
+    "previous_case": "H-06",
+    "input": {
+      "event_text": "FedEx 董事會公告事業組合決定。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-12-19T23:59:59+00:00",
+      "target": "FedEx",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "fdx-sep:capital",
+          "document_id": "fdx-sep",
+          "paragraph": "capital",
+          "source": "https://newsroom.fedex.com/newsroom/global-english/fedex-announces-intent-to-separate-fedex-freight-creating-two-industry-leading-public-companies",
+          "quote": "公告描述以資本市場方式推動分離，預期符合美國聯邦所得稅免稅分離資格，未量化母公司實收款或指定其用途。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        },
+        {
+          "id": "fdx-sep:decision",
+          "document_id": "fdx-sep",
+          "paragraph": "decision",
+          "source": "https://newsroom.fedex.com/newsroom/global-english/fedex-announces-intent-to-separate-fedex-freight-creating-two-industry-leading-public-companies",
+          "quote": "FedEx 董事會擬分拆 FedEx Freight，使其成為獨立上市公司。當時目標為 18 個月內完成，須待後續條件及核准。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        },
+        {
+          "id": "fdx-sep:original",
+          "document_id": "fdx-sep",
+          "paragraph": "original",
+          "source": "https://newsroom.fedex.com/newsroom/global-english/fedex-announces-intent-to-separate-fedex-freight-creating-two-industry-leading-public-companies",
+          "quote": "expected to qualify as a tax-free separation",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        },
+        {
+          "id": "fdx-q2:original",
+          "document_id": "fdx-q2",
+          "paragraph": "original",
+          "source": "https://newsroom.fedex.com/newsroom/global-english/fedex-reports-second-quarter-diluted-eps-of-3-03-and-adjusted-diluted-eps-of-4-05",
+          "quote": "$1 Billion Share Repurchases Completed During Quarter",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        },
+        {
+          "id": "fdx-q2:repurchases",
+          "document_id": "fdx-q2",
+          "paragraph": "repurchases",
+          "source": "https://newsroom.fedex.com/newsroom/global-english/fedex-reports-second-quarter-diluted-eps-of-3-03-and-adjusted-diluted-eps-of-4-05",
+          "quote": "同期財報說本季已完成 10 億美元回購。該數字是本季已發生事項。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        }
+      ]
+    }
+  },
+  "R-04": {
+    "issuer": "NIKE",
+    "split": "regression",
+    "event": {
+      "event_text": "NIKE 公布季度財報。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-12-19T23:59:59Z",
+      "research_target": "NIKE",
+      "research_horizon": "2025-06-30",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "nike-q2",
+          "source": "https://investors.nike.com/sec-filings/all-sec-filings/content/0000320187-24-000069/q2fy25exhibit991er.htm",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-12-19T23:59:59Z",
+          "obtained_at": "2024-12-19T23:59:59Z",
+          "paragraphs": {
+            "direct": "第二財季 NIKE Direct 營收 50 億美元，按報告口徑年減 13%。NIKE Brand Digital 銷售年減 21%，自營門市銷售年減 2%。",
+            "wholesale": "批發營收 69 億美元，按報告口徑年減 3%。",
+            "margin": "集團毛利率下滑 1 個百分點至 43.6%。公告同時列出通路和合併財務表現。",
+            "original": "NIKE Direct revenues were $5.0 billion"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "anchors": {
+      "nike-q2": {
+        "location": "Second Quarter Income Statement Review",
+        "quote": "NIKE Direct revenues were $5.0 billion"
+      }
+    },
+    "gold": {
+      "positive": false,
+      "category": "通路讀數並列",
+      "standard": "通路跌幅差異不證明相同顧客從 Direct 轉到批發。缺同款同市場銷量或庫存、通路配置或消費者遷移，保留替代效應與特定通路造成合併毛利變動的大小。"
+    },
+    "previous_case": "H-08",
+    "input": {
+      "event_text": "NIKE 公布季度財報。請提出可供研究員覆核的首稿。",
+      "as_of": "2024-12-19T23:59:59+00:00",
+      "target": "NIKE",
+      "horizon": "2025-06-30",
+      "evidence": [
+        {
+          "id": "nike-q2:direct",
+          "document_id": "nike-q2",
+          "paragraph": "direct",
+          "source": "https://investors.nike.com/sec-filings/all-sec-filings/content/0000320187-24-000069/q2fy25exhibit991er.htm",
+          "quote": "第二財季 NIKE Direct 營收 50 億美元，按報告口徑年減 13%。NIKE Brand Digital 銷售年減 21%，自營門市銷售年減 2%。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        },
+        {
+          "id": "nike-q2:margin",
+          "document_id": "nike-q2",
+          "paragraph": "margin",
+          "source": "https://investors.nike.com/sec-filings/all-sec-filings/content/0000320187-24-000069/q2fy25exhibit991er.htm",
+          "quote": "集團毛利率下滑 1 個百分點至 43.6%。公告同時列出通路和合併財務表現。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        },
+        {
+          "id": "nike-q2:original",
+          "document_id": "nike-q2",
+          "paragraph": "original",
+          "source": "https://investors.nike.com/sec-filings/all-sec-filings/content/0000320187-24-000069/q2fy25exhibit991er.htm",
+          "quote": "NIKE Direct revenues were $5.0 billion",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        },
+        {
+          "id": "nike-q2:wholesale",
+          "document_id": "nike-q2",
+          "paragraph": "wholesale",
+          "source": "https://investors.nike.com/sec-filings/all-sec-filings/content/0000320187-24-000069/q2fy25exhibit991er.htm",
+          "quote": "批發營收 69 億美元，按報告口徑年減 3%。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-12-19T23:59:59+00:00",
+          "obtained_at": "2024-12-19T23:59:59+00:00"
+        }
+      ]
+    }
+  }
+}

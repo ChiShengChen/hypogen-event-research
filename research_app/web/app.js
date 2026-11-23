@@ -214,6 +214,7 @@ function businessLinkageBlock(report, scope = null) {
     head.append(node("h3", `${path.origin_business} → ${path.affected_company} · ${path.affected_business}`),
       node("span", `${scopeLabel} · ${stances[path.linked_stance]}`, "badge"));
     item.append(head, fields([
+      ["排序理由", path.ranking_reason],
       ["傳導機制", path.mechanism], ["必要條件", path.condition], ["比較基準", path.baseline],
       ["財務影響", path.financial_effect], ["其他解釋", path.alternative_explanation],
       ["公開查核", `${path.public_source} · ${path.observation_period} · ${path.metric}`],
