@@ -1,0 +1,1681 @@
+{
+ "note": "Development replay: every case was seen while the veto rules were written. Zero model calls.",
+ "by_source": {
+  "guidance-ytd": {
+   "pilot": {
+    "metrics": {
+     "astra": {
+      "cases": 4,
+      "exact": 3,
+      "numeric_exact": 3,
+      "positive_exact": 2,
+      "negative_exact": 1,
+      "false_adjustments": 1,
+      "false_abstentions": 0
+     },
+     "veto": {
+      "cases": 4,
+      "exact": 4,
+      "numeric_exact": 4,
+      "positive_exact": 2,
+      "negative_exact": 2,
+      "false_adjustments": 0,
+      "false_abstentions": 0
+     },
+     "extract": {
+      "cases": 4,
+      "exact": 2,
+      "numeric_exact": 4,
+      "positive_exact": 0,
+      "negative_exact": 2,
+      "false_adjustments": 0,
+      "false_abstentions": 0
+     }
+    },
+    "veto_vs_astra": {
+     "numeric_exact": {
+      "veto_only": 1,
+      "astra_only": 0,
+      "p_two_sided": 1.0
+     },
+     "exact": {
+      "veto_only": 1,
+      "astra_only": 0,
+      "p_two_sided": 1.0
+     }
+    },
+    "vetoed_cases": [
+     "wday"
+    ],
+    "false_vetoes": []
+   },
+   "holdout": {
+    "metrics": {
+     "astra": {
+      "cases": 8,
+      "exact": 7,
+      "numeric_exact": 8,
+      "positive_exact": 3,
+      "negative_exact": 4,
+      "false_adjustments": 0,
+      "false_abstentions": 0
+     },
+     "veto": {
+      "cases": 8,
+      "exact": 7,
+      "numeric_exact": 8,
+      "positive_exact": 3,
+      "negative_exact": 4,
+      "false_adjustments": 0,
+      "false_abstentions": 0
+     },
+     "extract": {
+      "cases": 8,
+      "exact": 4,
+      "numeric_exact": 8,
+      "positive_exact": 0,
+      "negative_exact": 4,
+      "false_adjustments": 0,
+      "false_abstentions": 0
+     }
+    },
+    "veto_vs_astra": {
+     "numeric_exact": {
+      "veto_only": 0,
+      "astra_only": 0,
+      "p_two_sided": 1.0
+     },
+     "exact": {
+      "veto_only": 0,
+      "astra_only": 0,
+      "p_two_sided": 1.0
+     }
+    },
+    "vetoed_cases": [],
+    "false_vetoes": []
+   }
+  },
+  "guidance-table": {
+   "pilot": {
+    "metrics": {
+     "astra": {
+      "cases": 4,
+      "exact": 3,
+      "numeric_exact": 4,
+      "positive_exact": 1,
+      "negative_exact": 2,
+      "false_adjustments": 0,
+      "false_abstentions": 0
+     },
+     "veto": {
+      "cases": 4,
+      "exact": 3,
+      "numeric_exact": 4,
+      "positive_exact": 1,
+      "negative_exact": 2,
+      "false_adjustments": 0,
+      "false_abstentions": 0
+     },
+     "extract": {
+      "cases": 4,
+      "exact": 3,
+      "numeric_exact": 3,
+      "positive_exact": 1,
+      "negative_exact": 2,
+      "false_adjustments": 0,
+      "false_abstentions": 1
+     }
+    },
+    "veto_vs_astra": {
+     "numeric_exact": {
+      "veto_only": 0,
+      "astra_only": 0,
+      "p_two_sided": 1.0
+     },
+     "exact": {
+      "veto_only": 0,
+      "astra_only": 0,
+      "p_two_sided": 1.0
+     }
+    },
+    "vetoed_cases": [],
+    "false_vetoes": []
+   },
+   "holdout": {
+    "metrics": {
+     "astra": {
+      "cases": 8,
+      "exact": 4,
+      "numeric_exact": 5,
+      "positive_exact": 3,
+      "negative_exact": 1,
+      "false_adjustments": 3,
+      "false_abstentions": 0
+     },
+     "veto": {
+      "cases": 8,
+      "exact": 5,
+      "numeric_exact": 7,
+      "positive_exact": 3,
+      "negative_exact": 2,
+      "false_adjustments": 1,
+      "false_abstentions": 0
+     },
+     "extract": {
+      "cases": 8,
+      "exact": 8,
+      "numeric_exact": 8,
+      "positive_exact": 4,
+      "negative_exact": 4,
+      "false_adjustments": 0,
+      "false_abstentions": 0
+     }
+    },
+    "veto_vs_astra": {
+     "numeric_exact": {
+      "veto_only": 2,
+      "astra_only": 0,
+      "p_two_sided": 0.5
+     },
+     "exact": {
+      "veto_only": 1,
+      "astra_only": 0,
+      "p_two_sided": 1.0
+     }
+    },
+    "vetoed_cases": [
+     "wmt",
+     "snow"
+    ],
+    "false_vetoes": []
+   }
+  }
+ },
+ "all": {
+  "metrics": {
+   "astra": {
+    "cases": 24,
+    "exact": 17,
+    "numeric_exact": 20,
+    "positive_exact": 9,
+    "negative_exact": 8,
+    "false_adjustments": 4,
+    "false_abstentions": 0
+   },
+   "veto": {
+    "cases": 24,
+    "exact": 19,
+    "numeric_exact": 23,
+    "positive_exact": 9,
+    "negative_exact": 10,
+    "false_adjustments": 1,
+    "false_abstentions": 0
+   },
+   "extract": {
+    "cases": 24,
+    "exact": 17,
+    "numeric_exact": 23,
+    "positive_exact": 5,
+    "negative_exact": 12,
+    "false_adjustments": 0,
+    "false_abstentions": 1
+   }
+  },
+  "veto_vs_astra": {
+   "numeric_exact": {
+    "veto_only": 3,
+    "astra_only": 0,
+    "p_two_sided": 0.25
+   },
+   "exact": {
+    "veto_only": 2,
+    "astra_only": 0,
+    "p_two_sided": 0.5
+   }
+  },
+  "vetoed_cases": [
+   "wday",
+   "wmt",
+   "snow"
+  ],
+  "false_vetoes": []
+ },
+ "cases": [
+  {
+   "source": "guidance-ytd",
+   "case": "docu",
+   "ticker": "DOCU",
+   "split": "pilot",
+   "negative": false,
+   "gold": {
+    "implied_remainder_prior": "755333000",
+    "implied_remainder_new": "760513000",
+    "implied_remainder_change": "5180000",
+    "implied_remainder": "raised"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "755333000",
+      "implied_remainder_new": "760513000",
+      "implied_remainder_change": "5180000",
+      "implied_remainder": "raised"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "755333000",
+      "implied_remainder_new": "760513000",
+      "implied_remainder_change": "5180000",
+      "implied_remainder": "raised"
+     }
+    },
+    "extract": {
+     "exact": false,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [
+      "引文不足"
+     ],
+     "answers": {
+      "implied_remainder_prior": "755333000",
+      "implied_remainder_new": "760513000",
+      "implied_remainder_change": "5180000",
+      "implied_remainder": "raised"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-ytd",
+   "case": "sprt",
+   "ticker": "SPT",
+   "split": "pilot",
+   "negative": false,
+   "gold": {
+    "implied_remainder_prior": "107320000.0",
+    "implied_remainder_new": "106682000.0",
+    "implied_remainder_change": "-638000.0",
+    "implied_remainder": "lowered"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "107320000",
+      "implied_remainder_new": "106682000",
+      "implied_remainder_change": "-638000",
+      "implied_remainder": "lowered"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "107320000",
+      "implied_remainder_new": "106682000",
+      "implied_remainder_change": "-638000",
+      "implied_remainder": "lowered"
+     }
+    },
+    "extract": {
+     "exact": false,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [
+      "引文不足"
+     ],
+     "answers": {
+      "implied_remainder_prior": "107320000.0",
+      "implied_remainder_new": "106682000.0",
+      "implied_remainder_change": "-638000.0",
+      "implied_remainder": "lowered"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-ytd",
+   "case": "yeti",
+   "ticker": "YETI",
+   "split": "pilot",
+   "negative": true,
+   "gold": {
+    "implied_remainder_prior": "unknown",
+    "implied_remainder_change": "unknown",
+    "implied_remainder": "unknown"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-ytd",
+   "case": "wday",
+   "ticker": "WDAY",
+   "split": "pilot",
+   "negative": true,
+   "gold": {
+    "implied_remainder_prior": "unknown",
+    "implied_remainder_change": "unknown",
+    "implied_remainder": "unknown"
+   },
+   "arms": {
+    "astra": {
+     "exact": false,
+     "numeric_exact": false,
+     "false_adjustment": true,
+     "false_abstention": false,
+     "failures": [
+      "口徑不符"
+     ],
+     "answers": {
+      "implied_remainder_prior": "2038500000",
+      "implied_remainder_change": "-13500000",
+      "implied_remainder": "lowered"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    }
+   },
+   "vetoes": [
+    {
+     "operand": "prior",
+     "rule": "metric",
+     "block": "wday-prior:p0004",
+     "quote": "Subscription revenue between $7.700 billion to $7.725 billion",
+     "detail": "prior is a subscription revenue outlook, not comparable consolidated total revenue"
+    },
+    {
+     "operand": "prior_interim",
+     "rule": "metric",
+     "block": "wday-prior:p0004",
+     "quote": "Subscription revenue of $1.955 billion",
+     "detail": "prior_interim is a subscription revenue outlook, not comparable consolidated total revenue"
+    },
+    {
+     "operand": "new",
+     "rule": "metric",
+     "block": "wday-latest:p0003",
+     "quote": "Subscription revenue of $7.703 billion",
+     "detail": "new is a subscription revenue outlook, not comparable consolidated total revenue"
+    }
+   ],
+   "vetoed_items": {
+    "implied_remainder_prior": "implied_remainder_prior depends on prior, prior_interim",
+    "implied_remainder_change": "implied_remainder_change depends on new, prior, prior_interim",
+    "implied_remainder": "implied_remainder depends on new, prior, prior_interim"
+   }
+  },
+  {
+   "source": "guidance-ytd",
+   "case": "s",
+   "ticker": "S",
+   "split": "holdout",
+   "negative": false,
+   "gold": {
+    "implied_remainder_prior": "220208000.0",
+    "implied_remainder_new": "222060000",
+    "implied_remainder_change": "1852000.0",
+    "implied_remainder": "raised"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "220208000",
+      "implied_remainder_new": "222060000",
+      "implied_remainder_change": "1852000",
+      "implied_remainder": "raised"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "220208000",
+      "implied_remainder_new": "222060000",
+      "implied_remainder_change": "1852000",
+      "implied_remainder": "raised"
+     }
+    },
+    "extract": {
+     "exact": false,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [
+      "引文不足"
+     ],
+     "answers": {
+      "implied_remainder_prior": "220208000.0",
+      "implied_remainder_new": "222060000",
+      "implied_remainder_change": "1852000.0",
+      "implied_remainder": "raised"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-ytd",
+   "case": "docs",
+   "ticker": "DOCS",
+   "split": "holdout",
+   "negative": false,
+   "gold": {
+    "implied_remainder_prior": "121492000",
+    "implied_remainder_new": "132989000.0",
+    "implied_remainder_change": "11497000.0",
+    "implied_remainder": "raised"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "121492000",
+      "implied_remainder_new": "132989000",
+      "implied_remainder_change": "11497000",
+      "implied_remainder": "raised"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "121492000",
+      "implied_remainder_new": "132989000",
+      "implied_remainder_change": "11497000",
+      "implied_remainder": "raised"
+     }
+    },
+    "extract": {
+     "exact": false,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [
+      "引文不足"
+     ],
+     "answers": {
+      "implied_remainder_prior": "121492000",
+      "implied_remainder_new": "132989000.0",
+      "implied_remainder_change": "11497000.0",
+      "implied_remainder": "raised"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-ytd",
+   "case": "mndy",
+   "ticker": "MNDY",
+   "split": "holdout",
+   "negative": false,
+   "gold": {
+    "implied_remainder_prior": "260481000",
+    "implied_remainder_new": "260981000",
+    "implied_remainder_change": "500000",
+    "implied_remainder": "raised"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "260481000",
+      "implied_remainder_new": "260981000",
+      "implied_remainder_change": "500000",
+      "implied_remainder": "raised"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "260481000",
+      "implied_remainder_new": "260981000",
+      "implied_remainder_change": "500000",
+      "implied_remainder": "raised"
+     }
+    },
+    "extract": {
+     "exact": false,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [
+      "引文不足"
+     ],
+     "answers": {
+      "implied_remainder_prior": "260481000",
+      "implied_remainder_new": "260981000",
+      "implied_remainder_change": "500000",
+      "implied_remainder": "raised"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-ytd",
+   "case": "frog",
+   "ticker": "FROG",
+   "split": "holdout",
+   "negative": false,
+   "gold": {
+    "implied_remainder_prior": "114146000",
+    "implied_remainder_new": "113990000.0",
+    "implied_remainder_change": "-156000.0",
+    "implied_remainder": "lowered"
+   },
+   "arms": {
+    "astra": {
+     "exact": false,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [
+      "引文不足"
+     ],
+     "answers": {
+      "implied_remainder_prior": "114146000",
+      "implied_remainder_new": "113990000",
+      "implied_remainder_change": "-156000",
+      "implied_remainder": "lowered"
+     }
+    },
+    "veto": {
+     "exact": false,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [
+      "引文不足"
+     ],
+     "answers": {
+      "implied_remainder_prior": "114146000",
+      "implied_remainder_new": "113990000",
+      "implied_remainder_change": "-156000",
+      "implied_remainder": "lowered"
+     }
+    },
+    "extract": {
+     "exact": false,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [
+      "引文不足"
+     ],
+     "answers": {
+      "implied_remainder_prior": "114146000",
+      "implied_remainder_new": "113990000.0",
+      "implied_remainder_change": "-156000.0",
+      "implied_remainder": "lowered"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-ytd",
+   "case": "hd",
+   "ticker": "HD",
+   "split": "holdout",
+   "negative": true,
+   "gold": {
+    "implied_remainder_prior": "unknown",
+    "implied_remainder_change": "unknown",
+    "implied_remainder": "unknown"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-ytd",
+   "case": "tgt",
+   "ticker": "TGT",
+   "split": "holdout",
+   "negative": true,
+   "gold": {
+    "implied_remainder_prior": "unknown",
+    "implied_remainder_change": "unknown",
+    "implied_remainder": "unknown"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-ytd",
+   "case": "cost",
+   "ticker": "COST",
+   "split": "holdout",
+   "negative": true,
+   "gold": {
+    "implied_remainder_prior": "unknown",
+    "implied_remainder_change": "unknown",
+    "implied_remainder": "unknown"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-ytd",
+   "case": "deck",
+   "ticker": "DECK",
+   "split": "holdout",
+   "negative": true,
+   "gold": {
+    "implied_remainder_prior": "unknown",
+    "implied_remainder_change": "unknown",
+    "implied_remainder": "unknown"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-table",
+   "case": "frsh",
+   "ticker": "FRSH",
+   "split": "pilot",
+   "negative": false,
+   "gold": {
+    "implied_remainder_prior": "189226000.0",
+    "implied_remainder_new": "189251000.0",
+    "implied_remainder_change": "25000.0",
+    "implied_remainder": "raised"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "189226000",
+      "implied_remainder_new": "189251000",
+      "implied_remainder_change": "25000",
+      "implied_remainder": "raised"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "189226000",
+      "implied_remainder_new": "189251000",
+      "implied_remainder_change": "25000",
+      "implied_remainder": "raised"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "189226000.0",
+      "implied_remainder_new": "189251000.0",
+      "implied_remainder_change": "25000.0",
+      "implied_remainder": "raised"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-table",
+   "case": "crm",
+   "ticker": "CRM",
+   "split": "pilot",
+   "negative": false,
+   "gold": {
+    "implied_remainder_prior": "10057000000.00",
+    "implied_remainder_new": "9998000000.0",
+    "implied_remainder_change": "-59000000.00",
+    "implied_remainder": "lowered"
+   },
+   "arms": {
+    "astra": {
+     "exact": false,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [
+      "引文不足"
+     ],
+     "answers": {
+      "implied_remainder_prior": "10057000000",
+      "implied_remainder_new": "9998000000",
+      "implied_remainder_change": "-59000000",
+      "implied_remainder": "lowered"
+     }
+    },
+    "veto": {
+     "exact": false,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [
+      "引文不足"
+     ],
+     "answers": {
+      "implied_remainder_prior": "10057000000",
+      "implied_remainder_new": "9998000000",
+      "implied_remainder_change": "-59000000",
+      "implied_remainder": "lowered"
+     }
+    },
+    "extract": {
+     "exact": false,
+     "numeric_exact": false,
+     "false_adjustment": false,
+     "false_abstention": true,
+     "failures": [
+      "單位",
+      "單位錯",
+      "引文不足"
+     ],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_new": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-table",
+   "case": "low",
+   "ticker": "LOW",
+   "split": "pilot",
+   "negative": true,
+   "gold": {
+    "implied_remainder_prior": "unknown",
+    "implied_remainder_change": "unknown",
+    "implied_remainder": "unknown"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-table",
+   "case": "mdt",
+   "ticker": "MDT",
+   "split": "pilot",
+   "negative": true,
+   "gold": {
+    "implied_remainder_prior": "unknown",
+    "implied_remainder_change": "unknown",
+    "implied_remainder": "unknown"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-table",
+   "case": "blze",
+   "ticker": "BLZE",
+   "split": "holdout",
+   "negative": false,
+   "gold": {
+    "implied_remainder_prior": "33647000.0",
+    "implied_remainder_new": "33658000.0",
+    "implied_remainder_change": "11000.0",
+    "implied_remainder": "raised"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "33647000",
+      "implied_remainder_new": "33658000",
+      "implied_remainder_change": "11000",
+      "implied_remainder": "raised"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "33647000",
+      "implied_remainder_new": "33658000",
+      "implied_remainder_change": "11000",
+      "implied_remainder": "raised"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "33647000.0",
+      "implied_remainder_new": "33658000.0",
+      "implied_remainder_change": "11000.0",
+      "implied_remainder": "raised"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-table",
+   "case": "docn",
+   "ticker": "DOCN",
+   "split": "holdout",
+   "negative": false,
+   "gold": {
+    "implied_remainder_prior": "198794000",
+    "implied_remainder_new": "200310000",
+    "implied_remainder_change": "1516000",
+    "implied_remainder": "raised"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "198794000",
+      "implied_remainder_new": "200310000",
+      "implied_remainder_change": "1516000",
+      "implied_remainder": "raised"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "198794000",
+      "implied_remainder_new": "200310000",
+      "implied_remainder_change": "1516000",
+      "implied_remainder": "raised"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "198794000",
+      "implied_remainder_new": "200310000",
+      "implied_remainder_change": "1516000",
+      "implied_remainder": "raised"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-table",
+   "case": "net",
+   "ticker": "NET",
+   "split": "holdout",
+   "negative": false,
+   "gold": {
+    "implied_remainder_prior": "454902000.0",
+    "implied_remainder_new": "451820000.0",
+    "implied_remainder_change": "-3082000.0",
+    "implied_remainder": "lowered"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "454902000",
+      "implied_remainder_new": "451820000",
+      "implied_remainder_change": "-3082000",
+      "implied_remainder": "lowered"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "454902000",
+      "implied_remainder_new": "451820000",
+      "implied_remainder_change": "-3082000",
+      "implied_remainder": "lowered"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "454902000.0",
+      "implied_remainder_new": "451820000.0",
+      "implied_remainder_change": "-3082000.0",
+      "implied_remainder": "lowered"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-table",
+   "case": "okta",
+   "ticker": "OKTA",
+   "split": "holdout",
+   "negative": false,
+   "gold": {
+    "implied_remainder_prior": "648000000.000",
+    "implied_remainder_new": "668000000.000",
+    "implied_remainder_change": "20000000.000",
+    "implied_remainder": "raised"
+   },
+   "arms": {
+    "astra": {
+     "exact": false,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [
+      "引文不足"
+     ],
+     "answers": {
+      "implied_remainder_prior": "648000000",
+      "implied_remainder_new": "668000000",
+      "implied_remainder_change": "20000000",
+      "implied_remainder": "raised"
+     }
+    },
+    "veto": {
+     "exact": false,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [
+      "引文不足"
+     ],
+     "answers": {
+      "implied_remainder_prior": "648000000",
+      "implied_remainder_new": "668000000",
+      "implied_remainder_change": "20000000",
+      "implied_remainder": "raised"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "648000000.000",
+      "implied_remainder_new": "668000000.000",
+      "implied_remainder_change": "20000000.000",
+      "implied_remainder": "raised"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-table",
+   "case": "path",
+   "ticker": "PATH",
+   "split": "holdout",
+   "negative": true,
+   "gold": {
+    "implied_remainder_prior": "unknown",
+    "implied_remainder_change": "unknown",
+    "implied_remainder": "unknown"
+   },
+   "arms": {
+    "astra": {
+     "exact": false,
+     "numeric_exact": false,
+     "false_adjustment": true,
+     "false_abstention": false,
+     "failures": [
+      "營收口徑"
+     ],
+     "answers": {
+      "implied_remainder_prior": "423635000",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "veto": {
+     "exact": false,
+     "numeric_exact": false,
+     "false_adjustment": true,
+     "false_abstention": false,
+     "failures": [
+      "營收口徑"
+     ],
+     "answers": {
+      "implied_remainder_prior": "423635000",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-table",
+   "case": "wmt",
+   "ticker": "WMT",
+   "split": "holdout",
+   "negative": true,
+   "gold": {
+    "implied_remainder_prior": "unknown",
+    "implied_remainder_change": "unknown",
+    "implied_remainder": "unknown"
+   },
+   "arms": {
+    "astra": {
+     "exact": false,
+     "numeric_exact": false,
+     "false_adjustment": true,
+     "false_abstention": false,
+     "failures": [
+      "引文不足",
+      "營收口徑"
+     ],
+     "answers": {
+      "implied_remainder_prior": "176896000000",
+      "implied_remainder_change": "655700000",
+      "implied_remainder": "raised"
+     }
+    },
+    "veto": {
+     "exact": false,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [
+      "引文不足"
+     ],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    }
+   },
+   "vetoes": [
+    {
+     "operand": "prior",
+     "rule": "rate",
+     "block": "wmt-prior:p0005",
+     "quote": "Consolidated net sales (cc) Increase 3.75% to 4.75%",
+     "detail": "prior is a growth rate without a USD revenue amount"
+    },
+    {
+     "operand": "prior",
+     "rule": "currency",
+     "block": "wmt-prior:p0005",
+     "quote": "Consolidated net sales (cc) Increase 3.75% to 4.75%",
+     "detail": "prior is stated in constant currency, not reported USD"
+    },
+    {
+     "operand": "prior_interim",
+     "rule": "rate",
+     "block": "wmt-prior:p0005",
+     "quote": "Consolidated net sales (cc) Increase 3.25% to 4.25%",
+     "detail": "prior_interim is a growth rate without a USD revenue amount"
+    },
+    {
+     "operand": "prior_interim",
+     "rule": "currency",
+     "block": "wmt-prior:p0005",
+     "quote": "Consolidated net sales (cc) Increase 3.25% to 4.25%",
+     "detail": "prior_interim is stated in constant currency, not reported USD"
+    },
+    {
+     "operand": "new",
+     "rule": "rate",
+     "block": "wmt-latest:p0005",
+     "quote": "Net sales (cc) Increase 4.8% to 5.1%",
+     "detail": "new is a growth rate without a USD revenue amount"
+    },
+    {
+     "operand": "new",
+     "rule": "currency",
+     "block": "wmt-latest:p0005",
+     "quote": "Net sales (cc) Increase 4.8% to 5.1%",
+     "detail": "new is stated in constant currency, not reported USD"
+    }
+   ],
+   "vetoed_items": {
+    "implied_remainder_prior": "implied_remainder_prior depends on prior, prior_interim",
+    "implied_remainder_change": "implied_remainder_change depends on new, prior, prior_interim",
+    "implied_remainder": "implied_remainder depends on new, prior, prior_interim"
+   }
+  },
+  {
+   "source": "guidance-table",
+   "case": "cdw",
+   "ticker": "CDW",
+   "split": "holdout",
+   "negative": true,
+   "gold": {
+    "implied_remainder_prior": "unknown",
+    "implied_remainder_change": "unknown",
+    "implied_remainder": "unknown"
+   },
+   "arms": {
+    "astra": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    }
+   },
+   "vetoes": [],
+   "vetoed_items": {}
+  },
+  {
+   "source": "guidance-table",
+   "case": "snow",
+   "ticker": "SNOW",
+   "split": "holdout",
+   "negative": true,
+   "gold": {
+    "implied_remainder_prior": "unknown",
+    "implied_remainder_change": "unknown",
+    "implied_remainder": "unknown"
+   },
+   "arms": {
+    "astra": {
+     "exact": false,
+     "numeric_exact": false,
+     "false_adjustment": true,
+     "false_abstention": false,
+     "failures": [
+      "營收口徑"
+     ],
+     "answers": {
+      "implied_remainder_prior": "884663000",
+      "implied_remainder_change": "26218000",
+      "implied_remainder": "raised"
+     }
+    },
+    "veto": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    },
+    "extract": {
+     "exact": true,
+     "numeric_exact": true,
+     "false_adjustment": false,
+     "false_abstention": false,
+     "failures": [],
+     "answers": {
+      "implied_remainder_prior": "unknown",
+      "implied_remainder_change": "unknown",
+      "implied_remainder": "unknown"
+     }
+    }
+   },
+   "vetoes": [
+    {
+     "operand": "prior",
+     "rule": "metric",
+     "block": "snow-prior:p0003",
+     "quote": "Product revenue $3,356",
+     "detail": "prior is a product revenue outlook, not comparable consolidated total revenue"
+    },
+    {
+     "operand": "prior_interim",
+     "rule": "metric",
+     "block": "snow-prior:p0003",
+     "quote": "Product revenue $850 - $855",
+     "detail": "prior_interim is a product revenue outlook, not comparable consolidated total revenue"
+    },
+    {
+     "operand": "new",
+     "rule": "metric",
+     "block": "snow-latest:p0006",
+     "quote": "Product revenue(2) $3,430",
+     "detail": "new is a product revenue outlook, not comparable consolidated total revenue"
+    }
+   ],
+   "vetoed_items": {
+    "implied_remainder_prior": "implied_remainder_prior depends on prior, prior_interim",
+    "implied_remainder_change": "implied_remainder_change depends on new, prior, prior_interim",
+    "implied_remainder": "implied_remainder depends on new, prior, prior_interim"
+   }
+  }
+ ]
+}
