@@ -3,7 +3,7 @@ from datetime import date
 from functools import lru_cache
 from pathlib import Path
 
-from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi import Depends, FastAPI, HTTPException, Query, Request
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import AwareDatetime, Field, ValidationError
@@ -108,6 +108,11 @@ def create_app(store=None, adapter=None):
     @app.get("/runs/{id}")
     def run(id: str, db=Depends(storage)):
         return db.run(id)
+
+    @app.get("/reports")
+    def find_reports(query: str = Query(default="", max_length=120),
+                     limit: int = Query(default=10, ge=1, le=30), db=Depends(storage)):
+        return {"reports": db.find_reports(query, limit)}
 
     @app.get("/reports/{id}/revisions/{v}")
     def revision(id: str, v: int, db=Depends(storage)):

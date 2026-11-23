@@ -150,6 +150,26 @@ class Store:
             raise MissingReport("找不到研究任務")
         return self.result(row)
 
+    def find_reports(self, query, limit):
+        with self.connection() as db:
+            db.create_function("company_key", 1, lambda value: company_key(value or ""), deterministic=True)
+            db.row_factory = sqlite3.Row
+            rows = db.execute("""
+                SELECT runs.report_id, revisions.revision,
+                       json_extract(revisions.report, '$.target') AS target,
+                       json_extract(revisions.report, '$.as_of') AS as_of,
+                       substr(json_extract(runs.event, '$.event_text'), 1, 240) AS event_text
+                FROM runs JOIN revisions ON revisions.report_id = runs.report_id
+                  AND revisions.revision = (SELECT MAX(latest.revision) FROM revisions AS latest
+                                            WHERE latest.report_id = runs.report_id)
+                WHERE :query = '' OR instr(company_key(target), :query) > 0
+                   OR instr(company_key(json_extract(runs.event, '$.event_text')), :query) > 0
+                ORDER BY CASE WHEN :query != '' AND company_key(target) = :query THEN 0 ELSE 1 END,
+                         runs.rowid DESC
+                LIMIT :limit
+            """, {"query": company_key(query), "limit": limit}).fetchall()
+        return [dict(row) for row in rows]
+
     def revision(self, report_id, revision):
         with self.connection() as db:
             row = db.execute("""

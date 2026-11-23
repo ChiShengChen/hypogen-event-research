@@ -36,6 +36,41 @@ python -m research_app.demo
 
 示範將原稿、情境子版、逐行差異及 SQLite 資料庫寫入 `output/demo/`。預設使用可重現的 `fixture` 模式。停工案以 600 批建稿，追問改成 300 批，單季 EPS 增量從 +0.048 元改為 −0.024 元，損益兩平量為 400 批。可用 `--output` 指定目錄。
 
+## 在 Codex 對話使用 Hypogen
+
+Hypogen 提供本機 MCP 工具。從 Codex CLI 或 IDE 對話即可建稿、追問、附資料與跑評測。MCP 直接呼叫既有 API 的應用物件，使用和工作台相同的 SQLite 檔案。開啟 MCP 時無需另啟瀏覽器或 Uvicorn。
+
+在專案根目錄啟用已安裝 `requirements.txt` 的 Python 環境，再註冊 MCP 與 Skills。`RESEARCH_DB` 設成工作台實際使用的絕對路徑，即可從對話查到原有的報告。
+
+```bash
+codex mcp add hypogen \
+  --env "PYTHONPATH=$PWD" \
+  --env "RESEARCH_DB=$PWD/output/research.sqlite3" \
+  --env RESEARCH_MODE=codex \
+  --env RESEARCH_CODEX_MODEL=gpt-6.2-astra \
+  -- "$(command -v python)" -m research_app.mcp_server
+
+skill_dir="${CODEX_HOME:-$HOME/.codex}/skills"
+mkdir -p "$skill_dir"
+for skill in "$PWD"/skills/hypogen-*; do
+  ln -sT "$skill" "$skill_dir/$(basename "$skill")"
+done
+```
+
+在 Codex 的 `config.toml` 中，把 `tool_timeout_sec = 600` 放在現有的 `[mcp_servers.hypogen]` 區段，讓完整公告與研究生成有足夠時間。開新對話後可直接說下表的範例，或用 `$hypogen-*` 指定 Skill。`codex mcp list` 可確認工具註冊。
+
+| Skill | 對話範例 |
+|---|---|
+| [`$hypogen-research`](skills/hypogen-research/SKILL.md) | 「找上次的 ASML 報告，整理多空劇本與題目沒點名的供應鏈機會。」 |
+| [`$hypogen-branch`](skills/hypogen-branch/SKILL.md) | 「從剛才的空方假說往下追。把『客戶延後驗收』當成我的假設，參考我附的 PDF。」 |
+| [`$hypogen-guidance`](skills/hypogen-guidance/SKILL.md) | 「用這份原始公告核對營收相對封存現估的剩餘差額，列出財季和原文。」 |
+| [`$hypogen-earnings`](skills/hypogen-earnings/SKILL.md) | 「把這份 CSV 匯入為截至指定日期的共識，再查看基準情境。」 |
+| [`$hypogen-benchmark`](skills/hypogen-benchmark/SKILL.md) | 「用封存回傳重播 Freshworks，對照純 Astra 與新版驗證器。」 |
+
+附件工具從 `output/mcp-inbox/` 收件，可用 `HYPOGEN_INBOX` 指定其他目錄。將使用者指定的檔案放入後，對話用 `attachment_id` 引用。假說分支沿用原報告截止時點。重送同一份建稿或分支時使用原 `request_id`，已完成的請求會回傳原結果。
+
+新的指引核對可讀已定位的引文或完整單份 HTML。跨公告工具目前以封存案例與本機公告快照重播 `extract`、純 Astra 或已封存的 Veto 比較。V9 四案可用 `benchmark_start` 啟動，或提供原 `job_id` 續跑。輸出寫入 `output/mcp-jobs/`，封存重播不會發出新模型呼叫。
+
 ## 瀏覽器工作台與 API
 
 先用 `codex login status` 確認本機 Codex CLI 已透過 ChatGPT 登入，再啟動工作台。
