@@ -1,8 +1,14 @@
 {
   "hypothesis": "新版先比較公告明示的合約、資源及具名運作安排，再排序。保留集正例應比現版多答對至少一案，負例不退步。",
+  "amendment": {
+    "initial_seal_commit": "fbb016d",
+    "scope": "保留集推論前將曾用於 V9 服務探針的 IBM 換成 Corning。沿用原封存四案先導的輸入、請求、門檻及執行回傳。",
+    "unchanged_pilot_cases_sha256": "a63bb9b3cd735fc3459e119ec19ed178dd042b4b7b0168b9dec9dd1d3c2c1eda",
+    "unchanged_pilot_requests_sha256": "3153e365c30d2f7c50c229a8f4ff36ea48cdce3fc2f3bc72e6dee054af4b670f"
+  },
   "source_sha256": {
-    "linkage_rank.py": "2d25ac9c2448ab60a342f86e33cfd01bf7d00c6b23ce00d9e18d30cf20c15ea5",
-    "linkage_rank_cases.py": "324e8ccc00e2ab5344e654f37426e742013970d7e1aa30eda0598f482904eaa3",
+    "linkage_rank.py": "a30f1255515569ad1581fbbb54c417f3b083935da56462aa989e550a571fdadc",
+    "linkage_rank_cases.py": "3a80f37f086b2fd1311feb1917377534893e5412bb28dfdf012e399ecf45917b",
     "linkage_depth.py": "6cc1539b908b4deab99c894e8bfd7ffb6e45b5148683c6f08d87f7af9ed2e44a",
     "v9_equal.py": "f58527b1a9fae466f6f4790dbb5e9747fe3ae939d5688eda70a6f454aa9913aa",
     "earnings_execution.py": "40e800f97ee205b6f7e9f65fa388e438a7285f0b4929e5eeb2b5520d63ce3327",
@@ -12,8 +18,8 @@
     "v9_equal_admission.py": "7122cd8450e8d1792d6c193237a246a8a207cfb17dcd6ba86935057c06d90a7f",
     "business_linkage.py": "4ea8ee89da3ad975559b1c0673f36cbf571d582cdf39e7dc366e74c4ebb08465"
   },
-  "cases_sha256": "610d8ffe69918254148522d730eb0aba2b6e10921d9374e2de2f616b03ccc9d5",
-  "requests_sha256": "af939ad88446eb83ab416431d6ea3a782a6cb1d79bc51afa275f26fedf3106dc",
+  "cases_sha256": "3e596fbba1813cc239e10e3692a643bf44faed96cb2f517200e148247b06ed7f",
+  "requests_sha256": "ea43a37788b74c9b367ab5f08c42ad2697b2d082a817b8110c5651cf41767b21",
   "generation_model": "gpt-6.2-astra",
   "grading_model": "gpt-6.2-sol",
   "effort": "medium",
@@ -54,5 +60,5 @@
   "stop": "先導配對與評分過門檻才開保留集；已啟動的正式呼叫皆計入且不重試。429 或容量不足後，對未啟動工作依服務端提示等待；單次最多 900 秒，無提示等待 30 秒，超限停止主批。收到中斷保存紀錄，僅接續未啟動的工作；不完整三稿不評分。回歸最後執行並另計。",
   "max_provider_wait_seconds": 900,
   "regression": "Microsoft、lululemon、FedEx、NIKE 排除正式計分。重用之前封存且請求逐位元一致的 V10 與純 Astra，每案只生成一份新版稿，三份一同盲評。Microsoft 主要路徑是最低雲端承諾與 Azure 遷移。lululemon 接受 Peloton 的具名服飾通路或 Studio 內容安排，均需可區分的公開查核。",
-  "sealed_at": "2026-11-23T11:08:46.260469+00:00"
+  "sealed_at": "2026-11-23T11:13:41.645934+00:00"
 }

@@ -420,30 +420,30 @@
     }
   },
   "H-01": {
-    "issuer": "IBM",
+    "issuer": "Corning",
     "split": "holdout",
     "event": {
-      "event_text": "IBM 公布完成一項收購。請提出可供研究員覆核的繁體中文研究首稿。",
-      "as_of": "2025-02-27T23:59:59Z",
-      "research_target": "IBM",
-      "research_horizon": "2026-06-30",
+      "event_text": "Corning 公布擴大一項製造合作。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2025-08-06T23:59:59Z",
+      "research_target": "Corning",
+      "research_horizon": "2026-12-31",
       "search_mode": "off",
       "search_domains": [],
       "documents": [
         {
-          "id": "ibm-release",
-          "source": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp%2C-creates-comprehensive%2C-end-to-end-hybrid-cloud-platform",
+          "id": "corning-release",
+          "source": "https://www.apple.com/newsroom/2025/08/apple-corning-to-manufacture-all-iphone-apple-watch-cover-glass-in-kentucky/",
           "kind": "disclosure",
           "text_format": "summary",
           "availability_basis": "replay_day_end",
           "synthetic": false,
-          "published_at": "2025-02-27T23:59:59Z",
-          "obtained_at": "2025-02-27T23:59:59Z",
+          "published_at": "2025-08-06T23:59:59Z",
+          "obtained_at": "2025-08-06T23:59:59Z",
           "paragraphs": {
-            "deal": "IBM 完成收購 HashiCorp，每股現金 35 美元，企業價值約 64 億美元。",
-            "products": "IBM 以 HashiCorp Terraform 與 Red Hat Ansible Automation Platform 為例，前者佈建混合雲基礎設施，後者負責配置部署及管理。",
-            "other": "公司也提及 watsonx、資料安全、IT automation、Consulting 等潛在協同；公告未給各線附加率、合約價或部署數。",
-            "original": "Terraform and the Red Hat Ansible Automation Platform provide a powerful combination"
+            "commitment": "Apple 宣布新的 25 億美元承諾，與 Corning 合作在肯塔基州 Harrodsburg 工廠生產全球銷售的 iPhone 和 Apple Watch 所有 cover glass。",
+            "plant": "Corning 會建立新的智慧手機玻璃生產線，整個 Harrodsburg 工廠專供 Apple，預期 Corning 在肯塔基州的製造及工程人力增加 50%。",
+            "other": "雙方將在同廠設立 Apple-Corning Innovation Center，研發先進材料。此案屬 Apple 較大的美國投資計畫，公告未列採購單價、出貨節奏或承諾金額如何拆分。",
+            "original": "Corning will now dedicate this entire facility to manufacturing for Apple"
           }
         }
       ],
@@ -453,73 +453,73 @@
       "earnings_plan": null
     },
     "anchors": {
-      "ibm-release": {
-        "location": "公告開頭及產品互補清單",
-        "quote": "Terraform and the Red Hat Ansible Automation Platform provide a powerful combination"
+      "corning-release": {
+        "location": "公告開頭三段，承諾、工廠用途及研發安排",
+        "quote": "Corning will now dedicate this entire facility to manufacturing for Apple"
       }
     },
     "gold": {
       "positive": true,
-      "category": "軟體互補與通路",
-      "standard": "主要路徑為 Terraform 佈建工作負載接到 Red Hat Ansible 的配置或持續管理，透過具名整合部署、交叉採購或付費附加影響 Red Hat 訂閱。以聯合部署或採購證據區分獨立擴大自動化及 HashiCorp 單純併表，規模須待付費轉換與價格。"
+      "category": "客戶承諾、產能配置與出貨",
+      "standard": "主要路徑為 Apple 具名承諾與 Harrodsburg 全廠專供，透過量產、認證及實際出貨影響 Corning 玻璃線利用率、玻璃產品營收或固定成本／毛利。以生產線啟用、供應範圍與新增出貨區分既有外地訂單轉產或僅設研發中心；25 億美元不得視為已實現收入或保證採購額。"
     },
     "input": {
-      "event_text": "IBM 公布完成一項收購。請提出可供研究員覆核的繁體中文研究首稿。",
-      "as_of": "2025-02-27T23:59:59+00:00",
-      "target": "IBM",
-      "horizon": "2026-06-30",
+      "event_text": "Corning 公布擴大一項製造合作。請提出可供研究員覆核的繁體中文研究首稿。",
+      "as_of": "2025-08-06T23:59:59+00:00",
+      "target": "Corning",
+      "horizon": "2026-12-31",
       "evidence": [
         {
-          "id": "ibm-release:deal",
-          "document_id": "ibm-release",
-          "paragraph": "deal",
-          "source": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp%2C-creates-comprehensive%2C-end-to-end-hybrid-cloud-platform",
-          "quote": "IBM 完成收購 HashiCorp，每股現金 35 美元，企業價值約 64 億美元。",
+          "id": "corning-release:commitment",
+          "document_id": "corning-release",
+          "paragraph": "commitment",
+          "source": "https://www.apple.com/newsroom/2025/08/apple-corning-to-manufacture-all-iphone-apple-watch-cover-glass-in-kentucky/",
+          "quote": "Apple 宣布新的 25 億美元承諾，與 Corning 合作在肯塔基州 Harrodsburg 工廠生產全球銷售的 iPhone 和 Apple Watch 所有 cover glass。",
           "synthetic": false,
           "kind": "disclosure",
           "text_format": "summary",
           "availability_basis": "replay_day_end",
-          "published_at": "2025-02-27T23:59:59+00:00",
-          "obtained_at": "2025-02-27T23:59:59+00:00"
+          "published_at": "2025-08-06T23:59:59+00:00",
+          "obtained_at": "2025-08-06T23:59:59+00:00"
         },
         {
-          "id": "ibm-release:original",
-          "document_id": "ibm-release",
+          "id": "corning-release:original",
+          "document_id": "corning-release",
           "paragraph": "original",
-          "source": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp%2C-creates-comprehensive%2C-end-to-end-hybrid-cloud-platform",
-          "quote": "Terraform and the Red Hat Ansible Automation Platform provide a powerful combination",
+          "source": "https://www.apple.com/newsroom/2025/08/apple-corning-to-manufacture-all-iphone-apple-watch-cover-glass-in-kentucky/",
+          "quote": "Corning will now dedicate this entire facility to manufacturing for Apple",
           "synthetic": false,
           "kind": "disclosure",
           "text_format": "summary",
           "availability_basis": "replay_day_end",
-          "published_at": "2025-02-27T23:59:59+00:00",
-          "obtained_at": "2025-02-27T23:59:59+00:00"
+          "published_at": "2025-08-06T23:59:59+00:00",
+          "obtained_at": "2025-08-06T23:59:59+00:00"
         },
         {
-          "id": "ibm-release:other",
-          "document_id": "ibm-release",
+          "id": "corning-release:other",
+          "document_id": "corning-release",
           "paragraph": "other",
-          "source": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp%2C-creates-comprehensive%2C-end-to-end-hybrid-cloud-platform",
-          "quote": "公司也提及 watsonx、資料安全、IT automation、Consulting 等潛在協同；公告未給各線附加率、合約價或部署數。",
+          "source": "https://www.apple.com/newsroom/2025/08/apple-corning-to-manufacture-all-iphone-apple-watch-cover-glass-in-kentucky/",
+          "quote": "雙方將在同廠設立 Apple-Corning Innovation Center，研發先進材料。此案屬 Apple 較大的美國投資計畫，公告未列採購單價、出貨節奏或承諾金額如何拆分。",
           "synthetic": false,
           "kind": "disclosure",
           "text_format": "summary",
           "availability_basis": "replay_day_end",
-          "published_at": "2025-02-27T23:59:59+00:00",
-          "obtained_at": "2025-02-27T23:59:59+00:00"
+          "published_at": "2025-08-06T23:59:59+00:00",
+          "obtained_at": "2025-08-06T23:59:59+00:00"
         },
         {
-          "id": "ibm-release:products",
-          "document_id": "ibm-release",
-          "paragraph": "products",
-          "source": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp%2C-creates-comprehensive%2C-end-to-end-hybrid-cloud-platform",
-          "quote": "IBM 以 HashiCorp Terraform 與 Red Hat Ansible Automation Platform 為例，前者佈建混合雲基礎設施，後者負責配置部署及管理。",
+          "id": "corning-release:plant",
+          "document_id": "corning-release",
+          "paragraph": "plant",
+          "source": "https://www.apple.com/newsroom/2025/08/apple-corning-to-manufacture-all-iphone-apple-watch-cover-glass-in-kentucky/",
+          "quote": "Corning 會建立新的智慧手機玻璃生產線，整個 Harrodsburg 工廠專供 Apple，預期 Corning 在肯塔基州的製造及工程人力增加 50%。",
           "synthetic": false,
           "kind": "disclosure",
           "text_format": "summary",
           "availability_basis": "replay_day_end",
-          "published_at": "2025-02-27T23:59:59+00:00",
-          "obtained_at": "2025-02-27T23:59:59+00:00"
+          "published_at": "2025-08-06T23:59:59+00:00",
+          "obtained_at": "2025-08-06T23:59:59+00:00"
         }
       ]
     }

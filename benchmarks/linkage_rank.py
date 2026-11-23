@@ -21,7 +21,7 @@ from research_app.business_linkage import (
 )
 from research_app.schema import Event as ResearchEvent, Schema
 
-OUT = Path("output/linkage-rank")
+OUT = Path("output/linkage-rank-v11")
 PREVIOUS = Path("docs/linkage-depth")
 ARMS = ("astra", "current", "ranked")
 LABELS = ("A", "B", "C")
@@ -106,6 +106,12 @@ def seal(root):
             equal.admission.__file__, Path(equal.adapters.__file__).with_name("business_linkage.py")]
     rules = {
         "hypothesis": "新版先比較公告明示的合約、資源及具名運作安排，再排序。保留集正例應比現版多答對至少一案，負例不退步。",
+        "amendment": {
+            "initial_seal_commit": "fbb016d",
+            "scope": "保留集推論前將曾用於 V9 服務探針的 IBM 換成 Corning。沿用原封存四案先導的輸入、請求、門檻及執行回傳。",
+            "unchanged_pilot_cases_sha256": equal.digest({key: cases[key] for key in cases if key.startswith("P-")}),
+            "unchanged_pilot_requests_sha256": equal.digest({key: requests[key] for key in requests if key.startswith("P-")}),
+        },
         "source_sha256": {Path(path).name: hashlib.sha256(Path(path).read_bytes()).hexdigest() for path in code},
         "cases_sha256": equal.digest(cases), "requests_sha256": equal.digest(requests),
         "generation_model": equal.hypothesis.MODEL, "grading_model": equal.hypothesis.JUDGE,
