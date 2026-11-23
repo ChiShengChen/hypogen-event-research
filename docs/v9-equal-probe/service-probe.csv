@@ -1,0 +1,2 @@
+﻿case,status,reason,availability_source,started_at,finished_at,elapsed_seconds,prompt_bytes,request_sha256,input_tokens,cached_input_tokens,output_tokens,reasoning_output_tokens,reported_retry_wait_seconds,decision,retry_at
+P-01,completed,,,2026-11-23T09:06:05.042348+00:00,2026-11-23T09:07:05.157143+00:00,60.113,9691,decf3c5f27d95362c240cf09cc09a685fd184b392ed8245572402f46c331f23f,17766,0,2399,54,,,

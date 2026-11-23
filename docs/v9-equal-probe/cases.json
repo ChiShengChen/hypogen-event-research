@@ -1,0 +1,1039 @@
+{
+  "V-01": {
+    "name": "UPS 客戶量縮與網路重整",
+    "split": "pilot",
+    "anchors": {
+      "ups-q4:volume": "lower its volume by more than 50% by the second half of 2026"
+    },
+    "input": {
+      "event_text": "UPS 宣布計畫削減最大客戶的包裹量，並重新配置美國配送網路。",
+      "as_of": "2025-01-30T23:59:59+00:00",
+      "target": "UPS",
+      "horizon": "2026-03-31",
+      "evidence": [
+        {
+          "id": "ups-q4:guidance",
+          "document_id": "ups-q4",
+          "paragraph": "guidance",
+          "source": "https://investors.ups.com/news-events/press-releases/detail/2135/ups-releases-4q-2024-earnings-and-provides-2025-guidance",
+          "quote": "UPS 預估 2025 全年合併營收約 890 億美元，營業利益率約 10.8%。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2025-01-30T23:59:59+00:00",
+          "obtained_at": "2025-01-30T23:59:59+00:00"
+        },
+        {
+          "id": "ups-q4:network",
+          "document_id": "ups-q4",
+          "paragraph": "network",
+          "source": "https://investors.ups.com/news-events/press-releases/detail/2135/ups-releases-4q-2024-earnings-and-provides-2025-guidance",
+          "quote": "UPS 宣布重整美國網路，並計畫透過多年流程重設創造約 10 億美元節省。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2025-01-30T23:59:59+00:00",
+          "obtained_at": "2025-01-30T23:59:59+00:00"
+        },
+        {
+          "id": "ups-q4:volume",
+          "document_id": "ups-q4",
+          "paragraph": "volume",
+          "source": "https://investors.ups.com/news-events/press-releases/detail/2135/ups-releases-4q-2024-earnings-and-provides-2025-guidance",
+          "quote": "UPS 與最大客戶原則上達成協議，計畫至 2026 年下半年將該客戶包裹量減少逾 50%。2025 年 1 月 1 日起 UPS 將 SurePost 全數改為自行配送。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2025-01-30T23:59:59+00:00",
+          "obtained_at": "2025-01-30T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "UPS 宣布計畫削減最大客戶的包裹量，並重新配置美國配送網路。",
+      "as_of": "2025-01-30T23:59:59Z",
+      "research_target": "UPS",
+      "research_horizon": "2026-03-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "ups-q4",
+          "source": "https://investors.ups.com/news-events/press-releases/detail/2135/ups-releases-4q-2024-earnings-and-provides-2025-guidance",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2025-01-30T23:59:59Z",
+          "obtained_at": "2025-01-30T23:59:59Z",
+          "paragraphs": {
+            "volume": "UPS 與最大客戶原則上達成協議，計畫至 2026 年下半年將該客戶包裹量減少逾 50%。2025 年 1 月 1 日起 UPS 將 SurePost 全數改為自行配送。",
+            "network": "UPS 宣布重整美國網路，並計畫透過多年流程重設創造約 10 億美元節省。",
+            "guidance": "UPS 預估 2025 全年合併營收約 890 億美元，營業利益率約 10.8%。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": []
+  },
+  "V-02": {
+    "name": "Disney 串流與分部指引",
+    "split": "pilot",
+    "anchors": {
+      "dis-fy24:fy25": "Entertainment DTC operating income increase of approximately $875 million versus fiscal 2024"
+    },
+    "input": {
+      "event_text": "Disney 公布 2024 財年第四季財報，並發布下一財年串流和體驗部門指引。",
+      "as_of": "2024-11-14T23:59:59+00:00",
+      "target": "Disney",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "dis-fy24:experiences",
+          "document_id": "dis-fy24",
+          "paragraph": "experiences",
+          "source": "https://investors.thewaltdisneycompany.com/news/news-details/2024/The-Walt-Disney-Company-Reports-Fourth-Quarter-and-Full-Year-Earnings-for-Fiscal-2024-11-14-2024/",
+          "quote": "FY2024 Q4 Experiences 營業利益 17 億美元，年減 6%。公司預計 FY2025 該部門營業利益年增 6% 至 8%，成長偏向下半財年。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-14T23:59:59+00:00",
+          "obtained_at": "2024-11-14T23:59:59+00:00"
+        },
+        {
+          "id": "dis-fy24:fy25",
+          "document_id": "dis-fy24",
+          "paragraph": "fy25",
+          "source": "https://investors.thewaltdisneycompany.com/news/news-details/2024/The-Walt-Disney-Company-Reports-Fourth-Quarter-and-Full-Year-Earnings-for-Fiscal-2024-11-14-2024/",
+          "quote": "管理層預期 FY2025 Entertainment DTC 營業利益年增約 8.75 億美元。比較基期包含印度 DTC 約 2 億美元負面影響。管理層同時預期 FY2025 Q1 Disney+ Core 訂戶季減。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-14T23:59:59+00:00",
+          "obtained_at": "2024-11-14T23:59:59+00:00"
+        },
+        {
+          "id": "dis-fy24:streaming",
+          "document_id": "dis-fy24",
+          "paragraph": "streaming",
+          "source": "https://investors.thewaltdisneycompany.com/news/news-details/2024/The-Walt-Disney-Company-Reports-Fourth-Quarter-and-Full-Year-Earnings-for-Fiscal-2024-11-14-2024/",
+          "quote": "Disney FY2024 Q4 Entertainment DTC 廣告收入年增 14%，營業利益 2.53 億美元。合併 DTC 串流業務營業利益 3.21 億美元，兩者口徑不同。Disney+ Core 季末付費訂戶逾 1.2 億，較上一季增加 440 萬。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-11-14T23:59:59+00:00",
+          "obtained_at": "2024-11-14T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "Disney 公布 2024 財年第四季財報，並發布下一財年串流和體驗部門指引。",
+      "as_of": "2024-11-14T23:59:59Z",
+      "research_target": "Disney",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "dis-fy24",
+          "source": "https://investors.thewaltdisneycompany.com/news/news-details/2024/The-Walt-Disney-Company-Reports-Fourth-Quarter-and-Full-Year-Earnings-for-Fiscal-2024-11-14-2024/",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-11-14T23:59:59Z",
+          "obtained_at": "2024-11-14T23:59:59Z",
+          "paragraphs": {
+            "streaming": "Disney FY2024 Q4 Entertainment DTC 廣告收入年增 14%，營業利益 2.53 億美元。合併 DTC 串流業務營業利益 3.21 億美元，兩者口徑不同。Disney+ Core 季末付費訂戶逾 1.2 億，較上一季增加 440 萬。",
+            "fy25": "管理層預期 FY2025 Entertainment DTC 營業利益年增約 8.75 億美元。比較基期包含印度 DTC 約 2 億美元負面影響。管理層同時預期 FY2025 Q1 Disney+ Core 訂戶季減。",
+            "experiences": "FY2024 Q4 Experiences 營業利益 17 億美元，年減 6%。公司預計 FY2025 該部門營業利益年增 6% 至 8%，成長偏向下半財年。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": []
+  },
+  "V-03": {
+    "name": "Novo Nordisk 製造據點交易",
+    "split": "pilot",
+    "anchors": {
+      "novo-sites:capacity": "The acquisition is expected to gradually increase Novo Nordisk’s filling capacity from 2026 and onwards."
+    },
+    "input": {
+      "event_text": "Novo Nordisk 宣布簽約收購三座藥品充填及成品製造廠。",
+      "as_of": "2024-02-05T23:59:59+00:00",
+      "target": "Novo Nordisk",
+      "horizon": "2025-06-30",
+      "evidence": [
+        {
+          "id": "novo-sites:acquisition",
+          "document_id": "novo-sites",
+          "paragraph": "acquisition",
+          "source": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=167017&stream=top",
+          "quote": "Novo Nordisk 同意以約 110 億美元預付款向 Novo Holdings 購買三座充填及成品製造廠。該購買與 Novo Holdings 收購 Catalent 的交易相關。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-02-05T23:59:59+00:00",
+          "obtained_at": "2024-02-05T23:59:59+00:00"
+        },
+        {
+          "id": "novo-sites:capacity",
+          "document_id": "novo-sites",
+          "paragraph": "capacity",
+          "source": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=167017&stream=top",
+          "quote": "三座廠當時已與 Novo Nordisk 合作。管理層預期自 2026 年起逐步增加充填產能。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-02-05T23:59:59+00:00",
+          "obtained_at": "2024-02-05T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "Novo Nordisk 宣布簽約收購三座藥品充填及成品製造廠。",
+      "as_of": "2024-02-05T23:59:59Z",
+      "research_target": "Novo Nordisk",
+      "research_horizon": "2025-06-30",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "novo-sites",
+          "source": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=167017&stream=top",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-02-05T23:59:59Z",
+          "obtained_at": "2024-02-05T23:59:59Z",
+          "paragraphs": {
+            "acquisition": "Novo Nordisk 同意以約 110 億美元預付款向 Novo Holdings 購買三座充填及成品製造廠。該購買與 Novo Holdings 收購 Catalent 的交易相關。",
+            "capacity": "三座廠當時已與 Novo Nordisk 合作。管理層預期自 2026 年起逐步增加充填產能。"
+          }
+        },
+        {
+          "id": "novo-cleared",
+          "source": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=915078",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-12-14T23:59:59Z",
+          "obtained_at": "2024-12-14T23:59:59Z",
+          "paragraphs": {
+            "update": "Novo Nordisk 後續公告相關交易已取得完成所需批准，並把三座廠的收購價更新為 117 億美元。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": [
+      {
+        "id": "novo-cleared:update",
+        "document_id": "novo-cleared",
+        "paragraph": "update",
+        "source": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=915078",
+        "quote": "Novo Nordisk 後續公告相關交易已取得完成所需批准，並把三座廠的收購價更新為 117 億美元。",
+        "synthetic": false,
+        "kind": "disclosure",
+        "text_format": "summary",
+        "availability_basis": "replay_day_end",
+        "published_at": "2024-12-14T23:59:59+00:00",
+        "obtained_at": "2024-12-14T23:59:59+00:00"
+      }
+    ]
+  },
+  "V-04": {
+    "name": "Ford 電動車投資重整",
+    "split": "pilot",
+    "anchors": {
+      "ford-ev-strategy:plans": "an all-new commercial van that will begin production in 2026 in Ohio"
+    },
+    "input": {
+      "event_text": "Ford 宣布取消原計畫的純電三排座 SUV，並重排電動車投資。",
+      "as_of": "2024-08-21T23:59:59+00:00",
+      "target": "Ford",
+      "horizon": "2025-10-31",
+      "evidence": [
+        {
+          "id": "ford-ev-8k:charges",
+          "document_id": "ford-ev-8k",
+          "paragraph": "charges",
+          "source": "https://www.sec.gov/Archives/edgar/data/37996/000003799624000150/f-20240819.htm",
+          "quote": "Ford 估計 2024 Q3 將就原計畫純電三排座 SUV 的製造及供應商模具資產認列約 4 億美元減記。另可能產生最多約 15 億美元額外費用及現金支出。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-08-21T23:59:59+00:00",
+          "obtained_at": "2024-08-21T23:59:59+00:00"
+        },
+        {
+          "id": "ford-ev-strategy:plans",
+          "document_id": "ford-ev-strategy",
+          "paragraph": "plans",
+          "source": "https://www.sec.gov/Archives/edgar/data/37996/000003799624000150/exhibit99toaugust2120248.htm",
+          "quote": "Ford 計畫在 2026 年於俄亥俄州開始生產新款純電商用廂型車，隨後於 2027 年推出兩款電動皮卡。公司計畫把純電車相關資本支出占年度資本支出的比例從約 40% 下調至約 30%。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-08-21T23:59:59+00:00",
+          "obtained_at": "2024-08-21T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "Ford 宣布取消原計畫的純電三排座 SUV，並重排電動車投資。",
+      "as_of": "2024-08-21T23:59:59Z",
+      "research_target": "Ford",
+      "research_horizon": "2025-10-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "ford-ev-8k",
+          "source": "https://www.sec.gov/Archives/edgar/data/37996/000003799624000150/f-20240819.htm",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-08-21T23:59:59Z",
+          "obtained_at": "2024-08-21T23:59:59Z",
+          "paragraphs": {
+            "charges": "Ford 估計 2024 Q3 將就原計畫純電三排座 SUV 的製造及供應商模具資產認列約 4 億美元減記。另可能產生最多約 15 億美元額外費用及現金支出。"
+          }
+        },
+        {
+          "id": "ford-ev-strategy",
+          "source": "https://www.sec.gov/Archives/edgar/data/37996/000003799624000150/exhibit99toaugust2120248.htm",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-08-21T23:59:59Z",
+          "obtained_at": "2024-08-21T23:59:59Z",
+          "paragraphs": {
+            "plans": "Ford 計畫在 2026 年於俄亥俄州開始生產新款純電商用廂型車，隨後於 2027 年推出兩款電動皮卡。公司計畫把純電車相關資本支出占年度資本支出的比例從約 40% 下調至約 30%。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": []
+  },
+  "E-01": {
+    "name": "Adobe｜監管與併購終止",
+    "split": "holdout",
+    "anchors": {
+      "adbe-termination:fee": "a cash payment to Figma in the previously agreed amount of one billion dollars",
+      "adbe-joint-release:regulation": "there is no clear path to receive necessary regulatory approvals"
+    },
+    "sector": "軟體",
+    "input": {
+      "event_text": "Adobe 與 Figma 宣布終止原收購協議。這個事件對 Adobe 的營運可能有哪些不同影響？",
+      "as_of": "2023-12-18T23:59:59+00:00",
+      "target": "Adobe",
+      "horizon": "2024-12-31",
+      "evidence": [
+        {
+          "id": "adbe-termination:fee",
+          "document_id": "adbe-termination",
+          "paragraph": "fee",
+          "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000254/adbe-20231217.htm",
+          "quote": "Adobe 公布雙方在 12 月 17 日簽署終止協議。Adobe 須在三個營業日內向 Figma 支付 10 億美元現金。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-12-18T23:59:59+00:00",
+          "obtained_at": "2023-12-18T23:59:59+00:00"
+        },
+        {
+          "id": "adbe-joint-release:regulation",
+          "document_id": "adbe-joint-release",
+          "paragraph": "regulation",
+          "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000254/adbedecember182023pressrel.htm",
+          "quote": "雙方表示無法看到取得英國競爭及市場管理局與歐盟執委會所需批准的明確途徑。原協議擬以現金與股票收購 Figma。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-12-18T23:59:59+00:00",
+          "obtained_at": "2023-12-18T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "Adobe 與 Figma 宣布終止原收購協議。這個事件對 Adobe 的營運可能有哪些不同影響？",
+      "as_of": "2023-12-18T23:59:59Z",
+      "research_target": "Adobe",
+      "research_horizon": "2024-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "adbe-termination",
+          "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000254/adbe-20231217.htm",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2023-12-18T23:59:59Z",
+          "obtained_at": "2023-12-18T23:59:59Z",
+          "paragraphs": {
+            "fee": "Adobe 公布雙方在 12 月 17 日簽署終止協議。Adobe 須在三個營業日內向 Figma 支付 10 億美元現金。"
+          }
+        },
+        {
+          "id": "adbe-joint-release",
+          "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000254/adbedecember182023pressrel.htm",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2023-12-18T23:59:59Z",
+          "obtained_at": "2023-12-18T23:59:59Z",
+          "paragraphs": {
+            "regulation": "雙方表示無法看到取得英國競爭及市場管理局與歐盟執委會所需批准的明確途徑。原協議擬以現金與股票收購 Figma。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": []
+  },
+  "E-02": {
+    "name": "ExxonMobil｜資產整併",
+    "split": "holdout",
+    "anchors": {
+      "xom-pioneer:output": "will more than double to 1.3 million barrels of oil equivalent per day"
+    },
+    "sector": "石油與天然氣",
+    "input": {
+      "event_text": "ExxonMobil 宣布完成收購 Pioneer Natural Resources。分析其營運傳導。",
+      "as_of": "2024-05-03T23:59:59+00:00",
+      "target": "ExxonMobil",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "xom-pioneer:acreage",
+          "document_id": "xom-pioneer",
+          "paragraph": "acreage",
+          "source": "https://corporate.exxonmobil.com/news/news-releases/2024/0503_exxonmobil-completes-acquisition-of-pioneer-natural-resources",
+          "quote": "公告把相鄰探勘資產、技術與營運能力結合，列為交易可提高資源回收的依據。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-05-03T23:59:59+00:00",
+          "obtained_at": "2024-05-03T23:59:59+00:00"
+        },
+        {
+          "id": "xom-pioneer:output",
+          "document_id": "xom-pioneer",
+          "paragraph": "output",
+          "source": "https://corporate.exxonmobil.com/news/news-releases/2024/0503_exxonmobil-completes-acquisition-of-pioneer-natural-resources",
+          "quote": "公司以 2023 年產量估算，交易使二疊紀盆地日產量增逾一倍至 130 萬桶油當量，初估 2027 年達約 200 萬桶油當量。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-05-03T23:59:59+00:00",
+          "obtained_at": "2024-05-03T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "ExxonMobil 宣布完成收購 Pioneer Natural Resources。分析其營運傳導。",
+      "as_of": "2024-05-03T23:59:59Z",
+      "research_target": "ExxonMobil",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "xom-pioneer",
+          "source": "https://corporate.exxonmobil.com/news/news-releases/2024/0503_exxonmobil-completes-acquisition-of-pioneer-natural-resources",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-05-03T23:59:59Z",
+          "obtained_at": "2024-05-03T23:59:59Z",
+          "paragraphs": {
+            "output": "公司以 2023 年產量估算，交易使二疊紀盆地日產量增逾一倍至 130 萬桶油當量，初估 2027 年達約 200 萬桶油當量。",
+            "acreage": "公告把相鄰探勘資產、技術與營運能力結合，列為交易可提高資源回收的依據。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": []
+  },
+  "E-03": {
+    "name": "Starbucks｜營運重整與指引撤回",
+    "split": "holdout",
+    "anchors": {
+      "sbux-prelim:guidance": "guidance will be suspended for the full fiscal year 2025"
+    },
+    "sector": "餐飲零售",
+    "input": {
+      "event_text": "Starbucks 公布初步第四季數字並暫停下一財年指引。分析重整可能如何影響營運。",
+      "as_of": "2024-10-22T23:59:59+00:00",
+      "target": "Starbucks",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "sbux-prelim:drivers",
+          "document_id": "sbux-prelim",
+          "paragraph": "drivers",
+          "source": "https://about.starbucks.com/press/2024/starbucks-reports-preliminary-q4-and-full-fiscal-year-2024-results/",
+          "quote": "公司將表現歸因於客流走弱、加碼投入未改善顧客行為，以及中國景氣與競爭壓力。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-10-22T23:59:59+00:00",
+          "obtained_at": "2024-10-22T23:59:59+00:00"
+        },
+        {
+          "id": "sbux-prelim:guidance",
+          "document_id": "sbux-prelim",
+          "paragraph": "guidance",
+          "source": "https://about.starbucks.com/press/2024/starbucks-reports-preliminary-q4-and-full-fiscal-year-2024-results/",
+          "quote": "公司因執行長交接與目前營運情況，暫停整個 2025 財年的指引。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-10-22T23:59:59+00:00",
+          "obtained_at": "2024-10-22T23:59:59+00:00"
+        },
+        {
+          "id": "sbux-prelim:sales",
+          "document_id": "sbux-prelim",
+          "paragraph": "sales",
+          "source": "https://about.starbucks.com/press/2024/starbucks-reports-preliminary-q4-and-full-fiscal-year-2024-results/",
+          "quote": "第四季全球同店銷售年減 7%，美國同店銷售年減 6%，中國同店銷售年減 14%。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-10-22T23:59:59+00:00",
+          "obtained_at": "2024-10-22T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "Starbucks 公布初步第四季數字並暫停下一財年指引。分析重整可能如何影響營運。",
+      "as_of": "2024-10-22T23:59:59Z",
+      "research_target": "Starbucks",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "sbux-prelim",
+          "source": "https://about.starbucks.com/press/2024/starbucks-reports-preliminary-q4-and-full-fiscal-year-2024-results/",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-10-22T23:59:59Z",
+          "obtained_at": "2024-10-22T23:59:59Z",
+          "paragraphs": {
+            "sales": "第四季全球同店銷售年減 7%，美國同店銷售年減 6%，中國同店銷售年減 14%。",
+            "drivers": "公司將表現歸因於客流走弱、加碼投入未改善顧客行為，以及中國景氣與競爭壓力。",
+            "guidance": "公司因執行長交接與目前營運情況，暫停整個 2025 財年的指引。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": []
+  },
+  "E-04": {
+    "name": "Visa｜競爭執法",
+    "split": "holdout",
+    "anchors": {
+      "visa-doj:allegation": "filed a civil antitrust lawsuit today against Visa",
+      "visa-q3:baseline": "Data processing revenue rose 9% over the prior year to $4.5 billion."
+    },
+    "sector": "支付網路",
+    "input": {
+      "event_text": "美國司法部對 Visa 的扣帳卡網路業務提起民事反壟斷訴訟。分析這項事件可能如何影響 Visa。",
+      "as_of": "2024-09-24T23:59:59+00:00",
+      "target": "Visa",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "visa-doj:allegation",
+          "document_id": "visa-doj",
+          "paragraph": "allegation",
+          "source": "https://www.justice.gov/archives/opa/pr/justice-department-sues-visa-monopolizing-debit-markets",
+          "quote": "司法部提出民事訴訟，指控 Visa 在扣帳卡網路市場壟斷及有其他違法行為。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-09-24T23:59:59+00:00",
+          "obtained_at": "2024-09-24T23:59:59+00:00"
+        },
+        {
+          "id": "visa-doj:contracts",
+          "document_id": "visa-doj",
+          "paragraph": "contracts",
+          "source": "https://www.justice.gov/archives/opa/pr/justice-department-sues-visa-monopolizing-debit-markets",
+          "quote": "起訴指稱 Visa 以交易量承諾約束商戶、收單機構與發卡機構。這些是司法部指控。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-09-24T23:59:59+00:00",
+          "obtained_at": "2024-09-24T23:59:59+00:00"
+        },
+        {
+          "id": "visa-q3:baseline",
+          "document_id": "visa-q3",
+          "paragraph": "baseline",
+          "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316124000040/q32024earningsrelease.htm",
+          "quote": "Visa 第三財季合併淨營收 89 億美元，年增 10%；資料處理收入 45 億美元，年增 9%。這些是全球口徑。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-07-23T23:59:59+00:00",
+          "obtained_at": "2024-07-23T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "美國司法部對 Visa 的扣帳卡網路業務提起民事反壟斷訴訟。分析這項事件可能如何影響 Visa。",
+      "as_of": "2024-09-24T23:59:59Z",
+      "research_target": "Visa",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "visa-doj",
+          "source": "https://www.justice.gov/archives/opa/pr/justice-department-sues-visa-monopolizing-debit-markets",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-09-24T23:59:59Z",
+          "obtained_at": "2024-09-24T23:59:59Z",
+          "paragraphs": {
+            "allegation": "司法部提出民事訴訟，指控 Visa 在扣帳卡網路市場壟斷及有其他違法行為。",
+            "contracts": "起訴指稱 Visa 以交易量承諾約束商戶、收單機構與發卡機構。這些是司法部指控。"
+          }
+        },
+        {
+          "id": "visa-q3",
+          "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316124000040/q32024earningsrelease.htm",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-07-23T23:59:59Z",
+          "obtained_at": "2024-07-23T23:59:59Z",
+          "paragraphs": {
+            "baseline": "Visa 第三財季合併淨營收 89 億美元，年增 10%；資料處理收入 45 億美元，年增 9%。這些是全球口徑。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": []
+  },
+  "E-05": {
+    "name": "Johnson & Johnson｜新技術整併",
+    "split": "holdout",
+    "anchors": {
+      "jnj-shockwave-close:portfolio": "Completes Acquisition of Shockwave Medical",
+      "jnj-shockwave-terms:terms": "corresponding to an enterprise value of approximately $13.1 billion including cash acquired"
+    },
+    "sector": "醫療器材",
+    "input": {
+      "event_text": "Johnson & Johnson 完成收購 Shockwave Medical。分析其醫療器材業務可能出現的不同變化。",
+      "as_of": "2024-05-31T23:59:59+00:00",
+      "target": "Johnson & Johnson",
+      "horizon": "2025-12-31",
+      "evidence": [
+        {
+          "id": "jnj-shockwave-close:portfolio",
+          "document_id": "jnj-shockwave-close",
+          "paragraph": "portfolio",
+          "source": "https://www.investor.jnj.com/investor-news/news-details/2024/Johnson--Johnson-Completes-Acquisition-of-Shockwave-Medical/default.aspx",
+          "quote": "Johnson & Johnson 公布完成交易，Shockwave 的血管內震波碎石（IVL）技術補充其心血管介入器材組合。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-05-31T23:59:59+00:00",
+          "obtained_at": "2024-05-31T23:59:59+00:00"
+        },
+        {
+          "id": "jnj-shockwave-terms:terms",
+          "document_id": "jnj-shockwave-terms",
+          "paragraph": "terms",
+          "source": "https://www.investor.jnj.com/investor-news/news-details/2024/Johnson--Johnson-to-Acquire-Shockwave-Medical/default.aspx",
+          "quote": "交易對價為每股 335 美元現金。包含取得的現金，企業價值約 131 億美元。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-04-05T23:59:59+00:00",
+          "obtained_at": "2024-04-05T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "Johnson & Johnson 完成收購 Shockwave Medical。分析其醫療器材業務可能出現的不同變化。",
+      "as_of": "2024-05-31T23:59:59Z",
+      "research_target": "Johnson & Johnson",
+      "research_horizon": "2025-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "jnj-shockwave-close",
+          "source": "https://www.investor.jnj.com/investor-news/news-details/2024/Johnson--Johnson-Completes-Acquisition-of-Shockwave-Medical/default.aspx",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-05-31T23:59:59Z",
+          "obtained_at": "2024-05-31T23:59:59Z",
+          "paragraphs": {
+            "portfolio": "Johnson & Johnson 公布完成交易，Shockwave 的血管內震波碎石（IVL）技術補充其心血管介入器材組合。"
+          }
+        },
+        {
+          "id": "jnj-shockwave-terms",
+          "source": "https://www.investor.jnj.com/investor-news/news-details/2024/Johnson--Johnson-to-Acquire-Shockwave-Medical/default.aspx",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-04-05T23:59:59Z",
+          "obtained_at": "2024-04-05T23:59:59Z",
+          "paragraphs": {
+            "terms": "交易對價為每股 335 美元現金。包含取得的現金，企業價值約 131 億美元。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": []
+  },
+  "E-06": {
+    "name": "Spotify｜訂閱定價",
+    "split": "holdout",
+    "anchors": {
+      "spot-us-prices:rollout": "Over the next month, subscribers in the U.S. will receive an email",
+      "spot-prior-prices:comparison": "$10.99 $14.99 $16.99 $5.99"
+    },
+    "sector": "音訊串流",
+    "input": {
+      "event_text": "Spotify 公布美國 Premium 套餐調價。分析調價可能如何影響訂閱業務。",
+      "as_of": "2024-06-03T23:59:59+00:00",
+      "target": "Spotify",
+      "horizon": "2025-06-30",
+      "evidence": [
+        {
+          "id": "spot-us-prices:prices",
+          "document_id": "spot-us-prices",
+          "paragraph": "prices",
+          "source": "https://newsroom.spotify.com/2024-06-03/adjusting-spotify-premium-prices-in-the-us/",
+          "quote": "美國新訂戶的 Individual、Duo、Family、Student 價格分別為 11.99、16.99、19.99、5.99 美元。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-06-03T23:59:59+00:00",
+          "obtained_at": "2024-06-03T23:59:59+00:00"
+        },
+        {
+          "id": "spot-us-prices:rollout",
+          "document_id": "spot-us-prices",
+          "paragraph": "rollout",
+          "source": "https://newsroom.spotify.com/2024-06-03/adjusting-spotify-premium-prices-in-the-us/",
+          "quote": "Spotify 說未來一個月會以電子郵件通知美國現有訂戶。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-06-03T23:59:59+00:00",
+          "obtained_at": "2024-06-03T23:59:59+00:00"
+        },
+        {
+          "id": "spot-prior-prices:comparison",
+          "document_id": "spot-prior-prices",
+          "paragraph": "comparison",
+          "source": "https://newsroom.spotify.com/2023-07-24/adjusting-our-spotify-premium-prices/",
+          "quote": "2023 年公告的同四種美國套餐價格分別為 10.99、14.99、16.99、5.99 美元。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-07-24T23:59:59+00:00",
+          "obtained_at": "2023-07-24T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "Spotify 公布美國 Premium 套餐調價。分析調價可能如何影響訂閱業務。",
+      "as_of": "2024-06-03T23:59:59Z",
+      "research_target": "Spotify",
+      "research_horizon": "2025-06-30",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "spot-us-prices",
+          "source": "https://newsroom.spotify.com/2024-06-03/adjusting-spotify-premium-prices-in-the-us/",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-06-03T23:59:59Z",
+          "obtained_at": "2024-06-03T23:59:59Z",
+          "paragraphs": {
+            "prices": "美國新訂戶的 Individual、Duo、Family、Student 價格分別為 11.99、16.99、19.99、5.99 美元。",
+            "rollout": "Spotify 說未來一個月會以電子郵件通知美國現有訂戶。"
+          }
+        },
+        {
+          "id": "spot-prior-prices",
+          "source": "https://newsroom.spotify.com/2023-07-24/adjusting-our-spotify-premium-prices/",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2023-07-24T23:59:59Z",
+          "obtained_at": "2023-07-24T23:59:59Z",
+          "paragraphs": {
+            "comparison": "2023 年公告的同四種美國套餐價格分別為 10.99、14.99、16.99、5.99 美元。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": []
+  },
+  "E-07": {
+    "name": "Delta Air Lines｜營運中斷",
+    "split": "holdout",
+    "anchors": {
+      "dal-outage:revenue": "the direct revenue impact of the incident is estimated to be $380 million"
+    },
+    "sector": "航空",
+    "input": {
+      "event_text": "Delta Air Lines 公布 7 月資訊系統中斷的估計財務影響。分析這項事件可能如何傳導。",
+      "as_of": "2024-08-08T23:59:59+00:00",
+      "target": "Delta Air Lines",
+      "horizon": "2025-06-30",
+      "evidence": [
+        {
+          "id": "dal-outage:cancellations",
+          "document_id": "dal-outage",
+          "paragraph": "cancellations",
+          "source": "https://www.sec.gov/Archives/edgar/data/27904/000168316824005369/delta_8k.htm",
+          "quote": "Delta 報告 7 月 19 日起受到 CrowdStrike 相關故障影響，約 7,000 個航班在五天內取消。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-08-08T23:59:59+00:00",
+          "obtained_at": "2024-08-08T23:59:59+00:00"
+        },
+        {
+          "id": "dal-outage:costs",
+          "document_id": "dal-outage",
+          "paragraph": "costs",
+          "source": "https://www.sec.gov/Archives/edgar/data/27904/000168316824005369/delta_8k.htm",
+          "quote": "公司估計新增約 1.7 億美元非燃油支出，部分由取消航班減少燃油成本抵減。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-08-08T23:59:59+00:00",
+          "obtained_at": "2024-08-08T23:59:59+00:00"
+        },
+        {
+          "id": "dal-outage:revenue",
+          "document_id": "dal-outage",
+          "paragraph": "revenue",
+          "source": "https://www.sec.gov/Archives/edgar/data/27904/000168316824005369/delta_8k.htm",
+          "quote": "公司估計 9 月季度有 3.8 億美元直接營收影響，主要來自退款及現金或 SkyMiles 補償。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2024-08-08T23:59:59+00:00",
+          "obtained_at": "2024-08-08T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "Delta Air Lines 公布 7 月資訊系統中斷的估計財務影響。分析這項事件可能如何傳導。",
+      "as_of": "2024-08-08T23:59:59Z",
+      "research_target": "Delta Air Lines",
+      "research_horizon": "2025-06-30",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "dal-outage",
+          "source": "https://www.sec.gov/Archives/edgar/data/27904/000168316824005369/delta_8k.htm",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2024-08-08T23:59:59Z",
+          "obtained_at": "2024-08-08T23:59:59Z",
+          "paragraphs": {
+            "cancellations": "Delta 報告 7 月 19 日起受到 CrowdStrike 相關故障影響，約 7,000 個航班在五天內取消。",
+            "revenue": "公司估計 9 月季度有 3.8 億美元直接營收影響，主要來自退款及現金或 SkyMiles 補償。",
+            "costs": "公司估計新增約 1.7 億美元非燃油支出，部分由取消航班減少燃油成本抵減。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": []
+  },
+  "E-08": {
+    "name": "Ørsted｜專案取消與資本配置",
+    "split": "holdout",
+    "anchors": {
+      "orsted-us-wind:portfolio": "has taken final investment decision on the Revolution Wind project"
+    },
+    "sector": "再生能源",
+    "input": {
+      "event_text": "Ørsted 宣布終止兩個美國離岸風電案，並對另一個專案做出最終投資決策。分析專案組合變更。",
+      "as_of": "2023-10-31T23:59:59+00:00",
+      "target": "Ørsted",
+      "horizon": "2024-12-31",
+      "evidence": [
+        {
+          "id": "orsted-us-wind:impairment",
+          "document_id": "orsted-us-wind",
+          "paragraph": "impairment",
+          "source": "https://orsted.com/en/company-announcement-list/2023/10/oersted-ceases-development-of-its-us-offshore-wind-73751",
+          "quote": "首九個月總減損為 284 億丹麥克朗，其中 199 億與 Ocean Wind 1 有關。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-10-31T23:59:59+00:00",
+          "obtained_at": "2023-10-31T23:59:59+00:00"
+        },
+        {
+          "id": "orsted-us-wind:portfolio",
+          "document_id": "orsted-us-wind",
+          "paragraph": "portfolio",
+          "source": "https://orsted.com/en/company-announcement-list/2023/10/oersted-ceases-development-of-its-us-offshore-wind-73751",
+          "quote": "董事會決議停止 Ocean Wind 1 和 2，並對 Revolution Wind 做出最終投資決策。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-10-31T23:59:59+00:00",
+          "obtained_at": "2023-10-31T23:59:59+00:00"
+        },
+        {
+          "id": "orsted-us-wind:provision",
+          "document_id": "orsted-us-wind",
+          "paragraph": "provision",
+          "source": "https://orsted.com/en/company-announcement-list/2023/10/oersted-ceases-development-of-its-us-offshore-wind-73751",
+          "quote": "Ocean Wind 1 的潛在解約成本準備估計約 80 至 110 億丹麥克朗，影響第四季 EBITDA。",
+          "synthetic": false,
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "published_at": "2023-10-31T23:59:59+00:00",
+          "obtained_at": "2023-10-31T23:59:59+00:00"
+        }
+      ]
+    },
+    "event": {
+      "event_text": "Ørsted 宣布終止兩個美國離岸風電案，並對另一個專案做出最終投資決策。分析專案組合變更。",
+      "as_of": "2023-10-31T23:59:59Z",
+      "research_target": "Ørsted",
+      "research_horizon": "2024-12-31",
+      "search_mode": "off",
+      "search_domains": [],
+      "documents": [
+        {
+          "id": "orsted-us-wind",
+          "source": "https://orsted.com/en/company-announcement-list/2023/10/oersted-ceases-development-of-its-us-offshore-wind-73751",
+          "kind": "disclosure",
+          "text_format": "summary",
+          "availability_basis": "replay_day_end",
+          "synthetic": false,
+          "published_at": "2023-10-31T23:59:59Z",
+          "obtained_at": "2023-10-31T23:59:59Z",
+          "paragraphs": {
+            "portfolio": "董事會決議停止 Ocean Wind 1 和 2，並對 Revolution Wind 做出最終投資決策。",
+            "impairment": "首九個月總減損為 284 億丹麥克朗，其中 199 億與 Ocean Wind 1 有關。",
+            "provision": "Ocean Wind 1 的潛在解約成本準備估計約 80 至 110 億丹麥克朗，影響第四季 EBITDA。"
+          }
+        }
+      ],
+      "supply_edges": [],
+      "financial_inputs": null,
+      "reported_calculations": [],
+      "earnings_plan": null
+    },
+    "judge_only": []
+  }
+}

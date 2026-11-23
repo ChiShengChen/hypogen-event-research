@@ -1,0 +1,8 @@
+2026-11-23T09:09:45.144402Z  WARN codex_app_server::skills_watcher: failed to initialize skills file watcher: No file descriptors available (os error 24)
+2026-11-23T09:09:45.144613Z  WARN codex_app_server::fs_watch: filesystem watch manager falling back to noop core watcher: No file descriptors available (os error 24)
+2026-11-23T09:09:45.775535Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-23T09:09:45.775859Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-23T09:09:45.776104Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-23T09:09:45.776316Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-23T09:09:45.776526Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-23T09:09:48.774862Z  WARN codex_core::responses_retry: stream disconnected - retrying sampling request (1/5 in 379.99989022s)... turn_id=01a207ab-24e9-7512-9670-25cd725e82ba retries=1 max_retries=5 sampling_error=exceeded retry limit, last status: 429 Too Many Requests

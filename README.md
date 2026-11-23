@@ -261,15 +261,18 @@ python -m benchmarks.hypothesis_pilot --head-to-head --holdout
 
 正式人工盲評 **0 案**，目前可送評 1 個先導配對。人工可用率、重大錯誤數與本輪優劣待正式評分。新模型評分 **0 案**，前瞻實績 **0 案**。另附四個已封存的匿名校準案。評測程式已加入 CLI `stderr` 的限流停止偵測，正式批次與修正後的測試各保留紀錄。[完整報告](docs/v9-equal/report.pdf) · [逐案 QA](docs/v9-equal/QA.md) · [匿名覆核包](docs/v9-equal/analyst-review.pdf) · [空白評分表](docs/v9-equal/review-form.csv)
 
+加入服務探針後，IBM 公告首試 **60.11 秒**通過，獨立記錄 **17,766／2,399** 輸入／輸出詞元。新批次沿用同一封存輸入，先導完成 **2/4** 配對（UPS、Disney）。Novo Nordisk 的純 Astra 收到 HTTP 429，CLI 宣告等待約 380 秒。程式在該次呼叫累計 3.82 秒時自動停派，三次呼叫保留為未啟動，八案保留集未執行。新人工盲評、模型評分及前瞻實績各 **0 案**，兩個正式配對可供分析師覆核。 [探針與正式批次報告](docs/v9-equal-probe/report.pdf) · [逐案 QA](docs/v9-equal-probe/QA.md) · [匿名包](docs/v9-equal-probe/analyst-review.pdf) · [空白評分表](docs/v9-equal-probe/review-form.csv)
+
 ```bash
 python -m benchmarks.v9_equal --out output/v9-equal-new --phase seal
+python -m benchmarks.v9_equal --out output/v9-equal-new --phase probe
 python -m benchmarks.v9_equal --out output/v9-equal-new --phase pilot
 python -m benchmarks.v9_equal --out output/v9-equal-new --phase holdout
 python -m benchmarks.v9_equal --out output/v9-equal-new --phase judge
 python -m benchmarks.v9_equal --out output/v9-equal-new --phase report
 ```
 
-先導配對齊全時才開啟保留集，兩階段均齊全後才啟動雙順序模型評分。用同一輸出目錄可從中斷後尚未啟動的呼叫接續。遇到限流的批次停止派發。收到人工評分後，`report` 可加 `--ratings` 匯入。匿名對照鍵留在本機輸出資料夾。 [程式、預註冊與執行帳本](docs/v9-equal/README.md)
+服務探針通過後才開先導。先導配對齊全時才開啟保留集，兩階段均齊全後才啟動雙順序模型評分。用同一輸出目錄可從一般程序中斷後接續尚未啟動的呼叫。遇到限流或模型容量錯誤的批次停止派發。收到人工評分後，`report` 可加 `--ratings` 匯入。匿名對照鍵留在本機輸出資料夾。 [上一輪預註冊與執行帳本](docs/v9-equal/README.md)
 
 ### 盈利預測、估值與研究員覆核
 

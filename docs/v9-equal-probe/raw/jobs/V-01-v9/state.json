@@ -1,0 +1,217 @@
+{
+  "case": "V-01",
+  "call": "v9",
+  "status": "completed",
+  "queued_at": "2026-11-23T09:07:05.449748+00:00",
+  "queued_epoch": 1795424825.4497588,
+  "started_at": "2026-11-23T09:07:37.001976+00:00",
+  "request_sha256": "9a9ce069769114944f27618b9726abb7c951e542d545ec00b029332378613bf9",
+  "queue_seconds": 31.548,
+  "preparation_seconds": 0.004,
+  "prompt_bytes": 9219,
+  "returncode": 0,
+  "cli_elapsed_seconds": 46.992,
+  "hypotheses": {
+    "first": {
+      "company": "UPS",
+      "mechanism": "若 UPS 隨最大客戶逐步減量而合併分揀班次及配送路線，相較減量後仍維持原網路，可少付閒置產能的成本。若當年節省超過重整費用，將支撐營業利益率。約 10 億美元是多年節省目標，2025 年淨節省額待查。",
+      "catalyst": "UPS 於 2025 年 1 月 30 日宣布重整美國網路。觀察 2025 年內流程調整進度，並於 2026 年 3 月 31 日前核對 UPS 全年業績公告。",
+      "prediction": "UPS 2025 全年合併營業利益率按原指引口徑達 10.8% 或以上。以指引中心值作情境門檻，此合併指標只能檢驗獲利表現，網路重整的貢獻仍須看成本說明。",
+      "invalidation": "截至 2026 年 3 月 31 日，UPS 公布的 2025 全年同口徑合併營業利益率低於 10.8%，即推翻此獲利預測。若公司另有節省，仍可能被其他成本抵銷。",
+      "materiality": "—",
+      "evidence_ids": [
+        "ups-q4:network",
+        "ups-q4:volume",
+        "ups-q4:guidance"
+      ]
+    },
+    "second": {
+      "company": "UPS",
+      "mechanism": "若最大客戶減量早於 UPS 編製指引時的假設，相較維持原承運量，UPS 完成的收費配送將減少。若其他客戶的包裹量或單件收入不足以填補缺口，全年營收可能低於指引中心值。客戶實際減量時程與單件收入均未揭露。",
+      "catalyst": "2025 年 1 月 30 日公布原則協議後，觀察減量是否已影響 2025 年配送業務，並於 2026 年 3 月 31 日前核對 UPS 全年業績公告。減量逾半的計畫期限在 2026 年下半年。",
+      "prediction": "UPS 2025 全年合併營收低於原指引中心值 890 億美元。合併營收是淨影響的代理指標，須搭配 UPS 對美國業務包裹量的說明，才能判斷減量是否為原因。",
+      "invalidation": "截至 2026 年 3 月 31 日，UPS 公布的 2025 全年合併營收達 890 億美元或以上，即推翻此營收預測，即使最大客戶已開始減量。",
+      "materiality": "—",
+      "evidence_ids": [
+        "ups-q4:volume",
+        "ups-q4:guidance"
+      ]
+    }
+  },
+  "original_report": {
+    "event_text": "UPS 宣布計畫削減最大客戶的包裹量，並重新配置美國配送網路。",
+    "as_of": "2025-01-30T23:59:59+00:00",
+    "target": "UPS",
+    "horizon": "2026-03-31",
+    "evidence": [
+      {
+        "id": "ups-q4:guidance",
+        "document_id": "ups-q4",
+        "paragraph": "guidance",
+        "source": "https://investors.ups.com/news-events/press-releases/detail/2135/ups-releases-4q-2024-earnings-and-provides-2025-guidance",
+        "quote": "UPS 預估 2025 全年合併營收約 890 億美元，營業利益率約 10.8%。",
+        "synthetic": false,
+        "kind": "disclosure",
+        "text_format": "summary",
+        "availability_basis": "replay_day_end",
+        "published_at": "2025-01-30T23:59:59+00:00",
+        "obtained_at": "2025-01-30T23:59:59+00:00"
+      },
+      {
+        "id": "ups-q4:network",
+        "document_id": "ups-q4",
+        "paragraph": "network",
+        "source": "https://investors.ups.com/news-events/press-releases/detail/2135/ups-releases-4q-2024-earnings-and-provides-2025-guidance",
+        "quote": "UPS 宣布重整美國網路，並計畫透過多年流程重設創造約 10 億美元節省。",
+        "synthetic": false,
+        "kind": "disclosure",
+        "text_format": "summary",
+        "availability_basis": "replay_day_end",
+        "published_at": "2025-01-30T23:59:59+00:00",
+        "obtained_at": "2025-01-30T23:59:59+00:00"
+      },
+      {
+        "id": "ups-q4:volume",
+        "document_id": "ups-q4",
+        "paragraph": "volume",
+        "source": "https://investors.ups.com/news-events/press-releases/detail/2135/ups-releases-4q-2024-earnings-and-provides-2025-guidance",
+        "quote": "UPS 與最大客戶原則上達成協議，計畫至 2026 年下半年將該客戶包裹量減少逾 50%。2025 年 1 月 1 日起 UPS 將 SurePost 全數改為自行配送。",
+        "synthetic": false,
+        "kind": "disclosure",
+        "text_format": "summary",
+        "availability_basis": "replay_day_end",
+        "published_at": "2025-01-30T23:59:59+00:00",
+        "obtained_at": "2025-01-30T23:59:59+00:00"
+      }
+    ],
+    "supply_edges": [],
+    "claims": [
+      {
+        "id": "fact:ups-q4:guidance",
+        "kind": "fact",
+        "text": "UPS 預估 2025 全年合併營收約 890 億美元，營業利益率約 10.8%。",
+        "evidence_id": "ups-q4:guidance"
+      },
+      {
+        "id": "fact:ups-q4:network",
+        "kind": "fact",
+        "text": "UPS 宣布重整美國網路，並計畫透過多年流程重設創造約 10 億美元節省。",
+        "evidence_id": "ups-q4:network"
+      },
+      {
+        "id": "fact:ups-q4:volume",
+        "kind": "fact",
+        "text": "UPS 與最大客戶原則上達成協議，計畫至 2026 年下半年將該客戶包裹量減少逾 50%。2025 年 1 月 1 日起 UPS 將 SurePost 全數改為自行配送。",
+        "evidence_id": "ups-q4:volume"
+      },
+      {
+        "id": "unverified_impact",
+        "kind": "assumption",
+        "assumption_id": "impact_mechanism",
+        "text": "事件的傳導機制與獲利影響待查。"
+      }
+    ],
+    "disclosed_calculations": [],
+    "valuation": {
+      "gaps": [
+        "缺少截止時點的股價、可比基準及市場共識，無法判斷市場已反映多少。",
+        "估值仍需基準獲利與可辯護的估值倍數。"
+      ]
+    },
+    "model_inputs": null,
+    "model_outputs": null,
+    "hypotheses": [
+      {
+        "stance": "bull",
+        "mechanism": "若 UPS 隨最大客戶逐步減量而合併分揀班次及配送路線，相較減量後仍維持原網路，可少付閒置產能的成本。若當年節省超過重整費用，將支撐營業利益率。約 10 億美元是多年節省目標，2025 年淨節省額待查。",
+        "target": "UPS",
+        "horizon": "2026-03-31",
+        "catalyst": "UPS 於 2025 年 1 月 30 日宣布重整美國網路。觀察 2025 年內流程調整進度，並於 2026 年 3 月 31 日前核對 UPS 全年業績公告。",
+        "prediction": "UPS 2025 全年合併營業利益率按原指引口徑達 10.8% 或以上。以指引中心值作情境門檻，此合併指標只能檢驗獲利表現，網路重整的貢獻仍須看成本說明。",
+        "invalidation": "截至 2026 年 3 月 31 日，UPS 公布的 2025 全年同口徑合併營業利益率低於 10.8%，即推翻此獲利預測。若公司另有節省，仍可能被其他成本抵銷。",
+        "claim_ids": [
+          "fact:ups-q4:network",
+          "fact:ups-q4:volume",
+          "fact:ups-q4:guidance"
+        ]
+      },
+      {
+        "stance": "bear",
+        "mechanism": "若最大客戶減量早於 UPS 編製指引時的假設，相較維持原承運量，UPS 完成的收費配送將減少。若其他客戶的包裹量或單件收入不足以填補缺口，全年營收可能低於指引中心值。客戶實際減量時程與單件收入均未揭露。",
+        "target": "UPS",
+        "horizon": "2026-03-31",
+        "catalyst": "2025 年 1 月 30 日公布原則協議後，觀察減量是否已影響 2025 年配送業務，並於 2026 年 3 月 31 日前核對 UPS 全年業績公告。減量逾半的計畫期限在 2026 年下半年。",
+        "prediction": "UPS 2025 全年合併營收低於原指引中心值 890 億美元。合併營收是淨影響的代理指標，須搭配 UPS 對美國業務包裹量的說明，才能判斷減量是否為原因。",
+        "invalidation": "截至 2026 年 3 月 31 日，UPS 公布的 2025 全年合併營收達 890 億美元或以上，即推翻此營收預測，即使最大客戶已開始減量。",
+        "claim_ids": [
+          "fact:ups-q4:volume",
+          "fact:ups-q4:guidance"
+        ]
+      }
+    ],
+    "assessment": {
+      "thesis": "UPS 在 2025 年的營運取決於兩個時程：最大客戶減量會減少配送收入，美國網路重整能否同步降低成本，則決定利益率可獲多少支撐。",
+      "key_gap": "2025 年已實現的網路淨節省，能否抵銷已減少包裹的利益貢獻？若 UPS 未量化兩項影響，精確歸因需要非公開的客戶單件收益、配送成本及重整費用明細。",
+      "next_check": "先查 2025 年內 UPS 季度業績公告對減量與網路調整的進度說明，再於 2026 年 3 月 31 日前查 2025 全年業績公告，按 2025 年 1 月 30 日原指引口徑核對合併營收與營業利益率。",
+      "evidence_limits": [
+        {
+          "evidence_id": "ups-q4:guidance",
+          "limit": "890 億美元營收與 10.8% 營業利益率均為 2025 全年合併指引約數。指引未列編製時假設的客戶減量幅度或當年節省額。"
+        },
+        {
+          "evidence_id": "ups-q4:network",
+          "limit": "公告確認美國網路重整計畫，約 10 億美元為多年節省目標。2025 年已實現節省、執行費用與淨利益均待揭露。"
+        },
+        {
+          "evidence_id": "ups-q4:volume",
+          "limit": "原則協議以 2026 年下半年減量逾半為目標，未提供 2025 年實際客戶件量。UPS 另披露 SurePost 自 2025 年 1 月 1 日起全數自行配送，這項營運變更也會影響網路負荷。"
+        }
+      ],
+      "public_checks": [
+        {
+          "metric": "最大客戶減量進度，以及 UPS 是否因件量變化調整全年營收指引",
+          "source_to_watch": "UPS 季度業績新聞稿及投資人說明",
+          "window": "自原則協議公告後至 2025 年全年業績公布，最遲檢視至 2026 年 3 月 31 日",
+          "impact_on_thesis": "若 UPS 明確將營收指引下修歸因於提前減量，則提高對看空路徑的信心。若僅確認已減量，只能確認機制啟動，仍無法量化收入損失。",
+          "evidence_ids": [
+            "ups-q4:volume",
+            "ups-q4:guidance"
+          ]
+        },
+        {
+          "metric": "美國配送網路流程調整的完成進度及已實現節省",
+          "source_to_watch": "UPS 季度及全年業績新聞稿中的網路重整說明",
+          "window": "自重整公告後的 2025 年各季至全年業績公布，最遲檢視至 2026 年 3 月 31 日",
+          "impact_on_thesis": "若 UPS 說明哪些流程已調整，可確認執行進度。若進一步揭露當期節省高於執行費用，才支持當年淨獲利受益。僅重申多年目標，當年貢獻仍待查。",
+          "evidence_ids": [
+            "ups-q4:network"
+          ]
+        }
+      ],
+      "supply_chain": [],
+      "trade_opportunities": [],
+      "trade_opportunities_gap": "缺少截止時點可用、可連結研究標的與其他具名公司的產品關係證據。"
+    },
+    "adapter": {
+      "mode": "codex",
+      "model": "gpt-6.2-astra",
+      "prompt_version": 9
+    },
+    "report_version": 8,
+    "markdown": "# 事件研究報告\n\n- 標的／研究期間為 **UPS／2026-03-31**。\n- 截止時點為 2025-01-30T23:59:59+00:00，生成模式為 `codex`（`gpt-6.2-astra`）。\n- **研究結論為觀望**。待確認事件對公司營運的傳導與現價隱含預期。\n- **核心判斷**　UPS 在 2025 年的營運取決於兩個時程：最大客戶減量會減少配送收入，美國網路重整能否同步降低成本，則決定利益率可獲多少支撐。\n- **首要待證**　2025 年已實現的網路淨節省，能否抵銷已減少包裹的利益貢獻？若 UPS 未量化兩項影響，精確歸因需要非公開的客戶單件收益、配送成本及重整費用明細。\n- **下一個查核點**　先查 2025 年內 UPS 季度業績公告對減量與網路調整的進度說明，再於 2026 年 3 月 31 日前查 2025 全年業績公告，按 2025 年 1 月 30 日原指引口徑核對合併營收與營業利益率。\n\n## 公開查核點\n\n- **最大客戶減量進度，以及 UPS 是否因件量變化調整全年營收指引**　從UPS 季度業績新聞稿及投資人說明查核（自原則協議公告後至 2025 年全年業績公布，最遲檢視至 2026 年 3 月 31 日）。若 UPS 明確將營收指引下修歸因於提前減量，則提高對看空路徑的信心。若僅確認已減量，只能確認機制啟動，仍無法量化收入損失。 [`ups-q4:volume`](#evidence-3)、[`ups-q4:guidance`](#evidence-1)\n- **美國配送網路流程調整的完成進度及已實現節省**　從UPS 季度及全年業績新聞稿中的網路重整說明查核（自重整公告後的 2025 年各季至全年業績公布，最遲檢視至 2026 年 3 月 31 日）。若 UPS 說明哪些流程已調整，可確認執行進度。若進一步揭露當期節省高於執行費用，才支持當年淨獲利受益。僅重申多年目標，當年貢獻仍待查。 [`ups-q4:network`](#evidence-2)\n\n## 供應鏈公司分析\n\n### 上游關鍵供應商\n\n目前可見來源未提供足以列名的公司。\n\n### 下游客戶與需求\n\n目前可見來源未提供足以列名的公司。\n\n### 替代供應商與同業\n\n目前可見來源未提供足以列名的公司。\n\n## 延伸交易機會\n\n以下為未在收件敘述中點名的供應鏈公司。方向取決於觸發條件，估值、行情與可執行性仍需查核。\n\n缺少截止時點可用、可連結研究標的與其他具名公司的產品關係證據。\n\n\n## 事件與證據判讀\n\n收件敘述（待核）　UPS 宣布計畫削減最大客戶的包裹量，並重新配置美國配送網路。\n\n- [`ups-q4:guidance`](#evidence-1) 890 億美元營收與 10.8% 營業利益率均為 2025 全年合併指引約數。指引未列編製時假設的客戶減量幅度或當年節省額。\n- [`ups-q4:network`](#evidence-2) 公告確認美國網路重整計畫，約 10 億美元為多年節省目標。2025 年已實現節省、執行費用與淨利益均待揭露。\n- [`ups-q4:volume`](#evidence-3) 原則協議以 2026 年下半年減量逾半為目標，未提供 2025 年實際客戶件量。UPS 另披露 SurePost 自 2025 年 1 月 1 日起全數自行配送，這項營運變更也會影響網路負荷。\n\n## 多空假說與查核\n\n推翻假說需要相反證據。必要紀錄未取得時，假說仍待驗證。\n\n### 多方\n\n- 傳導機制　若 UPS 隨最大客戶逐步減量而合併分揀班次及配送路線，相較減量後仍維持原網路，可少付閒置產能的成本。若當年節省超過重整費用，將支撐營業利益率。約 10 億美元是多年節省目標，2025 年淨節省額待查。\n- 查核時機　UPS 於 2025 年 1 月 30 日宣布重整美國網路。觀察 2025 年內流程調整進度，並於 2026 年 3 月 31 日前核對 UPS 全年業績公告。\n- 可驗證預測　UPS 2025 全年合併營業利益率按原指引口徑達 10.8% 或以上。以指引中心值作情境門檻，此合併指標只能檢驗獲利表現，網路重整的貢獻仍須看成本說明。\n- 推翻條件　截至 2026 年 3 月 31 日，UPS 公布的 2025 全年同口徑合併營業利益率低於 10.8%，即推翻此獲利預測。若公司另有節省，仍可能被其他成本抵銷。\n- 依據　[`fact:ups-q4:network`](#claim-2)、[`fact:ups-q4:volume`](#claim-3)、[`fact:ups-q4:guidance`](#claim-1)\n\n### 空方\n\n- 傳導機制　若最大客戶減量早於 UPS 編製指引時的假設，相較維持原承運量，UPS 完成的收費配送將減少。若其他客戶的包裹量或單件收入不足以填補缺口，全年營收可能低於指引中心值。客戶實際減量時程與單件收入均未揭露。\n- 查核時機　2025 年 1 月 30 日公布原則協議後，觀察減量是否已影響 2025 年配送業務，並於 2026 年 3 月 31 日前核對 UPS 全年業績公告。減量逾半的計畫期限在 2026 年下半年。\n- 可驗證預測　UPS 2025 全年合併營收低於原指引中心值 890 億美元。合併營收是淨影響的代理指標，須搭配 UPS 對美國業務包裹量的說明，才能判斷減量是否為原因。\n- 推翻條件　截至 2026 年 3 月 31 日，UPS 公布的 2025 全年合併營收達 890 億美元或以上，即推翻此營收預測，即使最大客戶已開始減量。\n- 依據　[`fact:ups-q4:volume`](#claim-3)、[`fact:ups-q4:guidance`](#claim-1)\n\n## 財務橋接\n\n缺少相符且有時點可見來源的財務輸入，維持定性判斷。\n\n## 市場預期與估值\n\n- 缺少截止時點的股價、可比基準及市場共識，無法判斷市場已反映多少。\n- 估值仍需基準獲利與可辯護的估值倍數。\n\n## 主張索引\n\n- <a id=\"claim-1\"></a> `fact:ups-q4:guidance` 來源摘要　UPS 預估 2025 全年合併營收約 890 億美元，營業利益率約 10.8%。（[`ups-q4:guidance`](#evidence-1)）\n- <a id=\"claim-2\"></a> `fact:ups-q4:network` 來源摘要　UPS 宣布重整美國網路，並計畫透過多年流程重設創造約 10 億美元節省。（[`ups-q4:network`](#evidence-2)）\n- <a id=\"claim-3\"></a> `fact:ups-q4:volume` 來源摘要　UPS 與最大客戶原則上達成協議，計畫至 2026 年下半年將該客戶包裹量減少逾 50%。2025 年 1 月 1 日起 UPS 將 SurePost 全數改為自行配送。（[`ups-q4:volume`](#evidence-3)）\n- <a id=\"claim-4\"></a> `unverified_impact` 待查假設　事件的傳導機制與獲利影響待查。\n\n## 來源與時點\n\n- <a id=\"evidence-1\"></a> `ups-q4:guidance` https://investors.ups.com/news-events/press-releases/detail/2135/ups-releases-4q-2024-earnings-and-provides-2025-guidance 第 guidance 段（來源揭露）\n  - 歷史可得時點代理 2025-01-30T23:59:59+00:00。\n  - 來源摘要　UPS 預估 2025 全年合併營收約 890 億美元，營業利益率約 10.8%。\n- <a id=\"evidence-2\"></a> `ups-q4:network` https://investors.ups.com/news-events/press-releases/detail/2135/ups-releases-4q-2024-earnings-and-provides-2025-guidance 第 network 段（來源揭露）\n  - 歷史可得時點代理 2025-01-30T23:59:59+00:00。\n  - 來源摘要　UPS 宣布重整美國網路，並計畫透過多年流程重設創造約 10 億美元節省。\n- <a id=\"evidence-3\"></a> `ups-q4:volume` https://investors.ups.com/news-events/press-releases/detail/2135/ups-releases-4q-2024-earnings-and-provides-2025-guidance 第 volume 段（來源揭露）\n  - 歷史可得時點代理 2025-01-30T23:59:59+00:00。\n  - 來源摘要　UPS 與最大客戶原則上達成協議，計畫至 2026 年下半年將該客戶包裹量減少逾 50%。2025 年 1 月 1 日起 UPS 將 SurePost 全數改為自行配送。\n"
+  },
+  "elapsed_seconds": 46.993,
+  "usage": {
+    "input_tokens": 17679,
+    "cached_input_tokens": 0,
+    "output_tokens": 1579,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.162,
+    "turn.started": 1.482,
+    "item.completed": 46.47,
+    "turn.completed": 46.506
+  },
+  "finished_at": "2026-11-23T09:08:23.996485+00:00"
+}

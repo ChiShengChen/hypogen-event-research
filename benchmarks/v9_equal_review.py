@@ -68,13 +68,13 @@ def model_scores(cases, calls):
     return rows
 
 
-def review_set(cases, calls):
+def review_set(cases, calls, *, include_calibration=True):
     selected = {}
     for key, case in cases.items():
         pairs = arm_pairs(calls, key)
         if len(pairs) == 2:
             selected[key] = (case, pairs)
-    if any(case["split"] == "pilot" and key not in selected for key, case in cases.items()):
+    if include_calibration and any(case["split"] == "pilot" and key not in selected for key, case in cases.items()):
         # Keep earlier complete examples usable as calibration while the new formal comparison is blocked.
         for key, case in cases.items():
             if case["split"] != "pilot":
@@ -183,6 +183,8 @@ def blind_files(out, selected, mapping):
         "5. 記錄完成必要修稿所需整數秒數。備註可列出錯誤與證據編號。", "",
     ]
     rows = []
+    if not selected:
+        lines += ["目前可送評的正式配對為 0。評分表保留欄位，待取得完整配對後再填寫。", ""]
     names = {"pilot": "先導", "holdout": "正式保留集", "calibration": "封存校準"}
     for key, (case, pairs) in selected.items():
         lines.extend([f"## {key} · {case['name']}", "", f"**用途**　{names[case['split']]}", ""])
@@ -238,6 +240,9 @@ def preserve_records(root, out):
     controlled = root / "controlled-stop.json"
     if controlled.exists():
         shutil.copyfile(controlled, out / controlled.name)
+    service = root / run.admission.FOLDER
+    if service.exists():
+        shutil.copytree(service, out / "raw" / run.admission.FOLDER, dirs_exist_ok=True)
     for folder in ("batches", "calls"):
         source = root / folder
         if source.exists():
@@ -276,25 +281,71 @@ def ledger_and_scorecards(out, calls, scores, reviews):
               "model_disqualified", *RATINGS, "ready", "major_errors", "edit_seconds"), rows)
 
 
-def qa_file(out, cases, calls, scores):
+def probe_report(root, out):
+    plan = hypothesis.read(root / "probe.json")
+    if not plan:
+        return None
+    shutil.copyfile(root / "probe.json", out / "probe.json")
+    source = root / run.admission.FOLDER
+    attempts = []
+    for key in run.admission.PROBES:
+        job = source / "jobs" / f"{key}-v9"
+        if not (job / "state.json").exists():
+            continue
+        row = run.journal.restore(source, job)
+        decision = hypothesis.read(source / f"{key}-decision.json")
+        attempts.append({field: row.get(field) for field in (
+            "case", "status", "reason", "availability_source", "started_at", "finished_at", "elapsed_seconds",
+            "prompt_bytes", "request_sha256",
+        )} | {"reported_retry_wait_seconds": run.admission.wait_hint(job), "decision": decision,
+              "usage": row.get("usage") if "turn.completed" in row.get("event_seconds", {}) else None})
+    fields = ("case", "status", "reason", "availability_source", "started_at", "finished_at", "elapsed_seconds",
+              "prompt_bytes", "request_sha256", *USAGE, "reported_retry_wait_seconds", "decision", "retry_at")
+    write_csv(out / "service-probe.csv", fields, [
+        {field: row.get(field) for field in fields if field not in {*USAGE, "decision", "retry_at"}}
+        | (row["usage"] or {}) | {"decision": row["decision"].get("decision"), "retry_at": row["decision"].get("retry_at")}
+        for row in attempts
+    ])
+    return {"opened": bool(run.admission.admitted(root, plan, run.digest)), "attempts": attempts,
+            "prompt_bytes": plan["prompt_bytes"], "pilot_v9_prompt_bytes": plan["pilot_v9_prompt_bytes"]}
+
+
+def call_links(out, base, key, arm, receipt_label):
+    records = {f"{base}/calls/{key}-{arm}.json": receipt_label,
+               f"{base}/jobs/{key}-{arm}/events.jsonl": "CLI 事件",
+               f"{base}/jobs/{key}-{arm}/answer.json": "模型原始 JSON",
+               f"{base}/jobs/{key}-{arm}/stderr.log": "CLI 診斷"}
+    return " · ".join(f"[{label}]({path})" for path, label in records.items() if (out / path).exists()
+                      and (out / path).stat().st_size)
+
+
+def qa_file(root, out, cases, calls, scores, probe):
     lines = [
         "# V9 等預算逐案問答", "",
         "此紀錄供結果查核。匿名人評應使用獨立的匿名 PDF 和空白表。下列為生成時點可見的封存摘要，並附原文摘錄與可開啟的原始公告。", "",
     ]
+    if probe is not None:
+        plan = hypothesis.read(root / "probe.json")
+        lines += ["## 服務探針 · IBM", "", "探針的回傳與帳本獨立保存，供判斷本輪正式評測可否開跑。", ""]
+        lines += research_input(plan["case"])
+        for attempt in probe["attempts"]:
+            key = attempt["case"]
+            row = run.receipt(root / run.admission.FOLDER, key, "v9")
+            lines += [f"### {key} · {STATUSES[attempt['status']]}", ""]
+            if diagnostic := call_links(out, f"raw/{run.admission.FOLDER}", key, "v9", "探針回傳"):
+                lines += [diagnostic, ""]
+            if row.get("error"):
+                lines += [f"**失敗原因**　{row['error']}", ""]
+            if row.get("hypotheses"):
+                lines += hypothesis_lines(row["hypotheses"])
     for key, case in cases.items():
         lines.extend([f"## {key} · {case['name']}", "", f"**分組**　{case['split']}", ""])
         lines += research_input(case)
         for arm in run.ARMS:
             row = calls[key, arm]
             lines.extend([f"### {LABELS[arm]}", "", f"**執行狀態**　{STATUSES[row['status']]}。", ""])
-            records = {f"raw/calls/{key}-{arm}.json": "正式回傳",
-                       f"raw/jobs/{key}-{arm}/events.jsonl": "CLI 事件",
-                       f"raw/jobs/{key}-{arm}/answer.json": "模型原始 JSON",
-                       f"raw/jobs/{key}-{arm}/stderr.log": "CLI 診斷"}
-            links = [f"[{label}]({path})" for path, label in records.items() if (out / path).exists()
-                     and (out / path).stat().st_size]
-            if links:
-                lines.extend([" · ".join(links), ""])
+            if links := call_links(out, "raw", key, arm, "正式回傳"):
+                lines.extend([links, ""])
             if row.get("error"):
                 lines.extend([f"**失敗原因**　{row['error']}", ""])
             if row.get("hypotheses"):
@@ -318,6 +369,13 @@ def diagnostic_lines(root, calls):
         detail = f"CLI 宣告等待 {float(retries[-1][0]):.1f} 秒後重試" if retries else ""
         if detail and "at capacity" in retries[-1][1]:
             detail += "，訊息指出該模型已達容量"
+        if row.get("reason") in run.AVAILABILITY_ERRORS:
+            channel = "stderr" if row.get("availability_source") == "stderr" else "JSON 事件"
+            message = "模型容量不足" if row["reason"] == "model_capacity" else "限流或用量上限"
+            if log.exists() and "last status: 429" in log.read_text(encoding="utf-8", errors="replace"):
+                message = " HTTP 429"
+            classification = f"CLI 由 {channel} 回報{message}，程式在呼叫累計 {row['elapsed_seconds']:.1f} 秒時停派"
+            detail = f"{classification}。{detail}" if detail else classification
         label = LABELS.get(arm, arm)
         diagnostics = f" [CLI 紀錄](raw/{path})" if log.exists() and log.stat().st_size else ""
         lines.append(f"- {key} {label}，{STATUSES[row['status']]}。" + (f"{detail}。" if detail else "") + diagnostics)
@@ -334,14 +392,18 @@ def report_lines(root, summary, model_count, calibration, calls):
         planned = split["planned"]
         table += [f"| {label} | {split['complete_pairs']}/{planned} | {split['human_pairs']}/{planned} | "
                   f"{split['available_for_review']} |"]
+    probe = summary.get("probe")
+    pilot_label = "通過" if pilot["complete_pairs"] == pilot["planned"] else "未通過"
+    if probe is not None and not probe["opened"]:
+        pilot_label = "尚未啟動"
     lines = [
         "# V9 等預算研究首稿評測", "",
-        f"**先導門檻{'通過' if pilot['complete_pairs'] == pilot['planned'] else '未通過'}。"
+        f"**先導{pilot_label}。"
         f"人工驗收{gates[summary['passed']]}。** 兩組維持原生成提示，使用相同的 Astra medium、點時證據和 180 秒 CLI 上限，各一次啟動。"
         "程式停用搜尋，詞元採實耗紀錄，服務端詞元及 CLI 內部重試沒有可強制上限。", "",
         *table, "",
         f"新雙順序模型評分已完成 {model_count} 案。前瞻實績完成 0 案，這批為歷史時點回放。"
-        f"匿名包另有 {calibration} 個先前封存的校準案例，供評分者試填。", "",
+        + (f"匿名包另有 {calibration} 個先前封存的校準案例，供評分者試填。" if calibration else ""), "",
         "| 階段與組別 | 啟動 | 完成 | 逾時 | 其他失敗 | 完成回覆中位秒數 | 詞元回合 | 輸入／輸出詞元 | 人工可用率 | 重大錯誤 |",
         "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
@@ -353,6 +415,25 @@ def report_lines(root, summary, model_count, calibration, calls):
                       f"{row['ready']}/{split['human_pairs']}" if split["human_pairs"] else None,
                       row["major_errors"] if split["human_pairs"] else None]
             lines.append(f"| {label} {LABELS[arm]} | " + " | ".join("—" if v is None else str(v) for v in values) + " |")
+    if probe is not None:
+        lines += ["", "## 服務探針", "",
+                  f"探針使用 IBM 完成收購 HashiCorp 的點時公告。提示 {probe['prompt_bytes']:,} bytes。"
+                  f"開跑門檻{'通過' if probe['opened'] else '未通過'}。 [封存請求](probe.json) · [探針執行帳本](service-probe.csv)", "",
+                  "探針衡量開跑當下的請求可用性。正式批次仍逐次檢查容量，依停止條件保存全部已啟動呼叫。", "",
+                  "| 探針 | 狀態 | 原因 | 秒數 | 公告等待秒數 | 輸入／輸出詞元 |",
+                  "|---|---|---|---:|---:|---:|"]
+        for attempt in probe["attempts"]:
+            usage = attempt["usage"]
+            values = (attempt["case"], STATUSES[attempt["status"]], attempt["reason"], attempt["elapsed_seconds"],
+                      attempt["reported_retry_wait_seconds"],
+                      f"{usage['input_tokens']}／{usage['output_tokens']}" if usage else None)
+            lines.append("| " + " | ".join("—" if value is None else str(value) for value in values) + " |")
+    if model_count:
+        lines += ["", "## 雙順序模型評分", "", "| 階段 | 已評案數 | V9／10 | 純 Astra／10 |",
+                  "|---|---:|---:|---:|"]
+        for split, row in summary["model_scores"].items():
+            label = "先導" if split == "pilot" else "保留集"
+            lines.append(f"| {label} | {row['pairs']} | {row['v9']:.2f} | {row['astra']:.2f} |")
     if diagnostics := diagnostic_lines(root, calls):
         lines += ["", "## 失敗紀錄", "", *diagnostics]
     if intervention := hypothesis.read(root / "controlled-stop.json"):
@@ -377,20 +458,30 @@ def publish(root, cases, out, ratings=None):
     out.mkdir(parents=True, exist_ok=True)
     calls = read_calls(root, cases)
     scores = model_scores(cases, calls)
-    selected = review_set(cases, calls)
+    probe = probe_report(root, out)
+    selected = review_set(cases, calls, include_calibration=probe is None)
     mapping = anonymous_keys(root, selected)
     reviews = import_ratings(ratings, selected, mapping)
     summary = review_metrics(cases, calls, reviews)
     model_count = len(scores) // 2
+    model_summary = {}
+    for split in ("pilot", "holdout"):
+        keys = [key for key, case in cases.items() if case["split"] == split and (key, "v9") in scores]
+        if keys:
+            model_summary[split] = {"pairs": len(keys)} | {
+                arm: mean(scores[key, arm]["score"] for key in keys) for arm in run.ARMS
+            }
     calibration = sum(case["split"] == "calibration" for case, _ in selected.values())
-    summary.update(model_pairs=model_count, prospective_resolved=0, calibration_pairs=calibration,
+    summary.update(model_pairs=model_count, model_scores=model_summary, prospective_resolved=0, calibration_pairs=calibration,
                    calibration_human_pairs=sum(all((key, arm) in reviews for arm in run.ARMS)
                                                for key in selected if key.startswith("C-")))
+    if probe is not None:
+        summary["probe"] = probe
     for name in ("protocol.json", "cases.json", "requests.json"):
         shutil.copyfile(root / name, out / name)
     preserve_records(root, out)
     ledger_and_scorecards(out, calls, scores, reviews)
     blind_files(out, selected, mapping)
-    qa_file(out, cases, calls, scores)
+    qa_file(root, out, cases, calls, scores, probe)
     atomic(out / "summary.json", summary)
     write_text(out / "README.md", report_lines(root, summary, model_count, calibration, calls))

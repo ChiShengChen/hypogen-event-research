@@ -1,0 +1,111 @@
+{
+  "pilot": {
+    "planned": 4,
+    "complete_pairs": 2,
+    "human_pairs": 0,
+    "available_for_review": 2,
+    "arms": {
+      "astra": {
+        "completed": 2,
+        "started": 3,
+        "timeouts": 0,
+        "failed": 1,
+        "tokens_observed": 2,
+        "usage": {
+          "input_tokens": 30754,
+          "cached_input_tokens": 0,
+          "output_tokens": 1500,
+          "reasoning_output_tokens": 0
+        },
+        "median_completed_seconds": 30.66,
+        "ready": 0,
+        "major_errors": 0,
+        "median_edit_seconds": null
+      },
+      "v9": {
+        "completed": 2,
+        "started": 2,
+        "timeouts": 0,
+        "failed": 0,
+        "tokens_observed": 2,
+        "usage": {
+          "input_tokens": 35580,
+          "cached_input_tokens": 0,
+          "output_tokens": 3308,
+          "reasoning_output_tokens": 0
+        },
+        "median_completed_seconds": 48.99,
+        "ready": 0,
+        "major_errors": 0,
+        "median_edit_seconds": null
+      }
+    }
+  },
+  "holdout": {
+    "planned": 8,
+    "complete_pairs": 0,
+    "human_pairs": 0,
+    "available_for_review": 0,
+    "arms": {
+      "astra": {
+        "completed": 0,
+        "started": 0,
+        "timeouts": 0,
+        "failed": 0,
+        "tokens_observed": 0,
+        "usage": null,
+        "median_completed_seconds": null,
+        "ready": 0,
+        "major_errors": 0,
+        "median_edit_seconds": null
+      },
+      "v9": {
+        "completed": 0,
+        "started": 0,
+        "timeouts": 0,
+        "failed": 0,
+        "tokens_observed": 0,
+        "usage": null,
+        "median_completed_seconds": null,
+        "ready": 0,
+        "major_errors": 0,
+        "median_edit_seconds": null
+      }
+    }
+  },
+  "passed": null,
+  "model_pairs": 0,
+  "model_scores": {},
+  "prospective_resolved": 0,
+  "calibration_pairs": 0,
+  "calibration_human_pairs": 0,
+  "probe": {
+    "opened": true,
+    "attempts": [
+      {
+        "case": "P-01",
+        "status": "completed",
+        "reason": null,
+        "availability_source": null,
+        "started_at": "2026-11-23T09:06:05.042348+00:00",
+        "finished_at": "2026-11-23T09:07:05.157143+00:00",
+        "elapsed_seconds": 60.113,
+        "prompt_bytes": 9691,
+        "request_sha256": "decf3c5f27d95362c240cf09cc09a685fd184b392ed8245572402f46c331f23f",
+        "reported_retry_wait_seconds": null,
+        "decision": {},
+        "usage": {
+          "input_tokens": 17766,
+          "cached_input_tokens": 0,
+          "output_tokens": 2399,
+          "reasoning_output_tokens": 54
+        }
+      }
+    ],
+    "prompt_bytes": 9691,
+    "pilot_v9_prompt_bytes": [
+      8599,
+      9863
+    ]
+  }
+}

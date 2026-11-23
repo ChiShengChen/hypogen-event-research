@@ -1,0 +1,55 @@
+{
+  "case": "V-01",
+  "call": "astra",
+  "status": "completed",
+  "queued_at": "2026-11-23T09:07:05.427276+00:00",
+  "queued_epoch": 1795424825.427284,
+  "started_at": "2026-11-23T09:07:05.630460+00:00",
+  "request_sha256": "95d45b8440d703439c674c6952e0963270c3dc963e0ddbb21c87bf14fa1e8108",
+  "queue_seconds": 0.18,
+  "preparation_seconds": 0.023,
+  "prompt_bytes": 2151,
+  "returncode": 0,
+  "cli_elapsed_seconds": 31.359,
+  "hypotheses": {
+    "first": {
+      "company": "UPS",
+      "mechanism": "若最大客戶的包裹量在 2025 年開始下降，而 UPS 調整美國配送網路的速度落後於減量速度，每件包裹須分攤的固定成本將上升，壓低營業利益率。",
+      "catalyst": "追蹤 UPS 在 2025 年揭露的最大客戶減量進度與美國網路調整時程，並於 2026 年 3 月 31 日前以全年業績檢驗。",
+      "prediction": "2025 年合併營業利益率將低於公司指引中值 10.8%，且 UPS 對美國配送業務的說明將指出，包裹量下降使固定成本更難攤薄。",
+      "invalidation": "若 2025 年合併營業利益率達到或超過 10.8%，則財務預測失準。若利益率低於 10.8%，但 UPS 揭露網路成本已隨減量同步下降，則利益率落差本身不足以支持此機制。",
+      "materiality": "以公司預估的 890 億美元全年營收計算，合併營業利益率每低於指引 0.1 個百分點，約對應 8,900 萬美元營業利益差額。",
+      "evidence_ids": [
+        "ups-q4:volume",
+        "ups-q4:network",
+        "ups-q4:guidance"
+      ]
+    },
+    "second": {
+      "company": "UPS",
+      "mechanism": "SurePost 改由 UPS 全數自行配送後，若新增包裹能併入既有路線，UPS 可提高每條路線的投遞量，並以省下的委外配送費抵銷新增工時與里程成本。",
+      "catalyst": "SurePost 自 2025 年 1 月 1 日起全面轉為自行配送。2025 年第四季是轉換後首個可與前一年同期比較的年終旺季，可用截至 2026 年 3 月 31 日已揭露的第四季資料檢驗。",
+      "prediction": "相較 2024 年第四季，2025 年第四季 SurePost 每件包裹的最終配送成本將下降。若 UPS 提供成本拆解，應可見每件節省的委外費用高於新增的內部配送成本。",
+      "invalidation": "若 UPS 揭露同期 SurePost 每件最終配送成本持平或上升，或指出新增內部配送成本已抵銷全部委外費用節省，則假說失效。若僅揭露整體網路節省額，則此假說仍待驗證。",
+      "materiality": "全面自配使每件成本差額作用於全部 SurePost 包裹。估算其營業利益影響需要件量與單件成本差額，兩者在截止時點均未提供。公司約 10 億美元的節省目標涵蓋多年流程重設，不能直接歸因於 SurePost。",
+      "evidence_ids": [
+        "ups-q4:volume",
+        "ups-q4:network"
+      ]
+    }
+  },
+  "elapsed_seconds": 31.36,
+  "usage": {
+    "input_tokens": 15311,
+    "cached_input_tokens": 0,
+    "output_tokens": 755,
+    "reasoning_output_tokens": 0
+  },
+  "event_seconds": {
+    "thread.started": 0.812,
+    "turn.started": 1.35,
+    "item.completed": 30.758,
+    "turn.completed": 30.798
+  },
+  "finished_at": "2026-11-23T09:07:36.992220+00:00"
+}
