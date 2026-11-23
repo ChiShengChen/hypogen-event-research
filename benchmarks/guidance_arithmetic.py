@@ -78,6 +78,24 @@ QUESTIONS = {
     "implied_remainder_change_ratio": "That change as a percent of the prior implied revenue for {remainder}.",
     "implied_remainder": "Was the implied revenue for {remainder} raised, lowered or unchanged?",
 }
+# Open wording for the same items: the question names the outlook, never the computation or baseline.
+IMPLICIT_QUESTIONS = {
+    "revision": "Did this release raise, lower or keep unchanged the company's {period} revenue outlook?",
+    "midpoint_change": "By how much did this release change the company's {period} revenue outlook?",
+    "interim_surprise": "By how much did revenue for {interim} beat or miss what the company had guided?",
+    "implied_remainder_new": "What revenue does the company's latest outlook imply for {remainder}?",
+    "implied_remainder_change": "By how much did this release change the company's revenue outlook for {remainder}?",
+    "implied_remainder": "Did this release raise, lower or keep unchanged the company's revenue outlook for "
+                         "{remainder}?",
+    "sequential": "Does the company's latest outlook put {period} revenue above (raised), below (lowered) or "
+                  "level with (unchanged) {last_period}?",
+}
+TEMPLATES = {"explicit": QUESTIONS, "implicit": IMPLICIT_QUESTIONS}
+DEFINITIONS = (
+    "A period's revenue outlook is the issuer's guidance midpoint for it. The outlook for the remainder of a "
+    "fiscal year is the full-year guidance midpoint minus revenue already reported in that year. The prior "
+    "remainder outlook also subtracts the prior guidance midpoint for the quarter reported since then."
+)
 ANSWER_RULES = (
     "Answer every listed item. For an amount give the exact signed value in full currency units without "
     "separators or symbols, for example -2345000. For a percent give the signed percent number with two "
@@ -125,6 +143,7 @@ class Case(Schema):
     documents: list[ArchivedDocument] = Field(min_length=1)
     figures: dict[Literal[FIGURES], list[FigureRef]]
     items: list[Literal[tuple(ITEM_KINDS)]] = Field(min_length=1)
+    style: Literal["explicit", "implicit"] = "explicit"
     trap: Nonempty
 
     @model_validator(mode="after")
@@ -140,10 +159,13 @@ class Case(Schema):
                 raise ValueError(f"figure {name} needs {'one reference' if name in INTERVALS else 'references'}")
         if len(set(self.items)) != len(self.items):
             raise ValueError("items repeat")
+        templates = TEMPLATES[self.style]
         for item in self.items:
+            if item not in templates:
+                raise ValueError(f"item {item} has no {self.style} wording")
             if missing := set(NEEDS[item]) - set(self.figures):
                 raise ValueError(f"item {item} needs figures {sorted(missing)}")
-            if missing := set(re.findall(r"{(\w+)}", QUESTIONS[item])) - set(self.labels):
+            if missing := set(re.findall(r"{(\w+)}", templates[item])) - set(self.labels):
                 raise ValueError(f"item {item} needs labels {sorted(missing)}")
         return self
 
@@ -211,7 +233,8 @@ def gold(case, blocks=None):
 
 
 def questions(case):
-    return [{"item": item, "kind": ITEM_KINDS[item], "question": QUESTIONS[item].format(**case.labels)}
+    templates = TEMPLATES[case.style]
+    return [{"item": item, "kind": ITEM_KINDS[item], "question": templates[item].format(**case.labels)}
             for item in case.items]
 
 
@@ -404,9 +427,9 @@ def seal(root, cases):
         "stop": "Calls run one at a time, repeat by repeat. A 429, usage limit or capacity error waits for the "
                 "announced cooldown up to 900 seconds and retries that call once; a second availability error "
                 "stops dispatch. Other failures count as wrong answers.",
-        "pilot_purpose": "Pilot cases come from announcements used in earlier benchmarks and seen during design. "
-                         "They estimate ceiling and discordance only; the holdout size is set from them and "
-                         "holdout issuers must be new.",
+        "pilot_purpose": "Pilot cases are seen during design. They estimate ceiling and discordance only; the "
+                         "holdout size is set from them and holdout issuers must be new.",
+        "implicit_definitions": DEFINITIONS,
         "cases_sha256": equal.digest(frozen), "requests_sha256": equal.digest(requests),
     }
     for name, value in (("cases.json", frozen), ("requests.json", requests), ("protocol.json", protocol)):

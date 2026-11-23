@@ -188,3 +188,80 @@ def test_mcnemar_and_holdout_size():
     size = bench.holdout_size(3, 0, 8)
     assert size is not None and 4 <= size <= 30
     assert bench.holdout_size(2, 1, 8) > size
+
+
+PRIOR = (
+    "<html><body><p>For fiscal 2025, Acme expects revenue of $100 million to $110 million.</p>"
+    "<p>For the third quarter, Acme expects revenue of $26 million to $28 million.</p>"
+    "<p>(U.S. $ in thousands)</p><table><tr><td>Six months revenue</td><td>50,000</td></tr></table></body></html>"
+)
+CURRENT = (
+    "<html><body><p>Acme raises its fiscal 2025 revenue outlook to $105 million to $109 million.</p>"
+    "<p>(U.S. $ in thousands)</p><table><tr><td>Nine months revenue</td><td>80,000</td></tr></table></body></html>"
+)
+
+
+@pytest.fixture
+def releases(tmp_path, monkeypatch):
+    monkeypatch.setattr(bench, "ROOT", tmp_path)
+    documents = []
+    for name, html, when in (("prior", PRIOR, "2025-08-01T16:00:00-04:00"), ("current", CURRENT, "2025-11-01T16:00:00-04:00")):
+        path = tmp_path / f"{name}.htm"
+        path.write_text(html)
+        documents.append({"id": name, "source_url": f"https://example.com/{name}.htm", "path": path.name,
+                          "sha256": sha256(path.read_bytes()).hexdigest(), "published_at": when, "obtained_at": when})
+    return documents
+
+
+def remainder_case(documents, style="implicit", items=("revision", "interim_surprise", "implied_remainder",
+                                                       "implied_remainder_change")):
+    table = {"tabular": True, "unit_quote": "(U.S. $ in thousands)"}
+    return bench.Case.model_validate({
+        "id": "acme_fy2025", "split": "pilot", "issuer": "Acme", "ticker": "ACME",
+        "event_at": "2025-11-01T16:00:00-04:00", "as_of": "2025-11-01T16:00:00-04:00", "precision": "1000000",
+        "labels": {"period": "fiscal 2025", "interim": "the third quarter of fiscal 2025",
+                   "remainder": "the fourth quarter of fiscal 2025"},
+        "documents": documents,
+        "figures": {
+            "new": [{"document": "current", "block": "current:p0001", "quote": "$105 million to $109 million"}],
+            "prior": [{"document": "prior", "block": "prior:p0001", "quote": "$100 million to $110 million"}],
+            "prior_interim": [{"document": "prior", "block": "prior:p0002", "quote": "$26 million to $28 million"}],
+            "reported_in_period": [{"document": "current", "block": "current:p0003", "quote": "80,000",
+                                    "unit_block": "current:p0002", **table}],
+            "prior_reported_in_period": [{"document": "prior", "block": "prior:p0004", "quote": "50,000",
+                                          "unit_block": "prior:p0003", **table}],
+        },
+        "items": list(items), "style": style, "trap": "Full-year raise is smaller than the quarter's beat.",
+    })
+
+
+def test_cross_document_remainder_is_lowered_despite_full_year_raise(releases):
+    item = remainder_case(releases)
+    expected = bench.gold(item)
+    assert expected == {"revision": "raised", "interim_surprise": Decimal(3_000_000),
+                        "implied_remainder": "lowered", "implied_remainder_change": Decimal(-1_000_000)}
+
+
+def test_implicit_wording_names_no_baseline_or_formula(releases):
+    text = " ".join(row["question"] for row in bench.questions(remainder_case(releases)))
+    assert "outlook for the fourth quarter of fiscal 2025" in text
+    for hint in ("midpoint", "minus", "prior guidance", "reported"):
+        assert hint not in text
+    explicit = " ".join(row["question"] for row in bench.questions(remainder_case(releases, style="explicit")))
+    assert "midpoint" in explicit
+
+
+def test_implicit_style_rejects_items_without_open_wording(releases):
+    with pytest.raises(ValidationError, match="no implicit wording"):
+        remainder_case(releases, items=("low_change",))
+
+
+def test_harness_reads_figures_across_releases(releases):
+    item = remainder_case(releases)
+    blocks = bench.case_blocks(item)
+    figures = [{"name": name, **ref.model_dump()} for name, refs in item.figures.items() for ref in refs]
+    answers, errors = bench.harness_answers(item, blocks, bench.Extraction.model_validate(
+        {"figures": figures, "reason": "已定位"}))
+    assert not errors and bench.grade(item, bench.gold(item, blocks), answers)["exact"]
+    request = bench.requests_for(item, blocks)["harness"]["prompt"]
+    assert "prior:p0002" in request and "current:p0003" in request
