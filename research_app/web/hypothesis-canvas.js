@@ -25,8 +25,9 @@ export function layoutHypotheses(nodes, expanded) {
     const item = visible[i];
     const point = points.get(item.id);
     if (point.y !== null) continue;
-    const first = points.get(children.get(item.id)[0].id);
-    const last = points.get(children.get(item.id).at(-1).id);
+    const descendants = children.get(item.id);
+    const first = points.get(descendants[0].id);
+    const last = points.get(descendants[descendants.length - 1].id);
     point.y = (first.y + last.y) / 2;
   }
   return { visible, points, children };
@@ -56,17 +57,29 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
   const canvas = node("canvas", null, "graph-wires");
   canvas.setAttribute("aria-hidden", "true");
   const plane = node("div", null, "graph-plane");
+  const list = node("nav", null, "graph-list");
+  list.setAttribute("aria-label", "假說分支列表");
   viewport.append(canvas, plane);
-  toolbar.append(node("h2", "分支畫布"), tools);
-  element.append(toolbar, viewport);
+  const title = node("h2", "分支畫布");
+  toolbar.append(title, tools);
+  element.append(toolbar, viewport, list);
 
-  const pen = canvas.getContext("2d");
+  let pen;
+  try {
+    pen = canvas.getContext("2d");
+  } catch {
+    // Branches remain accessible in the list if the browser cannot create a canvas context.
+  }
+  let listMode = !pen || new URLSearchParams(location.search).get("layout") === "list";
   const cards = new Map();
   let locations = new Map();
   let visible = [];
+  let childGroups = new Map();
+  let expandedNodes = new Set();
   let byId = new Map();
   let selected;
   let view;
+  let viewportSize;
   let fitting = true;
   let gesture;
   let pinch;
@@ -213,12 +226,46 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
     card.style.top = `${point.y}px`;
   }
 
+  function renderList(focusId) {
+    const fragment = document.createDocumentFragment();
+    let focusTarget;
+    for (const item of visible) {
+      const row = node("div", null, "graph-list-row");
+      let depth = 0;
+      for (let parent = byId.get(item.parent_id); parent && depth < 5; parent = byId.get(parent.parent_id)) depth++;
+      row.style.paddingInlineStart = `${depth * 10}px`;
+      if (childGroups.has(item.id)) {
+        const open = expandedNodes.has(item.id);
+        const control = button(open ? "−" : "+", `${open ? "收合" : "展開"} ${item.title}`, () => toggle(item.id));
+        control.setAttribute("aria-expanded", String(open));
+        if (focusId === `toggle:${item.id}`) focusTarget = control;
+        row.append(control);
+      }
+      const entry = button(item.title, item.title, () => select(item.id));
+      entry.className = "graph-list-title";
+      entry.dataset.listNode = item.id;
+      if (item.id === selected) entry.setAttribute("aria-current", "true");
+      if (item.id === focusId) focusTarget = entry;
+      row.append(entry);
+      if (enabled && !item.input) row.append(button("↗", `在 ${item.title} 開分支`, () => select(item.id, true)));
+      fragment.append(row);
+    }
+    list.replaceChildren(fragment);
+    focusTarget?.focus({ preventScroll: true });
+  }
+
   function update(nodes, expanded, active, focusId) {
     selected = active;
     byId = new Map(nodes.map(item => [item.id, item]));
     const graph = layoutHypotheses(nodes, expanded);
     visible = graph.visible;
     locations = graph.points;
+    childGroups = graph.children;
+    expandedNodes = expanded;
+    if (listMode) {
+      renderList(focusId);
+      return;
+    }
     cards.clear();
     const fragment = document.createDocumentFragment();
     let focusTarget;
@@ -382,7 +429,7 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
   viewport.addEventListener("blur", () => { spacePan = false; });
 
   let lastUpdate;
-  tools.append(button("−", "縮小", () => zoom(0.8)), zoomLevel, button("+", "放大", () => zoom(1.25)),
+  const graphControls = [button("−", "縮小", () => zoom(0.8)), zoomLevel, button("+", "放大", () => zoom(1.25)),
     button("全覽", "縮放至全覽", fit),
     button("聚焦", "聚焦所選節點", focusSelected),
     button("排版", "恢復自動排版", () => {
@@ -390,16 +437,51 @@ export function createHypothesisCanvas({ key, node, enabled, select, toggle }) {
       saveOffsets();
       if (lastUpdate) update(...lastUpdate);
       fit();
-    }));
-  const resize = () => !view ? initialView() : fitting ? fit() : paint();
+    })];
+  const mode = button("列表", "切換分支顯示方式", () => showList(!listMode));
+  tools.append(...graphControls, mode);
+
+  function showList(next) {
+    listMode = next;
+    viewport.hidden = next;
+    list.hidden = !next;
+    title.textContent = next ? "分支列表" : "分支畫布";
+    mode.textContent = next ? "畫布" : "列表";
+    mode.setAttribute("aria-pressed", String(next));
+    for (const control of graphControls) control.hidden = next;
+    if (lastUpdate) update(...lastUpdate);
+  }
+  showList(listMode);
+
+  const resize = () => {
+    const { clientWidth: width, clientHeight: height } = viewport;
+    if (listMode || !width) return;
+    if (!height || getComputedStyle(plane).position !== "absolute") {
+      showList(true);
+      return;
+    }
+    const previous = viewportSize;
+    viewportSize = { width, height };
+    if (!view) initialView();
+    else if (fitting) fit();
+    else {
+      if (previous) {
+        view.x += (width - previous.width) / 2;
+        view.y += (height - previous.height) / 2;
+      }
+      paint();
+    }
+  };
   const observer = typeof ResizeObserver === "function" ? new ResizeObserver(resize) : null;
   if (observer) observer.observe(viewport);
   else window.addEventListener("resize", resize);
   return {
     element,
     update(...args) {
+      const first = !lastUpdate;
       lastUpdate = args;
       update(...args);
+      if (first && !observer) resize();
     },
     destroy() {
       observer?.disconnect();

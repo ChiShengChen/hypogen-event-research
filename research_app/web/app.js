@@ -1,5 +1,5 @@
 import { exampleLabels, questionBank } from "./question-bank.js";
-import { disposeHypothesisTree, renderHypothesisTree } from "./hypothesis-tree.js";
+import { disposeHypothesisTree, renderHypothesisTree } from "./hypothesis-tree.js?v=20261124-2";
 
 const $ = (selector) => document.querySelector(selector);
 const all = (selector) => [...document.querySelectorAll(selector)];
@@ -1045,7 +1045,7 @@ async function boot() {
       }
     }
     const selected = params.get("example");
-    if (Object.hasOwn(exampleLabels, selected)) {
+    if (Object.prototype.hasOwnProperty.call(exampleLabels, selected)) {
       const exercise = questionBank[Number(params.get("question")) - 1];
       await loadExample(selected, exercise?.example === selected ? exercise : null, true);
       return;

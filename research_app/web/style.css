@@ -90,7 +90,7 @@ main { max-width: 1530px; margin: 0 auto; padding: 28px clamp(16px, 3.3vw, 48px)
 .graph-scale { min-width: 3.4em; color: #c5d3cb; font-size: .82rem; font-variant-numeric: tabular-nums; text-align: center; }
 .graph-tools button, .graph-node-controls button { border: 1px solid #4a5d54; background: #283a33; color: #e9f2ec; border-radius: 5px; padding: 3px 9px; font-size: .81rem; }
 .graph-tools button:hover, .graph-node-controls button:hover { background: #384f43; }
-.graph-viewport { position: relative; height: clamp(440px, calc(100dvh - 330px), 780px); overflow: hidden; cursor: grab; touch-action: none; user-select: none; background: radial-gradient(circle, #4a5d54 1px, transparent 1.2px) 0 0 / 24px 24px, #15201d; }
+.graph-viewport { position: relative; height: 460px; height: clamp(440px, calc(100dvh - 330px), 780px); overflow: hidden; cursor: grab; touch-action: none; user-select: none; background: radial-gradient(circle, #4a5d54 1px, transparent 1.2px) 0 0 / 24px 24px, #15201d; }
 .graph-viewport.graph-panning { cursor: grabbing; }
 .graph-viewport:focus-visible { outline: 2px solid #9bd4a9; outline-offset: -2px; }
 .graph-wires, .graph-plane { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
@@ -113,6 +113,11 @@ main { max-width: 1530px; margin: 0 auto; padding: 28px clamp(16px, 3.3vw, 48px)
 .graph-port { position: absolute; width: 8px; height: 8px; border: 1px solid #17231f; border-radius: 100%; top: calc(50% - 4px); background: var(--node-accent); pointer-events: none; }
 .graph-port-in { left: -5px; }
 .graph-port-out { right: -5px; }
+.graph-list { max-height: 60vh; overflow: auto; padding: 8px; background: #f4f8f5; color: var(--text); }
+.graph-list-row { display: flex; align-items: center; gap: 5px; margin: 4px 0; }
+.graph-list-row button { min-height: 36px; border: 1px solid #ccd9cf; border-radius: 6px; background: #fff; color: var(--text); padding: 4px 9px; }
+.graph-list-row .graph-list-title { flex: 1; min-width: 0; text-align: left; white-space: normal; }
+.graph-list-row button[aria-current] { background: #e4f1e6; border-color: #5d8b72; font-weight: 700; }
 .hypothesis-detail { min-width: 0; max-height: clamp(480px, calc(100dvh - 290px), 820px); overflow: auto; padding: 0 6px 6px 1px; }
 .hypothesis-detail .notice, .hypothesis-question, .hypothesis-stance { margin-top: 8px; }
 .hypothesis-question { white-space: pre-wrap; }

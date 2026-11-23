@@ -1,4 +1,4 @@
-import { createHypothesisCanvas } from "./hypothesis-canvas.js";
+import { createHypothesisCanvas } from "./hypothesis-canvas.js?v=20261124-2";
 import { inputComposer, inputDetail, inputLabels, inputPayload } from "./hypothesis-inputs.js";
 
 const expandedByRevision = new Map();
@@ -14,7 +14,8 @@ export function disposeHypothesisTree(body) {
   canvases.delete(body);
 }
 
-export async function renderHypothesisTree(body, { report, request, node, fields, evidenceLinks, enabled }) {
+export async function renderHypothesisTree(body, options) {
+  const { report, request, node } = options;
   const key = `${report.report_id}/${report.revision}`;
   const url = `/reports/${encodeURIComponent(report.report_id)}/revisions/${report.revision}/hypothesis-tree`;
   const panel = node("section", null, "hypothesis-tree");
@@ -23,24 +24,26 @@ export async function renderHypothesisTree(body, { report, request, node, fields
   panel.append(status);
   body.append(panel);
 
-  let nodes;
   try {
     await pendingByRevision.get(key)?.catch(() => {});
-    ({ nodes } = await request(url));
+    const { nodes } = await request(url);
+    if (panel.isConnected) mountHypothesisTree(body, panel, options, nodes, key, url);
   } catch (error) {
+    if (!panel.isConnected) return;
+    disposeHypothesisTree(body);
     const retry = node("button", "重新載入", "button quiet");
     retry.type = "button";
     retry.addEventListener("click", () => {
       panel.remove();
-      renderHypothesisTree(body, { report, request, node, fields, evidenceLinks, enabled });
+      renderHypothesisTree(body, options);
     });
-    status.textContent = error.message;
+    status.textContent = `假說樹載入失敗。 ${error.message || error}`;
     status.classList.add("error-text");
-    panel.append(retry);
-    return;
+    panel.replaceChildren(status, retry);
   }
-  if (!panel.isConnected) return;
+}
 
+function mountHypothesisTree(body, panel, { request, node, fields, evidenceLinks, enabled }, nodes, key, url) {
   const grid = node("div", null, "hypothesis-tree-grid");
   const detail = node("section", null, "hypothesis-detail");
   detail.setAttribute("aria-label", "所選節點");
@@ -218,7 +221,7 @@ export async function renderHypothesisTree(body, { report, request, node, fields
     const bubbles = inputComposer(node, draft.inputs, () => {
       expanded.add(item.id);
       question.required = !draft.inputs.length;
-      const newest = draft.inputs.at(-1)?.id;
+      const newest = draft.inputs[draft.inputs.length - 1]?.id;
       graph.update(visibleNodes(), expanded, selected, newest || null);
     });
     form.append(modeLabel, mode, custom, questionLabel, question, bubbles, submit, feedback);
